@@ -1,0 +1,6 @@
+node_modules/
+gandom.db
+gandom.log
+server.js
+package.json
+package-lock.json
