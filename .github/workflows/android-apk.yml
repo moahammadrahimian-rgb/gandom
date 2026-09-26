@@ -24,15 +24,10 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Create www folder
+    - name: Install Android SDK
       run: |
-        mkdir -p www
-        cp -r public/* www/ 2>/dev/null || true
-        echo '<html><body>Gandom</body></html>' > www/index.html
-
-    - name: Create package.json
-      run: |
-        echo '{"name":"gandom","version":"1.0.0","private":true}' > package.json
+        sudo apt-get update
+        sudo apt-get install -y android-sdk
 
     - name: Install Capacitor
       run: |
