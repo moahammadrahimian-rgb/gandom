@@ -8,50 +8,44 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
         node-version: '20'
-    
+
     - name: Setup Java
       uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
         java-version: '17'
-    
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
-    
+
     - name: Install Capacitor
       run: |
         npm install @capacitor/core @capacitor/cli @capacitor/android
-    
-    - name: Init Capacitor
+
+    - name: Create Config
       run: |
-        npx cap init gandom com.gandom.app --web-dir=public
-    
-    - name: Add Android Platform
-      run: |
-        npx cap add android
-    
-    - name: Sync Capacitor
-      run: |
-        npx cap sync android
-    
-    - name: Build APK
+        echo '{"appId":"com.gandom.app","appName":"gandom","webDir":"public"}' > capacitor.config.json
+
+    - name: Add Android
+      run: npx cap add android
+
+    - name: Sync
+      run: npx cap sync android
+
+    - name: Build
       run: |
         cd android
         chmod +x gradlew
         ./gradlew assembleDebug
-    
+
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: gandom-apk
         path: android/app/build/outputs/apk/debug/app-debug.apk
-
