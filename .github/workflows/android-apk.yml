@@ -1,3 +1,4 @@
+
 name: Build Android APK
 
 on:
@@ -24,10 +25,8 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Install Android SDK
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y android-sdk
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v4
 
     - name: Install Capacitor
       run: |
