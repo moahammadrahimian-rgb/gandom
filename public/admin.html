@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>پنل مدیریت گندم</title>
+<style>
+body { background: #0d1117; color: #fff; font-family: Tahoma; padding: 20px; }
+h1 { color: #f5c518; text-align: center; }
+.form-box { background: #161b22; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #30363d; }
+.form-box input, .form-box select { width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #30363d; background: #0d1117; color: #fff; }
+.form-box button { width: 100%; padding: 12px; background: #f5c518; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+.card { background: #161b22; padding: 15px; margin: 10px 0; border-radius: 8px; border: 1px solid #30363d; }
+.card h3 { color: #f5c518; margin-bottom: 5px; }
+.card p { color: #8b949e; font-size: 13px; margin: 3px 0; }
+.card .price { color: #3fb950; font-weight: bold; }
+.empty { text-align: center; color: #8b949e; padding: 40px; }
+</style>
+</head>
+<body>
+<h1>🔐 پنل مدیریت گندم</h1>
+
+<div class="form-box">
+<h3 style="color:#f5c518; margin-bottom:10px;">ثبت آگهی جدید</h3>
+<input type="text" id="title" placeholder="عنوان آگهی">
+<input type="number" id="price" placeholder="قیمت (تومان)">
+<input type="text" id="city" placeholder="شهر">
+<select id="dealType">
+<option value="فروش">فروش</option>
+<option value="اجاره">اجاره</option>
+<option value="خرید">خرید</option>
+</select>
+<select id="propertyType">
+<option value="مسکونی">مسکونی</option>
+<option value="تجاری">تجاری</option>
+<option value="اداری">اداری</option>
+</select>
+<button onclick="addAd()">➕ ثبت آگهی</button>
+</div>
+
+<div id="adsList"><div class="empty">در حال بارگذاری...</div></div>
+
+<script>
+async function loadAds() {
+  const res = await fetch('/api/ads');
+  const data = await res.json();
+  const ads = data.ads || [];
+  const list = document.getElementById('adsList');
+  if (!ads.length) {
+    list.innerHTML = '<div class="empty">هنوز آگهی‌ای ثبت نشده</div>';
+    return;
+  }
+  list.innerHTML = '<h2 style="color:#f5c518;">لیست آگهی‌ها (' + ads.length + ')</h2>' +
+    ads.map(a => '<div class="card"><h3>' + a.title + '</h3><p>📍 ' + a.city + ' | ' + a.deal_type + ' | ' + a.property_type + '</p><p class="price">' + Number(a.price).toLocaleString() + ' تومان</p></div>').join('');
+}
+
+async function addAd() {
+  const title = document.getElementById('title').value;
+  const price = document.getElementById('price').value;
+  const city = document.getElementById('city').value;
+  const deal_type = document.getElementById('dealType').value;
+  const property_type = document.getElementById('propertyType').value;
+  if (!title || !price || !city) { alert('همه فیلدها رو پر کن'); return; }
+  await fetch('/api/ads', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ title, price, city, deal_type, property_type, province: city, description: '', address: '', owner_name: '', owner_phone: '' })
+  });
+  document.getElementById('title').value = '';
+  document.getElementById('price').value = '';
+  document.getElementById('city').value = '';
+  loadAds();
+}
+
+loadAds();
+</script>
+</body>
+</html>
