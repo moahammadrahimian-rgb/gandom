@@ -1,0 +1,11 @@
+node_modules
+.git
+.github
+gandom.db
+gandom.log
+backups
+android
+www
+gandom-core
+*.apk
+*.aab

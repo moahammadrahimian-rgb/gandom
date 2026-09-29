@@ -1,0 +1,18 @@
+{
+  "project": "GANDOM",
+  "standard": "OCI-CONTAINER",
+  "runtime": "NODE.JS",
+  "deployment_mode": "CLOUD_PORTABLE",
+  "port": 8787,
+  "bind": "0.0.0.0",
+  "health": "/health",
+  "stateless_application_required": true,
+  "horizontal_scaling": true,
+  "provider_lock_in": false,
+  "termux_required_in_production": false,
+  "server_js_modification": false,
+  "production_capacity": "NOT_ASSUMED",
+  "capacity_requires_load_test": true,
+  "external_health_check_required": true,
+  "no_fake_pass": true
+}
