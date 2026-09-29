@@ -1,5 +1,12 @@
 node_modules/
 gandom.db
 gandom.log
-server.js
-package-lock.json
+
+# Local backups
+backups/
+
+# Local runtime/build output
+android/.gradle/
+android/build/
+android/app/build/
+android/.idea/

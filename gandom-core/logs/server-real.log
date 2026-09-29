@@ -1,0 +1,14 @@
+nohup: ignoring input
+{"ts":"2026-09-29T12:14:54.594Z","event":"NODE_STARTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","port":8787,"websocket":"ws://0.0.0.0:8787","health":"http://127.0.0.1:8787/health"}
+{"ts":"2026-09-29T12:14:56.686Z","event":"PEER_CONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-df542cf5-e136-4e88-99a8-70720c7927e9","peers":1}
+{"ts":"2026-09-29T12:14:56.708Z","event":"MESSAGE_RECEIVED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-df542cf5-e136-4e88-99a8-70720c7927e9","type":"DATA"}
+{"ts":"2026-09-29T12:14:56.727Z","event":"PEER_DISCONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-df542cf5-e136-4e88-99a8-70720c7927e9","peers":0}
+{"ts":"2026-09-29T12:20:11.533Z","event":"PEER_CONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-PEER-A","peers":1}
+{"ts":"2026-09-29T12:20:11.566Z","event":"PEER_CONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-PEER-B","peers":2}
+{"ts":"2026-09-29T12:20:11.588Z","event":"PEER_DISCONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-PEER-A","peers":1}
+{"ts":"2026-09-29T12:20:11.592Z","event":"PEER_DISCONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-PEER-B","peers":0}
+{"ts":"2026-09-29T12:21:19.792Z","event":"PEER_CONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-PEER-A","peers":1}
+{"ts":"2026-09-29T12:21:19.824Z","event":"PEER_CONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-PEER-B","peers":2}
+{"ts":"2026-09-29T12:21:19.834Z","event":"MESSAGE_RECEIVED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-PEER-A","type":"DATA"}
+{"ts":"2026-09-29T12:21:19.857Z","event":"PEER_DISCONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-PEER-A","peers":1}
+{"ts":"2026-09-29T12:21:19.860Z","event":"PEER_DISCONNECTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-PEER-B","peers":0}

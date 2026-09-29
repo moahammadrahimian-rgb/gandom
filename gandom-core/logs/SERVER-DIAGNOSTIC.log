@@ -1,0 +1,2 @@
+{"ts":"2026-09-29T12:29:49.873Z","event":"NODE_STARTED","node_id":"5316fd02-7f85-4608-a68b-9541fd647b69","port":8787,"websocket":"ws://0.0.0.0:8787","health":"http://127.0.0.1:8787/health"}
+{"ts":"2026-09-29T12:29:51.466Z","event":"NODE_SHUTDOWN","node_id":"5316fd02-7f85-4608-a68b-9541fd647b69","signal":"SIGTERM"}

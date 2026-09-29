@@ -1,0 +1,12 @@
+{
+  "project": "GANDUM",
+  "test": "REAL-LIFECYCLE-PEERS",
+  "mode": "REAL_EXECUTION",
+  "timestamp": "2026-09-29T12:30:42.633Z",
+  "initial_peers": 0,
+  "connected_peers": 2,
+  "final_peers": 0,
+  "peer_a": "CONNECTED_AND_CLOSED",
+  "peer_b": "CONNECTED_AND_CLOSED",
+  "result": "PASS_REAL"
+}

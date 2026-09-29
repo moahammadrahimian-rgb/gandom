@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">gandom</string>
+    <string name="title_activity_main">gandom</string>
+    <string name="package_name">com.gandom.app</string>
+    <string name="custom_url_scheme">com.gandom.app</string>
+</resources>

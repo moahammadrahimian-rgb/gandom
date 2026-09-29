@@ -1,0 +1,11 @@
+===== GANDUM REAL DATA CONTRACT =====
+===== GANDUM REAL DATA CONTRACT =====
+HTTP_HEALTH=PASS_REAL
+DATA_SENT={"type":"DATA","from":"REAL-DATA-df542cf5-e136-4e88-99a8-70720c7927e9","ts":"2026-09-29T12:14:56.691Z","payload":{"message_id":"msg-8182e52f-e562-4563-97a7-c19c36b4063c","text":"GANDUM REAL DATA EXECUTION"}}
+DATA_RECEIVED={"type":"WELCOME","from":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","ts":"2026-09-29T12:14:56.687Z","payload":{"node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","peer_id":"REAL-DATA-df542cf5-e136-4e88-99a8-70720c7927e9"}}
+DATA_RECEIVED={"type":"DATA_ACK","from":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","ts":"2026-09-29T12:14:56.709Z","payload":{"accepted":true,"message_id":"msg-8182e52f-e562-4563-97a7-c19c36b4063c"}}
+DATA_CONTRACT=PASS_REAL
+DATA_ACK=PASS_REAL
+MESSAGE_ID_MATCH=PASS_REAL
+EVIDENCE=/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-DATA-1790684096715.json
+RESULT=PASS_REAL

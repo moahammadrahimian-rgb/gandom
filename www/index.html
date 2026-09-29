@@ -1,16 +1,47 @@
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>گندم</title>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#f5c518">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
-body { background: #0d1117; color: #fff; font-family: Tahoma; text-align: center; padding: 50px; }
-h1 { color: #f5c518; font-size: 40px; }
-p { color: #8b949e; margin-top: 10px; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0d1117; color: #fff; font-family: Tahoma, sans-serif; text-align: center; padding: 50px 20px; min-height: 100vh; }
+h1 { color: #f5c518; font-size: 48px; margin-bottom: 10px; }
+p { color: #8b949e; font-size: 16px; margin-top: 10px; }
+.logo { font-size: 80px; margin-bottom: 20px; }
 </style>
 </head>
 <body>
-<h1>🌾 گندم</h1>
+<div class="logo">🌾</div>
+<h1>گندم</h1>
 <p>هر چی می‌خوای، اینجا هست</p>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(reg => console.log('Service Worker registered'))
+      .catch(err => console.log('Service Worker error:', err));
+  });
+}
+</script>
 </body>
 </html>
+
