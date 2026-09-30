@@ -1,0 +1,20 @@
+{
+  "project": "GANDOM",
+  "section": 2,
+  "step": 18,
+  "name": "WORKER_STATE",
+  "source": "REAL_RUNTIME",
+  "fakeWorker": false,
+  "workerId": "WORKER-3c884de2-3606-43a9-b07b-940b2b7fdd04",
+  "runtimeFunction": "setWorkerState",
+  "executedAt": "2026-09-30T01:10:45.822Z",
+  "runtimeResult": {
+    "workerId": "WORKER-3c884de2-3606-43a9-b07b-940b2b7fdd04",
+    "state": "READY",
+    "timestamp": "2026-09-30T01:10:45.837Z",
+    "correlationId": "0431b83d-e588-4327-aefc-22092bdebeba",
+    "eventId": "822837d6-0afb-4d22-af03-ed40f44e626f",
+    "source": "GANDOM_WORKER_STATE",
+    "fakeWorker": false
+  }
+}

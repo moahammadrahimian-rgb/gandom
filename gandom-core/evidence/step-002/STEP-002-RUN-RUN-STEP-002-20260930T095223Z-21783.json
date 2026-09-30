@@ -1,0 +1,364 @@
+{
+  "step": "002",
+  "name": "FULL_GANDOM_PROJECT_AUDIT",
+  "run_id": "RUN-STEP-002-20260930T095223Z-21783",
+  "timestamp": "2026-09-30T09:52:23Z",
+  "git_head": "58f3b0ba9de56be3cdd846cc999986e30da70902",
+  "real_execution": true,
+  "counts": {
+    "all_files": 232,
+    "json_files": 66,
+    "js_files": 37,
+    "md_files": 1
+  },
+  "json_validation": {
+    "total": 66,
+    "valid": 63,
+    "invalid": 3,
+    "results": [
+      {
+        "file": "package.json",
+        "valid": true
+      },
+      {
+        "file": "package-lock.json",
+        "valid": true
+      },
+      {
+        "file": "provinces-cities.json",
+        "valid": false,
+        "error": "Extra data: line 1 column 4 (char 3)"
+      },
+      {
+        "file": "provinces.json",
+        "valid": false,
+        "error": "Extra data: line 1 column 4 (char 3)"
+      },
+      {
+        "file": "iran-cities.json",
+        "valid": false,
+        "error": "Extra data: line 1 column 4 (char 3)"
+      },
+      {
+        "file": "capacitor.config.json",
+        "valid": true
+      },
+      {
+        "file": "public/manifest.json",
+        "valid": true
+      },
+      {
+        "file": "android/app/src/main/assets/capacitor.config.json",
+        "valid": true
+      },
+      {
+        "file": "android/app/src/main/assets/capacitor.plugins.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-015-20260930-001106/evidence-last-event.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-015-20260930-001106/STEP-015-VERIFICATION.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-016-NODE-REGISTRY-20260930-040744/registry.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-018-WORKER-STATE-20260930-010548/WORKER-STATE-CONTRACT.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/evidence/peer-discovery.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/peers/registry.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/worker-state/contracts/WORKER-STATE-CONTRACT.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/worker-state/evidence/worker-state-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/health/evidence/node-health-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/evidence/peer-discovery.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/peers/registry.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/worker-state/contracts/WORKER-STATE-CONTRACT.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/worker-state/evidence/worker-state-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/health/evidence/node-health-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/evidence/peer-discovery.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/peers/registry.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/worker-state/contracts/WORKER-STATE-CONTRACT.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/worker-state/evidence/worker-state-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/health/evidence/node-health-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-017-NODE-HEALTH-20260930-041936/p2p-before-step-017/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-017-NODE-HEALTH-20260930-041936/p2p-before-step-017/evidence/peer-discovery.json",
+        "valid": true
+      },
+      {
+        "file": "backups/STEP-017-NODE-HEALTH-20260930-041936/p2p-before-step-017/peers/registry.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/contracts/GANDUM-MASTER-CONTRACT.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/state/BOOTSTRAP.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/evidence/GND-INTEGRATED-RUNTIME-1790683619759.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/evidence/REAL-DATA-1790684096715.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/evidence/REAL-TWO-PEER-1790684411570.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/evidence/REAL-TWO-PEER-DATA-1790684479841.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/evidence/REAL-LIFECYCLE-1790685042637.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/governance/EVIDENCE-TRUST-PROTOCOL-2558.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/governance/evidence-trust/RUN-20260930043238567-e32ca99705b26d59.challenge.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/governance/evidence-trust/RUN-20260930043238567-e32ca99705b26d59.evidence.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/governance/evidence/LAW-2558-INSTALL-20260930T044748Z.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/governance/backups/EVIDENCE-TRUST-2558-20260930-080237/GOLDEN-MOTHER-LAW-2558.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/evidence/peer-discovery.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/evidence/runtime-benchmark-proof.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/peers/registry.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/worker-state/contracts/WORKER-STATE-CONTRACT.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/worker-state/evidence/worker-state-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/p2p/health/evidence/node-health-runtime.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/global-architecture/contracts/GLOBAL-EXECUTION-CONTRACT.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json",
+        "valid": true
+      },
+      {
+        "file": "gandom-core/evidence/step-001/STEP-001-RUN-RUN-STEP-001-20260930T094635Z-21783.json",
+        "valid": true
+      }
+    ]
+  },
+  "important_files": [
+    {
+      "file": "package.json",
+      "exists": true,
+      "sha256": "5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3",
+      "bytes": 512
+    },
+    {
+      "file": "capacitor.config.json",
+      "exists": true,
+      "sha256": "36fe022501fdd162b153db1c133ef25fffa21c7973d7496f193f20cd36778ae0",
+      "bytes": 74
+    },
+    {
+      "file": "server.js",
+      "exists": true,
+      "sha256": "61a853635818df420795937b325fcbb5db79de6881ef642f19672c7c7837bca8",
+      "bytes": 3852
+    },
+    {
+      "file": "gandom-core/contracts/GANDUM-MASTER-CONTRACT.json",
+      "exists": true,
+      "sha256": "97a92487a274c5108cf3ef80af6127132c90b6a7f16473d15c6d2670cd3f5ef4",
+      "bytes": 893
+    },
+    {
+      "file": "gandom-core/global-architecture/contracts/GLOBAL-EXECUTION-CONTRACT.json",
+      "exists": true,
+      "sha256": "4abb22225f70655a423cb5b406b408689d6081815d1dac9b8ad937643cafd0fe",
+      "bytes": 692
+    },
+    {
+      "file": "gandom-core/global-architecture/design/GLOBAL-ARCHITECTURE.md",
+      "exists": true,
+      "sha256": "123365ad99dc2bd5afeca3875aa931126df89b2b7b75968992311662214c75d3",
+      "bytes": 827
+    },
+    {
+      "file": "gandom-core/p2p/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+      "exists": true,
+      "sha256": "5945691531d1c77c142b6a025101b78aacb963dbaa2960115f7fcd821fb177d7",
+      "bytes": 539
+    },
+    {
+      "file": "gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json",
+      "exists": true,
+      "sha256": "8d385ca7ecd48eecf2b6f2cc5627cbd28ccf96ec09d7fe17cd74a60ee3bb77c1",
+      "bytes": 3909
+    }
+  ],
+  "server": {
+    "exists": true,
+    "sha256": "61a853635818df420795937b325fcbb5db79de6881ef642f19672c7c7837bca8",
+    "git_diff_exit": 0,
+    "git_diff_empty": true
+  },
+  "git": {
+    "status": " M .gitignore\n?? gandom-core/evidence/step-001/\n?? gandom-core/governance/EVIDENCE-TRUST-PROTOCOL-2558.json\n?? gandom-core/governance/GOLDEN-MOTHER-LAW-2558.HASH\n?? gandom-core/governance/GOLDEN-MOTHER-LAW-2558.HASH.bak.20260930T044748Z\n?? gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json.bak.20260930T044748Z\n?? gandom-core/governance/bin/\n?? gandom-core/governance/evidence-trust/\n?? gandom-core/governance/evidence/\n?? gandom-core/governance/owner/\n?? gandom-core/p2p/\n",
+    "head": "58f3b0ba9de56be3cdd846cc999986e30da70902",
+    "remote_main": "58f3b0ba9de56be3cdd846cc999986e30da70902\trefs/heads/main"
+  },
+  "step_reference_scan": {
+    "command": "git grep -n -E 'STEP[ _-]*[0-9]{3}|CHAPTER[ _-]*[0-9]+|SECTION[ _-]*[0-9]+' HEAD -- '*.json' '*.md' '*.txt' '*.js'",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": ""
+  },
+  "audit_policy": {
+    "read_only": true,
+    "git_add": false,
+    "git_commit": false,
+    "git_push": false,
+    "build": false,
+    "server_js_modified": false
+  },
+  "status": "PENDING_INDEPENDENT_VERIFICATION"
+}

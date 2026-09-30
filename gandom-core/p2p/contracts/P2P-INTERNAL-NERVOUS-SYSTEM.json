@@ -1,0 +1,27 @@
+{
+  "project": "GANDOM",
+  "module": "P2P_INTERNAL_NERVOUS_SYSTEM",
+  "version": "1.0.0",
+  "role": "INTERNAL_REPORTING_AND_EVENT_BUS",
+  "real_events_only": true,
+  "fake_reports": false,
+  "immutable_evidence": true,
+  "reports": [
+    "NODE_HEALTH",
+    "PEER_STATE",
+    "AI_WORKER_STATE",
+    "REVENUE_EVENT",
+    "WALLET_EVENT",
+    "COMMERCE_EVENT",
+    "SECURITY_EVENT",
+    "ERROR_EVENT",
+    "RECOVERY_EVENT"
+  ],
+  "performance": [
+    "LATENCY",
+    "THROUGHPUT",
+    "QUEUE_DEPTH",
+    "ERROR_RATE",
+    "RECOVERY_TIME"
+  ]
+}

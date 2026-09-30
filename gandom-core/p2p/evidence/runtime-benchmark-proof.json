@@ -1,0 +1,16 @@
+{
+  "step": "023",
+  "section": "02",
+  "name": "LATENCY_THROUGHPUT_BENCHMARK",
+  "timestamp": "2026-09-30T04:24:42.275Z",
+  "realRuntime": true,
+  "requestedEvents": 1000,
+  "successfulEvents": 1000,
+  "errors": 0,
+  "totalMs": 194.626462,
+  "averageLatencyMs": 0.13241483399999984,
+  "minLatencyMs": 0.052385,
+  "maxLatencyMs": 22.24577,
+  "throughputEventsPerSecond": 5138.04746653618,
+  "fakeEvents": false
+}

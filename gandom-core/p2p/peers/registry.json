@@ -1,0 +1,29 @@
+[
+  {
+    "peerId": "844fbd8d0eeb74564d8420219c979cd59754203358afa394e59f96110178abfe",
+    "nodeId": "localhost",
+    "platform": "android",
+    "architecture": "arm",
+    "nodeVersion": "v24.17.0",
+    "discoveredAt": "2026-09-29T22:35:20.532Z",
+    "source": "REAL_LOCAL_RUNTIME"
+  },
+  {
+    "peerId": "7429bc5be961f03ec3efd36b05e10b56ca9c064849cf7f3a81f006041610a012",
+    "nodeId": "localhost",
+    "platform": "android",
+    "architecture": "arm",
+    "nodeVersion": "v24.17.0",
+    "discoveredAt": "2026-09-30T00:36:50.627Z",
+    "source": "REAL_LOCAL_RUNTIME"
+  },
+  {
+    "peerId": "2d5dfacb41b4eb942fd26e8ab77fbabdd1c11b62ca78454a1b141dc9f1d71266",
+    "nodeId": "localhost",
+    "platform": "android",
+    "architecture": "arm",
+    "nodeVersion": "v24.17.0",
+    "discoveredAt": "2026-09-30T00:37:44.690Z",
+    "source": "REAL_LOCAL_RUNTIME"
+  }
+]

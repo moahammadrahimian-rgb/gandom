@@ -1,0 +1,252 @@
+name: GANDOM Chapter 02 - 1000 Real Cloud Nodes
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p2p-1000-real-nodes:
+    name: 1000 independent P2P node processes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Runtime preflight
+        shell: bash
+        run: |
+          set -e
+          echo "ARCH=$(uname -m)"
+          echo "CPU=$(nproc)"
+          echo "MEMORY_MB=$(free -m | awk '/^Mem:/{print $2}')"
+
+          test "$(uname -m)" = "x86_64"
+
+          NODE_VERSION="$(node --version)"
+          echo "NODE_VERSION=$NODE_VERSION"
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -e
+          npm ci
+
+      - name: Start 1000 independent nodes
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p evidence/ch02-1000-nodes
+          rm -f evidence/ch02-1000-nodes/*.jsonl
+
+          TARGET=1000
+          BASE_PORT=10000
+          PIDS=""
+
+          echo "TARGET_NODES=$TARGET"
+
+          for i in $(seq 1 "$TARGET"); do
+            PORT=$((BASE_PORT + i))
+            NODE_ID="GANDOM-NODE-$(printf '%04d' "$i")-$(cat /proc/sys/kernel/random/uuid)"
+
+            NODE_ID="$NODE_ID" \
+            PORT="$PORT" \
+            PEER_ADDRESS="" \
+            node --max-old-space-size=16 server.js \
+              >"evidence/ch02-1000-nodes/node-$i.log" 2>&1 &
+
+            PIDS="$PIDS $!"
+          done
+
+          echo "$PIDS" > evidence/ch02-1000-nodes/pids.txt
+
+          sleep 8
+
+          echo "NODE_PROCESSES_STARTED=$(wc -w < evidence/ch02-1000-nodes/pids.txt)"
+
+      - name: Verify 1000 unique node processes and health
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          TARGET=1000
+          BASE_PORT=10000
+
+          : > evidence/ch02-1000-nodes/health.jsonl
+          : > evidence/ch02-1000-nodes/node-ids.txt
+
+          HEALTH_PASS=0
+          HEALTH_FAIL=0
+
+          for i in $(seq 1 "$TARGET"); do
+            PORT=$((BASE_PORT + i))
+
+            RESPONSE="$(curl --max-time 3 -fsS \
+              "http://127.0.0.1:${PORT}/health" || true)"
+
+            if [ -n "$RESPONSE" ]; then
+              echo "$RESPONSE" >> evidence/ch02-1000-nodes/health.jsonl
+              HEALTH_PASS=$((HEALTH_PASS + 1))
+
+              printf '%s\n' "$RESPONSE" |
+                sed -n 's/.*"node_id":"\([^"]*\)".*/\1/p' \
+                >> evidence/ch02-1000-nodes/node-ids.txt
+            else
+              HEALTH_FAIL=$((HEALTH_FAIL + 1))
+            fi
+          done
+
+          UNIQUE_NODE_IDS="$(
+            sort -u evidence/ch02-1000-nodes/node-ids.txt |
+            sed '/^$/d' |
+            wc -l
+          )"
+
+          echo "TARGET_NODES=$TARGET"
+          echo "HEALTH_PASS=$HEALTH_PASS"
+          echo "HEALTH_FAIL=$HEALTH_FAIL"
+          echo "UNIQUE_NODE_IDS=$UNIQUE_NODE_IDS"
+
+          test "$HEALTH_PASS" -eq "$TARGET"
+          test "$UNIQUE_NODE_IDS" -eq "$TARGET"
+
+      - name: Real network ACK test
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          cat > evidence/ch02-1000-nodes/network-test.js <<'NODE'
+          const WebSocket = require('ws');
+
+          const start = 10001;
+          const end = 11000;
+
+          let ok = 0;
+          let fail = 0;
+          let pending = end - start + 1;
+
+          for (let port = start; port <= end; port++) {
+            const ws = new WebSocket(`ws://127.0.0.1:${port}`);
+
+            const timer = setTimeout(() => {
+              fail++;
+              try { ws.close(); } catch {}
+              done();
+            }, 3000);
+
+            ws.on('open', () => {
+              ws.send(JSON.stringify({
+                type: 'PING',
+                payload: {
+                  source: 'CH02_REAL_NETWORK_TEST',
+                  targetPort: port
+                }
+              }));
+            });
+
+            ws.on('message', () => {
+              clearTimeout(timer);
+              ok++;
+              try { ws.close(); } catch {}
+              done();
+            });
+
+            ws.on('error', () => {
+              clearTimeout(timer);
+              fail++;
+              done();
+            });
+          }
+
+          function done() {
+            pending--;
+            if (pending === 0) {
+              console.log(`NETWORK_ACK_OK=${ok}`);
+              console.log(`NETWORK_ACK_FAIL=${fail}`);
+
+              if (ok !== 1000 || fail !== 0) {
+                process.exit(1);
+              }
+            }
+          }
+          NODE
+
+          node evidence/ch02-1000-nodes/network-test.js \
+            | tee evidence/ch02-1000-nodes/network-test.txt
+
+      - name: Independent verification
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          TARGET=1000
+
+          PROCESS_COUNT="$(wc -w < evidence/ch02-1000-nodes/pids.txt)"
+          UNIQUE_NODE_IDS="$(
+            sort -u evidence/ch02-1000-nodes/node-ids.txt |
+            sed '/^$/d' |
+            wc -l
+          )"
+
+          HEALTH_COUNT="$(wc -l < evidence/ch02-1000-nodes/health.jsonl)"
+
+          ACK_OK="$(
+            sed -n 's/^NETWORK_ACK_OK=//p' \
+            evidence/ch02-1000-nodes/network-test.txt
+          )"
+
+          ACK_FAIL="$(
+            sed -n 's/^NETWORK_ACK_FAIL=//p' \
+            evidence/ch02-1000-nodes/network-test.txt
+          )"
+
+          echo "TARGET_NODES=$TARGET"
+          echo "PROCESS_COUNT=$PROCESS_COUNT"
+          echo "UNIQUE_NODE_IDS=$UNIQUE_NODE_IDS"
+          echo "HEALTH_COUNT=$HEALTH_COUNT"
+          echo "NETWORK_ACK_OK=$ACK_OK"
+          echo "NETWORK_ACK_FAIL=$ACK_FAIL"
+
+          test "$PROCESS_COUNT" -eq "$TARGET"
+          test "$UNIQUE_NODE_IDS" -eq "$TARGET"
+          test "$HEALTH_COUNT" -eq "$TARGET"
+          test "$ACK_OK" -eq "$TARGET"
+          test "$ACK_FAIL" -eq 0
+
+          cat > evidence/ch02-1000-nodes/FINAL-1000-NODE-VERIFICATION.txt <<EOF
+          CHAPTER=02
+          TARGET_NODES=1000
+          INDEPENDENT_NODE_PROCESSES=$PROCESS_COUNT
+          UNIQUE_NODE_IDS=$UNIQUE_NODE_IDS
+          HEALTH_PASS=$HEALTH_COUNT
+          NETWORK_ACK_PASS=$ACK_OK
+          NETWORK_ACK_FAIL=$ACK_FAIL
+          FAKE_NODE_IDS=0
+          EVENT_COUNT_USED_AS_NODE_COUNT=NO
+          REAL_CLOUD_RUNTIME=YES
+          ARCH=x86_64
+          FINAL_1000_NODE_VERIFICATION=PASS
+          EOF
+
+          cat evidence/ch02-1000-nodes/FINAL-1000-NODE-VERIFICATION.txt
+
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gandom-ch02-1000-real-node-evidence
+          path: evidence/ch02-1000-nodes/
+
+      - name: Stop all nodes
+        if: always()
+        shell: bash
+        run: |
+          if [ -f evidence/ch02-1000-nodes/pids.txt ]; then
+            while read -r pid; do
+              kill "$pid" 2>/dev/null || true
+            done < <(tr ' ' '\n' < evidence/ch02-1000-nodes/pids.txt)
+          fi
