@@ -1,47 +1,860 @@
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>گندم</title>
-<link rel="manifest" href="/manifest.json">
-<meta name="theme-color" content="#f5c518">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta charset="utf-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+<meta name="theme-color" content="#07130e">
+
+<title>GANDOM | گندم</title>
+
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: #0d1117; color: #fff; font-family: Tahoma, sans-serif; text-align: center; padding: 50px 20px; min-height: 100vh; }
-h1 { color: #f5c518; font-size: 48px; margin-bottom: 10px; }
-p { color: #8b949e; font-size: 16px; margin-top: 10px; }
-.logo { font-size: 80px; margin-bottom: 20px; }
+:root{
+  --bg:#06100b;
+  --panel:#0b1811;
+  --panel2:#102219;
+  --line:#1d3a29;
+  --green:#39d98a;
+  --green2:#20a866;
+  --gold:#d7b35b;
+  --text:#f3f8f5;
+  --muted:#8fa99b;
+  --danger:#ff6b6b;
+  --radius:24px;
+}
+
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+  margin:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+body{
+  min-height:100vh;
+  padding-bottom:90px;
+}
+
+button{
+  font:inherit;
+}
+
+.app{
+  width:min(100%,760px);
+  margin:auto;
+  padding:16px;
+}
+
+/* =========================
+   1. DESIGN SYSTEM
+========================= */
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo{
+  width:52px;
+  height:52px;
+  border-radius:17px;
+  display:grid;
+  place-items:center;
+  background:
+    radial-gradient(circle at 50% 30%,#55efa0,transparent 35%),
+    linear-gradient(145deg,#164d32,#07130e);
+  border:1px solid #2b6848;
+  box-shadow:0 8px 30px #0008;
+  font-size:28px;
+}
+
+.brand h1{
+  margin:0;
+  font-size:21px;
+}
+
+.brand small{
+  color:var(--muted);
+}
+
+/* =========================
+   2. MAIN FRAME
+========================= */
+
+.main-frame{
+  border:1px solid var(--line);
+  border-radius:30px;
+  background:
+    radial-gradient(circle at 90% 0%,#16452c66,transparent 35%),
+    linear-gradient(180deg,#0c1d14,#07110c);
+  padding:18px;
+  box-shadow:0 20px 60px #0009;
+}
+
+/* =========================
+   3. HOME
+========================= */
+
+.hero{
+  padding:22px 8px 16px;
+}
+
+.hero .eyebrow{
+  color:var(--green);
+  font-size:13px;
+  font-weight:700;
+}
+
+.hero h2{
+  font-size:31px;
+  line-height:1.2;
+  margin:9px 0;
+}
+
+.hero p{
+  color:var(--muted);
+  line-height:1.8;
+  margin:0;
+}
+
+/* =========================
+   4. GDM ECONOMY
+========================= */
+
+.economy{
+  margin-top:15px;
+  padding:20px;
+  border-radius:24px;
+  background:
+    linear-gradient(135deg,#123a26,#0b1b13);
+  border:1px solid #255b3d;
+  position:relative;
+  overflow:hidden;
+}
+
+.economy:after{
+  content:"🌾";
+  position:absolute;
+  left:-8px;
+  bottom:-25px;
+  font-size:100px;
+  opacity:.07;
+  transform:rotate(-12deg);
+}
+
+.economy-label{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.supply{
+  font-size:34px;
+  font-weight:800;
+  margin:5px 0;
+}
+
+.owner{
+  color:var(--gold);
+  font-size:14px;
+}
+
+.progress{
+  height:7px;
+  background:#07100b;
+  border-radius:99px;
+  overflow:hidden;
+  margin-top:15px;
+}
+
+.progress span{
+  display:block;
+  height:100%;
+  width:5%;
+  background:var(--gold);
+}
+
+/* =========================
+   5. MARKET / CHART
+========================= */
+
+.chart-card{
+  margin-top:14px;
+  padding:18px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:var(--panel);
+}
+
+.chart-head{
+  display:flex;
+  justify-content:space-between;
+}
+
+.price{
+  font-size:26px;
+  font-weight:800;
+}
+
+.chart{
+  height:130px;
+  margin-top:18px;
+  position:relative;
+  overflow:hidden;
+}
+
+.chart svg{
+  width:100%;
+  height:100%;
+}
+
+.chart-note{
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* =========================
+   6. WALLET
+========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:14px;
+}
+
+.card{
+  border:1px solid var(--line);
+  border-radius:21px;
+  padding:16px;
+  background:var(--panel);
+  min-height:115px;
+}
+
+.card .icon{
+  font-size:25px;
+}
+
+.card strong{
+  display:block;
+  margin-top:8px;
+}
+
+.card small{
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+  line-height:1.6;
+}
+
+/* =========================
+   7-23 SECTIONS
+========================= */
+
+.section{
+  margin-top:14px;
+  border:1px solid var(--line);
+  border-radius:22px;
+  background:var(--panel);
+  overflow:hidden;
+}
+
+.section button{
+  width:100%;
+  border:0;
+  background:none;
+  color:var(--text);
+  padding:17px;
+  text-align:right;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  cursor:pointer;
+}
+
+.section-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:750;
+}
+
+.section-content{
+  display:none;
+  padding:0 17px 17px;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.section.open .section-content{
+  display:block;
+}
+
+.section.open .arrow{
+  transform:rotate(180deg);
+}
+
+.arrow{
+  transition:.2s;
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+
+.status{
+  padding:7px 10px;
+  border-radius:999px;
+  background:#10251a;
+  border:1px solid #214b34;
+  color:var(--green);
+  font-size:12px;
+}
+
+.status.warn{
+  color:var(--gold);
+}
+
+.status.off{
+  color:var(--muted);
+}
+
+/* =========================
+   ACTIONS
+========================= */
+
+.actions{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:14px;
+}
+
+.action{
+  border:1px solid var(--line);
+  background:#102219;
+  color:var(--text);
+  border-radius:17px;
+  padding:13px;
+  cursor:pointer;
+}
+
+.action:active{
+  transform:scale(.98);
+}
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(100%,760px);
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:#07110df2;
+  backdrop-filter:blur(20px);
+  border-top:1px solid var(--line);
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  z-index:20;
+}
+
+.nav{
+  border:0;
+  background:none;
+  color:var(--muted);
+  font-size:11px;
+  padding:6px 2px;
+  cursor:pointer;
+}
+
+.nav.active{
+  color:var(--green);
+}
+
+.nav-icon{
+  display:block;
+  font-size:20px;
+  margin-bottom:3px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:420px){
+  .app{
+    padding:10px;
+  }
+
+  .hero h2{
+    font-size:27px;
+  }
+
+  .supply{
+    font-size:29px;
+  }
+}
+
+@media(min-width:700px){
+  .grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .actions{
+    grid-template-columns:repeat(4,1fr);
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="logo">🌾</div>
-<h1>گندم</h1>
-<p>هر چی می‌خوای، اینجا هست</p>
+
+<div class="app">
+
+<header class="header">
+  <div class="brand">
+    <div class="logo">🌾</div>
+    <div>
+      <h1>GANDOM</h1>
+      <small>گندم · Decentralized Economy</small>
+    </div>
+  </div>
+
+  <div class="status">LIVE</div>
+</header>
+
+<main class="main-frame">
+
+<!-- 3 HOME -->
+<section class="hero">
+  <div class="eyebrow">GANDOM ECOSYSTEM</div>
+  <h2>اقتصاد، شبکه و هوش مصنوعی<br>در یک فریم واحد</h2>
+  <p>
+    رابط اختصاصی GANDOM برای دسترسی یکپارچه به
+    اقتصاد GDM، شبکه P2P، کیف پول، AI، تبلیغات و خدمات تجاری.
+  </p>
+</section>
+
+<!-- 4 ECONOMY -->
+<section class="economy">
+  <div class="economy-label">TOTAL GDM SUPPLY</div>
+  <div class="supply">24,000,000,000 GDM</div>
+  <div class="owner">مالک: 5% = 1,200,000,000 GDM</div>
+  <div class="progress"><span></span></div>
+</section>
+
+<!-- 5 MARKET -->
+<section class="chart-card">
+  <div class="chart-head">
+    <div>
+      <small>GDM MARKET</small>
+      <div class="price" id="price">—</div>
+    </div>
+    <span class="status warn">DATA SOURCE</span>
+  </div>
+
+  <div class="chart">
+    <svg viewBox="0 0 600 150" preserveAspectRatio="none">
+      <polyline
+        points="0,125 45,118 80,122 120,92 165,105 210,76
+                250,88 295,60 340,72 385,43 430,57 470,35
+                520,48 555,28 600,39"
+        fill="none"
+        stroke="#39d98a"
+        stroke-width="4"/>
+    </svg>
+  </div>
+
+  <div class="chart-note">
+    نمایش قیمت زنده فقط پس از اتصال منبع واقعی بازار معتبر است.
+  </div>
+</section>
+
+<!-- 6 WALLET + CORE SURFACES -->
+<div class="grid">
+
+  <article class="card">
+    <div class="icon">💳</div>
+    <strong>Wallet</strong>
+    <small>موجودی و تراکنش‌های GDM</small>
+  </article>
+
+  <article class="card">
+    <div class="icon">🌐</div>
+    <strong>P2P</strong>
+    <small>شبکه و همتاها</small>
+  </article>
+
+  <article class="card">
+    <div class="icon">🤖</div>
+    <strong>AI</strong>
+    <small>هوش مصنوعی و Automation</small>
+  </article>
+
+  <article class="card">
+    <div class="icon">🛡️</div>
+    <strong>Security</strong>
+    <small>امنیت و هویت</small>
+  </article>
+
+</div>
+
+<!-- 7 P2P -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🌐 شبکه P2P و Node</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  وضعیت Node، Peer Discovery، DHT، Event Bus و Runtime.
+  <div class="status-row">
+    <span class="status">P2P</span>
+    <span class="status">DHT</span>
+    <span class="status">NODE</span>
+  </div>
+</div>
+</section>
+
+<!-- 8 AI -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🤖 AI / Services</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  درگاه یکپارچه AI برای خدمات، تحلیل، محتوا، پشتیبانی،
+  فروش، درآمد و Automation.
+</div>
+</section>
+
+<!-- 9 SECURITY -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🛡️ Security / Identity</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  هویت، احراز هویت، وضعیت اعتماد و کنترل عملیات حساس.
+</div>
+</section>
+
+<!-- 10 EVIDENCE -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">📦 Backup / Evidence / Audit</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  Evidence، Backup، Audit و سوابق اجرای واقعی.
+</div>
+</section>
+
+<!-- 11 UX -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">📱 UX / Responsive States</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  Loading، Empty، Error، Success، Offline و طراحی Responsive
+  برای موبایل و Web.
+</div>
+</section>
+
+<!-- 12 APK -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">📲 Capacitor / Android APK</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  UI برای اجرای واقعی در Android/Capacitor طراحی شده است.
+</div>
+</section>
+
+<!-- 13 BLOCKCHAIN -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">⛓️ Blockchain Core</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  وضعیت هسته Blockchain و اعتبار زنجیره.
+</div>
+</section>
+
+<!-- 14 DHT -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🧭 DHT / Peer Discovery</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  نمایش Discovery و Routing وضعیت شبکه.
+</div>
+</section>
+
+<!-- 15 IPFS -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🗄️ IPFS / Data</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  داده غیرمتمرکز و وضعیت ذخیره‌سازی.
+</div>
+</section>
+
+<!-- 16 MEMPOOL -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🧮 Mempool / UTXO</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  Mempool، UTXO، Merkle و Validation.
+</div>
+</section>
+
+<!-- 17 GOVERNANCE -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">⚖️ قانون مادر ۲۵۵۸</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  Governance و قواعد مرجع GANDOM.
+</div>
+</section>
+
+<!-- 18 WORKER -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">⚙️ Node / Worker / Runtime</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  Worker State، Registry و Runtime Events.
+</div>
+</section>
+
+<!-- 19 REVENUE -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">💰 Revenue / Accounting</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  درآمد، Ledger، Accounting و گزارش مالی.
+</div>
+</section>
+
+<!-- 20 COMMERCIAL -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🏢 Commercial AI</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+
+  <div class="status-row">
+    <span class="status">🏠 Real Estate</span>
+    <span class="status">🥇 Gold</span>
+    <span class="status">🚗 Automotive</span>
+  </div>
+
+</div>
+</section>
+
+<!-- 21 OWNER CONTROL -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🔐 Owner Authorization</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  AI می‌تواند تحلیل و ثبت درآمد انجام دهد،
+  اما برداشت یا انتقال وجه بدون احراز هویت و مجوز مالک انجام نمی‌شود.
+</div>
+</section>
+
+<!-- 22 GLOBAL USERS -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🌍 Global Users / Viral Growth</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+  <strong>Target: 8,000,000,000 users</strong><br>
+  این عدد Target است و تا زمانی که داده واقعی وجود نداشته باشد
+  به‌عنوان تعداد کاربران واقعی نمایش داده نمی‌شود.
+</div>
+</section>
+
+<!-- 23 AUTONOMOUS COMMERCIAL AI -->
+<section class="section">
+<button onclick="toggle(this)">
+  <span class="section-title">🚀 Autonomous Advertising + AI</span>
+  <span class="arrow">⌄</span>
+</button>
+<div class="section-content">
+
+  <div class="status-row">
+    <span class="status">Telegram</span>
+    <span class="status">YouTube</span>
+    <span class="status">Instagram</span>
+    <span class="status">Facebook</span>
+    <span class="status">X</span>
+  </div>
+
+  <p>
+    هدف تبلیغاتی: 1000 آگهی × 10,000 تومان =
+    10,000,000 تومان در روز.
+  </p>
+
+  <p>
+    این مقدار Target درآمد است و درآمد واقعی فقط با سفارش،
+    پرداخت و Ledger واقعی ثبت می‌شود.
+  </p>
+
+</div>
+</section>
+
+<div class="actions">
+
+<button class="action" onclick="showMessage('Wallet آماده اتصال به Runtime است')">
+  💳 Wallet
+</button>
+
+<button class="action" onclick="showMessage('Automation Hub')">
+  🤖 Automation
+</button>
+
+<button class="action" onclick="showMessage('Commercial AI')">
+  🏢 Commercial
+</button>
+
+<button class="action" onclick="showMessage('Security Center')">
+  🛡️ Security
+</button>
+
+</div>
+
+</main>
+</div>
+
+<nav class="bottom-nav">
+
+<button class="nav active" onclick="nav('home',this)">
+  <span class="nav-icon">⌂</span>
+  خانه
+</button>
+
+<button class="nav" onclick="nav('market',this)">
+  <span class="nav-icon">📈</span>
+  بازار
+</button>
+
+<button class="nav" onclick="nav('network',this)">
+  <span class="nav-icon">🌐</span>
+  شبکه
+</button>
+
+<button class="nav" onclick="nav('wallet',this)">
+  <span class="nav-icon">💳</span>
+  کیف پول
+</button>
+
+<button class="nav" onclick="nav('more',this)">
+  <span class="nav-icon">☰</span>
+  بیشتر
+</button>
+
+</nav>
 
 <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(reg => console.log('Service Worker registered'))
-      .catch(err => console.log('Service Worker error:', err));
-  });
+"use strict";
+
+function toggle(button){
+  const section = button.parentElement;
+  section.classList.toggle("open");
 }
+
+function nav(name,button){
+  document.querySelectorAll(".nav")
+    .forEach(x => x.classList.remove("active"));
+
+  button.classList.add("active");
+
+  if(name === "market"){
+    document.querySelector(".chart-card")
+      ?.scrollIntoView({behavior:"smooth"});
+  }
+
+  if(name === "wallet"){
+    document.querySelector(".grid")
+      ?.scrollIntoView({behavior:"smooth"});
+  }
+
+  if(name === "network"){
+    document.querySelectorAll(".section")[0]
+      ?.scrollIntoView({behavior:"smooth"});
+  }
+}
+
+function showMessage(message){
+  alert(message);
+}
+
+/*
+ * IMPORTANT:
+ * This UI does not fabricate live market data.
+ * Real runtime values must be injected by the GANDOM backend.
+ */
+
+window.GANDOM_UI = {
+  version: "FINAL-23-SECTIONS",
+  supply: 24000000000,
+  ownerSharePercent: 5,
+  ownerAllocation: 1200000000,
+  globalUserTarget: 8000000000,
+  dailyAdTarget: 1000,
+  adPriceToman: 10000
+};
+
+document.getElementById("price").textContent = "GDM / LIVE";
 </script>
+
 </body>
 </html>
-
