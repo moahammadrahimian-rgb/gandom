@@ -5,10 +5,13 @@ on:
   push:
     branches:
       - main
-      - master
+
+permissions:
+  contents: read
 
 jobs:
-  android-build:
+  build:
+    name: Build Debug APK
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +23,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -44,18 +44,87 @@ jobs:
           ./gradlew --version
 
       - name: Build Debug APK
+        id: build
         working-directory: android
-        run: ./gradlew assembleDebug --stacktrace
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          ./gradlew assembleDebug \
+            --stacktrace \
+            --info \
+            --console=plain \
+            2>&1 | tee ../gandom-gradle-build.log
+
+          CODE=${PIPESTATUS[0]}
+
+          echo "GRADLE_EXIT_CODE=$CODE" | tee ../gandom-build-result.txt
+
+          exit "$CODE"
+
+      - name: Publish Gradle failure diagnostics
+        if: always()
+        shell: bash
+        run: |
+          {
+            echo "# GANDOM Android Build Diagnostic"
+            echo
+            echo "## Commit"
+            echo "${GITHUB_SHA}"
+            echo
+            echo "## Run"
+            echo "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo
+            echo "## Gradle result"
+            if [ -f gandom-build-result.txt ]; then
+              cat gandom-build-result.txt
+            else
+              echo "NO_RESULT_FILE"
+            fi
+            echo
+            echo "## Gradle failure signatures"
+            if [ -f gandom-gradle-build.log ]; then
+              grep -E \
+                "What went wrong|Could not resolve|Could not find|FAILURE|Exception|Caused by:|AAPT|SDK|AGP|Gradle|401|403|404|429|timeout|Timeout" \
+                gandom-gradle-build.log | tail -n 250 || true
+            else
+              echo "NO_GRADLE_LOG"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload Gradle diagnostic log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gandom-gradle-diagnostic
+          path: |
+            gandom-gradle-build.log
+            gandom-build-result.txt
+          if-no-files-found: warn
 
       - name: Verify APK
+        if: steps.build.outcome == 'success'
+        shell: bash
         run: |
           test -f android/app/build/outputs/apk/debug/app-debug.apk
           ls -lh android/app/build/outputs/apk/debug/app-debug.apk
           sha256sum android/app/build/outputs/apk/debug/app-debug.apk
 
       - name: Upload APK
+        if: steps.build.outcome == 'success'
         uses: actions/upload-artifact@v4
         with:
           name: gandom-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+
+      - name: Final build result
+        if: always()
+        shell: bash
+        run: |
+          if [ "${{ steps.build.outcome }}" = "success" ]; then
+            echo "GANDOM_ANDROID_BUILD=PASS" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "GANDOM_ANDROID_BUILD=FAIL" >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
