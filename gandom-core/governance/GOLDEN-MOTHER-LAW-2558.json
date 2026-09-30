@@ -1,0 +1,131 @@
+{
+  "id": "2558",
+  "project": "GANDOM",
+  "type": "GOLDEN_MOTHER_LAW",
+  "version": "1.2.0",
+  "status": "ACTIVE",
+  "purpose": "Permanent protection of the canonical GANDOM construction method and architecture.",
+  "ownership": {
+    "owner_authorization_required": true,
+    "unauthorized_structure_change": "DENY",
+    "unauthorized_delete": "DENY",
+    "unauthorized_replace": "DENY",
+    "unauthorized_overwrite": "DENY"
+  },
+  "construction_rules": {
+    "real_execution_required": true,
+    "real_evidence_required": true,
+    "fake_pass": false,
+    "fake_evidence": false,
+    "self_asserted_runtime": false,
+    "destructive_overwrite": false,
+    "duplicate_structure": false,
+    "invented_step": false,
+    "invented_chapter": false,
+    "first_failure_rule": true,
+    "stop_on_failure": true
+  },
+  "evidence_trust": {
+    "screenshot_as_evidence": "DENY",
+    "chat_text_as_evidence": "DENY",
+    "copied_terminal_text_as_evidence": "DENY",
+    "echo_only_as_evidence": "DENY",
+    "new_tab_pass_reuse": "DENY",
+    "cross_session_pass_reuse": "DENY",
+    "stale_evidence": "DENY",
+    "unique_run_id_required": true,
+    "challenge_required": true,
+    "project_root_required": true,
+    "git_head_required": true,
+    "timestamp_required": true,
+    "evidence_hash_required": true,
+    "independent_verification_required": true,
+    "fail_closed": true
+  },
+  "change_protocol": [
+    "VERIFY_LAW_2558",
+    "BACKUP_CURRENT_STATE",
+    "RECORD_CHANGE_REQUEST",
+    "OWNER_AUTHORIZATION",
+    "APPLY_CHANGE",
+    "VERIFY_STRUCTURE",
+    "RECORD_HASH",
+    "RECORD_AUDIT",
+    "KEEP_ROLLBACK"
+  ],
+  "financial_security": {
+    "ai_withdrawal_authority": false,
+    "ai_transfer_authority": false,
+    "ai_owner_override": false,
+    "real_transactions_only": true,
+    "double_entry_ledger_required": true,
+    "owner_control_required": true
+  },
+  "assistant_behavior": {
+    "must_follow_law_2558": true,
+    "must_not_claim_unverified_pass": true,
+    "must_not_claim_execution_without_execution": true,
+    "must_report_unverified_as_unverified": true,
+    "must_fail_closed_when_evidence_is_missing": true
+  },
+  "rules": {
+    "execution_integrity": {
+      "id": "L2558-ANTI-REPEAT-FAKE-EXECUTION",
+      "status": "ACTIVE",
+      "unique_run_id_required": true,
+      "duplicate_execution": {
+        "allowed": false,
+        "exception_requires": [
+          "VALID_CHANGE_REQUEST",
+          "OWNER_AUTHORIZATION",
+          "NEW_VERSION",
+          "RECORDED_REASON"
+        ]
+      },
+      "fake_execution": {
+        "allowed": false,
+        "fake_pass": false,
+        "fake_evidence": false,
+        "screenshot_alone_is_evidence": false,
+        "copied_output_alone_is_evidence": false,
+        "echo_output_alone_is_evidence": false,
+        "self_assertion_alone_is_evidence": false,
+        "new_tab_or_session_alone_is_evidence": false
+      },
+      "completion_requires": [
+        "REAL_EXECUTION",
+        "REAL_OUTPUT",
+        "EVIDENCE",
+        "INDEPENDENT_VERIFICATION"
+      ],
+      "execution_continuity": {
+        "continue_from_first_unfinished_step": true,
+        "repeated_completed_step_forbidden": true,
+        "state_check_required": [
+          "RUN_ID",
+          "STEP",
+          "GIT_HEAD",
+          "EVIDENCE_HASH",
+          "STEP_STATUS"
+        ]
+      },
+      "fail_closed": {
+        "enabled": true,
+        "on_conflict": "STOP",
+        "on_invalid_evidence": "STOP",
+        "on_unknown_state": "STOP",
+        "on_duplicate_execution": "STOP"
+      },
+      "pass_policy": {
+        "pass_requires_real_execution": true,
+        "pass_requires_independent_verification": true,
+        "pass_must_match_run_id": true,
+        "pass_must_match_evidence": true
+      }
+    }
+  },
+  "meta": {
+    "last_integrity_rule": "L2558-ANTI-REPEAT-FAKE-EXECUTION",
+    "last_integrity_rule_registered_at": "2026-09-30T05:39:27.471Z"
+  }
+}
