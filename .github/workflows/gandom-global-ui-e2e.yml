@@ -1,0 +1,73 @@
+name: GANDOM Global UI E2E
+
+on:
+  workflow_dispatch:
+
+jobs:
+  global-ui-e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Verify x64
+        run: |
+          set -e
+          uname -m
+          test "$(uname -m)" = "x86_64"
+          echo "RUNNER_X64=PASS"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npm install --no-save playwright@1.63.0
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Verify Chromium
+        run: |
+          set -e
+          npx playwright --version
+          test -n "$(find "$HOME/.cache/ms-playwright" -type f -name 'chrome' -o -name 'chromium' 2>/dev/null | head -1 || true)"
+          echo "CHROMIUM_INSTALL_GATE=PASS"
+
+      - name: Start GANDOM 8080
+        run: |
+          set -e
+          PORT=8080 node server.js > gandom-server.log 2>&1 &
+          echo $! > gandom-server.pid
+
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8080/health; then
+              echo
+              echo "GANDOM_8080_HEALTH=PASS"
+              exit 0
+            fi
+            sleep 1
+          done
+
+          cat gandom-server.log
+          exit 1
+
+      - name: Run real UI E2E
+        run: |
+          set -o pipefail
+          mkdir -p evidence/SECTION-5-GLOBAL-UI
+          node test-ui-real-8080.js \
+            2>&1 | tee evidence/SECTION-5-GLOBAL-UI/test-output.log
+
+      - name: Upload evidence
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: GANDOM-SECTION-5-GLOBAL-UI-EVIDENCE
+          path: |
+            evidence/**
+            gandom-server.log
+            test-results/**
+            playwright-report/**
+          retention-days: 30
