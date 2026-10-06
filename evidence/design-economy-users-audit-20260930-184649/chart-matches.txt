@@ -1,0 +1,24 @@
+www/index.html:82:<!-- SECTION 2: ECONOMY + EXCHANGE -->
+www/index.html:83:<section id="view-market" class="view">
+www/index.html:87:    <h1>اقتصاد و بازار</h1>
+www/index.html:89:      داده بازار باید از منبع واقعی Runtime وارد شود.
+www/index.html:96:        <div class="muted small">GDM Market</div>
+www/index.html:97:        <h2>Exchange</h2>
+www/index.html:102:    <canvas id="marketChart" class="chart"></canvas>
+www/index.html:105:      نمودار فعلی فقط چارچوب UI است؛ قیمت واقعی تا اتصال API بازار نمایش داده نمی‌شود.
+www/index.html:116:      <div class="muted small">Market Data</div>
+www/index.html:253:  <button data-view="market">بازار</button>
+www/admin.html:15:.card .price { color: #3fb950; font-weight: bold; }
+www/admin.html:25:<input type="number" id="price" placeholder="قیمت (تومان)">
+www/admin.html:53:    ads.map(a => '<div class="card"><h3>' + a.title + '</h3><p>📍 ' + a.city + ' | ' + a.deal_type + ' | ' + a.property_type + '</p><p class="price">' + Number(a.price).toLocaleString() + ' تومان</p></div>').join('');
+www/admin.html:58:  const price = document.getElementById('price').value;
+www/admin.html:62:  if (!title || !price || !city) { alert('همه فیلدها رو پر کن'); return; }
+www/admin.html:66:    body: JSON.stringify({ title, price, city, deal_type, property_type, province: city, description: '', address: '', owner_name: '', owner_phone: '' })
+www/admin.html:69:  document.getElementById('price').value = '';
+www/assets/css/gandom-ui.css:172:.chart{
+www/assets/js/gandom-ui.js:27:function drawChart(){
+www/assets/js/gandom-ui.js:28:  const canvas = $('#marketChart');
+www/assets/js/gandom-ui.js:49:   * این خط فقط برای نمایش ساختار نمودار است.
+www/assets/js/gandom-ui.js:50:   * هیچ قیمت یا داده بازار جعلی تولید نمی‌شود.
+www/assets/js/gandom-ui.js:83:window.addEventListener('resize', drawChart);
+www/assets/js/gandom-ui.js:86:  drawChart();

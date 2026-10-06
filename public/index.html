@@ -1,92 +1,900 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>گندم | GANDOM</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07100d">
+<title>GANDOM — Global Decentralized Network</title>
+
 <style>
-* { margin:0; padding:0; box-sizing:border-box; font-family:Tahoma,sans-serif; }
-body { background:#0a0e1a; color:#fff; min-height:100vh; padding-bottom:80px; }
-.header { background:#131829; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e2642; position:sticky; top:0; z-index:100; }
-.logo { display:flex; align-items:center; gap:10px; }
-.logo-icon { font-size:28px; }
-.logo-text { font-size:22px; font-weight:bold; color:#f5c518; }
-.header-actions { display:flex; gap:15px; font-size:20px; }
-.balance-card { background:linear-gradient(135deg,#f5a623,#f76b1c); margin:20px; padding:25px; border-radius:20px; box-shadow:0 10px 30px rgba(245,166,35,.3); }
-.balance-title { font-size:14px; opacity:.9; margin-bottom:8px; }
-.balance-amount { font-size:32px; font-weight:bold; margin-bottom:5px; }
-.balance-usd { font-size:14px; opacity:.9; }
-.balance-actions { display:flex; gap:10px; margin-top:20px; }
-.balance-btn { flex:1; padding:12px; border-radius:12px; border:none; font-weight:bold; cursor:pointer; font-size:14px; }
-.btn-deposit { background:rgba(255,255,255,.25); color:#fff; }
-.btn-withdraw { background:#fff; color:#f5a623; }
-.section-title { padding:0 20px; margin:25px 0 15px; font-size:18px; font-weight:bold; }
-.market-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:0 20px; }
-.market-item { background:#131829; border-radius:15px; padding:15px 10px; text-align:center; border:1px solid #1e2642; }
-.market-icon { font-size:28px; margin-bottom:8px; }
-.market-name { font-size:12px; color:#8b949e; }
-.chart-card { background:#131829; margin:20px; padding:20px; border-radius:20px; border:1px solid #1e2642; }
-.chart-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:15px; }
-.chart-price { font-size:24px; font-weight:bold; color:#3fb950; }
-.chart-change { font-size:13px; color:#3fb950; }
-.chart-svg { width:100%; height:120px; }
-.stats-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; padding:0 20px; }
-.stat-card { background:#131829; padding:15px; border-radius:15px; border:1px solid #1e2642; }
-.stat-value { font-size:18px; font-weight:bold; color:#f5c518; margin-bottom:5px; }
-.stat-label { font-size:12px; color:#8b949e; }
-.bottom-nav { position:fixed; bottom:0; left:0; right:0; background:#131829; border-top:1px solid #1e2642; display:grid; grid-template-columns:repeat(5,1fr); padding:10px 0; z-index:100; }
-.nav-item { text-align:center; color:#8b949e; font-size:11px; }
-.nav-item.active { color:#f5c518; }
-.nav-icon { font-size:22px; margin-bottom:3px; }
+:root{
+  --bg:#050908;
+  --panel:#0b1210;
+  --panel2:#101a16;
+  --line:#24342d;
+  --gold:#d6a84f;
+  --gold2:#f0cf78;
+  --green:#55c878;
+  --text:#edf3ee;
+  --muted:#8e9b94;
+  --red:#e66b6b;
+  --blue:#55aee8;
+  --purple:#9c7bea;
+  --shadow:0 18px 50px rgba(0,0,0,.38);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 80% 0%,rgba(214,168,79,.09),transparent 30%),
+    radial-gradient(circle at 10% 30%,rgba(85,200,120,.06),transparent 28%),
+    var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+.app{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:250px 1fr;
+}
+
+.sidebar{
+  position:sticky;
+  top:0;
+  height:100vh;
+  padding:22px 16px;
+  background:rgba(7,12,10,.94);
+  border-left:1px solid var(--line);
+  backdrop-filter:blur(18px);
+  z-index:10;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 6px 24px;
+}
+
+.wheat{
+  width:46px;
+  height:46px;
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,#f2ce72,#9b7027);
+  color:#10120d;
+  font-size:25px;
+  box-shadow:0 0 30px rgba(214,168,79,.25);
+}
+
+.brand strong{
+  display:block;
+  font-size:24px;
+  letter-spacing:2px;
+}
+
+.brand small{
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:1.5px;
+}
+
+.nav{
+  display:grid;
+  gap:7px;
+}
+
+.nav button{
+  border:1px solid transparent;
+  color:#b8c2bc;
+  background:transparent;
+  text-align:right;
+  padding:12px 14px;
+  border-radius:12px;
+  transition:.2s;
+}
+
+.nav button:hover,
+.nav button.active{
+  color:var(--gold2);
+  background:rgba(214,168,79,.08);
+  border-color:rgba(214,168,79,.25);
+}
+
+.network-mini{
+  margin-top:25px;
+  padding:15px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--panel);
+}
+
+.dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 12px var(--green);
+  margin-left:7px;
+}
+
+.main{
+  min-width:0;
+  padding:18px;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+  padding:16px 20px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:rgba(11,18,16,.8);
+  box-shadow:var(--shadow);
+}
+
+.status{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+}
+
+.icon-btn{
+  width:40px;
+  height:40px;
+  border:1px solid var(--line);
+  background:var(--panel2);
+  color:var(--text);
+  border-radius:12px;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.5fr .8fr;
+  gap:16px;
+  margin-bottom:16px;
+}
+
+.card{
+  background:linear-gradient(145deg,rgba(16,26,22,.96),rgba(8,14,12,.96));
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+
+.hero-main{
+  min-height:235px;
+  padding:28px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-main:after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  left:-80px;
+  bottom:-150px;
+  border:1px solid rgba(214,168,79,.22);
+  box-shadow:0 0 80px rgba(214,168,79,.08);
+}
+
+.eyebrow{
+  color:var(--gold2);
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  margin:12px 0 5px;
+  font-size:clamp(34px,5vw,64px);
+  letter-spacing:3px;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:650px;
+  line-height:1.9;
+}
+
+.hero-owner{
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.owner-value{
+  font-size:28px;
+  margin:12px 0;
+  color:var(--gold2);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.module{
+  padding:18px;
+  min-height:190px;
+}
+
+.module-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.module h3{
+  margin:0;
+  font-size:18px;
+}
+
+.badge{
+  font-size:11px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#142019;
+  color:var(--green);
+  border:1px solid rgba(85,200,120,.2);
+}
+
+.metric{
+  font-size:26px;
+  font-weight:700;
+  margin:12px 0;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+.small{
+  font-size:12px;
+}
+
+.primary{
+  width:100%;
+  margin-top:15px;
+  padding:11px;
+  border-radius:11px;
+  border:1px solid rgba(214,168,79,.35);
+  background:rgba(214,168,79,.1);
+  color:var(--gold2);
+}
+
+.primary:hover{
+  background:rgba(214,168,79,.18);
+}
+
+.market{
+  margin-top:16px;
+  padding:20px;
+}
+
+.market-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.market-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.price{
+  font-size:30px;
+  font-weight:800;
+  color:var(--gold2);
+}
+
+.market-body{
+  display:grid;
+  grid-template-columns:1.4fr .7fr;
+  gap:16px;
+  margin-top:18px;
+}
+
+.chart{
+  min-height:260px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+
+.chart-note{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:var(--muted);
+}
+
+.order-box{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:16px;
+}
+
+.tabs{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:9px;
+}
+
+.tab.active{
+  color:var(--gold2);
+  border-color:rgba(214,168,79,.4);
+}
+
+.industry{
+  margin-top:16px;
+}
+
+.industry-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:12px;
+}
+
+.industry-card{
+  padding:18px;
+  min-height:125px;
+}
+
+.industry-icon{
+  font-size:25px;
+  margin-bottom:8px;
+}
+
+.footer{
+  margin:18px 0 75px;
+  text-align:center;
+  color:#6f7c75;
+  font-size:11px;
+}
+
+.mobile-nav{
+  display:none;
+}
+
+@media(max-width:1100px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .industry-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+}
+
+@media(max-width:760px){
+  .app{display:block}
+  .sidebar{
+    display:none;
+  }
+
+  .main{
+    padding:10px;
+  }
+
+  .header{
+    padding:12px;
+    border-radius:15px;
+  }
+
+  .header .status{
+    display:none;
+  }
+
+  .hero-main{
+    min-height:205px;
+    padding:22px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .market-body{
+    grid-template-columns:1fr;
+  }
+
+  .industry-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mobile-nav{
+    position:fixed;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    bottom:8px;
+    right:8px;
+    left:8px;
+    padding:7px;
+    border:1px solid var(--line);
+    border-radius:17px;
+    background:rgba(7,12,10,.96);
+    backdrop-filter:blur(18px);
+    z-index:30;
+  }
+
+  .mobile-nav button{
+    border:0;
+    background:transparent;
+    color:var(--muted);
+    padding:9px 3px;
+    font-size:11px;
+  }
+
+  .mobile-nav button.active{
+    color:var(--gold2);
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="header">
-  <div class="logo"><span class="logo-icon">🌾</span><span class="logo-text">گندم</span></div>
-  <div class="header-actions"><span>🔔</span><span>⚙️</span></div>
-</div>
-<div class="balance-card">
-  <div class="balance-title">موجودی کل کیف پول</div>
-  <div class="balance-amount">2,458.32 GDM</div>
-  <div class="balance-usd">≈ 308.45 USDT</div>
-  <div class="balance-actions">
-    <button class="balance-btn btn-deposit">واریز</button>
-    <button class="balance-btn btn-withdraw">برداشت</button>
+
+<div class="app">
+
+<aside class="sidebar">
+
+  <div class="brand">
+    <div class="wheat">🌾</div>
+    <div>
+      <strong>GANDOM</strong>
+      <small>GLOBAL DECENTRALIZED NETWORK</small>
+    </div>
   </div>
+
+  <nav class="nav">
+    <button class="active" data-section="home">⌂ خانه</button>
+    <button data-section="wallet">▣ کیف پول</button>
+    <button data-section="market">◈ صرافی GDM</button>
+    <button data-section="industry">◉ اصناف و بازارها</button>
+    <button data-section="p2p">⌘ P2P</button>
+    <button data-section="ai">✦ هوش مصنوعی</button>
+    <button data-section="social">◎ شبکه اجتماعی</button>
+    <button data-section="ads">◇ تبلیغات</button>
+    <button data-section="settings">⚙ تنظیمات</button>
+  </nav>
+
+  <div class="network-mini">
+    <div><span class="dot"></span>شبکه GANDOM</div>
+    <div class="muted small" style="margin-top:8px">
+      وضعیت: <span id="side-status">در حال بررسی</span>
+    </div>
+  </div>
+
+</aside>
+
+<main class="main">
+
+<header class="header">
+
+  <div>
+    <div class="eyebrow">GANDOM NETWORK</div>
+    <div id="page-title">داشبورد جهانی</div>
+  </div>
+
+  <div class="status">
+    <span class="dot"></span>
+    <span id="network-status">در حال بررسی شبکه...</span>
+  </div>
+
+  <div class="actions">
+    <button class="icon-btn" onclick="refreshAll()">↻</button>
+    <button class="icon-btn" onclick="showNotice('تنظیمات امنیتی در حال اتصال به API است.')">⚙</button>
+  </div>
+
+</header>
+
+<section class="hero">
+
+  <div class="card hero-main">
+    <div class="eyebrow">GLOBAL DECENTRALIZED ECONOMY</div>
+    <h1>GANDOM</h1>
+    <p>
+      یک رابط واحد برای شبکه P2P، اقتصاد دیجیتال،
+      بازارهای واقعی، هوش مصنوعی و خدمات غیرمتمرکز.
+    </p>
+    <div class="muted small">
+      اجرای واقعی فقط پس از تأیید Backend و شبکه ثبت می‌شود.
+    </div>
+  </div>
+
+  <div class="card hero-owner">
+    <div class="muted small">وضعیت Node</div>
+    <div class="owner-value" id="node-id">در انتظار API</div>
+    <div class="muted small">
+      Peers:
+      <span id="peer-count">--</span>
+    </div>
+  </div>
+
+</section>
+
+<section class="grid">
+
+  <article class="card module" id="p2p">
+    <div class="module-head">
+      <h3>⌘ هسته P2P</h3>
+      <span class="badge" id="p2p-status">CHECK</span>
+    </div>
+    <div class="metric" id="p2p-peers">--</div>
+    <div class="muted">Peerهای مشاهده‌شده</div>
+    <button class="primary" onclick="refreshPeers()">بررسی واقعی شبکه</button>
+  </article>
+
+  <article class="card module" id="ai">
+    <div class="module-head">
+      <h3>✦ AI Core</h3>
+      <span class="badge">CORE</span>
+    </div>
+    <div class="metric">READY</div>
+    <div class="muted">تحلیل، تصمیم‌یار و اتوماسیون</div>
+    <button class="primary" onclick="showNotice('AI فقط پس از اتصال سرویس واقعی فعال می‌شود.')">
+      ورود به AI
+    </button>
+  </article>
+
+  <article class="card module" id="wallet">
+    <div class="module-head">
+      <h3>▣ کیف پول</h3>
+      <span class="badge">SECURE</span>
+    </div>
+    <div class="metric">-- GDM</div>
+    <div class="muted">موجودی پس از اتصال Wallet API</div>
+    <button class="primary" onclick="showNotice('تراکنش مالی بدون API واقعی اجرا نمی‌شود.')">
+      ورود به کیف پول
+    </button>
+  </article>
+
+  <article class="card module" id="social">
+    <div class="module-head">
+      <h3>◎ شبکه اجتماعی</h3>
+      <span class="badge">SOCIAL</span>
+    </div>
+    <div class="metric">GANDOM</div>
+    <div class="muted">محتوا، ارتباط و اقتصاد اجتماعی</div>
+    <button class="primary" onclick="showNotice('ماژول Social API در حال اتصال است.')">
+      ورود به شبکه
+    </button>
+  </article>
+
+</section>
+
+<section class="card market" id="market">
+
+  <div class="market-top">
+
+    <div class="market-title">
+      <h2 style="margin:0">صرافی GDM</h2>
+      <span class="badge">GDM / USDT</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active">نمودار</button>
+      <button class="tab" onclick="showNotice('خرید فقط با Trading API واقعی فعال می‌شود.')">خرید</button>
+      <button class="tab" onclick="showNotice('فروش فقط با Trading API واقعی فعال می‌شود.')">فروش</button>
+      <button class="tab" onclick="showNotice('Deposit API هنوز متصل نیست.')">واریز</button>
+      <button class="tab" onclick="showNotice('Withdraw API هنوز متصل نیست.')">برداشت</button>
+      <button class="tab">تاریخچه</button>
+    </div>
+
+  </div>
+
+  <div style="margin-top:16px">
+    <div class="muted small">قیمت زنده GDM</div>
+    <div class="price">--</div>
+    <div class="muted small">
+      قیمت تا اتصال Market API عمداً نمایش داده نمی‌شود.
+    </div>
+  </div>
+
+  <div class="market-body">
+
+    <div class="chart">
+      <div class="chart-note">
+        نمودار پس از اتصال دادهٔ واقعی بازار فعال می‌شود
+      </div>
+    </div>
+
+    <div class="order-box">
+      <h3>سفارش</h3>
+
+      <div class="muted small">
+        خرید / فروش فقط از مسیر API معتبر انجام می‌شود.
+      </div>
+
+      <button class="primary"
+        onclick="showNotice('Trading API هنوز برای اجرای تراکنش متصل نشده است.')">
+        اتصال بازار
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="industry">
+
+  <div class="card module-head" style="padding:18px;margin:0">
+    <h3>بازارهای واقعی و اصناف</h3>
+    <span class="badge">GLOBAL MARKET</span>
+  </div>
+
+  <div class="industry-grid">
+
+    <article class="card industry-card">
+      <div class="industry-icon">🥇</div>
+      <strong>طلا و جواهر</strong>
+      <div class="muted small">بازار طلا، جواهر و دارایی</div>
+      <button class="primary" onclick="showNotice('Market API طلا هنوز متصل نیست.')">ورود</button>
+    </article>
+
+    <article class="card industry-card">
+      <div class="industry-icon">🏠</div>
+      <strong>املاک</strong>
+      <div class="muted small">خرید، فروش و خدمات املاک</div>
+      <button class="primary" onclick="showNotice('Real Estate API هنوز متصل نیست.')">ورود</button>
+    </article>
+
+    <article class="card industry-card">
+      <div class="industry-icon">🚗</div>
+      <strong>خودرو</strong>
+      <div class="muted small">بازار خودرو و خدمات وابسته</div>
+      <button class="primary" onclick="showNotice('Auto API هنوز متصل نیست.')">ورود</button>
+    </article>
+
+    <article class="card industry-card">
+      <div class="industry-icon">⚙</div>
+      <strong>مس / نقره / فلزات</strong>
+      <div class="muted small">بازار فلزات و کالا</div>
+      <button class="primary" onclick="showNotice('Metals API هنوز متصل نیست.')">ورود</button>
+    </article>
+
+  </div>
+
+</section>
+
+<section class="grid" style="margin-top:16px">
+
+  <article class="card module" id="ads">
+    <div class="module-head">
+      <h3>◇ تبلیغات هوشمند</h3>
+      <span class="badge">AI ADS</span>
+    </div>
+    <div class="metric">READY</div>
+    <div class="muted">درآمد تبلیغات فقط از رویداد واقعی</div>
+  </article>
+
+  <article class="card module">
+    <div class="module-head">
+      <h3>🛡 امنیت</h3>
+      <span class="badge">2558</span>
+    </div>
+    <div class="metric">ACTIVE</div>
+    <div class="muted">Gateهای حاکمیتی و شواهد اجرایی</div>
+  </article>
+
+  <article class="card module" id="settings">
+    <div class="module-head">
+      <h3>⚙ تنظیمات</h3>
+      <span class="badge">SYSTEM</span>
+    </div>
+    <div class="metric" id="api-state">CHECK</div>
+    <div class="muted">Backend API</div>
+  </article>
+
+  <article class="card module">
+    <div class="module-head">
+      <h3>🌐 شبکه</h3>
+      <span class="badge">NODE</span>
+    </div>
+    <div class="metric" id="uptime">--</div>
+    <div class="muted">زمان فعالیت Node</div>
+  </article>
+
+</section>
+
+<div class="footer">
+  GANDOM · GLOBAL DECENTRALIZED NETWORK ·
+  Design → Code → Execute → Evidence → Verify
 </div>
-<div class="section-title">🛒 بازارهای اصلی</div>
-<div class="market-grid">
-  <div class="market-item"><div class="market-icon">🏠</div><div class="market-name">املاک</div></div>
-  <div class="market-item"><div class="market-icon">🥇</div><div class="market-name">طلا</div></div>
-  <div class="market-item"><div class="market-icon">🚗</div><div class="market-name">خودرو</div></div>
-  <div class="market-item"><div class="market-icon">💱</div><div class="market-name">صرافی</div></div>
-  <div class="market-item"><div class="market-icon">👛</div><div class="market-name">کیف پول</div></div>
-  <div class="market-item"><div class="market-icon">🤖</div><div class="market-name">هوش مصنوعی</div></div>
-  <div class="market-item"><div class="market-icon">📢</div><div class="market-name">تبلیغات</div></div>
-  <div class="market-item"><div class="market-icon">👥</div><div class="market-name">شبکه اجتماعی</div></div>
+
+</main>
 </div>
-<div class="section-title">📈 نمودار قیمت GDM</div>
-<div class="chart-card">
-  <div class="chart-title"><span class="chart-price">$0.1254</span><span class="chart-change">▲ +12.36%</span></div>
-  <svg class="chart-svg" viewBox="0 0 300 100" preserveAspectRatio="none">
-    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3fb950" stop-opacity="0.4"/><stop offset="100%" stop-color="#3fb950" stop-opacity="0"/></linearGradient></defs>
-    <path d="M0,70 L30,65 L60,55 L90,60 L120,45 L150,50 L180,35 L210,40 L240,25 L270,30 L300,20 L300,100 L0,100 Z" fill="url(#g)"/>
-    <path d="M0,70 L30,65 L60,55 L90,60 L120,45 L150,50 L180,35 L210,40 L240,25 L270,30 L300,20" fill="none" stroke="#3fb950" stroke-width="2"/>
-  </svg>
-</div>
-<div class="section-title">📊 آمار شبکه</div>
-<div class="stats-grid">
-  <div class="stat-card"><div class="stat-value">۲۴ میلیارد</div><div class="stat-label">عرضه کل سکه GDM</div></div>
-  <div class="stat-card"><div class="stat-value">۱.۲ میلیارد</div><div class="stat-label">سهام (۵٪)</div></div>
-  <div class="stat-card"><div class="stat-value">۲۲.۸ میلیون</div><div class="stat-label">کاربر (۹۵٪)</div></div>
-  <div class="stat-card"><div class="stat-value">۲۴۸۷</div><div class="stat-label">نود فعال</div></div>
-</div>
-<div class="bottom-nav">
-  <div class="nav-item active"><div class="nav-icon">🏠</div>خانه</div>
-  <div class="nav-item"><div class="nav-icon">🛒</div>بازار</div>
-  <div class="nav-item"><div class="nav-icon">💱</div>صرافی</div>
-  <div class="nav-item"><div class="nav-icon">👛</div>کیف پول</div>
-  <div class="nav-item"><div class="nav-icon">👤</div>پروفایل</div>
-</div>
+
+<nav class="mobile-nav">
+  <button class="active" data-section="home">⌂ خانه</button>
+  <button data-section="market">◈ بازار</button>
+  <button data-section="p2p">⌘ P2P</button>
+  <button data-section="wallet">▣ کیف</button>
+  <button data-section="ai">✦ AI</button>
+</nav>
+
+<script>
+const API = location.protocol + '//' + location.hostname + ':8787';
+
+async function getJSON(path){
+  const response = await fetch(API + path, {
+    cache:'no-store'
+  });
+
+  if(!response.ok){
+    throw new Error('HTTP ' + response.status);
+  }
+
+  return response.json();
+}
+
+async function refreshHealth(){
+  try{
+    const data = await getJSON('/health');
+
+    document.getElementById('network-status').textContent =
+      'Backend فعال';
+
+    document.getElementById('side-status').textContent =
+      'Online';
+
+    document.getElementById('node-id').textContent =
+      data.node_id || '--';
+
+    document.getElementById('peer-count').textContent =
+      data.peers ?? '--';
+
+    document.getElementById('p2p-peers').textContent =
+      data.peers ?? '--';
+
+    document.getElementById('api-state').textContent =
+      'ONLINE';
+
+    document.getElementById('p2p-status').textContent =
+      'ONLINE';
+
+  }catch(error){
+
+    document.getElementById('network-status').textContent =
+      'Backend قطع است';
+
+    document.getElementById('side-status').textContent =
+      'Offline';
+
+    document.getElementById('api-state').textContent =
+      'OFFLINE';
+
+    document.getElementById('p2p-status').textContent =
+      'OFFLINE';
+  }
+}
+
+async function refreshPeers(){
+  try{
+    const data = await getJSON('/api/peers');
+
+    document.getElementById('p2p-peers').textContent =
+      data.peers_count ?? '--';
+
+    document.getElementById('peer-count').textContent =
+      data.peers_count ?? '--';
+
+    showNotice(
+      'Peerهای واقعی مشاهده‌شده: ' +
+      (data.peers_count ?? 0)
+    );
+
+  }catch(error){
+    showNotice('دریافت وضعیت P2P شکست خورد.');
+  }
+}
+
+async function refreshStats(){
+  try{
+    const data = await getJSON('/api/stats');
+
+    document.getElementById('uptime').textContent =
+      Math.floor(data.uptime_seconds || 0) + 's';
+
+  }catch(error){}
+}
+
+async function refreshAll(){
+  await Promise.all([
+    refreshHealth(),
+    refreshPeers(),
+    refreshStats()
+  ]);
+}
+
+function showNotice(message){
+  alert(message);
+}
+
+function navigate(section){
+
+  const target = document.getElementById(section);
+
+  if(target){
+    target.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
+  }
+
+  document.querySelectorAll('[data-section]').forEach(button=>{
+    button.classList.toggle(
+      'active',
+      button.dataset.section === section
+    );
+  });
+
+  const names = {
+    home:'داشبورد جهانی',
+    wallet:'کیف پول',
+    market:'صرافی GDM',
+    industry:'بازارها',
+    p2p:'شبکه P2P',
+    ai:'هوش مصنوعی',
+    social:'شبکه اجتماعی',
+    ads:'تبلیغات',
+    settings:'تنظیمات'
+  };
+
+  document.getElementById('page-title').textContent =
+    names[section] || 'داشبورد جهانی';
+}
+
+document.querySelectorAll('[data-section]').forEach(button=>{
+  button.addEventListener('click',()=>{
+    navigate(button.dataset.section);
+  });
+});
+
+refreshAll();
+
+setInterval(refreshHealth,5000);
+setInterval(refreshStats,5000);
+</script>
+
 </body>
 </html>

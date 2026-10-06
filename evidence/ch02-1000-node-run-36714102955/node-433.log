@@ -1,0 +1,4 @@
+{"ts":"2026-09-30T12:21:07.224Z","event":"NODE_STARTED","node_id":"GANDOM-NODE-0433-6b733e20-8b06-43f1-842a-27eaa27c7652","port":10433,"websocket":"ws://0.0.0.0:10433","health":"http://127.0.0.1:10433/health"}
+{"ts":"2026-09-30T12:21:47.979Z","event":"PEER_CONNECTED","node_id":"GANDOM-NODE-0433-6b733e20-8b06-43f1-842a-27eaa27c7652","peer_id":"ca8dad87-b715-4ddc-9a22-f7b476a69bc5","peers":1}
+{"ts":"2026-09-30T12:21:48.879Z","event":"MESSAGE_RECEIVED","node_id":"GANDOM-NODE-0433-6b733e20-8b06-43f1-842a-27eaa27c7652","peer_id":"ca8dad87-b715-4ddc-9a22-f7b476a69bc5","type":"PING"}
+{"ts":"2026-09-30T12:21:49.486Z","event":"PEER_DISCONNECTED","node_id":"GANDOM-NODE-0433-6b733e20-8b06-43f1-842a-27eaa27c7652","peer_id":"ca8dad87-b715-4ddc-9a22-f7b476a69bc5","peers":0}

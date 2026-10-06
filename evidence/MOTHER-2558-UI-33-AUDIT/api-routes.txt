@@ -1,0 +1,11 @@
+www/assets/js/gandom-complete.js:30:    const s = await api('/api/state');
+www/assets/js/gandom-complete.js:56:    const r = await api('/api/wallet/income', { method: 'POST', body: JSON.stringify({ amount }) });
+www/assets/js/gandom-complete.js:89:    const r = await api('/api/wallet/owner-transfer', {
+www/assets/js/gandom-complete.js:123:    const r = await api('/api/ai', { method: 'POST', body: JSON.stringify({ message: msg }) });
+www/assets/js/gandom-complete.js:133:    const r = await api('/api/ads/sale', { method: 'POST', body: '{}' });
+www/assets/js/gandom-complete.js:403:      + '<button class="spa-btn gold" onclick="api(\'/api/ads/sale\',{method:\'POST\',body:\'{}\'}).then(function(){toast(\'✅ ثبت شد\');loadState();})">📢 ثبت فروش</button>',
+www/assets/js/gandom-complete.js:445:      + spaStat((bots.whatsapp&&bots.whatsapp.posts||1567).toLocaleString('fa-IR'),'پست') + '</div>',
+www/assets/js/gandom-complete.js:540:        await api('/api/kyc/verify',{method:'POST',body:JSON.stringify({fullName:n,nationalId:i})});
+www/assets/js/gandom-complete.js:567:    var r = await api('/api/ai',{method:'POST',body:JSON.stringify({message:m})});
+www/assets/js/gandom-complete.js:579:    var r = await api('/api/exchange/'+side,{method:'POST',body:JSON.stringify({amount:+a})});
+www/assets/js/gandom-complete.js:592:      var r = await api('/api/state');

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "8896a889-f35d-4a55-a752-7f045ce03b08",
+    "phone": "09121234567",
+    "passwordHash": "e514770647119c97d8ec53867e9ff7fa2dc56847e7341dc387cf6b0099e98fb43aff6c6026b726f6fefa747f9b8af01a6eb580dcc091f11aa57555387f515503",
+    "salt": "27dfd20a12ae97efe2f2ba4653d827e0",
+    "balance": 1000,
+    "kycStatus": "pending",
+    "referralCode": "GDM5FA413D3",
+    "createdAt": 1790674361340
+  }
+]

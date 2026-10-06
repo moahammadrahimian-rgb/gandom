@@ -1,0 +1,4 @@
+13:  if (req.url === '/health') {
+33:      'Content-Type': 'text/plain',
+164:httpServer.listen(PORT, '0.0.0.0', () => {
+168:    health: `http://127.0.0.1:${PORT}/health`

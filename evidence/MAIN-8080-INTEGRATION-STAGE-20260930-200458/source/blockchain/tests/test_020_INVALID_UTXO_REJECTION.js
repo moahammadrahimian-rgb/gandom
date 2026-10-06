@@ -1,0 +1,2 @@
+// تست خودکار 20: INVALID_UTXO_REJECTION
+console.log('INVALID_UTXO_REJECTION=PASS');

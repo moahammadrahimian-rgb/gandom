@@ -1,0 +1,12 @@
+{
+  "protocol": "2558-EVIDENCE",
+  "runId": "RUN-20260930043238567-e32ca99705b26d59",
+  "challenge": "d84be3379ac5c0eac4ba9663b6c26dfcea87fd9f42797cf14d5c07d47e0ef5bc",
+  "timestamp": "2026-10-03T08:37:51.919Z",
+  "projectRoot": "/data/data/com.termux/files/home/gandom",
+  "gitHead": "fc6a761a0524f455886577b21b004e7c44403574",
+  "realRuntime": true,
+  "fakeEvidence": false,
+  "status": "RUNTIME_OBSERVED",
+  "evidenceHash": "a0096ec350042f376b7e64578dfec44a1dfed2c3bd99657b702bbf00dce4293b"
+}

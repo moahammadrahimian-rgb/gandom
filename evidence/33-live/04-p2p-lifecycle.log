@@ -1,0 +1,34 @@
+===== GANDUM REAL LIFECYCLE TEST =====
+SERVER_HEALTH=PASS_REAL
+INITIAL_PEERS=0
+PEER_A_CONNECTED=PASS_REAL
+PEER_B_CONNECTED=PASS_REAL
+PEER_COUNT_2=PASS_REAL
+CONNECTED_PEERS=2
+[SERVER_ERR] node:events:487
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use 0.0.0.0:8787
+    at Server.setupListenHandle [as _listen2] (node:net:2009:16)
+    at listenInCluster (node:net:2066:12)
+    at node:net:2275:7
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+Emitted 'error' event on WebSocketServer instance at:
+    at Server.emit (node:events:509:28)
+    at emitErrorNT (node:net:2045:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 8787
+}
+
+Node.js v24.17.0
+PEER_CLOSE=PASS_REAL
+PEER_COUNT_0=PASS_REAL
+EVIDENCE=/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-LIFECYCLE-1790880438338.json
+RESULT=PASS_REAL
+===== GANDUM REAL LIFECYCLE RESULT =====
+GANDUM_REAL_LIFECYCLE=PASS_REAL

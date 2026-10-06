@@ -1,0 +1,193 @@
+www/index.html:28:  box-sizing:border-box;
+www/index.html:80:  border-radius:17px;
+www/index.html:86:  border:1px solid #2b6848;
+www/index.html:105:  border:1px solid var(--line);
+www/index.html:106:  border-radius:30px;
+www/index.html:147:  border-radius:24px;
+www/index.html:150:  border:1px solid #255b3d;
+www/index.html:176:.owner{
+www/index.html:184:  border-radius:99px;
+www/index.html:197:   5. MARKET / CHART
+www/index.html:200:.chart-card{
+www/index.html:203:  border:1px solid var(--line);
+www/index.html:204:  border-radius:22px;
+www/index.html:208:.chart-head{
+www/index.html:213:.price{
+www/index.html:218:.chart{
+www/index.html:225:.chart svg{
+www/index.html:230:.chart-note{
+www/index.html:236:   6. WALLET
+www/index.html:247:  border:1px solid var(--line);
+www/index.html:248:  border-radius:21px;
+www/index.html:276:  border:1px solid var(--line);
+www/index.html:277:  border-radius:22px;
+www/index.html:284:  border:0;
+www/index.html:334:  border-radius:999px;
+www/index.html:336:  border:1px solid #214b34;
+www/index.html:361:  border:1px solid var(--line);
+www/index.html:364:  border-radius:17px;
+www/index.html:386:  border-top:1px solid var(--line);
+www/index.html:393:  border:0;
+www/index.html:465:    اقتصاد GDM، شبکه P2P، کیف پول، AI، تبلیغات و خدمات تجاری.
+www/index.html:473:  <div class="owner">مالک: 5% = 1,200,000,000 GDM</div>
+www/index.html:477:<!-- 5 MARKET -->
+www/index.html:478:<section class="chart-card">
+www/index.html:479:  <div class="chart-head">
+www/index.html:481:      <small>GDM MARKET</small>
+www/index.html:482:      <div class="price" id="price">—</div>
+www/index.html:487:  <div class="chart">
+www/index.html:499:  <div class="chart-note">
+www/index.html:500:    نمایش قیمت زنده فقط پس از اتصال منبع واقعی بازار معتبر است.
+www/index.html:504:<!-- 6 WALLET + CORE SURFACES -->
+www/index.html:509:    <strong>Wallet</strong>
+www/index.html:510:    <small>موجودی و تراکنش‌های GDM</small>
+www/index.html:557:  فروش، درآمد و Automation.
+www/index.html:679:  درآمد، Ledger، Accounting و گزارش مالی.
+www/index.html:700:<!-- 21 OWNER CONTROL -->
+www/index.html:703:  <span class="section-title">🔐 Owner Authorization</span>
+www/index.html:708:  اما برداشت یا انتقال وجه بدون احراز هویت و مجوز مالک انجام نمی‌شود.
+www/index.html:747:    این مقدار Target درآمد است و درآمد واقعی فقط با سفارش،
+www/index.html:748:    پرداخت و Ledger واقعی ثبت می‌شود.
+www/index.html:756:<button class="action" onclick="showMessage('Wallet آماده اتصال به Runtime است')">
+www/index.html:757:  💳 Wallet
+www/index.html:784:<button class="nav" onclick="nav('market',this)">
+www/index.html:786:  بازار
+www/index.html:794:<button class="nav" onclick="nav('wallet',this)">
+www/index.html:796:  کیف پول
+www/index.html:820:  if(name === "market"){
+www/index.html:821:    document.querySelector(".chart-card")
+www/index.html:825:  if(name === "wallet"){
+www/index.html:842: * This UI does not fabricate live market data.
+www/index.html:849:  ownerSharePercent: 5,
+www/index.html:850:  ownerAllocation: 1200000000,
+www/index.html:853:  adPriceToman: 10000
+www/index.html:856:document.getElementById("price").textContent = "GDM / LIVE";
+www/admin.html:9:.form-box { background: #161b22; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #30363d; }
+www/admin.html:10:.form-box input, .form-box select { width: 100%; padding: 10px; margin: 6px 0; border-radius: 6px; border: 1px solid #30363d; background: #0d1117; color: #fff; }
+www/admin.html:11:.form-box button { width: 100%; padding: 12px; background: #f5c518; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+www/admin.html:12:.card { background: #161b22; padding: 15px; margin: 10px 0; border-radius: 8px; border: 1px solid #30363d; }
+www/admin.html:15:.card .price { color: #3fb950; font-weight: bold; }
+www/admin.html:25:<input type="number" id="price" placeholder="قیمت (تومان)">
+www/admin.html:28:<option value="فروش">فروش</option>
+www/admin.html:30:<option value="خرید">خرید</option>
+www/admin.html:53:    ads.map(a => '<div class="card"><h3>' + a.title + '</h3><p>📍 ' + a.city + ' | ' + a.deal_type + ' | ' + a.property_type + '</p><p class="price">' + Number(a.price).toLocaleString() + ' تومان</p></div>').join('');
+www/admin.html:58:  const price = document.getElementById('price').value;
+www/admin.html:62:  if (!title || !price || !city) { alert('همه فیلدها رو پر کن'); return; }
+www/admin.html:66:    body: JSON.stringify({ title, price, city, deal_type, property_type, province: city, description: '', address: '', owner_name: '', owner_phone: '' })
+www/admin.html:69:  document.getElementById('price').value = '';
+www/admin.html:77:<section id="gandom-wallet-core" class="gandom-card gandom-wallet-core" data-view="wallet">
+www/admin.html:78:  <div class="gandom-wallet-head">
+www/admin.html:80:      <span class="gandom-eyebrow">GANDOM WALLET</span>
+www/admin.html:81:      <h2>کیف پول GDM</h2>
+www/admin.html:82:      <small>مدیریت دارایی، درآمد و تراکنش</small>
+www/admin.html:84:    <strong id="gandom-wallet-balance">0 GDM</strong>
+www/admin.html:87:  <div class="gandom-wallet-actions" role="tablist" aria-label="عملیات کیف پول">
+www/admin.html:88:    <button type="button" data-wallet-action="deposit">واریز</button>
+www/admin.html:89:    <button type="button" data-wallet-action="withdraw">برداشت</button>
+www/admin.html:90:    <button type="button" data-wallet-action="transfer">انتقال</button>
+www/admin.html:91:    <button type="button" data-wallet-action="owner">کنترل مالک</button>
+www/admin.html:94:  <div id="gandom-wallet-panel" class="gandom-wallet-panel" hidden>
+www/admin.html:95:    <div class="gandom-wallet-row">
+www/admin.html:98:        <input id="gandom-wallet-amount"
+www/admin.html:107:      <label id="gandom-wallet-destination-wrap">
+www/admin.html:108:        مقصد کیف پول
+www/admin.html:109:        <input id="gandom-wallet-destination"
+www/admin.html:113:               placeholder="آدرس کیف پول مقصد">
+www/admin.html:117:    <div id="gandom-owner-auth" class="gandom-owner-auth" hidden>
+www/admin.html:119:        تأیید مالک
+www/admin.html:120:        <input id="gandom-owner-token"
+www/admin.html:123:               placeholder="تأیید هویت مالک">
+www/admin.html:127:    <div class="gandom-wallet-controls">
+www/admin.html:128:      <button type="button" id="gandom-wallet-back">بازگشت</button>
+www/admin.html:129:      <button type="button" id="gandom-wallet-submit">ثبت درخواست</button>
+www/admin.html:132:    <div id="gandom-wallet-status" class="gandom-wallet-status" aria-live="polite">
+www/admin.html:137:  <div class="gandom-wallet-history">
+www/admin.html:138:    <div><span>تراکنش‌های اخیر</span><span id="gandom-wallet-ledger-count">0</span></div>
+www/admin.html:139:    <div id="gandom-wallet-ledger">هنوز تراکنشی ثبت نشده است.</div>
+www/assets/css/gandom-ui.css:10:  --border:rgba(255,255,255,.09);
+www/assets/css/gandom-ui.css:17:*{box-sizing:border-box}
+www/assets/css/gandom-ui.css:54:  border-bottom:1px solid var(--border);
+www/assets/css/gandom-ui.css:68:  border-radius:14px;
+www/assets/css/gandom-ui.css:93:  border:1px solid var(--border);
+www/assets/css/gandom-ui.css:94:  border-radius:26px;
+www/assets/css/gandom-ui.css:134:  border:1px solid var(--border);
+www/assets/css/gandom-ui.css:135:  border-radius:var(--radius);
+www/assets/css/gandom-ui.css:153:  border-radius:999px;
+www/assets/css/gandom-ui.css:165:  border:0;
+www/assets/css/gandom-ui.css:166:  border-radius:14px;
+www/assets/css/gandom-ui.css:172:.chart{
+www/assets/css/gandom-ui.css:176:  border-radius:16px;
+www/assets/css/gandom-ui.css:178:  border:1px solid var(--border);
+www/assets/css/gandom-ui.css:191:  border:1px solid var(--border);
+www/assets/css/gandom-ui.css:192:  border-radius:22px;
+www/assets/css/gandom-ui.css:199:  border:0;
+www/assets/css/gandom-ui.css:202:  border-radius:14px;
+www/assets/css/gandom-ui.css:240:  border-radius:14px;
+www/assets/css/gandom-ui.css:245:  border:1px solid var(--border);
+www/assets/css/gandom-ui.css:246:  border-radius:16px;
+www/assets/css/gandom-ui.css:283:  border:1px solid rgba(80,220,150,.30);
+www/assets/css/gandom-ui.css:284:  border-radius:12px;
+www/assets/css/gandom-ui.css:317:/* GANDOM WALLET CORE V1 */
+www/assets/css/gandom-ui.css:318:.gandom-wallet-core{
+www/assets/css/gandom-ui.css:321:  border:1px solid rgba(60,190,120,.28);
+www/assets/css/gandom-ui.css:322:  border-radius:18px;
+www/assets/css/gandom-ui.css:324:.gandom-wallet-head{
+www/assets/css/gandom-ui.css:330:.gandom-wallet-head h2{margin:4px 0}
+www/assets/css/gandom-ui.css:336:.gandom-wallet-head strong{
+www/assets/css/gandom-ui.css:340:.gandom-wallet-actions{
+www/assets/css/gandom-ui.css:346:.gandom-wallet-actions button,
+www/assets/css/gandom-ui.css:347:.gandom-wallet-controls button{
+www/assets/css/gandom-ui.css:349:  border-radius:12px;
+www/assets/css/gandom-ui.css:350:  border:1px solid rgba(60,190,120,.25);
+www/assets/css/gandom-ui.css:353:.gandom-wallet-panel{
+www/assets/css/gandom-ui.css:356:  border-radius:14px;
+www/assets/css/gandom-ui.css:359:.gandom-wallet-row{
+www/assets/css/gandom-ui.css:364:.gandom-wallet-row label,
+www/assets/css/gandom-ui.css:365:.gandom-owner-auth label{
+www/assets/css/gandom-ui.css:371:.gandom-wallet-row input,
+www/assets/css/gandom-ui.css:372:.gandom-owner-auth input{
+www/assets/css/gandom-ui.css:375:  box-sizing:border-box;
+www/assets/css/gandom-ui.css:376:  border-radius:11px;
+www/assets/css/gandom-ui.css:380:.gandom-wallet-controls{
+www/assets/css/gandom-ui.css:385:.gandom-wallet-controls button{
+www/assets/css/gandom-ui.css:388:.gandom-wallet-status{
+www/assets/css/gandom-ui.css:392:.gandom-wallet-history{
+www/assets/css/gandom-ui.css:395:  border-top:1px solid rgba(255,255,255,.08);
+www/assets/css/gandom-ui.css:397:.gandom-wallet-history>div:first-child{
+www/assets/css/gandom-ui.css:402:  .gandom-wallet-actions{grid-template-columns:repeat(2,1fr)}
+www/assets/css/gandom-ui.css:403:  .gandom-wallet-row{grid-template-columns:1fr}
+www/assets/css/gandom-ui.css:404:  .gandom-wallet-head{align-items:flex-start;flex-direction:column}
+www/assets/js/gandom-ui.js:27:function drawChart(){
+www/assets/js/gandom-ui.js:28:  const canvas = $('#marketChart');
+www/assets/js/gandom-ui.js:49:   * این خط فقط برای نمایش ساختار نمودار است.
+www/assets/js/gandom-ui.js:50:   * هیچ قیمت یا داده بازار جعلی تولید نمی‌شود.
+www/assets/js/gandom-ui.js:83:window.addEventListener('resize', drawChart);
+www/assets/js/gandom-ui.js:86:  drawChart();
+www/assets/js/gandom-ui.js:435:/* GANDOM_WALLET_CORE_V1 */
+www/assets/js/gandom-ui.js:437:  const panel = document.querySelector('#gandom-wallet-panel');
+www/assets/js/gandom-ui.js:438:  const status = document.querySelector('#gandom-wallet-status');
+www/assets/js/gandom-ui.js:439:  const amount = document.querySelector('#gandom-wallet-amount');
+www/assets/js/gandom-ui.js:440:  const destination = document.querySelector('#gandom-wallet-destination');
+www/assets/js/gandom-ui.js:441:  const destinationWrap = document.querySelector('#gandom-wallet-destination-wrap');
+www/assets/js/gandom-ui.js:442:  const ownerAuth = document.querySelector('#gandom-owner-auth');
+www/assets/js/gandom-ui.js:443:  const ownerToken = document.querySelector('#gandom-owner-token');
+www/assets/js/gandom-ui.js:444:  const submit = document.querySelector('#gandom-wallet-submit');
+www/assets/js/gandom-ui.js:445:  const back = document.querySelector('#gandom-wallet-back');
+www/assets/js/gandom-ui.js:446:  const ledger = document.querySelector('#gandom-wallet-ledger');
+www/assets/js/gandom-ui.js:447:  const ledgerCount = document.querySelector('#gandom-wallet-ledger-count');
+www/assets/js/gandom-ui.js:457:    ownerAuth.hidden = next !== 'owner';
+www/assets/js/gandom-ui.js:458:    destinationWrap.hidden = next === 'deposit';
+www/assets/js/gandom-ui.js:462:      deposit:'واریز',
+www/assets/js/gandom-ui.js:463:      withdraw:'برداشت',
+www/assets/js/gandom-ui.js:464:      transfer:'انتقال',
+www/assets/js/gandom-ui.js:465:      owner:'کنترل مالک'
+www/assets/js/gandom-ui.js:471:  document.querySelectorAll('[data-wallet-action]').forEach(btn => {
+www/assets/js/gandom-ui.js:472:    btn.addEventListener('click', () => openAction(btn.dataset.walletAction));
+www/assets/js/gandom-ui.js:490:    if((action === 'transfer' || action === 'withdraw' || action === 'owner') &&
+www/assets/js/gandom-ui.js:492:      status.textContent = 'خطا: مقصد کیف پول را وارد کنید.';
+www/assets/js/gandom-ui.js:497:    if(action === 'owner' && !ownerToken.value){
+www/assets/js/gandom-ui.js:498:      status.textContent = 'تأیید مالک الزامی است.';
+www/assets/js/gandom-ui.js:499:      ownerToken.focus();
+www/assets/js/gandom-ui.js:504:    ledgerCount.textContent = String(count);
+www/assets/js/gandom-ui.js:505:    ledger.textContent =
+www/assets/js/gandom-ui.js:509:      'درخواست ثبت شد؛ اجرای مالی واقعی فقط پس از مسیر مجاز و احراز مالک انجام می‌شود.';

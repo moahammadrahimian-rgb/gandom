@@ -1,9 +1,9 @@
 {
-  "eventId": "31d08221-2fa2-4ede-bb3a-5ef232463129",
-  "timestamp": "2026-09-30T00:37:44.695Z",
+  "eventId": "e127281b-3b52-4d0f-b468-a3932285ab83",
+  "timestamp": "2026-10-06T06:06:33.246Z",
   "discovery": "REAL_LOCAL_PEER",
-  "peerId": "2d5dfacb41b4eb942fd26e8ab77fbabdd1c11b62ca78454a1b141dc9f1d71266",
-  "registryCount": 3,
+  "peerId": "40c50648a9637f52073a45a426cea58a3564b9885a4b12d2b50edb78d3490d49",
+  "registryCount": 4,
   "fakePeer": false,
   "financialAuthority": {
     "deposit": false,

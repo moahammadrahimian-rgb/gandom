@@ -1,0 +1,12 @@
+www/index.html:82:<!-- SECTION 2: ECONOMY + EXCHANGE -->
+www/index.html:83:<section id="view-market" class="view">
+www/index.html:86:    <div class="eyebrow">ECONOMY</div>
+www/index.html:96:        <div class="muted small">GDM Market</div>
+www/index.html:102:    <canvas id="marketChart" class="chart"></canvas>
+www/index.html:116:      <div class="muted small">Market Data</div>
+www/index.html:123:<!-- SECTION 3: WALLET + NETWORK + AI -->
+www/index.html:134:      <h2>Wallet</h2>
+www/index.html:253:  <button data-view="market">بازار</button>
+www/admin.html:25:<input type="number" id="price" placeholder="قیمت (تومان)">
+www/admin.html:53:    ads.map(a => '<div class="card"><h3>' + a.title + '</h3><p>📍 ' + a.city + ' | ' + a.deal_type + ' | ' + a.property_type + '</p><p class="price">' + Number(a.price).toLocaleString() + ' تومان</p></div>').join('');
+www/assets/js/gandom-ui.js:28:  const canvas = $('#marketChart');

@@ -250,99 +250,6 @@ jobs:
 
           node /tmp/ch03-runtime.mjs
 
-      - name: Independent Chapter 03 verifier
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          E="evidence/ch03-ai-workforce/CH03-RUNTIME-EVIDENCE.json"
-
-          test -f "$E"
-
-          node <<'JS'
-          const fs = require("fs");
-
-          const f =
-            "evidence/ch03-ai-workforce/CH03-RUNTIME-EVIDENCE.json";
-
-          const d = JSON.parse(fs.readFileSync(f, "utf8"));
-
-          if (d.runtime !== "REAL")
-            throw new Error("REAL_RUNTIME_MARKER_MISSING");
-
-          if (d.architecture !== "x64")
-            throw new Error(
-              "EXPECTED_X64_RUNTIME"
-            );
-
-          if (!Number.isInteger(d.discoveredWorkerFiles) ||
-              d.discoveredWorkerFiles < 1)
-            throw new Error(
-              "NO_WORKER_IMPLEMENTATION"
-            );
-
-          for (const [step, value] of
-               Object.entries(d.steps)) {
-
-            if (step === "036_FINAL_VERIFICATION")
-              continue;
-
-            if (value !== true)
-              throw new Error(
-                `CH03_STEP_NOT_VERIFIED:${step}`
-              );
-          }
-
-          d.steps["036_FINAL_VERIFICATION"] = true;
-
-          d.final = {
-            verification: "PASS",
-            independentlyVerified: true,
-            fakePass: false,
-            fakeEvidence: false,
-            realRuntime: true
-          };
-
-          fs.writeFileSync(
-            f,
-            JSON.stringify(d, null, 2)
-          );
-
-          fs.writeFileSync(
-            "evidence/ch03-ai-workforce/FINAL-CH03-VERIFICATION.txt",
-            [
-              "CHAPTER=03",
-              "NAME=AI_WORKFORCE",
-              "RANGE=025-036",
-              `WORKER_FILES=${d.discoveredWorkerFiles}`,
-              `ARCH=${d.architecture}`,
-              "REAL_RUNTIME=PASS",
-              "FAKE_PASS=false",
-              "FAKE_EVIDENCE=false",
-              "INDEPENDENT_VERIFICATION=PASS",
-              "CHAPTER_03_FINAL_VERIFICATION=PASS"
-            ].join("\n") + "\n"
-          );
-
-          console.log(
-            "CHAPTER_03_FINAL_VERIFICATION=PASS"
-          );
-          JS
-
-      - name: Evidence hashes
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          find evidence/ch03-ai-workforce \
-            -type f \
-            -print0 |
-            sort -z |
-            xargs -0 sha256sum \
-            > evidence/ch03-ai-workforce/EVIDENCE-SHA256.txt
-
-          cat evidence/ch03-ai-workforce/EVIDENCE-SHA256.txt
-
       - name: Verify server source untouched
         shell: bash
         run: |
@@ -350,8 +257,176 @@ jobs:
 
           git diff --quiet -- server.js
 
-          echo "SERVER_JS_UNCHANGED=PASS" \
-            | tee evidence/ch03-ai-workforce/SERVER-INTEGRITY.txt
+          printf '%s\n' \
+            "SERVER_JS_UNCHANGED=PASS" \
+            "GIT_HEAD=$(git rev-parse HEAD)" \
+            > evidence/ch03-ai-workforce/SERVER-INTEGRITY.txt
+
+      - name: Evidence hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          E="evidence/ch03-ai-workforce"
+          H="$E/EVIDENCE-SHA256.txt"
+
+          find "$E" \
+            -type f \
+            ! -name 'EVIDENCE-SHA256.txt' \
+            ! -name 'FINAL-CH03-VERIFICATION.txt' \
+            -print0 |
+            sort -z |
+            xargs -0 sha256sum > "$H"
+
+          test -s "$H"
+          cat "$H"
+
+      - name: Independent Chapter 03 verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          node <<'JS'
+          const fs = require("fs");
+          const crypto = require("crypto");
+          const cp = require("child_process");
+
+          const E =
+            "evidence/ch03-ai-workforce/CH03-RUNTIME-EVIDENCE.json";
+          const H =
+            "evidence/ch03-ai-workforce/EVIDENCE-SHA256.txt";
+          const S =
+            "evidence/ch03-ai-workforce/SERVER-INTEGRITY.txt";
+          const FINAL =
+            "evidence/ch03-ai-workforce/FINAL-CH03-VERIFICATION.txt";
+
+          function fail(code) {
+            throw new Error(code);
+          }
+
+          function sha256(file) {
+            return crypto
+              .createHash("sha256")
+              .update(fs.readFileSync(file))
+              .digest("hex");
+          }
+
+          if (!fs.existsSync(E)) fail("MISSING_RUNTIME_EVIDENCE");
+          if (!fs.existsSync(H)) fail("MISSING_EVIDENCE_HASH");
+          if (!fs.existsSync(S)) fail("MISSING_SERVER_INTEGRITY");
+
+          const d = JSON.parse(fs.readFileSync(E, "utf8"));
+
+          if (Object.prototype.hasOwnProperty.call(d, "final"))
+            fail("SELF_ASSERTED_FINAL_FIELD_PRESENT");
+
+          if (d.runtime !== "REAL")
+            fail("REAL_RUNTIME_MARKER_MISSING");
+
+          if (d.architecture !== "x64")
+            fail("EXPECTED_X64_RUNTIME");
+
+          if (d.runId !== process.env.GITHUB_RUN_ID)
+            fail("RUN_ID_MISMATCH");
+
+          if (!Number.isInteger(d.discoveredWorkerFiles) ||
+              d.discoveredWorkerFiles < 1)
+            fail("NO_WORKER_IMPLEMENTATION");
+
+          const required = [
+            "025_AI_WORKFORCE_CORE",
+            "026_WORKER_REGISTRY",
+            "027_WORKER_LIFECYCLE",
+            "028_WORKER_SCHEDULER",
+            "029_PARALLEL_EXECUTION",
+            "030_TASK_DISTRIBUTION",
+            "031_FAILURE_ISOLATION",
+            "032_RECOVERY",
+            "033_SCALING_BENCHMARK",
+            "034_SECURITY_AUTHORITY",
+            "035_P2P_INTEGRATION"
+          ];
+
+          for (const step of required) {
+            if (d.steps[step] !== true)
+              fail(`CH03_STEP_NOT_VERIFIED:${step}`);
+          }
+
+          if (d.steps["036_FINAL_VERIFICATION"] !== false)
+            fail("RUNTIME_SELF_ASSERTED_036");
+
+          if (cp.execFileSync(
+                "git",
+                ["diff", "--quiet", "--", "server.js"],
+                {stdio: "ignore"}
+              ) !== undefined) {
+            fail("SERVER_JS_CHANGED");
+          }
+
+          const serverText = fs.readFileSync(S, "utf8").trim();
+          if (!serverText.startsWith("SERVER_JS_UNCHANGED=PASS"))
+            fail("SERVER_INTEGRITY_INVALID");
+
+          const expectedHead =
+            cp.execFileSync("git", ["rev-parse", "HEAD"])
+              .toString().trim();
+
+          if (!serverText.includes(`GIT_HEAD=${expectedHead}`))
+            fail("GIT_HEAD_NOT_RECORDED");
+
+          const lines = fs.readFileSync(H, "utf8")
+            .trim()
+            .split("\n")
+            .filter(Boolean);
+
+          if (lines.length === 0)
+            fail("EMPTY_EVIDENCE_HASH_MANIFEST");
+
+          for (const line of lines) {
+            const m = line.match(/^([0-9a-f]{64})  (.+)$/);
+            if (!m)
+              fail(`INVALID_HASH_LINE:${line}`);
+
+            const expected = m[1];
+            const file = m[2];
+
+            if (file === H || file === FINAL)
+              fail("SELF_REFERENTIAL_HASH_ENTRY");
+
+            if (!fs.existsSync(file))
+              fail(`HASHED_FILE_MISSING:${file}`);
+
+            const actual = sha256(file);
+
+            if (actual !== expected)
+              fail(`EVIDENCE_HASH_MISMATCH:${file}`);
+          }
+
+          const manifestHash = sha256(H);
+
+          const finalReport = [
+            "CHAPTER=03",
+            "NAME=AI_WORKFORCE",
+            "RANGE=025-036",
+            `RUN_ID=${process.env.GITHUB_RUN_ID}`,
+            `GIT_HEAD=${expectedHead}`,
+            `WORKER_FILES=${d.discoveredWorkerFiles}`,
+            `ARCH=${d.architecture}`,
+            "REAL_RUNTIME=VERIFIED",
+            "EVIDENCE_HASH_VERIFICATION=PASS",
+            "SERVER_JS_UNCHANGED=PASS",
+            "INDEPENDENT_VERIFICATION=PASS",
+            `EVIDENCE_MANIFEST_SHA256=${manifestHash}`,
+            "CHAPTER_03_FINAL_VERIFICATION=PASS"
+          ].join("\n") + "\n";
+
+          fs.writeFileSync(FINAL, finalReport);
+
+          console.log("EVIDENCE_HASH_VERIFICATION=PASS");
+          console.log("SERVER_JS_UNCHANGED=PASS");
+          console.log("INDEPENDENT_VERIFICATION=PASS");
+          console.log("CHAPTER_03_FINAL_VERIFICATION=PASS");
+          JS
 
       - name: Upload evidence
         if: always()

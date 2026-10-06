@@ -1,0 +1,1 @@
+{"ok":true,"project":"GANDUM-P2P","node_id":"e00bbc4f-5734-44ab-9a76-d9f20487f0fa","peers":0,"uptime":313.231247173}

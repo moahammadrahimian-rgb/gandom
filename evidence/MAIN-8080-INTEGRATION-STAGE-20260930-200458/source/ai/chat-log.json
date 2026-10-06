@@ -1,0 +1,58 @@
+[
+  {
+    "userId": "user1",
+    "message": "Hello",
+    "intent": "greeting",
+    "response": "Hello! Welcome to Gandom",
+    "timestamp": 1790671391401
+  },
+  {
+    "userId": "user1",
+    "message": "What is GDM price?",
+    "intent": "price",
+    "response": "GDM is trading at 1.15 USD",
+    "timestamp": 1790671391403
+  },
+  {
+    "userId": "user1",
+    "message": "How to buy GDM?",
+    "intent": "buy",
+    "response": "Buy GDM through decentralized exchange",
+    "timestamp": 1790671391404
+  },
+  {
+    "userId": "user1",
+    "message": "My wallet balance?",
+    "intent": "wallet",
+    "response": "Balance: 1.2 billion GDM",
+    "timestamp": 1790671391405
+  },
+  {
+    "userId": "user1",
+    "message": "How to do KYC?",
+    "intent": "kyc",
+    "response": "Go to KYC section for verification",
+    "timestamp": 1790671391405
+  },
+  {
+    "userId": "user1",
+    "message": "What is airdrop?",
+    "intent": "airdrop",
+    "response": "Register to receive airdrop",
+    "timestamp": 1790671391405
+  },
+  {
+    "userId": "user1",
+    "message": "/help",
+    "intent": "help",
+    "response": "Commands: /price /buy /sell /wallet /kyc /airdrop /help",
+    "timestamp": 1790671391406
+  },
+  {
+    "userId": "user1",
+    "message": "random question",
+    "intent": "unknown",
+    "response": "Sorry, I did not understand. Please try again.",
+    "timestamp": 1790671391406
+  }
+]

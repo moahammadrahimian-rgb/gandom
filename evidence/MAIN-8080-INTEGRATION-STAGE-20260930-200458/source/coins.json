@@ -1,0 +1,8 @@
+{
+  "ownerBalance": 1200000000,
+  "userBalances": {
+    "SELLER": 1900000,
+    "BUYER": 1100000
+  },
+  "totalUserIssued": 3000000
+}

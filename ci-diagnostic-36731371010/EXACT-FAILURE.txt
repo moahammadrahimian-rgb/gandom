@@ -1,0 +1,382 @@
+===== WHAT WENT WRONG =====
+6975-Caching disabled for task ':capacitor-android:compileDebugJavaWithJavac' because:
+6976-  Build cache is disabled
+6977-Task ':capacitor-android:compileDebugJavaWithJavac' is not up-to-date because:
+6978-  No history is available.
+6979-The input changes require a full rebuild for incremental task ':capacitor-android:compileDebugJavaWithJavac'.
+6980-Compilation mode: in-process compilation
+6981-file or directory '/home/runner/work/gandom/gandom/node_modules/@capacitor/android/capacitor/libs', not found
+6982-Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+6983-Compiling with toolchain '/usr/lib/jvm/temurin-17-jdk-amd64'.
+6984-file or directory '/home/runner/work/gandom/gandom/node_modules/@capacitor/android/capacitor/src/debug/java', not found
+6985-Compiling with JDK Java compiler API.
+6986-
+6987-> Task :capacitor-android:compileDebugJavaWithJavac FAILED
+6988-AAPT2 aapt2-8.9.2-12782657-linux Daemon #0: shutdown
+6989-AAPT2 aapt2-8.9.2-12782657-linux Daemon #1: shutdown
+6990-
+6991-[Incubating] Problems report is available at: file:///home/runner/work/gandom/gandom/android/build/reports/problems/problems-report.html
+6992-
+6993-FAILURE: Build failed with an exception.
+6994-
+6995:* What went wrong:
+6996-Execution failed for task ':capacitor-android:compileDebugJavaWithJavac'.
+6997-> error: invalid source release: 21
+6998-
+6999-
+7000-* Try:
+7001-> Run with --debug option to get more log output.
+7002-> Run with --scan to get full insights.
+7003-> Get more help at https://help.gradle.org.
+7004-
+7005-* Exception is:
+7006-org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':capacitor-android:compileDebugJavaWithJavac'.
+7007-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:130)
+7008-	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+7009-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+7010-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+7011-	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:40)
+7012-	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+7013-	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+7014-	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+7015-	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+7016-	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+7017-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+7018-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+7019-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+7020-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+7021-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+7022-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+7023-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+7024-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+7025-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+7026-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+7027-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+7028-	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+7029-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+7030-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+7031-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+7032-	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+7033-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+7034-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+7035-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+7036-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+7037-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+7038-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+7039-Caused by: java.lang.IllegalArgumentException: error: invalid source release: 21
+7040-	at jdk.compiler/com.sun.tools.javac.main.Arguments.error(Arguments.java:905)
+7041-	at jdk.compiler/com.sun.tools.javac.main.Arguments.doProcessArgs(Arguments.java:383)
+7042-	at jdk.compiler/com.sun.tools.javac.main.Arguments.processArgs(Arguments.java:347)
+7043-	at jdk.compiler/com.sun.tools.javac.main.Arguments.init(Arguments.java:246)
+7044-	at jdk.compiler/com.sun.tools.javac.api.JavacTool.getTask(JavacTool.java:191)
+7045-	at org.gradle.api.internal.tasks.compile.JdkTools$DefaultIncrementalAwareCompiler.getTask(JdkTools.java:99)
+7046-	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.createCompileTask(JdkJavaCompiler.java:113)
+7047-	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:76)
+7048-	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:50)
+7049-	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHandleErrors(NormalizingJavaCompiler.java:98)
+7050-	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(NormalizingJavaCompiler.java:52)
+7051-	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(NormalizingJavaCompiler.java:38)
+7052-	at org.gradle.api.internal.tasks.compile.AnnotationProcessorDiscoveringCompiler.execute(AnnotationProcessorDiscoveringCompiler.java:52)
+7053-	at org.gradle.api.internal.tasks.compile.AnnotationProcessorDiscoveringCompiler.execute(AnnotationProcessorDiscoveringCompiler.java:38)
+7054-	at org.gradle.api.internal.tasks.compile.ModuleApplicationNameWritingCompiler.execute(ModuleApplicationNameWritingCompiler.java:46)
+7055-	at org.gradle.api.internal.tasks.compile.ModuleApplicationNameWritingCompiler.execute(ModuleApplicationNameWritingCompiler.java:36)
+7056-	at org.gradle.jvm.toolchain.internal.DefaultToolchainJavaCompiler.execute(DefaultToolchainJavaCompiler.java:57)
+7057-	at org.gradle.api.tasks.compile.JavaCompile.lambda$createToolchainCompiler$3(JavaCompile.java:206)
+7058-	at org.gradle.api.internal.tasks.compile.CleaningJavaCompiler.execute(CleaningJavaCompiler.java:53)
+7059-	at org.gradle.api.internal.tasks.compile.incremental.IncrementalCompilerFactory.lambda$createRebuildAllCompiler$0(IncrementalCompilerFactory.java:55)
+7060-	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute(SelectiveCompiler.java:70)
+7061-	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute(SelectiveCompiler.java:44)
+7062-	at org.gradle.api.internal.tasks.compile.incremental.IncrementalResultStoringCompiler.execute(IncrementalResultStoringCompiler.java:66)
+7063-	at org.gradle.api.internal.tasks.compile.incremental.IncrementalResultStoringCompiler.execute(IncrementalResultStoringCompiler.java:52)
+7064-	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler$1.call(CompileJavaBuildOperationReportingCompiler.java:64)
+7065-	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler$1.call(CompileJavaBuildOperationReportingCompiler.java:48)
+7066-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+7067-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+7068-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+7069-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+7070-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+7071-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+7072-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+7073-	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler.execute(CompileJavaBuildOperationReportingCompiler.java:48)
+7074-	at org.gradle.api.tasks.compile.JavaCompile.performCompilation(JavaCompile.java:224)
+7075-	at org.gradle.api.tasks.compile.JavaCompile.performIncrementalCompilation(JavaCompile.java:165)
+
+===== FAILED TASK =====
+6977-Task ':capacitor-android:compileDebugJavaWithJavac' is not up-to-date because:
+6978-  No history is available.
+6979-The input changes require a full rebuild for incremental task ':capacitor-android:compileDebugJavaWithJavac'.
+6980-Compilation mode: in-process compilation
+6981-file or directory '/home/runner/work/gandom/gandom/node_modules/@capacitor/android/capacitor/libs', not found
+6982-Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+6983-Compiling with toolchain '/usr/lib/jvm/temurin-17-jdk-amd64'.
+6984-file or directory '/home/runner/work/gandom/gandom/node_modules/@capacitor/android/capacitor/src/debug/java', not found
+6985-Compiling with JDK Java compiler API.
+6986-
+6987:> Task :capacitor-android:compileDebugJavaWithJavac FAILED
+6988-AAPT2 aapt2-8.9.2-12782657-linux Daemon #0: shutdown
+6989-AAPT2 aapt2-8.9.2-12782657-linux Daemon #1: shutdown
+6990-
+6991-[Incubating] Problems report is available at: file:///home/runner/work/gandom/gandom/android/build/reports/problems/problems-report.html
+6992-
+6993-FAILURE: Build failed with an exception.
+6994-
+6995-* What went wrong:
+6996:Execution failed for task ':capacitor-android:compileDebugJavaWithJavac'.
+6997-> error: invalid source release: 21
+6998-
+6999-
+7000-* Try:
+7001-> Run with --debug option to get more log output.
+7002-> Run with --scan to get full insights.
+7003-> Get more help at https://help.gradle.org.
+7004-
+7005-* Exception is:
+7006:org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':capacitor-android:compileDebugJavaWithJavac'.
+7007-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:130)
+7008-	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+7009-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+7010-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+7011-	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:40)
+7012-	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+7013-	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+7014-	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+7015-	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+7016-	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+7017-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+7018-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+7019-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+7020-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+7021-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+7022-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+7023-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+7024-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+7025-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+7026-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+7027-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+7028-	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+7029-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+7030-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+7031-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+
+===== CAUSE =====
+1-Initialized native services in: /home/runner/.gradle/native
+2-Initialized jansi services in: /home/runner/.gradle/native
+3-Removing 0 daemon stop events from registry
+4-Starting a Gradle Daemon (subsequent builds will be faster)
+5:Starting process 'Gradle build daemon'. Working directory: /home/runner/.gradle/daemon/8.13 Command: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED --add-opens=java.xml/javax.xml.namespace=ALL-UNNAMED -Xmx1536m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /home/runner/.gradle/wrapper/dists/gradle-8.13-all/54h0s9kvb6g2sinako7ub77ku/gradle-8.13/lib/gradle-daemon-main-8.13.jar -javaagent:/home/runner/.gradle/wrapper/dists/gradle-8.13-all/54h0s9kvb6g2sinako7ub77ku/gradle-8.13/lib/agents/gradle-instrumentation-agent-8.13.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.13
+6-Successfully started process 'Gradle build daemon'
+7-An attempt to start the daemon took 1.604 secs.
+8-The client will now receive all logging from the daemon (pid: 2505). The daemon log file: /home/runner/.gradle/daemon/8.13/daemon-2505.out.log
+9-Starting build in new daemon [memory: 1.5 GiB]
+10-Using 4 worker leases.
+11-Received JVM installation metadata from '/usr/lib/jvm/temurin-17-jdk-amd64': {JAVA_HOME=/usr/lib/jvm/temurin-17-jdk-amd64, JAVA_VERSION=17.0.20.1, JAVA_VENDOR=Eclipse Adoptium, RUNTIME_NAME=OpenJDK Runtime Environment, RUNTIME_VERSION=17.0.20.1+1, VM_NAME=OpenJDK 64-Bit Server VM, VM_VERSION=17.0.20.1+1, VM_VENDOR=Eclipse Adoptium, OS_ARCH=amd64}
+12-Watching the file system is configured to be enabled if available
+13-Now considering [/home/runner/work/gandom/gandom/android] as hierarchies to watch
+14-File system watching is active
+15-Starting Build
+16-Caching disabled for Groovy DSL script compilation (cp_settings) because:
+17-  Build cache is disabled
+18-  Not worth caching.
+19-Compiling settings file '/home/runner/work/gandom/gandom/android/settings.gradle' using SubsetScriptTransformer.
+20-Caching disabled for Groovy DSL script compilation (settings) because:
+21-  Build cache is disabled
+22-  Not worth caching.
+23-Compiling settings file '/home/runner/work/gandom/gandom/android/settings.gradle' using BuildScriptTransformer.
+24-Caching disabled for Groovy DSL script compilation (cp_dsl) because:
+25-  Build cache is disabled
+26-  Not worth caching.
+27-Compiling script '/home/runner/work/gandom/gandom/android/capacitor.settings.gradle' using SubsetScriptTransformer.
+28-Caching disabled for Groovy DSL script compilation (dsl) because:
+29-  Build cache is disabled
+30-  Not worth caching.
+31-Compiling script '/home/runner/work/gandom/gandom/android/capacitor.settings.gradle' using BuildScriptTransformer.
+32-Settings evaluated using settings file '/home/runner/work/gandom/gandom/android/settings.gradle'.
+33-Projects loaded. Root project using build file '/home/runner/work/gandom/gandom/android/build.gradle'.
+34-Included projects: [root project 'android', project ':app', project ':capacitor-android', project ':capacitor-cordova-android-plugins']
+35-
+36-> Configure project :
+37-Evaluating root project 'android' using build file '/home/runner/work/gandom/gandom/android/build.gradle'.
+38-Caching disabled for Groovy DSL script compilation (cp_proj) because:
+39-  Build cache is disabled
+40-  Not worth caching.
+41-Compiling build file '/home/runner/work/gandom/gandom/android/build.gradle' using SubsetScriptTransformer.
+42-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.9.2/gradle-8.9.2.pom to /home/runner/.gradle/.tmp/gradle_download18221774614048837221bin
+43-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.9.2/gradle-8.9.2.module to /home/runner/.gradle/.tmp/gradle_download6117967716989385154bin
+44-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle-settings-api/8.9.2/gradle-settings-api-8.9.2.pom to /home/runner/.gradle/.tmp/gradle_download1004559742016866233bin
+45-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/sdk-common/31.9.2/sdk-common-31.9.2.pom to /home/runner/.gradle/.tmp/gradle_download17513723904837614889bin
+46-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/repository/31.9.2/repository-31.9.2.pom to /home/runner/.gradle/.tmp/gradle_download15773138101479019531bin
+47-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/sdklib/31.9.2/sdklib-31.9.2.pom to /home/runner/.gradle/.tmp/gradle_download11939639136962530953bin
+48-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle-settings-api/8.9.2/gradle-settings-api-8.9.2.module to /home/runner/.gradle/.tmp/gradle_download7271854264103733675bin
+49-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/ddms/ddmlib/31.9.2/ddmlib-31.9.2.pom to /home/runner/.gradle/.tmp/gradle_download16065581737139224600bin
+50-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/analytics-library/crash/31.9.2/crash-31.9.2.pom to /home/runner/.gradle/.tmp/gradle_download6998776606050595697bin
+51-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/aaptcompiler/8.9.2/aaptcompiler-8.9.2.pom to /home/runner/.gradle/.tmp/gradle_download10332657896744163521bin
+52-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/aapt2-proto/8.9.2-12782657/aapt2-proto-8.9.2-12782657.pom to /home/runner/.gradle/.tmp/gradle_download13770562625023876754bin
+53-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/analytics-library/shared/31.9.2/shared-31.9.2.pom to /home/runner/.gradle/.tmp/gradle_download14288320749617462928bin
+54-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/lint/lint-model/31.9.2/lint-model-31.9.2.pom to /home/runner/.gradle/.tmp/gradle_download14864569812970235946bin
+55-Downloading https://dl.google.com/dl/android/maven2/com/android/tools/build/aaptcompiler/8.9.2/aaptcompiler-8.9.2.module to /home/runner/.gradle/.tmp/gradle_download5803926456460898064bin
+--
+6541-Caching disabled for AarResourcesCompilerTransform: /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0 because:
+6542-  Build cache is disabled
+6543-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/anim/btn_checkbox_to_unchecked_check_path_merged_animation.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/anim_btn_checkbox_to_unchecked_check_path_merged_animation.xml.flat
+6544-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/anim/abc_fade_in.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/anim_abc_fade_in.xml.flat
+6545-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/anim/btn_radio_to_on_mtrl_ring_outer_path_animation.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/anim_btn_radio_to_on_mtrl_ring_outer_path_animation.xml.flat
+6546:AAPT2 aapt2-8.9.2-12782657-linux Daemon #1: starting
+6547:AAPT2 aapt2-8.9.2-12782657-linux Daemon #0: starting
+6548-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable-v21/notification_action_background.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable-v21_notification_action_background.xml.flat
+6549-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/ic_call_answer_video_low.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_ic_call_answer_video_low.xml.flat
+6550-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/ic_call_decline.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_ic_call_decline.xml.flat
+6551-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/notification_tile_bg.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_notification_tile_bg.xml.flat
+6552-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/ic_call_answer_low.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_ic_call_answer_low.xml.flat
+6553-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/ic_call_answer_video.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_ic_call_answer_video.xml.flat
+6554-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/notification_bg_low.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_notification_bg_low.xml.flat
+6555-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/notification_bg.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_notification_bg.xml.flat
+6556-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/notification_icon_background.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_notification_icon_background.xml.flat
+6557-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/ic_call_answer.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_ic_call_answer.xml.flat
+6558-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/drawable/ic_call_decline_low.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/drawable_ic_call_decline_low.xml.flat
+6559-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/layout-v21/notification_template_icon_group.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/layout-v21_notification_template_icon_group.xml.flat
+6560-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/layout-v21/notification_action.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/layout-v21_notification_action.xml.flat
+6561-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/layout-v21/notification_template_custom_big.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/layout-v21_notification_template_custom_big.xml.flat
+6562-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/db6b48848361ae9efb0cfb92ad255b1f/transformed/core-1.17.0/res/layout-v21/notification_action_tombstone.xml to /home/runner/.gradle/caches/8.13/transforms/fb6a5739ff1ac1d0d56c57c2410759de-0f7f4a4e-dde4-4ebd-9eca-e159a06c7028/transformed/androidx.core/layout-v21_notification_action_tombstone.xml.flat
+6563-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable-v21/abc_list_divider_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable-v21_abc_list_divider_material.xml.flat
+6564-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable-v21/abc_dialog_material_background.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable-v21_abc_dialog_material_background.xml.flat
+6565-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable-v21/abc_action_bar_item_background_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable-v21_abc_action_bar_item_background_material.xml.flat
+6566-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable-v21/abc_edit_text_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable-v21_abc_edit_text_material.xml.flat
+6567-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable-v21/abc_btn_colored_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable-v21_abc_btn_colored_material.xml.flat
+6568-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_btn_check_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_btn_check_material.xml.flat
+6569-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_cab_background_top_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_cab_background_top_material.xml.flat
+6570-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ic_menu_overflow_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ic_menu_overflow_material.xml.flat
+6571-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/btn_radio_on_to_off_mtrl_animation.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_btn_radio_on_to_off_mtrl_animation.xml.flat
+6572-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/btn_radio_on_mtrl.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_btn_radio_on_mtrl.xml.flat
+6573-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_star_black_48dp.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_star_black_48dp.xml.flat
+6574-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_btn_radio_material_anim.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_btn_radio_material_anim.xml.flat
+6575-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ic_voice_search_api_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ic_voice_search_api_material.xml.flat
+6576-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ic_menu_paste_mtrl_am_alpha.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ic_menu_paste_mtrl_am_alpha.xml.flat
+6577-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_star_half_black_48dp.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_star_half_black_48dp.xml.flat
+6578-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ic_go_search_api_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ic_go_search_api_material.xml.flat
+6579-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_item_background_holo_light.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_item_background_holo_light.xml.flat
+6580-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_list_selector_background_transition_holo_light.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_list_selector_background_transition_holo_light.xml.flat
+6581-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ic_menu_cut_mtrl_alpha.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ic_menu_cut_mtrl_alpha.xml.flat
+6582-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/test_level_drawable.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_test_level_drawable.xml.flat
+6583-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_list_selector_holo_light.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_list_selector_holo_light.xml.flat
+6584-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/btn_radio_off_to_on_mtrl_animation.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_btn_radio_off_to_on_mtrl_animation.xml.flat
+6585-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_item_background_holo_dark.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_item_background_holo_dark.xml.flat
+6586-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/tooltip_frame_light.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_tooltip_frame_light.xml.flat
+6587-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ic_menu_selectall_mtrl_alpha.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ic_menu_selectall_mtrl_alpha.xml.flat
+6588-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/btn_checkbox_unchecked_to_checked_mtrl_animation.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_btn_checkbox_unchecked_to_checked_mtrl_animation.xml.flat
+6589-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_seekbar_tick_mark_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_seekbar_tick_mark_material.xml.flat
+6590-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/tooltip_frame_dark.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_tooltip_frame_dark.xml.flat
+6591-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/btn_checkbox_checked_to_unchecked_mtrl_animation.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_btn_checkbox_checked_to_unchecked_mtrl_animation.xml.flat
+6592-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ratingbar_indicator_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ratingbar_indicator_material.xml.flat
+6593-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_cab_background_internal_bg.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_cab_background_internal_bg.xml.flat
+6594-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ic_search_api_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ic_search_api_material.xml.flat
+6595-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_seekbar_track_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_seekbar_track_material.xml.flat
+6596-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/abc_ratingbar_small_material.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_abc_ratingbar_small_material.xml.flat
+6597-Compiling xml file /home/runner/.gradle/caches/8.13/transforms/31d01fad95e01aacfec80d6add9e163d/transformed/appcompat-1.7.1/res/drawable/btn_radio_off_mtrl.xml to /home/runner/.gradle/caches/8.13/transforms/37074f6366d7d0b0a015e6e9d563e6a7-d8d6a7b8-c3ad-4fd7-9fd7-6c7ebe3bc007/transformed/androidx.appcompat/drawable_btn_radio_off_mtrl.xml.flat
+--
+6983-Compiling with toolchain '/usr/lib/jvm/temurin-17-jdk-amd64'.
+6984-file or directory '/home/runner/work/gandom/gandom/node_modules/@capacitor/android/capacitor/src/debug/java', not found
+6985-Compiling with JDK Java compiler API.
+6986-
+6987-> Task :capacitor-android:compileDebugJavaWithJavac FAILED
+6988:AAPT2 aapt2-8.9.2-12782657-linux Daemon #0: shutdown
+6989:AAPT2 aapt2-8.9.2-12782657-linux Daemon #1: shutdown
+6990-
+6991-[Incubating] Problems report is available at: file:///home/runner/work/gandom/gandom/android/build/reports/problems/problems-report.html
+6992-
+6993-FAILURE: Build failed with an exception.
+6994-
+6995-* What went wrong:
+6996-Execution failed for task ':capacitor-android:compileDebugJavaWithJavac'.
+6997-> error: invalid source release: 21
+6998-
+6999-
+7000-* Try:
+7001-> Run with --debug option to get more log output.
+7002-> Run with --scan to get full insights.
+7003-> Get more help at https://help.gradle.org.
+7004-
+7005-* Exception is:
+7006-org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':capacitor-android:compileDebugJavaWithJavac'.
+7007-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:130)
+7008-	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+7009-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+7010-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+7011-	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:40)
+7012-	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+7013-	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+7014-	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+7015-	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+7016-	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+7017-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+7018-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+7019-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+7020-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+7021-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+7022-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+7023-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+7024-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+7025-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+7026-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+7027-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+7028-	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+7029-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+7030-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+7031-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+7032-	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+7033-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+7034-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+7035-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+7036-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+7037-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+7038-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+7039:Caused by: java.lang.IllegalArgumentException: error: invalid source release: 21
+7040-	at jdk.compiler/com.sun.tools.javac.main.Arguments.error(Arguments.java:905)
+7041-	at jdk.compiler/com.sun.tools.javac.main.Arguments.doProcessArgs(Arguments.java:383)
+7042-	at jdk.compiler/com.sun.tools.javac.main.Arguments.processArgs(Arguments.java:347)
+7043-	at jdk.compiler/com.sun.tools.javac.main.Arguments.init(Arguments.java:246)
+7044-	at jdk.compiler/com.sun.tools.javac.api.JavacTool.getTask(JavacTool.java:191)
+7045-	at org.gradle.api.internal.tasks.compile.JdkTools$DefaultIncrementalAwareCompiler.getTask(JdkTools.java:99)
+7046-	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.createCompileTask(JdkJavaCompiler.java:113)
+7047-	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:76)
+7048-	at org.gradle.api.internal.tasks.compile.JdkJavaCompiler.execute(JdkJavaCompiler.java:50)
+7049-	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.delegateAndHandleErrors(NormalizingJavaCompiler.java:98)
+7050-	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(NormalizingJavaCompiler.java:52)
+7051-	at org.gradle.api.internal.tasks.compile.NormalizingJavaCompiler.execute(NormalizingJavaCompiler.java:38)
+7052-	at org.gradle.api.internal.tasks.compile.AnnotationProcessorDiscoveringCompiler.execute(AnnotationProcessorDiscoveringCompiler.java:52)
+7053-	at org.gradle.api.internal.tasks.compile.AnnotationProcessorDiscoveringCompiler.execute(AnnotationProcessorDiscoveringCompiler.java:38)
+7054-	at org.gradle.api.internal.tasks.compile.ModuleApplicationNameWritingCompiler.execute(ModuleApplicationNameWritingCompiler.java:46)
+7055-	at org.gradle.api.internal.tasks.compile.ModuleApplicationNameWritingCompiler.execute(ModuleApplicationNameWritingCompiler.java:36)
+7056-	at org.gradle.jvm.toolchain.internal.DefaultToolchainJavaCompiler.execute(DefaultToolchainJavaCompiler.java:57)
+7057-	at org.gradle.api.tasks.compile.JavaCompile.lambda$createToolchainCompiler$3(JavaCompile.java:206)
+7058-	at org.gradle.api.internal.tasks.compile.CleaningJavaCompiler.execute(CleaningJavaCompiler.java:53)
+7059-	at org.gradle.api.internal.tasks.compile.incremental.IncrementalCompilerFactory.lambda$createRebuildAllCompiler$0(IncrementalCompilerFactory.java:55)
+7060-	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute(SelectiveCompiler.java:70)
+7061-	at org.gradle.api.internal.tasks.compile.incremental.SelectiveCompiler.execute(SelectiveCompiler.java:44)
+7062-	at org.gradle.api.internal.tasks.compile.incremental.IncrementalResultStoringCompiler.execute(IncrementalResultStoringCompiler.java:66)
+7063-	at org.gradle.api.internal.tasks.compile.incremental.IncrementalResultStoringCompiler.execute(IncrementalResultStoringCompiler.java:52)
+7064-	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler$1.call(CompileJavaBuildOperationReportingCompiler.java:64)
+7065-	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler$1.call(CompileJavaBuildOperationReportingCompiler.java:48)
+7066-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+7067-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+7068-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+7069-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+7070-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+7071-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+7072-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+7073-	at org.gradle.api.internal.tasks.compile.CompileJavaBuildOperationReportingCompiler.execute(CompileJavaBuildOperationReportingCompiler.java:48)
+7074-	at org.gradle.api.tasks.compile.JavaCompile.performCompilation(JavaCompile.java:224)
+7075-	at org.gradle.api.tasks.compile.JavaCompile.performIncrementalCompilation(JavaCompile.java:165)
+7076-	at org.gradle.api.tasks.compile.JavaCompile.compile(JavaCompile.java:150)
+7077-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+7078-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+7079-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+7080-	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+7081-	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute(IncrementalTaskAction.java:45)
+7082-	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+7083-	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.execute(IncrementalTaskAction.java:26)
+7084-	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+7085-	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:244)
+7086-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+7087-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+7088-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+7089-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)

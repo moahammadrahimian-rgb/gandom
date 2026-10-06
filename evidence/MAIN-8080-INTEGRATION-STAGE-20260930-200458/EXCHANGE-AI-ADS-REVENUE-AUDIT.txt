@@ -1,0 +1,1375 @@
+www/index.html:101:   2. MAIN FRAME
+www/index.html:104:.main-frame{
+www/index.html:141:   4. GDM ECONOMY
+www/index.html:197:   5. MARKET / CHART
+www/index.html:200:.chart-card{
+www/index.html:208:.chart-head{
+www/index.html:218:.chart{
+www/index.html:225:.chart svg{
+www/index.html:230:.chart-note{
+www/index.html:236:   6. WALLET
+www/index.html:457:<main class="main-frame">
+www/index.html:465:    اقتصاد GDM، شبکه P2P، کیف پول، AI، تبلیغات و خدمات تجاری.
+www/index.html:471:  <div class="economy-label">TOTAL GDM SUPPLY</div>
+www/index.html:472:  <div class="supply">24,000,000,000 GDM</div>
+www/index.html:473:  <div class="owner">مالک: 5% = 1,200,000,000 GDM</div>
+www/index.html:477:<!-- 5 MARKET -->
+www/index.html:478:<section class="chart-card">
+www/index.html:479:  <div class="chart-head">
+www/index.html:481:      <small>GDM MARKET</small>
+www/index.html:487:  <div class="chart">
+www/index.html:499:  <div class="chart-note">
+www/index.html:504:<!-- 6 WALLET + CORE SURFACES -->
+www/index.html:509:    <strong>Wallet</strong>
+www/index.html:510:    <small>موجودی و تراکنش‌های GDM</small>
+www/index.html:521:    <strong>AI</strong>
+www/index.html:549:<!-- 8 AI -->
+www/index.html:552:  <span class="section-title">🤖 AI / Services</span>
+www/index.html:556:  درگاه یکپارچه AI برای خدمات، تحلیل، محتوا، پشتیبانی،
+www/index.html:606:<!-- 13 BLOCKCHAIN -->
+www/index.html:609:  <span class="section-title">⛓️ Blockchain Core</span>
+www/index.html:613:  وضعیت هسته Blockchain و اعتبار زنجیره.
+www/index.html:672:<!-- 19 REVENUE -->
+www/index.html:675:  <span class="section-title">💰 Revenue / Accounting</span>
+www/index.html:686:  <span class="section-title">🏢 Commercial AI</span>
+www/index.html:707:  AI می‌تواند تحلیل و ثبت درآمد انجام دهد،
+www/index.html:725:<!-- 23 AUTONOMOUS COMMERCIAL AI -->
+www/index.html:728:  <span class="section-title">🚀 Autonomous Advertising + AI</span>
+www/index.html:756:<button class="action" onclick="showMessage('Wallet آماده اتصال به Runtime است')">
+www/index.html:757:  💳 Wallet
+www/index.html:764:<button class="action" onclick="showMessage('Commercial AI')">
+www/index.html:774:</main>
+www/index.html:784:<button class="nav" onclick="nav('market',this)">
+www/index.html:794:<button class="nav" onclick="nav('wallet',this)">
+www/index.html:820:  if(name === "market"){
+www/index.html:821:    document.querySelector(".chart-card")
+www/index.html:825:  if(name === "wallet"){
+www/index.html:842: * This UI does not fabricate live market data.
+www/index.html:852:  dailyAdTarget: 1000,
+www/index.html:856:document.getElementById("price").textContent = "GDM / LIVE";
+www/admin.html:40:<div id="adsList"><div class="empty">در حال بارگذاری...</div></div>
+www/admin.html:43:async function loadAds() {
+www/admin.html:44:  const res = await fetch('/api/ads');
+www/admin.html:45:  const data = await res.json();
+www/admin.html:46:  const ads = data.ads || [];
+www/admin.html:47:  const list = document.getElementById('adsList');
+www/admin.html:48:  if (!ads.length) {
+www/admin.html:52:  list.innerHTML = '<h2 style="color:#f5c518;">لیست آگهی‌ها (' + ads.length + ')</h2>' +
+www/admin.html:53:    ads.map(a => '<div class="card"><h3>' + a.title + '</h3><p>📍 ' + a.city + ' | ' + a.deal_type + ' | ' + a.property_type + '</p><p class="price">' + Number(a.price).toLocaleString() + ' تومان</p></div>').join('');
+www/admin.html:63:  await fetch('/api/ads', {
+www/admin.html:71:  loadAds();
+www/admin.html:74:loadAds();
+www/assets/css/gandom-ui.css:172:.chart{
+www/assets/css/gandom-ui.css:244:details{
+www/assets/css/gandom-ui.css:251:details+details{
+www/assets/js/gandom-ui.js:27:function drawChart(){
+www/assets/js/gandom-ui.js:28:  const canvas = $('#marketChart');
+www/assets/js/gandom-ui.js:68:    const response = await fetch('/health', {
+www/assets/js/gandom-ui.js:83:window.addEventListener('resize', drawChart);
+www/assets/js/gandom-ui.js:86:  drawChart();
+server.js:33:      'Content-Type': 'text/plain',
+gandom-core/contracts/GANDUM-MASTER-CONTRACT.json:15:    "FIRST_FAILURE_WINS",
+gandom-core/contracts/GANDUM-MASTER-CONTRACT.json:20:  "domains": [
+gandom-core/contracts/GANDUM-MASTER-CONTRACT.json:45:    "FAIL_REAL",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:51:        "file": "android/app/src/main/assets/capacitor.config.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:55:        "file": "android/app/src/main/assets/capacitor.plugins.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:87:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:119:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:151:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:255:        "file": "gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:259:        "file": "gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:279:        "file": "gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:347:    "remote_main": "58f3b0ba9de56be3cdd846cc999986e30da70902\trefs/heads/main"
+gandom-core/logs/bootstrap.log:2:DOMAINS=17
+gandom-core/tests/bootstrap-test.sh:25:if (!Array.isArray(p.domains) || p.domains.length < 10) process.exit(1);
+gandom-core/tests/bootstrap-test.sh:28:console.log('DOMAINS=' + p.domains.length);
+gandom-core/tests/REAL-DATA-CONTRACT.js:97:  const h = await health();
+gandom-core/tests/REAL-DATA-CONTRACT.js:100:    throw new Error('HEALTH_CONTRACT_FAILED');
+gandom-core/tests/REAL-DATA-CONTRACT.js:105:  const result = await testData();
+gandom-core/tests/REAL-DATA-CONTRACT.js:135:  console.error('RESULT=FAIL_REAL');
+gandom-core/tests/REAL-TWO-PEER-CONNECTION.js:41:  const peerA = await connect('REAL-PEER-A');
+gandom-core/tests/REAL-TWO-PEER-CONNECTION.js:44:  const peerB = await connect('REAL-PEER-B');
+gandom-core/tests/REAL-TWO-PEER-CONNECTION.js:78:  console.error('RESULT=FAIL_REAL');
+gandom-core/tests/REAL-TWO-PEER-DATA.js:33:function waitForAck(ws, messageId) {
+gandom-core/tests/REAL-TWO-PEER-DATA.js:69:  const peerA = await connect('REAL-DATA-PEER-A');
+gandom-core/tests/REAL-TWO-PEER-DATA.js:72:  const peerB = await connect('REAL-DATA-PEER-B');
+gandom-core/tests/REAL-TWO-PEER-DATA.js:87:  const ackPromise = waitForAck(peerA, messageId);
+gandom-core/tests/REAL-TWO-PEER-DATA.js:93:  const ack = await ackPromise;
+gandom-core/tests/REAL-TWO-PEER-DATA.js:130:  console.error('RESULT=FAIL_REAL');
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:12:function wait(ms) {
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:101:        initial = await health();
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:105:        await wait(250);
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:114:      throw new Error('INITIAL_HEALTH_FAILED');
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:120:    peerA = await connect('LIFECYCLE-PEER-A');
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:123:    peerB = await connect('LIFECYCLE-PEER-B');
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:126:    await wait(250);
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:128:    const connected = await health();
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:142:    await wait(500);
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:144:    const after = await health();
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:195:    await wait(300);
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:200:    console.error('RESULT=FAIL_REAL');
+gandom-core/global-architecture/contracts/GLOBAL-EXECUTION-CONTRACT.json:19:  "capacity_claim": "NOT_ASSUMED",
+gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json:3:  "standard": "OCI-CONTAINER",
+gandom-core/p2p/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json:12:    "AI_WORKER_STATE",
+gandom-core/p2p/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json:13:    "REVENUE_EVENT",
+gandom-core/p2p/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json:14:    "WALLET_EVENT",
+gandom-core/p2p/engine/p2p-report-bus.js:28:if (require.main === module) {
+gandom-core/p2p/reports/runtime-events.jsonl:7:{"eventId":"5665abb2-2a49-4f32-aac9-debf87f633cd","correlationId":"8e122cff-ece7-4c75-8d2f-a1a76145a382","nodeId":"LOCAL_NODE","type":"REVENUE_EVENT","source":"GANDOM_REVENUE_EVENTS","timestamp":"2026-09-30T01:12:48.767Z","payload":{"eventType":"REVENUE_PIPELINE_RUNTIME","status":"REAL_RUNTIME_EVENT","realRevenue":false,"fakeRevenue":false,"transactionId":null,"amount":0,"currency":null,"source":"GANDOM_REVENUE_EVENTS"}}
+gandom-core/p2p/reports/runtime-events.jsonl:9:{"eventId":"191f8515-3700-4ea6-80ce-b886e90329e2","correlationId":"16b181f7-ab63-4644-9b1c-22493166b598","nodeId":"LOCAL_NODE","type":"REVENUE_EVENT","source":"GANDOM_REVENUE_EVENTS","timestamp":"2026-09-30T01:14:50.880Z","payload":{"eventType":"REVENUE_PIPELINE_RUNTIME","status":"REAL_RUNTIME_EVENT","fakeRevenue":false,"realRevenue":false,"financialTransactionCreated":false,"source":"GANDOM_REVENUE_EVENTS"}}
+gandom-core/p2p/reports/runtime-events.jsonl:11:{"eventId":"2b795c62-2548-4aa9-be5b-58a18395b53c","correlationId":"4e1269e5-4f28-4693-bfcf-a143f8f1ecb9","nodeId":"LOCAL_NODE","type":{"eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","source":"GANDOM_SECURITY_RUNTIME","type":"SECURITY_EVENT","payload":{"control":"AI_FINANCIAL_AUTHORITY","withdrawalAuthority":false,"transferAuthority":false,"depositAuthority":false,"result":"DENIED","realRuntimeCheck":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T03:52:51.312Z","payload":{"eventBusEventId":"f989dc95-0c19-463f-9aa5-ef801d73a729","eventBusCorrelationId":"653d2900-9790-4348-bf1c-1dfbae3f0d5b","eventBusTimestamp":"2026-09-30T03:52:51.311Z","eventBusSource":"GANDOM_EVENT_BUS"}}
+gandom-core/p2p/reports/runtime-events.jsonl:12:{"eventId":"76afb3a7-800c-40b7-909e-a8705b7054c2","correlationId":"361820bd-ad95-408d-b00e-be7bf6eaf7e9","nodeId":"LOCAL_NODE","type":{"eventId":"2e04afe6-9783-4ad8-ba13-76804c9a3bee","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.314Z","nodeId":"GANDOM-LOCAL-RUNTIME","type":"SECURITY_EVENT","source":"GANDOM_SECURITY_RUNTIME","payload":{"linkedEventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","control":"AI_FINANCIAL_AUTHORITY","result":"DENIED"}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T03:52:51.314Z","payload":{}}
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:42:gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:43:gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:60:JS_FAIL=gandom-core/p2p/engine/p2p-report-bus.js
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:61:JS_FAIL=gandom-core/p2p/discovery/peer-discovery.js
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:62:JS_FAIL=gandom-core/p2p/event-bus/event-bus.js
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:63:JS_FAIL=gandom-core/p2p/worker-state/engine/worker-state.js
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:88:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:43:gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:90:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:91:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:92:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:93:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:259:        "file": "gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:97:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:90:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:98:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:91:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:99:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:92:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:101:gandom-core/p2p/evidence/security-events-proof.jsonl:1:{"step":"021","name":"SECURITY_EVENTS","eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","realRuntime":true,"securityEvent":"SECURITY_EVENT","aiWithdrawalAuthority":false,"aiTransferAuthority":false,"aiDepositAuthority":false,"result":"DENIED"}
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:105:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:87:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:106:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:113:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:119:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:114:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:121:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:151:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:122:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:175:{"eventId":"f989dc95-0c19-463f-9aa5-ef801d73a729","correlationId":"653d2900-9790-4348-bf1c-1dfbae3f0d5b","timestamp":"2026-09-30T03:52:51.311Z","source":"GANDOM_EVENT_BUS","type":{"eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","source":"GANDOM_SECURITY_RUNTIME","type":"SECURITY_EVENT","payload":{"control":"AI_FINANCIAL_AUTHORITY","withdrawalAuthority":false,"transferAuthority":false,"depositAuthority":false,"result":"DENIED","realRuntimeCheck":true}},"payload":{}}
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:182:{"step":"021","name":"SECURITY_EVENTS","eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","realRuntime":true,"securityEvent":"SECURITY_EVENT","aiWithdrawalAuthority":false,"aiTransferAuthority":false,"aiDepositAuthority":false,"result":"DENIED"}
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:183:{"eventId":"5debe60b-447d-461f-b88b-9811ec871b9c","correlationId":"ae8a8cbc-5c55-4577-8543-110579f890ac","timestamp":"2026-09-30T04:05:26.999Z","type":"SECURITY_EVENT","source":"GANDOM_SECURITY_RUNTIME","payload":{"aiDepositAuthority":false,"aiWithdrawalAuthority":false,"aiTransferAuthority":false,"result":"DENIED"}}
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:202:    "AI_WORKER_STATE",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:203:    "REVENUE_EVENT",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:204:    "WALLET_EVENT",
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:58:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:43:gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:62:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:88:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:43:gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:75:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:90:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:76:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:91:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:77:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:92:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:79:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:97:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:90:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:80:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:98:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:91:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:81:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:99:gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:92:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:117:gandom-core/p2p/reports/runtime-events.jsonl:7:{"eventId":"5665abb2-2a49-4f32-aac9-debf87f633cd","correlationId":"8e122cff-ece7-4c75-8d2f-a1a76145a382","nodeId":"LOCAL_NODE","type":"REVENUE_EVENT","source":"GANDOM_REVENUE_EVENTS","timestamp":"2026-09-30T01:12:48.767Z","payload":{"eventType":"REVENUE_PIPELINE_RUNTIME","status":"REAL_RUNTIME_EVENT","realRevenue":false,"fakeRevenue":false,"transactionId":null,"amount":0,"currency":null,"source":"GANDOM_REVENUE_EVENTS"}}
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:118:gandom-core/p2p/reports/runtime-events.jsonl:9:{"eventId":"191f8515-3700-4ea6-80ce-b886e90329e2","correlationId":"16b181f7-ab63-4644-9b1c-22493166b598","nodeId":"LOCAL_NODE","type":"REVENUE_EVENT","source":"GANDOM_REVENUE_EVENTS","timestamp":"2026-09-30T01:14:50.880Z","payload":{"eventType":"REVENUE_PIPELINE_RUNTIME","status":"REAL_RUNTIME_EVENT","fakeRevenue":false,"realRevenue":false,"financialTransactionCreated":false,"source":"GANDOM_REVENUE_EVENTS"}}
+gandom-core/p2p/reports/CH02-FINAL-MATRIX.txt:119:gandom-core/p2p/reports/runtime-events.jsonl:11:{"eventId":"2b795c62-2548-4aa9-be5b-58a18395b53c","correlationId":"4e1269e5-4f28-4693-bfcf-a143f8f1ecb9","nodeId":"LOCAL_NODE","type":{"eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","source":"GANDOM_SECURITY_RUNTIME","type":"SECURITY_EVENT","payload":{"control":"AI_FINANCIAL_AUTHORITY","withdrawalAuthority":false,"transferAuthority":false,"depositAuthority":false,"result":"DENIED","realRuntimeCheck":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T03:52:51.312Z","payload":{"eventBusEventId":"f989dc95-0c19-463f-9aa5-ef801d73a729","eventBusCorrelationId":"653d2900-9790-4348-bf1c-1dfbae3f0d5b","eventBusTimestamp":"2026-09-30T03:52:51.311Z","eventBusSource":"GANDOM_EVENT_BUS"}}
+gandom-core/p2p/evidence/security-events-proof.jsonl:1:{"step":"021","name":"SECURITY_EVENTS","eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","realRuntime":true,"securityEvent":"SECURITY_EVENT","aiWithdrawalAuthority":false,"aiTransferAuthority":false,"aiDepositAuthority":false,"result":"DENIED"}
+gandom-core/p2p/evidence/security-events-proof.jsonl:2:{"eventId":"5debe60b-447d-461f-b88b-9811ec871b9c","correlationId":"ae8a8cbc-5c55-4577-8543-110579f890ac","timestamp":"2026-09-30T04:05:26.999Z","type":"SECURITY_EVENT","source":"GANDOM_SECURITY_RUNTIME","payload":{"aiDepositAuthority":false,"aiWithdrawalAuthority":false,"aiTransferAuthority":false,"result":"DENIED"}}
+gandom-core/p2p/discovery/peer-discovery.js:67:console.log("AI_DEPOSIT_AUTHORITY=false");
+gandom-core/p2p/discovery/peer-discovery.js:68:console.log("AI_WITHDRAWAL_AUTHORITY=false");
+gandom-core/p2p/discovery/peer-discovery.js:69:console.log("AI_TRANSFER_AUTHORITY=false");
+gandom-core/p2p/event-bus/evidence/event-bus-proof.jsonl:5:{"eventId":"f989dc95-0c19-463f-9aa5-ef801d73a729","correlationId":"653d2900-9790-4348-bf1c-1dfbae3f0d5b","timestamp":"2026-09-30T03:52:51.311Z","source":"GANDOM_EVENT_BUS","type":{"eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","source":"GANDOM_SECURITY_RUNTIME","type":"SECURITY_EVENT","payload":{"control":"AI_FINANCIAL_AUTHORITY","withdrawalAuthority":false,"transferAuthority":false,"depositAuthority":false,"result":"DENIED","realRuntimeCheck":true}},"payload":{}}
+gandom-core/p2p/event-bus/event-bus.js:22:  throw new Error('P2P_REPORT_BUS_EMIT_NOT_AVAILABLE');
+gandom-core/p2p/event-bus/event-bus.js:56:if (require.main === module) {
+gandom-core/p2p/worker-state/engine/worker-state.js:11:  'FAILED',
+gandom-core/p2p/worker-state/engine/worker-state.js:47:if (require.main === module) {
+gandom-core/p2p/worker-state/contracts/WORKER-STATE-CONTRACT.json:20:    "FAILED",
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:5:  "name": "REVENUE_EVENTS",
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:7:  "fakeRevenue": false,
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:8:  "realRevenue": false,
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:13:  "eventType": "REVENUE_EVENT",
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:14:  "sourceModule": "GANDOM_REVENUE_EVENTS",
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:16:    "eventType": "REVENUE_PIPELINE_RUNTIME",
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:18:    "realRevenue": false,
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:19:    "fakeRevenue": false,
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json:23:    "source": "GANDOM_REVENUE_EVENTS"
+gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json:5:  "name": "REVENUE_EVENTS",
+gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json:7:  "dependencyRepair": true,
+gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json:9:  "fakeRevenue": false,
+gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json:10:  "realRevenue": false,
+gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json:17:  "evidence": "gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/governance/owner/owner-gate.sh:9:  echo "OWNER_GATE=FAIL"
+gandom-core/governance/owner/owner-gate.sh:15:  echo "OWNER_GATE=FAIL"
+gandom-core/governance/owner/owner-gate.sh:23:  echo "OWNER_GATE=FAIL"
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:25:    "first_failure_rule": true,
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:26:    "stop_on_failure": true
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:43:    "fail_closed": true
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:57:    "ai_withdrawal_authority": false,
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:58:    "ai_transfer_authority": false,
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:59:    "ai_owner_override": false,
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:66:    "must_not_claim_unverified_pass": true,
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:67:    "must_not_claim_execution_without_execution": true,
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:69:    "must_fail_closed_when_evidence_is_missing": true
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:112:      "fail_closed": {
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:25:    "first_failure_rule": true,
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:26:    "stop_on_failure": true
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:43:    "fail_closed": true
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:57:    "ai_withdrawal_authority": false,
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:58:    "ai_transfer_authority": false,
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:59:    "ai_owner_override": false,
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:66:    "must_not_claim_unverified_pass": true,
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:67:    "must_not_claim_execution_without_execution": true,
+gandom-core/governance/backups/L2558-BEFORE-ANTI-REPEAT-20260930-053926/GOLDEN-MOTHER-LAW-2558.json:69:    "must_fail_closed_when_evidence_is_missing": true
+gandom-core/governance/evidence-trust/verify-evidence.js:9:  console.log("INDEPENDENT_VERIFICATION=FAIL");
+gandom-core/governance/evidence-trust/verify-evidence.js:20:  console.log("INDEPENDENT_VERIFICATION=FAIL");
+gandom-core/governance/evidence-trust/verify-evidence.js:42:  console.log(name+"="+(value?"PASS":"FAIL"));
+gandom-core/governance/evidence-trust/verify-evidence.js:56:console.log("EVIDENCE_HASH_VERIFICATION="+(hashOk?"PASS":"FAIL"));
+gandom-core/governance/evidence-trust/verify-evidence.js:60:console.log("INDEPENDENT_VERIFICATION="+(ok?"PASS":"FAIL"));
+gandom-core/governance/EVIDENCE-TRUST-PROTOCOL-2558.json:5:  "mode": "FAIL_CLOSED",
+gandom-core/governance/evidence/LAW-2558-INSTALL-20260930T044748Z.json:16:  "runtimeExecutionClaim": false,
+gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json.bak.20260930T044748Z:34:    "mode": "FAIL_CLOSED",
+gandom-core/governance/bin/law2558.sh:30:  x.rules.ai_withdrawal_authority===false &&
+gandom-core/governance/bin/law2558.sh:31:  x.rules.ai_transfer_authority===false &&
+gandom-core/governance/bin/law2558.sh:36:console.log("LAW_2558_INTERNAL_VERIFICATION="+(required?"PASS":"FAIL"));
+/data/data/com.termux/files/home/mybot/package.json:4:  "description": "Gandom Blockchain Core V2 - Full Ecosystem",
+/data/data/com.termux/files/home/mybot/package.json:5:  "main": "main.js",
+/data/data/com.termux/files/home/mybot/package.json:8:    "start": "node main.js",
+/data/data/com.termux/files/home/mybot/package.json:9:    "test": "node blockchain/tests/framework-100-real.js",
+/data/data/com.termux/files/home/mybot/package.json:10:    "node": "node blockchain/index.js",
+/data/data/com.termux/files/home/mybot/package.json:11:    "exchange": "node market/exchange.js",
+/data/data/com.termux/files/home/mybot/package.json:12:    "ai": "node ai/index.js"
+/data/data/com.termux/files/home/mybot/package.json:15:    "blockchain",
+/data/data/com.termux/files/home/mybot/package.json:19:    "ai"
+/data/data/com.termux/files/home/mybot/index.js:14:let savedData = { ads: {}, users: {}, coins: {} };
+/data/data/com.termux/files/home/mybot/index.js:28:            ads: Object.fromEntries(ads), 
+/data/data/com.termux/files/home/mybot/index.js:41:const ads = new Map(Object.entries(savedData.ads || {}));
+/data/data/com.termux/files/home/mybot/index.js:48:const { publicKey } = crypto.generateKeyPairSync('rsa', {
+/data/data/com.termux/files/home/mybot/index.js:105:        ads: Object.fromEntries(ads),
+/data/data/com.termux/files/home/mybot/index.js:118:                ads.set(id, { ...data.ad, id, createdAt: Date.now() });
+/data/data/com.termux/files/home/mybot/index.js:207:                ads.set(data.ad.id, data.ad);
+/data/data/com.termux/files/home/mybot/package-lock.json:34:      "integrity": "sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==",
+/data/data/com.termux/files/home/mybot/package-lock.json:35:      "deprecated": "Active development of CryptoJS has been discontinued. This library is no longer maintained.",
+/data/data/com.termux/files/home/mybot/package-lock.json:114:        "0ecdsa-generate-keypair": "bin/0ecdsa-generate-keypair.js",
+/data/data/com.termux/files/home/mybot/package-lock.json:162:      "integrity": "sha512-q/UYvr1gOk4XII+Cu1CW2dINjYqJJFifTzogEaIARznrvX7uOlHsdTEXcnOBMuIsrCGEEKdNxi74kyMLZlKVfw==",
+/data/data/com.termux/files/home/mybot/index.js.backup:13:let savedData = { ads: {}, users: {}, coins: {} };
+/data/data/com.termux/files/home/mybot/index.js.backup:27:            ads: Object.fromEntries(ads), 
+/data/data/com.termux/files/home/mybot/index.js.backup:40:const ads = new Map(Object.entries(savedData.ads || {}));
+/data/data/com.termux/files/home/mybot/index.js.backup:47:const { publicKey } = crypto.generateKeyPairSync('rsa', {
+/data/data/com.termux/files/home/mybot/index.js.backup:75:        ads: Object.fromEntries(ads),
+/data/data/com.termux/files/home/mybot/index.js.backup:88:                ads.set(id, { ...data.ad, id, createdAt: Date.now() });
+/data/data/com.termux/files/home/mybot/index.js.backup:163:                ads.set(data.ad.id, data.ad);
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-161445:13:let savedData = { ads: {}, users: {}, coins: {} };
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-161445:27:            ads: Object.fromEntries(ads), 
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-161445:40:const ads = new Map(Object.entries(savedData.ads || {}));
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-161445:47:const { publicKey } = crypto.generateKeyPairSync('rsa', {
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-161445:75:        ads: Object.fromEntries(ads),
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-161445:88:                ads.set(id, { ...data.ad, id, createdAt: Date.now() });
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-161445:163:                ads.set(data.ad.id, data.ad);
+/data/data/com.termux/files/home/mybot/index.js.backup2:13:let savedData = { ads: {}, users: {}, coins: {} };
+/data/data/com.termux/files/home/mybot/index.js.backup2:27:            ads: Object.fromEntries(ads), 
+/data/data/com.termux/files/home/mybot/index.js.backup2:40:const ads = new Map(Object.entries(savedData.ads || {}));
+/data/data/com.termux/files/home/mybot/index.js.backup2:47:const { publicKey } = crypto.generateKeyPairSync('rsa', {
+/data/data/com.termux/files/home/mybot/index.js.backup2:75:        ads: Object.fromEntries(ads),
+/data/data/com.termux/files/home/mybot/index.js.backup2:88:                ads.set(id, { ...data.ad, id, createdAt: Date.now() });
+/data/data/com.termux/files/home/mybot/index.js.backup2:163:                ads.set(data.ad.id, data.ad);
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-164741:13:let savedData = { ads: {}, users: {}, coins: {} };
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-164741:27:            ads: Object.fromEntries(ads), 
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-164741:40:const ads = new Map(Object.entries(savedData.ads || {}));
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-164741:47:const { publicKey } = crypto.generateKeyPairSync('rsa', {
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-164741:75:        ads: Object.fromEntries(ads),
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-164741:88:                ads.set(id, { ...data.ad, id, createdAt: Date.now() });
+/data/data/com.termux/files/home/mybot/index.js.backup.20260927-164741:163:                ads.set(data.ad.id, data.ad);
+/data/data/com.termux/files/home/mybot/ipfs/index.js:53:      if (sha256(data) !== hash) throw new Error('CHUNK_INTEGRITY_FAILED:' + hash);
+/data/data/com.termux/files/home/mybot/ipfs/index.js:84:      await send(peer, { type: 'ipfs_manifest', cid, manifest });
+/data/data/com.termux/files/home/mybot/ipfs/index.js:87:        await send(peer, { type: 'ipfs_chunk', cid, hash, data: data.toString('base64') });
+/data/data/com.termux/files/home/mybot/ipfs/store/chunks/2be033a0850ba86dfa6789880a858d23a63c97bc13eb5d2d6020140a41b9e57b:1:{"algorithm":"AES-256-GCM","iv":"3APbkBODai8pWLBZ","authTag":"yr8dLzKXPssHaUIyPdWbkQ==","ciphertext":"/0VY+02COgtDz8eKR6FQg2yVa8gUcYx2jfxv"}
+/data/data/com.termux/files/home/mybot/blockchain/index.js:4: * GANDOM - Blockchain
+/data/data/com.termux/files/home/mybot/blockchain/index.js:12: * - Chain validation
+/data/data/com.termux/files/home/mybot/blockchain/index.js:13: * - Longest valid chain consensus
+/data/data/com.termux/files/home/mybot/blockchain/index.js:80: * Blockchain
+/data/data/com.termux/files/home/mybot/blockchain/index.js:83:class Blockchain {
+/data/data/com.termux/files/home/mybot/blockchain/index.js:97:    this.chain = [
+/data/data/com.termux/files/home/mybot/blockchain/index.js:121:    return this.chain[
+/data/data/com.termux/files/home/mybot/blockchain/index.js:122:      this.chain.length - 1
+/data/data/com.termux/files/home/mybot/blockchain/index.js:133:        this.chain.length;
+/data/data/com.termux/files/home/mybot/blockchain/index.js:144:          this.chain.length,
+/data/data/com.termux/files/home/mybot/blockchain/index.js:154:    this.chain.push(block);
+/data/data/com.termux/files/home/mybot/blockchain/index.js:159:  isChainValid(chain = this.chain) {
+/data/data/com.termux/files/home/mybot/blockchain/index.js:161:      !Array.isArray(chain) ||
+/data/data/com.termux/files/home/mybot/blockchain/index.js:162:      chain.length === 0
+/data/data/com.termux/files/home/mybot/blockchain/index.js:167:    const genesis = chain[0];
+/data/data/com.termux/files/home/mybot/blockchain/index.js:178:      Blockchain.calculateBlockHash(
+/data/data/com.termux/files/home/mybot/blockchain/index.js:187:      i < chain.length;
+/data/data/com.termux/files/home/mybot/blockchain/index.js:191:        chain[i];
+/data/data/com.termux/files/home/mybot/blockchain/index.js:194:        chain[i - 1];
+/data/data/com.termux/files/home/mybot/blockchain/index.js:210:        Blockchain.calculateBlockHash(
+/data/data/com.termux/files/home/mybot/blockchain/index.js:229:  getChain() {
+/data/data/com.termux/files/home/mybot/blockchain/index.js:230:    return this.chain;
+/data/data/com.termux/files/home/mybot/blockchain/index.js:326:      const block of this.chain
+/data/data/com.termux/files/home/mybot/blockchain/index.js:371:  replaceChain(newChain) {
+/data/data/com.termux/files/home/mybot/blockchain/index.js:373:      !Array.isArray(newChain)
+/data/data/com.termux/files/home/mybot/blockchain/index.js:379:      newChain.length <=
+/data/data/com.termux/files/home/mybot/blockchain/index.js:380:      this.chain.length
+/data/data/com.termux/files/home/mybot/blockchain/index.js:386:      !this.isChainValid(
+/data/data/com.termux/files/home/mybot/blockchain/index.js:387:        newChain
+/data/data/com.termux/files/home/mybot/blockchain/index.js:393:    this.chain =
+/data/data/com.termux/files/home/mybot/blockchain/index.js:395:        JSON.stringify(newChain)
+/data/data/com.termux/files/home/mybot/blockchain/index.js:402:    let peerChains;
+/data/data/com.termux/files/home/mybot/blockchain/index.js:407:      peerChains =
+/data/data/com.termux/files/home/mybot/blockchain/index.js:408:        await peers();
+/data/data/com.termux/files/home/mybot/blockchain/index.js:410:      peerChains =
+/data/data/com.termux/files/home/mybot/blockchain/index.js:415:      !Array.isArray(peerChains)
+/data/data/com.termux/files/home/mybot/blockchain/index.js:421:          this.chain.length
+/data/data/com.termux/files/home/mybot/blockchain/index.js:425:    let longestChain =
+/data/data/com.termux/files/home/mybot/blockchain/index.js:426:      this.chain;
+/data/data/com.termux/files/home/mybot/blockchain/index.js:429:      const peer of peerChains
+/data/data/com.termux/files/home/mybot/blockchain/index.js:437:        Array.isArray(peer.chain)
+/data/data/com.termux/files/home/mybot/blockchain/index.js:440:          peer.chain;
+/data/data/com.termux/files/home/mybot/blockchain/index.js:451:          longestChain.length &&
+/data/data/com.termux/files/home/mybot/blockchain/index.js:452:        this.isChainValid(candidate)
+/data/data/com.termux/files/home/mybot/blockchain/index.js:454:        longestChain =
+/data/data/com.termux/files/home/mybot/blockchain/index.js:460:      longestChain !== this.chain &&
+/data/data/com.termux/files/home/mybot/blockchain/index.js:461:      this.replaceChain(
+/data/data/com.termux/files/home/mybot/blockchain/index.js:462:        longestChain
+/data/data/com.termux/files/home/mybot/blockchain/index.js:468:        this.chain.length
+/data/data/com.termux/files/home/mybot/blockchain/index.js:475:        this.chain
+/data/data/com.termux/files/home/mybot/blockchain/index.js:480:  static fromChain(
+/data/data/com.termux/files/home/mybot/blockchain/index.js:481:    chain,
+/data/data/com.termux/files/home/mybot/blockchain/index.js:484:    const blockchain =
+/data/data/com.termux/files/home/mybot/blockchain/index.js:485:      new Blockchain(
+/data/data/com.termux/files/home/mybot/blockchain/index.js:490:      !Array.isArray(chain) ||
+/data/data/com.termux/files/home/mybot/blockchain/index.js:491:      chain.length === 0
+/data/data/com.termux/files/home/mybot/blockchain/index.js:494:        'INVALID_CHAIN'
+/data/data/com.termux/files/home/mybot/blockchain/index.js:499:      !blockchain.isChainValid(
+/data/data/com.termux/files/home/mybot/blockchain/index.js:500:        chain
+/data/data/com.termux/files/home/mybot/blockchain/index.js:504:        'INVALID_CHAIN'
+/data/data/com.termux/files/home/mybot/blockchain/index.js:508:    blockchain.chain =
+/data/data/com.termux/files/home/mybot/blockchain/index.js:510:        JSON.stringify(chain)
+/data/data/com.termux/files/home/mybot/blockchain/index.js:513:    return blockchain;
+/data/data/com.termux/files/home/mybot/blockchain/index.js:537:  Blockchain
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:2:class AdvancedBlockchain {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:4:    this.options=options||{}; this.chain=[]; this.mempool=new Map();
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:6:    this.chain = [];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:23:      return '[' + value.map(v => AdvancedBlockchain.canonical(v)).join(',') + ']';
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:32:          AdvancedBlockchain.canonical(value[k])
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:49:    return AdvancedBlockchain.sha256(
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:50:      AdvancedBlockchain.canonical(clean)
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:141:      return AdvancedBlockchain.sha256('');
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:157:          AdvancedBlockchain.sha256(left + right)
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:179:    return AdvancedBlockchain.sha256(
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:180:      AdvancedBlockchain.canonical(
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:205:    index = this.chain.length;
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:209:    const previous = this.chain[index - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:213:    index = this.chain.length;
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:217:    const previous = this.chain[index - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:221:    index = this.chain.length;
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:225:    const previous = this.chain[index - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:229:      index = this.chain.length;
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:233:      const previous = this.chain[index - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:293:    this.chain.push(block);
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:354:    Array.isArray(this.chain)
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:355:      ? this.chain[block.index - 1]
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:368:  if (block.index > 0 && Array.isArray(this.chain)) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:369:    for (let i = 0; i < this.chain.length; i++) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:370:      const existing = this.chain[i];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:426:    const previous = this.chain[this.chain.length - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:438:    this.chain.push(block);
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:448:    const previous = this.chain[this.chain.length - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:454:    if (this.chain.some(b => b.hash === block.hash)) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:458:    this.chain.push(block);
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:472:    const currentLength = Array.isArray(this.chain) ? this.chain.length : 0;
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:479:    for (let i = 0; i < this.chain.length; i++) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:480:      const block = this.chain[i];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:513:    if (this.chain.length > 0) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:514:      return this.chain[0];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:526:    this.chain.push(genesis);
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:530:  isChainValid() {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:531:    if (!Array.isArray(this.chain)) return false;
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:532:    for (let i = 0; i < this.chain.length; i++) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:533:      const b = this.chain[i];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:536:        const prev = this.chain[i-1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:543:  calculateChainWork(chain) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:544:    const source = Array.isArray(chain) ? chain : this.chain;
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:568:  getChain() {
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:569:    return this.chain;
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:574:      chainLength: this.chain.length,
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:577:      tip: this.chain[this.chain.length - 1]?.hash || null
+/data/data/com.termux/files/home/mybot/blockchain/advanced.js:582:module.exports={AdvancedBlockchain};
+/data/data/com.termux/files/home/mybot/blockchain/core-crypto.js:42:function createKeyPair() {
+/data/data/com.termux/files/home/mybot/blockchain/core-crypto.js:43:  return crypto.generateKeyPairSync('ed25519');
+/data/data/com.termux/files/home/mybot/blockchain/core-crypto.js:82:  createKeyPair,
+/data/data/com.termux/files/home/mybot/blockchain/merkle.js:7:function hashPair(left, right) {
+/data/data/com.termux/files/home/mybot/blockchain/merkle.js:33:      next.push(hashPair(left, right));
+/data/data/com.termux/files/home/mybot/blockchain/merkle.js:79:      next.push(hashPair(left, right));
+/data/data/com.termux/files/home/mybot/blockchain/merkle.js:111:      current = hashPair(sibling.hash, current);
+/data/data/com.termux/files/home/mybot/blockchain/merkle.js:113:      current = hashPair(current, sibling.hash);
+/data/data/com.termux/files/home/mybot/blockchain/merkle.js:124:  hashPair,
+/data/data/com.termux/files/home/mybot/blockchain/utxo.js:8:  createKeyPair,
+/data/data/com.termux/files/home/mybot/blockchain/utxo.js:698:  createKeyPair
+/data/data/com.termux/files/home/mybot/blockchain/tx-validation.js:56:     * This also protects against modified outputs/inputs.
+/data/data/com.termux/files/home/mybot/blockchain/tests/section9-mempool-real.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section9-mempool-real.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section10-block-validation.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section10-block-validation.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:9:function fail(s,e){console.log(`${s}=FAIL`);console.error(String(e&&e.stack||e));process.exitCode=1;throw e}
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:11:function assert(x,m){if(!x)throw new Error(m||'ASSERT_FAILED')}
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:23:  assert(m && typeof m.AdvancedBlockchain==='function','AdvancedBlockchain export missing');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:24:  return m.AdvancedBlockchain;
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:29:    'minePendingTransactions','isChainValid','getChain',
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:31:    'getConfirmations','resolveFork','calculateChainWork',
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:36:console.log('===== GANDOM BLOCKCHAIN CORE V2 : 21-28 LIVE =====');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:55:  if(Array.isArray(b.chain)&&b.chain.length>0) genesis=b.chain[0];
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:58:    if(genesis && Array.isArray(b.chain) && b.chain.length===0)b.chain.push(genesis);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:71:  assert(mined!==undefined && Array.isArray(b.chain) && b.chain.length>=2,'MINING_FAILED');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:73:  assert(b.isChainValid()===true,'CHAIN_INVALID');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:74:  ok('API_IS_CHAIN_VALID');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:75:  assert(Array.isArray(b.getChain()),'GET_CHAIN_FAILED');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:76:  ok('API_GET_CHAIN');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:77:  assert(b.getStatus()&&typeof b.getStatus()==='object','STATUS_FAILED');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:80:  const last=b.chain[b.chain.length-1];
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:89:  const work=b.calculateChainWork(b.chain);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:90:  assert(typeof work==='bigint'||typeof work==='number'||typeof work==='string','CHAINWORK_TYPE');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:91:  ok('API_CALCULATE_CHAIN_WORK');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:99:  assert(b.validateBlock(last,b.chain[b.chain.length-2])===true,'VALID_BLOCK_REJECTED');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:102:  const same=b.reorganize(b.chain);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:112:  assert(exported.AdvancedBlockchain===C,'EXPORT_REFERENCE');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:113:  ok('EXPORT_ADVANCED_BLOCKCHAIN');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:123:    ['P2P','p2p'],['DHT','dht'],['IPFS','ipfs'],['BLOCKCHAIN','blockchain'],
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:124:    ['SECURITY','security'],['TOR','tor'],['AI','ai'],
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:126:    ['INDUSTRIES','industr'],['COIN_SYSTEM','coin'],['EXCHANGE','exchange']
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:145:  let rg=R.chain[0]||R.createGenesisBlock();
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:146:  if(R.chain.length===0)R.chain.push(rg);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:147:  assert(R.chain.length>=1,'GENESIS'); ok('GENESIS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:164:  const before=R.chain.length;
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:166:  assert(R.chain.length===before+1,'BLOCK_CREATION');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:169:  const block=R.chain[R.chain.length-1];
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:170:  assert(R.validateBlock(block,R.chain[R.chain.length-2])===true,'BLOCK_VALIDATION');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:187:  try{merkleRejected=R.validateBlock(tam,R.chain[R.chain.length-2])===false}
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:192:  assert(R.isChainValid()===true,'CHAIN_VALIDATION');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:193:  ok('CHAIN_VALIDATION');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:195:  const cw=R.calculateChainWork(R.chain);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:196:  assert(cw!==undefined,'CHAINWORK');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:197:  ok('CHAINWORK');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:214:    path.join(parent,'blockchain-advanced.json'),
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:215:    path.join(ROOT,'blockchain-advanced.json')
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:249:    return R.validateBlock(x,R.chain[R.chain.length-2]);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:255:    return R.validateBlock(x,R.chain[R.chain.length-2]);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:261:    return R.validateBlock(x,R.chain[R.chain.length-2]);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:277:    return R.validateBlock(x,R.chain[R.chain.length-2]);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:283:    return R.validateBlock(x,R.chain[R.chain.length-2]);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:289:    return R.validateBlock(x,R.chain[R.chain.length-2]);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:295:    return R.validateBlock(x,R.chain[R.chain.length-2]);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:309:    const fake={chain:[{hash:'bad'}]};
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:310:    return Array.isArray(fake.chain)&&fake.chain[0].hash==='bad';
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:314:    const a=R.chain.slice(0,1);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:315:    const b=R.chain.slice();
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:320:    const a=R.chain.slice();
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:321:    const b=R.chain.slice();
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:340:  R.validateBlock(block,R.chain[R.chain.length-2]);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:367:  console.log('FORK_CHOICE=Bitcoin selects the chain with greatest accumulated proof-of-work');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:368:  console.log('NOTE=This is a technical comparison, not a superiority claim');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:379:  console.log('FLOW_FAILURE=ONLY_IF_RUNTIME_FAILURE_OCCURS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:380:  console.log('FLOW_REPAIR=NOT_REQUIRED_IN_CURRENT_RUN');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:381:  console.log('FLOW_REAL_EXECUTION_2=NOT_CLAIMED_WITHOUT_REPAIR');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28.js:389:  console.error('FINAL=REAL_EXECUTION_FAIL'); console.error(e.stack || e);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:8:const { AdvancedBlockchain } = require('../advanced');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:11:let failed = 0;
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:12:const failures = [];
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:21:    console.log(`${name}=FAIL_REAL ${e.message}`);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:22:    failures.push(`${name}: ${e.stack || e.message}`);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:23:    failed++;
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:28:  const b = new AdvancedBlockchain({difficulty: 2});
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:29:  if (!Array.isArray(b.chain)) throw new Error('CHAIN_NOT_ARRAY');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:35:  if (b.chain.length !== 1)
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:36:    throw new Error(`EXPECTED_GENESIS_CHAIN_1_GOT_${b.chain.length}`);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:38:  const g = b.chain[0];
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:46:  if (!b.isChainValid())
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:47:    throw new Error('INITIAL_CHAIN_INVALID');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:66:console.log('===== GANDOM BLOCKCHAIN CORE V2 : 21-28 LIVE =====');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:91:    'calculateChainWork',
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:94:    'isChainValid',
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:95:    'getChain',
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:100:    AdvancedBlockchain.prototype
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:144:  if (b.chain.length !== 2)
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:145:    throw new Error('CHAIN_NOT_EXTENDED');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:150:  if (!b.isChainValid())
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:151:    throw new Error('CHAIN_INVALID_AFTER_MINING');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:160:  if (!s || typeof s.chainLength !== 'number')
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:171:  if (typeof m.AdvancedBlockchain !== 'function')
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:174:  if (!Object.keys(m).includes('AdvancedBlockchain'))
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:183:  ['BLOCKCHAIN', '../advanced'],
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:272:  if (!b.validateBlock(block, b.chain[0]))
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:284:  if (b.validateBlock(block, b.chain[0]))
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:353:test('SECTION_24_CHAINWORK', () => {
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:356:  const before = b.calculateChainWork(b.getChain());
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:361:  const after = b.calculateChainWork(b.getChain());
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:364:    throw new Error('CHAINWORK_NOT_INCREASED');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:421:  if (b.validateBlock(block, b.chain[0]))
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:433:  if (b.validateBlock(block, b.chain[0]))
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:447:  if (b.validateBlock(block, b.chain[0]))
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:459:  if (b.validateBlock(block, b.chain[0]))
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:471:  if (b.validateBlock(block, b.chain[0]))
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:487:        prevTxId: String(i).padStart(64, '0'),
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:527:    throw new Error('COMPARISON_PREREQUISITE_FAILED');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:539:  console.log('FLOW_REPAIR=ONLY_AFTER_REAL_FAILURE');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:547:console.log('FAILED=' + failed);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:548:console.log('TOTAL=' + (passed + failed));
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:550:if (failed > 0) {
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:551:  console.log('===== FAILURES =====');
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:553:  for (const f of failures)
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:554:    console.log('FAIL=' + f);
+/data/data/com.termux/files/home/mybot/blockchain/tests/MASTER-21-28-LIVE.js:556:  console.log('FINAL=REAL_EXECUTION_FAIL');
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-real.js:33:  'CHAIN_VALIDATION',
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-real.js:36:  'CHAINWORK',
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-real.js:119:  'section11-chain-validation.js',
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-real.js:120:  'section12-chain-work.js',
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-real.js:150:console.log('=== GANDOM BLOCKCHAIN CORE V2 — FRAMEWORK 100 ===');
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-real.js:177:    `TEST_${String(n).padStart(3, '0')} ${name}=${status}`
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-latest.log:1:=== GANDOM BLOCKCHAIN CORE V2 — FRAMEWORK 100 ===
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-latest.log:27:TEST_026 CHAIN_VALIDATION=PENDING
+/data/data/com.termux/files/home/mybot/blockchain/tests/framework-100-latest.log:30:TEST_029 CHAINWORK=PENDING
+/data/data/com.termux/files/home/mybot/blockchain/tests/section11-chain-validation.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section11-chain-validation.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section14-reorg.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section14-reorg.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section16-persistence.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section16-persistence.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section17-crash-recovery.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section17-crash-recovery.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section18-overflow.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section18-overflow.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section19-serialization.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section19-serialization.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section20-security.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section20-security.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section24-real-tests.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section24-real-tests.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section25-attack-tests.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section25-attack-tests.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section26-benchmark.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section26-benchmark.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section12-chain-work.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section12-chain-work.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section13-fork-resolution.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section13-fork-resolution.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section15-confirmations.js:27:console.log('CHAIN_VALIDATION=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/tests/section15-confirmations.js:30:console.log('CHAINWORK=PASS');
+/data/data/com.termux/files/home/mybot/blockchain/coinbase.js:6: * GANDOM BLOCKCHAIN V2
+/data/data/com.termux/files/home/mybot/blockchain/utxo.js.bak-before-section7-repair:7:  createKeyPair,
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:56:  _fail(code, message) {
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:80:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:87:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:94:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:96:        'Transaction must contain inputs'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:101:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:103:        'Transaction must contain outputs'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:110:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:117:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:126:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:133:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:134:        'SIGNATURE_VALIDATOR_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:135:        'verifySignedTransaction is unavailable'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:143:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:145:          'Transaction signature verification failed'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:149:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:153:          : 'Transaction signature verification failed'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:158:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:159:        'UTXO_SET_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:167:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:168:        'UTXO_VALIDATOR_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:169:        'UTXO validateInput() is unavailable'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:179:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:181:          'Input does not contain a valid previous-output reference'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:186:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:201:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:217:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:221:            : `UTXO validation failed: ${key}`
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:226:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:228:          `UTXO validation failed: ${key}`
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js:256:            : 'MEMPOOL_VALIDATE_FAILED';
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:56:  _fail(code, message) {
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:80:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:87:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:94:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:96:        'Transaction must contain inputs'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:101:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:103:        'Transaction must contain outputs'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:110:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:117:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:126:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:133:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:134:        'SIGNATURE_VALIDATOR_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:135:        'verifySignedTransaction is unavailable'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:143:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:145:          'Transaction signature verification failed'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:149:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:153:          : 'Transaction signature verification failed'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:158:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:159:        'UTXO_SET_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:167:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:168:        'UTXO_VALIDATOR_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:169:        'UTXO validateInput() is unavailable'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:179:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:181:          'Input does not contain a valid previous-output reference'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:186:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:201:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:217:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:221:            : `UTXO validation failed: ${key}`
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:226:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-before-section9-return-fix:228:          `UTXO validation failed: ${key}`
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:56:  _fail(code, message) {
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:80:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:87:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:94:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:96:        'Transaction must contain inputs'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:101:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:103:        'Transaction must contain outputs'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:110:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:117:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:126:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:133:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:134:        'SIGNATURE_VALIDATOR_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:135:        'verifySignedTransaction is unavailable'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:143:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:145:          'Transaction signature verification failed'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:149:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:153:          : 'Transaction signature verification failed'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:158:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:159:        'UTXO_SET_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:167:      return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:168:        'UTXO_VALIDATOR_UNAVAILABLE',
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:169:        'UTXO validateInput() is unavailable'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:179:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:181:          'Input does not contain a valid previous-output reference'
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:186:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:201:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:217:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:221:            : `UTXO validation failed: ${key}`
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:226:        return this._fail(
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:228:          `UTXO validation failed: ${key}`
+/data/data/com.termux/files/home/mybot/blockchain/mempool.js.bak-fee-priority-20260928-134732:256:            : 'MEMPOOL_VALIDATE_FAILED';
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:2:const { AdvancedBlockchain } = require('./advanced.js');
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:4:class GandomLiveBlockchain extends AdvancedBlockchain {
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:8:    this.chain = [];
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:25:      return '[' + value.map(v => GandomLiveBlockchain.canonical(v)).join(',') + ']';
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:34:          GandomLiveBlockchain.canonical(value[k])
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:51:    return GandomLiveBlockchain.sha256(
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:52:      GandomLiveBlockchain.canonical(clean)
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:143:      return GandomLiveBlockchain.sha256('');
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:159:          GandomLiveBlockchain.sha256(left + right)
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:181:    return GandomLiveBlockchain.sha256(
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:182:      GandomLiveBlockchain.canonical(
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:263:    this.chain.push(block);
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:347:    const previous = this.chain[this.chain.length - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:359:    this.chain.push(block);
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:369:    const previous = this.chain[this.chain.length - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:375:    if (this.chain.some(b => b.hash === block.hash)) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:379:    this.chain.push(block);
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:388:  isChainValid() {
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:389:    if (!this.chain.length) return false;
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:391:    for (let i = 0; i < this.chain.length; i++) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:392:      const previous = i === 0 ? null : this.chain[i - 1];
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:394:      if (!this.validateBlock(this.chain[i], previous)) {
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:402:  getChain() {
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:403:    return this.chain;
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:408:      chainLength: this.chain.length,
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:411:      tip: this.chain[this.chain.length - 1]?.hash || null
+/data/data/com.termux/files/home/mybot/blockchain/advanced-live.js:417:  GandomLiveBlockchain
+/data/data/com.termux/files/home/mybot/security/index.js:42:  return code.toString().padStart(6, '0');
+/data/data/com.termux/files/home/mybot/security/index.js:50:function generateWalletBackup(wallet) {
+/data/data/com.termux/files/home/mybot/security/index.js:52:    address: wallet.address,
+/data/data/com.termux/files/home/mybot/security/index.js:53:    publicKey: wallet.publicKey,
+/data/data/com.termux/files/home/mybot/security/index.js:54:    mnemonic: wallet.mnemonic,
+/data/data/com.termux/files/home/mybot/security/index.js:61:function restoreWalletFromBackup(encryptedBackup) {
+/data/data/com.termux/files/home/mybot/security/index.js:97:console.log('--- Test 4: Wallet Backup ---');
+/data/data/com.termux/files/home/mybot/security/index.js:98:const mockWallet = {
+/data/data/com.termux/files/home/mybot/security/index.js:103:const backup = generateWalletBackup(mockWallet);
+/data/data/com.termux/files/home/mybot/security/index.js:105:const restored = restoreWalletFromBackup(backup);
+/data/data/com.termux/files/home/mybot/security/index.js:107:console.log('Match: ' + (restored.address === mockWallet.address));
+/data/data/com.termux/files/home/mybot/security/index.js:109:module.exports = { encrypt, decrypt, hashPassword, verifyPassword, generate2FASecret, generate2FACode, verify2FACode, generateWalletBackup, restoreWalletFromBackup };
+/data/data/com.termux/files/home/mybot/tor/index.js:40:      payloadSize: payload.length
+/data/data/com.termux/files/home/mybot/integration/index.js:4:const { Blockchain } = require('../blockchain');
+/data/data/com.termux/files/home/mybot/integration/index.js:18: * 4. Blockchain
+/data/data/com.termux/files/home/mybot/integration/index.js:32:    this.blockchain =
+/data/data/com.termux/files/home/mybot/integration/index.js:33:      new Blockchain({
+/data/data/com.termux/files/home/mybot/integration/index.js:56:      blockchain: this.blockchain,
+/data/data/com.termux/files/home/mybot/integration/index.js:85:      blockchain: {
+/data/data/com.termux/files/home/mybot/integration/index.js:87:          this.blockchain instanceof Blockchain,
+/data/data/com.termux/files/home/mybot/integration/index.js:88:        chainLength:
+/data/data/com.termux/files/home/mybot/integration/index.js:89:          this.blockchain.getChain().length,
+/data/data/com.termux/files/home/mybot/integration/index.js:91:          this.blockchain.isChainValid()
+/data/data/com.termux/files/home/mybot/integration/index.js:98:          typeof this.security.generateRSAKeyPair === 'function'
+/data/data/com.termux/files/home/mybot/integration/index.js:130:   * ثبت CID در Blockchain
+/data/data/com.termux/files/home/mybot/integration/index.js:141:    return this.blockchain.addTransaction({
+/data/data/com.termux/files/home/mybot/integration/index.js:153:    return this.blockchain
+/data/data/com.termux/files/home/mybot/integration/index.js:190:    return this.security.generateRSAKeyPair();
+/data/data/com.termux/files/home/mybot/integration/index.js:243:   * Blockchain
+/data/data/com.termux/files/home/mybot/integration/index.js:277:      this.blockchain.addTransaction({
+/data/data/com.termux/files/home/mybot/integration/test.js:32:console.log('Blockchain valid:', g.blockchain.isChainValid());
+/data/data/com.termux/files/home/mybot/integration/test.js:33:console.log('Chain length:', g.blockchain.getChain().length);
+/data/data/com.termux/files/home/mybot/integration/test.js:38:  g.blockchain.isChainValid() === true &&
+/data/data/com.termux/files/home/mybot/integration/test.js:39:  g.blockchain.getChain().length === 1 &&
+/data/data/com.termux/files/home/mybot/integration/test.js:45:  console.log('\nGANDOM_1_TO_6_INTEGRATION=FAIL');
+/data/data/com.termux/files/home/mybot/ai/index.js:5:const DEFAULT_BASE_URL = 'https://openrouter.ai/api/v1';
+/data/data/com.termux/files/home/mybot/ai/index.js:7:const CACHE_FILE = path.join(__dirname, 'ai-cache.json');
+/data/data/com.termux/files/home/mybot/ai/index.js:9:class AI {
+/data/data/com.termux/files/home/mybot/ai/index.js:80:  isAvailable() {
+/data/data/com.termux/files/home/mybot/ai/index.js:85:    return this.isAvailable();
+/data/data/com.termux/files/home/mybot/ai/index.js:143:    if (!this.isAvailable()) {
+/data/data/com.termux/files/home/mybot/ai/index.js:165:      const response = await fetch(
+/data/data/com.termux/files/home/mybot/ai/index.js:190:      const data = await response.json();
+/data/data/com.termux/files/home/mybot/ai/index.js:203:        throw new Error('AI_EMPTY_RESPONSE');
+/data/data/com.termux/files/home/mybot/ai/index.js:215:    if (!this.isAvailable()) {
+/data/data/com.termux/files/home/mybot/ai/index.js:226:      const response = await fetch(
+/data/data/com.termux/files/home/mybot/ai/index.js:246:      const data = await response.json();
+/data/data/com.termux/files/home/mybot/ai/index.js:300:      await this.generateAdDescription(adData);
+/data/data/com.termux/files/home/mybot/ai/index.js:304:      aiDescription: description
+/data/data/com.termux/files/home/mybot/ai/index.js:313:  async publishAdWithAI(adData) {
+/data/data/com.termux/files/home/mybot/ai/index.js:314:    const enriched = await this.enrichAd(adData);
+/data/data/com.termux/files/home/mybot/ai/index.js:321:      await this.p2p(enriched);
+/data/data/com.termux/files/home/mybot/ai/index.js:325:      await this.p2p.broadcast(enriched);
+/data/data/com.termux/files/home/mybot/ai/index.js:329:      await this.p2p.broadcastMessage(enriched);
+/data/data/com.termux/files/home/mybot/ai/index.js:333:      await this.p2p.broadcastAd(enriched);
+/data/data/com.termux/files/home/mybot/ai/index.js:347:      ok: this.isAvailable(),
+/data/data/com.termux/files/home/mybot/ai/index.js:348:      configured: this.isAvailable(),
+/data/data/com.termux/files/home/mybot/ai/index.js:355:      available: this.isAvailable(),
+/data/data/com.termux/files/home/mybot/ai/index.js:362:const GandomAI = AI;
+/data/data/com.termux/files/home/mybot/ai/index.js:365:  AI,
+/data/data/com.termux/files/home/mybot/ai/index.js:366:  GandomAI
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:13:    'Current GDM price: 1.15 USDT',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:14:    'GDM is trading at 1.15 USD',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:18:    'To buy GDM, go to DEX',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:19:    'Enter the amount of GDM you want to buy',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:20:    'Buy GDM through decentralized exchange'
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:23:    'To sell GDM, go to DEX',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:24:    'Enter the amount of GDM you want to sell',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:25:    'Sell GDM through decentralized exchange'
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:27:  wallet: [
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:28:    'Your wallet: 1,200,000,000 GDM',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:29:    'Balance: 1.2 billion GDM',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:30:    'Go to Wallet section to see your balance'
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:37:  airdrop: [
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:38:    'Airdrop is active! Get 1000 GDM free',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:39:    'Register to receive airdrop',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:40:    '1000 GDM free for new users'
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:43:    'Commands: /price /buy /sell /wallet /kyc /airdrop /help',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:44:    'Available commands: /price /buy /sell /wallet /kyc /airdrop'
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:47:    'Sorry, I did not understand. Please try again.',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:68:  if (lower.includes('/wallet') || lower.includes('wallet')) return 'wallet';
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:70:  if (lower.includes('/airdrop') || lower.includes('airdrop')) return 'airdrop';
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:96:console.log('GANDOM AI CHATBOT');
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:102:  'What is GDM price?',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:103:  'How to buy GDM?',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:104:  'My wallet balance?',
+/data/data/com.termux/files/home/mybot/ai/chatbot.js:106:  'What is airdrop?',
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:11:    "message": "What is GDM price?",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:13:    "response": "GDM is trading at 1.15 USD",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:18:    "message": "How to buy GDM?",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:20:    "response": "Buy GDM through decentralized exchange",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:25:    "message": "My wallet balance?",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:26:    "intent": "wallet",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:27:    "response": "Balance: 1.2 billion GDM",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:39:    "message": "What is airdrop?",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:40:    "intent": "airdrop",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:41:    "response": "Register to receive airdrop",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:48:    "response": "Commands: /price /buy /sell /wallet /kyc /airdrop /help",
+/data/data/com.termux/files/home/mybot/ai/chat-log.json:55:    "response": "Sorry, I did not understand. Please try again.",
+/data/data/com.termux/files/home/mybot/autopublish/index.js:156:    const creation = await requestJson(
+/data/data/com.termux/files/home/mybot/autopublish/index.js:167:      throw new Error('INSTAGRAM_MEDIA_CREATION_FAILED');
+/data/data/com.termux/files/home/mybot/autopublish/index.js:279:        const result = await this.publishItem(item);
+/data/data/com.termux/files/home/mybot/autopublish/index.js:285:        item.status = 'failed';
+/data/data/com.termux/files/home/mybot/autopublish/index.js:286:        item.failedAt = Date.now();
+/data/data/com.termux/files/home/mybot/autopublish/index.js:315:  async publishAdWithAI(adData, ai) {
+/data/data/com.termux/files/home/mybot/autopublish/index.js:316:    if (!ai || typeof ai.enrichAd !== 'function') {
+/data/data/com.termux/files/home/mybot/autopublish/index.js:317:      throw new Error('AI_NOT_CONFIGURED');
+/data/data/com.termux/files/home/mybot/autopublish/index.js:320:    const enriched = await ai.enrichAd(adData);
+/data/data/com.termux/files/home/mybot/autopublish/index.js:326:      enriched.aiDescription || '',
+/data/data/com.termux/files/home/mybot/autopublish/index.js:364:        await this.p2p(packet);
+/data/data/com.termux/files/home/mybot/autopublish/index.js:366:        await this.p2p.broadcast(packet);
+/data/data/com.termux/files/home/mybot/autopublish/index.js:403:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/oauth/index.js:205:  async exchangeCodeForToken(code) {
+/data/data/com.termux/files/home/mybot/oauth/index.js:214:    const result = await requestForm(
+/data/data/com.termux/files/home/mybot/oauth/index.js:264:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/oauth/index.js:272:  console.log('TOKEN_METHOD=' + typeof oauth.exchangeCodeForToken);
+/data/data/com.termux/files/home/mybot/industries/index.js:122:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/industries/index.js:164:      console.log('INDUSTRY_TEST=FAIL');
+/data/data/com.termux/files/home/mybot/coins/index.js:73:      throw new Error('COIN_CONFIG_INTEGRITY_FAILED');
+/data/data/com.termux/files/home/mybot/coins/index.js:209:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/coins/index.js:306:        : 'COIN_SYSTEM_TEST=FAIL'
+/data/data/com.termux/files/home/mybot/market/exchange.js:5:const DATA_FILE = path.join(__dirname, '..', 'exchange-orders.json');
+/data/data/com.termux/files/home/mybot/market/exchange.js:22:class InternalExchange {
+/data/data/com.termux/files/home/mybot/market/exchange.js:57:  _availableCash(user) {
+/data/data/com.termux/files/home/mybot/market/exchange.js:61:  _availableCoins(user) {
+/data/data/com.termux/files/home/mybot/market/exchange.js:116:      if (this._availableCash(user) < required) {
+/data/data/com.termux/files/home/mybot/market/exchange.js:124:      if (this._availableCoins(user) < quantity) {
+/data/data/com.termux/files/home/mybot/market/exchange.js:136:      remaining: quantity,
+/data/data/com.termux/files/home/mybot/market/exchange.js:160:    const remainingValue = order.remaining * order.price;
+/data/data/com.termux/files/home/mybot/market/exchange.js:161:    const remainingFee = remainingValue * FEE_RATE;
+/data/data/com.termux/files/home/mybot/market/exchange.js:166:        remainingValue + remainingFee
+/data/data/com.termux/files/home/mybot/market/exchange.js:171:        order.remaining
+/data/data/com.termux/files/home/mybot/market/exchange.js:268:          buy.remaining,
+/data/data/com.termux/files/home/mybot/market/exchange.js:269:          sell.remaining
+/data/data/com.termux/files/home/mybot/market/exchange.js:283:        buy.remaining -= quantity;
+/data/data/com.termux/files/home/mybot/market/exchange.js:284:        sell.remaining -= quantity;
+/data/data/com.termux/files/home/mybot/market/exchange.js:286:        if (buy.remaining <= 0) {
+/data/data/com.termux/files/home/mybot/market/exchange.js:287:          buy.remaining = 0;
+/data/data/com.termux/files/home/mybot/market/exchange.js:291:        if (sell.remaining <= 0) {
+/data/data/com.termux/files/home/mybot/market/exchange.js:292:          sell.remaining = 0;
+/data/data/com.termux/files/home/mybot/market/exchange.js:329:      availableCash: this._availableCash(user),
+/data/data/com.termux/files/home/mybot/market/exchange.js:334:      availableCoins: this.coinSystem
+/data/data/com.termux/files/home/mybot/market/exchange.js:335:        ? this._availableCoins(user)
+/data/data/com.termux/files/home/mybot/market/exchange.js:342:  InternalExchange,
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:5:const DATA_FILE = path.join(__dirname, '..', 'exchange-orders.json');
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:22:class InternalExchange {
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:57:  _availableCash(user) {
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:61:  _availableCoins(user) {
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:116:      if (this._availableCash(user) < required) {
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:124:      if (this._availableCoins(user) < quantity) {
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:136:      remaining: quantity,
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:160:    const remainingValue = order.remaining * order.price;
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:161:    const remainingFee = remainingValue * FEE_RATE;
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:166:        remainingValue + remainingFee
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:171:        order.remaining
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:258:          buy.remaining,
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:259:          sell.remaining
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:273:        buy.remaining -= quantity;
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:274:        sell.remaining -= quantity;
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:276:        if (buy.remaining <= 0) {
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:277:          buy.remaining = 0;
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:281:        if (sell.remaining <= 0) {
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:282:          sell.remaining = 0;
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:319:      availableCash: this._availableCash(user),
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:324:      availableCoins: this.coinSystem
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:325:        ? this._availableCoins(user)
+/data/data/com.termux/files/home/mybot/market/exchange.js.bak-pre-cash-fix:332:  InternalExchange,
+/data/data/com.termux/files/home/mybot/exchange-orders.json:7:    "remaining": 0,
+/data/data/com.termux/files/home/mybot/exchange-orders.json:18:    "remaining": 0,
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-peer-20260927-232805:14:let savedData = { ads: {}, users: {}, coins: {} };
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-peer-20260927-232805:28:            ads: Object.fromEntries(ads), 
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-peer-20260927-232805:41:const ads = new Map(Object.entries(savedData.ads || {}));
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-peer-20260927-232805:48:const { publicKey } = crypto.generateKeyPairSync('rsa', {
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-peer-20260927-232805:80:        ads: Object.fromEntries(ads),
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-peer-20260927-232805:93:                ads.set(id, { ...data.ad, id, createdAt: Date.now() });
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-peer-20260927-232805:182:                ads.set(data.ad.id, data.ad);
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-find-20260928-003438:14:let savedData = { ads: {}, users: {}, coins: {} };
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-find-20260928-003438:28:            ads: Object.fromEntries(ads), 
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-find-20260928-003438:41:const ads = new Map(Object.entries(savedData.ads || {}));
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-find-20260928-003438:48:const { publicKey } = crypto.generateKeyPairSync('rsa', {
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-find-20260928-003438:105:        ads: Object.fromEntries(ads),
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-find-20260928-003438:118:                ads.set(id, { ...data.ad, id, createdAt: Date.now() });
+/data/data/com.termux/files/home/mybot/index.js.bak-dht-find-20260928-003438:207:                ads.set(data.ad.id, data.ad);
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/PROTECTED-MANIFEST.json:3:  "scope": "Blockchain V2",
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/PROTECTED-MANIFEST.json:9:    "ai/index.js": {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:4: * GANDOM Advanced Blockchain V2
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:8: * - ai/index.js
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:19:  dataFile: path.resolve(process.cwd(), 'blockchain-advanced.json'),
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:32:class AdvancedBlockchain {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:39:    this.chain = [];
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:56:  isChainValid() {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:60:  getChain() {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:61:    return this.chain;
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:66:      chainLength: this.chain.length,
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:87:  calculateChainWork() {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4.20260928-101006.js:104:module.exports = { AdvancedBlockchain };
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:4: * GANDOM Advanced Blockchain V2
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:8: * - ai/index.js
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:19:  dataFile: path.resolve(process.cwd(), 'blockchain-advanced.json'),
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:32:class AdvancedBlockchain {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:39:    this.chain = [];
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:56:  isChainValid() {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:60:  getChain() {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:61:    return this.chain;
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:66:      chainLength: this.chain.length,
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:87:  calculateChainWork() {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/advanced.step4-skeleton.js:104:module.exports = { AdvancedBlockchain };
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/utxo.before-signature-fix.20260928-115151.js:6:  createKeyPair,
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/utxo.before-signature-fix.20260928-115151.js:252:  keyPair,
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/utxo.before-signature-fix.20260928-115151.js:263:  if (!keyPair || !keyPair.privateKey || !keyPair.publicKey) {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/utxo.before-signature-fix.20260928-115151.js:264:    throw new Error('INVALID_KEY_PAIR');
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/utxo.before-signature-fix.20260928-115151.js:298:    if (!utxo.validateInput(input, keyPair.publicKey)) {
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/utxo.before-signature-fix.20260928-115151.js:348:  tx.publicKey = publicKeyDer(keyPair.publicKey).toString('base64');
+/data/data/com.termux/files/home/mybot/backups/blockchain-v2/utxo.before-signature-fix.20260928-115151.js:349:  tx.signature = signPayload(payload, keyPair.privateKey);
+/data/data/com.termux/files/home/mybot/stage10-real.log:5:AssertionError [ERR_ASSERTION]: BLOCKCHAIN_HAS_NO_GENESIS
+/data/data/com.termux/files/home/mybot/stage10-real.log:6:    at Object.<anonymous> (/data/data/com.termux/files/home/mybot/blockchain/tests/section10-block-validation.js:278:1)
+/data/data/com.termux/files/home/mybot/stage10-real.log:12:    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+/data/data/com.termux/files/home/mybot/stage10-real.log:13:    at node:internal/main/run_main_module:33:47 {
+/data/data/com.termux/files/home/mybot/stage10-real-output.txt:5:AssertionError [ERR_ASSERTION]: BLOCKCHAIN_HAS_NO_GENESIS
+/data/data/com.termux/files/home/mybot/stage10-real-output.txt:6:    at Object.<anonymous> (/data/data/com.termux/files/home/mybot/blockchain/tests/section10-block-validation.js:281:1)
+/data/data/com.termux/files/home/mybot/stage10-real-output.txt:12:    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+/data/data/com.termux/files/home/mybot/stage10-real-output.txt:13:    at node:internal/main/run_main_module:33:47 {
+/data/data/com.termux/files/home/mybot/live-commander.js:12:  nextAction: 'WAITING_FOR_REAL_EVENT',
+/data/data/com.termux/files/home/mybot/live-commander.js:109:  console.log('NEXT_ACTION=WAITING_FOR_REAL_EVENT');
+/data/data/com.termux/files/home/mybot/run-all-tests.js:34:  const testNum = String(i + 1).padStart(3, '0');
+/data/data/com.termux/files/home/mybot/run-all-tests.js:44:    status = 'FAIL';
+/data/data/com.termux/files/home/mybot/build_tests.py:5:tests_dir = os.path.expanduser("~/mybot/blockchain/tests")
+/data/data/com.termux/files/home/mybot/candidates.txt:4:  'section11-chain-validation.js',
+/data/data/com.termux/files/home/mybot/candidates.txt:5:  'section12-chain-work.js',
+/data/data/com.termux/files/home/mybot/candidates.txt:35:console.log('=== GANDOM BLOCKCHAIN CORE V2 — FRAMEWORK 100 ===');
+/data/data/com.termux/files/home/mybot/fix_tests.py:4:tests_dir = os.path.expanduser("~/mybot/blockchain/tests")
+/data/data/com.termux/files/home/mybot/main.js:6:console.log('🌾 GANDOM BLOCKCHAIN CORE V2');
+/data/data/com.termux/files/home/mybot/main.js:12:let AI = null;
+/data/data/com.termux/files/home/mybot/main.js:13:try { AI = require('./ai/index.js'); console.log('✅ AI module loaded'); } catch (e) { console.log('⚠️  AI error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:15:let Exchange = null;
+/data/data/com.termux/files/home/mybot/main.js:16:try { Exchange = require('./market/exchange.js'); console.log('✅ Exchange module loaded'); } catch (e) { console.log('⚠️  Exchange error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:24:let Blockchain = null;
+/data/data/com.termux/files/home/mybot/main.js:25:try { Blockchain = require('./blockchain/advanced.js'); console.log('✅ Blockchain loaded'); } catch (e) { console.log('⚠️  Blockchain error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:28:try { P2P = require('./blockchain/index.js'); console.log('✅ P2P network loaded'); } catch (e) { console.log('⚠️  P2P error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:33:let Wallet = null;
+/data/data/com.termux/files/home/mybot/main.js:34:try { Wallet = require('./wallet/index.js'); console.log('✅ Wallet module loaded'); } catch (e) { console.log('⚠️  Wallet error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:37:try { Deposit = require('./wallet/deposit.js'); console.log('✅ Deposit module loaded'); } catch (e) { console.log('⚠️  Deposit error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:40:try { Withdraw = require('./wallet/withdraw.js'); console.log('✅ Withdraw module loaded'); } catch (e) { console.log('⚠️  Withdraw error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:43:try { Transfer = require('./wallet/transfer.js'); console.log('✅ Transfer module loaded'); } catch (e) { console.log('⚠️  Transfer error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:46:try { Fee = require('./wallet/fee.js'); console.log('✅ Fee module loaded'); } catch (e) { console.log('⚠️  Fee error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:57:let Airdrop = null;
+/data/data/com.termux/files/home/mybot/main.js:58:try { Airdrop = require('./marketing/airdrop.js'); console.log('✅ Airdrop module loaded'); } catch (e) { console.log('⚠️  Airdrop error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:61:try { Referral = require('./marketing/referral.js'); console.log('✅ Referral module loaded'); } catch (e) { console.log('⚠️  Referral error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:67:try { RealEstate = require('./markets/real-estate.js'); console.log('✅ Real Estate loaded'); } catch (e) { console.log('⚠️  Real Estate error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:70:try { Gold = require('./markets/gold.js'); console.log('✅ Gold loaded'); } catch (e) { console.log('⚠️  Gold error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:73:try { Auto = require('./markets/auto.js'); console.log('✅ Auto loaded'); } catch (e) { console.log('⚠️  Auto error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:79:try { Orderbook = require('./exchange/orderbook.js'); console.log('✅ Orderbook loaded'); } catch (e) { console.log('⚠️  Orderbook error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:82:try { Liquidity = require('./exchange/liquidity.js'); console.log('✅ Liquidity loaded'); } catch (e) { console.log('⚠️  Liquidity error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:84:let Chart = null;
+/data/data/com.termux/files/home/mybot/main.js:85:try { Chart = require('./exchange/chart.js'); console.log('✅ Chart loaded'); } catch (e) { console.log('⚠️  Chart error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:88:try { Deploy = require('./exchange/deploy.js'); console.log('✅ Deploy loaded'); } catch (e) { console.log('⚠️  Deploy error:', e.message); }
+/data/data/com.termux/files/home/mybot/main.js:96:  console.log('🤖 AI Module:        ' + (AI ? '✅ ACTIVE' : '❌ INACTIVE'));
+/data/data/com.termux/files/home/mybot/main.js:97:  console.log('🏪 Exchange:         ' + (Exchange ? '✅ ACTIVE' : '❌ INACTIVE'));
+/data/data/com.termux/files/home/mybot/main.js:100:  console.log('⛓️  Blockchain:       ' + (Blockchain ? '✅ ACTIVE' : '❌ INACTIVE'));
+/data/data/com.termux/files/home/mybot/main.js:102:  console.log('🔑 Wallet:           ' + (Wallet ? '✅ ACTIVE' : '❌ INACTIVE'));
+/data/data/com.termux/files/home/mybot/main.js:108:  console.log('🎁 Airdrop:          ' + (Airdrop ? '✅ ACTIVE' : '❌ INACTIVE'));
+/data/data/com.termux/files/home/mybot/main.js:115:  console.log('📈 Chart:            ' + (Chart ? '✅ ACTIVE' : '❌ INACTIVE'));
+/data/data/com.termux/files/home/mybot/main.js:120:async function main() {
+/data/data/com.termux/files/home/mybot/main.js:129:main().catch(console.error);
+/data/data/com.termux/files/home/mybot/wallet/index.js:2:// GANDOM WALLET MODULE
+/data/data/com.termux/files/home/mybot/wallet/index.js:12:const WALLET_FILE = path.join(__dirname, 'wallet.json');
+/data/data/com.termux/files/home/mybot/wallet/index.js:84:function saveWallet(wallet) {
+/data/data/com.termux/files/home/mybot/wallet/index.js:88:  let encrypted = cipher.update(JSON.stringify(wallet), 'utf8', 'hex');
+/data/data/com.termux/files/home/mybot/wallet/index.js:90:  const encryptedWallet = { iv: iv.toString('hex'), data: encrypted };
+/data/data/com.termux/files/home/mybot/wallet/index.js:91:  fs.writeFileSync(WALLET_FILE, JSON.stringify(encryptedWallet, null, 2));
+/data/data/com.termux/files/home/mybot/wallet/index.js:92:  console.log(`✅ Wallet saved to ${WALLET_FILE}`);
+/data/data/com.termux/files/home/mybot/wallet/index.js:93:  return encryptedWallet;
+/data/data/com.termux/files/home/mybot/wallet/index.js:96:function loadWallet() {
+/data/data/com.termux/files/home/mybot/wallet/index.js:97:  if (!fs.existsSync(WALLET_FILE)) {
+/data/data/com.termux/files/home/mybot/wallet/index.js:98:    console.log('⚠️  Wallet not found');
+/data/data/com.termux/files/home/mybot/wallet/index.js:101:  const encryptedWallet = JSON.parse(fs.readFileSync(WALLET_FILE, 'utf8'));
+/data/data/com.termux/files/home/mybot/wallet/index.js:103:  const decipher = crypto.createDecipheriv('aes-256-cbc', key, Buffer.from(encryptedWallet.iv, 'hex'));
+/data/data/com.termux/files/home/mybot/wallet/index.js:104:  let decrypted = decipher.update(encryptedWallet.data, 'hex', 'utf8');
+/data/data/com.termux/files/home/mybot/wallet/index.js:106:  console.log('✅ Wallet loaded');
+/data/data/com.termux/files/home/mybot/wallet/index.js:135:function createWallet(ownerShare = 1200000000) {
+/data/data/com.termux/files/home/mybot/wallet/index.js:140:  const wallet = {
+/data/data/com.termux/files/home/mybot/wallet/index.js:148:  saveWallet(wallet);
+/data/data/com.termux/files/home/mybot/wallet/index.js:149:  return wallet;
+/data/data/com.termux/files/home/mybot/wallet/index.js:155:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/wallet/index.js:157:  console.log('🌾 GANDOM WALLET GENERATOR');
+/data/data/com.termux/files/home/mybot/wallet/index.js:159:  const wallet = createWallet();
+/data/data/com.termux/files/home/mybot/wallet/index.js:160:  console.log('\n--- Wallet Created ---');
+/data/data/com.termux/files/home/mybot/wallet/index.js:161:  console.log(`📍 Address:    ${wallet.address}`);
+/data/data/com.termux/files/home/mybot/wallet/index.js:162:  console.log(`🔓 Public Key: ${wallet.publicKey.substring(0, 40)}...`);
+/data/data/com.termux/files/home/mybot/wallet/index.js:163:  console.log(`🔑 Private Key: ${wallet.privateKey.substring(0, 20)}...`);
+/data/data/com.termux/files/home/mybot/wallet/index.js:164:  console.log(`📝 Mnemonic:   ${wallet.mnemonic}`);
+/data/data/com.termux/files/home/mybot/wallet/index.js:165:  console.log(`💰 Balance:    ${wallet.balance} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/index.js:175:  saveWallet,
+/data/data/com.termux/files/home/mybot/wallet/index.js:176:  loadWallet,
+/data/data/com.termux/files/home/mybot/wallet/index.js:179:  createWallet
+/data/data/com.termux/files/home/mybot/wallet/deposit.js:20:function deposit(address, amount, source = 'exchange') {
+/data/data/com.termux/files/home/mybot/wallet/deposit.js:36:  console.log(`✅ Deposit: ${amount} GDM to ${address}`);
+/data/data/com.termux/files/home/mybot/wallet/deposit.js:50:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/wallet/deposit.js:55:  deposit('CdDUfT6gsUJFb5VArH21ZVRWqT8bM6Cqz', 5000000, 'exchange');
+/data/data/com.termux/files/home/mybot/wallet/deposit.js:56:  console.log(`\n💰 Balance: ${getBalance('CdDUfT6gsUJFb5VArH21ZVRWqT8bM6Cqz')} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/deposits.json:6:    "source": "exchange",
+/data/data/com.termux/files/home/mybot/wallet/deposits.json:14:    "source": "exchange",
+/data/data/com.termux/files/home/mybot/wallet/withdraw.js:23:function withdraw(address, amount, destination, method = 'exchange') {
+/data/data/com.termux/files/home/mybot/wallet/withdraw.js:49:  console.log(`✅ Withdrawal: ${amount} GDM from ${address}`);
+/data/data/com.termux/files/home/mybot/wallet/withdraw.js:50:  console.log(`   Fee:       ${fee} GDM (0.2%)`);
+/data/data/com.termux/files/home/mybot/wallet/withdraw.js:51:  console.log(`   Owner Fee: ${ownerFee} GDM (5% of fee)`);
+/data/data/com.termux/files/home/mybot/wallet/withdraw.js:52:  console.log(`   Miner Fee: ${minerFee} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/withdraw.js:53:  console.log(`   Net:       ${netAmount} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/withdraw.js:64:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/wallet/withdraw.js:69:  withdraw('CdDUfT6gsUJFb5VArH21ZVRWqT8bM6Cqz', 1000000, 'USDT', 'exchange');
+/data/data/com.termux/files/home/mybot/wallet/withdrawals.json:11:    "method": "exchange",
+/data/data/com.termux/files/home/mybot/wallet/withdrawals.json:24:    "method": "exchange",
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:61:  console.log(`✅ Transfer: ${amount} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:64:  console.log(`   Fee:       ${fee} GDM (0.1%)`);
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:65:  console.log(`   Owner Fee: ${ownerFee} GDM (5% of fee)`);
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:66:  console.log(`   Net:       ${netAmount} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:76:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:82:  const { createWallet } = require('./index.js');
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:83:  const receiverWallet = createWallet(0); // گیرنده با موجودی صفر
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:85:  console.log(`\n📤 Sending 1000 GDM to receiver...\n`);
+/data/data/com.termux/files/home/mybot/wallet/transfer.js:89:    receiverWallet.address,
+/data/data/com.termux/files/home/mybot/wallet/fee.js:11:    exchange: 0.002,    // ۰.۲٪ صرافی
+/data/data/com.termux/files/home/mybot/wallet/fee.js:32:if (require.main === module) {
+/data/data/com.termux/files/home/mybot/wallet/fee.js:38:  console.log(`Amount:     ${result.amount} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/fee.js:41:  console.log(`Total Fee:  ${result.totalFee} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/fee.js:42:  console.log(`Owner Fee:  ${result.ownerFee} GDM (5%)`);
+/data/data/com.termux/files/home/mybot/wallet/fee.js:43:  console.log(`Miner Fee:  ${result.minerFee} GDM`);
+/data/data/com.termux/files/home/mybot/wallet/fee.js:44:  console.log(`Net Amount: ${result.netAmount} GDM`);
+/data/data/com.termux/files/home/mybot/test-wallet.js:2:// GANDOM WALLET TEST (قدم ۱۱)
+/data/data/com.termux/files/home/mybot/test-wallet.js:7:console.log('🧪 GANDOM WALLET TEST');
+/data/data/com.termux/files/home/mybot/test-wallet.js:10:const Wallet = require('./wallet/index.js');
+/data/data/com.termux/files/home/mybot/test-wallet.js:11:const Deposit = require('./wallet/deposit.js');
+/data/data/com.termux/files/home/mybot/test-wallet.js:12:const Withdraw = require('./wallet/withdraw.js');
+/data/data/com.termux/files/home/mybot/test-wallet.js:13:const Transfer = require('./wallet/transfer.js');
+/data/data/com.termux/files/home/mybot/test-wallet.js:14:const Fee = require('./wallet/fee.js');
+/data/data/com.termux/files/home/mybot/test-wallet.js:16:console.log('--- Test 1: Create Wallet ---');
+/data/data/com.termux/files/home/mybot/test-wallet.js:17:const wallet = Wallet.createWallet(1200000000);
+/data/data/com.termux/files/home/mybot/test-wallet.js:18:console.log(`✅ Wallet: ${wallet.address}\n`);
+/data/data/com.termux/files/home/mybot/test-wallet.js:21:Deposit.deposit(wallet.address, 5000000, 'exchange');
+/data/data/com.termux/files/home/mybot/test-wallet.js:22:console.log(`💰 Balance: ${Deposit.getBalance(wallet.address)} GDM\n`);
+/data/data/com.termux/files/home/mybot/test-wallet.js:25:Withdraw.withdraw(wallet.address, 1000000, 'USDT', 'exchange');
+/data/data/com.termux/files/home/mybot/test-wallet.js:30:console.log(`Total Fee: ${fee.totalFee} GDM`);
+/data/data/com.termux/files/home/mybot/test-wallet.js:31:console.log(`Owner Fee: ${fee.ownerFee} GDM\n`);
+/data/data/com.termux/files/home/mybot/test-wallet.js:34:const tx = { from: wallet.address, to: '1Receiver', amount: 1000 };
+/data/data/com.termux/files/home/mybot/test-wallet.js:35:const sig = Wallet.signTransaction(wallet.privateKey, tx);
+/data/data/com.termux/files/home/mybot/test-wallet.js:36:const valid = Wallet.verifyTransaction(wallet.publicKey, tx, sig);
+/data/data/com.termux/files/home/mybot/test-wallet.js:40:console.log('✅ ALL WALLET TESTS PASSED');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:5:const AIRDROP_FILE = path.join(__dirname, 'airdrops.json');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:6:const TOTAL_AIRDROP = 1200000000;
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:9:function loadAirdrops() {
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:10:  if (!fs.existsSync(AIRDROP_FILE)) return [];
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:11:  return JSON.parse(fs.readFileSync(AIRDROP_FILE, 'utf8'));
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:14:function saveAirdrops(airdrops) {
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:15:  fs.writeFileSync(AIRDROP_FILE, JSON.stringify(airdrops, null, 2));
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:18:function registerAirdrop(address, socialMedia, referrer) {
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:21:  const airdrops = loadAirdrops();
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:23:  if (airdrops.find(a => a.address === address)) {
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:28:  const totalGiven = airdrops.reduce((sum, a) => sum + a.amount, 0);
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:29:  if (totalGiven + REWARD_PER_USER > TOTAL_AIRDROP) {
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:30:    console.log('Airdrop pool is empty');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:44:  airdrops.push(record);
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:45:  saveAirdrops(airdrops);
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:47:  console.log('Airdrop: ' + REWARD_PER_USER + ' GDM to ' + address);
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:50:  console.log('   Remaining Pool: ' + (TOTAL_AIRDROP - totalGiven - REWARD_PER_USER) + ' GDM');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:55:function getAirdropStats() {
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:56:  const airdrops = loadAirdrops();
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:57:  const totalGiven = airdrops.reduce((sum, a) => sum + a.amount, 0);
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:59:    totalPool: TOTAL_AIRDROP,
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:61:    remaining: TOTAL_AIRDROP - totalGiven,
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:62:    totalUsers: airdrops.length
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:67:console.log('GANDOM AIRDROP SYSTEM');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:70:registerAirdrop('1User1Address', 'telegram');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:71:registerAirdrop('1User2Address', 'twitter');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:72:registerAirdrop('1User3Address', 'instagram', '1User1Address');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:76:const stats = getAirdropStats();
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:77:console.log('Total Pool:  ' + stats.totalPool + ' GDM');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:78:console.log('Given:       ' + stats.totalGiven + ' GDM');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:79:console.log('Remaining:   ' + stats.remaining + ' GDM');
+/data/data/com.termux/files/home/mybot/marketing/airdrop.js:82:module.exports = { registerAirdrop, getAirdropStats };
+/data/data/com.termux/files/home/mybot/marketing/referral.js:37:  console.log('   Amount:    ' + userAmount + ' GDM');
+/data/data/com.termux/files/home/mybot/marketing/referral.js:38:  console.log('   Reward:    ' + reward + ' GDM');
+/data/data/com.termux/files/home/mybot/marketing/referral.js:65:console.log('Total Reward:    ' + stats.totalReward + ' GDM');
+/data/data/com.termux/files/home/mybot/marketing/telegram.js:22:    '/balance': () => 'موجودی شما: 1000 GDM',
+/data/data/com.termux/files/home/mybot/marketing/twitter.js:8:  hashtags = hashtags || ['#Gandom', '#GDM', '#Crypto'];
+/data/data/com.termux/files/home/mybot/marketing/twitter.js:18:    airdrop: 'ایردراپ گندم! 1000 GDM رایگان برای کاربران جدید',
+/data/data/com.termux/files/home/mybot/marketing/twitter.js:19:    listing: 'گندم در صرافی لیست شد! #GDM'
+/data/data/com.termux/files/home/mybot/marketing/twitter.js:36:postTweet(generateTweet('airdrop', {}));
+/data/data/com.termux/files/home/mybot/marketing/social.js:14:  hashtags = hashtags || ['#gandom', '#gdm', '#crypto', '#blockchain'];
+/data/data/com.termux/files/home/mybot/marketing/social.js:30:      hashtags: ['#gdm', '#cryptopump']
+/data/data/com.termux/files/home/mybot/marketing/social.js:32:    airdrop: {
+/data/data/com.termux/files/home/mybot/marketing/social.js:34:      hashtags: ['#airdrop', '#gandom']
+/data/data/com.termux/files/home/mybot/marketing/social.js:38:      hashtags: ['#tutorial', '#gdm']
+/data/data/com.termux/files/home/mybot/marketing/social.js:61:crossPost('airdrop');
+/data/data/com.termux/files/home/mybot/markets/real-estate.js:6:const GDM_PER_TOMAN = 0.0001;
+/data/data/com.termux/files/home/mybot/markets/real-estate.js:18:  const priceGDM = priceToman * GDM_PER_TOMAN;
+/data/data/com.termux/files/home/mybot/markets/real-estate.js:25:    priceGDM: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/real-estate.js:26:    tokens: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/real-estate.js:28:    status: 'available',
+/data/data/com.termux/files/home/mybot/markets/real-estate.js:41:  console.log('   In GDM:    ' + priceGDM.toLocaleString() + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/real-estate.js:69:  console.log('   Amount:     ' + amount + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/real-estate.js:76:console.log('GANDOM REAL ESTATE MARKET');
+/data/data/com.termux/files/home/mybot/markets/real-estate.json:8:    "priceGDM": 1000000,
+/data/data/com.termux/files/home/mybot/markets/real-estate.json:24:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/real-estate.json:33:    "priceGDM": 1000000,
+/data/data/com.termux/files/home/mybot/markets/real-estate.json:49:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/real-estate.json:58:    "priceGDM": 1000000,
+/data/data/com.termux/files/home/mybot/markets/real-estate.json:74:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/real-estate.json:83:    "priceGDM": 1000000,
+/data/data/com.termux/files/home/mybot/markets/real-estate.json:99:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/gold.js:6:const GDM_PER_GRAM = 100;
+/data/data/com.termux/files/home/mybot/markets/gold.js:19:  const priceGDM = weightGrams * GDM_PER_GRAM;
+/data/data/com.termux/files/home/mybot/markets/gold.js:25:    priceGDM: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/gold.js:26:    tokens: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/gold.js:28:    status: 'available',
+/data/data/com.termux/files/home/mybot/markets/gold.js:40:  console.log('   In GDM:    ' + priceGDM.toLocaleString() + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/gold.js:57:    grams: (amount / gold.priceGDM) * gold.weightGrams,
+/data/data/com.termux/files/home/mybot/markets/gold.js:67:  console.log('   Amount:    ' + amount + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/gold.js:74:console.log('GANDOM GOLD MARKET');
+/data/data/com.termux/files/home/mybot/markets/gold.json:7:    "priceGDM": 1000,
+/data/data/com.termux/files/home/mybot/markets/gold.json:23:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/gold.json:31:    "priceGDM": 1000,
+/data/data/com.termux/files/home/mybot/markets/gold.json:47:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/gold.json:55:    "priceGDM": 1000,
+/data/data/com.termux/files/home/mybot/markets/gold.json:71:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/gold.json:79:    "priceGDM": 1000,
+/data/data/com.termux/files/home/mybot/markets/gold.json:95:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/auto.js:6:const GDM_PER_TOMAN = 0.0001;
+/data/data/com.termux/files/home/mybot/markets/auto.js:18:  const priceGDM = priceToman * GDM_PER_TOMAN;
+/data/data/com.termux/files/home/mybot/markets/auto.js:25:    priceGDM: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/auto.js:26:    tokens: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/auto.js:28:    status: 'available',
+/data/data/com.termux/files/home/mybot/markets/auto.js:41:  console.log('   In GDM:    ' + priceGDM.toLocaleString() + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/auto.js:68:  console.log('   Amount:     ' + amount + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/auto.js:75:console.log('GANDOM AUTO MARKET');
+/data/data/com.termux/files/home/mybot/markets/auto.json:8:    "priceGDM": 500000,
+/data/data/com.termux/files/home/mybot/markets/auto.json:24:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/auto.json:33:    "priceGDM": 500000,
+/data/data/com.termux/files/home/mybot/markets/auto.json:49:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/auto.json:58:    "priceGDM": 500000,
+/data/data/com.termux/files/home/mybot/markets/auto.json:74:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/auto.json:83:    "priceGDM": 500000,
+/data/data/com.termux/files/home/mybot/markets/auto.json:99:    "status": "available",
+/data/data/com.termux/files/home/mybot/markets/realtors.js:43:function addProperty(realtorId, propertyName, priceGDM) {
+/data/data/com.termux/files/home/mybot/markets/realtors.js:54:    priceGDM: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/realtors.js:55:    status: 'available',
+/data/data/com.termux/files/home/mybot/markets/realtors.js:63:  console.log('  Price: ' + priceGDM + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/realtors.js:68:function recordSale(realtorId, propertyId, salePriceGDM) {
+/data/data/com.termux/files/home/mybot/markets/realtors.js:76:  const commission = salePriceGDM * COMMISSION_RATE;
+/data/data/com.termux/files/home/mybot/markets/realtors.js:83:  console.log('  Sale Price: ' + salePriceGDM + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/realtors.js:84:  console.log('  Commission: ' + commission.toFixed(2) + ' GDM (2%)');
+/data/data/com.termux/files/home/mybot/markets/realtors.json:12:        "priceGDM": 1000000,
+/data/data/com.termux/files/home/mybot/markets/realtors.json:13:        "status": "available",
+/data/data/com.termux/files/home/mybot/markets/realtors.json:19:        "priceGDM": 1200000,
+/data/data/com.termux/files/home/mybot/markets/realtors.json:20:        "status": "available",
+/data/data/com.termux/files/home/mybot/markets/gold-shops.js:43:function addGoldItem(shopId, type, weightGrams, priceGDM) {
+/data/data/com.termux/files/home/mybot/markets/gold-shops.js:55:    priceGDM: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/gold-shops.js:56:    status: 'available',
+/data/data/com.termux/files/home/mybot/markets/gold-shops.js:65:  console.log('  Price: ' + priceGDM + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/gold-shops.js:70:function recordGoldSale(shopId, itemId, salePriceGDM) {
+/data/data/com.termux/files/home/mybot/markets/gold-shops.js:78:  const commission = salePriceGDM * COMMISSION_RATE;
+/data/data/com.termux/files/home/mybot/markets/gold-shops.js:85:  console.log('  Sale Price: ' + salePriceGDM + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/gold-shops.js:86:  console.log('  Commission: ' + commission.toFixed(2) + ' GDM (1.5%)');
+/data/data/com.termux/files/home/mybot/markets/gold-shops.json:13:        "priceGDM": 1000,
+/data/data/com.termux/files/home/mybot/markets/gold-shops.json:14:        "status": "available",
+/data/data/com.termux/files/home/mybot/markets/gold-shops.json:21:        "priceGDM": 10000,
+/data/data/com.termux/files/home/mybot/markets/gold-shops.json:22:        "status": "available",
+/data/data/com.termux/files/home/mybot/markets/dealers.js:43:function addCar(dealerId, model, year, priceGDM) {
+/data/data/com.termux/files/home/mybot/markets/dealers.js:55:    priceGDM: priceGDM,
+/data/data/com.termux/files/home/mybot/markets/dealers.js:56:    status: 'available',
+/data/data/com.termux/files/home/mybot/markets/dealers.js:65:  console.log('  Price: ' + priceGDM + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/dealers.js:70:function recordCarSale(dealerId, carId, salePriceGDM) {
+/data/data/com.termux/files/home/mybot/markets/dealers.js:78:  const commission = salePriceGDM * COMMISSION_RATE;
+/data/data/com.termux/files/home/mybot/markets/dealers.js:85:  console.log('  Sale Price: ' + salePriceGDM + ' GDM');
+/data/data/com.termux/files/home/mybot/markets/dealers.js:86:  console.log('  Commission: ' + commission.toFixed(2) + ' GDM (2.5%)');
+/data/data/com.termux/files/home/mybot/markets/dealers.json:13:        "priceGDM": 500000,
+/data/data/com.termux/files/home/mybot/markets/dealers.json:14:        "status": "available",
+/data/data/com.termux/files/home/mybot/markets/dealers.json:21:        "priceGDM": 700000,
+/data/data/com.termux/files/home/mybot/markets/dealers.json:22:        "status": "available",
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:28:        .container {
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:111:            .container { grid-template-columns: 1fr; }
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:121:    <div class="container">
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:145:            <label>مقدار (GDM)</label>
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:161:            <label>مقدار (GDM)</label>
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:176:                    <span>500 GDM</span>
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:180:                    <span>800 GDM</span>
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:190:                    <span>600 GDM</span>
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:194:                    <span>1000 GDM</span>
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:204:                    <div class="label">موجودی گندم (GDM)</div>
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:239:            alert('✅ سفارش خرید ثبت شد!\nمقدار: ' + amount + ' GDM\nقیمت: ' + rate + ' USDT');
+/data/data/com.termux/files/home/mybot/exchange/web/index.html:246:            alert('✅ سفارش فروش ثبت شد!\nمقدار: ' + amount + ' GDM\nقیمت: ' + rate + ' USDT');
+/data/data/com.termux/files/home/mybot/exchange/orderbook.js:38:  console.log('   Amount:  ' + amount + ' GDM');
+/data/data/com.termux/files/home/mybot/exchange/orderbook.js:63:  console.log('   Amount:  ' + amount + ' GDM');
+/data/data/com.termux/files/home/mybot/exchange/orderbook.js:83:      const buyRemaining = buyOrder.amount - buyOrder.filled;
+/data/data/com.termux/files/home/mybot/exchange/orderbook.js:84:      const sellRemaining = sellOrder.amount - sellOrder.filled;
+/data/data/com.termux/files/home/mybot/exchange/orderbook.js:85:      const tradeAmount = Math.min(buyRemaining, sellRemaining);
+/data/data/com.termux/files/home/mybot/exchange/orderbook.js:113:      console.log('   Amount:  ' + tradeAmount + ' GDM');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:19:function createPool(gdmAmount, usdtAmount) {
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:23:    gdmReserve: gdmAmount,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:25:    k: gdmAmount * usdtAmount,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:31:  const initialPrice = usdtAmount / gdmAmount;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:34:  console.log('   GDM Reserve:   ' + gdmAmount + ' GDM');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:37:  console.log('   Price:         ' + initialPrice.toFixed(4) + ' USDT/GDM');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:42:function swapGDMtoUSDT(gdmAmount, poolId) {
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:53:  const fee = gdmAmount * FEE_RATE;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:54:  const gdmAfterFee = gdmAmount - fee;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:56:  const newGdmReserve = pool.gdmReserve + gdmAfterFee;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:57:  const newUsdtReserve = pool.k / newGdmReserve;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:60:  pool.gdmReserve = newGdmReserve;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:62:  pool.k = newGdmReserve * newUsdtReserve;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:66:    type: 'GDM_TO_USDT',
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:67:    gdmIn: gdmAmount,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:70:    price: usdtOut / gdmAmount,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:76:  console.log('Swap: GDM -> USDT');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:77:  console.log('   GDM In:    ' + gdmAmount);
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:79:  console.log('   Fee:       ' + fee.toFixed(2) + ' GDM');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:80:  console.log('   Price:     ' + swap.price.toFixed(4) + ' USDT/GDM');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:85:function swapUSDTtoGDM(usdtAmount, poolId) {
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:100:  const newGdmReserve = pool.k / newUsdtReserve;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:101:  const gdmOut = pool.gdmReserve - newGdmReserve;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:103:  pool.gdmReserve = newGdmReserve;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:105:  pool.k = newGdmReserve * newUsdtReserve;
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:109:    type: 'USDT_TO_GDM',
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:111:    gdmOut: gdmOut,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:113:    price: usdtAmount / gdmOut,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:119:  console.log('Swap: USDT -> GDM');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:121:  console.log('   GDM Out:   ' + gdmOut.toFixed(2));
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:123:  console.log('   Price:     ' + swap.price.toFixed(4) + ' USDT/GDM');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:137:    gdmReserve: pool.gdmReserve,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:139:    price: pool.usdtReserve / pool.gdmReserve,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:151:swapGDMtoUSDT(10000);
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:153:swapUSDTtoGDM(5000);
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:158:console.log('GDM Reserve:   ' + stats.gdmReserve.toFixed(2));
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:160:console.log('Price:         ' + stats.price.toFixed(4) + ' USDT/GDM');
+/data/data/com.termux/files/home/mybot/exchange/liquidity.js:163:module.exports = { createPool, swapGDMtoUSDT, swapUSDTtoGDM, getPoolStats };
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:5:      "gdmReserve": 1019348.1835697835,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:12:      "gdmReserve": 1000000,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:19:      "gdmReserve": 1000000,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:26:      "gdmReserve": 1000000,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:36:      "type": "GDM_TO_USDT",
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:37:      "gdmIn": 10000,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:45:      "type": "USDT_TO_GDM",
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:47:      "gdmOut": 5059.4237305535935,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:54:      "type": "GDM_TO_USDT",
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:55:      "gdmIn": 10000,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:63:      "type": "USDT_TO_GDM",
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:65:      "gdmOut": 5108.617766523734,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:72:      "type": "GDM_TO_USDT",
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:73:      "gdmIn": 10000,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:81:      "type": "USDT_TO_GDM",
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:83:      "gdmOut": 5157.552233237191,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:90:      "type": "GDM_TO_USDT",
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:91:      "gdmIn": 10000,
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:99:      "type": "USDT_TO_GDM",
+/data/data/com.termux/files/home/mybot/exchange/liquidity.json:101:      "gdmOut": 5206.22269990202,
+/data/data/com.termux/files/home/mybot/exchange/chart.js:4:const CHART_FILE = path.join(__dirname, 'chart-data.json');
+/data/data/com.termux/files/home/mybot/exchange/chart.js:6:function loadChartData() {
+/data/data/com.termux/files/home/mybot/exchange/chart.js:7:  if (!fs.existsSync(CHART_FILE)) return [];
+/data/data/com.termux/files/home/mybot/exchange/chart.js:8:  return JSON.parse(fs.readFileSync(CHART_FILE, 'utf8'));
+/data/data/com.termux/files/home/mybot/exchange/chart.js:11:function saveChartData(data) {
+/data/data/com.termux/files/home/mybot/exchange/chart.js:12:  fs.writeFileSync(CHART_FILE, JSON.stringify(data, null, 2));
+/data/data/com.termux/files/home/mybot/exchange/chart.js:16:  const data = loadChartData();
+/data/data/com.termux/files/home/mybot/exchange/chart.js:24:  saveChartData(data);
+/data/data/com.termux/files/home/mybot/exchange/chart.js:28:function getChartData(limit) {
+/data/data/com.termux/files/home/mybot/exchange/chart.js:30:  const data = loadChartData();
+/data/data/com.termux/files/home/mybot/exchange/chart.js:35:  const data = loadChartData();
+/data/data/com.termux/files/home/mybot/exchange/chart.js:52:console.log('GANDOM DEX - PRICE CHART');
+/data/data/com.termux/files/home/mybot/exchange/chart.js:67:const chartData = getChartData(5);
+/data/data/com.termux/files/home/mybot/exchange/chart.js:68:chartData.forEach(point => {
+/data/data/com.termux/files/home/mybot/exchange/chart.js:83:console.log('--- ASCII Chart ---');
+/data/data/com.termux/files/home/mybot/exchange/chart.js:88:chartData.forEach(point => {
+/data/data/com.termux/files/home/mybot/exchange/chart.js:95:module.exports = { recordPrice, getChartData, getPriceStats };
+/data/data/com.termux/files/home/mybot/exchange/gandom-token.sol:5:// GANDOM TOKEN (GDM) - BEP-20 Smart Contract
+/data/data/com.termux/files/home/mybot/exchange/gandom-token.sol:23:    string public symbol = "GDM";
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:7:  bscMainnet: {
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:8:    name: 'Binance Smart Chain Mainnet',
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:10:    chainId: 56,
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:17:    name: 'Binance Smart Chain Testnet',
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:19:    chainId: 97,
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:49:    chainId: net.chainId,
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:54:        symbol: 'GDM',
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:76:  console.log('Chain ID:      ' + net.chainId);
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:81:  console.log('  GDM Token:   ' + config.contracts.gandomToken.name);
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:114:  config.contractAddress = '0x' + 'GDM'.repeat(20).substring(0, 40);
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:129:  console.log('2. List GDM on CoinMarketCap');
+/data/data/com.termux/files/home/mybot/exchange/deploy.js:130:  console.log('3. List GDM on CoinGecko');
+/data/data/com.termux/files/home/mybot/exchange/deploy-config.json:3:  "networkName": "Binance Smart Chain Testnet",
+/data/data/com.termux/files/home/mybot/exchange/deploy-config.json:5:  "chainId": 97,
+/data/data/com.termux/files/home/mybot/exchange/deploy-config.json:10:      "symbol": "GDM",
+/data/data/com.termux/files/home/mybot/exchange/deploy-config.json:21:  "contractAddress": "0xGDMGDMGDMGDMGDMGDMGDMGDMGDMGDMGDMGDMGDMG",
+/data/data/com.termux/files/home/mybot/auth/index.js:53:  const remainder = sum % 11;
+/data/data/com.termux/files/home/mybot/auth/index.js:56:  return (remainder < 2 && checkDigit === remainder) || (remainder >= 2 && checkDigit === 11 - remainder);
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:1:# 🌾 Gandom (GDM) - White Paper
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:6:**نماد:** GDM
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:43:- **الگوریتم اجماع:** PoW + Longest Chain
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:68:- نمودار قیمت (Price Chart)
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:103:- **نماد:** GDM
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:105:- **استاندارد:** BEP-20 (Binance Smart Chain)
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:127:- ⏳ چت‌بات AI
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:132:- 📌 لیست CoinMarketCap
+/data/data/com.termux/files/home/mybot/docs/whitepaper.md:179:## ⚠️ سلب مسئولیت (Disclaimer)
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:2:  network: 'Binance Smart Chain',
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:3:  chainId: 56,
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:7:  gdm: '0xGDM_ADDRESS_HERE'
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:11:  { step: 1, title: 'Deploy GDM Contract', description: 'Deploy BEP-20 contract on BSC', command: 'deploy gandom-token.sol' },
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:13:  { step: 3, title: 'Add Liquidity', description: 'Create GDM/BNB pool on PancakeSwap', command: 'add liquidity GDM + BNB' },
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:14:  { step: 4, title: 'Set Initial Price', description: 'Initial price: $0.001 per GDM', command: 'set initial price: $0.001/GDM' },
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:16:  { step: 6, title: 'Submit to CoinMarketCap', description: 'Submit listing request to CMC', command: 'submit to coinmarketcap.com' },
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:22:    exchange: 'PancakeSwap',
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:24:    chainId: PANCAKESWAP_CONFIG.chainId,
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:25:    pair: 'GDM/BNB',
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:43:function calculateInitialLiquidity(gdmAmount, bnbAmount) {
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:44:  const price = bnbAmount / gdmAmount;
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:46:    gdmAmount: gdmAmount,
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:50:    totalValue: gdmAmount * price * 600
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:61:console.log('Exchange:  ' + info.exchange);
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:63:console.log('Chain ID:  ' + info.chainId);
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:64:console.log('Pair:      ' + info.pair);
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:71:console.log('GDM Amount:  ' + liq.gdmAmount.toLocaleString());
+/data/data/com.termux/files/home/mybot/listings/pancakeswap.js:73:console.log('Price:       ' + liq.price.toFixed(6) + ' BNB/GDM');
+/data/data/com.termux/files/home/mybot/mobile/index.html:6:<title>گندم - Gandom Wallet</title>
+/data/data/com.termux/files/home/mybot/mobile/index.html:34:.form-container { padding: 20px; }
+/data/data/com.termux/files/home/mybot/mobile/index.html:55:.item-card .item-detail { color: #aaa; font-size: 0.85em; margin-top: 4px; }
+/data/data/com.termux/files/home/mybot/mobile/index.html:63:        <p>Gandom Wallet v2.0</p>
+/data/data/com.termux/files/home/mybot/mobile/index.html:77:        <div class="price" id="market-price">$1.15</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:81:        <div class="grid-item" onclick="showPage('wallet')"><span class="icon">🔑</span>کیف پول</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:83:        <div class="grid-item" onclick="showPage('markets')"><span class="icon">🏠</span>بازارها</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:84:        <div class="grid-item" onclick="showPage('exchange')"><span class="icon">📊</span>صرافی</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:85:        <div class="grid-item" onclick="showPage('airdrop')"><span class="icon">🎁</span>ایردراپ</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:98:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:107:<div class="page" id="page-markets">
+/data/data/com.termux/files/home/mybot/mobile/index.html:109:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:111:            <div class="grid-item" onclick="loadMarket('real-estate')"><span class="icon">🏠</span>املاک</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:112:            <div class="grid-item" onclick="loadMarket('gold')"><span class="icon">🥇</span>طلا</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:113:            <div class="grid-item" onclick="loadMarket('auto')"><span class="icon">🚗</span>خودرو</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:114:            <div class="grid-item" onclick="loadMarket('all')"><span class="icon">📦</span>همه</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:116:        <div id="market-list" class="loading">برای دیدن بازار، روی یکی از دسته‌ها بزن</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:120:<div class="page" id="page-wallet">
+/data/data/com.termux/files/home/mybot/mobile/index.html:122:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:124:        <div class="info-card"><div class="info-label">موجودی</div><div class="info-value" id="wallet-balance">-</div></div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:129:<div class="page" id="page-exchange">
+/data/data/com.termux/files/home/mybot/mobile/index.html:131:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:132:        <div class="info-card"><div class="info-label">قیمت GDM</div><div class="info-value">$1.15 USDT</div></div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:133:        <button class="btn-primary" onclick="showPage('buy')">🛒 خرید GDM</button>
+/data/data/com.termux/files/home/mybot/mobile/index.html:134:        <button class="btn-primary" onclick="showPage('sell')" style="background:linear-gradient(90deg,#e74c3c,#c0392b);margin-top:10px;">💸 فروش GDM</button>
+/data/data/com.termux/files/home/mybot/mobile/index.html:140:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:141:        <div class="form-group"><label>مقدار (GDM)</label><input type="number" id="buy-amount" value="1000"></div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:148:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:149:        <div class="form-group"><label>مقدار (GDM)</label><input type="number" id="sell-amount" value="1000"></div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:156:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:172:<div class="page" id="page-airdrop">
+/data/data/com.termux/files/home/mybot/mobile/index.html:174:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:176:        <h2 style="text-align:center;color:#f39c12;">1000 GDM رایگان!</h2>
+/data/data/com.termux/files/home/mybot/mobile/index.html:177:        <button class="btn-primary" onclick="claimAirdrop()">دریافت ایردراپ</button>
+/data/data/com.termux/files/home/mybot/mobile/index.html:183:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:191:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:203:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:212:    <div class="form-container">
+/data/data/com.termux/files/home/mybot/mobile/index.html:222:    <div class="nav-item" onclick="showPage('wallet')"><span class="icon">🔑</span>کیف پول</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:223:    <div class="nav-item" onclick="showPage('exchange')"><span class="icon">📊</span>صرافی</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:224:    <div class="nav-item" onclick="showPage('markets')"><span class="icon">🏪</span>بازارها</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:260:    if (id === 'wallet') document.querySelectorAll('.nav-item')[1].classList.add('active');
+/data/data/com.termux/files/home/mybot/mobile/index.html:261:    if (id === 'exchange') document.querySelectorAll('.nav-item')[2].classList.add('active');
+/data/data/com.termux/files/home/mybot/mobile/index.html:262:    if (id === 'markets') document.querySelectorAll('.nav-item')[3].classList.add('active');
+/data/data/com.termux/files/home/mybot/mobile/index.html:287:        const res = await fetch(API + '/api/stats');
+/data/data/com.termux/files/home/mybot/mobile/index.html:288:        const data = await res.json();
+/data/data/com.termux/files/home/mybot/mobile/index.html:303:        const res = await fetch(API + '/api/register', {
+/data/data/com.termux/files/home/mybot/mobile/index.html:307:        const data = await res.json();
+/data/data/com.termux/files/home/mybot/mobile/index.html:312:            showToast('✅ ثبت‌نام موفق! 1000 GDM');
+/data/data/com.termux/files/home/mybot/mobile/index.html:324:        const res = await fetch(API + '/api/login', {
+/data/data/com.termux/files/home/mybot/mobile/index.html:328:        const data = await res.json();
+/data/data/com.termux/files/home/mybot/mobile/index.html:345:    document.getElementById('wallet-balance').textContent = (currentUser.balance || 0).toLocaleString() + ' GDM';
+/data/data/com.termux/files/home/mybot/mobile/index.html:348:    document.getElementById('profile-balance').textContent = (currentUser.balance || 0).toLocaleString() + ' GDM';
+/data/data/com.termux/files/home/mybot/mobile/index.html:352:async function loadMarket(type) {
+/data/data/com.termux/files/home/mybot/mobile/index.html:353:    const list = document.getElementById('market-list');
+/data/data/com.termux/files/home/mybot/mobile/index.html:359:            const res = await fetch(API + '/api/market/' + t);
+/data/data/com.termux/files/home/mybot/mobile/index.html:360:            const data = await res.json();
+/data/data/com.termux/files/home/mybot/mobile/index.html:361:            if (data.success) data.data.forEach(item => allItems.push({ ...item, marketType: t }));
+/data/data/com.termux/files/home/mybot/mobile/index.html:369:        const icon = item.marketType === 'real-estate' ? '🏠' : item.marketType === 'gold' ? '🥇' : '🚗';
+/data/data/com.termux/files/home/mybot/mobile/index.html:373:            <div class="item-detail">معادل: ${(item.priceGDM || 0).toLocaleString()} GDM</div>
+/data/data/com.termux/files/home/mybot/mobile/index.html:374:            ${item.province ? '<div class="item-detail">📍 ' + item.province + ' - ' + item.city + '</div>' : ''}
+/data/data/com.termux/files/home/mybot/mobile/index.html:375:            ${item.brand ? '<div class="item-detail">🚗 ' + item.brand + ' ' + item.year + '</div>' : ''}
+/data/data/com.termux/files/home/mybot/mobile/index.html:376:            ${item.weight ? '<div class="item-detail">⚖️ ' + item.weight + ' گرم</div>' : ''}
+/data/data/com.termux/files/home/mybot/mobile/index.html:388:    showToast('✅ خرید موفق: ' + amount + ' GDM');
+/data/data/com.termux/files/home/mybot/mobile/index.html:398:    showToast('✅ فروش موفق: ' + amount + ' GDM');
+/data/data/com.termux/files/home/mybot/mobile/index.html:425:function claimAirdrop() {
+/data/data/com.termux/files/home/mybot/mobile/index.html:429:    showToast('🎁 1000 GDM دریافت شد');
+/data/data/com.termux/files/home/mybot/mobile/index.html:437:    else if (input.includes('کیف')) response = 'موجودی: ' + (currentUser ? currentUser.balance : 0) + ' GDM';
+/data/data/com.termux/files/home/mybot/mobile/index.html:438:    else if (input.includes('ایردراپ')) response = '1000 GDM رایگان در انتظار شماست!';
+/data/data/com.termux/files/home/mybot/api/data/users.json:9:    "referralCode": "GDM5FA413D3",
+/data/data/com.termux/files/home/mybot/api/data/real-estate.json:9:    "priceGDM": 1000000,
+/data/data/com.termux/files/home/mybot/api/data/real-estate.json:11:    "status": "available",
+/data/data/com.termux/files/home/mybot/api/data/gold.json:7:    "priceGDM": 5000,
+/data/data/com.termux/files/home/mybot/api/data/gold.json:9:    "status": "available",
+/data/data/com.termux/files/home/mybot/api/data/gold.json:17:    "priceGDM": 5000,
+/data/data/com.termux/files/home/mybot/api/data/gold.json:19:    "status": "available",
+/data/data/com.termux/files/home/mybot/api/data/auto.json:8:    "priceGDM": 50000,
+/data/data/com.termux/files/home/mybot/api/data/auto.json:10:    "status": "available",
+/data/data/com.termux/files/home/mybot/api/server.js:44:    referralCode: 'GDM' + crypto.randomBytes(4).toString('hex').toUpperCase(),
+/data/data/com.termux/files/home/mybot/api/server.js:70:    priceGDM: Math.round(data.price * 0.0001),
+/data/data/com.termux/files/home/mybot/api/server.js:72:    status: 'available',
+/data/data/com.termux/files/home/mybot/api/server.js:87:    priceGDM: Math.round(data.price * 0.0001),
+/data/data/com.termux/files/home/mybot/api/server.js:89:    status: 'available',
+/data/data/com.termux/files/home/mybot/api/server.js:105:    priceGDM: Math.round(data.price * 0.0001),
+/data/data/com.termux/files/home/mybot/api/server.js:107:    status: 'available',
+/data/data/com.termux/files/home/mybot/api/server.js:136:    else if (pathname === '/api/market/real-estate' && req.method === 'GET') response = { success: true, data: load('real-estate') };
+/data/data/com.termux/files/home/mybot/api/server.js:137:    else if (pathname === '/api/market/gold' && req.method === 'GET') response = { success: true, data: load('gold') };
+/data/data/com.termux/files/home/mybot/api/server.js:138:    else if (pathname === '/api/market/auto' && req.method === 'GET') response = { success: true, data: load('auto') };
+/data/data/com.termux/files/home/mybot/api/server.js:142:    else if (pathname === '/api/market/real-estate' && req.method === 'POST') response = addProperty(data);
+/data/data/com.termux/files/home/mybot/api/server.js:143:    else if (pathname === '/api/market/gold' && req.method === 'POST') response = addGold(data);
+/data/data/com.termux/files/home/mybot/api/server.js:144:    else if (pathname === '/api/market/auto' && req.method === 'POST') response = addCar(data);
+/data/data/com.termux/files/home/mybot/api/server.js:158:  console.log('GET:  /api/stats, /api/market/*');
+/data/data/com.termux/files/home/mybot/api/server.js:159:  console.log('POST: /api/register, /api/login, /api/market/*');

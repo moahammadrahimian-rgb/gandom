@@ -1,0 +1,19 @@
+{
+  "project": "GANDUM",
+  "test": "REAL-DATA-CONTRACT",
+  "mode": "REAL_EXECUTION",
+  "timestamp": "2026-10-01T19:13:23.496Z",
+  "health": {
+    "ok": true,
+    "project": "GANDUM-P2P",
+    "node_id": "51b65de9-5b35-4dfe-9b78-9596d2e3e6df",
+    "peers": 0,
+    "uptime": 1863.914614957
+  },
+  "result": {
+    "node_id": "REAL-DATA-de1c67ee-7cf2-4182-b8e3-cdf38f1f2304",
+    "message_id": "msg-ed13e5af-7989-4aac-87e7-1df26151a916",
+    "ack_type": "DATA_ACK",
+    "accepted": true
+  }
+}

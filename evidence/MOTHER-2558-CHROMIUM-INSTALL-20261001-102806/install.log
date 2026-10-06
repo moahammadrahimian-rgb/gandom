@@ -1,0 +1,16 @@
+=== GANDOM / LAW 2558 / CHROMIUM INSTALL ===
+DEB=/data/data/com.termux/files/usr/var/tmp/apt/chromium_138.0.7204.100_arm.deb
+(Reading database ... 40982 files and directories currently installed.)
+Preparing to unpack .../chromium_138.0.7204.100_arm.deb ...
+Unpacking chromium (138.0.7204.100) ...
+dpkg: error processing archive /data/data/com.termux/files/usr/var/tmp/apt/chromium_138.0.7204.100_arm.deb (--install):
+ cannot copy extracted data for './data/data/com.termux/files/usr/lib/chromium/locales/ko.pak' to '/data/data/com.termux/files/usr/lib/chromium/locales/ko.pak.dpkg-new': failed to write (No space left on device)
+dpkg-deb: error: paste subprocess was killed by signal (Broken pipe)
+Errors were encountered while processing:
+ /data/data/com.termux/files/usr/var/tmp/apt/chromium_138.0.7204.100_arm.deb
+=== STATUS ===
+Package: chromium
+Status: install ok not-installed
+Architecture: arm
+=== AUDIT ===
+=== BINARIES ===
