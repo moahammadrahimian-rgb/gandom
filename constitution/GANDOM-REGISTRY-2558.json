@@ -1,0 +1,603 @@
+{
+  "law": "2558",
+  "type": "GANDOM_REGISTRY",
+  "created": "2026-10-10T15:28:18.254Z",
+  "total_files": 102,
+  "unique_files": 91,
+  "duplicates": 11,
+  "files": [
+    {
+      "path": "ALL/GANDOM-ALL.js",
+      "hash": "a502bc97ec7534b7123f3c67d069f481346eb7c893975c76720bb244aa7b6ef7",
+      "size": 4048,
+      "mtime": "2026-10-10T13:52:14.808Z"
+    },
+    {
+      "path": "ALL/GANDOM-BOOT-MASTER.js",
+      "hash": "7ff18d3c7dd7b3d3a125142c06140797b5c62d9abf5ac050d62b41a4780bc5fd",
+      "size": 2472,
+      "mtime": "2026-10-10T13:54:45.944Z"
+    },
+    {
+      "path": "ALL/dashboard.html",
+      "hash": "75c8d8fc2ea959c0414079f2799154f637d8aa7194f6eba0bc85a87528f8ec6a",
+      "size": 6640,
+      "mtime": "2026-10-10T13:58:36.472Z"
+    },
+    {
+      "path": "ALL-IN-ONE/README.md",
+      "hash": "18c73c0ee5b47f95842d8ccd604fceed9320150ce88d5da62246bcd199745f09",
+      "size": 731,
+      "mtime": "2026-10-10T15:07:19.420Z"
+    },
+    {
+      "path": "ALL-IN-ONE/audit-server.js",
+      "hash": "5e60459617ca40c06aee00a8ab898cc27a1da02bc3703add9858beb7504a5b9d",
+      "size": 4448,
+      "mtime": "2026-10-10T15:01:00.092Z"
+    },
+    {
+      "path": "ALL-IN-ONE/backend.js",
+      "hash": "12cc2d688216edcfab10d06cd0810dc4736b7937db16ab08df9ade2077ef07ad",
+      "size": 3096,
+      "mtime": "2026-10-10T15:01:00.076Z"
+    },
+    {
+      "path": "ALL-IN-ONE/client.html",
+      "hash": "0960b7ff5e297fcf158b1e699ac6828be812253955cf29f940b3bb2638438e5d",
+      "size": 5158,
+      "mtime": "2026-10-10T15:01:00.056Z"
+    },
+    {
+      "path": "ALL-IN-ONE/final.html",
+      "hash": "7431ef2b2d1eb00fa80041bc4d7a592c79ba5e21f07d3836f636ea4e6d44b16b",
+      "size": 1996,
+      "mtime": "2026-10-10T15:01:00.020Z"
+    },
+    {
+      "path": "ALL-IN-ONE/p2p-server.js",
+      "hash": "20cc00cced7d0097748a8a31a8a3ffde9a48d0dc288c4f146c7073a4c1f3a8f8",
+      "size": 11969,
+      "mtime": "2026-10-10T15:01:00.116Z"
+    },
+    {
+      "path": "ALL-IN-ONE/package.json",
+      "hash": "76100fe0808b1b9a1c8ff4db3adcfe105dcfb1b3e776d937406564023ce7e78e",
+      "size": 662,
+      "mtime": "2026-10-10T15:03:45.788Z"
+    },
+    {
+      "path": "ALL-IN-ONE/start.sh",
+      "hash": "63052ca8c37b0486551f3e600a753eb63896c4b89a2d0a848f6baeafa933ca9b",
+      "size": 459,
+      "mtime": "2026-10-10T15:08:49.956Z"
+    },
+    {
+      "path": "ALL-IN-ONE/ui-server.js",
+      "hash": "0e0dc47e731e21c3fcb1e6391ecab1d7cd88f9e6dbae8c64d93cbc38df66a2e9",
+      "size": 10081,
+      "mtime": "2026-10-10T15:01:00.132Z"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "hash": "227766521fa32807ffff24c2dadac96a81c1d06d0a6641d00e71cebc8b19568d",
+      "size": 1035,
+      "mtime": "2026-10-10T07:17:21.576Z"
+    },
+    {
+      "path": "GANDOM-BOOT.sh",
+      "hash": "dcf09171ac6c4752f8f71a6b6f498178f9a6f9966d724edc3d8ae83c98583bf7",
+      "size": 3036,
+      "mtime": "2026-10-10T09:36:14.548Z"
+    },
+    {
+      "path": "GANDOM-FULL-AUTOMATION-2558.js",
+      "hash": "38d2519fcea1d8b2a8c1a6eb0a3519bec9fae319a7ea56fe2819406885fceefe",
+      "size": 5723,
+      "mtime": "2026-10-10T14:12:01.768Z"
+    },
+    {
+      "path": "GANDOM-ONE-SITE.html",
+      "hash": "966efa811d58e1d8c7fde50550c01ee2add74d5edd07b2b8c916c6c9aeac91ac",
+      "size": 9769,
+      "mtime": "2026-10-10T14:16:57.316Z"
+    },
+    {
+      "path": "GANDOM-ONE.html",
+      "hash": "7822f6443c0c6e4fed0a877d775f3edeec76cd978b30894e725c2a2028462085",
+      "size": 6000,
+      "mtime": "2026-10-10T14:06:29.748Z"
+    },
+    {
+      "path": "GANDOM-REGISTRY-2558.js",
+      "hash": "ee4a658d56aeb2c1560f9843c9f1ccc2daeb4f715cc50f5f9b01688d93bd2dd3",
+      "size": 3221,
+      "mtime": "2026-10-10T15:28:12.728Z"
+    },
+    {
+      "path": "GANDOM-SECTION-01.tar.gz",
+      "hash": "d75ac3c72a35989e03b936470c4b3261f4c69bc0617ad54e9b9a4d046921d050",
+      "size": 10457,
+      "mtime": "2026-10-10T15:18:19.772Z"
+    },
+    {
+      "path": "LICENSE",
+      "hash": "3efaee7f2aad7ddcde84e64b13da0351ec041a2a7b7653a3e0395ce3613f7ef8",
+      "size": 1074,
+      "mtime": "2026-10-10T07:00:31.948Z"
+    },
+    {
+      "path": "PROPOSAL.txt",
+      "hash": "4a504910ffb86b5472011a971aef53aeed0e5810559956d950b4c52be1362100",
+      "size": 741,
+      "mtime": "2026-10-10T14:09:40.324Z"
+    },
+    {
+      "path": "README.md",
+      "hash": "5fd01e28f9bbee8f62c7f78e52824a9857ce509e5d225f99a7d2e2dfdf83cbc9",
+      "size": 233,
+      "mtime": "2026-10-10T06:53:30.292Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/CONTROL.txt",
+      "hash": "53eacca9fd8a6a119aa3e5e49fe73c5fb15a59e5fa6dc92091a5ce9b0f346203",
+      "size": 446,
+      "mtime": "2026-10-10T05:54:54.712Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/current-live-backup/current-live.sha256",
+      "hash": "e9bb37439013e44a9d6f2e1f43a3f3a1cc987f96a26dc233dd746609714bd927",
+      "size": 181,
+      "mtime": "2026-10-10T05:55:46.848Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/current-live-backup/current-live.tar.gz",
+      "hash": "f438a2d89ff8eeba90e67ef42652e6158cbb26459f9f576cfa7e3c44e5dde3ed",
+      "size": 257690831,
+      "mtime": "2026-10-10T05:55:46.056Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/discovery/ALL-SOURCES.txt",
+      "hash": "a86bfab465f49fa9e77e0abaaad0e08c066f4562e146a16e0062585458868cb2",
+      "size": 35823,
+      "mtime": "2026-10-10T05:55:48.640Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/discovery/BACKUP-DIRECTORIES.txt",
+      "hash": "3c8867fd3a2c00cb1e159f2e828f67eb9779738b059e7e2a8d7578eb1060bf40",
+      "size": 17045,
+      "mtime": "2026-10-10T05:55:48.928Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/evidence/REVIVAL-CONTROL.txt",
+      "hash": "d3c1f74d590f1bf7c7f2c695bcde8e62995ad5378a962b46d01b4305cac704d9",
+      "size": 606,
+      "mtime": "2026-10-10T05:59:02.156Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/evidence/javascript-syntax.txt",
+      "hash": "8ead3054648c17035048a76b65371112bb2b7573a5eda0e0955d2fd7bfe1fa91",
+      "size": 13432,
+      "mtime": "2026-10-10T05:58:57.144Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/evidence/staging-sha256.txt",
+      "hash": "4bc72f1017243183f409789647a19379501054995bd03d02aa787bf7a27b520c",
+      "size": 48116,
+      "mtime": "2026-10-10T05:59:01.916Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/report/CANDIDATES.tsv",
+      "hash": "ac67dca1a32f3d32af5bc406c6bab39ddcacd3458b37deedad9ad77eb3a8c55b",
+      "size": 45866,
+      "mtime": "2026-10-10T05:57:58.728Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/report/CANONICAL-SELECTION.tsv",
+      "hash": "2630a67c791399f770e4324e4396371752f1c36af9e4134cc8dfd112e966b216",
+      "size": 57497,
+      "mtime": "2026-10-10T05:58:09.376Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/report/SOURCE-HASHES.tsv",
+      "hash": "92f1f876dea23e8c8ea956447fffb7fcc063a3989f6a19fb26b422811b3e2b5d",
+      "size": 69133,
+      "mtime": "2026-10-10T05:56:15.900Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/report/UNKNOWN-DETAILED.tsv",
+      "hash": "e799349c066cdea3050127144a97a1e65898b28d8e26bd8ebb2ad0e40d2020e3",
+      "size": 1759,
+      "mtime": "2026-10-10T05:58:02.128Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/report/UNKNOWN.tsv",
+      "hash": "f86ef4323125b5fd73a908c45ba914236f0033e2fde6af9ee6b9289967582fd4",
+      "size": 5478,
+      "mtime": "2026-10-10T05:57:52.852Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/Engine-Execution/GANDOM-LAYER-GATE-EXECUTOR-2558.js",
+      "hash": "a71276ac8824f5fa11a105c7a895850d396d766120a4685a9a7535d2a80e14aa",
+      "size": 3628,
+      "mtime": "2026-10-10T04:50:22.188Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/Law2558/GANDOM-EXPERIENCE-INJECTOR-2558.js",
+      "hash": "c7bd31f4b795aa7447911e33cdd91bece7fa246fb93129b11b3bad53d0adf198",
+      "size": 4662,
+      "mtime": "2026-10-10T04:31:31.360Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/Law2558/GANDOM-LUNG-GLOBAL-2558.js",
+      "hash": "9185eb65b62d779dd77635b83345e4174d5e9e8ee42122dbb4f54141aa5982db",
+      "size": 4319,
+      "mtime": "2026-10-10T04:02:31.548Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/Law2558/GANDOM-SOUL-2558.js",
+      "hash": "bea352592f386ce3ed3a95d29cd82e95025f7f0bb28d5823af9dd55fdd6c8474",
+      "size": 4836,
+      "mtime": "2026-10-10T05:31:51.156Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/Law2558/LAW2558-MASTER-PREFLIGHT-2026-10-10T04-46-55-577Z.json",
+      "hash": "b2ba0d213ae62d95f7d72d0de178e1adbcb781fcd13a604f6ca795a3f100c263",
+      "size": 2270,
+      "mtime": "2026-10-10T04:46:55.580Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/P2P-Node/GANDOM-NODE-DEATH-2558.js",
+      "hash": "3ac27f2281422d49a66c5cea6020153558b1a77138e1985c9ff8ec5188ffe916",
+      "size": 4570,
+      "mtime": "2026-10-10T04:22:12.160Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/UI/gandom-complete.css",
+      "hash": "8914511e7c33383f44aa008f1728e594211baffa9316e1db637beb388b4104f3",
+      "size": 14702,
+      "mtime": "2026-10-10T05:01:12.008Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/UI/gandom-ui.css",
+      "hash": "77c11e128d4c7c562dce4d4cfde3adcd1d880bdc8d48cf6ac012f8635b877078",
+      "size": 3944,
+      "mtime": "2026-10-10T05:01:12.008Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/UI/gandom-ui.js",
+      "hash": "3431f123c8da32f0558ecf145db09edd8b9626962c11d198f407b7d419387673",
+      "size": 2086,
+      "mtime": "2026-10-10T05:01:12.008Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/Unknown/GANDOM-BOOT.sh",
+      "hash": "104c6afe75e5617dee676e056695d509ad33c1bc3587efa85d371ee601967188",
+      "size": 2525,
+      "mtime": "2026-10-10T04:34:14.560Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/Unknown/GANDOM-LUNG-DAEMON.sh",
+      "hash": "146ab07acf3ba9f05cfd8b8e50bd62fc314b08ea8d8e23613b05cbcb424de726",
+      "size": 915,
+      "mtime": "2026-10-10T04:06:36.460Z"
+    },
+    {
+      "path": "audit/REVIVAL-1470-20261010-092454/staging/Unknown/gandom-complete.js",
+      "hash": "8de310429cc801a2da8e8c95cf00d62c9fe0cd98c767a4977d00e44fd4feac4d",
+      "size": 31337,
+      "mtime": "2026-10-10T05:01:12.008Z"
+    },
+    {
+      "path": "audit-service/audit.log",
+      "hash": "be403feb17c02fe26348ac9c53d143cb3dc6d16c676e5b595940e740bd826875",
+      "size": 203,
+      "mtime": "2026-10-10T14:45:52.952Z"
+    },
+    {
+      "path": "audit-service/bridge.log",
+      "hash": "0e56b3c2913aecbb98944c542655280158ebe72506aae8325cbad0bf4d7b41ef",
+      "size": 257,
+      "mtime": "2026-10-10T11:23:47.504Z"
+    },
+    {
+      "path": "audit-service/wallet-bridge.js",
+      "hash": "c43a68aced66c0c874ebf234fcd79343c553c28421c61aa65998b4eaa0e2e007",
+      "size": 2453,
+      "mtime": "2026-10-10T11:23:38.136Z"
+    },
+    {
+      "path": "docs/MARKETING.md",
+      "hash": "0fb825c3f0c8e1f749e68ac611a329eeb02651226f12f4974a49f81585d1e570",
+      "size": 2581,
+      "mtime": "2026-10-10T07:28:59.416Z"
+    },
+    {
+      "path": "docs/PORTFOLIO.md",
+      "hash": "d0c1745ea86f3e390f4ac343a65024c165edfc622bfeed9514369b9132470619",
+      "size": 2272,
+      "mtime": "2026-10-10T13:23:41.156Z"
+    },
+    {
+      "path": "docs/PRICING-NEW.md",
+      "hash": "a6b48aca10b0264e06bf8291057af6d72a477d8e96031df61a54a200ca759b00",
+      "size": 985,
+      "mtime": "2026-10-10T09:59:20.216Z"
+    },
+    {
+      "path": "docs/PRODUCT.md",
+      "hash": "5d786174589f0df73350f0d6aebdd79d1ac8547258f5cdaa7ca622dd9c34df16",
+      "size": 1231,
+      "mtime": "2026-10-10T07:27:22.948Z"
+    },
+    {
+      "path": "docs/landing/index.html",
+      "hash": "2092914dcaa7a309c82d442de280a0f4ea5938859d035cf6aa87e351a9fd24fe",
+      "size": 5326,
+      "mtime": "2026-10-10T07:57:36.388Z"
+    },
+    {
+      "path": "employees/AI-ACCOUNTANT-038.js",
+      "hash": "84afa14fef2024b309dd7947b4ffeafee8d738cc7d2c0b94fc6d6c3c26fe52fc",
+      "size": 4104,
+      "mtime": "2026-10-10T12:09:01.064Z"
+    },
+    {
+      "path": "employees/AI-MARKETER-037.js",
+      "hash": "ca192c96fa8894c8694f2cb4911823c53aba20c4b064b8f1fe27ebbe4973c74c",
+      "size": 2544,
+      "mtime": "2026-10-10T07:30:59.848Z"
+    },
+    {
+      "path": "employees/AI-TREASURER-039.js",
+      "hash": "aa1ff40d0e3131abe6f7f5ca4f5d7a50813fc87cdcb823144e1bd618b42f59f1",
+      "size": 3678,
+      "mtime": "2026-10-10T12:11:42.308Z"
+    },
+    {
+      "path": "employees/GANDOM-AUDIT-2558.js",
+      "hash": "3cf3bceebc3a87609a9a0c1b69852b5dc32d33aab8e3163a5a2bf117c5aca221",
+      "size": 2979,
+      "mtime": "2026-10-10T07:08:17.004Z"
+    },
+    {
+      "path": "employees/accounting-ledger.json",
+      "hash": "65afa2042f5791145e2fa161c547248de23941e2ee7f7f798a7f2caffd3082c0",
+      "size": 1478,
+      "mtime": "2026-10-10T13:55:00.240Z"
+    },
+    {
+      "path": "employees/treasury-report.json",
+      "hash": "9333a7aebed5821703783f0e67d2742f4ba50971b20df3649e7b2a3dfa15c04e",
+      "size": 817,
+      "mtime": "2026-10-10T13:55:00.796Z"
+    },
+    {
+      "path": "employees/wallet-bridge.js",
+      "hash": "f7814a439140fb49c1450a18a3af34c49f156a6678f237b2891d3637698cd727",
+      "size": 3173,
+      "mtime": "2026-10-10T12:17:26.212Z"
+    },
+    {
+      "path": "employees/workforce.js",
+      "hash": "2445b9959d1fd7783334439c4ba5cac41c773cb4627fc9032e942e8c1bab7ee7",
+      "size": 3166,
+      "mtime": "2026-10-10T07:05:19.088Z"
+    },
+    {
+      "path": "evidence/LAYER-GATE-EXECUTION-1791607910084.json",
+      "hash": "973f9995adad49339042e0d09b27640bd2adb02fd5a70ed88ff1a365d876955e",
+      "size": 3070,
+      "mtime": "2026-10-10T04:51:50.088Z"
+    },
+    {
+      "path": "evidence/LAYER-GATE-EXECUTION-1791607959870.json",
+      "hash": "b4fb8a24fc20bc5cfda18d06dce82d67d9e8cb702e99e4c8acc973ea228a71f5",
+      "size": 3070,
+      "mtime": "2026-10-10T04:52:39.872Z"
+    },
+    {
+      "path": "gandom-core/cell-life-2558/lung-state.json",
+      "hash": "dea46408682b75bc39910dd6e4b40f34b3669714dac795bdc7f36711c72715ba",
+      "size": 164,
+      "mtime": "2026-10-10T15:28:12.896Z"
+    },
+    {
+      "path": "gandom-core/evidence/LAYER-GATE-EXECUTION-1791607771590.json",
+      "hash": "8cbae9b17c3a5ffa6a1a2ebdf69d926486dd5d373f07220c4a9124982e79c1ff",
+      "size": 3098,
+      "mtime": "2026-10-10T04:49:31.592Z"
+    },
+    {
+      "path": "gandom-core/governance/soul-state.json",
+      "hash": "773a28ed286f6e21abb784d3cf0a4890c0ded27af99421a7b3d88da2e341c7c8",
+      "size": 749,
+      "mtime": "2026-10-10T13:54:56.276Z"
+    },
+    {
+      "path": "gandom-core/neural/GANDOM-NEURAL-BRAIN-2558.js",
+      "hash": "942e115b624ca1ea7245dfbffd00d87ef98649797e84eff0f83b66d96e6ebc9f",
+      "size": 5049,
+      "mtime": "2026-10-10T06:03:19.512Z"
+    },
+    {
+      "path": "gandom-core/neural/REAL-NEURAL-SAFETY-GOVERNOR-2558.js",
+      "hash": "d3c8df957c9d6ae0a113a4b0fa38419fbf3276d8b12748eccb8fb50f86eb917e",
+      "size": 8717,
+      "mtime": "2026-10-10T06:03:19.512Z"
+    },
+    {
+      "path": "gandom-core/neural/REAL-NEURAL-SAFETY-INTEGRATION-2558.js",
+      "hash": "e411722f2210d7dfd80cd1b564b7b1410d5246abb5dfbd3b086f7865c824654e",
+      "size": 4930,
+      "mtime": "2026-10-10T06:03:19.512Z"
+    },
+    {
+      "path": "gandom-core/p2p/worker-state/engine/JOB-WORKER-2558.js",
+      "hash": "e77cddedb2bb46f3899c3e74329e4b8b2b37d34f2d55b627fa498af2cfd1aae6",
+      "size": 4451,
+      "mtime": "2026-10-10T13:27:34.164Z"
+    },
+    {
+      "path": "gandom-core/revenue/GANDOM-ZARINPAL-ADAPTER-2558.js",
+      "hash": "fd0498e5ad64620c0e245f1da14b0166fe2f587e51637b23c5b5cb0a53e6a489",
+      "size": 3679,
+      "mtime": "2026-10-10T13:19:14.636Z"
+    },
+    {
+      "path": "gandom-core/revenue/test-fpay.js",
+      "hash": "7bf121d16fe771bec8d9b01cd4c02c85de87fa1744ea4f40bf2d0ddd30c4bc72",
+      "size": 407,
+      "mtime": "2026-10-10T13:17:47.776Z"
+    },
+    {
+      "path": "gandom-core/revival-live/injected-experience.json",
+      "hash": "2f4f59b190833817233cd15321deffd992fa64526226ac2bb2ffe96d9acdb33b",
+      "size": 6947,
+      "mtime": "2026-10-10T13:54:56.840Z"
+    },
+    {
+      "path": "runtime-logs/BOOT-20261010-070841.log",
+      "hash": "c5126103748aa494b44575138f0b5ad3a36a452ff62ea022bdd92114f74f99f8",
+      "size": 1205,
+      "mtime": "2026-10-10T04:35:05.548Z"
+    },
+    {
+      "path": "runtime-logs/BOOT-20261010-080458.log",
+      "hash": "3c81543b2b076468c4245beb9dc89c8cdc36016eba81da60765d7003798c5aa3",
+      "size": 3858,
+      "mtime": "2026-10-10T04:35:14.100Z"
+    },
+    {
+      "path": "runtime-logs/LUNG-DAEMON-20261010-073706.log",
+      "hash": "e1d86a8ef7883292da3455e251b8f48781f0f64a76020af944fe9ba8daa30354",
+      "size": 197814,
+      "mtime": "2026-10-10T04:34:56.368Z"
+    },
+    {
+      "path": "runtime-logs/LUNG-DAEMON-20261010-080500.log",
+      "hash": "bd48301202c3e728ee1f8c6f6229decd2dce55b53dba41c32594f7302e1fa959",
+      "size": 4716560,
+      "mtime": "2026-10-10T15:28:12.900Z"
+    },
+    {
+      "path": "runtime-logs/backend.log",
+      "hash": "5cb279e9d13acbda568b20b5f09cee9a0105b8840a5403b5464dd1fa1dfa6f2d",
+      "size": 296,
+      "mtime": "2026-10-10T14:55:45.900Z"
+    },
+    {
+      "path": "runtime-logs/p2p.log",
+      "hash": "54d7d2e87c43c834492c6426c9c26c49d2d47cec0468fd2b7869b52e1c15d8ee",
+      "size": 212,
+      "mtime": "2026-10-10T14:45:54.080Z"
+    },
+    {
+      "path": "runtime-logs/ui.log",
+      "hash": "d2fe84f8ba45c6487b1436c28c6fb5b38beed401d553400858f72a78dcb27ade",
+      "size": 101,
+      "mtime": "2026-10-10T14:45:52.952Z"
+    },
+    {
+      "path": "site/index.html",
+      "hash": "c2283c47b7dc53b388dd226c25bd4cb83f695f65e1198864196fcc155da71520",
+      "size": 9743,
+      "mtime": "2026-10-10T14:15:55.028Z"
+    },
+    {
+      "path": "test-integration.js",
+      "hash": "322b4e74eb88a48246b37ec0c5913fe7208f5a45a8bac3fc3cb6f613ecf4dc85",
+      "size": 2269,
+      "mtime": "2026-10-10T12:05:59.512Z"
+    },
+    {
+      "path": "wallet/GANDOM-WALLET-2558.js",
+      "hash": "d435852142991b463c2f84ca5824f0129eec05d7a42163e7b3ea0d0c6bcbb69b",
+      "size": 4520,
+      "mtime": "2026-10-10T09:47:02.192Z"
+    },
+    {
+      "path": "wallet/modules/deposit.js",
+      "hash": "14f552f175be209783ec10b5c749709f07c9d9f9f193a7487242bb62c404aff8",
+      "size": 600,
+      "mtime": "2026-10-10T11:12:38.524Z"
+    },
+    {
+      "path": "wallet/modules/fee.js",
+      "hash": "f935cfb856851a71aa16cfa9470fe3e7a5533c8e0193e5de5e660e0cf3366c18",
+      "size": 543,
+      "mtime": "2026-10-10T10:06:46.300Z"
+    },
+    {
+      "path": "wallet/modules/index.js",
+      "hash": "8fb9c4314c5b694017e158425c44f3a8b586277f84db0bc6f36eacb77679f50c",
+      "size": 621,
+      "mtime": "2026-10-10T11:12:38.584Z"
+    },
+    {
+      "path": "wallet/modules/transfer.js",
+      "hash": "0d79babe9374d3644df6dd6b45b2461bc5093bbf547e35c81e5a324858487b97",
+      "size": 770,
+      "mtime": "2026-10-10T11:12:38.564Z"
+    },
+    {
+      "path": "wallet/modules/withdraw.js",
+      "hash": "00f9b45336c0a8bf0d8baa902caa17fa85c4eb710d968694af342d496cf2cb2a",
+      "size": 683,
+      "mtime": "2026-10-10T11:12:38.544Z"
+    },
+    {
+      "path": "wallet/wallet-state.json",
+      "hash": "bab548bea6df189d8dbe5a8bacec64a99887deb6f7d9336a7aa6208ea218bb8c",
+      "size": 1084,
+      "mtime": "2026-10-10T13:54:58.636Z"
+    }
+  ],
+  "duplicates_list": [
+    {
+      "path": "FINAL.html",
+      "duplicate_of": "ALL-IN-ONE/final.html"
+    },
+    {
+      "path": "audit-service/client.html",
+      "duplicate_of": "ALL-IN-ONE/client.html"
+    },
+    {
+      "path": "audit-service/server.js",
+      "duplicate_of": "ALL-IN-ONE/audit-server.js"
+    },
+    {
+      "path": "gandom-backend.js",
+      "duplicate_of": "ALL-IN-ONE/backend.js"
+    },
+    {
+      "path": "gandom-core/cell-life-2558/GANDOM-LUNG-DAEMON.sh",
+      "duplicate_of": "audit/REVIVAL-1470-20261010-092454/staging/Unknown/GANDOM-LUNG-DAEMON.sh"
+    },
+    {
+      "path": "gandom-core/cell-life-2558/GANDOM-LUNG-GLOBAL-2558.js",
+      "duplicate_of": "audit/REVIVAL-1470-20261010-092454/staging/Law2558/GANDOM-LUNG-GLOBAL-2558.js"
+    },
+    {
+      "path": "gandom-core/governance/GANDOM-LAYER-GATE-EXECUTOR-2558.js",
+      "duplicate_of": "audit/REVIVAL-1470-20261010-092454/staging/Engine-Execution/GANDOM-LAYER-GATE-EXECUTOR-2558.js"
+    },
+    {
+      "path": "gandom-core/governance/GANDOM-SOUL-2558.js",
+      "duplicate_of": "audit/REVIVAL-1470-20261010-092454/staging/Law2558/GANDOM-SOUL-2558.js"
+    },
+    {
+      "path": "gandom-core/p2p/neural/GANDOM-NODE-DEATH-2558.js",
+      "duplicate_of": "audit/REVIVAL-1470-20261010-092454/staging/P2P-Node/GANDOM-NODE-DEATH-2558.js"
+    },
+    {
+      "path": "gandom-core/revival-live/GANDOM-EXPERIENCE-INJECTOR-2558.js",
+      "duplicate_of": "audit/REVIVAL-1470-20261010-092454/staging/Law2558/GANDOM-EXPERIENCE-INJECTOR-2558.js"
+    },
+    {
+      "path": "runtime-logs/LAW2558-MASTER-PREFLIGHT-2026-10-10T04-46-55-577Z.json",
+      "duplicate_of": "audit/REVIVAL-1470-20261010-092454/staging/Law2558/LAW2558-MASTER-PREFLIGHT-2026-10-10T04-46-55-577Z.json"
+    }
+  ],
+  "registry_hash": "7dbdaec0e1d15f6f1ec4857f21cc4bb6e539a1a7fa6af6bf1a5f2df9d85789d1"
+}
