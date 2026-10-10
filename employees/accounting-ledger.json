@@ -1,0 +1,27 @@
+{
+  "entries": [
+    {
+      "id": "ENTRY-2f73054b",
+      "debit": "moahammadrahimian-rgb",
+      "credit": "GANDOM-TREASURY",
+      "amount_irt": 51000,
+      "description": "Owner share from AUDIT-850a7257",
+      "ts": "2026-10-10T12:09:10.566Z",
+      "hash": "a42d277f4b564bf0e4cdfb493b62e58738226327e044851575fc765ca5305856"
+    },
+    {
+      "id": "ENTRY-1670ed36",
+      "debit": "GANDOM-TREASURY",
+      "credit": "AI-AUDITOR",
+      "amount_irt": 1000000,
+      "description": "Salary payment to AI-AUDITOR",
+      "ts": "2026-10-10T12:09:10.572Z",
+      "hash": "b99913e3240ad6cfaa70c11b70c382fb92ee3d9a1f3a994b315933f13946b3b1"
+    }
+  ],
+  "total_debit": 1051000,
+  "total_credit": 1051000,
+  "balance": 0,
+  "hash": "a1de2addd44a4529e92d62fd8a7fada4e826bf926d7b0e54050adeef861a78c3",
+  "last_updated": "2026-10-10T12:09:10.572Z"
+}
