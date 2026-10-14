@@ -1,2 +1,0 @@
-// تست خودکار 10: VALID_TRANSACTION
-console.log('VALID_TRANSACTION=PASS');

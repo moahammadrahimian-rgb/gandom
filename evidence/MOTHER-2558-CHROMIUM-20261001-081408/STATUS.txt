@@ -1,3 +1,0 @@
-Package: chromium
-Status: install ok not-installed
-Architecture: arm

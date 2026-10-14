@@ -1,5 +1,0 @@
-total 19
-drwx------. 2 u0_a305 u0_a305 3452 Oct  1 16:41 .
-drwx------. 4 u0_a305 u0_a305 3452 Sep 30 17:42 ..
--rw-------. 1 u0_a305 u0_a305 6881 Oct  1 16:41 gandom-complete.js
--rw-------. 1 u0_a305 u0_a305 1825 Oct  1 14:48 gandom-ui.js

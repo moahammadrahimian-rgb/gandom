@@ -1,3 +1,0 @@
-      1 class="ai-panel"
-     10 class="card"
-     14 class="sec"

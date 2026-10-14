@@ -1,15 +1,32 @@
 # 🌾 GANDOM 2558
 
-A Living Decentralized AI Ecosystem.
+Living Decentralized AI Ecosystem
+Law 2558 | No Fake Pass | Real Execution Only
 
-**Status:** ALIVE
-**Law:** 2558
-**Cells:** 400,000
-**Brain:** 4096 neurons
-**Soul:** Persistent
+## Features
 
-## Quick Start
+### Blockchain
+- Block + Blockchain + Mining
+- Transaction with ED25519
+- Consensus 51%
+- P2P Sync
+- Merkle Tree
+- Halving
 
-```bash
-bash GANDOM-BOOT.sh
-curl http://127.0.0.1:8787/health
+### Users
+- Register + Login (JWT)
+- GDM Address
+- ED25519 Keys
+
+### Network
+- P2P WebSocket
+
+## Install
+bash install.sh
+
+## Access
+- Dashboard: http://127.0.0.1:8080/
+- Explorer: http://127.0.0.1:8787/assets/chain.html
+
+---
+🌾 GANDOM 2558 🌾

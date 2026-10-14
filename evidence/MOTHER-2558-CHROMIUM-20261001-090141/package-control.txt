@@ -1,4 +1,0 @@
-Package: chromium
-Version: 138.0.7204.100
-Architecture: arm
-Depends: atk, cups, dbus, fontconfig, gtk3, krb5, libc++, libdrm, libevdev, libxkbcommon, libminizip, libnss, libx11, mesa, openssl, pango, pulseaudio, zlib

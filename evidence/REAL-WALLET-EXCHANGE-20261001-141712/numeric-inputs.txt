@@ -1,3 +1,0 @@
-www/admin.html:25:<input type="number" id="price" placeholder="قیمت (تومان)">
-www/admin.html:99:               type="number"
-www/admin.html:100:               inputmode="decimal"

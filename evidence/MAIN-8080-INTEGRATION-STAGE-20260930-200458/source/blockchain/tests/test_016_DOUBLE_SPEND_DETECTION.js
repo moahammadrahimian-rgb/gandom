@@ -1,2 +1,0 @@
-// تست خودکار 16: DOUBLE_SPEND_DETECTION
-console.log('DOUBLE_SPEND_DETECTION=PASS');

@@ -1,8 +1,0 @@
-proot error: execve("/data/data/com.termux/files/usr/lib/chromium/chrome"): Exec format error
-proot info: possible causes:
-  * the program is a script but its interpreter (eg. /bin/sh) was not found;
-  * the program is an ELF but its interpreter (eg. ld-linux.so) was not found;
-  * the program is a foreign binary but qemu was not specified;
-  * qemu does not work correctly (if specified);
-  * the loader was not found or doesn't work.
-fatal error: see `proot --help`.

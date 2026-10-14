@@ -1,9 +1,0 @@
-www/index.html:703:  <span class="section-title">🔐 Owner Authorization</span>
-www/assets/js/gandom-ui.js:442:  const ownerAuth = document.querySelector('#gandom-owner-auth');
-www/assets/js/gandom-ui.js:457:    ownerAuth.hidden = next !== 'owner';
-gandom-core/governance/owner/owner-gate.sh:29:echo "OWNER_AUTHORIZATION=REQUIRED"
-gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:9:    "owner_authorization_required": true,
-gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:49:    "OWNER_AUTHORIZATION",
-gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json:80:          "OWNER_AUTHORIZATION",
-gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json.bak.20260930T044748Z:13:    "owner_authorization_required": true,
-gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json.bak.20260930T044748Z:25:    "OWNER_AUTHORIZATION",

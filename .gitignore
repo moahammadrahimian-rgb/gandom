@@ -1,14 +1,20 @@
 node_modules/
-gandom.db
-gandom.log
-
-# Local backups
+package-lock.json
+blockchain-data/
+blockchain-data-b/
+users-data/
+logs/
+*.log
+*.backup
+*.backup-*
 backups/
-
-# Local runtime/build output
-android/.gradle/
-android/build/
-android/app/build/
-android/.idea/
-gandom-core/governance/owner/.owner-key
+tmp/
+*.tmp
+*.pid
+.DS_Store
+.vscode/
+.idea/
 .env
+dist/
+build/
+*.apk

@@ -1,3 +1,0 @@
-nohup: ignoring input
-GANDOM_SERVER=http://127.0.0.1:8080
-GANDOM_HEALTH=http://127.0.0.1:8080/health

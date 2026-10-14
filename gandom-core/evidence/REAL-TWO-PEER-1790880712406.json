@@ -1,9 +1,0 @@
-{
-  "project": "GANDUM",
-  "test": "REAL-TWO-PEER-CONNECTION",
-  "mode": "REAL_EXECUTION",
-  "timestamp": "2026-10-01T18:51:52.386Z",
-  "peer_a": "REAL-PEER-A",
-  "peer_b": "REAL-PEER-B",
-  "peer_count": 2
-}

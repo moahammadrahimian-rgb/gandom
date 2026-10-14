@@ -1,2 +1,0 @@
-// تست خودکار 9: SIGNATURE_REJECTION
-console.log('SIGNATURE_REJECTION=PASS');

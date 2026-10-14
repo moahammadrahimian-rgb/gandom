@@ -1,9 +1,0 @@
-{
-  "owner_authorization_required": true,
-  "authorization_level": "OWNER_AUTHORIZATION",
-  "law_version": "2558",
-  "details": {
-    "owner_auth": true,
-    "strict_mode": true
-  }
-}

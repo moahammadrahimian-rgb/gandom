@@ -1,9 +1,0 @@
-{
-  "protocol": "2558-EVIDENCE",
-  "runId": "RUN-20260930043238567-e32ca99705b26d59",
-  "challenge": "d84be3379ac5c0eac4ba9663b6c26dfcea87fd9f42797cf14d5c07d47e0ef5bc",
-  "createdAt": "2026-09-30T04:32:38.651Z",
-  "projectRoot": "/data/data/com.termux/files/home/gandom",
-  "gitHead": "437ab2afca97ac41b410784b4cf8af3a077fc2dc",
-  "status": "OPEN"
-}

@@ -1,7 +1,24 @@
+const { handleUsersAPI } = require('./users-api.js');
+
+const { handleBlockchainMessage, broadcastNewBlock } = require('./blockchain-p2p-handler.js');
+
+const { GandomBlockchain } = require('./blockchain-100.js');
+
+// ─── Blockchain ───
+const { handleBlockchainAPI } = require('./blockchain-api.js');
+
+const gandomChain = new GandomBlockchain();
+
 const { getStateSnapshot } = require('./gandom-core/state-api-adapter');
 'use strict';
 
 const http = require('http');
+const { LiveCellRuntimeBridge2558 } = require('./gandom-core/live-node/LIVE-CELL-RUNTIME-BRIDGE-2558.js');
+// LIVE_CELL_BRIDGE_2558
+const cellBridge = new LiveCellRuntimeBridge2558({
+  capacity: Number(process.env.GANDOM_CELL_CAPACITY || 1000),
+  intervalMs: Number(process.env.GANDOM_CELL_INTERVAL_MS || 5000)
+});
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -19,6 +36,16 @@ let shuttingDown = false;
 const peers = new Map();
 
 const httpServer = http.createServer((req, res) => {
+  // ─── Users APIs ───
+  if (handleUsersAPI(req, res, req.url, req.method)) {
+    return;
+  }
+
+    // ─── Blockchain APIs ───
+    if (handleBlockchainAPI(req, res, req.url, req.method, gandomChain) !== false) {
+        return;
+    }
+
 
     // ================== UI STATIC SERVER ==================
     if (
@@ -63,6 +90,7 @@ const httpServer = http.createServer((req, res) => {
 
         fs.stat(filePath, (err, stat) => {
             if (err || !stat.isFile()) {
+
                 res.writeHead(404);
                 res.end('Not Found');
                 return;
@@ -204,7 +232,14 @@ if (req.url === '/api/stats') {
     }));
   }
 
-  res.writeHead(404);
+  if (req.url.split('?')[0] === '/api/cells' && req.method === 'GET') {
+  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+  return res.end(JSON.stringify({
+    ok: true, law: 2558, integration: 'LIVE_CELL_BRIDGE_2558',
+    ...cellBridge.snapshot()
+  }));
+}
+res.writeHead(404);
   res.end('NOT_FOUND');
 });
 
@@ -324,8 +359,20 @@ wss.on('connection', (ws, req) => {
       return;
     }
 
-    send(ws, 'ERROR', {
-      code: 'UNKNOWN_MESSAGE_TYPE',
+    // ─── Blockchain P2P Messages ───
+
+
+    if (handleBlockchainMessage(message, ws, peerId, gandomChain, peers, send)) {
+
+
+        return;
+
+
+    }
+
+
+
+    send(ws, 'ERROR', { code: 'UNKNOWN_MESSAGE_TYPE',
       received_type: message.type || null
     });
   });
@@ -502,12 +549,18 @@ httpServer.listen(PORT, '0.0.0.0', () => {
     health: `http://127.0.0.1:${PORT}/health`
   });
 
+  cellBridge.start();
+  log('LIVE_CELL_BRIDGE_STARTED', {
+    capacity: cellBridge.capacity,
+    intervalMs: cellBridge.intervalMs
+  });
   if (PEER_ADDRESS) {
     connectOutbound();
   }
 });
 
 function shutdown(signal) {
+  cellBridge.stop();
   shuttingDown = true;
   if (reconnectTimer) {
     clearTimeout(reconnectTimer);

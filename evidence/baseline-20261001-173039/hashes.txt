@@ -1,4 +1,0 @@
-b0b2098f5c889800cfcccb60fd1106daa5eb044196fac50dbd126865ea9742a5  /data/data/com.termux/files/home/gandom/gandom-ui-server.js
-17b6559a243cf22d57ccb4d0364bae5c14045c8af1858e8cf486b9e1c3890c97  /data/data/com.termux/files/home/gandom/www/index.html
-65fca7108b714b65e15ce6c9e603b4ad816da3e98f96b25126e1c1abbc553f4c  /data/data/com.termux/files/home/gandom/www/assets/css/gandom-complete.css
-2db174367a9629e2cfe881a4596e752f2adb4a625fec9c38677265066032db9b  /data/data/com.termux/files/home/gandom/www/assets/js/gandom-complete.js

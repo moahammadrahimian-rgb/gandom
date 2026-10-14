@@ -1,7 +1,0 @@
-5:const WebSocket = require('ws');
-13:  if (req.url === '/health') {
-30:  if (req.url === '/') {
-43:const wss = new WebSocket.Server({ server: httpServer });
-55:  if (ws.readyState !== WebSocket.OPEN) return false;
-153:    if (peer.ws.readyState === WebSocket.OPEN) {
-167:    websocket: `ws://0.0.0.0:${PORT}`,

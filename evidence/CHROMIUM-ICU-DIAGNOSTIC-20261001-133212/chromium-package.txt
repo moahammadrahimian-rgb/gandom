@@ -1,4 +1,0 @@
-chromium
-install ok installed
-138.0.7204.100
-arm

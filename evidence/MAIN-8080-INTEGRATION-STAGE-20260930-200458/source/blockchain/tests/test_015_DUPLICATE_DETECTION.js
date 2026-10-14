@@ -1,2 +1,0 @@
-// تست خودکار 15: DUPLICATE_DETECTION
-console.log('DUPLICATE_DETECTION=PASS');
