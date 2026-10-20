@@ -1,0 +1,12 @@
+{
+  "chapter": 4,
+  "test": "REAL_INDEPENDENT_NODE_TCP",
+  "node_id": "400001",
+  "port": 19201,
+  "agent_output_pass": 1,
+  "identity_pass": 1,
+  "tcp_ping_pong_pass": 0,
+  "fake_pass_blocked": 1,
+  "result": "FAIL_REAL",
+  "source_log": "gandom-core/evidence/REAL-CHAPTER4-NODE-20261005-150711.log"
+}

@@ -1,0 +1,765 @@
+=== PROJECT METADATA ===
+{
+  "name": "gandom-p2p",
+  "version": "0.1.0",
+  "description": "GANDUM P2P real-time peer communication core",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "node client.js",
+    "health": "node -e \"require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})\""
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "ws": "^8.18.0"
+  }
+}
+
+=== TOP-LEVEL SOURCE FILES ===
+./'
+./.backend-health.json
+./.dockerignore
+./.gandom-2558/audit-report.json
+./.gandom-2558/audit.cjs
+./.gandom-2558/audit.js
+./.gandom-2558/full-readonly-report.json
+./.gandom-2558/heavy-two-node-report.json
+./.gandom-2558/heavy-two-node.cjs
+./.gandom-2558/mother-lock-report.json
+./.gandom-2558/mother-lock.js
+./.gandom-2558/performance-readonly.json
+./.gandom-2558/repair-genesis-report.json
+./.gandom-2558/repair-genesis.cjs
+./.gandom-2558/structure-report.json
+./.gandom-agent-2558/evidence-2558.jsonl
+./.gandom-agent-2558/evidence.jsonl
+./.gandom-agent-2558/latest-report.json
+./.gandom-agent-2558/state.json
+./.gandom-agent-2558/tasks-17-sections.json
+./.gandom-audit-20261016_155330/blockchain-100.js
+./.gandom-audit-20261016_155330/blockchain-p2p-handler.js
+./.gandom-audit-20261016_155330/node-b-chain.js
+./.gandom-audit-2558-20261016_160241/blockchain-100.js
+./.gandom-audit-2558-20261016_160241/blockchain-p2p-handler.js
+./.gandom-audit-2558-20261016_160241/node-b-chain.js
+./.gandom-audit-2558-20261016_160241/package.json
+./.gandom-audit-2558-20261016_160241/server.js
+./.gandom-execution-lock.json
+./.gandom-integration-rollback-20261013-094845/CELL-LIFE-ENGINE-2558.js
+./.gandom-integration-rollback-20261013-094845/LIVE-CELL-RUNTIME-BRIDGE-2558.js
+./.gandom-integration-rollback-20261013-094845/server.js
+./.gandom-server.pid
+./.gitignore
+./.installer-pid
+./.runtime/node-A.pid
+./.runtime/ui-check.html
+./=
+./ALL/GANDOM-ALL.js
+./ALL/GANDOM-BOOT-MASTER.js
+./ALL/dashboard.html
+./API.md
+./ARCHITECTURE.md
+./BACKUP_SYNC_FIX_20261017-081230/blockchain-persistent.js
+./BACKUP_SYNC_FIX_20261017-081230/node-b-chain.js
+./BACKUP_SYNC_FIX_20261017-081230/server.js
+./BLOCKCHAIN.md
+./CHANGELOG.md
+./CONTRIBUTING.md
+./Dockerfile
+./FINAL.html
+./GANDOM-ALL.md
+./GANDOM-AUTONOMOUS-AGENT-2558.js
+./GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z
+./GANDOM-AWAKENING.js
+./GANDOM-AWAKENING.json
+./GANDOM-DEEP-TREASURE-SCAN.js
+./GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js
+./GANDOM-FULL-AUTOMATION-2558.js
+./GANDOM-INTEGRATE-2558.sh
+./GANDOM-INTEGRATION-2558-REPORT.txt
+./GANDOM-LAW2558-AUDIT-20261013-102234.txt
+./GANDOM-LAW2558-AUDIT.sh
+./GANDOM-MOTHER-2558.sh
+./GANDOM-ONE-SITE.html
+./GANDOM-ONE.html
+./GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt
+./GANDOM-REGISTRY-2558.js
+./GANDOM-SECTION-01.tar.gz
+./GANDOM-TREASURE-LITE.js
+./GANDOM_2558_AUDIT_20261016T102512Z.txt
+./GANDOM_AUDIT_2558_READ_ONLY.json
+./GANDOM_CONSENSUS_GATE_2558_2026-10-16T11-22-34-402Z.txt
+./GANDOM_DEEP_AUDIT_20261016T103550Z.txt
+./GANDOM_ENGINE_SHOCK_2558.txt
+./GANDOM_EXECUTION_STATE.txt
+./GANDOM_GLOBAL_BRIDGE_2558.json
+./GANDOM_PREFLIGHT_20261016T060127Z.txt
+./GANDOM_PREFLIGHT_20261016T060154Z.txt
+./GANDOM_ROOT_CAUSE_2558_20261016T141524.txt
+./GANDOM_ROOT_CAUSE_CODE_20261016T112839Z.txt
+./GANDOM_ROOT_CAUSE_CODE_AUDIT_2558.sh
+./GANDOM_ROOT_CAUSE_DEEP_2558.sh
+./GANDOM_ROOT_CAUSE_DEEP_2558_20261016T104716Z.txt
+./GANDOM_ROOT_FIX_2558.sh
+./INSTALL.md
+./LICENSE
+./MASTER-PLAN.md
+./PROPOSAL.txt
+./PUZZLE-BACKUP-OVERLAP-2558.sh
+./README.md
+./SHOVEL-REPORT-20261013-203517.txt
+./ads-api.js
+./ads-data/ads.json
+./ads-data/campaigns.json
+./ads-data/revenue.json
+./ads-manager.js
+./ai-accountant-bridge.js
+./ai-data/accountant-ledger.json
+./ai-runner.js
+./ai-worker.js
+./android/.gitignore
+./android/build.gradle
+./android/build.gradle.BACKUP-20260929-162615
+./android/build.gradle.R24.07.before
+./android/capacitor.settings.gradle
+./android/gandom_headers.txt
+./android/gandom_response.txt
+./android/gradle.properties
+./android/gradlew
+./android/gradlew.bat
+./android/settings.gradle
+./android/variables.gradle
+./architecture/MASTER-SPECIFICATION.md
+./audit-data/reports.json
+./audit-service/client.html
+./audit-service/server.js
+./audit-service/wallet-bridge.js
+./audit/1470-AUDIT-SIZE-MAP-20261007-220325.txt
+./audit/1470-AUDIT-SIZE-MAP.sh
+./audit/1470-REAL-CLEAN.sh
+./audit/33-LIVE-BRAIN-MAP.sh
+./audit/33-LIVE-DEDUP-ENGINE.sh
+./audit/33-LIVE-ORGANS-MAP.sh
+./audit/CLEAN-STAGING-EXACT-DUPS.sh
+./audit/FAST-33-BACKTEST.sh
+./audit/GANDOM-1446-ABSOLUTE-REVIVAL.txt
+./audit/GANDOM-1470-GLOBAL-INDEX-2558.sh
+./audit/GANDOM-2558-DUAL-SYSTEM-AUDIT.txt
+./audit/GANDOM-ABSOLUTE-AUDIT.txt
+./audit/GANDOM-FAST-33-REAL-BACKTEST.sh
+./audit/GANDOM-FULL-REVIVAL-2558.js
+./audit/GANDOM-LIVE-UPGRADE-2558.sh
+./audit/GANDOM-MASS-INDEXER-2558.sh
+./audit/GANDOM-REVIVAL-BRIDGE-2558.js
+./audit/GANDOM-REVIVAL-ENGINE-2558.sh
+./audit/GANDOM-REVIVAL-NODE-2558.js
+./audit/LAW2558-EXACT-ARCHIVE-CLEANUP-20261009-135438.json
+./audit/REVIVE-1470-FULL-TREASURE.sh
+./audit/REVIVE-1470-MOTHER-INGEST.sh
+./audit/REVIVE-STAGING-EXACT-CLEAN.sh
+./audit/SAFE-CLEAN-DUPLICATES-2558.sh
+./audit/SAFE-STAGING-SWEEP.sh
+./audit/START-FULL-REVIVAL-2558-TO-SD.sh
+./auto-auditor.js
+./backend.log
+./bitcoin-style-baseline.log
+./blockchain-100.js
+./blockchain-100.js.backup
+./blockchain-100.js.backup-mother
+./blockchain-100.js.backup-sync
+./blockchain-100.js.before-gandom-2558-validation-1792134653021.bak
+./blockchain-api.js
+./blockchain-core.js
+./blockchain-data-b/chain.json
+./blockchain-data-b/chain.json.backup-2026-10-17T04-10-32-029Z
+./blockchain-data-b/meta.json
+./blockchain-data-b/pending-tx.json
+./blockchain-data-b/wallets.json
+./blockchain-data/backup-1792210019049.json
+./blockchain-data/chain.json
+./blockchain-data/chain.json.corrupted-1792210018924
+./blockchain-data/meta.json
+./blockchain-data/pending-tx.json
+./blockchain-data/wallets.json
+./blockchain-p2p-handler.js
+./blockchain-persistent.js
+./blockchain-persistent.js.backup
+./blockchain-persistent.js.backup-before-load-fix-1792211964
+./blockchain.js
+./breeding-data/cells.json
+./breeding-data/generations.json
+./breeding-manager.js
+./capacitor.config.json
+./cell-life-api.js
+./cell-life-data/events.log
+./cell-life-data/snapshot.json
+./cell-life-engine-v2.js
+./cell-life-engine.js
+./cell-life-runner.js
+./chromium-dom.html
+./ci-diagnostic-36731371010/EXACT-FAILURE.txt
+./ci-diagnostic-36731371010/gandom-build-result.txt
+./client.js
+./connect-organs.sh
+./consensus.js
+./constitution/EVIDENCE-TRUST-PROTOCOL-2558.json
+./constitution/GANDOM-GLOBAL-2558-UNIFIED-LOCK.md
+./constitution/GANDOM-REGISTRY-2558.json
+./constitution/GOLDEN-MOTHER-LAW-2558.HASH
+./constitution/GOLDEN-MOTHER-LAW-2558.json
+./constitution/GOLDEN-MOTHER-LAW-2558.md
+./deep-shovel.sh
+./docs/MARKETING.md
+./docs/PORTFOLIO.md
+./docs/PRICING-NEW.md
+./docs/PRODUCT.md
+./e
+./e HEAD
+./ecosystem-api.js
+./employees/AI-ACCOUNTANT-038.js
+./employees/AI-MARKETER-037.js
+./employees/AI-TREASURER-039.js
+./employees/GANDOM-AUDIT-2558.js
+./employees/accounting-ledger.json
+./employees/treasury-report.json
+./employees/wallet-bridge.js
+./employees/workforce.js
+./erver.js
+./evidence/CHROMIUM-INSTALL-20261001-083416.txt
+./evidence/GANDOM-MASTER-20261005-083358.txt
+./evidence/LAYER-GATE-EXECUTION-1791607910084.json
+./evidence/LAYER-GATE-EXECUTION-1791607959870.json
+./evidence/after-ids.txt
+./evidence/chromium-direct-dom.html
+./evidence/chromium-gandom-8080-dom.html
+./evidence/live-index.html
+./evidence/now-endpoints.txt
+./evidence/proot-gandom-dom.html
+./evidence/required-ids.txt
+./evidence/root.html
+./exchange-api.js
+./exchange-api.js.backup
+./exchange-data/orders.json
+./exchange-data/trades.json
+./exchange-manager.js
+./experience-data/experiences.json
+./experience-recorder.js
+./family-memory.js
+./father-audit.json
+./father-vault.js
+./father-wallet.json
+./final-apk.sha256
+./final-apk/app-debug.apk
+./fix-display.js
+./fix-route.js
+./fix-vault-v2.js
+./fix-vault-v3.js
+./fix-vault.js
+./frontend-python.log
+./frontend.log
+./full-audit.js
+./gandom-alive.js
+./gandom-audit-20261016-083014.txt
+./gandom-audit.sh
+./gandom-backend.js
+./gandom-code.tar.gz
+./gandom-core/CHAPTER-01-MATH-EXECUTION.js
+./gandom-core/EVIDENCE-HASH-VERIFY.js
+./gandom-core/INDEPENDENT-BACKUP-VERIFIER.js
+
+=== BUILD AND DEPENDENCY CONFIGURATION ===
+--- package-lock.json ---
+{
+  "name": "gandom-p2p",
+  "version": "0.1.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "gandom-p2p",
+      "version": "0.1.0",
+      "dependencies": {
+        "@capacitor/android": "^8.5.2",
+        "@capacitor/cli": "^8.5.2",
+        "@capacitor/core": "^8.5.2",
+        "ws": "^8.18.0"
+      }
+    },
+    "node_modules/@capacitor/android": {
+      "version": "8.5.2",
+      "resolved": "https://registry.npmjs.org/@capacitor/android/-/android-8.5.2.tgz",
+      "integrity": "sha512-rtiaz78egCcS+vs29wkWCL3C+RhazKMSygXcjutwWP8NmO6r5UBxOvGf3Wjz5+ahobyQ723tn9gCePwRwcNDZQ==",
+      "license": "MIT",
+      "peerDependencies": {
+        "@capacitor/core": "^8.5.0"
+      }
+    },
+    "node_modules/@capacitor/cli": {
+      "version": "8.5.2",
+      "resolved": "https://registry.npmjs.org/@capacitor/cli/-/cli-8.5.2.tgz",
+      "integrity": "sha512-O2kpA5ZPJUAmliDCcmpMf8xnJwMezxlFPUrlyOAjbL3U9MFNY3l4ZpPI/UXwvyPmR8ETcVF9pFr+VdWq61rqTQ==",
+      "license": "MIT",
+      "dependencies": {
+        "@ionic/cli-framework-output": "^2.2.8",
+        "@ionic/utils-subprocess": "^3.0.1",
+        "@ionic/utils-terminal": "^2.3.5",
+        "commander": "^12.1.0",
+        "debug": "^4.4.0",
+        "env-paths": "^2.2.0",
+        "fs-extra": "^11.2.0",
+        "kleur": "^4.1.5",
+        "native-run": "^2.0.3",
+        "open": "^8.4.0",
+        "plist": "^3.1.0",
+        "prompts": "^2.4.2",
+        "rimraf": "^6.0.1",
+        "semver": "^7.6.3",
+        "tar": "^7.5.3",
+        "tslib": "^2.8.1",
+        "xcode": "^3.0.1",
+        "xml2js": "^0.6.2"
+      },
+      "bin": {
+        "cap": "bin/capacitor",
+        "capacitor": "bin/capacitor"
+      },
+      "engines": {
+        "node": ">=22.0.0"
+      }
+    },
+    "node_modules/@capacitor/core": {
+      "version": "8.5.2",
+      "resolved": "https://registry.npmjs.org/@capacitor/core/-/core-8.5.2.tgz",
+      "integrity": "sha512-agnQbGdhGw/KZFuLf7H9SY2o+oE7upkr/WPQsYaokXP6f9chaE8iVmbKkfN6SVl4w3pmz7oZ3Ur1hbkmy1hx+w==",
+      "license": "MIT",
+      "dependencies": {
+        "tslib": "^2.1.0"
+      }
+    },
+    "node_modules/@ionic/cli-framework-output": {
+      "version": "2.2.8",
+      "resolved": "https://registry.npmjs.org/@ionic/cli-framework-output/-/cli-framework-output-2.2.8.tgz",
+      "integrity": "sha512-TshtaFQsovB4NWRBydbNFawql6yul7d5bMiW1WYYf17hd99V6xdDdk3vtF51bw6sLkxON3bDQpWsnUc9/hVo3g==",
+      "license": "MIT",
+      "dependencies": {
+        "@ionic/utils-terminal": "2.3.5",
+        "debug": "^4.0.0",
+        "tslib": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16.0.0"
+      }
+    },
+    "node_modules/@ionic/utils-array": {
+      "version": "2.1.6",
+      "resolved": "https://registry.npmjs.org/@ionic/utils-array/-/utils-array-2.1.6.tgz",
+      "integrity": "sha512-0JZ1Zkp3wURnv8oq6Qt7fMPo5MpjbLoUoa9Bu2Q4PJuSDWM8H8gwF3dQO7VTeUj3/0o1IB1wGkFWZZYgUXZMUg==",
+      "license": "MIT",
+      "dependencies": {
+        "debug": "^4.0.0",
+        "tslib": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16.0.0"
+      }
+    },
+    "node_modules/@ionic/utils-fs": {
+      "version": "3.1.7",
+      "resolved": "https://registry.npmjs.org/@ionic/utils-fs/-/utils-fs-3.1.7.tgz",
+      "integrity": "sha512-2EknRvMVfhnyhL1VhFkSLa5gOcycK91VnjfrTB0kbqkTFCOXyXgVLI5whzq7SLrgD9t1aqos3lMMQyVzaQ5gVA==",
+      "license": "MIT",
+      "dependencies": {
+        "@types/fs-extra": "^8.0.0",
+        "debug": "^4.0.0",
+        "fs-extra": "^9.0.0",
+        "tslib": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16.0.0"
+      }
+    },
+    "node_modules/@ionic/utils-fs/node_modules/fs-extra": {
+      "version": "9.1.0",
+      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-9.1.0.tgz",
+      "integrity": "sha512-hcg3ZmepS30/7BSFqRvoo3DOMQu7IjqxO5nCDt+zM9XWjb33Wg7ziNT+Qvqbuc3+gWpzO02JubVyk2G4Zvo1OQ==",
+      "license": "MIT",
+      "dependencies": {
+        "at-least-node": "^1.0.0",
+        "graceful-fs": "^4.2.0",
+        "jsonfile": "^6.0.1",
+        "universalify": "^2.0.0"
+      },
+      "engines": {
+        "node": ">=10"
+      }
+    },
+    "node_modules/@ionic/utils-object": {
+      "version": "2.1.6",
+      "resolved": "https://registry.npmjs.org/@ionic/utils-object/-/utils-object-2.1.6.tgz",
+      "integrity": "sha512-vCl7sl6JjBHFw99CuAqHljYJpcE88YaH2ZW4ELiC/Zwxl5tiwn4kbdP/gxi2OT3MQb1vOtgAmSNRtusvgxI8ww==",
+      "license": "MIT",
+      "dependencies": {
+        "debug": "^4.0.0",
+        "tslib": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16.0.0"
+      }
+    },
+    "node_modules/@ionic/utils-process": {
+      "version": "2.1.12",
+      "resolved": "https://registry.npmjs.org/@ionic/utils-process/-/utils-process-2.1.12.tgz",
+      "integrity": "sha512-Jqkgyq7zBs/v/J3YvKtQQiIcxfJyplPgECMWgdO0E1fKrrH8EF0QGHNJ9mJCn6PYe2UtHNS8JJf5G21e09DfYg==",
+      "license": "MIT",
+      "dependencies": {
+        "@ionic/utils-object": "2.1.6",
+        "@ionic/utils-terminal": "2.3.5",
+        "debug": "^4.0.0",
+        "signal-exit": "^3.0.3",
+        "tree-kill": "^1.2.2",
+        "tslib": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16.0.0"
+      }
+    },
+    "node_modules/@ionic/utils-stream": {
+      "version": "3.1.7",
+      "resolved": "https://registry.npmjs.org/@ionic/utils-stream/-/utils-stream-3.1.7.tgz",
+      "integrity": "sha512-eSELBE7NWNFIHTbTC2jiMvh1ABKGIpGdUIvARsNPMNQhxJB3wpwdiVnoBoTYp+5a6UUIww4Kpg7v6S7iTctH1w==",
+      "license": "MIT",
+      "dependencies": {
+        "debug": "^4.0.0",
+        "tslib": "^2.0.1"
+      },
+      "engines": {
+        "node": ">=16.0.0"
+      }
+    },
+    "node_modules/@ionic/utils-subprocess": {
+      "version": "3.0.1",
+      "resolved": "https://registry.npmjs.org/@ionic/utils-subprocess/-/utils-subprocess-3.0.1.tgz",
+      "integrity": "sha512-cT4te3AQQPeIM9WCwIg8ohroJ8TjsYaMb2G4ZEgv9YzeDqHZ4JpeIKqG2SoaA3GmVQ3sOfhPM6Ox9sxphV/d1A==",
+      "license": "MIT",
+      "dependencies": {
+        "@ionic/utils-array": "2.1.6",
+        "@ionic/utils-fs": "3.1.7",
+        "@ionic/utils-process": "2.1.12",
+        "@ionic/utils-stream": "3.1.7",
+        "@ionic/utils-terminal": "2.3.5",
+        "cross-spawn": "^7.0.3",
+        "debug": "^4.0.0",
+--- Dockerfile ---
+FROM node:24-bookworm-slim
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=8787
+
+COPY package*.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+
+COPY server.js ./
+COPY client.js ./
+
+RUN useradd --create-home --shell /usr/sbin/nologin gandom \
+    && chown -R gandom:gandom /app
+
+USER gandom
+
+EXPOSE 8787
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD node -e "require('http').get('http://127.0.0.1:'+(process.env.PORT||8787)+'/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"
+
+CMD ["node", "server.js"]
+
+=== DISCOVERY MODULE ===
+'use strict';
+
+const crypto = require('crypto');
+const WebSocket = require('ws');
+
+const NODE_ID = process.env.GANDOM_NODE_ID;
+const DISCOVERY_URL = process.env.GANDOM_DISCOVERY_URL || '';
+
+if (!NODE_ID) {
+  throw new Error('GANDOM_NODE_ID_REQUIRED');
+}
+
+const identity = crypto
+  .createHash('sha256')
+  .update(`GANDOM-DISCOVERY:${NODE_ID}`)
+  .digest('hex');
+
+function discover() {
+  if (!DISCOVERY_URL) {
+    return {
+      ok: false,
+      reason: 'DISCOVERY_ENDPOINT_NOT_CONFIGURED',
+      node_id: NODE_ID,
+      identity
+    };
+  }
+
+  return new Promise((resolve) => {
+    const ws = new WebSocket(DISCOVERY_URL, {
+      headers: {
+        'x-gandom-node': NODE_ID
+      }
+    });
+
+    const timer = setTimeout(() => {
+      try { ws.close(); } catch (_) {}
+      resolve({
+        ok: false,
+        reason: 'DISCOVERY_TIMEOUT',
+        node_id: NODE_ID,
+        identity
+      });
+    }, 10000);
+
+    ws.once('open', () => {
+      ws.send(JSON.stringify({
+        type: 'DISCOVERY_REQUEST',
+        node_id: NODE_ID,
+        identity,
+        protocol: 'GANDOM-P2P-DISCOVERY-1'
+      }));
+    });
+
+    ws.once('message', (raw) => {
+      clearTimeout(timer);
+
+      let message;
+      try {
+        message = JSON.parse(raw.toString());
+      } catch (_) {
+        resolve({
+          ok: false,
+          reason: 'INVALID_DISCOVERY_RESPONSE',
+          node_id: NODE_ID,
+          identity
+        });
+        try { ws.close(); } catch (_) {}
+        return;
+      }
+
+      resolve({
+        ok: true,
+        node_id: NODE_ID,
+        identity,
+        response: message
+      });
+
+      try { ws.close(); } catch (_) {}
+    });
+
+    ws.once('error', (err) => {
+      clearTimeout(timer);
+      resolve({
+        ok: false,
+        reason: 'DISCOVERY_CONNECTION_ERROR',
+        error: err.message,
+        node_id: NODE_ID,
+        identity
+      });
+    });
+  });
+}
+
+module.exports = {
+  discover,
+  NODE_ID,
+  identity
+};
+
+=== PEER CONNECTION PATH ===
+    });
+  });
+
+  ws.on('error', error => {
+    log('PEER_ERROR', {
+      peer_id: peerId,
+      error: error.message
+    });
+  });
+});
+
+
+function connectOutbound() {
+  if (shuttingDown || !PEER_ADDRESS) return;
+
+  if (outboundPeer &&
+      outboundPeer.readyState !== WebSocket.CLOSED &&
+      outboundPeer.readyState !== WebSocket.CLOSING) {
+    return;
+  }
+
+  log('PEER_OUTBOUND_CONNECTING', {
+    address: PEER_ADDRESS,
+    node_id: NODE_ID
+  });
+
+  const ws = new WebSocket(PEER_ADDRESS, {
+    headers: {
+      'x-gandom-node': NODE_ID
+    }
+  });
+
+  outboundPeer = ws;
+
+  const peerId = `outbound:${PEER_ADDRESS}`;
+
+  ws.on('open', () => {
+    if (shuttingDown) {
+      try { ws.close(); } catch {}
+      return;
+    }
+
+    peers.set(peerId, {
+      ws,
+      direction: 'outbound',
+      address: PEER_ADDRESS,
+      connectedAt: Date.now()
+    });
+
+    log('PEER_OUTBOUND_CONNECTED', {
+      peer_id: peerId,
+      address: PEER_ADDRESS,
+      peers: peers.size
+    });
+
+    send(ws, 'HELLO', {
+      node_id: NODE_ID,
+      direction: 'outbound'
+    });
+  });
+
+  ws.on('message', raw => {
+    let message;
+
+    try {
+      message = JSON.parse(raw.toString());
+    } catch (error) {
+      log('PEER_OUTBOUND_INVALID_MESSAGE', {
+        peer_id: peerId,
+        error: error.message
+      });
+      return;
+    }
+
+    log('PEER_OUTBOUND_MESSAGE', {
+      peer_id: peerId,
+      type: message.type || null
+    });
+
+    if (message.type === 'PING') {
+      send(ws, 'PONG', {
+        node_id: NODE_ID,
+        uptime: process.uptime()
+      });
+      return;
+    }
+
+    if (message.type === 'HELLO_ACK') {
+      log('PEER_OUTBOUND_HELLO_ACK', {
+        peer_id: peerId,
+        remote_node_id:
+          message.payload && message.payload.node_id
+            ? message.payload.node_id
+            : null
+      });
+      return;
+    }
+
+    if (message.type === 'DATA_ACK') {
+      log('PEER_OUTBOUND_DATA_ACK', {
+        peer_id: peerId,
+        accepted:
+          message.payload && typeof message.payload.accepted !== 'undefined'
+            ? message.payload.accepted
+            : null
+      });
+      return;
+    }
+
+    if (message.type === 'PONG') {
+      log('PEER_OUTBOUND_PONG', {
+        peer_id: peerId
+      });
+    }
+  });
+
+  ws.on('close', () => {
+    peers.delete(peerId);
+
+    if (outboundPeer === ws) {
+      outboundPeer = null;
+    }
+
+    log('PEER_OUTBOUND_DISCONNECTED', {
+      peer_id: peerId,
+      peers: peers.size,
+      reconnect_in_ms: shuttingDown ? 0 : RECONNECT_DELAY
+    });
+
+    if (!shuttingDown && !reconnectTimer) {
+      reconnectTimer = setTimeout(() => {
+        reconnectTimer = null;
+        connectOutbound();
+      }, RECONNECT_DELAY);
+    }
+  });
+
+  ws.on('error', error => {
+    log('PEER_OUTBOUND_ERROR', {
+      peer_id: peerId,
+      address: PEER_ADDRESS,
+      error: error.message
+    });
+  });
+}
+
+const heartbeat = setInterval(() => {
+  for (const [peerId, peer] of peers) {
+    if (peer.ws.readyState === WebSocket.OPEN) {
+      send(peer.ws, 'PING', {
+        node_id: NODE_ID,
+        uptime: process.uptime()
+      });
+    } else {
+      peers.delete(peerId);
+    }
+  }
+}, 15000);
+
+httpServer.listen(PORT, '0.0.0.0', () => {
+  log('NODE_STARTED', {
+    port: PORT,
+    websocket: `ws://0.0.0.0:${PORT}`,
+    health: `http://127.0.0.1:${PORT}/health`
+  });
+
+  cellBridge.start();
+  log('LIVE_CELL_BRIDGE_STARTED', {
+    capacity: cellBridge.capacity,
+    intervalMs: cellBridge.intervalMs
+  });
+  if (PEER_ADDRESS) {
+    connectOutbound();
+  }
+});
+
+function shutdown(signal) {
+  cellBridge.stop();
+  shuttingDown = true;
+  if (reconnectTimer) {
+    clearTimeout(reconnectTimer);
+
+=== CURRENT OPERATIONAL STATUS ===
+{"ok":true,"project":"GANDUM-P2P","node_id":"GANDOM-NODE-A","peers":0,"uptime":11098.026875354}
+FRONTEND_HTTP=200

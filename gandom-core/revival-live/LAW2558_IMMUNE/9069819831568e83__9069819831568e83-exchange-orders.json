@@ -1,0 +1,24 @@
+[
+  {
+    "id": "794e5f1c-0501-4bac-9837-f82398f22dc6",
+    "user": "SELLER",
+    "side": "sell",
+    "quantity": 100000,
+    "remaining": 0,
+    "price": 1,
+    "feeRate": 0.01,
+    "status": "filled",
+    "createdAt": 1790534970540
+  },
+  {
+    "id": "d6d7691b-3e5f-48c1-8caf-4e5ffe41dcff",
+    "user": "BUYER",
+    "side": "buy",
+    "quantity": 100000,
+    "remaining": 0,
+    "price": 1,
+    "feeRate": 0.01,
+    "status": "filled",
+    "createdAt": 1790534970541
+  }
+]

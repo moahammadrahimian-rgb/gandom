@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06100c">
+<meta name="description" content="GANDOM decentralized ecosystem">
+
+<title>GANDOM</title>
+
+<link rel="stylesheet" href="/assets/css/gandom-ui.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<header class="header">
+  <div class="brand">
+    <div class="logo">🌾</div>
+    <div>
+      <div class="brand-title">GANDOM</div>
+      <div class="brand-sub">Decentralized Ecosystem</div>
+    </div>
+  </div>
+
+  <span id="runtimeStatus" class="status offline">
+    Checking Runtime
+  </span>
+</header>
+
+<main class="page">
+
+<!-- SECTION 2: HOME -->
+<section id="view-home" class="view active">
+
+  <div class="hero section">
+    <div class="eyebrow">GANDOM CORE</div>
+    <h1>گندم</h1>
+    <p class="muted">
+      رابط یکپارچه شبکه، اقتصاد، کیف پول و سرویس‌های GANDOM
+    </p>
+  </div>
+
+  <div class="grid section">
+
+    <article class="card">
+      <div class="muted small">Network</div>
+      <div class="metric">P2P</div>
+      <span class="status">Core</span>
+    </article>
+
+    <article class="card">
+      <div class="muted small">Runtime</div>
+      <div class="metric">Live</div>
+      <span id="homeRuntime" class="status">Checking</span>
+    </article>
+
+    <article class="card card-full">
+      <h2>وضعیت سیستم</h2>
+      <div class="list">
+        <div class="list-item">
+          <span>UI</span>
+          <span>Ready</span>
+        </div>
+        <div class="list-item">
+          <span>Capacitor</span>
+          <span>Configured</span>
+        </div>
+        <div class="list-item">
+          <span>Core Data</span>
+          <span>Runtime Controlled</span>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- SECTION 2: ECONOMY + EXCHANGE -->
+<section id="view-market" class="view">
+
+  <div class="section">
+    <div class="eyebrow">ECONOMY</div>
+    <h1>اقتصاد و بازار</h1>
+    <p class="muted">
+      داده بازار باید از منبع واقعی Runtime وارد شود.
+    </p>
+  </div>
+
+  <div class="card section">
+    <div class="row">
+      <div>
+        <div class="muted small">GDM Market</div>
+        <h2>Exchange</h2>
+      </div>
+      <span class="status">Ready</span>
+    </div>
+
+    <canvas id="marketChart" class="chart"></canvas>
+
+    <p class="muted small">
+      نمودار فعلی فقط چارچوب UI است؛ قیمت واقعی تا اتصال API بازار نمایش داده نمی‌شود.
+    </p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <div class="muted small">Supply</div>
+      <div class="metric">Core</div>
+    </article>
+
+    <article class="card">
+      <div class="muted small">Market Data</div>
+      <div class="metric">API</div>
+    </article>
+  </div>
+
+</section>
+
+<!-- SECTION 3: WALLET + NETWORK + AI -->
+<section id="view-network" class="view">
+
+  <div class="section">
+    <div class="eyebrow">NETWORK</div>
+    <h1>شبکه و سرویس‌ها</h1>
+  </div>
+
+  <div class="grid section">
+
+    <article class="card">
+      <h2>Wallet</h2>
+      <p class="muted">
+        موجودی و تراکنش فقط از Runtime واقعی.
+      </p>
+      <span class="status">Protected</span>
+    </article>
+
+    <article class="card">
+      <h2>P2P</h2>
+      <p class="muted">
+        Peer / Node / DHT
+      </p>
+      <span class="status">Connected UI</span>
+    </article>
+
+    <article class="card">
+      <h2>AI</h2>
+      <p class="muted">
+        سرویس هوشمند موجود در Core
+      </p>
+      <span class="status">Service</span>
+    </article>
+
+    <article class="card">
+      <h2>Node</h2>
+      <p class="muted">
+        وضعیت Node از Runtime
+      </p>
+      <span class="status">Monitor</span>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- SECTION 4: SECURITY + BACKUP -->
+<section id="view-security" class="view">
+
+  <div class="section">
+    <div class="eyebrow">SECURITY</div>
+    <h1>امنیت و شواهد</h1>
+  </div>
+
+  <div class="card section">
+
+    <details open>
+      <summary>Security</summary>
+      <p class="muted">
+        وضعیت امنیتی از Core واقعی خوانده خواهد شد.
+      </p>
+    </details>
+
+    <details>
+      <summary>Backup</summary>
+      <p class="muted">
+        نقطه پشتیبان پروژه در مسیر backups نگهداری می‌شود.
+      </p>
+    </details>
+
+    <details>
+      <summary>Evidence / Audit</summary>
+      <p class="muted">
+        شواهد باید از اجرای واقعی سیستم ثبت شوند.
+      </p>
+    </details>
+
+  </div>
+
+  <div class="card">
+    <h2>UX States</h2>
+    <div class="list">
+      <div class="list-item"><span>Loading</span><span>Ready</span></div>
+      <div class="list-item"><span>Error</span><span>Supported</span></div>
+      <div class="list-item"><span>Offline</span><span>Supported</span></div>
+      <div class="list-item"><span>Empty</span><span>Supported</span></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SECTION 5 -->
+<section id="view-more" class="view">
+
+  <div class="section">
+    <div class="eyebrow">SYSTEM</div>
+    <h1>GANDOM System</h1>
+  </div>
+
+  <div class="card section">
+    <h2>Integration</h2>
+    <div class="list">
+      <div class="list-item">
+        <span>App ID</span>
+        <span>com.gandom.app</span>
+      </div>
+      <div class="list-item">
+        <span>Web Directory</span>
+        <span>www</span>
+      </div>
+      <div class="list-item">
+        <span>UI Sections</span>
+        <span>5</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Backup</h2>
+    <p class="muted">
+      نسخه قبل از اجرای این مرحله در backups ثبت شده است.
+    </p>
+  </div>
+
+</section>
+
+</main>
+
+<nav class="nav">
+  <button data-view="home" class="active">خانه</button>
+  <button data-view="market">بازار</button>
+  <button data-view="network">شبکه</button>
+  <button data-view="security">امنیت</button>
+  <button data-view="more">سیستم</button>
+</nav>
+
+</div>
+
+<script src="/assets/js/gandom-ui.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const runtime = document.getElementById('runtimeStatus');
+  const homeRuntime = document.getElementById('homeRuntime');
+
+  const observer = new MutationObserver(() => {
+    if(runtime.classList.contains('offline')){
+      homeRuntime.textContent = 'Offline';
+      homeRuntime.classList.add('offline');
+    }else{
+      homeRuntime.textContent = 'Online';
+      homeRuntime.classList.remove('offline');
+    }
+  });
+
+  observer.observe(runtime, {
+    attributes:true,
+    childList:true,
+    subtree:true
+  });
+});
+</script>
+
+</body>
+</html>

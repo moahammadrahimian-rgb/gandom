@@ -1,0 +1,12 @@
+[
+  {
+    "id": "1b557f66-a0cb-42fc-b1ff-8e689d998c14",
+    "phone": "09121234567",
+    "passwordHash": "aa1a27b586080ba2ab4e81c236bc73035b2c759cb4df94c3b4d0ca4071d264519e2101b76319c0fa5520d2409e0e99fc949ac687b40a634953c8c8878ed42b36",
+    "salt": "6a7dbc305dc2e0a64cc6976c7a613134",
+    "kycStatus": "verified",
+    "kycLevel": 2,
+    "createdAt": 1790670643376,
+    "updatedAt": 1790670643381
+  }
+]

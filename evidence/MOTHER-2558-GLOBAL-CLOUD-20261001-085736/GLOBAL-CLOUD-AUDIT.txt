@@ -1,0 +1,86 @@
+=== GANDOM GLOBAL CLOUD / MOTHER 2558 ===
+Thu Oct  1 08:57:36 +0330 2026
+
+=== ROOT CLOUD FILES ===
+PASS  Dockerfile
+577 Dockerfile
+PASS  .dockerignore
+91 .dockerignore
+PASS  gandom-core/global-architecture/contracts/GLOBAL-EXECUTION-CONTRACT.json
+692 gandom-core/global-architecture/contracts/GLOBAL-EXECUTION-CONTRACT.json
+PASS  gandom-core/global-architecture/design/GLOBAL-ARCHITECTURE.md
+827 gandom-core/global-architecture/design/GLOBAL-ARCHITECTURE.md
+PASS  gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json
+503 gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json
+
+=== CLOUD REFERENCES ===
+gandom-core/evidence/GND-INTEGRATED-RUNTIME-1790683619759.json:7:  "port": 8787,
+gandom-core/evidence/GND-INTEGRATED-RUNTIME-1790683619759.json:52:      "address": "ws://127.0.0.1:8787"
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:103:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/health/evidence/node-health-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:135:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/health/evidence/node-health-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:167:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/health/evidence/node-health-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:271:        "file": "gandom-core/p2p/health/evidence/node-health-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:279:        "file": "gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json",
+gandom-core/logs/integrated-runtime.log:1:{"ts":"2026-09-29T12:06:59.592Z","event":"NODE_STARTED","node_id":"959f270e-13d7-4de3-8f94-bf200acc5907","port":8787,"websocket":"ws://0.0.0.0:8787","health":"http://127.0.0.1:8787/health"}
+gandom-core/logs/server-real.log:2:{"ts":"2026-09-29T12:14:54.594Z","event":"NODE_STARTED","node_id":"e7a26267-f3ec-4b71-b1fa-532fc33aa3aa","port":8787,"websocket":"ws://0.0.0.0:8787","health":"http://127.0.0.1:8787/health"}
+gandom-core/logs/REAL-LIFECYCLE-PEERS.log:3:[SERVER] {"ts":"2026-09-29T12:30:41.570Z","event":"NODE_STARTED","node_id":"6b66ea9d-e5d4-432e-9686-d952a31225cc","port":8787,"websocket":"ws://0.0.0.0:8787","health":"http://127.0.0.1:8787/health"}
+gandom-core/logs/SERVER-DIAGNOSTIC.log:1:{"ts":"2026-09-29T12:29:49.873Z","event":"NODE_STARTED","node_id":"5316fd02-7f85-4608-a68b-9541fd647b69","port":8787,"websocket":"ws://0.0.0.0:8787","health":"http://127.0.0.1:8787/health"}
+gandom-core/tests/REAL-DATA-CONTRACT.js:7:const PORT = 8787;
+gandom-core/tests/REAL-DATA-CONTRACT.js:12:    http.get(`http://${HOST}:${PORT}/health`, res => {
+gandom-core/tests/REAL-TWO-PEER-CONNECTION.js:7:const URL = 'ws://127.0.0.1:8787';
+gandom-core/tests/REAL-TWO-PEER-DATA.js:7:const URL = 'ws://127.0.0.1:8787';
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:9:const PORT = 8787;
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js:19:      `http://${HOST}:${PORT}/health`,
+gandom-core/global-architecture/contracts/GLOBAL-EXECUTION-CONTRACT.json:9:  "cloud_required": true,
+gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json:3:  "standard": "OCI-CONTAINER",
+gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json:5:  "deployment_mode": "CLOUD_PORTABLE",
+gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json:6:  "port": 8787,
+gandom-core/global-architecture/cloud/CONTAINER-DEPLOYMENT-CONTRACT.json:8:  "health": "/health",
+gandom-core/p2p/reports/runtime-events.jsonl:991:{"eventId":"bc19075d-8a64-4930-add4-4086895bb874","correlationId":"5cf28102-8787-48a4-9dc0-6ef5b4f533c8","nodeId":"LOCAL_NODE","type":{"eventId":"6f944cce-043f-450c-9f69-240a5b42130d","correlationId":"32533723-e853-4207-9e03-6f3f2259a19b","timestamp":"2026-09-30T04:24:42.270Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":979,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.270Z","payload":{}}
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:38:gandom-core/p2p/health/evidence/node-health-runtime.json
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:109:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:103:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/health/evidence/node-health-runtime.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:117:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:135:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/health/evidence/node-health-runtime.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:125:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:167:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/health/evidence/node-health-runtime.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:222:7:const PORT = Number(process.env.PORT || 8787);
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:223:13:  if (req.url === '/health') {
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:229:168:    health: `http://127.0.0.1:${PORT}/health`
+Dockerfile:6:ENV PORT=8787
+Dockerfile:19:EXPOSE 8787
+Dockerfile:22:  CMD node -e "require('http').get('http://127.0.0.1:'+(process.env.PORT||8787)+'/health',r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"
+
+=== CONTAINER ENGINE ===
+DOCKER=NOT_FOUND
+PODMAN=NOT_FOUND
+
+=== GIT STATUS ===
+ M .github/workflows/gandom-ch03-ai-workforce-final.yml
+ M .gitignore
+ M android/build.gradle
+ M gandom-core/governance/GOLDEN-MOTHER-LAW-2558.HASH
+?? GANDOM-FINAL-BUILD-AND-AUDIT.sh
+?? ci-diagnostic-36731371010/
+?? evidence/
+?? final-apk.sha256
+?? final-apk/
+?? gandom-core/governance/GOLDEN-MOTHER-LAW-2558.HASH.bak.20260930T044748Z
+?? gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json.bak.20260930T044748Z
+?? gandom-core/governance/bin/
+?? gandom-core/governance/evidence-trust/
+?? gandom-core/governance/evidence/
+?? gandom-core/governance/owner/
+?? run-gandom-ui-5-sections.sh
+?? run-gandom-ui-sections-6-12.sh
+?? test-12-sections-heavy-8080.js
+?? test-ui-design-8080.js
+?? test-ui-real-8080.js
+?? www/assets/
+
+=== CLOUD COMMITS ===
+df16950 GANDOM: add portable cloud container deployment
+1600cc1 GANDOM: establish global execution architecture contract
+
+=== SERVER PORT / HEALTH ===
+7:const PORT = Number(process.env.PORT || 8787);
+13:  if (req.url === '/health') {
+164:httpServer.listen(PORT, '0.0.0.0', () => {
+168:    health: `http://127.0.0.1:${PORT}/health`

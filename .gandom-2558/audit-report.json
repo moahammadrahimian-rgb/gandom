@@ -1,0 +1,69 @@
+{
+  "version": "GANDOM_GENESIS_AUDIT_2558",
+  "startedAt": "2026-10-16T19:33:49.478Z",
+  "mode": "READ_ONLY",
+  "mutation": false,
+  "serviceRestarted": false,
+  "nodes": [
+    {
+      "file": "blockchain-data/chain.json",
+      "fileSHA256": "cdd1f3703074cb9d0ab41487a99f5b6f5def2fd7e27488eb4b4cdad249432686",
+      "blocks": 2,
+      "genesisHash": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33",
+      "genesisPrevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "genesisTimestamp": 0,
+      "genesisDifficulty": 3,
+      "genesisNonce": 0,
+      "genesisMerkleRoot": "4e3225608ca216d741753a1cb16dc9eabb7577b92550a68cad6282997b509fec",
+      "difficulty": 3
+    },
+    {
+      "file": "blockchain-data-b/chain.json",
+      "fileSHA256": "29a1c80fd7f5e81bd17d5272c81e92cf3e21ec12965f17c606f509c3a802104e",
+      "blocks": 1,
+      "genesisHash": "2271a0a7eca3880cd727c27ce3e47388897d9121674792d7737368737746d7f3",
+      "genesisPrevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "genesisTimestamp": 0,
+      "genesisDifficulty": 3,
+      "genesisNonce": 0,
+      "genesisMerkleRoot": "afe78366b0076832c42a09d57a24afe27f1a6a238c6e360ab45c3df5fa8d22bc",
+      "difficulty": 3
+    }
+  ],
+  "genesisMatch": false,
+  "structureAudits": [
+    {
+      "file": "blockchain-data/chain.json",
+      "blockCount": 2,
+      "genesisHash": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33",
+      "lastIndex": 1,
+      "structuralErrors": [],
+      "linksValid": true,
+      "indicesValid": true
+    },
+    {
+      "file": "blockchain-data-b/chain.json",
+      "blockCount": 1,
+      "genesisHash": "2271a0a7eca3880cd727c27ce3e47388897d9121674792d7737368737746d7f3",
+      "lastIndex": 0,
+      "structuralErrors": [],
+      "linksValid": true,
+      "indicesValid": true
+    }
+  ],
+  "benchmark": {
+    "algorithm": "SHA-256",
+    "iterations": 100000,
+    "elapsedMs": 763.598,
+    "hashesPerSecond": 130959,
+    "finalDigest": "2465694c72e9792b4c78b83fd41c6120778dc875497bc8952ae0f9a49c920c0e",
+    "meaning": "Local synthetic benchmark; not Bitcoin network hashrate"
+  },
+  "verdict": "GENESIS_MISMATCH_SYNC_BLOCKED",
+  "limitations": [
+    "Does not replace project-specific block hash validation",
+    "Does not independently validate transaction signatures or Merkle roots",
+    "Does not modify either chain file",
+    "Benchmark does not measure network throughput or block production"
+  ]
+}

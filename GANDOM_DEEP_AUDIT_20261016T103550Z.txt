@@ -1,0 +1,170 @@
+GANDOM_AUDIT=2558
+MODE=READ_ONLY
+ROOT=/data/data/com.termux/files/home/gandom
+CHAIN_MUTATION=NO
+AUTOMATIC_REPAIR=NO
+SERVICE_RESTART=NO
+
+===== 1. SOURCE FILES =====
+PRESENT=server.js
+6153ffd3aa3931ddaa91f27f0e556cb68bd892f21074a0a6d291f7afa521e98f  server.js
+PRESENT=blockchain-100.js
+5643b9139abebe1511e92c7440ef36120ede9fa6a6a502ac9055a80029118945  blockchain-100.js
+PRESENT=node-b-chain.js
+19a5dbdd3fda3fdec3cd8349b3a9cfb1b2a6b21b403cc8188be32488a4a63710  node-b-chain.js
+PRESENT=blockchain-p2p-handler.js
+d1fc01f4e7257455c8842343b45aa10ff51aa28b0905c536e98d34d6069deef4  blockchain-p2p-handler.js
+PRESENT=package.json
+5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3  package.json
+PRESENT=package-lock.json
+81538f4ca930f46c599efdedc951271841d4ac8b2f960c689b6a1d89f32816a6  package-lock.json
+
+===== 2. JAVASCRIPT SYNTAX =====
+SYNTAX_CHECK_COMPLETED=server.js
+SYNTAX_CHECK_COMPLETED=blockchain-100.js
+SYNTAX_CHECK_COMPLETED=node-b-chain.js
+SYNTAX_CHECK_COMPLETED=blockchain-p2p-handler.js
+
+===== 3. CONSENSUS AND P2P =====
+blockchain-100.js:209:  constructor(index, prevHash, timestamp, transactions, difficulty = 3) {
+blockchain-100.js:211:    this.prevHash = prevHash;
+blockchain-100.js:219:    this.merkleRoot = merkle.root;
+blockchain-100.js:222:    this.reward = Block.calculateReward(index);
+blockchain-100.js:225:    this.hash = this.calculateHash();
+blockchain-100.js:229:  static calculateReward(blockIndex) {
+blockchain-100.js:236:  calculateHash() {
+blockchain-100.js:240:        this.prevHash + 
+blockchain-100.js:242:        this.merkleRoot + 
+blockchain-100.js:253:      this.hash = this.calculateHash();
+blockchain-100.js:260:      prevHash: this.prevHash,
+blockchain-100.js:263:      merkleRoot: this.merkleRoot,
+blockchain-100.js:273:    const b = new Block(obj.index, obj.prevHash, obj.timestamp, txs, obj.difficulty);
+blockchain-100.js:275:    b.merkleRoot = obj.merkleRoot;
+blockchain-100.js:335:        this.createGenesis();
+blockchain-100.js:352:      if (!this.isValid()) {
+blockchain-100.js:354:        this.createGenesis();
+blockchain-100.js:358:      this.createGenesis();
+blockchain-100.js:363:  createGenesis() {
+blockchain-100.js:366:    genesis.hash = genesis.calculateHash();
+blockchain-100.js:376:    block.prevHash = this.getLatest().hash;
+blockchain-100.js:379:    this.chain.push(block);
+blockchain-100.js:408:    const reward = Block.calculateReward(this.chain.length);
+blockchain-100.js:482:  isValidBlock(block, previousBlock = this.getLatest()) {
+blockchain-100.js:487:      if (block.prevHash !== previousBlock.hash) return false;
+blockchain-100.js:495:      if (block.reward !== Block.calculateReward(block.index)) return false;
+blockchain-100.js:498:      if (merkle.root !== block.merkleRoot) return false;
+blockchain-100.js:499:      if (block.calculateHash() !== block.hash) return false;
+blockchain-100.js:535:  isValid() {
+blockchain-100.js:539:      if (curr.hash !== curr.calculateHash()) return false;
+blockchain-100.js:540:      if (curr.prevHash !== prev.hash) return false;
+blockchain-100.js:544:      if (merkle.root !== curr.merkleRoot) return false;
+blockchain-100.js:568:      is_valid: this.isValid(),
+blockchain-100.js:574:      next_reward: Block.calculateReward(this.chain.length),
+node-b-chain.js:91:          const valid = chainB.isValidBlock ? chainB.isValidBlock(block, latest) : false;
+node-b-chain.js:97:          chainB.chain.push(block);
+node-b-chain.js:110:      if (msg.type === 'NEW_BLOCK_FROM_PEER') {
+node-b-chain.js:123:          if (!chainB.isValidBlock(block, latest)) {
+node-b-chain.js:127:          chainB.chain.push(block);
+blockchain-p2p-handler.js:30:  if (type === 'NEW_BLOCK_FROM_PEER') {
+blockchain-p2p-handler.js:47:      if (!gandomChain.isValidBlock(block, latest)) {
+blockchain-p2p-handler.js:52:      gandomChain.chain.push(block);
+blockchain-p2p-handler.js:63:  if (type === 'REQUEST_FULL_SYNC') {
+blockchain-p2p-handler.js:83:        type: 'NEW_BLOCK_FROM_PEER',
+
+===== 4. TRANSACTIONS AND ACCOUNTING =====
+blockchain-100.js:39:    const { privateKey, publicKey } = crypto.generateKeyPairSync('ed25519');
+blockchain-100.js:41:    this.publicKeyObj = publicKey;
+blockchain-100.js:43:    this.publicKey = publicKey.export({ type: 'spki', format: 'pem' });
+blockchain-100.js:50:  static verify(publicKeyPem, data, signatureHex) {
+blockchain-100.js:52:      const pk = crypto.createPublicKey(publicKeyPem);
+blockchain-100.js:53:      return crypto.verify(null, Buffer.from(data), pk, Buffer.from(signatureHex, 'hex'));
+blockchain-100.js:138:  constructor(from, to, amount, fee = 0.001, publicKey = null) {
+blockchain-100.js:142:    this.amount = amount;
+blockchain-100.js:143:    this.fee = fee;
+blockchain-100.js:145:    this.publicKey = publicKey;
+blockchain-100.js:146:    this.signature = null;
+blockchain-100.js:151:    const tx = new Transaction('COINBASE', to, reward, 0, null);
+blockchain-100.js:152:    tx.txid = 'COINBASE-' + crypto.randomBytes(8).toString('hex');
+blockchain-100.js:153:    tx.type = 'COINBASE';
+blockchain-100.js:159:      .update(this.txid + this.from + this.to + this.amount + this.fee + this.timestamp)
+blockchain-100.js:164:    if (this.type === 'COINBASE') return true;
+blockchain-100.js:167:      this.signature = crypto.sign(null, Buffer.from(this.getHash()), keyObj).toString('hex');
+blockchain-100.js:175:  verify() {
+blockchain-100.js:176:    if (this.type === 'COINBASE') return true;
+blockchain-100.js:177:    if (!this.signature || !this.publicKey) return false;
+blockchain-100.js:179:      const pk = crypto.createPublicKey(this.publicKey);
+blockchain-100.js:180:      return crypto.verify(null, Buffer.from(this.getHash()), pk, Buffer.from(this.signature, 'hex'));
+blockchain-100.js:189:      amount: this.amount,
+blockchain-100.js:190:      fee: this.fee,
+blockchain-100.js:192:      publicKey: this.publicKey,
+blockchain-100.js:193:      signature: this.signature,
+blockchain-100.js:199:    const tx = new Transaction(obj.from, obj.to, obj.amount, obj.fee, obj.publicKey);
+blockchain-100.js:215:    this.nonce = 0;
+blockchain-100.js:243:        this.nonce + 
+blockchain-100.js:252:      this.nonce++;
+blockchain-100.js:264:      nonce: this.nonce,
+blockchain-100.js:274:    b.nonce = obj.nonce;
+blockchain-100.js:388:      if (tx.type === 'COINBASE') {
+blockchain-100.js:389:        this.wallets[tx.to] = (this.wallets[tx.to] || 0) + tx.amount;
+blockchain-100.js:393:        this.wallets[tx.from] -= (tx.amount + tx.fee);
+blockchain-100.js:397:        this.wallets[tx.to] += tx.amount;
+blockchain-100.js:413:      if (tx.type === 'COINBASE') return false;
+blockchain-100.js:414:      if (!tx.verify()) return false;
+blockchain-100.js:417:      if (senderBalance < tx.amount + tx.fee) return false;
+blockchain-100.js:464:    if (tx.type === 'COINBASE') return false;
+blockchain-100.js:465:    if (!tx.verify()) return { ok: false, error: 'INVALID_SIGNATURE' };
+blockchain-100.js:467:    const balance = this.wallets[tx.from] || 0;
+blockchain-100.js:470:      .reduce((s, t) => s + t.amount + t.fee, 0);
+blockchain-100.js:472:    if (balance < tx.amount + tx.fee + pending) {
+blockchain-100.js:473:      return { ok: false, error: 'INSUFFICIENT_BALANCE', balance, needed: tx.amount + tx.fee };
+blockchain-100.js:490:      if (!Number.isSafeInteger(block.nonce) || block.nonce < 0) return false;
+blockchain-100.js:509:            !Number.isFinite(tx.amount) || tx.amount < 0 ||
+blockchain-100.js:510:            !Number.isFinite(tx.fee) || tx.fee < 0 ||
+blockchain-100.js:516:        if (tx.type === 'COINBASE') {
+blockchain-100.js:518:          if (tx.from !== 'COINBASE' || tx.fee !== 0 ||
+blockchain-100.js:519:              tx.amount !== block.reward) return false;
+blockchain-100.js:521:          if (tx.amount <= 0 || !tx.verify()) return false;
+blockchain-100.js:554:        if (tx.type === 'COINBASE') total += tx.amount;
+blockchain-100.js:589:      .map(([address, balance]) => ({ address, balance }))
+blockchain-100.js:590:      .sort((a, b) => b.balance - a.balance);
+
+===== 5. API AND STATIC FILE SECURITY =====
+11:const { handlePaymentAPI } = require('./payment-api.js');
+12:const { handleExchangeAPI } = require('./exchange-api.js');
+13:const { handleMarketAPI } = require('./market-api.js');
+14:const { handleUsersAPI } = require('./users-api.js');
+21:const { handleBlockchainAPI } = require('./blockchain-api.js');
+250:  if (handlePaymentAPI(req, res, req.url, req.method)) {
+255:  if (handleExchangeAPI(req, res, req.url, req.method)) {
+260:  if (handleMarketAPI(req, res, req.url, req.method)) {
+265:  if (handleUsersAPI(req, res, req.url, req.method)) {
+270:    if (handleBlockchainAPI(req, res, req.url, req.method, gandomChain) !== false) {
+294:            decodedPath = decodeURIComponent(requestPath);
+301:        const publicRoot = path.resolve(__dirname, 'public');
+302:        const filePath = path.resolve(
+
+===== 6. CHAIN LINK INTEGRITY =====
+CHAIN=blockchain-data/chain.json
+BLOCK_COUNT=2
+GENESIS_HASH=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+STRUCTURAL_ERRORS=0
+CHAIN=blockchain-data-b/chain.json
+BLOCK_COUNT=2
+GENESIS_HASH=f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624
+BROKEN_LINK=1
+EXPECTED_PREV=f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624
+ACTUAL_PREV=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+STRUCTURAL_ERRORS=1
+
+===== 7. DEPENDENCIES =====
+CRITICAL=0
+HIGH=0
+MODERATE=3
+LOW=0
+
+===== 8. FINAL SAFETY GATE =====
+CHAIN_FILES_MODIFIED=NO
+AUTOMATIC_REPAIR=NO
+SERVICE_RESTARTED=NO
+PRODUCTION_APPROVAL=NOT_GRANTED
+PASS_REAL_FULL_SYSTEM=NOT_CLAIMED

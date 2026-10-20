@@ -1,0 +1,32 @@
+{
+  "employee": "AI-TREASURER",
+  "id": "039",
+  "cash_flow": {
+    "owner_balance_irt": 25500,
+    "treasury_balance_irt": 484500,
+    "total_cash_irt": 510000,
+    "employee_count": 0,
+    "total_salaries_irt": 0,
+    "reserves_irt": 484500,
+    "healthy": true,
+    "ts": "2026-10-10T13:55:00.791Z"
+  },
+  "forecasts": [
+    {
+      "audits_per_month": 100,
+      "price_per_audit": 510000,
+      "monthly_income_irt": 51000000,
+      "owner_monthly_irt": 5100000,
+      "yearly_owner_irt": 61200000
+    },
+    {
+      "audits_per_month": 500,
+      "price_per_audit": 510000,
+      "monthly_income_irt": 255000000,
+      "owner_monthly_irt": 25500000,
+      "yearly_owner_irt": 306000000
+    }
+  ],
+  "ts": "2026-10-10T13:55:00.794Z",
+  "hash": "66a724e9ddf9f6547f77ea010a0160208aa6b356a5717499dd390166de5433fd"
+}

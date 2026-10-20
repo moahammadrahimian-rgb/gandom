@@ -1,0 +1,11 @@
+{
+  "contract": "GOLDEN-MOTHER-LAW-2558",
+  "function_match": true,
+  "geometry_zero": true,
+  "physics_zero": true,
+  "conservation_zero": true,
+  "hash_a": "6781b4657f7eb70f68f8feca63f4bae0b76671903f3d134647ad8ca15524656f",
+  "hash_b": "6781b4657f7eb70f68f8feca63f4bae0b76671903f3d134647ad8ca15524656f",
+  "hash_match": true,
+  "final": true
+}

@@ -1,0 +1,384 @@
+=== GANDOM EXECUTOR / LAW 2558 ===
+TIME=2026-10-18T17:51:19+03:30
+ROOT=/data/data/com.termux/files/home/gandom
+EVIDENCE=/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T175119
+LAW=2558
+NO_FAKE_PASS=1
+PROJECT_FILES_DELETED=NO
+WALLETS_OR_DATABASES_TOUCHED=NO
+
+=== 1. PREFLIGHT ===
+node=/data/data/com.termux/files/usr/bin/node
+npm=/data/data/com.termux/files/usr/bin/npm
+java=/data/data/com.termux/files/usr/bin/java
+git=/data/data/com.termux/files/usr/bin/git
+v24.17.0
+11.17.0
+openjdk version "21.0.11" 2026-04-21
+OpenJDK Runtime Environment (build 21.0.11)
+OpenJDK Server VM (build 21.0.11, mixed mode)
+ARCH=armv8l
+LONG_BIT=32
+
+=== 2. PROJECT INVENTORY ===
+ M .github/workflows/gandom-ui-e2e.yml
+ D ALL-IN-ONE/README.md
+ D ALL-IN-ONE/audit-server.js
+ D ALL-IN-ONE/backend.js
+ D ALL-IN-ONE/client.html
+ D ALL-IN-ONE/final.html
+ D ALL-IN-ONE/p2p-server.js
+ D ALL-IN-ONE/package.json
+ D ALL-IN-ONE/start.sh
+ D ALL-IN-ONE/ui-server.js
+ D CHECK.sh
+ D GANDOM-BOOT.sh
+ D GANDOM-FINAL-BUILD-AND-AUDIT.sh
+ D RESTORE.sh
+ M android/build.gradle
+ M android/settings.gradle
+ M audit-service/server.js
+ M blockchain-100.js
+ D chromium-dpkg-cycle1.log
+ D chromium-error.log
+ D chromium-runtime.log
+ D ci-diagnostic-36731371010/gandom-gradle-build.log
+ M employees/accounting-ledger.json
+ M employees/wallet-bridge.js
+ D gandom-server.log
+ M node-b-chain.js
+ M public/index.html
+ M server.js
+?? '
+?? .backend-health.json
+?? .evidence/
+?? .gandom-2558/
+?? .gandom-agent-2558/
+?? .gandom-audit-20261016_155330/
+?? .gandom-audit-2558-20261016_160241/
+?? .gandom-execution-lock.json
+?? .gandom-integration-rollback-20261013-094845/
+?? .github/workflows/gandom-ui-e2e.yml.before-ui-server-fix
+?? .installer-pid
+?? .law2558-gradle-backup-20261018-083014/
+?? .runtime/
+?? =
+?? ALL/dashboard.html
+?? BACKUP_SYNC_FIX_20261017-081230/
+?? FINAL.html
+?? GANDOM-ALL.md
+?? GANDOM-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z
+?? GANDOM-AWAKENING.js
+?? GANDOM-AWAKENING.json
+?? GANDOM-DEEP-TREASURE-SCAN.js
+?? GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-FULL-AUTOMATION-2558.js
+?? GANDOM-INTEGRATE-2558.sh
+?? GANDOM-INTEGRATION-2558-REPORT.txt
+?? GANDOM-LAW2558-AUDIT-20261013-102234.txt
+?? GANDOM-LAW2558-AUDIT.sh
+?? GANDOM-MOTHER-2558.sh
+?? GANDOM-ONE-SITE.html
+?? GANDOM-ONE.html
+?? GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt
+?? GANDOM-SECTION-01.tar.gz
+?? GANDOM-TREASURE-LITE.js
+?? GANDOM_2558_AUDIT_20261016T102512Z.txt
+?? GANDOM_AUDIT_2558_READ_ONLY.json
+?? GANDOM_CONSENSUS_GATE_2558_2026-10-16T11-22-34-402Z.txt
+?? GANDOM_DEEP_AUDIT_20261016T103550Z.txt
+?? GANDOM_ENGINE_SHOCK_2558.txt
+?? GANDOM_EXECUTION_STATE.txt
+?? GANDOM_GLOBAL_BRIDGE_2558.json
+?? GANDOM_GRADLE_ROOT_CAUSE_2558.sh
+?? GANDOM_GRADLE_ROOT_CAUSE_2558_20261018T073633Z.txt
+?? GANDOM_PREFLIGHT_20261016T060127Z.txt
+?? GANDOM_PREFLIGHT_20261016T060154Z.txt
+?? GANDOM_ROOT_CAUSE_2558_20261016T141524.txt
+?? GANDOM_ROOT_CAUSE_CODE_20261016T112839Z.txt
+?? GANDOM_ROOT_CAUSE_CODE_AUDIT_2558.sh
+?? GANDOM_ROOT_CAUSE_DEEP_2558.sh
+?? GANDOM_ROOT_CAUSE_DEEP_2558_20261016T104716Z.txt
+?? GANDOM_ROOT_FIX_2558.sh
+?? MASTER-PLAN.md
+?? PROPOSAL.txt
+?? PUZZLE-BACKUP-OVERLAP-2558.sh
+?? SHOVEL-REPORT-20261013-203517.txt
+?? ads-api.js
+?? ads-data/
+?? ads-manager.js
+?? ai-accountant-bridge.js
+?? ai-data/
+?? ai-runner.js
+?? ai-worker.js
+?? android/app/src/main/assets/
+?? architecture/
+?? archives/
+?? audit-data/
+?? audit-service/client.html
+?? audit/
+?? auto-auditor.js
+?? blockchain-100.js.before-gandom-2558-validation-1792134653021.bak
+?? blockchain-core.js
+?? blockchain-persistent.js
+?? blockchain.js
+?? breeding-data/
+?? breeding-manager.js
+?? cell-life-api.js
+?? cell-life-data/
+?? cell-life-engine-v2.js
+?? cell-life-engine.js
+?? cell-life-runner.js
+?? connect-organs.sh
+?? consensus.js
+?? constitution/EVIDENCE-TRUST-PROTOCOL-2558.json
+?? constitution/GANDOM-GLOBAL-2558-UNIFIED-LOCK.md
+?? constitution/GOLDEN-MOTHER-LAW-2558.HASH
+?? constitution/GOLDEN-MOTHER-LAW-2558.json
+?? constitution/GOLDEN-MOTHER-LAW-2558.md
+?? deep-shovel.sh
+?? docs/PRICING-NEW.md
+?? e
+?? "e HEAD"
+?? ecosystem-api.js
+?? employees/treasury-report.json
+?? erver.js
+?? evidence/
+?? exchange-api.js
+?? exchange-data/
+?? exchange-manager.js
+?? experience-data/
+?? experience-recorder.js
+?? family-memory.js
+?? father-audit.json
+?? father-vault.js
+?? father-wallet.json
+?? fix-display.js
+?? fix-route.js
+?? fix-vault-v2.js
+?? fix-vault-v3.js
+?? fix-vault.js
+?? full-audit.js
+?? gandom-alive.js
+?? gandom-audit-20261016-083014.txt
+?? gandom-audit.sh
+?? gandom-backend.js
+?? gandom-code.tar.gz
+?? gandom-core/
+?? gandom-executor-2558.sh
+?? gandom-final-start.sh
+?? gandom-global-bridge-2558.js
+?? gandom-investor-audit-20261016-082640.txt
+?? gandom-release-gate.txt
+?? gandom-ui-backtest.html
+?? gandom.db
+?? gandom_2558_execution_gate.sh
+?? gandom_consensus_gate_2558.js
+?? gandom_deep_audit_2558.sh
+?? gandom_mother2558_p2p.sh
+?? gandom_phase2_2558.sh
+?? gandom_phase3_accounting_audit_2558.sh
+?? gandom_preflight.sh
+?? gandom_root_cause_2558.sh
+?? governance/
+?? install-memory-v2.js
+?? install-vault.js
+?? investor-audit.sh
+?? market-api.js
+?? market-data/
+?? market-manager.js
+?? memories/
+?? mother-data/
+?? mother-node.js
+?? music-data/
+?? music-income.js
+?? neural-api.js
+?? neural-bus.js
+?? node-b-chain.js.before-gandom-2558-validation-1792134653022.bak
+?? node-b-chain.js.before-validation-fix-1792134426147.bak
+?? node-b-persistent.js
+?? node-breeding-api.js
+?? node-breeding.js
+?? node-mobile-release.json
+?? nodes-family/
+?? p2p-heavy-test.js
+?? p2p-heavy-test.js.pre-fix-2558
+?? p2p-heavy-test.js.pre-newline-fix
+?? p2p-heavy-test.js.pre-patch-2558
+?? p2p-real-test.js
+?? p2p-sync-fixed.js
+?? p2p-sync.js
+?? patch-blockchain-final.js
+?? patch-dashboard.js
+?? patch-exchange-dashboard.js
+?? patch-exchange-link.js
+?? patch-menu.js
+?? patch-section.js
+?? patch.js
+?? payment-api.js
+?? payment-data/
+?? payment-manager.js
+?? price-api.js
+?? price-oracle.js
+?? public/assets/
+?? public/chain.html
+?? public/chat.html
+?? public/diagnose.html
+?? public/gandom-3d.html
+?? public/gandom-brain.js
+?? public/gandom-girl.html
+?? public/gandom-test.html
+?? public/index.html.backup3
+?? public/index.html.backup4
+?? public/libs/
+?? public/voice-continuous.js
+?? public/voice-test.html
+?? run/
+?? runtime-logs/
+?? runtime/
+?? scripts/
+?? security-audit-20261016-085914.txt
+?? security-audit.sh
+?? security_audit.sh
+?? server.js.before-fix-20261017-124433.bak
+?? shovel.sh
+?? site/
+?? start-ai.js
+?? start-gandom.sh
+?? start-gandom.sh.before-lock-20261017-125729.bak
+?? start-gandom.sh.before-no-pkill-20261017-132028.bak
+?? start-gandom.sh.before-python-fix-20261017-131500.bak
+?? "tatus --short"
+?? test-100.js
+?? test-neuron.js
+?? test-node-b.js
+?? test-organs.sh
+?? utils.js
+?? wallet/GANDOM-WALLET-2558.js
+?? wallet/wallet-state.json
+?? worker-api.js
+?? worker-coordinator.js
+?? worker-node.js
+?? workers-data/
+?? www/gandom-live-ui.html
+?? www/gandom-live-ui.html.step4-before
+FOUND=package.json
+5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3  package.json
+FOUND=capacitor.config.json
+36fe022501fdd162b153db1c133ef25fffa21c7973d7496f193f20cd36778ae0  capacitor.config.json
+FOUND=android/gradle.properties
+3bab15c5b8bc4c2f4b6cf525497d15ad4abca53a460e6dd2eb0f0135817d31e6  android/gradle.properties
+FOUND=android/gradle/wrapper/gradle-wrapper.properties
+d5175eaa933ae7aebb126f5c99024f511a396132e8bacdfe74c66daf8292920d  android/gradle/wrapper/gradle-wrapper.properties
+FOUND=android/settings.gradle
+ab907f28cb71eecd93bf1606f4c0b3692f12c5c42189620de374092c04a0da7b  android/settings.gradle
+FOUND=android/build.gradle
+2231a11d344b82e9ee3332da3238eeb14062fd714051ccf3933ceabf2e0dc631  android/build.gradle
+FOUND=android/app/build.gradle
+a00300c3a052839a377456b5f2c92f72eda2445e7ef317c62d1226245a097217  android/app/build.gradle
+
+=== 3. PREVIOUS FAILURE SIGNATURES ===
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141617Z/EXECUTION_REPORT.txt
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141739Z/EXECUTION_REPORT.txt
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141708Z/EXECUTION_REPORT.txt
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/android-build.log
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/EXECUTION_REPORT.txt
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T175119/EXECUTION_REPORT.txt
+/data/data/com.termux/files/home/gandom/evidence/12-SECTIONS-INSTALL-AUDIT-20260930-201101/capability-references.txt:2088:./backups/ui-sections-6-12-20260930-174410/android/app/build.gradle:36:    implementation "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion"
+/data/data/com.termux/files/home/gandom/evidence/12-SECTIONS-INSTALL-AUDIT-20260930-201101/capability-references.txt:2099:./backups/ui-sections-6-12-20260930-174410/android/app/src/main/res/layout/activity_main.xml:2:<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+/data/data/com.termux/files/home/gandom/evidence/12-SECTIONS-INSTALL-AUDIT-20260930-201101/capability-references.txt:2101:./backups/ui-sections-6-12-20260930-174410/android/app/src/main/res/layout/activity_main.xml:12:</androidx.coordinatorlayout.widget.CoordinatorLayout>
+/data/data/com.termux/files/home/gandom/evidence/12-SECTIONS-INSTALL-AUDIT-20260930-201101/capability-references.txt:2146:./backups/ui-sections-6-12-20260930-174410/android/variables.gradle:7:    androidxCoordinatorLayoutVersion = '1.3.0'
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141617Z/EXECUTION_REPORT.txt:680:22:android.useAndroidX=true
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141617Z/EXECUTION_REPORT.txt:724:38:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141617Z/EXECUTION_REPORT.txt:725:39:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-common/8.6.0/databinding-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:11 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141617Z/EXECUTION_REPORT.txt:733:374:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:31 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141739Z/EXECUTION_REPORT.txt:680:22:android.useAndroidX=true
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141739Z/EXECUTION_REPORT.txt:724:38:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141739Z/EXECUTION_REPORT.txt:725:39:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-common/8.6.0/databinding-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:11 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141739Z/EXECUTION_REPORT.txt:733:374:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:31 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141708Z/EXECUTION_REPORT.txt:680:22:android.useAndroidX=true
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141708Z/EXECUTION_REPORT.txt:724:38:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141708Z/EXECUTION_REPORT.txt:725:39:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-common/8.6.0/databinding-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:11 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141708Z/EXECUTION_REPORT.txt:733:374:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:31 GMT 2025).
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/execution.log:37:===== 4. GRADLE AND ANDROIDX CONFIGURATION =====
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/execution.log:43:22:android.useAndroidX=true
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/execution.log:61:===== 5. ANDROIDX SAFE CHECK =====
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/execution.log:62:ANDROIDX=ENABLED
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/android-build.log:29:FAILURE: Build failed with an exception.
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/android-build.log:31:* What went wrong:
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/android-build.log:33:> java.nio.BufferOverflowException (no error message)
+/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T142006Z/android-build.log:183:Caused by: java.nio.BufferOverflowException
+
+=== 4. BUILD TOOLCHAIN ===
+--- Wrapper distribution ---
+3:distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-all.zip
+
+=== 5. EXISTING ANDROIDX CONFIG ===
+--- android/gradle.properties ---
+12:org.gradle.jvmargs=-Xmx1536m
+22:android.useAndroidX=true
+
+=== 6. REAL DEBUG BUILD ===
+BUILD_TRIGGERED=YES
+BUILD_EXIT_CODE=1
+--- Exact failure details ---
+2928-
+2929-[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+2930-
+2931-FAILURE: Build failed with an exception.
+2932-
+2933:* What went wrong:
+2934-A problem occurred configuring project ':capacitor-android'.
+2935:> java.nio.BufferOverflowException (no error message)
+2936-
+2937-* Try:
+2938-> Run with --info or --debug option to get more log output.
+2939-> Run with --scan to get full insights.
+2940-> Get more help at https://help.gradle.org.
+2941-
+2942-* Exception is:
+2943-org.gradle.api.ProjectConfigurationException: A problem occurred configuring project ':capacitor-android'.
+2944-	at org.gradle.configuration.project.LifecycleProjectEvaluator.wrapException(LifecycleProjectEvaluator.java:84)
+2945-	at org.gradle.configuration.project.LifecycleProjectEvaluator.addConfigurationFailure(LifecycleProjectEvaluator.java:77)
+2946-	at org.gradle.configuration.project.LifecycleProjectEvaluator.access$500(LifecycleProjectEvaluator.java:55)
+2947-	at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.lambda$run$0(LifecycleProjectEvaluator.java:111)
+--
+3080-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+3081-	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+3082-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+3083-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+3084-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+3085:Caused by: java.nio.BufferOverflowException
+3086-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.ensureRemaining(CodePointBuffer.java:191)
+3087-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.append(CodePointBuffer.java:217)
+3088-	at groovyjarjarantlr4.v4.runtime.CharStreams.fromReader(CharStreams.java:184)
+3089-	at org.apache.groovy.parser.antlr4.AstBuilder.createCharStream(AstBuilder.java:195)
+3090-	at org.apache.groovy.parser.antlr4.AstBuilder.<init>(AstBuilder.java:181)
+3091-	at org.apache.groovy.parser.antlr4.Antlr4ParserPlugin.buildAST(Antlr4ParserPlugin.java:56)
+3092-	at org.gradle.groovy.scripts.internal.DefaultScriptCompilationHandler.compileScript(DefaultScriptCompilationHandler.java:164)
+3093-	at org.gradle.groovy.scripts.internal.DefaultScriptCompilationHandler.compileToDir(DefaultScriptCompilationHandler.java:116)
+3094-	at org.gradle.groovy.scripts.internal.BuildOperationBackedScriptCompilationHandler$2.run(BuildOperationBackedScriptCompilationHandler.java:54)
+3095-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+3096-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+3097-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+--
+3321-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+3322-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+3323-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+3324-
+3325-
+3326:BUILD FAILED in 55s
+
+=== 7. APK ARTIFACT CHECK ===
+BUILD_STATUS=BUILD_FAILED
+PASS_REAL=NOT_ISSUED
+
+=== 8. PRESERVATION ===
+PROJECT_FILES_DELETED=NO
+WALLETS_OR_DATABASES_TOUCHED=NO
+SERVERS_RESTARTED=NO
+SOURCE_CONFIGURATION_CHANGED=NO
+REPORT=/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T175119/EXECUTION_REPORT.txt
+BUILD_LOG=/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTOR_2558_20261018T175119/build.log
+=== END ===

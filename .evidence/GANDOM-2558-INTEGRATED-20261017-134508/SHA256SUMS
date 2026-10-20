@@ -1,0 +1,13 @@
+a4796fcbf93768bd020442c959b74d3ec9e1619a5c43ab9b7a533a473bc7796d  ./backend-health.json
+63f5e62ab7ad431b78f739d0086fe9d03c8ad77f00abaabee4dd7def9a2b301c  ./backup/gandom-core/discovery/REAL-DISCOVERY.js
+5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3  ./backup/package.json
+6153ffd3aa3931ddaa91f27f0e556cb68bd892f21074a0a6d291f7afa521e98f  ./backup/server.js
+6ed28abee0eff529fbbe0043ed0f65a786749fb3a98e5a1277252ac9b2d75d12  ./backup/start-gandom.sh
+63f5e62ab7ad431b78f739d0086fe9d03c8ad77f00abaabee4dd7def9a2b301c  ./discovery-module.txt
+c11e3f4837efde2441e23a7b9da02131f53bf59fddeb7147c4ab81afe400460f  ./frontend-http-status.txt
+f32871b9c09cbf4d66975730285d3f7a4f6fb2e978962c398842b5960d6e2105  ./git-head.txt
+90e855d8db13fe42e486c6d4be31398661204741025028e2b3a71b7da07587aa  ./git-remotes.txt
+dc6c59c0b0fbb7e786f9614916b1ababfd4fb16dc591c325b0ce62b2f562ead6  ./git-status.txt
+941ae21538be283aca615d6dadb9bdb8a70588556862e3ceea165ccf9ab012fd  ./peer-integration.txt
+12b9fa7ebf856c1454eab014f9a8cd12a2a2fa713c100e48d08b03636d9c072c  ./source-sha256.txt
+06daf654a4bfbb7a9eaf287cdffdee087ddea78c82c61553f8b5053ec65de078  ./startup-config.txt

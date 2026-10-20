@@ -1,0 +1,59 @@
+{
+  "version": "1.0",
+  "saved_at": "2026-10-17T04:06:59.042Z",
+  "difficulty": 3,
+  "length": 2,
+  "chain": [
+    {
+      "index": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "timestamp": 0,
+      "transactions": [
+        {
+          "type": "GENESIS",
+          "msg": "Gandom 2558",
+          "law": "2558"
+        }
+      ],
+      "nonce": 0,
+      "hash": "f41ca54609a0ff526bf949d893052e2bc872ef7d20723408d7533d7306e6a42c"
+    },
+    {
+      "index": 1,
+      "prevHash": "f41ca54609a0ff526bf949d893052e2bc872ef7d20723408d7533d7306e6a42c",
+      "timestamp": 1792210018952,
+      "transactions": [
+        {
+          "from": "GDM4c88f35f",
+          "to": "GDM9cf93bf9",
+          "amount": 329,
+          "fee": 0.001,
+          "timestamp": 1792210018951
+        },
+        {
+          "from": "GDM16c259e5",
+          "to": "GDM8df12c66",
+          "amount": 658,
+          "fee": 0.001,
+          "timestamp": 1792210018951
+        },
+        {
+          "from": "GDM3df04976",
+          "to": "GDMa5236263",
+          "amount": 318,
+          "fee": 0.001,
+          "timestamp": 1792210018951
+        },
+        {
+          "from": "GDM4c5659c8",
+          "to": "GDMf927f9a8",
+          "amount": 126,
+          "fee": 0.001,
+          "timestamp": 1792210018951
+        }
+      ],
+      "nonce": 1990,
+      "hash": "00092a3da27d9747f8e73bca039eb15f86e70bef63fcc1d3d2de92d115f3abb7"
+    }
+  ]
+}

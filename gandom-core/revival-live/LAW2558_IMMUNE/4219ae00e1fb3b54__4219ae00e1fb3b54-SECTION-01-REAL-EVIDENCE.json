@@ -1,0 +1,37 @@
+{
+  "protocol": "GANDOM",
+  "law": "2558",
+  "section": "01/12",
+  "mode": "REAL_ABSOLUTE_EXECUTION",
+  "executedAt": "2026-10-02T13:07:17.033Z",
+  "executable": "gandom-core/execution/GANDOM-SECTION-01-REAL.js",
+  "contract": {
+    "file": "GANDOM-ALL.md",
+    "sha256": "994a86a2c93a10cf3eb4a78d617f874152d876bcc935cc0647178a8afdad6494"
+  },
+  "lawHash": "5902228e55c8bfc32470cf6c64a5fe2cd9be21e3a89fe9582e46bf412c1d4571",
+  "lawJsonHash": "a27f951a47c4fc8a0214970782655dc900d52a49ec2381273a81a60568f0b8aa",
+  "executionLockHash": "97833c134b5b8a89e0372273a746f02532eb192c2a4391aeb8ceb90f39df7d91",
+  "architectureHash": "27764cb5554451a04f4c77bcaca9b02fb331a37337b624dfdd07e529aeb86572",
+  "section01": {
+    "boundaryVerified": true,
+    "chapters": 3,
+    "governance": true,
+    "globalArchitecture": true,
+    "systemContracts": true
+  },
+  "finalTarget": {
+    "realNodes": 20000,
+    "realCellsPerNode": 400000,
+    "realLiveCells": 8000000000
+  },
+  "antiFake": {
+    "simulationFinalExecution": false,
+    "demoFinalExecution": false,
+    "processCountingAsPhysicalNodes": false,
+    "fabricatedNumbers": false,
+    "fakePass": false
+  },
+  "complete": false,
+  "nextSectionAllowed": false
+}

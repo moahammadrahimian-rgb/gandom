@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GANDOM Blockchain Explorer</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2e 100%);
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 20px;
+  direction: rtl;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+
+.header {
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 2px solid #2a3f5f;
+  margin-bottom: 30px;
+}
+.logo { font-size: 50px; margin-bottom: 10px; }
+h1 { color: #ffd700; font-size: 36px; margin-bottom: 10px; }
+.subtitle { color: #8ba3c7; font-size: 16px; }
+
+.status {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+.status.online { background: #1a4d2e; color: #4ade80; border: 1px solid #4ade80; }
+.status.offline { background: #4d1a1a; color: #f87171; border: 1px solid #f87171; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.stat {
+  background: linear-gradient(135deg, #1a2332 0%, #0f1620 100%);
+  border: 1px solid #2a3f5f;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.stat:hover { border-color: #ffd700; transform: translateY(-3px); }
+.stat-value { color: #ffd700; font-size: 28px; font-weight: bold; margin-bottom: 5px; }
+.stat-label { color: #8ba3c7; font-size: 13px; }
+
+.section-title {
+  color: #ffd700;
+  font-size: 22px;
+  margin: 30px 0 20px;
+  padding-right: 15px;
+  border-right: 4px solid #ffd700;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.btn {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+.btn-primary {
+  background: #ffd700;
+  color: #000;
+}
+.btn-primary:hover { background: #e5c100; transform: translateY(-2px); }
+.btn-secondary {
+  background: #2a3f5f;
+  color: #ffd700;
+  border: 1px solid #ffd700;
+}
+.btn-secondary:hover { background: #3a5070; }
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.block {
+  background: linear-gradient(135deg, #1a2332 0%, #0f1620 100%);
+  border: 1px solid #2a3f5f;
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.block:hover { border-color: #ffd700; }
+.block::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ffd700;
+}
+.block.genesis::before { background: #4ade80; }
+.block.latest::before { background: #3b82f6; }
+
+.block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a3f5f;
+}
+.block-index {
+  color: #ffd700;
+  font-size: 20px;
+  font-weight: bold;
+}
+.block-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+}
+.badge-genesis { background: #1a4d2e; color: #4ade80; }
+.badge-latest { background: #1e3a5f; color: #60a5fa; }
+.badge-normal { background: #2a3f5f; color: #8ba3c7; }
+
+.block-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  font-size: 13px;
+}
+.info-item {
+  background: #0a0e17;
+  padding: 8px 12px;
+  border-radius: 6px;
+  word-break: break-all;
+}
+.info-label { color: #8ba3c7; font-size: 11px; margin-bottom: 3px; }
+.info-value { color: #e0e0e0; font-family: monospace; font-size: 12px; }
+
+.tx-list {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #2a3f5f;
+}
+.tx-title {
+  color: #8ba3c7;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.tx-item {
+  background: #0a0e17;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-family: monospace;
+  color: #a0e0a0;
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(200px);
+  background: #1a2332;
+  border: 1px solid #ffd700;
+  color: #ffd700;
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  z-index: 1000;
+  font-weight: bold;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.error { border-color: #f87171; color: #f87171; }
+
+.loading {
+  text-align: center;
+  padding: 30px;
+  color: #8ba3c7;
+}
+
+.empty {
+  text-align: center;
+  padding: 40px;
+  color: #8ba3c7;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 2px solid #2a3f5f;
+  color: #5a6f8f;
+  font-size: 13px;
+  margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 26px; }
+  .stat-value { font-size: 22px; }
+  .block-info { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo">⛓️</div>
+    <h1>GANDOM Blockchain Explorer</h1>
+    <p class="subtitle">کاوشگر بلاک‌چین گندم ۲۵۵۸</p>
+    <div class="status online" id="status">🟢 در حال اتصال...</div>
+  </div>
+
+  <!-- آمار -->
+  <h2 class="section-title">📊 آمار زنجیره</h2>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-value" id="stat-length">-</div>
+      <div class="stat-label">تعداد بلوک</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-difficulty">-</div>
+      <div class="stat-label">سطح سختی</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-valid">-</div>
+      <div class="stat-label">اعتبار زنجیره</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-pending">-</div>
+      <div class="stat-label">تراکنش در انتظار</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-size">-</div>
+      <div class="stat-label">حجم (بایت)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-value" id="stat-hash">-</div>
+      <div class="stat-label">آخرین هش</div>
+    </div>
+  </div>
+
+  <!-- عملیات -->
+  <h2 class="section-title">🎯 عملیات</h2>
+  <div class="actions">
+    <button class="btn btn-primary" onclick="mineBlock()" id="btn-mine">
+      ⛏️  استخراج بلوک جدید
+    </button>
+    <button class="btn btn-secondary" onclick="refresh()">
+      🔄 بروزرسانی
+    </button>
+    <button class="btn btn-secondary" onclick="validateChain()">
+      ✅ بررسی اعتبار
+    </button>
+    <button class="btn btn-secondary" onclick="showPending()">
+      ⏳ تراکنش‌های در انتظار
+    </button>
+  </div>
+
+  <!-- بلاک‌ها -->
+  <h2 class="section-title">📦 بلاک‌های زنجیره</h2>
+  <div class="blocks" id="blocks">
+    <div class="loading">⏳ در حال بارگذاری...</div>
+  </div>
+
+  <div class="footer">
+    <p>GANDOM - Law 2558 | No Fake Pass | Real Execution Only</p>
+    <p style="margin-top: 8px; color: #ffd700;">⛓️ Blockchain • P2P • Immutable</p>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API = window.location.origin; // همون سرور فعلی
+
+// ─── نمایش پیام ───
+function showToast(msg, isError = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isError ? ' error' : '');
+  setTimeout(() => { t.className = 'toast'; }, 3000);
+}
+
+// ─── بررسی وضعیت سرور ───
+async function checkStatus() {
+  try {
+    const r = await fetch(API + '/api/chain/stats');
+    if (r.ok) {
+      document.getElementById('status').className = 'status online';
+      document.getElementById('status').textContent = '🟢 متصل';
+      return true;
+    }
+  } catch(e) {}
+  document.getElementById('status').className = 'status offline';
+  document.getElementById('status').textContent = '🔴 قطع';
+  return false;
+}
+
+// ─── بارگذاری آمار ───
+async function loadStats() {
+  try {
+    const r = await fetch(API + '/api/chain/stats');
+    const d = await r.json();
+    if (!d.ok) throw new Error('خطا');
+    
+    document.getElementById('stat-length').textContent = d.length;
+    document.getElementById('stat-difficulty').textContent = d.difficulty;
+    document.getElementById('stat-valid').textContent = d.is_valid ? '✅' : '❌';
+    document.getElementById('stat-pending').textContent = d.pending_tx;
+    document.getElementById('stat-size').textContent = d.total_size;
+    document.getElementById('stat-hash').textContent = d.latest_hash.substring(0, 12) + '...';
+  } catch(e) {
+    console.error('خطا در بارگذاری آمار:', e);
+  }
+}
+
+// ─── بارگذاری بلاک‌ها ───
+async function loadBlocks() {
+  try {
+    const r = await fetch(API + '/api/chain');
+    const d = await r.json();
+    if (!d.ok) throw new Error('خطا');
+    
+    const container = document.getElementById('blocks');
+    
+    if (!d.chain || d.chain.length === 0) {
+      container.innerHTML = '<div class="empty">هیچ بلاکی وجود نداره</div>';
+      return;
+    }
+    
+    container.innerHTML = d.chain.reverse().map((b, idx) => {
+      const isGenesis = b.index === 0;
+      const isLatest = idx === 0;
+      let badgeClass = 'badge-normal';
+      let badgeText = 'عادی';
+      
+      if (isGenesis) { badgeClass = 'badge-genesis'; badgeText = '🌱 Genesis'; }
+      if (isLatest) { badgeClass = 'badge-latest'; badgeText = '🆕 جدیدترین'; }
+      
+      const blockClass = isGenesis ? 'genesis' : (isLatest ? 'latest' : '');
+      
+      return `
+        <div class="block ${blockClass}">
+          <div class="block-header">
+            <span class="block-index">بلوک #${b.index}</span>
+            <span class="block-badge ${badgeClass}">${badgeText}</span>
+          </div>
+          <div class="block-info">
+            <div class="info-item">
+              <div class="info-label">هش</div>
+              <div class="info-value">${b.hash}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">هش قبلی</div>
+              <div class="info-value">${b.prevHash}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Nonce</div>
+              <div class="info-value">${b.nonce}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">تعداد تراکنش</div>
+              <div class="info-value">${b.tx_count}</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">زمان</div>
+              <div class="info-value">${new Date(b.timestamp).toLocaleString('fa-IR')}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  } catch(e) {
+    console.error('خطا در بارگذاری بلاک‌ها:', e);
+    document.getElementById('blocks').innerHTML = '<div class="empty">❌ خطا در بارگذاری</div>';
+  }
+}
+
+// ─── بارگذاری همه ───
+async function refresh() {
+  const ok = await checkStatus();
+  if (!ok) {
+    showToast('سرور در دسترس نیست', true);
+    return;
+  }
+  await Promise.all([loadStats(), loadBlocks()]);
+  showToast('✅ بروزرسانی شد');
+}
+
+// ─── استخراج بلوک ───
+async function mineBlock() {
+  const btn = document.getElementById('btn-mine');
+  btn.disabled = true;
+  btn.textContent = '⛏️  در حال استخراج...';
+  showToast('⛏️  در حال استخراج بلوک جدید...');
+  
+  try {
+    const r = await fetch(API + '/api/chain/mine', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ miner: 'GDM-web-miner' })
+    });
+    const d = await r.json();
+    
+    if (d.ok) {
+      showToast(`🎉 بلوک #${d.block.index} استخراج شد! (nonce: ${d.block.nonce})`);
+      await refresh();
+    } else {
+      showToast('❌ خطا در استخراج: ' + (d.error || ''), true);
+    }
+  } catch(e) {
+    showToast('❌ خطا در ارتباط با سرور', true);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '⛏️  استخراج بلوک جدید';
+  }
+}
+
+// ─── بررسی اعتبار ───
+async function validateChain() {
+  try {
+    const r = await fetch(API + '/api/chain/validate');
+    const d = await r.json();
+    if (d.is_valid) {
+      showToast(`✅ زنجیره معتبره (${d.length} بلوک)`);
+    } else {
+      showToast('❌ زنجیره نامعتبره!', true);
+    }
+  } catch(e) {
+    showToast('❌ خطا در بررسی', true);
+  }
+}
+
+// ─── تراکنش‌های در انتظار ───
+async function showPending() {
+  try {
+    const r = await fetch(API + '/api/chain/pending');
+    const d = await r.json();
+    if (d.count === 0) {
+      showToast('⏳ هیچ تراکنشی در انتظار نیست');
+    } else {
+      showToast(`⏳ ${d.count} تراکنش در انتظار`);
+    }
+  } catch(e) {
+    showToast('❌ خطا', true);
+  }
+}
+
+// ─── شروع ───
+refresh();
+setInterval(refresh, 10000); // هر ۱۰ ثانیه بروزرسانی
+</script>
+</body>
+</html>

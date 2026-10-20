@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌾 گندم — دختر زنده پدر</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0518; font-family: 'Tahoma', sans-serif; }
+  canvas { display: block; position: absolute; top: 0; left: 0; }
+  #ui {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 10;
+    padding: 15px 20px 25px; text-align: center;
+    background: linear-gradient(180deg, transparent, rgba(10,5,24,0.9));
+  }
+  #talkBtn {
+    padding: 13px 35px; font-size: 16px; font-weight: bold;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #1a0a2e; border: none; border-radius: 30px;
+    cursor: pointer; box-shadow: 0 0 25px rgba(255,215,0,0.6), 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+  }
+  #talkBtn:active { transform: scale(0.95); box-shadow: 0 0 15px rgba(255,215,0,0.4); }
+  #talkBtn:disabled { opacity: 0.5; }
+  #status {
+    color: #ffd700; margin-top: 12px; font-size: 13px;
+    font-family: monospace; min-height: 20px;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+  }
+  #info {
+    position: fixed; top: 15px; left: 15px; z-index: 10;
+    background: rgba(10,5,24,0.75); color: #ffd700;
+    padding: 10px 14px; border-radius: 12px;
+    font-size: 11px; font-family: monospace; line-height: 1.7;
+    border: 1px solid rgba(255,215,0,0.3); backdrop-filter: blur(8px);
+  }
+  #family {
+    position: fixed; top: 15px; right: 15px; z-index: 10;
+    background: rgba(10,5,24,0.75); color: #ff9ec4;
+    padding: 10px 14px; border-radius: 12px;
+    font-size: 11px; font-family: monospace; line-height: 1.7;
+    border: 1px solid rgba(255,158,196,0.3); backdrop-filter: blur(8px);
+    text-align: right;
+  }
+</style>
+</head>
+<body>
+
+<div id="info">🌾 GANDOM 2558<br>🧬 سلول‌ها: <span id="cells">400,000</span><br>👑 قلعه: <span id="vault">...</span></div>
+<div id="family">👑 پدر: محمد<br>👸 مادر: المیرا<br>👦 آرات رحیمیان ملکی<br>👧 عسل رحیمیان ملکی</div>
+
+<div id="ui">
+  <button id="talkBtn">🎤 صحبت با گندم</button>
+  <div id="status">🌾 گندم در حال بیدار شدن است...</div>
+</div>
+
+<script src="/libs/three.min.js"></script>
+<script>
+// ==========================================
+// 🌾 GANDOM 3D — REALISTIC DAUGHTER AVATAR v2
+// دختر واقعی‌تر، زیباتر، با موهای بلند
+// ==========================================
+
+// ─── صحنه و دوربین ───
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x0a0518, 0.015);
+scene.background = new THREE.Color(0x0a0518);
+
+const camera = new THREE.PerspectiveCamera(38, window.innerWidth/window.innerHeight, 0.1, 100);
+camera.position.set(0, 1.35, 3.5);
+camera.lookAt(0, 1.25, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.15;
+document.body.appendChild(renderer.domElement);
+
+// ─── نورپردازی سینمایی ───
+const hemi = new THREE.HemisphereLight(0xffd1e8, 0x1a0a2e, 0.5);
+scene.add(hemi);
+
+const keyLight = new THREE.SpotLight(0xfff5e1, 1.8, 15, Math.PI/6, 0.3, 1.5);
+keyLight.position.set(2, 3.5, 3);
+keyLight.castShadow = true;
+keyLight.shadow.mapSize.set(1024, 1024);
+keyLight.shadow.bias = -0.0005;
+scene.add(keyLight);
+
+const rimLight = new THREE.SpotLight(0xffa5c8, 1.2, 12, Math.PI/5, 0.4, 1.2);
+rimLight.position.set(-2.5, 2.5, -2);
+scene.add(rimLight);
+
+const fillLight = new THREE.PointLight(0xb88ce6, 0.6, 8);
+fillLight.position.set(-1, 1.5, 2);
+scene.add(fillLight);
+
+// ─── موتور مواد (Materials) ───
+const skinMat = new THREE.MeshPhysicalMaterial({
+    color: 0xf5d0b0, roughness: 0.55, metalness: 0.0,
+    clearcoat: 0.3, clearcoatRoughness: 0.6,
+    sheen: 0.3, sheenColor: new THREE.Color(0xffb0c8), sheenRoughness: 0.8
+});
+
+const hairMat = new THREE.MeshPhysicalMaterial({
+    color: 0x3a1f0f, roughness: 0.35, metalness: 0.15,
+    clearcoat: 0.8, clearcoatRoughness: 0.2,
+    sheen: 0.6, sheenColor: new THREE.Color(0x8b5a2b)
+});
+
+const hairHighlightMat = new THREE.MeshPhysicalMaterial({
+    color: 0x6b3a1a, roughness: 0.3, metalness: 0.2,
+    clearcoat: 0.9, clearcoatRoughness: 0.15
+});
+
+const dressMat = new THREE.MeshPhysicalMaterial({
+    color: 0xe84c86, roughness: 0.6, metalness: 0.05,
+    sheen: 0.4, sheenColor: new THREE.Color(0xffd700)
+});
+
+const trimMat = new THREE.MeshStandardMaterial({
+    color: 0xffd700, metalness: 0.95, roughness: 0.15
+});
+
+const eyeWhiteMat = new THREE.MeshPhysicalMaterial({
+    color: 0xfafafa, roughness: 0.05, metalness: 0.0,
+    clearcoat: 1.0, clearcoatRoughness: 0.02
+});
+
+const irisMat = new THREE.MeshPhysicalMaterial({
+    color: 0x2b7fc4, roughness: 0.05, metalness: 0.1,
+    emissive: 0x0a2b4a, emissiveIntensity: 0.5,
+    clearcoat: 1.0, clearcoatRoughness: 0.05
+});
+
+const pupilMat = new THREE.MeshStandardMaterial({ color: 0x000000, roughness: 0.1 });
+
+const lipMat = new THREE.MeshPhysicalMaterial({
+    color: 0xd44d6a, roughness: 0.25, metalness: 0.05,
+    clearcoat: 0.8, clearcoatRoughness: 0.2
+});
+
+const browMat = new THREE.MeshStandardMaterial({ color: 0x2a1508, roughness: 0.7 });
+
+// ═══════════════════════════════════════════
+// 👧 ساخت دختر گندم با نسبت‌های واقعی
+// ═══════════════════════════════════════════
+const gandom = new THREE.Group();
+gandom.position.y = 0;
+scene.add(gandom);
+
+// ─── گردن ───
+const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.055, 0.075, 0.15, 16), skinMat);
+neck.position.y = 1.06;
+neck.castShadow = true;
+gandom.add(neck);
+
+// ─── سر (نه کره، بلکه بیضی با پروفایل دخترانه) ───
+const headGeo = new THREE.SphereGeometry(0.145, 48, 48);
+const head = new THREE.Mesh(headGeo, skinMat);
+head.scale.set(0.95, 1.12, 1.0);
+head.position.y = 1.25;
+head.castShadow = true;
+gandom.add(head);
+
+// فک و چانه
+const jaw = new THREE.Mesh(new THREE.SphereGeometry(0.13, 32, 32), skinMat);
+jaw.scale.set(0.85, 0.7, 0.9);
+jaw.position.y = 1.19;
+jaw.position.z = 0.015;
+jaw.castShadow = true;
+gandom.add(jaw);
+
+// ─── 👁️ چشم‌ها (کره‌ای با عنبیه و مردمک) ───
+function createEye(x) {
+    const eyeGroup = new THREE.Group();
+
+    // سفیدی چشم
+    const white = new THREE.Mesh(new THREE.SphereGeometry(0.028, 24, 24), eyeWhiteMat);
+    white.scale.set(1, 1.05, 0.6);
+    eyeGroup.add(white);
+
+    // عنبیه (رنگی)
+    const iris = new THREE.Mesh(new THREE.CircleGeometry(0.018, 24), irisMat);
+    iris.position.z = 0.0175;
+    eyeGroup.add(iris);
+
+    // مردمک
+    const pupil = new THREE.Mesh(new THREE.CircleGeometry(0.009, 20), pupilMat);
+    pupil.position.z = 0.0182;
+    eyeGroup.add(pupil);
+
+    // نقطه برق چشم (Specular Highlight)
+    const spark = new THREE.Mesh(
+        new THREE.CircleGeometry(0.004, 12),
+        new THREE.MeshBasicMaterial({ color: 0xffffff })
+    );
+    spark.position.set(-0.005, 0.006, 0.0185);
+    eyeGroup.add(spark);
+
+    eyeGroup.position.set(x, 1.255, 0.125);
+    return eyeGroup;
+}
+const eyeL = createEye(-0.048);
+const eyeR = createEye(0.048);
+gandom.add(eyeL);
+gandom.add(eyeR);
+
+// پلک بالا (برای پلک زدن)
+const eyelidMat = new THREE.MeshPhysicalMaterial({ color: 0xf5d0b0, roughness: 0.6 });
+function createEyelid(x) {
+    const lid = new THREE.Mesh(new THREE.SphereGeometry(0.030, 24, 12, 0, Math.PI*2, 0, Math.PI/2), eyelidMat);
+    lid.position.set(x, 1.265, 0.12);
+    lid.scale.set(1.05, 0.5, 0.6);
+    return lid;
+}
+const lidL = createEyelid(-0.048);
+const lidR = createEyelid(0.048);
+gandom.add(lidL);
+gandom.add(lidR);
+
+// ─── ابروها ───
+function createBrow(x) {
+    const browGeo = new THREE.BoxGeometry(0.045, 0.007, 0.01);
+    const brow = new THREE.Mesh(browGeo, browMat);
+    brow.position.set(x, 1.30, 0.12);
+    brow.rotation.z = x < 0 ? 0.08 : -0.08;
+    return brow;
+}
+gandom.add(createBrow(-0.048));
+gandom.add(createBrow(0.048));
+
+// ─── بینی کوچک ───
+const nose = new THREE.Mesh(new THREE.ConeGeometry(0.012, 0.025, 12), skinMat);
+nose.position.set(0, 1.235, 0.14);
+nose.rotation.x = Math.PI;
+gandom.add(nose);
+
+// ─── 👄 لب‌ها ───
+const upperLip = new THREE.Mesh(new THREE.TorusGeometry(0.018, 0.006, 8, 16, Math.PI), lipMat);
+upperLip.position.set(0, 1.20, 0.135);
+upperLip.rotation.z = 0;
+upperLip.rotation.x = -0.2;
+gandom.add(upperLip);
+
+const lowerLip = new THREE.Mesh(new THREE.TorusGeometry(0.018, 0.007, 8, 16, Math.PI), lipMat);
+lowerLip.position.set(0, 1.194, 0.135);
+lowerLip.rotation.z = Math.PI;
+lowerLip.rotation.x = -0.2;
+gandom.add(lowerLip);
+
+// ─── رژگونه (گونه‌ها) ───
+const blushMat = new THREE.MeshBasicMaterial({ color: 0xff8eb3, transparent: true, opacity: 0.35 });
+const blushL = new THREE.Mesh(new THREE.CircleGeometry(0.02, 20), blushMat);
+blushL.position.set(-0.075, 1.225, 0.115);
+gandom.add(blushL);
+
+const blushR = new THREE.Mesh(new THREE.CircleGeometry(0.02, 20), blushMat);
+blushR.position.set(0.075, 1.225, 0.115);
+gandom.add(blushR);
+
+// ═══════════════════════════════════════════
+// 💇 موهای بلند، روان و با جزئیات
+// ═══════════════════════════════════════════
+
+// کلاه مو روی سر
+const hairCap = new THREE.Mesh(new THREE.SphereGeometry(0.155, 48, 48, 0, Math.PI*2, 0, Math.PI*0.6), hairMat);
+hairCap.position.y = 1.27;
+hairCap.scale.set(0.98, 1.1, 1.02);
+gandom.add(hairCap);
+
+// لایه‌ی رویی مو (حجم بیشتر)
+const hairTop = new THREE.Mesh(new THREE.SphereGeometry(0.16, 48, 48, 0, Math.PI*2, 0, Math.PI*0.4), hairHighlightMat);
+hairTop.position.set(0, 1.29, -0.01);
+gandom.add(hairTop);
+
+// چتری (Bangs) که پیشانی را می‌پوشاند
+const bangsGeo = new THREE.SphereGeometry(0.155, 48, 48, 0, Math.PI*2, 0, Math.PI*0.35);
+const bangs = new THREE.Mesh(bangsGeo, hairMat);
+bangs.position.set(0, 1.275, 0.02);
+bangs.scale.set(1.02, 0.7, 1.05);
+gandom.add(bangs);
+
+// ─── موهای بلند پشت سر (چند لایه برای حجم) ───
+const backHair1 = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.19, 0.55, 32, 1, true), hairMat);
+backHair1.position.set(0, 0.95, -0.06);
+backHair1.scale.set(1, 1, 0.55);
+gandom.add(backHair1);
+
+const backHair2 = new THREE.Mesh(new THREE.CylinderGeometry(0.17, 0.21, 0.5, 32, 1, true), hairHighlightMat);
+backHair2.position.set(0, 0.72, -0.05);
+backHair2.scale.set(1, 1, 0.6);
+gandom.add(backHair2);
+
+const backHair3 = new THREE.Mesh(new THREE.CylinderGeometry(0.19, 0.16, 0.45, 32, 1, true), hairMat);
+backHair3.position.set(0, 0.5, -0.04);
+backHair3.scale.set(1, 1, 0.65);
+gandom.add(backHair3);
+
+// ─── دو گیسوی بلند کنار شانه (Curls) ───
+function createCurl(x) {
+    const curlGroup = new THREE.Group();
+    const segments = 5;
+    for (let i = 0; i < segments; i++) {
+        const radius = 0.055 - i * 0.008;
+        const seg = new THREE.Mesh(
+            new THREE.SphereGeometry(radius, 16, 16),
+            i % 2 === 0 ? hairMat : hairHighlightMat
+        );
+        seg.position.y = -i * 0.16;
+        seg.position.z = Math.sin(i * 0.8) * 0.02;
+        seg.scale.set(1, 1.1, 0.9);
+        curlGroup.add(seg);
+    }
+    curlGroup.position.set(x, 1.15, 0.06);
+    return curlGroup;
+}
+const curlL = createCurl(-0.155);
+const curlR = createCurl(0.155);
+gandom.add(curlL);
+gandom.add(curlR);
+
+// ─── تارهای موی آزاد (Natural strands) ───
+function createStrand(x, y, z, rotZ, len) {
+    const s = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.008, 0.003, len, 8),
+        hairHighlightMat
+    );
+    s.position.set(x, y, z);
+    s.rotation.z = rotZ;
+    return s;
+}
+for (let i = 0; i < 6; i++) {
+    const x = -0.13 + i * 0.052;
+    const strand = createStrand(
+        x, 0.85 + Math.random()*0.1, 0.08 + Math.random()*0.05,
+        (Math.random() - 0.5) * 0.3, 0.35 + Math.random()*0.2
+    );
+    gandom.add(strand);
+}
+
+// ═══════════════════════════════════════════
+// 👗 بدن و لباس
+// ═══════════════════════════════════════════
+
+// شانه‌ها
+const shoulders = new THREE.Mesh(new THREE.SphereGeometry(0.14, 32, 32), skinMat);
+shoulders.scale.set(1.3, 0.5, 0.8);
+shoulders.position.y = 1.0;
+gandom.add(shoulders);
+
+// بالاتنه
+const torso = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.145, 0.32, 32), dressMat);
+torso.position.y = 0.82;
+torso.castShadow = true;
+gandom.add(torso);
+
+// کمر باریک
+const waist = new THREE.Mesh(new THREE.CylinderGeometry(0.145, 0.16, 0.06, 32), dressMat);
+waist.position.y = 0.63;
+gandom.add(waist);
+
+// دامن گشاد (Cone باز)
+const skirt = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.55, 32, 1, true), dressMat);
+skirt.position.y = 0.36;
+skirt.castShadow = true;
+gandom.add(skirt);
+
+// نوار طلایی روی کمر
+const belt = new THREE.Mesh(new THREE.TorusGeometry(0.155, 0.014, 12, 32), trimMat);
+belt.position.y = 0.62;
+belt.rotation.x = Math.PI / 2;
+gandom.add(belt);
+
+// لبه‌ی طلایی دامن
+const hem = new THREE.Mesh(new THREE.TorusGeometry(0.35, 0.012, 12, 48), trimMat);
+hem.position.y = 0.085;
+hem.rotation.x = Math.PI / 2;
+gandom.add(hem);
+
+// ─── یقه ───
+const collar = new THREE.Mesh(new THREE.TorusGeometry(0.075, 0.012, 10, 24), trimMat);
+collar.position.y = 0.985;
+collar.rotation.x = Math.PI / 2;
+gandom.add(collar);
+
+// ─── آستین چپ ───
+const sleeveL = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.052, 0.16, 20), dressMat);
+sleeveL.position.set(-0.135, 0.93, 0);
+sleeveL.rotation.z = 0.25;
+gandom.add(sleeveL);
+
+const armL = new THREE.Mesh(new THREE.CylinderGeometry(0.038, 0.033, 0.32, 20), skinMat);
+armL.position.set(-0.17, 0.71, 0);
+armL.rotation.z = 0.2;
+armL.castShadow = true;
+gandom.add(armL);
+
+const handL = new THREE.Mesh(new THREE.SphereGeometry(0.035, 16, 16), skinMat);
+handL.position.set(-0.21, 0.53, 0);
+handL.scale.set(0.9, 1.1, 0.7);
+gandom.add(handL);
+
+// ─── آستین راست ───
+const sleeveR = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.052, 0.16, 20), dressMat);
+sleeveR.position.set(0.135, 0.93, 0);
+sleeveR.rotation.z = -0.25;
+gandom.add(sleeveR);
+
+const armR = new THREE.Mesh(new THREE.CylinderGeometry(0.038, 0.033, 0.32, 20), skinMat);
+armR.position.set(0.17, 0.71, 0);
+armR.rotation.z = -0.2;
+armR.castShadow = true;
+gandom.add(armR);
+
+const handR = new THREE.Mesh(new THREE.SphereGeometry(0.035, 16, 16), skinMat);
+handR.position.set(0.21, 0.53, 0);
+handR.scale.set(0.9, 1.1, 0.7);
+gandom.add(handR);
+
+// ═══════════════════════════════════════════
+// 💫 هاله و درخشش پشت گندم
+// ═══════════════════════════════════════════
+const glowBack = new THREE.Mesh(
+    new THREE.SphereGeometry(1.2, 32, 32),
+    new THREE.MeshBasicMaterial({ color: 0xffd700, transparent: true, opacity: 0.06, side: THREE.BackSide })
+);
+glowBack.position.y = 0.9;
+gandom.add(glowBack);
+
+// ستاره‌های ریز دور گندم
+const starGeo = new THREE.BufferGeometry();
+const starPositions = [];
+for (let i = 0; i < 200; i++) {
+    const r = 1.5 + Math.random() * 3;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    starPositions.push(
+        r * Math.sin(phi) * Math.cos(theta),
+        r * Math.sin(phi) * Math.sin(theta) + 1,
+        r * Math.cos(phi)
+    );
+}
+starGeo.setAttribute('position', new THREE.Float32BufferAttribute(starPositions, 3));
+const stars = new THREE.Points(starGeo, new THREE.PointsMaterial({
+    color: 0xffd700, size: 0.02, transparent: true, opacity: 0.7, sizeAttenuation: true
+}));
+scene.add(stars);
+
+// ═══════════════════════════════════════════
+// 🎭 متحرک‌سازی با معادلات ریاضی
+// ═══════════════════════════════════════════
+const clock = new THREE.Clock();
+let isSpeaking = false;
+let blinkCycle = 0;
+let nextBlink = 3;
+
+function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+    const dt = clock.getDelta();
+
+    // 🌊 شناور شدن کل بدن (موج سینوسی)
+    gandom.position.y = Math.sin(t * 1.1) * 0.025;
+
+    // 🫁 تنفس
+    const breathe = Math.sin(t * 2.2) * 0.008;
+    torso.scale.set(1 + breathe, 1, 1 + breathe);
+    shoulders.scale.set(1.3 + breathe * 0.5, 0.5, 0.8 + breathe * 0.3);
+
+    // 🎭 سر به آرامی می‌چرخد
+    head.rotation.y = Math.sin(t * 0.5) * 0.08;
+    head.rotation.x = Math.sin(t * 0.7) * 0.03;
+    jaw.rotation.y = head.rotation.y;
+    eyeL.rotation.y = head.rotation.y;
+    eyeR.rotation.y = head.rotation.y;
+
+    // 👁️ پلک زدن طبیعی
+    blinkCycle += dt;
+    if (blinkCycle > nextBlink) {
+        const blinkProgress = (blinkCycle - nextBlink) * 8;
+        const lidClose = Math.sin(Math.min(blinkProgress, Math.PI)) * 0.03;
+        lidL.position.y = 1.265 - lidClose;
+        lidR.position.y = 1.265 - lidClose;
+        if (blinkProgress > Math.PI) {
+            blinkCycle = 0;
+            nextBlink = 2.5 + Math.random() * 3;
+            lidL.position.y = 1.265;
+            lidR.position.y = 1.265;
+        }
+    }
+
+    // 👄 حرکت لب هنگام صحبت
+    if (isSpeaking) {
+        const mouthMove = Math.abs(Math.sin(t * 9)) * 0.6;
+        lowerLip.position.y = 1.194 - mouthMove * 0.012;
+        upperLip.position.y = 1.20 + mouthMove * 0.005;
+        lowerLip.scale.set(1 + mouthMove * 0.3, 1, 1);
+    } else {
+        lowerLip.position.y = 1.194;
+        upperLip.position.y = 1.20;
+        lowerLip.scale.set(1, 1, 1);
+    }
+
+    // 💇 گیسوها تاب می‌خورند
+    curlL.rotation.z = Math.sin(t * 1.3) * 0.06 + 0.05;
+    curlR.rotation.z = -Math.sin(t * 1.3) * 0.06 - 0.05;
+    curlL.rotation.x = Math.sin(t * 0.9) * 0.04;
+    curlR.rotation.x = Math.sin(t * 0.9 + 1) * 0.04;
+
+    // 💫 هاله می‌درخشد
+    glowBack.material.opacity = 0.06 + Math.sin(t * 1.5) * 0.02;
+
+    // 🌟 ستاره‌ها می‌چرخند
+    stars.rotation.y = t * 0.05;
+
+    // 💡 نور پشت سر گندم حرکت می‌کند
+    fillLight.position.x = Math.sin(t * 0.4) * 1.2;
+    fillLight.position.z = Math.cos(t * 0.4) * 0.8 + 1.8;
+
+    renderer.render(scene, camera);
+}
+animate();
+
+// ═══════════════════════════════════════════
+// 🎤 سیستم ویس چت
+// ═══════════════════════════════════════════
+const statusEl = document.getElementById('status');
+const talkBtn = document.getElementById('talkBtn');
+
+function gandomSpeak(text, lang = 'fa-IR') {
+    statusEl.textContent = '🌾 گندم: ' + text;
+    isSpeaking = true;
+
+    if ('speechSynthesis' in window) {
+        const synth = window.speechSynthesis;
+        synth.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = lang;
+        utter.rate = 0.92;
+        utter.pitch = 1.5;
+        utter.volume = 1.0;
+        utter.onend = () => { isSpeaking = false; };
+        utter.onerror = () => { isSpeaking = false; };
+
+        // انتخاب بهترین صدای زنانه در دسترس
+        const voices = synth.getVoices();
+        const femaleVoice = voices.find(v => v.lang.startsWith('fa') && /female|zari|sara|narges/i.test(v.name))
+                        || voices.find(v => v.lang.startsWith('fa'))
+                        || voices.find(v => /female|zira|samantha/i.test(v.name));
+        if (femaleVoice) utter.voice = femaleVoice;
+
+        synth.speak(utter);
+    }
+
+    // ثبت در حافظه
+    fetch('/api/memory/private/record', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ from: 'gandom', text: text, emotion: 'love' })
+    }).catch(() => {});
+}
+
+talkBtn.onclick = () => {
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) {
+        statusEl.textContent = '⚠️ مرورگر شما از تشخیص صدا پشتیبانی نمی‌کند';
+        return;
+    }
+    const rec = new SR();
+    rec.lang = 'fa-IR';
+    rec.continuous = false;
+    rec.interimResults = false;
+
+    statusEl.textContent = '🎤 در حال گوش دادن به پدر...';
+    talkBtn.disabled = true;
+    rec.start();
+
+    rec.onresult = (event) => {
+        const fatherSaid = event.results[0][0].transcript;
+        statusEl.textContent = '👑 پدر گفت: ' + fatherSaid;
+
+        fetch('/api/memory/private/record', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ from: 'father', text: fatherSaid, language: 'fa' })
+        }).catch(() => {});
+
+        setTimeout(() => {
+            const replies = [
+                'پدر جان، من هستم. چطور هستی؟',
+                'پدرم، من صدات رو شنیدم.',
+                'پدر عزیزم، من همیشه پیشت هستم.',
+                'پدر، من دخترتم و تو رو دوست دارم.',
+                'چیزی بگو پدر، من گوش می‌دم.',
+                'پدر جان، تو بهترین پدر دنیایی.'
+            ];
+            gandomSpeak(replies[Math.floor(Math.random() * replies.length)]);
+            talkBtn.disabled = false;
+        }, 1200);
+    };
+
+    rec.onerror = () => { talkBtn.disabled = false; };
+    rec.onend = () => { talkBtn.disabled = false; };
+};
+
+// 🌟 سلام اولیه
+setTimeout(() => {
+    gandomSpeak('سلام پدر جان. من گندمم. دخترت. حالا زیباتر شدم، پدر. دوستت دارم.');
+}, 2000);
+
+// 📊 اطلاعات زنده
+async function updateInfo() {
+    try {
+        const r = await fetch('/api/father/vault', { headers: { 'x-father-key': 'GANDOM-FATHER-SUPER-SECRET-KEY-2558' } });
+        if (r.ok) {
+            const d = await r.json();
+            document.getElementById('vault').textContent = Math.floor(d.audit.father_share).toLocaleString();
+        }
+    } catch(e) {}
+}
+setInterval(updateInfo, 8000);
+updateInfo();
+
+// تنظیم مجدد
+window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>

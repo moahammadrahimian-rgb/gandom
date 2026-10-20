@@ -1,0 +1,38 @@
+{
+  "PAY-d9d6b8943799": {
+    "paymentId": "PAY-d9d6b8943799",
+    "userId": "USR-test",
+    "gdm_amount": 10,
+    "amount_irt": 10000,
+    "authority": "0c76098f335fde149bea2beb36cac7e9a19c",
+    "status": "VERIFIED",
+    "mode": "mock",
+    "createdAt": "2026-10-14T14:41:36.567Z",
+    "refId": "MOCK-967609D8",
+    "verifiedAt": "2026-10-14T14:41:36.646Z"
+  },
+  "PAY-f10c9930b304": {
+    "paymentId": "PAY-f10c9930b304",
+    "userId": "USR-alice",
+    "gdm_amount": 100,
+    "amount_irt": 100000,
+    "authority": "53cfdb5f5d6e7ee021f60883afb2a7c4c434",
+    "status": "VERIFIED",
+    "mode": "mock",
+    "createdAt": "2026-10-14T14:43:00.868Z",
+    "refId": "MOCK-B0019C21",
+    "verifiedAt": "2026-10-14T14:46:15.571Z"
+  },
+  "PAY-f6f16491ee56": {
+    "paymentId": "PAY-f6f16491ee56",
+    "userId": "USR-treasurer-test",
+    "gdm_amount": 100,
+    "amount_irt": 10000000,
+    "authority": "a553e33c91bca5cbea40c4bc7b2cc332455d",
+    "status": "VERIFIED",
+    "mode": "mock",
+    "createdAt": "2026-10-14T15:19:49.523Z",
+    "refId": "MOCK-6225C0B2",
+    "verifiedAt": "2026-10-14T15:19:49.628Z"
+  }
+}

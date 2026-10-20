@@ -1,0 +1,603 @@
+// ═══════════════════════════════════════════════════════
+// 🌾 GANDOM BLOCKCHAIN 100% - بلاک‌چین کامل گندم
+// ═══════════════════════════════════════════════════════
+
+const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
+
+const DATA_DIR = process.env.GANDOM_DATA_DIR || path.join(__dirname, 'blockchain-data');
+const CHAIN_FILE = path.join(DATA_DIR, 'chain.json');
+const TX_FILE = path.join(DATA_DIR, 'pending-tx.json');
+const META_FILE = path.join(DATA_DIR, 'meta.json');
+const WALLETS_FILE = path.join(DATA_DIR, 'wallets.json');
+
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
+
+// ═══════════════════════════════════════════════════════
+// 🔐 کلید و امضا (ED25519-like)
+// ═══════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════════════
+// 👑 MOTHER NODE CONSTANTS
+// ═══════════════════════════════════════════════════════
+const MOTHER_INFO = {
+  mother_id: "GDM-MOTHER-2558",
+  mother_name: "GANDOM-MOTHER-NODE",
+  wallet_address: "GDM-MOTHER-WALLET-2558-OWNER",
+  fingerprint: "9472060a44dc141706a9884d1eabe3d7",
+  identity_hash: "8897a75b3424f91bade62f58759e835b9fa86d4ad6ecb3a51cb1e4abec66cfad",
+  owner_share_percent: 5,
+  total_supply: 24000000000,
+  owner_share: 1200000000
+};
+
+class KeyPair {
+  constructor() {
+    const { privateKey, publicKey } = crypto.generateKeyPairSync('ed25519');
+    this.privateKeyObj = privateKey;
+    this.publicKeyObj = publicKey;
+    this.privateKey = privateKey.export({ type: 'pkcs8', format: 'pem' });
+    this.publicKey = publicKey.export({ type: 'spki', format: 'pem' });
+  }
+  sign(data) {
+    try {
+      return crypto.sign(null, Buffer.from(data), this.privateKeyObj).toString('hex');
+    } catch(e) { return null; }
+  }
+  static verify(publicKeyPem, data, signatureHex) {
+    try {
+      const pk = crypto.createPublicKey(publicKeyPem);
+      return crypto.verify(null, Buffer.from(data), pk, Buffer.from(signatureHex, 'hex'));
+    } catch(e) { return false; }
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// 🌳 Merkle Tree
+// ═══════════════════════════════════════════════════════
+class MerkleTree {
+  constructor(transactions) {
+    this.transactions = transactions;
+    this.leaves = transactions.map(tx => this.hash(tx));
+    this.levels = [];
+    this.root = this.buildTree();
+  }
+  
+  hash(data) {
+    return crypto.createHash('sha256')
+      .update(typeof data === 'string' ? data : JSON.stringify(data))
+      .digest('hex');
+  }
+  
+  buildTree() {
+    if (this.leaves.length === 0) return this.hash('');
+    
+    this.levels.push(this.leaves);
+    let current = this.leaves;
+    
+    while (current.length > 1) {
+      const next = [];
+      for (let i = 0; i < current.length; i += 2) {
+        const left = current[i];
+        const right = current[i + 1] || left;
+        next.push(this.hash(left + right));
+      }
+      this.levels.push(next);
+      current = next;
+    }
+    
+    return current[0];
+  }
+  
+  getProof(index) {
+    const proof = [];
+    let idx = index;
+    
+    for (let i = 0; i < this.levels.length - 1; i++) {
+      const level = this.levels[i];
+      const isRightNode = idx % 2 === 1;
+      const siblingIdx = isRightNode ? idx - 1 : idx + 1;
+      
+      if (siblingIdx < level.length) {
+        proof.push({
+          position: isRightNode ? 'left' : 'right',
+          data: level[siblingIdx]
+        });
+      }
+      
+      idx = Math.floor(idx / 2);
+    }
+    
+    return proof;
+  }
+  
+  static verifyProof(leaf, proof, root) {
+    let hash = crypto.createHash('sha256')
+      .update(typeof leaf === 'string' ? leaf : JSON.stringify(leaf))
+      .digest('hex');
+    
+    for (const step of proof) {
+      if (step.position === 'left') {
+        hash = crypto.createHash('sha256').update(step.data + hash).digest('hex');
+      } else {
+        hash = crypto.createHash('sha256').update(hash + step.data).digest('hex');
+      }
+    }
+    
+    return hash === root;
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// 💸 Transaction با امضا
+// ═══════════════════════════════════════════════════════
+class Transaction {
+  constructor(from, to, amount, fee = 0.001, publicKey = null) {
+    this.txid = crypto.randomBytes(16).toString('hex');
+    this.from = from;
+    this.to = to;
+    this.amount = amount;
+    this.fee = fee;
+    this.timestamp = Date.now();
+    this.publicKey = publicKey;
+    this.signature = null;
+    this.type = 'TRANSFER';
+  }
+  
+  static coinbase(to, reward) {
+    const tx = new Transaction('COINBASE', to, reward, 0, null);
+    tx.txid = 'COINBASE-' + crypto.randomBytes(8).toString('hex');
+    tx.type = 'COINBASE';
+    return tx;
+  }
+  
+  getHash() {
+    return crypto.createHash('sha256')
+      .update(this.txid + this.from + this.to + this.amount + this.fee + this.timestamp)
+      .digest('hex');
+  }
+  
+  sign(privateKey) {
+    if (this.type === 'COINBASE') return true;
+    try {
+      const keyObj = crypto.createPrivateKey(privateKey);
+      this.signature = crypto.sign(null, Buffer.from(this.getHash()), keyObj).toString('hex');
+      return true;
+    } catch(e) { 
+      console.error('Sign err:', e.message);
+      return false; 
+    }
+  }
+  
+  verify() {
+    if (this.type === 'COINBASE') return true;
+    if (!this.signature || !this.publicKey) return false;
+    try {
+      const pk = crypto.createPublicKey(this.publicKey);
+      return crypto.verify(null, Buffer.from(this.getHash()), pk, Buffer.from(this.signature, 'hex'));
+    } catch(e) { return false; }
+  }
+  
+  toJSON() {
+    return {
+      txid: this.txid,
+      from: this.from,
+      to: this.to,
+      amount: this.amount,
+      fee: this.fee,
+      timestamp: this.timestamp,
+      publicKey: this.publicKey,
+      signature: this.signature,
+      type: this.type
+    };
+  }
+  
+  static fromJSON(obj) {
+    const tx = new Transaction(obj.from, obj.to, obj.amount, obj.fee, obj.publicKey);
+    Object.assign(tx, obj);
+    return tx;
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// 🧱 Block با Merkle Root
+// ═══════════════════════════════════════════════════════
+class Block {
+  constructor(index, prevHash, timestamp, transactions, difficulty = 3) {
+    this.index = index;
+    this.prevHash = prevHash;
+    this.timestamp = timestamp;
+    this.transactions = transactions;
+    this.difficulty = difficulty;
+    this.nonce = 0;
+    
+    // Merkle Root
+    const merkle = new MerkleTree(transactions);
+    this.merkleRoot = merkle.root;
+    
+    // Block Reward
+    this.reward = Block.calculateReward(index);
+    
+    // Hash
+    this.hash = this.calculateHash();
+  }
+  
+  // پاداش هر ۲۱۰۰۰۰ بلوک نصف می‌شه
+  static calculateReward(blockIndex) {
+    const INITIAL_REWARD = 50;
+    const HALVING_INTERVAL = 210000;
+    const halvings = Math.floor(blockIndex / HALVING_INTERVAL);
+    return INITIAL_REWARD / Math.pow(2, halvings);
+  }
+  
+  calculateHash() {
+    return crypto.createHash('sha256')
+      .update(
+        this.index + 
+        this.prevHash + 
+        this.timestamp + 
+        this.merkleRoot + 
+        this.nonce + 
+        this.difficulty
+      )
+      .digest('hex');
+  }
+  
+  mine() {
+    const target = '0'.repeat(this.difficulty);
+    while (this.hash.substring(0, this.difficulty) !== target) {
+      this.nonce++;
+      this.hash = this.calculateHash();
+    }
+  }
+  
+  toJSON() {
+    return {
+      index: this.index,
+      prevHash: this.prevHash,
+      timestamp: this.timestamp,
+      transactions: this.transactions.map(t => t.toJSON()),
+      merkleRoot: this.merkleRoot,
+      nonce: this.nonce,
+      difficulty: this.difficulty,
+      reward: this.reward,
+      hash: this.hash
+    };
+  }
+  
+  static fromJSON(obj) {
+    const txs = obj.transactions.map(t => Transaction.fromJSON(t));
+    const b = new Block(obj.index, obj.prevHash, obj.timestamp, txs, obj.difficulty);
+    b.nonce = obj.nonce;
+    b.merkleRoot = obj.merkleRoot;
+    b.reward = obj.reward;
+    b.hash = obj.hash;
+    return b;
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// ⛓️  Blockchain کامل
+// ═══════════════════════════════════════════════════════
+class GandomBlockchain {
+  constructor() {
+    this.chain = [];
+    this.pendingTx = [];
+    this.difficulty = 3;
+    this.targetBlockTime = 10000; // ۱۰ ثانیه
+    this.adjustmentInterval = 5;  // هر ۵ بلوک
+    this.wallets = {};            // موجودی آدرس‌ها
+    this.maxSupply = 24000000000; // ۲۴ میلیارد
+    this.load();
+  }
+  
+  // ─── ذخیره ───
+  save() {
+    try {
+      fs.writeFileSync(CHAIN_FILE, JSON.stringify({
+        version: '2.0',
+        saved_at: new Date().toISOString(),
+        difficulty: this.difficulty,
+        length: this.chain.length,
+        chain: this.chain.map(b => b.toJSON())
+      }, null, 2));
+      
+      fs.writeFileSync(TX_FILE, JSON.stringify(
+        this.pendingTx.map(t => t.toJSON()), null, 2
+      ));
+      
+      fs.writeFileSync(WALLETS_FILE, JSON.stringify(this.wallets, null, 2));
+      
+      fs.writeFileSync(META_FILE, JSON.stringify({
+        last_save: new Date().toISOString(),
+        chain_length: this.chain.length,
+        latest_hash: this.chain.length > 0 ? this.chain[this.chain.length-1].hash : null,
+        latest_index: this.chain.length > 0 ? this.chain[this.chain.length-1].index : null,
+        pending_tx_count: this.pendingTx.length,
+        difficulty: this.difficulty,
+        total_supply: this.getTotalSupply()
+      }, null, 2));
+      
+      return true;
+    } catch(e) {
+      console.error(`❌ خطا: ${e.message}`);
+      return false;
+    }
+  }
+  
+  // ─── بارگذاری ───
+  load() {
+    try {
+      if (!fs.existsSync(CHAIN_FILE)) {
+        this.createGenesis();
+        return;
+      }
+      
+      const data = JSON.parse(fs.readFileSync(CHAIN_FILE, 'utf8'));
+      this.difficulty = data.difficulty || 3;
+      this.chain = data.chain.map(b => Block.fromJSON(b));
+      
+      if (fs.existsSync(TX_FILE)) {
+        const txs = JSON.parse(fs.readFileSync(TX_FILE, 'utf8'));
+        this.pendingTx = txs.map(t => Transaction.fromJSON(t));
+      }
+      
+      if (fs.existsSync(WALLETS_FILE)) {
+        this.wallets = JSON.parse(fs.readFileSync(WALLETS_FILE, 'utf8'));
+      }
+      
+      if (!this.isValid()) {
+        console.error('❌ زنجیره نامعتبره!');
+        this.createGenesis();
+      }
+    } catch(e) {
+      console.error(`❌ خطا در بارگذاری: ${e.message}`);
+      this.createGenesis();
+    }
+  }
+  
+  // ─── Genesis ───
+  createGenesis() {
+    const genesisTx = Transaction.coinbase('GDM-GENESIS-WALLET', 0);
+    const genesis = new Block(0, '0'.repeat(64), 0, [genesisTx], 3);
+    genesis.hash = genesis.calculateHash();
+    this.chain = [genesis];
+    this.wallets['GDM-GENESIS-WALLET'] = 0;
+    this.save();
+  }
+  
+  getLatest() { return this.chain[this.chain.length - 1]; }
+  
+  // ─── اضافه کردن بلوک ───
+  addBlock(block) {
+    block.prevHash = this.getLatest().hash;
+    block.difficulty = this.difficulty;
+    block.mine();
+    this.chain.push(block);
+    this.applyTransactions(block);
+    this.save();
+    return block;
+  }
+  
+  // ─── اعمال تراکنش‌ها روی کیف‌ها ───
+  applyTransactions(block) {
+    for (const tx of block.transactions) {
+      if (tx.type === 'COINBASE') {
+        this.wallets[tx.to] = (this.wallets[tx.to] || 0) + tx.amount;
+      } else {
+        // از فرستنده کم کن
+        if (this.wallets[tx.from] === undefined) this.wallets[tx.from] = 0;
+        this.wallets[tx.from] -= (tx.amount + tx.fee);
+        
+        // به گیرنده اضافه کن
+        if (this.wallets[tx.to] === undefined) this.wallets[tx.to] = 0;
+        this.wallets[tx.to] += tx.amount;
+        
+        // کارمزد به ماینر
+        // TODO: نیاز به آدرس ماینر در بلوک
+      }
+    }
+  }
+  
+  // ─── استخراج بلوک جدید ───
+  mineBlock(minerAddress) {
+    // پاداش
+    const reward = Block.calculateReward(this.chain.length);
+    const rewardTx = Transaction.coinbase(minerAddress, reward);
+    
+    // تراکنش‌های در انتظار (معتبر)
+    const validTxs = this.pendingTx.filter(tx => {
+      if (tx.type === 'COINBASE') return false;
+      if (!tx.verify()) return false;
+      
+      const senderBalance = this.wallets[tx.from] || 0;
+      if (senderBalance < tx.amount + tx.fee) return false;
+      
+      return true;
+    });
+    
+    const allTxs = [rewardTx, ...validTxs];
+    const block = new Block(
+      this.chain.length,
+      this.getLatest().hash,
+      Date.now(),
+      allTxs,
+      this.difficulty
+    );
+    
+    this.addBlock(block);
+    
+    // حذف تراکنش‌های استخراج‌شده
+    this.pendingTx = this.pendingTx.filter(tx => !validTxs.includes(tx));
+    this.save();
+    
+    // تنظیم سختی
+    this.adjustDifficulty();
+    
+    return block;
+  }
+  
+  // ─── تعدیل سختی ───
+  adjustDifficulty() {
+    if (this.chain.length < this.adjustmentInterval) return;
+    if (this.chain.length % this.adjustmentInterval !== 0) return;
+    
+    const last = this.getLatest();
+    const prev = this.chain[this.chain.length - this.adjustmentInterval];
+    const actualTime = last.timestamp - prev.timestamp;
+    const expectedTime = this.targetBlockTime * this.adjustmentInterval;
+    
+    if (actualTime < expectedTime / 2) {
+      this.difficulty++;
+      console.log(`⬆️  سختی افزایش یافت: ${this.difficulty}`);
+    } else if (actualTime > expectedTime * 2) {
+      this.difficulty = Math.max(1, this.difficulty - 1);
+      console.log(`⬇️  سختی کاهش یافت: ${this.difficulty}`);
+    }
+  }
+  
+  // ─── اضافه کردن تراکنش ───
+  addTransaction(tx) {
+    if (tx.type === 'COINBASE') return false;
+    if (!tx.verify()) return { ok: false, error: 'INVALID_SIGNATURE' };
+    
+    const balance = this.wallets[tx.from] || 0;
+    const pending = this.pendingTx
+      .filter(t => t.from === tx.from)
+      .reduce((s, t) => s + t.amount + t.fee, 0);
+    
+    if (balance < tx.amount + tx.fee + pending) {
+      return { ok: false, error: 'INSUFFICIENT_BALANCE', balance, needed: tx.amount + tx.fee };
+    }
+    
+    this.pendingTx.push(tx);
+    this.save();
+    return { ok: true, txid: tx.txid };
+  }
+  
+  // GANDOM 2558: validate a received block before appending it.
+  isValidBlock(block, previousBlock = this.getLatest()) {
+    try {
+      if (!block || !previousBlock) return false;
+      if (!Number.isSafeInteger(block.index) ||
+          block.index !== previousBlock.index + 1) return false;
+      if (block.prevHash !== previousBlock.hash) return false;
+      if (!Number.isSafeInteger(block.timestamp) ||
+          block.timestamp < previousBlock.timestamp) return false;
+      if (!Number.isSafeInteger(block.nonce) || block.nonce < 0) return false;
+      if (!Number.isSafeInteger(block.difficulty) ||
+          block.difficulty < 1 || block.difficulty > 64) return false;
+      if (!Array.isArray(block.transactions) ||
+          block.transactions.length === 0) return false;
+      if (block.reward !== Block.calculateReward(block.index)) return false;
+
+      const merkle = new MerkleTree(block.transactions);
+      if (merkle.root !== block.merkleRoot) return false;
+      if (block.calculateHash() !== block.hash) return false;
+      if (!block.hash.startsWith('0'.repeat(block.difficulty))) return false;
+
+      const ids = new Set();
+      let coinbaseCount = 0;
+
+      for (const tx of block.transactions) {
+        if (!tx || typeof tx.txid !== 'string' || !tx.txid ||
+            typeof tx.from !== 'string' || typeof tx.to !== 'string' ||
+            !tx.to ||
+            !Number.isFinite(tx.amount) || tx.amount < 0 ||
+            !Number.isFinite(tx.fee) || tx.fee < 0 ||
+            !Number.isFinite(tx.timestamp) || tx.timestamp < 0 ||
+            ids.has(tx.txid)) return false;
+
+        ids.add(tx.txid);
+
+        if (tx.type === 'COINBASE') {
+          coinbaseCount++;
+          if (tx.from !== 'COINBASE' || tx.fee !== 0 ||
+              tx.amount !== block.reward) return false;
+        } else if (tx.type === 'TRANSFER') {
+          if (tx.amount <= 0 || !tx.verify()) return false;
+        } else {
+          return false;
+        }
+      }
+
+      if (coinbaseCount !== 1) return false;
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  // ─── اعتبارسنجی ───
+  isValid() {
+    for (let i = 1; i < this.chain.length; i++) {
+      const curr = this.chain[i];
+      const prev = this.chain[i-1];
+      if (curr.hash !== curr.calculateHash()) return false;
+      if (curr.prevHash !== prev.hash) return false;
+      
+      // بررسی Merkle Root
+      const merkle = new MerkleTree(curr.transactions);
+      if (merkle.root !== curr.merkleRoot) return false;
+    }
+    return true;
+  }
+  
+  // ─── موجودی کل ───
+  getTotalSupply() {
+    let total = 0;
+    for (const block of this.chain) {
+      for (const tx of block.transactions) {
+        if (tx.type === 'COINBASE') total += tx.amount;
+      }
+    }
+    return total;
+  }
+  
+  // ─── آمار ───
+  getStats() {
+    const latest = this.getLatest();
+    return {
+      length: this.chain.length,
+      latest_hash: latest.hash,
+      latest_index: latest.index,
+      difficulty: this.difficulty,
+      is_valid: this.isValid(),
+      pending_tx: this.pendingTx.length,
+      total_supply: this.getTotalSupply(),
+      max_supply: this.maxSupply,
+      circulating_percent: (this.getTotalSupply() / this.maxSupply * 100).toFixed(6),
+      wallets_count: Object.keys(this.wallets).length,
+      next_reward: Block.calculateReward(this.chain.length),
+      mother_id: MOTHER_INFO.mother_id,
+      mother_fingerprint: MOTHER_INFO.fingerprint,
+      owner_wallet: MOTHER_INFO.wallet_address,
+      owner_share: MOTHER_INFO.owner_share,
+      total_size: JSON.stringify(this.chain).length
+    };
+  }
+  
+  getBalance(address) {
+    return this.wallets[address] || 0;
+  }
+  
+  getWalletList() {
+    return Object.entries(this.wallets)
+      .map(([address, balance]) => ({ address, balance }))
+      .sort((a, b) => b.balance - a.balance);
+  }
+}
+
+// ═══════════════════════════════════════════════════════
+// 📤 Exports
+// ═══════════════════════════════════════════════════════
+module.exports = {
+  GandomBlockchain,
+  Block,
+  Transaction,
+  MerkleTree,
+  KeyPair
+};

@@ -1,0 +1,26 @@
+[
+  {
+    "genId": "GEN-eb51628b",
+    "generation": 1,
+    "parentA": "NODE-BDA1AE69",
+    "parentB": "NODE-945D0D63",
+    "offspring_count": 1,
+    "offspring_ids": [
+      "NODE-G1-E0675B"
+    ],
+    "ts": 1791992482728
+  },
+  {
+    "genId": "GEN-48154163",
+    "generation": 1,
+    "parentA": "NODE-58E060BE",
+    "parentB": "NODE-EAA7C0C6",
+    "offspring_count": 3,
+    "offspring_ids": [
+      "NODE-G1-43FDCB",
+      "NODE-G1-ABC9D6",
+      "NODE-G1-DBE5D4"
+    ],
+    "ts": 1791992874991
+  }
+]

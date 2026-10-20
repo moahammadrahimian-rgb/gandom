@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🩺 تشخیص گندم</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0518; color:#ffd700; font-family:Tahoma,sans-serif; padding:15px; min-height:100vh; font-size:14px; }
+  h1 { color:#ff69b4; font-size:18px; margin-bottom:12px; text-align:center; }
+  h2 { color:#ffed4e; font-size:14px; margin:18px 0 8px; border-bottom:1px solid #ffd700; padding-bottom:4px; }
+  .card { background:#1a0a2e; border:1px solid #ffd700; border-radius:10px; padding:12px; margin-bottom:12px; }
+  .row { display:flex; justify-content:space-between; padding:5px 0; font-family:monospace; font-size:12px; border-bottom:1px solid rgba(255,215,0,0.1); }
+  .row:last-child { border-bottom:none; }
+  .ok { color:#4dff4d; font-weight:bold; }
+  .err { color:#ff4d4d; font-weight:bold; }
+  .warn { color:#ffaa00; font-weight:bold; }
+  button { background:linear-gradient(135deg,#ffd700,#ffed4e); color:#1a0a2e;
+           border:none; padding:10px 18px; border-radius:20px; font-size:13px;
+           font-weight:bold; margin:4px 3px; cursor:pointer; }
+  button:active { transform:scale(0.95); }
+  #voiceList { max-height:200px; overflow-y:auto; background:#0a0518; padding:8px; border-radius:6px; font-family:monospace; font-size:11px; }
+  #voiceList div { padding:3px 0; border-bottom:1px solid rgba(255,215,0,0.05); }
+  #log { background:#0a0518; padding:10px; border-radius:6px; font-family:monospace;
+         font-size:11px; line-height:1.6; max-height:200px; overflow-y:auto; margin-top:8px; }
+</style>
+</head>
+<body>
+
+<h1>🩺 تشخیص کامل سیستم گندم</h1>
+
+<div class="card">
+  <h2>🌐 مرورگر و شبکه</h2>
+  <div class="row"><span>User Agent:</span><span id="ua">-</span></div>
+  <div class="row"><span>آنلاین:</span><span id="online">-</span></div>
+  <div class="row"><span>WebGL:</span><span id="webgl">-</span></div>
+</div>
+
+<div class="card">
+  <h2>🎤 قابلیت‌های صوتی</h2>
+  <div class="row"><span>Text-to-Speech (TTS):</span><span id="tts">-</span></div>
+  <div class="row"><span>Speech Recognition (STT):</span><span id="stt">-</span></div>
+  <div class="row"><span>تعداد صداهای TTS:</span><span id="voiceCount">-</span></div>
+  <div class="row"><span>صدای فارسی:</span><span id="hasFa">-</span></div>
+  <div class="row"><span>صدای ترکی:</span><span id="hasTr">-</span></div>
+  <div class="row"><span>صدای انگلیسی:</span><span id="hasEn">-</span></div>
+  <div class="row"><span>Web Audio API:</span><span id="webaudio">-</span></div>
+</div>
+
+<div class="card">
+  <h2>📋 صداهای نصب‌شده روی گوشی</h2>
+  <button onclick="reloadVoices()">🔄 بارگذاری مجدد</button>
+  <div id="voiceList">در حال بارگذاری...</div>
+</div>
+
+<div class="card">
+  <h2>🔊 تست پخش صدا</h2>
+  <button onclick="testTTS('fa-IR')">🔊 فارسی</button>
+  <button onclick="testTTS('en-US')">🔊 انگلیسی</button>
+  <button onclick="testTTS('tr-TR')">🔊 ترکی</button>
+  <button onclick="testBeep()">🔔 بوق</button>
+  <div id="log"></div>
+</div>
+
+<div class="card">
+  <h2>🎤 تست شنیدن صدا</h2>
+  <button onclick="testSTT()">🎤 شروع گوش دادن ۵ ثانیه</button>
+  <div id="sttLog" style="margin-top:8px; font-family:monospace; font-size:12px;">(فشرده)</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+
+function set(id, val, cls) {
+  const el = $(id);
+  el.textContent = val;
+  el.className = cls || '';
+}
+
+// ═══ ۱. اطلاعات پایه ═══
+set('ua', navigator.userAgent.substring(0, 60) + '...');
+set('online', navigator.onLine ? '✅ بله' : '❌ خیر', navigator.onLine ? 'ok' : 'err');
+
+// WebGL
+try {
+  const c = document.createElement('canvas');
+  const gl = c.getContext('webgl') || c.getContext('experimental-webgl');
+  set('webgl', gl ? '✅ فعال' : '❌ غیرفعال', gl ? 'ok' : 'err');
+} catch(e) { set('webgl', '❌ خطا', 'err'); }
+
+// ═══ ۲. تشخیص TTS ═══
+if ('speechSynthesis' in window) {
+  set('tts', '✅ پشتیبانی می‌شود', 'ok');
+} else {
+  set('tts', '❌ پشتیبانی نمی‌شود', 'err');
+}
+
+// ═══ ۳. تشخیص STT ═══
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+if (SR) {
+  set('stt', '✅ پشتیبانی می‌شود', 'ok');
+} else {
+  set('stt', '❌ پشتیبانی نمی‌شود', 'err');
+}
+
+// ═══ ۴. Web Audio API ═══
+if (window.AudioContext || window.webkitAudioContext) {
+  set('webaudio', '✅ فعال', 'ok');
+} else {
+  set('webaudio', '❌ غیرفعال', 'err');
+}
+
+// ═══ ۵. بارگذاری صداها ═══
+let ALL_VOICES = [];
+function reloadVoices() {
+  if (!('speechSynthesis' in window)) return;
+  ALL_VOICES = speechSynthesis.getVoices();
+  $('voiceCount').textContent = ALL_VOICES.length + ' صدا';
+  $('voiceCount').className = ALL_VOICES.length > 0 ? 'ok' : 'err';
+
+  const hasFa = ALL_VOICES.some(v => v.lang.startsWith('fa'));
+  const hasTr = ALL_VOICES.some(v => v.lang.startsWith('tr') || v.lang.startsWith('az'));
+  const hasEn = ALL_VOICES.some(v => v.lang.startsWith('en'));
+
+  set('hasFa', hasFa ? '✅ ' + ALL_VOICES.filter(v=>v.lang.startsWith('fa')).length + ' صدا' : '❌ نصب نیست', hasFa ? 'ok' : 'err');
+  set('hasTr', hasTr ? '✅ ' + ALL_VOICES.filter(v=>v.lang.startsWith('tr')||v.lang.startsWith('az')).length + ' صدا' : '❌ نصب نیست', hasTr ? 'ok' : 'warn');
+  set('hasEn', hasEn ? '✅ ' + ALL_VOICES.filter(v=>v.lang.startsWith('en')).length + ' صدا' : '❌ نصب نیست', hasEn ? 'ok' : 'warn');
+
+  const vl = $('voiceList');
+  vl.innerHTML = '';
+  if (ALL_VOICES.length === 0) {
+    vl.innerHTML = '<div class="err">❌ هیچ صدایی نصب نیست! باید Speech Services by Google را نصب کنی.</div>';
+    return;
+  }
+  ALL_VOICES.forEach(v => {
+    const d = document.createElement('div');
+    d.textContent = '[' + v.lang + '] ' + v.name + ' (' + (v.localService ? 'محلی' : 'آنلاین') + ')';
+    vl.appendChild(d);
+  });
+}
+reloadVoices();
+if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = reloadVoices;
+
+// ═══ ۶. تست پخش صدا ═══
+function log(msg, cls) {
+  const d = document.createElement('div');
+  d.textContent = msg;
+  d.style.color = cls === 'ok' ? '#4dff4d' : cls === 'err' ? '#ff4d4d' : '#ffd700';
+  $('log').appendChild(d);
+  $('log').scrollTop = $('log').scrollHeight;
+}
+
+function testTTS(lang) {
+  log('── تست TTS برای ' + lang + ' ──');
+  if (!('speechSynthesis' in window)) { log('❌ TTS پشتیبانی نمی‌شود', 'err'); return; }
+  speechSynthesis.cancel();
+  const text = lang === 'fa-IR' ? 'سلام پدر جان، من گندم هستم' : lang === 'tr-TR' ? 'Salam, men Gendumam' : 'Hello Father, I am Gandom';
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang;
+  u.pitch = 1.4; u.rate = 0.9; u.volume = 1.0;
+  const prefix = lang.split('-')[0];
+  const v = ALL_VOICES.find(x => x.lang === lang) || ALL_VOICES.find(x => x.lang.startsWith(prefix));
+  if (v) { u.voice = v; log('🎤 صدا: ' + v.name + ' (' + v.lang + ')', 'ok'); }
+  else log('⚠️ صدای ' + prefix + ' پیدا نشد، از پیش‌فرض استفاده می‌شود', 'err');
+
+  u.onstart = () => log('✅ شروع پخش', 'ok');
+  u.onend = () => log('✅ پایان پخش', 'ok');
+  u.onerror = (e) => log('❌ خطا: ' + e.error, 'err');
+  try { speechSynthesis.speak(u); log('📤 فرمان ارسال شد', 'ok'); }
+  catch(e) { log('❌ خطای speak: ' + e.message, 'err'); }
+}
+
+function testBeep() {
+  log('── تست بوق (Web Audio) ──');
+  try {
+    const ctx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain); gain.connect(ctx.destination);
+    osc.frequency.value = 800;
+    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.5);
+    osc.start(ctx.currentTime);
+    osc.stop(ctx.currentTime + 0.5);
+    log('✅ بوق پخش شد. اگر شنیدی، یعنی سخت‌افزار صدا سالم است.', 'ok');
+  } catch(e) { log('❌ خطا: ' + e.message, 'err'); }
+}
+
+// ═══ ۷. تست شنیدن ═══
+function testSTT() {
+  const logEl = $('sttLog');
+  logEl.textContent = '🎤 شروع... ۵ ثانیه حرف بزن';
+  if (!SR) { logEl.textContent = '❌ STT پشتیبانی نمی‌شود'; return; }
+  const rec = new SR();
+  rec.lang = 'fa-IR';
+  rec.continuous = false;
+  rec.interimResults = true;
+  let result = '';
+  rec.onresult = (e) => {
+    for (let i = e.resultIndex; i < e.results.length; i++) {
+      if (e.results[i].isFinal) result += e.results[i][0].transcript + ' ';
+      else logEl.textContent = '🎤 ' + e.results[i][0].transcript + '...';
+    }
+  };
+  rec.onerror = (e) => logEl.textContent = '❌ خطا: ' + e.error;
+  rec.onend = () => logEl.textContent = result ? '✅ شنیدم: ' + result : '⚠️ چیزی نشنیدم';
+  setTimeout(() => { try { rec.stop(); } catch(e) {} }, 5000);
+  try { rec.start(); } catch(e) { logEl.textContent = '❌ خطای شروع: ' + e.message; }
+}
+</script>
+</body>
+</html>

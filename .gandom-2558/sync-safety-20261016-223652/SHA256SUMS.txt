@@ -1,0 +1,2 @@
+cdd1f3703074cb9d0ab41487a99f5b6f5def2fd7e27488eb4b4cdad249432686  blockchain-data/chain.json
+29a1c80fd7f5e81bd17d5272c81e92cf3e21ec12965f17c606f509c3a802104e  blockchain-data-b/chain.json

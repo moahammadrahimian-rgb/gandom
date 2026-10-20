@@ -1,0 +1,32 @@
+{
+  "project": "GANDOM",
+  "module": "WORKER_STATE",
+  "step": 18,
+  "section": 2,
+  "version": "1.0.0",
+  "source_of_truth": "REAL_RUNTIME_STATE",
+  "required_fields": [
+    "workerId",
+    "state",
+    "timestamp",
+    "source",
+    "correlationId"
+  ],
+  "allowed_states": [
+    "REGISTERED",
+    "READY",
+    "RUNNING",
+    "COMPLETED",
+    "FAILED",
+    "STOPPED"
+  ],
+  "requirements": {
+    "real_runtime_only": true,
+    "fake_worker": false,
+    "event_required": true,
+    "evidence_required": true,
+    "security_required": true,
+    "immutable_server": true,
+    "no_destructive_overwrite": true
+  }
+}

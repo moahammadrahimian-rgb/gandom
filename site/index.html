@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANDOM 2558 — سایت رسمی</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #06100c, #0a1f18);
+            color: #e8f5e9;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            border-bottom: 2px solid rgba(76,175,80,0.3);
+            margin-bottom: 30px;
+        }
+        header .logo { font-size: 80px; margin-bottom: 10px; }
+        header h1 { font-size: 48px; color: #81c784; margin-bottom: 10px; }
+        header p { color: #a5d6a7; font-size: 18px; }
+        header .status {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #4caf50;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        /* STATS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .stat {
+            background: rgba(76,175,80,0.1);
+            border: 1px solid rgba(76,175,80,0.3);
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+        }
+        .stat .value { font-size: 22px; color: #4caf50; font-weight: bold; }
+        .stat .label { font-size: 10px; color: #a5d6a7; margin-top: 5px; }
+        
+        /* SECTIONS */
+        h2 {
+            font-size: 22px;
+            color: #81c784;
+            margin: 30px 0 15px;
+            padding-right: 12px;
+            border-right: 4px solid #4caf50;
+        }
+        
+        /* CARDS */
+        .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .card {
+            background: rgba(76,175,80,0.1);
+            border: 1px solid rgba(76,175,80,0.3);
+            border-radius: 12px;
+            padding: 20px;
+            text-decoration: none;
+            color: #e8f5e9;
+            transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-3px); border-color: #4caf50; }
+        .card .icon { font-size: 32px; margin-bottom: 10px; }
+        .card .title { color: #81c784; font-weight: bold; font-size: 16px; margin-bottom: 5px; }
+        .card .desc { font-size: 12px; color: #a5d6a7; line-height: 1.5; }
+        .card.primary { background: rgba(76,175,80,0.25); border-color: #4caf50; }
+        
+        /* ACTION BUTTONS */
+        .actions { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 20px 0; }
+        .action {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #4caf50, #388e3c);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(76,175,80,0.3);
+            color: #81c784;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <header>
+            <div class="logo">🌾</div>
+            <h1>GANDOM 2558</h1>
+            <p>Living Decentralized AI Ecosystem</p>
+            <div class="status">✅ 100% ACTIVE</div>
+        </header>
+
+        <div class="stats">
+            <div class="stat"><div class="value">۴۰۰K</div><div class="label">سلول زنده</div></div>
+            <div class="stat"><div class="value">۴۰۹۶</div><div class="label">نرون</div></div>
+            <div class="stat"><div class="value">۲۳</div><div class="label">کارمند AI</div></div>
+            <div class="stat"><div class="value">۲۴B</div><div class="label">سکه GDM</div></div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="actions">
+            <a href="http://127.0.0.1:8888/client.html" class="action">🔐 حسابرسی</a>
+            <a href="http://127.0.0.1:7777/dashboard.html" class="action">📊 داشبورد</a>
+            <a href="https://github.com/moahammadrahimian-rgb/gandom" class="action">📦 گیت‌هاب</a>
+        </div>
+
+        <!-- MAIN PRODUCTS -->
+        <h2>🎯 محصولات اصلی</h2>
+        <div class="cards">
+            <a href="http://127.0.0.1:8888/client.html" class="card primary">
+                <div class="icon">🔐</div>
+                <div class="title">GANDOM-AUDIT</div>
+                <div class="desc">حسابرسی فایل با SHA256<br>۳۰ ثانیه — ۵۱۰,۰۰۰ تومان</div>
+            </a>
+            <a href="http://127.0.0.1:8080/" class="card">
+                <div class="icon">🎛️</div>
+                <div class="title">پنل مدیریت</div>
+                <div class="desc">کیف پول، صرافی، بازارها، اصناف</div>
+            </a>
+        </div>
+
+        <!-- INFRASTRUCTURE -->
+        <h2>🧬 زیرساخت زیستی</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">🧠</div>
+                <div class="title">مغز + DNA</div>
+                <div class="desc">۴۰۹۶ نرون — ژنوم فعال</div>
+            </div>
+            <div class="card">
+                <div class="icon">🫁</div>
+                <div class="title">شش نامیرا</div>
+                <div class="desc">در حال تنفس هر ۵ ثانیه</div>
+            </div>
+        </div>
+
+        <!-- NETWORK -->
+        <h2>🌐 شبکه</h2>
+        <div class="cards">
+            <a href="http://127.0.0.1:8787/health" class="card">
+                <div class="icon">🔗</div>
+                <div class="title">P2P Server</div>
+                <div class="desc">پورت 8787 — ۲ نود فعال</div>
+            </a>
+            <div class="card">
+                <div class="icon">💓</div>
+                <div class="title">ضربان قلب</div>
+                <div class="desc">Heartbeat فعال</div>
+            </div>
+        </div>
+
+        <!-- ECONOMY -->
+        <h2>💰 اقتصاد</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">🪙</div>
+                <div class="title">سکه GDM</div>
+                <div class="desc">۲۴ میلیارد — BEP-20</div>
+            </div>
+            <div class="card">
+                <div class="icon">🏦</div>
+                <div class="title">بانک گندم</div>
+                <div class="desc">۵ ماژول: واریز، برداشت، انتقال</div>
+            </div>
+            <div class="card">
+                <div class="icon">💳</div>
+                <div class="title">Zarinpal</div>
+                <div class="desc">درگاه پرداخت ایرانی</div>
+            </div>
+            <div class="card">
+                <div class="icon">🌍</div>
+                <div class="title">Paddle</div>
+                <div class="desc">درگاه بین‌المللی</div>
+            </div>
+        </div>
+
+        <!-- AI WORKFORCE -->
+        <h2>🤖 کارمندان AI</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">📊</div>
+                <div class="title">AI-ACCOUNTANT</div>
+                <div class="desc">حسابداری دوطرفه</div>
+            </div>
+            <div class="card">
+                <div class="icon">💼</div>
+                <div class="title">AI-MARKETER</div>
+                <div class="desc">بازاریابی خودکار</div>
+            </div>
+            <div class="card">
+                <div class="icon">💰</div>
+                <div class="title">AI-TREASURER</div>
+                <div class="desc">مدیریت خزانه</div>
+            </div>
+            <div class="card">
+                <div class="icon">🎯</div>
+                <div class="title">Job Worker</div>
+                <div class="desc">شکار خودکار کار</div>
+            </div>
+        </div>
+
+        <!-- SOCIAL -->
+        <h2>📱 شبکه‌های اجتماعی</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="icon">💬</div>
+                <div class="title">Telegram Bot</div>
+                <div class="desc">@GandomOfficialBot</div>
+            </div>
+            <div class="card">
+                <div class="icon">🐦</div>
+                <div class="title">Twitter Bot</div>
+                <div class="desc">@GandomToken</div>
+            </div>
+            <div class="card">
+                <div class="icon">📸</div>
+                <div class="title">Instagram + TikTok</div>
+                <div class="desc">@gandom_official</div>
+            </div>
+            <div class="card">
+                <div class="icon">🤖</div>
+                <div class="title">Chatbot</div>
+                <div class="desc">۸ نوع پاسخ خودکار</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with Law 2558 | No fake pass. Real execution only.</p>
+            <p style="margin-top: 8px;">🌾 GANDOM — Alive, Immortal, Decentralized</p>
+        </footer>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{
+  "law": 2558,
+  "mode": "READ_ONLY",
+  "time": "2026-10-16T17:32:39.539Z",
+  "checks": [
+    {
+      "file": "blockchain-data/chain.json",
+      "bytes": 1730,
+      "sha256": "cdd1f3703074cb9d0ab41487a99f5b6f5def2fd7e27488eb4b4cdad249432686",
+      "blocks": 2,
+      "firstIndex": 0,
+      "lastIndex": 1,
+      "errors": [],
+      "status": "STRUCTURE_PASS"
+    },
+    {
+      "file": "blockchain-data-b/chain.json",
+      "bytes": 1730,
+      "sha256": "7a9d09eb4fcd75c783e4baaf13ab01811743c06f4f715b30a0a41e6f30fcad12",
+      "blocks": 2,
+      "firstIndex": 0,
+      "lastIndex": 1,
+      "errors": [
+        "LINK_ERROR_1"
+      ],
+      "status": "FAIL"
+    }
+  ],
+  "runtime": {
+    "processes": [
+      "10218 node /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/home/gandom/server.js",
+      "13314 node /data/data/com.termux/files/usr/bin/node -e  const fs=require(\"fs\"),crypto=require(\"crypto\"),http=require(\"http\"),path=require(\"path\"); const out={law:2558,mode:\"READ_ONLY\",time:new Date().toISOString(),checks:[],runtime:{},verdict:\"BLOCKED\"}; for(const f of [\"blockchain-data/chain.json\",\"blockchain-data-b/chain.json\"]){  const r={file:f};  try{   const raw=fs.readFileSync(f),p=JSON.parse(raw.toString()),c=Array.isArray(p)?p:p.chain;   r.bytes=raw.length;r.sha256=crypto.createHash(\"sha256\").update(raw).digest(\"hex\");   if(!Array.isArray(c)||!c.length)throw Error(\"EMPTY_OR_INVALID_CHAIN\");   r.blocks=c.length;r.firstIndex=c[0].index;r.lastIndex=c[c.length-1].index;r.errors=[];   for(let i=0;i<c.length;i++){    if(c[i].index!==i)r.errors.push(\"INDEX_ERROR_\"+i);    if(i>0&&c[i].prevHash!==c[i-1].hash)r.errors.push(\"LINK_ERROR_\"+i);    if(typeof c[i].hash!==\"string\")r.errors.push(\"MISSING_HASH_\"+i);   }   r.status=r.errors.length?\"FAIL\":\"STRUCTURE_PASS\";  }catch(e){r.status=\"FAIL\";r.errors=[e.message]}  out.checks.push(r); } try{const p=require(\"child_process\").execFileSync(\"pgrep\",[\"-af\",\"node.*(server.js|node-b-chain.js)\"],{encoding:\"utf8\"});out.runtime.processes=p.trim().split(\"\\n\")}catch{out.runtime.processes=[]} out.runtime.health=\"NOT_CHECKED\"; const req=http.get(\"http://127.0.0.1:8787/health\",{timeout:2500},res=>{let s=\"\";res.on(\"data\",d=>s+=d);res.on(\"end\",()=>{try{out.runtime.health=JSON.parse(s)}catch{out.runtime.health=s} finish()})}); req.on(\"error\",e=>{out.runtime.health=\"UNAVAILABLE: \"+e.message;finish()});req.on(\"timeout\",()=>req.destroy(Error(\"timeout\"))); function finish(){ out.verdict=out.checks.every(x=>x.status===\"STRUCTURE_PASS\")&&out.runtime.health&&out.runtime.health.ok&&out.runtime.health.peers>0?\"NEEDS_DEEP_TEST\":\"BLOCKED\"; const file=\".gandom-2558/full-readonly-report.json\"; fs.writeFileSync(file,JSON.stringify(out,null,2)); console.log(JSON.stringify(out,null,2));console.log(\"\\nREPORT=\"+path.resolve(file));console.log(\"CHAIN_FILES_MODIFIED=false\");console.log(\"SERVICE_RESTARTED=false\"); }"
+    ],
+    "health": {
+      "ok": true,
+      "project": "GANDUM-P2P",
+      "node_id": "GANDOM-NODE-A",
+      "peers": 0,
+      "uptime": 39775.496454064
+    }
+  },
+  "verdict": "BLOCKED"
+}

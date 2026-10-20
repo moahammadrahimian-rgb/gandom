@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صرافی گندم (Gandom DEX)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(90deg, #f39c12, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+        .header p { color: #aaa; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+        }
+        .card h2 {
+            color: #f39c12;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+        .price-box {
+            text-align: center;
+            padding: 20px;
+            background: rgba(243, 156, 18, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .price-box .label { color: #aaa; font-size: 0.9em; }
+        .price-box .price {
+            font-size: 2.5em;
+            color: #2ecc71;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .price-box .change { color: #2ecc71; }
+        .price-box .change.down { color: #e74c3c; }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1em;
+        }
+        button {
+            background: linear-gradient(90deg, #f39c12, #e74c3c);
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: transform 0.2s;
+        }
+        button:hover { transform: scale(1.02); }
+        .order-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9em;
+        }
+        .order-item.buy { color: #2ecc71; }
+        .order-item.sell { color: #e74c3c; }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .stat {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .stat .value { font-size: 1.5em; color: #f39c12; font-weight: bold; }
+        .stat .label { font-size: 0.8em; color: #aaa; }
+        .full-width { grid-column: 1 / -1; }
+        @media (max-width: 768px) {
+            .container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌾 صرافی گندم</h1>
+        <p>Gandom DEX - غیرمتمرکز، امن، شفاف</p>
+    </div>
+
+    <div class="container">
+        <div class="card full-width">
+            <div class="stats">
+                <div class="stat">
+                    <div class="value" id="price">1.15</div>
+                    <div class="label">قیمت (USDT)</div>
+                </div>
+                <div class="stat">
+                    <div class="value" id="change">+15%</div>
+                    <div class="label">تغییر ۲۴ ساعته</div>
+                </div>
+                <div class="stat">
+                    <div class="value" id="volume">$250K</div>
+                    <div class="label">حجم ۲۴ ساعته</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🛒 خرید گندم</h2>
+            <div class="price-box">
+                <div class="label">قیمت فعلی</div>
+                <div class="price" id="buy-price">1.15 USDT</div>
+            </div>
+            <label>مقدار (GDM)</label>
+            <input type="number" id="buy-amount" placeholder="1000" value="1000">
+            <label>قیمت (USDT)</label>
+            <input type="number" id="buy-rate" placeholder="1.15" value="1.15" step="0.01">
+            <div style="padding: 10px; color: #aaa; font-size: 0.9em;">
+                مجموع: <span id="buy-total" style="color: #2ecc71;">1150 USDT</span>
+            </div>
+            <button onclick="placeBuyOrder()">خرید</button>
+        </div>
+
+        <div class="card">
+            <h2>💸 فروش گندم</h2>
+            <div class="price-box">
+                <div class="label">قیمت فعلی</div>
+                <div class="price" id="sell-price">1.15 USDT</div>
+            </div>
+            <label>مقدار (GDM)</label>
+            <input type="number" id="sell-amount" placeholder="1000" value="1000">
+            <label>قیمت (USDT)</label>
+            <input type="number" id="sell-rate" placeholder="1.15" value="1.15" step="0.01">
+            <div style="padding: 10px; color: #aaa; font-size: 0.9em;">
+                مجموع: <span id="sell-total" style="color: #e74c3c;">1150 USDT</span>
+            </div>
+            <button onclick="placeSellOrder()">فروش</button>
+        </div>
+
+        <div class="card">
+            <h2>📊 سفارش‌های خرید</h2>
+            <div class="order-list" id="buy-orders">
+                <div class="order-item buy">
+                    <span>1.10 USDT</span>
+                    <span>500 GDM</span>
+                </div>
+                <div class="order-item buy">
+                    <span>1.05 USDT</span>
+                    <span>800 GDM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 سفارش‌های فروش</h2>
+            <div class="order-list" id="sell-orders">
+                <div class="order-item sell">
+                    <span>1.20 USDT</span>
+                    <span>600 GDM</span>
+                </div>
+                <div class="order-item sell">
+                    <span>1.25 USDT</span>
+                    <span>1000 GDM</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card full-width">
+            <h2>💼 کیف پول شما</h2>
+            <div class="stats">
+                <div class="stat">
+                    <div class="value">1,200,000,000</div>
+                    <div class="label">موجودی گندم (GDM)</div>
+                </div>
+                <div class="stat">
+                    <div class="value">$1,380,000,000</div>
+                    <div class="label">ارزش دلاری</div>
+                </div>
+                <div class="stat">
+                    <div class="value">12,000</div>
+                    <div class="label">سود (تومان میلیارد)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateBuyTotal() {
+            const amount = parseFloat(document.getElementById('buy-amount').value) || 0;
+            const rate = parseFloat(document.getElementById('buy-rate').value) || 0;
+            document.getElementById('buy-total').textContent = (amount * rate).toFixed(2) + ' USDT';
+        }
+
+        function updateSellTotal() {
+            const amount = parseFloat(document.getElementById('sell-amount').value) || 0;
+            const rate = parseFloat(document.getElementById('sell-rate').value) || 0;
+            document.getElementById('sell-total').textContent = (amount * rate).toFixed(2) + ' USDT';
+        }
+
+        document.getElementById('buy-amount').addEventListener('input', updateBuyTotal);
+        document.getElementById('buy-rate').addEventListener('input', updateBuyTotal);
+        document.getElementById('sell-amount').addEventListener('input', updateSellTotal);
+        document.getElementById('sell-rate').addEventListener('input', updateSellTotal);
+
+        function placeBuyOrder() {
+            const amount = document.getElementById('buy-amount').value;
+            const rate = document.getElementById('buy-rate').value;
+            alert('✅ سفارش خرید ثبت شد!\nمقدار: ' + amount + ' GDM\nقیمت: ' + rate + ' USDT');
+            console.log('Buy order placed:', { amount, rate });
+        }
+
+        function placeSellOrder() {
+            const amount = document.getElementById('sell-amount').value;
+            const rate = document.getElementById('sell-rate').value;
+            alert('✅ سفارش فروش ثبت شد!\nمقدار: ' + amount + ' GDM\nقیمت: ' + rate + ' USDT');
+            console.log('Sell order placed:', { amount, rate });
+        }
+
+        console.log('🌾 Gandom DEX loaded successfully');
+        console.log('Price: 1.15 USDT');
+        console.log('Change: +15%');
+    </script>
+</body>
+</html>

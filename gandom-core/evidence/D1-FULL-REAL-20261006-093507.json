@@ -1,0 +1,14 @@
+{
+  "chapter": "D1",
+  "execution": "REAL",
+  "node_id": "600001",
+  "identity": "cea84da133083203cf3ef3886687b7808831aa65a8d832930f3ee3d094a17f68",
+  "discovery_url": "ws://127.0.0.1:19401",
+  "server_process": "REAL",
+  "client_process": "REAL",
+  "discovery_runtime": "PASS_REAL",
+  "node_id_match": "PASS_REAL",
+  "identity_match": "PASS_REAL",
+  "response_type": "PASS_REAL",
+  "fake_pass": "BLOCKED"
+}

@@ -1,0 +1,80 @@
+{
+  "law": 2558,
+  "run_count": 7,
+  "last_run": "RUN-1791900796263-18359",
+  "last_run_at": "2026-10-13T14:15:34.539Z",
+  "last_report": ".gandom-agent-2558/latest-report.json",
+  "tasks": {
+    "1": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "2": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "3": {
+      "status": "PASS_REAL",
+      "evidence": [
+        "RUN-1791900796263-18359"
+      ]
+    },
+    "4": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "5": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "6": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "7": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "8": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "9": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "10": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "11": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "12": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "13": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "14": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "15": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "16": {
+      "status": "DISCOVERED",
+      "evidence": []
+    },
+    "17": {
+      "status": "DISCOVERED",
+      "evidence": []
+    }
+  },
+  "project_status": "NOT_YET_VERIFIED"
+}

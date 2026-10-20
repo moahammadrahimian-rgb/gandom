@@ -1,0 +1,8 @@
+{
+  "protocol": "2558-REAL-TEST",
+  "runId": "STEP4-REAL-20261003T105041Z",
+  "timestamp": "2026-10-03T10:50:41.941Z",
+  "projectRoot": "/data/data/com.termux/files/home/gandom",
+  "realRuntime": true,
+  "fakeEvidence": false
+}

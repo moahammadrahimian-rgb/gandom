@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌾 تست گندم</title>
+<style>
+  body { margin:0; background:#0a0518; color:#ffd700; font-family:monospace; overflow:hidden; }
+  #err { position:fixed; top:10px; left:10px; right:10px; background:rgba(200,0,0,0.9); color:#fff; padding:10px; border-radius:8px; font-size:12px; display:none; z-index:1000; white-space:pre-wrap; }
+  #ok { position:fixed; top:10px; left:10px; background:rgba(0,150,0,0.9); color:#fff; padding:10px; border-radius:8px; font-size:13px; z-index:1000; }
+  canvas { display:block; }
+</style>
+</head>
+<body>
+<div id="ok">✅ در حال بارگذاری...</div>
+<div id="err"></div>
+
+<script src="/libs/three.min.js"></script>
+<script>
+try {
+  document.getElementById('ok').textContent = '✅ Three.js لود شد: ' + (typeof THREE !== 'undefined');
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 1000);
+  camera.position.set(0, 1.2, 3);
+
+  const renderer = new THREE.WebGLRenderer({ antialias:true });
+  renderer.setSize(innerWidth, innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  // نور
+  scene.add(new THREE.AmbientLight(0xffd1e8, 0.7));
+  const d = new THREE.DirectionalLight(0xffffff, 1.2);
+  d.position.set(2, 3, 3);
+  scene.add(d);
+
+  // یک کره سبز به عنوان تست
+  const ball = new THREE.Mesh(
+    new THREE.SphereGeometry(0.5, 32, 32),
+    new THREE.MeshStandardMaterial({ color: 0xff69b4, roughness: 0.3 })
+  );
+  ball.position.y = 1;
+  scene.add(ball);
+
+  // حلقه طلایی
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(0.8, 0.05, 16, 64),
+    new THREE.MeshStandardMaterial({ color: 0xffd700, metalness: 0.9, roughness: 0.2 })
+  );
+  ring.position.y = 1;
+  ring.rotation.x = Math.PI/2;
+  scene.add(ring);
+
+  let t = 0;
+  function loop() {
+    requestAnimationFrame(loop);
+    t += 0.02;
+    ball.rotation.y = t;
+    ring.rotation.z = t;
+    renderer.render(scene, camera);
+  }
+  loop();
+
+  document.getElementById('ok').textContent = '✅ رندر فعال! اگر این را می‌بینی، مشکل حل است.';
+
+} catch(e) {
+  document.getElementById('err').style.display = 'block';
+  document.getElementById('err').textContent = '❌ خطا:\n' + e.message + '\n\n' + e.stack;
+  console.error(e);
+}
+</script>
+</body>
+</html>

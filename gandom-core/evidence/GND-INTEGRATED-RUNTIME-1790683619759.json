@@ -1,0 +1,63 @@
+{
+  "project": "GANDUM",
+  "project_id": "GND-MASTER-0001",
+  "test_id": "GND-INTEGRATED-RUNTIME-0001",
+  "mode": "REAL_EXECUTION",
+  "started_at": "2026-09-29T12:06:58.964Z",
+  "port": 8787,
+  "checks": [
+    {
+      "id": "SERVER_SOURCE",
+      "result": "PASS_REAL",
+      "time": "2026-09-29T12:06:58.983Z"
+    },
+    {
+      "id": "SERVER_PROCESS",
+      "result": "PASS_REAL",
+      "time": "2026-09-29T12:06:59.694Z",
+      "pid": 30684
+    },
+    {
+      "id": "HTTP_HEALTH",
+      "result": "PASS_REAL",
+      "time": "2026-09-29T12:06:59.695Z",
+      "status": 200,
+      "response": {
+        "ok": true,
+        "project": "GANDUM-P2P",
+        "node_id": "959f270e-13d7-4de3-8f94-bf200acc5907",
+        "peers": 0,
+        "uptime": 0.647404385
+      }
+    },
+    {
+      "id": "HEALTH_CONTRACT",
+      "result": "PASS_REAL",
+      "time": "2026-09-29T12:06:59.696Z",
+      "project": "GANDUM-P2P",
+      "node_id": "959f270e-13d7-4de3-8f94-bf200acc5907",
+      "peers": 0
+    },
+    {
+      "id": "HOMEPAGE_HTTP",
+      "result": "PASS_REAL",
+      "time": "2026-09-29T12:06:59.704Z",
+      "status": 200,
+      "bytes": 16
+    },
+    {
+      "id": "P2P_WEBSOCKET",
+      "result": "PASS_REAL",
+      "time": "2026-09-29T12:06:59.755Z",
+      "address": "ws://127.0.0.1:8787"
+    },
+    {
+      "id": "RUNTIME_STABILITY",
+      "result": "PASS_REAL",
+      "time": "2026-09-29T12:06:59.756Z",
+      "pid": 30684
+    }
+  ],
+  "result": "PASS_REAL",
+  "finished_at": "2026-09-29T12:06:59.759Z"
+}

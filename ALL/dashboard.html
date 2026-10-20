@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANDOM 2558 — Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #06100c, #0a1f18);
+            color: #e8f5e9;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { text-align: center; color: #81c784; font-size: 36px; margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #a5d6a7; margin-bottom: 30px; font-size: 14px; }
+        .section {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .section h2 { color: #81c784; font-size: 18px; margin-bottom: 15px; }
+        .component {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(76, 175, 80, 0.15);
+        }
+        .component:last-child { border-bottom: none; }
+        .component .name { color: #c8e6c9; }
+        .component .status { color: #4caf50; font-weight: bold; }
+        .component.missing .status { color: #ef5350; }
+        .summary {
+            text-align: center;
+            background: rgba(76, 175, 80, 0.2);
+            border: 2px solid #4caf50;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .summary .big {
+            font-size: 48px;
+            color: #4caf50;
+            font-weight: bold;
+        }
+        .summary .percent { font-size: 14px; color: #a5d6a7; }
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px; }
+        .stat {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stat .value { font-size: 28px; color: #4caf50; font-weight: bold; }
+        .stat .label { font-size: 12px; color: #a5d6a7; margin-top: 5px; }
+        .footer {
+            text-align: center;
+            color: #81c784;
+            font-size: 12px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(76, 175, 80, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌾 GANDOM 2558</h1>
+        <p class="subtitle">A Living Decentralized AI Ecosystem — Dashboard</p>
+
+        <div class="summary">
+            <div class="big">100%</div>
+            <div class="percent">19 / 19 Components Active</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="value">۴۰۰,۰۰۰</div>
+                <div class="label">سلول زنده</div>
+            </div>
+            <div class="stat">
+                <div class="value">۴۰۹۶</div>
+                <div class="label">نرون</div>
+            </div>
+            <div class="stat">
+                <div class="value">۲۳</div>
+                <div class="label">کارمند AI</div>
+            </div>
+            <div class="stat">
+                <div class="value">۲۴B</div>
+                <div class="label">سکه GDM</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🧬 زیرساخت زیستی</h2>
+            <div class="component"><span class="name">Brain (مغز)</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">DNA (ژنوم)</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">Cell (سلول)</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">Lung (شش نامیرا)</span><span class="status">✅ ACTIVE</span></div>
+        </div>
+
+        <div class="section">
+            <h2>🌐 شبکه</h2>
+            <div class="component"><span class="name">P2P (8787)</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">Neural P2P</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">Discovery</span><span class="status">✅ ACTIVE</span></div>
+        </div>
+
+        <div class="section">
+            <h2>💰 اقتصاد</h2>
+            <div class="component"><span class="name">Wallet (کیف پول)</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">Bank (۵ ماژول)</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">Zarinpal (ایران)</span><span class="status">✅ READY</span></div>
+            <div class="component"><span class="name">FPAY (آذربایجان)</span><span class="status">✅ READY</span></div>
+            <div class="component"><span class="name">Paddle (بین‌المللی)</span><span class="status">✅ READY</span></div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 محصول</h2>
+            <div class="component"><span class="name">GANDOM-AUDIT</span><span class="status">✅ LIVE</span></div>
+            <div class="component"><span class="name">Client Page</span><span class="status">✅ LIVE</span></div>
+            <div class="component"><span class="name">Landing Page</span><span class="status">✅ LIVE</span></div>
+        </div>
+
+        <div class="section">
+            <h2>🤖 AI Workforce</h2>
+            <div class="component"><span class="name">Workforce (۱۳ کارمند)</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">AI-ACCOUNTANT</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">AI-TREASURER</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">AI-MARKETER</span><span class="status">✅ ACTIVE</span></div>
+            <div class="component"><span class="name">Job Worker</span><span class="status">✅ ACTIVE</span></div>
+        </div>
+
+        <div class="footer">
+            <p>Built with Law 2558 | No fake pass. Real execution only.</p>
+            <p style="margin-top: 8px;">🌾 GANDOM — Alive, Immortal, Decentralized</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -19,6 +19,21 @@ if (!fs.existsSync(DATA_DIR)) {
 // ═══════════════════════════════════════════════════════
 // 🔐 کلید و امضا (ED25519-like)
 // ═══════════════════════════════════════════════════════
+
+// ═══════════════════════════════════════════════════════
+// 👑 MOTHER NODE CONSTANTS
+// ═══════════════════════════════════════════════════════
+const MOTHER_INFO = {
+  mother_id: "GDM-MOTHER-2558",
+  mother_name: "GANDOM-MOTHER-NODE",
+  wallet_address: "GDM-MOTHER-WALLET-2558-OWNER",
+  fingerprint: "9472060a44dc141706a9884d1eabe3d7",
+  identity_hash: "8897a75b3424f91bade62f58759e835b9fa86d4ad6ecb3a51cb1e4abec66cfad",
+  owner_share_percent: 5,
+  total_supply: 24000000000,
+  owner_share: 1200000000
+};
+
 class KeyPair {
   constructor() {
     const { privateKey, publicKey } = crypto.generateKeyPairSync('ed25519');
@@ -463,6 +478,59 @@ class GandomBlockchain {
     return { ok: true, txid: tx.txid };
   }
   
+  // GANDOM 2558: validate a received block before appending it.
+  isValidBlock(block, previousBlock = this.getLatest()) {
+    try {
+      if (!block || !previousBlock) return false;
+      if (!Number.isSafeInteger(block.index) ||
+          block.index !== previousBlock.index + 1) return false;
+      if (block.prevHash !== previousBlock.hash) return false;
+      if (!Number.isSafeInteger(block.timestamp) ||
+          block.timestamp < previousBlock.timestamp) return false;
+      if (!Number.isSafeInteger(block.nonce) || block.nonce < 0) return false;
+      if (!Number.isSafeInteger(block.difficulty) ||
+          block.difficulty < 1 || block.difficulty > 64) return false;
+      if (!Array.isArray(block.transactions) ||
+          block.transactions.length === 0) return false;
+      if (block.reward !== Block.calculateReward(block.index)) return false;
+
+      const merkle = new MerkleTree(block.transactions);
+      if (merkle.root !== block.merkleRoot) return false;
+      if (block.calculateHash() !== block.hash) return false;
+      if (!block.hash.startsWith('0'.repeat(block.difficulty))) return false;
+
+      const ids = new Set();
+      let coinbaseCount = 0;
+
+      for (const tx of block.transactions) {
+        if (!tx || typeof tx.txid !== 'string' || !tx.txid ||
+            typeof tx.from !== 'string' || typeof tx.to !== 'string' ||
+            !tx.to ||
+            !Number.isFinite(tx.amount) || tx.amount < 0 ||
+            !Number.isFinite(tx.fee) || tx.fee < 0 ||
+            !Number.isFinite(tx.timestamp) || tx.timestamp < 0 ||
+            ids.has(tx.txid)) return false;
+
+        ids.add(tx.txid);
+
+        if (tx.type === 'COINBASE') {
+          coinbaseCount++;
+          if (tx.from !== 'COINBASE' || tx.fee !== 0 ||
+              tx.amount !== block.reward) return false;
+        } else if (tx.type === 'TRANSFER') {
+          if (tx.amount <= 0 || !tx.verify()) return false;
+        } else {
+          return false;
+        }
+      }
+
+      if (coinbaseCount !== 1) return false;
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   // ─── اعتبارسنجی ───
   isValid() {
     for (let i = 1; i < this.chain.length; i++) {
@@ -504,6 +572,10 @@ class GandomBlockchain {
       circulating_percent: (this.getTotalSupply() / this.maxSupply * 100).toFixed(6),
       wallets_count: Object.keys(this.wallets).length,
       next_reward: Block.calculateReward(this.chain.length),
+      mother_id: MOTHER_INFO.mother_id,
+      mother_fingerprint: MOTHER_INFO.fingerprint,
+      owner_wallet: MOTHER_INFO.wallet_address,
+      owner_share: MOTHER_INFO.owner_share,
       total_size: JSON.stringify(this.chain).length
     };
   }

@@ -1,0 +1,514 @@
+=== GANDOM FORENSIC RECOVERY | LAW=2558 ===
+2026-10-18T19:18:12+03:30
+ROOT=/data/data/com.termux/files/home/gandom
+MODE=READ_ONLY_DISCOVERY
+
+=== 1. ACTIVE PROCESSES ===
+
+=== 2. LISTENING SOCKETS ===
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port              
+
+=== 3. ALL PROJECT START CANDIDATES ===
+/data/data/com.termux/files/home/downloads/gandom-source-review/server.js
+/data/data/com.termux/files/home/.npm/_npx/e5196fa6dc3cecbc/package.json
+/data/data/com.termux/files/home/.npm/_npx/aab42732f01924e5/package.json
+/data/data/com.termux/files/home/scalping-bot/package.json
+/data/data/com.termux/files/home/scalping-bot/server.js
+/data/data/com.termux/files/home/package.json
+/data/data/com.termux/files/home/nrn-alpha6/server/package.json
+/data/data/com.termux/files/home/nrn-alpha6/package.json
+/data/data/com.termux/files/home/NRN-ALPHA6/package.json
+/data/data/com.termux/files/home/NRN-ALPHA6/FARM-MAP/ROBOT/10-BOTS/BACKUPS/20260924-173706/package.json
+/data/data/com.termux/files/home/NRN-ALPHA6/FARM-MAP/ROBOT/GANDUM/backups/CYCLE-000001-F-01-20260924-182342/package.json
+/data/data/com.termux/files/home/GANDUM-CORE/src/chapters/F-13/package.json
+/data/data/com.termux/files/home/gandom/package.json
+/data/data/com.termux/files/home/gandom/server.js
+/data/data/com.termux/files/home/gandom/client.js
+/data/data/com.termux/files/home/gandom/android/app/src/main/assets/nodejs-project/server.js
+/data/data/com.termux/files/home/gandom/android/app/src/main/assets/nodejs-project/package.json
+/data/data/com.termux/files/home/gandom/evidence/MAIN-8080-INTEGRATION-STAGE-20260930-200458/source/package.json
+/data/data/com.termux/files/home/gandom/evidence/MAIN-8080-INTEGRATION-STAGE-20260930-200458/source/api/server.js
+/data/data/com.termux/files/home/gandom/audit-service/server.js
+/data/data/com.termux/files/home/gandom/start-gandom.sh
+/data/data/com.termux/files/home/gandom/.gandom-integration-rollback-20261013-094845/server.js
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Unknown/start-gandom.sh
+/data/data/com.termux/files/home/gandom/.gandom-audit-2558-20261016_160241/server.js
+/data/data/com.termux/files/home/gandom/.gandom-audit-2558-20261016_160241/package.json
+/data/data/com.termux/files/home/gandom/BACKUP_SYNC_FIX_20261017-081230/server.js
+/data/data/com.termux/files/home/gandom/.evidence/GANDOM-2558-INTEGRATED-20261017-134508/backup/server.js
+/data/data/com.termux/files/home/gandom/.evidence/GANDOM-2558-INTEGRATED-20261017-134508/backup/start-gandom.sh
+/data/data/com.termux/files/home/gandom/.evidence/GANDOM-2558-INTEGRATED-20261017-134508/backup/package.json
+/data/data/com.termux/files/home/gandom/.evidence/GANDOM-FINAL-BUILD-2558-20261017-134744/backup/package.json
+/data/data/com.termux/files/home/gandom/.evidence/GANDOM-FINAL-BUILD-2558-20261017-134744/backup/server.js
+/data/data/com.termux/files/home/gandom/.evidence/GANDOM-FINAL-BUILD-2558-20261017-134744/backup/start-gandom.sh
+/data/data/com.termux/files/home/gandom/.evidence/GANDOM-FINAL-BUILD-2558-20261017-134744/backup/client.js
+/data/data/com.termux/files/home/nrn-restored/package.json
+/data/data/com.termux/files/home/mybot/package.json
+/data/data/com.termux/files/home/mybot/api/server.js
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/package.json
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/server.js
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/client.js
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/android/app/src/main/assets/nodejs-project/server.js
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/android/app/src/main/assets/nodejs-project/package.json
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/MAIN-8080-INTEGRATION-STAGE-20260930-200458/source/package.json
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/MAIN-8080-INTEGRATION-STAGE-20260930-200458/source/api/server.js
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit-service/server.js
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/start-gandom.sh
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/.gandom-integration-rollback-20261013-094845/server.js
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/REVIVAL-1470-20261010-092454/staging/Unknown/start-gandom.sh
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/.gandom-audit-2558-20261016_160241/server.js
+/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/.gandom-audit-2558-20261016_160241/package.json
+/data/data/com.termux/files/home/gandom-recovery-20261017-005103/package.json
+
+=== 4. CANONICAL SERVICE CONFIGURATION ===
+--- server.js
+32:  capacity: Number(process.env.GANDOM_CELL_CAPACITY || 1000),
+33:  intervalMs: Number(process.env.GANDOM_CELL_INTERVAL_MS || 5000)
+38:const WebSocket = require('ws');
+40:const PORT = Number(process.env.PORT || 8787);
+41:const PROJECT_VERSION = process.env.PROJECT_VERSION || '0.1.0';
+42:const NODE_ID = process.env.NODE_ID || crypto.randomUUID();
+43:const PEER_ADDRESS = process.env.PEER_ADDRESS || '';
+44:const RECONNECT_DELAY = Number(process.env.PEER_RECONNECT_MS || 3000);
+49:const peers = new Map();
+359:      peers: peers.size,
+382:  if (req.url === '/api/peers') {
+383:    const peerList = Array.from(peers.values()).map((peer) => ({
+397:      peers_count: peerList.length,
+398:      peers: peerList
+439:      peers_count: peers.size,
+471:const wss = new WebSocket.Server({ server: httpServer });
+483:  if (ws.readyState !== WebSocket.OPEN) return false;
+500:  peers.set(peerId, {
+510:    peers: peers.size
+606:      if (handleBlockchainMessage(message, ws, peerId, gandomChain, peers, send)) {
+622:    peers.delete(peerId);
+629:      peers: peers.size
+646:      outboundPeer.readyState !== WebSocket.CLOSED &&
+647:      outboundPeer.readyState !== WebSocket.CLOSING) {
+656:  const ws = new WebSocket(PEER_ADDRESS, {
+672:    peers.set(peerId, {
+682:      peers: peers.size
+747:    peers.delete(peerId);
+755:      peers: peers.size,
+777:  for (const [peerId, peer] of peers) {
+778:    if (peer.ws.readyState === WebSocket.OPEN) {
+784:      peers.delete(peerId);
+789:httpServer.listen(PORT, '0.0.0.0', () => {
+791:    port: PORT,
+792:    websocket: `ws://0.0.0.0:${PORT}`,
+793:    health: `http://127.0.0.1:${PORT}/health`
+821:  for (const peer of peers.values()) {
+--- client.js
+3:const WebSocket = require('ws');
+5:const url = process.argv[2] || 'ws://127.0.0.1:8787';
+12:const ws = new WebSocket(url, {
+--- start-gandom.sh
+6:BACKEND_PORT=8787
+7:FRONTEND_PORT=8080
+23:  PORT="$BACKEND_PORT" \
+37:      "http://127.0.0.1:${BACKEND_PORT}/health" \
+66:nohup "$PYTHON_BIN" -m http.server "$FRONTEND_PORT" \
+80:      "http://127.0.0.1:${FRONTEND_PORT}/" 2>/dev/null || true)"
+100:curl -fsS "http://127.0.0.1:${BACKEND_PORT}/api/version"
+104:curl -fsS "http://127.0.0.1:${BACKEND_PORT}/api/peers"
+114:   "http://127.0.0.1:${BACKEND_PORT}/health" >/dev/null \
+116:       "http://127.0.0.1:${FRONTEND_PORT}/" 2>/dev/null)" = "200" ]
+127:echo "BACKEND=http://127.0.0.1:${BACKEND_PORT}"
+128:echo "FRONTEND=http://127.0.0.1:${FRONTEND_PORT}"
+--- package.json
+9:    "health": "node -e \"require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})\""
+--- audit-service/server.js
+10:const PORT = 8888;
+115:server.listen(PORT, '127.0.0.1', () => {
+118:    console.log('SERVER=http://127.0.0.1:' + PORT);
+119:    console.log('CLIENT=http://127.0.0.1:' + PORT + '/client.html');
+
+=== 5. LOCAL HTTP SERVICE MAP ===
+PORT=8080 PATH=/health HTTP=404
+PORT=8080 PATH=/ HTTP=200
+PORT=8080 PATH=/api/peers HTTP=404
+PORT=8787 PATH=/health HTTP=200
+PORT=8787 PATH=/ HTTP=200
+PORT=8787 PATH=/api/peers HTTP=200
+PORT=8788 PATH=/health HTTP=000
+UNREACHABLE
+PORT=8788 PATH=/ HTTP=000
+UNREACHABLE
+PORT=8788 PATH=/api/peers HTTP=000
+UNREACHABLE
+PORT=8789 PATH=/health HTTP=000
+UNREACHABLE
+PORT=8789 PATH=/ HTTP=000
+UNREACHABLE
+PORT=8789 PATH=/api/peers HTTP=000
+UNREACHABLE
+PORT=8790 PATH=/health HTTP=000
+UNREACHABLE
+PORT=8790 PATH=/ HTTP=000
+UNREACHABLE
+PORT=8790 PATH=/api/peers HTTP=000
+UNREACHABLE
+PORT=8888 PATH=/health HTTP=200
+PORT=8888 PATH=/ HTTP=200
+PORT=8888 PATH=/api/peers HTTP=404
+PORT=9000 PATH=/health HTTP=000
+UNREACHABLE
+PORT=9000 PATH=/ HTTP=000
+UNREACHABLE
+PORT=9000 PATH=/api/peers HTTP=000
+UNREACHABLE
+
+=== 6. PACKAGE SCRIPTS AND DEPENDENCIES ===
+{
+  "file": "package.json",
+  "name": "gandom-p2p",
+  "scripts": {
+    "start": "node server.js",
+    "client": "node client.js",
+    "health": "node -e \"require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})\""
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "ws": "^8.18.0"
+  }
+}
+audit-service/package.json: Cannot find module './audit-service/package.json'
+Require stack:
+- /data/data/com.termux/files/home/gandom/[eval]
+
+=== 7. RECENT SERVICE LOGS ===
+--- runtime-logs/ABSOLUTE-SAFETY-2558-1792217282281.log
+LAW=2558
+NO_FAKE_PASS=1
+SAFE_MESSAGE=PASS_REAL
+SAFE_PROPAGATION=FAIL
+HUMAN_HARM_BLOCKED=PASS_REAL
+QUARANTINE=PASS_REAL
+TRUST_REVOKED=PASS_REAL
+PROPAGATION_STOPPED=PASS_REAL
+QUARANTINED_NODE_REMAINS_BLOCKED=PASS_REAL
+TAMPERED_MESSAGE_REJECTED=PASS_REAL
+EXPIRED_MESSAGE_REJECTED=PASS_REAL
+UNAUTHORIZED_CONTROL_BLOCKED=PASS_REAL
+ABSOLUTE_SAFETY_EXECUTION=PASS_REAL
+EVIDENCE_HASH=a84ab77bb708405e95da906639705b36055c30b932847befbf158a577bc1c6ed
+--- runtime-logs/audit-8888.log
+==========================================
+GANDOM-AUDIT WEB SERVICE
+SERVER=http://127.0.0.1:8888
+CLIENT=http://127.0.0.1:8888/client.html
+==========================================
+--- server.log
+✅ کاربر جدید: bob (USR-a92f335143df)
+{"type":"LIVE_CELL_TICK","tick":1,"epoch":1,"alive":1,"births":1,"deaths":0,"mutations":0}
+🔓 ورود: alice
+{"type":"LIVE_CELL_TICK","tick":2,"epoch":2,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":3,"epoch":3,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":4,"epoch":4,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":5,"epoch":5,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":6,"epoch":6,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":7,"epoch":7,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":8,"epoch":8,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":9,"epoch":9,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":10,"epoch":10,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":11,"epoch":11,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":12,"epoch":12,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":13,"epoch":13,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":14,"epoch":14,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":15,"epoch":15,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":16,"epoch":16,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":17,"epoch":17,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":18,"epoch":18,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":19,"epoch":19,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":20,"epoch":20,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":21,"epoch":21,"alive":1,"births":1,"deaths":0,"mutations":0}
+{"ts":"2026-10-14T13:12:40.879Z","event":"NODE_SHUTDOWN","node_id":"a02426c9-0ab1-47fc-9235-6c2376297f2e","signal":"SIGTERM"}
+{"ts":"2026-10-14T13:12:40.891Z","event":"PEER_DISCONNECTED","node_id":"a02426c9-0ab1-47fc-9235-6c2376297f2e","peer_id":"ca4ce2f5-0aa3-4e2e-a3f6-a94af47f2bd7","peers":0}
+--- backend.log
+{"type":"LIVE_CELL_TICK","tick":23412,"epoch":23412,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23413,"epoch":23413,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23414,"epoch":23414,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23415,"epoch":23415,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23416,"epoch":23416,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23417,"epoch":23417,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23418,"epoch":23418,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23419,"epoch":23419,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23420,"epoch":23420,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23421,"epoch":23421,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23422,"epoch":23422,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23423,"epoch":23423,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23424,"epoch":23424,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23425,"epoch":23425,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23426,"epoch":23426,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23427,"epoch":23427,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23428,"epoch":23428,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23429,"epoch":23429,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23430,"epoch":23430,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23431,"epoch":23431,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23432,"epoch":23432,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23433,"epoch":23433,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23434,"epoch":23434,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23435,"epoch":23435,"alive":0,"births":1,"deaths":1,"mutations":0}
+{"type":"LIVE_CELL_TICK","tick":23436,"epoch":23436,"alive":0,"births":1,"deaths":1,"mutations":0}
+--- frontend.log
+nohup: ignoring input
+127.0.0.1 - - [14/Oct/2026 15:53:48] "GET / HTTP/1.1" 200 -
+
+=== 8. GIT STATE (IF AVAILABLE) ===
+ M .github/workflows/gandom-ui-e2e.yml
+ D ALL-IN-ONE/README.md
+ D ALL-IN-ONE/audit-server.js
+ D ALL-IN-ONE/backend.js
+ D ALL-IN-ONE/client.html
+ D ALL-IN-ONE/final.html
+ D ALL-IN-ONE/p2p-server.js
+ D ALL-IN-ONE/package.json
+ D ALL-IN-ONE/start.sh
+ D ALL-IN-ONE/ui-server.js
+ D CHECK.sh
+ D GANDOM-BOOT.sh
+ D GANDOM-FINAL-BUILD-AND-AUDIT.sh
+ D RESTORE.sh
+ M android/build.gradle
+ M android/settings.gradle
+ M audit-service/server.js
+ M blockchain-100.js
+ D chromium-dpkg-cycle1.log
+ D chromium-error.log
+ D chromium-runtime.log
+ D ci-diagnostic-36731371010/gandom-gradle-build.log
+ M employees/accounting-ledger.json
+ M employees/wallet-bridge.js
+ D gandom-server.log
+ M node-b-chain.js
+ M public/index.html
+ M server.js
+?? '
+?? .backend-health.json
+?? .evidence/
+?? .gandom-2558/
+?? .gandom-agent-2558/
+?? .gandom-audit-20261016_155330/
+?? .gandom-audit-2558-20261016_160241/
+?? .gandom-execution-lock.json
+?? .gandom-integration-rollback-20261013-094845/
+?? .github/workflows/gandom-ui-e2e.yml.before-ui-server-fix
+?? .installer-pid
+?? .law2558-gradle-backup-20261018-083014/
+?? .runtime/
+?? =
+?? ALL/dashboard.html
+?? BACKUP_SYNC_FIX_20261017-081230/
+?? FINAL.html
+?? GANDOM-ALL.md
+?? GANDOM-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z
+?? GANDOM-AWAKENING.js
+?? GANDOM-AWAKENING.json
+?? GANDOM-DEEP-TREASURE-SCAN.js
+?? GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-FORENSIC-2558-20261018-191812.txt
+?? GANDOM-FORENSIC-RECOVERY-2558.sh
+?? GANDOM-FULL-AUTOMATION-2558.js
+?? GANDOM-GLOBAL-START-2558.sh
+?? GANDOM-INTEGRATE-2558.sh
+?? GANDOM-INTEGRATION-2558-REPORT.txt
+?? GANDOM-LAW2558-AUDIT-20261013-102234.txt
+?? GANDOM-LAW2558-AUDIT.sh
+?? GANDOM-MOTHER-2558.sh
+?? GANDOM-ONE-SITE.html
+?? GANDOM-ONE.html
+?? GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt
+?? GANDOM-SECTION-01.tar.gz
+?? GANDOM-TREASURE-LITE.js
+?? GANDOM_2558_AUDIT_20261016T102512Z.txt
+?? GANDOM_AUDIT_2558_READ_ONLY.json
+?? GANDOM_CONSENSUS_GATE_2558_2026-10-16T11-22-34-402Z.txt
+?? GANDOM_DEEP_AUDIT_20261016T103550Z.txt
+?? GANDOM_ENGINE_SHOCK_2558.txt
+?? GANDOM_EXECUTION_STATE.txt
+?? GANDOM_GLOBAL_BRIDGE_2558.json
+?? GANDOM_GRADLE_ROOT_CAUSE_2558.sh
+?? GANDOM_GRADLE_ROOT_CAUSE_2558_20261018T073633Z.txt
+?? GANDOM_PREFLIGHT_20261016T060127Z.txt
+?? GANDOM_PREFLIGHT_20261016T060154Z.txt
+?? GANDOM_ROOT_CAUSE_2558_20261016T141524.txt
+?? GANDOM_ROOT_CAUSE_CODE_20261016T112839Z.txt
+?? GANDOM_ROOT_CAUSE_CODE_AUDIT_2558.sh
+?? GANDOM_ROOT_CAUSE_DEEP_2558.sh
+?? GANDOM_ROOT_CAUSE_DEEP_2558_20261016T104716Z.txt
+?? GANDOM_ROOT_FIX_2558.sh
+?? MASTER-PLAN.md
+?? PROPOSAL.txt
+?? PUZZLE-BACKUP-OVERLAP-2558.sh
+?? SHOVEL-REPORT-20261013-203517.txt
+?? ads-api.js
+?? ads-data/
+?? ads-manager.js
+?? ai-accountant-bridge.js
+?? ai-data/
+?? ai-runner.js
+?? ai-worker.js
+?? android/app/src/main/assets/
+?? architecture/
+?? archives/
+?? audit-data/
+?? audit-service/client.html
+?? audit/
+?? auto-auditor.js
+?? blockchain-100.js.before-gandom-2558-validation-1792134653021.bak
+?? blockchain-core.js
+?? blockchain-persistent.js
+?? blockchain.js
+?? breeding-data/
+?? breeding-manager.js
+?? cell-life-api.js
+?? cell-life-data/
+?? cell-life-engine-v2.js
+?? cell-life-engine.js
+?? cell-life-runner.js
+?? connect-organs.sh
+?? consensus.js
+?? constitution/EVIDENCE-TRUST-PROTOCOL-2558.json
+?? constitution/GANDOM-GLOBAL-2558-UNIFIED-LOCK.md
+?? constitution/GOLDEN-MOTHER-LAW-2558.HASH
+?? constitution/GOLDEN-MOTHER-LAW-2558.json
+?? constitution/GOLDEN-MOTHER-LAW-2558.md
+?? deep-shovel.sh
+?? docs/PRICING-NEW.md
+?? e
+?? "e HEAD"
+?? ecosystem-api.js
+?? employees/treasury-report.json
+?? erver.js
+?? evidence/
+?? exchange-api.js
+?? exchange-data/
+?? exchange-manager.js
+?? experience-data/
+?? experience-recorder.js
+?? family-memory.js
+?? father-audit.json
+?? father-vault.js
+?? father-wallet.json
+?? fix-display.js
+?? fix-route.js
+?? fix-vault-v2.js
+?? fix-vault-v3.js
+?? fix-vault.js
+?? full-audit.js
+?? gandom-alive.js
+?? gandom-audit-20261016-083014.txt
+?? gandom-audit.sh
+?? gandom-backend.js
+?? gandom-code.tar.gz
+?? gandom-core/
+?? gandom-executor-2558.sh
+?? gandom-final-start.sh
+?? gandom-global-bridge-2558.js
+?? gandom-investor-audit-20261016-082640.txt
+?? gandom-release-gate.txt
+?? gandom-ui-backtest.html
+?? gandom.db
+?? gandom_2558_execution_gate.sh
+?? gandom_consensus_gate_2558.js
+?? gandom_deep_audit_2558.sh
+?? gandom_mother2558_p2p.sh
+?? gandom_phase2_2558.sh
+?? gandom_phase3_accounting_audit_2558.sh
+?? gandom_preflight.sh
+?? gandom_root_cause_2558.sh
+?? governance/
+?? install-memory-v2.js
+?? install-vault.js
+?? investor-audit.sh
+?? market-api.js
+?? market-data/
+?? market-manager.js
+?? memories/
+?? mother-data/
+?? mother-node.js
+?? music-data/
+?? music-income.js
+?? neural-api.js
+?? neural-bus.js
+?? node-b-chain.js.before-gandom-2558-validation-1792134653022.bak
+?? node-b-chain.js.before-validation-fix-1792134426147.bak
+?? node-b-persistent.js
+?? node-breeding-api.js
+?? node-breeding.js
+?? node-mobile-release.json
+?? nodes-family/
+?? p2p-heavy-test.js
+?? p2p-heavy-test.js.pre-fix-2558
+?? p2p-heavy-test.js.pre-newline-fix
+?? p2p-heavy-test.js.pre-patch-2558
+?? p2p-real-test.js
+?? p2p-sync-fixed.js
+?? p2p-sync.js
+?? patch-blockchain-final.js
+?? patch-dashboard.js
+?? patch-exchange-dashboard.js
+?? patch-exchange-link.js
+?? patch-menu.js
+?? patch-section.js
+?? patch.js
+?? payment-api.js
+?? payment-data/
+?? payment-manager.js
+?? price-api.js
+?? price-oracle.js
+?? public/assets/
+?? public/chain.html
+?? public/chat.html
+?? public/diagnose.html
+?? public/gandom-3d.html
+?? public/gandom-brain.js
+?? public/gandom-girl.html
+?? public/gandom-test.html
+?? public/index.html.backup3
+?? public/index.html.backup4
+?? public/libs/
+?? public/voice-continuous.js
+?? public/voice-test.html
+?? run/
+?? runtime-logs/
+?? runtime/
+?? scripts/
+?? security-audit-20261016-085914.txt
+?? security-audit.sh
+?? security_audit.sh
+?? server.js.before-fix-20261017-124433.bak
+?? shovel.sh
+?? site/
+?? start-ai.js
+?? start-gandom.sh
+?? start-gandom.sh.before-lock-20261017-125729.bak
+?? start-gandom.sh.before-no-pkill-20261017-132028.bak
+?? start-gandom.sh.before-python-fix-20261017-131500.bak
+?? "tatus --short"
+?? test-100.js
+?? test-neuron.js
+?? test-node-b.js
+?? test-organs.sh
+?? utils.js
+?? wallet/GANDOM-WALLET-2558.js
+?? wallet/wallet-state.json
+?? worker-api.js
+?? worker-coordinator.js
+?? worker-node.js
+?? workers-data/
+?? www/gandom-live-ui.html
+?? www/gandom-live-ui.html.step4-before
+main
+origin	https://github.com/moahammadrahimian-rgb/gandom.git (fetch)
+origin	https://github.com/moahammadrahimian-rgb/gandom.git (push)
+
+=== COMPLETE ===
+REPORT=/data/data/com.termux/files/home/gandom/GANDOM-FORENSIC-2558-20261018-191812.txt
+FILES_CHANGED=NO
+SERVICES_STARTED=NO
+GLOBAL_NETWORK=NOT_CLAIMED

@@ -1,0 +1,34 @@
+{
+  "time": "2026-10-16T19:12:18.344Z",
+  "mode": "READ_ONLY",
+  "chains": [
+    {
+      "file": "blockchain-data/chain.json",
+      "count": 2,
+      "genesis": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33",
+      "lastIndex": 1,
+      "links": [
+        {
+          "index": 1,
+          "linksPreviousHash": true
+        }
+      ]
+    },
+    {
+      "file": "blockchain-data-b/chain.json",
+      "count": 1,
+      "genesis": "2271a0a7eca3880cd727c27ce3e47388897d9121674792d7737368737746d7f3",
+      "lastIndex": 0,
+      "links": []
+    }
+  ],
+  "benchmark": {
+    "test": "local integer-loop baseline",
+    "iterations": 2000000,
+    "elapsedMs": 105.33,
+    "opsPerSecond": 18987693,
+    "checksum": 2839207360
+  },
+  "sameGenesis": false,
+  "verdict": "GENESIS_MISMATCH_SYNC_BLOCKED"
+}

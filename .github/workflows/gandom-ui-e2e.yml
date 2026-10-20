@@ -30,7 +30,7 @@ jobs:
 
       - name: Start GANDOM server
         run: |
-          PORT=8080 node server.js > /tmp/gandom-server.log 2>&1 &
+          PORT=8080 node gandom-ui-server.js > /tmp/gandom-server.log 2>&1 &
           for i in {1..30}; do
             if curl -fsS http://127.0.0.1:8080/health; then
               echo

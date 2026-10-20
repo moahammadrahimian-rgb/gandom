@@ -1,0 +1,12 @@
+{
+  "stage": "D2",
+  "execution": "REAL",
+  "expected_node_id": "600002",
+  "observed_node_id": "600002",
+  "identity": "c76e621ce0477d0881dc1d80ee9fddd9f098c01dcd78fe14e8cba0bbcfd7a93b",
+  "discovery_response": true,
+  "node_id_match": true,
+  "identity_valid": true,
+  "result": "PASS_REAL",
+  "timestamp": "2026-10-06T06:15:01.725Z"
+}

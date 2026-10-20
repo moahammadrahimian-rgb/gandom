@@ -1,0 +1,164 @@
+======================================================
+ GANDOM 2558 — EXECUTION AND SECURITY GATE
+======================================================
+UTC_TIME=20261016T102512Z
+ROOT=/data/data/com.termux/files/home/gandom
+MODE=READ_ONLY_AUDIT
+CHAIN_MUTATION=FORBIDDEN
+PRIVATE_KEY_ACCESS=FORBIDDEN
+
+===== 1. REQUIRED FILES =====
+FILE_PRESENT=blockchain-100.js
+FILE_PRESENT=node-b-chain.js
+FILE_PRESENT=blockchain-p2p-handler.js
+FILE_PRESENT=package.json
+
+===== 2. SOURCE VALIDATION AUDIT =====
+--- SOURCE=blockchain-100.js ---
+53:      return crypto.verify(null, Buffer.from(data), pk, Buffer.from(signatureHex, 'hex'));
+151:    const tx = new Transaction('COINBASE', to, reward, 0, null);
+152:    tx.txid = 'COINBASE-' + crypto.randomBytes(8).toString('hex');
+153:    tx.type = 'COINBASE';
+164:    if (this.type === 'COINBASE') return true;
+176:    if (this.type === 'COINBASE') return true;
+180:      return crypto.verify(null, Buffer.from(this.getHash()), pk, Buffer.from(this.signature, 'hex'));
+209:  constructor(index, prevHash, timestamp, transactions, difficulty = 3) {
+211:    this.prevHash = prevHash;
+219:    this.merkleRoot = merkle.root;
+222:    this.reward = Block.calculateReward(index);
+225:    this.hash = this.calculateHash();
+229:  static calculateReward(blockIndex) {
+236:  calculateHash() {
+240:        this.prevHash + 
+242:        this.merkleRoot + 
+253:      this.hash = this.calculateHash();
+260:      prevHash: this.prevHash,
+263:      merkleRoot: this.merkleRoot,
+273:    const b = new Block(obj.index, obj.prevHash, obj.timestamp, txs, obj.difficulty);
+275:    b.merkleRoot = obj.merkleRoot;
+335:        this.createGenesis();
+352:      if (!this.isValid()) {
+354:        this.createGenesis();
+358:      this.createGenesis();
+363:  createGenesis() {
+366:    genesis.hash = genesis.calculateHash();
+376:    block.prevHash = this.getLatest().hash;
+379:    this.chain.push(block);
+388:      if (tx.type === 'COINBASE') {
+408:    const reward = Block.calculateReward(this.chain.length);
+413:      if (tx.type === 'COINBASE') return false;
+414:      if (!tx.verify()) return false;
+464:    if (tx.type === 'COINBASE') return false;
+465:    if (!tx.verify()) return { ok: false, error: 'INVALID_SIGNATURE' };
+482:  isValidBlock(block, previousBlock = this.getLatest()) {
+487:      if (block.prevHash !== previousBlock.hash) return false;
+495:      if (block.reward !== Block.calculateReward(block.index)) return false;
+498:      if (merkle.root !== block.merkleRoot) return false;
+499:      if (block.calculateHash() !== block.hash) return false;
+516:        if (tx.type === 'COINBASE') {
+518:          if (tx.from !== 'COINBASE' || tx.fee !== 0 ||
+521:          if (tx.amount <= 0 || !tx.verify()) return false;
+535:  isValid() {
+539:      if (curr.hash !== curr.calculateHash()) return false;
+540:      if (curr.prevHash !== prev.hash) return false;
+544:      if (merkle.root !== curr.merkleRoot) return false;
+554:        if (tx.type === 'COINBASE') total += tx.amount;
+568:      is_valid: this.isValid(),
+574:      next_reward: Block.calculateReward(this.chain.length),
+--- SOURCE=node-b-chain.js ---
+50:      send(ws, 'GET_CHAIN_LENGTH', {});
+74:          send(ws, 'GET_CHAIN', {});
+91:          const valid = chainB.isValidBlock ? chainB.isValidBlock(block, latest) : false;
+97:          chainB.chain.push(block);
+110:      if (msg.type === 'NEW_BLOCK_FROM_PEER') {
+119:            send(ws, 'GET_CHAIN', {});
+123:          if (!chainB.isValidBlock(block, latest)) {
+127:          chainB.chain.push(block);
+--- SOURCE=blockchain-p2p-handler.js ---
+9:  if (type === 'GET_CHAIN_LENGTH') {
+20:  if (type === 'GET_CHAIN') {
+30:  if (type === 'NEW_BLOCK_FROM_PEER') {
+47:      if (!gandomChain.isValidBlock(block, latest)) {
+52:      gandomChain.chain.push(block);
+63:  if (type === 'REQUEST_FULL_SYNC') {
+83:        type: 'NEW_BLOCK_FROM_PEER',
+
+===== 3. BLOCKCHAIN DATA AUDIT =====
+CHAIN_FILE=blockchain-data/chain.json
+BLOCK_COUNT=2
+GENESIS_HASH=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+GENESIS_TIMESTAMP=0
+GENESIS_TX_COUNT=1
+STRUCTURAL_ERROR_COUNT=0
+STRUCTURAL_STATUS=PASS
+
+CHAIN_FILE=blockchain-data-b/chain.json
+BLOCK_COUNT=2
+GENESIS_HASH=f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624
+GENESIS_TIMESTAMP=0
+GENESIS_TX_COUNT=1
+ERROR=LINK_MISMATCH INDEX=1 EXPECTED=f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624 ACTUAL=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+STRUCTURAL_ERROR_COUNT=1
+STRUCTURAL_STATUS=ISSUES_FOUND
+
+===== CROSS-NODE CONSENSUS =====
+GENESIS_A=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+GENESIS_B=f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624
+GENESIS_MATCH=false
+CONSENSUS_GATE=BLOCKED_GENESIS_MISMATCH
+FIRST_HASH_DIVERGENCE=0
+CHAIN_PREFIX_MATCH=NO
+
+CHAIN_FILES_MODIFIED=NO
+AUTOMATIC_REPAIR=NO
+PRIVATE_KEYS_READ=NO
+
+===== 4. SECURITY-SENSITIVE SOURCE PATTERNS =====
+--- REVIEW=blockchain-100.js ---
+9:const DATA_DIR = process.env.GANDOM_DATA_DIR || path.join(__dirname, 'blockchain-data');
+300:      fs.writeFileSync(CHAIN_FILE, JSON.stringify({
+308:      fs.writeFileSync(TX_FILE, JSON.stringify(
+312:      fs.writeFileSync(WALLETS_FILE, JSON.stringify(this.wallets, null, 2));
+314:      fs.writeFileSync(META_FILE, JSON.stringify({
+379:    this.chain.push(block);
+--- REVIEW=node-b-chain.js ---
+6:process.env.GANDOM_DATA_DIR = require('path').join(__dirname, 'blockchain-data-b');
+17:console.log(`📁 داده‌ها: ${process.env.GANDOM_DATA_DIR}`);
+97:          chainB.chain.push(block);
+127:          chainB.chain.push(block);
+--- REVIEW=blockchain-p2p-handler.js ---
+52:      gandomChain.chain.push(block);
+--- REVIEW=server.js ---
+32:  capacity: Number(process.env.GANDOM_CELL_CAPACITY || 1000),
+33:  intervalMs: Number(process.env.GANDOM_CELL_INTERVAL_MS || 5000)
+40:const PORT = Number(process.env.PORT || 8787);
+41:const PROJECT_VERSION = process.env.PROJECT_VERSION || '0.1.0';
+42:const NODE_ID = process.env.NODE_ID || crypto.randomUUID();
+43:const PEER_ADDRESS = process.env.PEER_ADDRESS || '';
+44:const RECONNECT_DELAY = Number(process.env.PEER_RECONNECT_MS || 3000);
+
+===== 5. DEPENDENCY AUDIT =====
+PACKAGE_LOCK=PRESENT
+NPM_AUDIT_START
+PROD_VULNERABILITIES_CRITICAL=0
+PROD_VULNERABILITIES_HIGH=0
+PROD_VULNERABILITIES_MODERATE=3
+PROD_VULNERABILITIES_LOW=0
+NPM_AUDIT_EXIT=COMPLETED
+
+===== 6. TESTS AND SCRIPTS AVAILABLE =====
+PACKAGE_NAME=gandom-p2p
+PACKAGE_VERSION=0.1.0
+AVAILABLE_SCRIPTS:
+  start = node server.js
+  client = node client.js
+  health = node -e "require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})"
+
+===== 7. FINAL SAFETY GATE =====
+CHAIN_MUTATION=NO
+AUTOMATIC_REPAIR=NO
+SERVICE_RESTARTED=NO
+PRODUCTION_APPROVAL=NOT_GRANTED
+PASS_REAL_FULL_SYSTEM=NOT_CLAIMED
+AUDIT_RESULT=EVIDENCE_COLLECTED
+======================================================

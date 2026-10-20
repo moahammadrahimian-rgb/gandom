@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANDOM ONE — همه چیز در یک جا</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #06100c, #0a1f18);
+            color: #e8f5e9;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 700px; margin: 0 auto; }
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(76,175,80,0.2), rgba(76,175,80,0.05));
+            border: 2px solid #4caf50;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+        .hero .logo { font-size: 72px; margin-bottom: 15px; }
+        .hero h1 { font-size: 42px; color: #81c784; margin-bottom: 10px; }
+        .hero p { color: #a5d6a7; font-size: 16px; }
+        .hero .badge {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 8px 20px;
+            background: #4caf50;
+            color: white;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        .stat {
+            background: rgba(76,175,80,0.1);
+            border: 1px solid rgba(76,175,80,0.3);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+        .stat .value { font-size: 24px; color: #4caf50; font-weight: bold; }
+        .stat .label { font-size: 11px; color: #a5d6a7; margin-top: 5px; }
+        .section-title {
+            font-size: 20px;
+            color: #81c784;
+            margin: 25px 0 15px 0;
+            padding-right: 10px;
+            border-right: 3px solid #4caf50;
+        }
+        .links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .link {
+            display: block;
+            background: rgba(76,175,80,0.1);
+            border: 1px solid rgba(76,175,80,0.3);
+            border-radius: 12px;
+            padding: 18px;
+            text-decoration: none;
+            color: #e8f5e9;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .link:hover { transform: scale(1.03); border-color: #4caf50; }
+        .link .icon { font-size: 28px; margin-bottom: 8px; }
+        .link .title { color: #81c784; font-weight: bold; margin-bottom: 5px; }
+        .link .desc { font-size: 12px; color: #a5d6a7; }
+        .link.primary { background: rgba(76,175,80,0.25); border-color: #4caf50; }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(76,175,80,0.3);
+            color: #81c784;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="logo">🌾</div>
+            <h1>GANDOM 2558</h1>
+            <p>Living Decentralized AI Ecosystem</p>
+            <div class="badge">✅ 100% ACTIVE</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="value">۴۰۰K</div>
+                <div class="label">سلول</div>
+            </div>
+            <div class="stat">
+                <div class="value">۴۰۹۶</div>
+                <div class="label">نرون</div>
+            </div>
+            <div class="stat">
+                <div class="value">۲۳</div>
+                <div class="label">کارمند AI</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">🚀 محصول اصلی</h2>
+        <div class="links">
+            <a href="http://127.0.0.1:8888/client.html" class="link primary">
+                <div class="icon">🔐</div>
+                <div class="title">GANDOM-AUDIT</div>
+                <div class="desc">صفحه مشتری — حسابرسی فایل</div>
+            </a>
+            <a href="http://127.0.0.1:7777/dashboard.html" class="link primary">
+                <div class="icon">📊</div>
+                <div class="title">Dashboard</div>
+                <div class="desc">پنل مدیریت</div>
+            </a>
+        </div>
+
+        <h2 class="section-title">🌐 شبکه</h2>
+        <div class="links">
+            <a href="http://127.0.0.1:8787/health" class="link">
+                <div class="icon">🔗</div>
+                <div class="title">P2P Server</div>
+                <div class="desc">پورت 8787 — وضعیت</div>
+            </a>
+            <a href="http://127.0.0.1:8080/" class="link">
+                <div class="icon">🎛️</div>
+                <div class="title">GANDOM Panel</div>
+                <div class="desc">پورت 8080 — پنل کامل</div>
+            </a>
+        </div>
+
+        <h2 class="section-title">📚 مستندات</h2>
+        <div class="links">
+            <a href="https://github.com/moahammadrahimian-rgb/gandom" class="link">
+                <div class="icon">📦</div>
+                <div class="title">GitHub</div>
+                <div class="desc">کد کامل گندم</div>
+            </a>
+            <a href="https://moahammadrahimian-rgb.github.io/gandom/landing/" class="link">
+                <div class="icon">🌍</div>
+                <div class="title">Landing Page</div>
+                <div class="desc">صفحه رسمی</div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>Built with Law 2558 | No fake pass. Real execution only.</p>
+            <p style="margin-top: 8px;">🌾 GANDOM — Alive, Immortal, Decentralized</p>
+        </div>
+    </div>
+</body>
+</html>

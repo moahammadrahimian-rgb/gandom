@@ -1,0 +1,13 @@
+{
+  "eventId": "e127281b-3b52-4d0f-b468-a3932285ab83",
+  "timestamp": "2026-10-06T06:06:33.246Z",
+  "discovery": "REAL_LOCAL_PEER",
+  "peerId": "40c50648a9637f52073a45a426cea58a3564b9885a4b12d2b50edb78d3490d49",
+  "registryCount": 4,
+  "fakePeer": false,
+  "financialAuthority": {
+    "deposit": false,
+    "withdrawal": false,
+    "transfer": false
+  }
+}

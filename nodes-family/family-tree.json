@@ -1,0 +1,74 @@
+{
+  "NODE-BDA1AE69": {
+    "nodeId": "NODE-BDA1AE69",
+    "parents": [],
+    "children": [
+      "NODE-G1-E0675B"
+    ],
+    "generation": 0
+  },
+  "NODE-945D0D63": {
+    "nodeId": "NODE-945D0D63",
+    "parents": [],
+    "children": [
+      "NODE-G1-E0675B"
+    ],
+    "generation": 0
+  },
+  "NODE-G1-E0675B": {
+    "nodeId": "NODE-G1-E0675B",
+    "parents": [
+      "NODE-BDA1AE69",
+      "NODE-945D0D63"
+    ],
+    "children": [],
+    "generation": 1
+  },
+  "NODE-58E060BE": {
+    "nodeId": "NODE-58E060BE",
+    "parents": [],
+    "children": [
+      "NODE-G1-43FDCB",
+      "NODE-G1-ABC9D6",
+      "NODE-G1-DBE5D4"
+    ],
+    "generation": 0
+  },
+  "NODE-EAA7C0C6": {
+    "nodeId": "NODE-EAA7C0C6",
+    "parents": [],
+    "children": [
+      "NODE-G1-43FDCB",
+      "NODE-G1-ABC9D6",
+      "NODE-G1-DBE5D4"
+    ],
+    "generation": 0
+  },
+  "NODE-G1-43FDCB": {
+    "nodeId": "NODE-G1-43FDCB",
+    "parents": [
+      "NODE-58E060BE",
+      "NODE-EAA7C0C6"
+    ],
+    "children": [],
+    "generation": 1
+  },
+  "NODE-G1-ABC9D6": {
+    "nodeId": "NODE-G1-ABC9D6",
+    "parents": [
+      "NODE-58E060BE",
+      "NODE-EAA7C0C6"
+    ],
+    "children": [],
+    "generation": 1
+  },
+  "NODE-G1-DBE5D4": {
+    "nodeId": "NODE-G1-DBE5D4",
+    "parents": [
+      "NODE-58E060BE",
+      "NODE-EAA7C0C6"
+    ],
+    "children": [],
+    "generation": 1
+  }
+}

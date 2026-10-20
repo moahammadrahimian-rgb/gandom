@@ -1,0 +1,13 @@
+{
+  "chapter": 4,
+  "test": "ATOMIC_REAL_NODE_AGENT_TCP",
+  "node_id": "400002",
+  "port": 19202,
+  "process_live": 1,
+  "agent_output_pass": 1,
+  "identity_pass": 1,
+  "tcp_ping_pong_pass": 1,
+  "fake_pass_blocked": 1,
+  "result": "PASS_REAL",
+  "log": "gandom-core/evidence/REAL-CHAPTER4-ATOMIC-20261005-151127.log"
+}

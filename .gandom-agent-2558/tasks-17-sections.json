@@ -1,0 +1,144 @@
+{
+  "law": 2558,
+  "updated_at": "2026-10-13T14:15:34.536Z",
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Identity and permissions",
+      "goal": "Validate agent identity, root path and allowed operations.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 2,
+      "name": "Mother Law 2558 gate",
+      "goal": "Check law artifacts and never infer project PASS from partial checks.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 3,
+      "name": "Project discovery",
+      "goal": "Inventory bounded project files and hash eligible files.",
+      "status": "PASS_REAL",
+      "execution_status": "PASS_REAL_BOUNDED_INVENTORY",
+      "evidence": [
+        "RUN-1791900796263-18359"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Central planner",
+      "goal": "Prioritize blocked prerequisites before dependent tasks.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 5,
+      "name": "Task management",
+      "goal": "Persist section tasks and resume statuses without duplicate tasks.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 6,
+      "name": "Controlled code execution",
+      "goal": "Run bounded syntax checks only; never run arbitrary package scripts.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 7,
+      "name": "Brain and experience memory",
+      "goal": "Persist verified observations and evidence references.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 8,
+      "name": "Cell-life engine",
+      "goal": "Locate cell engine and tests; do not claim live cell health without runtime evidence.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 9,
+      "name": "Neural engine",
+      "goal": "Locate neural modules and tests; inspect wiring before claiming integration.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 10,
+      "name": "P2P networking",
+      "goal": "Locate P2P modules/tests; loopback is not proof of independent nodes.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 11,
+      "name": "Server and APIs",
+      "goal": "Inventory server/API code; do not kill or restart unrelated processes.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 12,
+      "name": "UI, wallet, market and APK",
+      "goal": "Locate UI/build artifacts; never claim install or transaction success from source alone.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 13,
+      "name": "Math, geometry and physics",
+      "goal": "Locate computational modules/tests; require reference tests for correctness.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 14,
+      "name": "Security",
+      "goal": "Avoid secrets in evidence; flag risky patterns for review without executing them.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 15,
+      "name": "Backup audit and deduplication",
+      "goal": "Inventory only; never delete backups or infer duplicates from names alone.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 16,
+      "name": "Persistence and resume",
+      "goal": "Use atomic state writes and resume after interruption.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    },
+    {
+      "id": 17,
+      "name": "Independent verification",
+      "goal": "Report exact verified scope and leave project-wide status unclaimed.",
+      "status": "DISCOVERED",
+      "execution_status": "NOT_EXECUTED_BY_THIS_SAFE_ORCHESTRATOR",
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "law": 2558,
+  "project": "GANDOM",
+  "registry_version": 1,
+  "agents": [
+    {
+      "id": "GANDOM-AUTONOMOUS-AGENT-2558",
+      "file": "GANDOM-AUTONOMOUS-AGENT-2558.js",
+      "law": 2558,
+      "role": "17-section-safe-autonomous-orchestrator",
+      "enabled": true,
+      "execution": "explicit_runner",
+      "status": "REGISTERED_PENDING_REAL_EXECUTION_EVIDENCE",
+      "safety": {
+        "no_unverified_pass": true,
+        "no_source_overwrite_without_review": true,
+        "no_backup_deletion": true,
+        "no_package_script_execution": true,
+        "no_unrelated_process_kill": true
+      }
+    }
+  ]
+}

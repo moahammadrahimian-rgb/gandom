@@ -1,0 +1,15 @@
+{
+  "law": 2558,
+  "chapter": 4,
+  "test": "LIMITS_CONTINUITY",
+  "execution": "REAL_EXECUTION",
+  "results": {
+    "removable_limit": 2.000000000055511,
+    "sinc_limit": 0.9999999999998334
+  },
+  "assertions": {
+    "removable_limit": true,
+    "sinc_limit": true
+  },
+  "status": "PASS_REAL"
+}

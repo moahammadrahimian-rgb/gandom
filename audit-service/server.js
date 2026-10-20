@@ -17,18 +17,7 @@ function hash(v) {
     return crypto.createHash('sha256').update(v).digest('hex');
 }
 
-function auditFile(filename, content) {
-    const fileHash = hash(content);
-    return {
-        name: filename,
-        size: content.length,
-        hash: fileHash,
-        verified: true
-    };
-}
-
 const server = http.createServer((req, res) => {
-    // CORS
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -38,24 +27,39 @@ const server = http.createServer((req, res) => {
         return res.end();
     }
 
+    // CLIENT PAGE
+    if (req.method === 'GET' && (req.url === '/client.html' || req.url === '/client')) {
+        const clientPath = path.join(__dirname, 'client.html');
+        if (fs.existsSync(clientPath)) {
+            res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+            return res.end(fs.readFileSync(clientPath));
+        } else {
+            res.writeHead(404);
+            return res.end('client.html not found');
+        }
+    }
+
     // HOME PAGE
     if (req.method === 'GET' && req.url === '/') {
+        const landingPath = path.join(__dirname, '..', 'docs', 'landing', 'index.html');
+        if (fs.existsSync(landingPath)) {
+            res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+            return res.end(fs.readFileSync(landingPath));
+        }
         res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-        return res.end(fs.readFileSync(path.join(__dirname, '..', 'docs', 'landing', 'index.html')));
+        return res.end('<h1>GANDOM-AUDIT</h1><p><a href="/client.html">Client Page</a></p>');
     }
 
     // HEALTH
     if (req.method === 'GET' && req.url === '/health') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         return res.end(JSON.stringify({
-            ok: true,
-            service: 'GANDOM-AUDIT',
-            sessions: sessions.length,
-            uptime: process.uptime()
+            ok: true, service: 'GANDOM-AUDIT',
+            sessions: sessions.length, uptime: process.uptime()
         }));
     }
 
-    // AUDIT ENDPOINT
+    // AUDIT
     if (req.method === 'POST' && req.url === '/api/audit') {
         let body = '';
         req.on('data', chunk => { body += chunk; });
@@ -68,24 +72,24 @@ const server = http.createServer((req, res) => {
                 const session = {
                     id: 'AUDIT-' + crypto.randomBytes(4).toString('hex'),
                     customer: customer,
-                    files: [],
-                    total_files: 0,
-                    total_size: 0,
+                    files: [], total_files: 0, total_size: 0,
                     started: new Date().toISOString()
                 };
 
                 for (const f of files) {
                     const content = Buffer.from(f.content, 'base64');
-                    const result = auditFile(f.name, content);
-                    session.files.push(result);
+                    const fileHash = hash(content);
+                    session.files.push({
+                        name: f.name, size: content.length,
+                        hash: fileHash, verified: true
+                    });
                     session.total_files++;
-                    session.total_size += result.size;
+                    session.total_size += content.length;
                 }
 
                 session.finished = new Date().toISOString();
                 session.report_hash = hash(JSON.stringify(session.files));
-                session.price = 500000 + (session.total_files * 10000);
-
+                session.price = 500000 + (session.total_files * 100000);
                 sessions.push(session);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -98,7 +102,7 @@ const server = http.createServer((req, res) => {
         return;
     }
 
-    // LIST SESSIONS
+    // SESSIONS
     if (req.method === 'GET' && req.url === '/api/sessions') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         return res.end(JSON.stringify({ count: sessions.length, sessions: sessions }));
@@ -111,10 +115,7 @@ const server = http.createServer((req, res) => {
 server.listen(PORT, '127.0.0.1', () => {
     console.log('==========================================');
     console.log('GANDOM-AUDIT WEB SERVICE');
-    console.log('LAW=2558 | NO_FAKE_PASS=1');
+    console.log('SERVER=http://127.0.0.1:' + PORT);
+    console.log('CLIENT=http://127.0.0.1:' + PORT + '/client.html');
     console.log('==========================================');
-    console.log('SERVER_STARTED=http://127.0.0.1:' + PORT);
-    console.log('HEALTH=http://127.0.0.1:' + PORT + '/health');
-    console.log('AUDIT_API=POST http://127.0.0.1:' + PORT + '/api/audit');
-    console.log('SESSIONS=http://127.0.0.1:' + PORT + '/api/sessions');
 });

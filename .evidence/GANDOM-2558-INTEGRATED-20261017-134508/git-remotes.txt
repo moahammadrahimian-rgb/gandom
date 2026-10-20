@@ -1,0 +1,2 @@
+origin	https://github.com/moahammadrahimian-rgb/gandom.git (fetch)
+origin	https://github.com/moahammadrahimian-rgb/gandom.git (push)

@@ -1,0 +1,43 @@
+{
+  "record_type": "GANDOM_FINAL_AUTONOMOUS_EXECUTION_REGISTRATION",
+  "law_reference": "GOLDEN MOTHER LAW 2558",
+  "canonical_law_path": "constitution/GOLDEN-MOTHER-LAW-2558.json",
+  "canonical_law_sha256_at_registration": "a27f951a47c4fc8a0214970782655dc900d52a49ec2381273a81a60568f0b8aa",
+  "canonical_law_top_level_keys": [
+    "owner_authorization_required",
+    "authorization_level",
+    "law_version",
+    "details"
+  ],
+  "agent_source": "GANDOM-AUTONOMOUS-AGENT-2558.js",
+  "execution_runner": "gandom-core/governance/run-autonomous-agent-2558.sh",
+  "registry_reference": "gandom-core/governance/GANDOM-AUTONOMOUS-AGENT-REGISTRY-2558.json",
+  "binding_reference": "gandom-core/governance/GANDOM-LAW-2558-AUTONOMOUS-AGENT-BINDING.json",
+  "mission": [
+    "DISCOVERY",
+    "MAPPING",
+    "DEPENDENCY_ANALYSIS",
+    "INTEGRATION_PLAN",
+    "AUTHORIZED_EXECUTION",
+    "UNIFIED_WIRING",
+    "REAL_TESTS",
+    "EVIDENCE_AND_INDEPENDENT_VERIFICATION",
+    "PERSIST_AND_RESUME"
+  ],
+  "hard_rules": {
+    "no_fake_pass": true,
+    "real_evidence_required": true,
+    "no_unverified_deletion": true,
+    "no_duplicate_bulk_backups": true,
+    "no_secret_output": true,
+    "human_approval_required_for_real_financial_actions": true,
+    "preserve_rollback": true,
+    "distinguish_local_test_from_real_network": true
+  },
+  "scope": "REGISTRATION_ONLY_UNTIL_RUNTIME_VERIFIED",
+  "runtime_execution_verified": false,
+  "restart_resume_verified": false,
+  "integrated_system_verified": false,
+  "final_project_pass": false,
+  "registered_at": "2026-10-13T08:04:58.139Z"
+}

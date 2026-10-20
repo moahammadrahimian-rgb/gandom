@@ -1,0 +1,22 @@
+{
+  "id": "2558-EVIDENCE",
+  "parent_law": "2558",
+  "status": "ACTIVE",
+  "mode": "FAIL_CLOSED",
+  "rules": {
+    "screenshot_is_evidence": false,
+    "chat_text_is_evidence": false,
+    "echo_output_is_evidence": false,
+    "run_id_required": true,
+    "challenge_required": true,
+    "timestamp_required": true,
+    "project_root_required": true,
+    "git_head_required": true,
+    "evidence_hash_required": true,
+    "independent_verifier_required": true,
+    "old_run_reuse": false,
+    "cross_session_reuse": false,
+    "stale_evidence": "DENY",
+    "missing_proof": "DENY"
+  }
+}

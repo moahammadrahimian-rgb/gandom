@@ -1,0 +1,255 @@
+'use strict';
+
+const net = require('net');
+const crypto = require('crypto');
+
+const TOTAL_TX = 500;
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+const hash = value =>
+  crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
+
+class TestNode {
+  constructor(name, chain) {
+    this.name = name;
+    this.chain = chain;
+    this.server = null;
+    this.socket = null;
+    this.port = null;
+    this.receivedTx = [];
+    this.acceptedBlocks = 0;
+    this.rejectedBlocks = 0;
+    this.handshake = false;
+  }
+
+  start() {
+    return new Promise((resolve, reject) => {
+      this.server = net.createServer(socket => this.accept(socket));
+      this.server.once('error', reject);
+      this.server.listen(0, '127.0.0.1', () => {
+        this.port = this.server.address().port;
+        console.log(`[${this.name}] listening on ${this.port}`);
+        resolve();
+      });
+    });
+  }
+
+  accept(socket) {
+    this.socket = socket;
+    this.prepare(socket);
+    this.send({
+      type: 'hello',
+      node: this.name,
+      height: this.chain.length
+    });
+  }
+
+  connect(port) {
+    return new Promise((resolve, reject) => {
+      const socket = net.createConnection(
+        { host: '127.0.0.1', port },
+        () => {
+          this.socket = socket;
+          this.prepare(socket);
+          this.send({
+            type: 'hello',
+            node: this.name,
+            height: this.chain.length
+          });
+          resolve();
+        }
+      );
+      socket.once('error', reject);
+    });
+  }
+
+  prepare(socket) {
+    socket.setEncoding('utf8');
+    socket.buffer = '';
+
+    socket.on('data', data => {
+      socket.buffer += data;
+
+      let position;
+      while ((position = socket.buffer.indexOf('\n')) !== -1) {
+        const line = socket.buffer.slice(0, position);
+        socket.buffer = socket.buffer.slice(position + 1);
+
+        if (!line.trim()) continue;
+
+        try {
+          this.handle(JSON.parse(line));
+        } catch {
+          console.log(`[${this.name}] invalid message rejected`);
+        }
+      }
+    });
+  }
+
+  send(message) {
+    if (this.socket && !this.socket.destroyed) {
+      this.socket.write(JSON.stringify(message) + '
+');
+    }
+  }
+
+  handle(message) {
+    if (message.type === 'hello') {
+      this.handshake = true;
+      console.log(`[${this.name}] handshake with ${message.node}`);
+      return;
+    }
+
+    if (message.type === 'tx') {
+      this.receivedTx.push(message.tx);
+      return;
+    }
+
+    if (message.type === 'block') {
+      if (this.validateBlock(message.block)) {
+        this.chain.push(message.block);
+        this.acceptedBlocks++;
+        console.log(`[${this.name}] accepted block ${message.block.index}`);
+      } else {
+        this.rejectedBlocks++;
+        console.log(`[${this.name}] rejected invalid block`);
+      }
+    }
+  }
+
+  validateBlock(block) {
+    const previous = this.chain[this.chain.length - 1];
+
+    if (!previous) return false;
+    if (block.index !== previous.index + 1) return false;
+    if (block.prevHash !== previous.hash) return false;
+
+    const expectedHash = hash({
+      index: block.index,
+      prevHash: block.prevHash,
+      transactions: block.transactions,
+      nonce: block.nonce
+    });
+
+    return expectedHash === block.hash;
+  }
+
+  createBlock(transactions) {
+    const previous = this.chain[this.chain.length - 1];
+
+    const block = {
+      index: previous.index + 1,
+      prevHash: previous.hash,
+      transactions,
+      nonce: 0
+    };
+
+    block.hash = hash(block);
+    return block;
+  }
+
+  close() {
+    if (this.socket) this.socket.destroy();
+
+    return new Promise(resolve => {
+      if (!this.server) return resolve();
+      this.server.close(() => resolve());
+    });
+  }
+}
+
+async function main() {
+  console.log('=== GANDOM P2P HEAVY TEST ===');
+
+  const genesis = {
+    index: 0,
+    prevHash: '0'.repeat(64),
+    transactions: [],
+    nonce: 0
+  };
+
+  genesis.hash = hash(genesis);
+
+  const nodeA = new TestNode('NODE-A', [genesis]);
+  const nodeB = new TestNode('NODE-B', [genesis]);
+
+  await nodeA.start();
+  await nodeB.start();
+  await nodeA.connect(nodeB.port);
+  await sleep(500);
+
+  if (!nodeA.handshake || !nodeB.handshake) {
+    throw new Error('HANDSHAKE_FAILED');
+  }
+
+  console.log('[TEST] handshake: PASS');
+
+  const transactions = [];
+
+  for (let i = 1; i <= TOTAL_TX; i++) {
+    const tx = {
+      id: crypto.randomUUID(),
+      from: `user-${i}`,
+      to: `user-${i + 1}`,
+      amount: i,
+      timestamp: Date.now()
+    };
+
+    transactions.push(tx);
+    nodeA.send({ type: 'tx', tx });
+  }
+
+  await sleep(1000);
+
+  if (nodeB.receivedTx.length !== TOTAL_TX) {
+    throw new Error(
+      `TRANSACTION_SYNC_FAILED: ${nodeB.receivedTx.length}/${TOTAL_TX}`
+    );
+  }
+
+  console.log(`[TEST] transactions ${TOTAL_TX}: PASS`);
+
+  const validBlock = nodeA.createBlock(transactions);
+  nodeA.send({ type: 'block', block: validBlock });
+  await sleep(1000);
+
+  if (nodeB.chain.length !== 2 || nodeB.acceptedBlocks !== 1) {
+    throw new Error('VALID_BLOCK_SYNC_FAILED');
+  }
+
+  console.log('[TEST] valid block sync: PASS');
+
+  const fakeBlock = {
+    ...validBlock,
+    index: 2,
+    prevHash: 'f'.repeat(64),
+    hash: 'a'.repeat(64)
+  };
+
+  nodeA.send({ type: 'block', block: fakeBlock });
+  await sleep(500);
+
+  if (nodeB.rejectedBlocks !== 1 || nodeB.chain.length !== 2) {
+    throw new Error('INVALID_BLOCK_WAS_ACCEPTED');
+  }
+
+  console.log('[TEST] invalid block rejection: PASS');
+
+  console.log('
+=== RESULT ===');
+  console.log(`NODE-A chain height: ${nodeA.chain.length}`);
+  console.log(`NODE-B chain height: ${nodeB.chain.length}`);
+  console.log(`NODE-B transactions: ${nodeB.receivedTx.length}`);
+  console.log(`Accepted blocks: ${nodeB.acceptedBlocks}`);
+  console.log(`Rejected blocks: ${nodeB.rejectedBlocks}`);
+  console.log('FINAL: PASS');
+
+  await nodeA.close();
+  await nodeB.close();
+}
+
+main().catch(error => {
+  console.error('
+FINAL: FAIL');
+  console.error(error.message);
+  process.exitCode = 1;
+});

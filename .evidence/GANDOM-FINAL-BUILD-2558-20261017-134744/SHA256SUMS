@@ -1,0 +1,12 @@
+b5a9c041490ec63c594190c91d05eb3192882115d830354c2abf6eff864fcf83  ./backend-health.json
+63f5e62ab7ad431b78f739d0086fe9d03c8ad77f00abaabee4dd7def9a2b301c  ./backup/REAL-DISCOVERY.js
+75c3d43921f2e24f34707e8e750b1104d0ad304445200396568c624a15a7811f  ./backup/client.js
+81538f4ca930f46c599efdedc951271841d4ac8b2f960c689b6a1d89f32816a6  ./backup/package-lock.json
+5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3  ./backup/package.json
+6153ffd3aa3931ddaa91f27f0e556cb68bd892f21074a0a6d291f7afa521e98f  ./backup/server.js
+6ed28abee0eff529fbbe0043ed0f65a786749fb3a98e5a1277252ac9b2d75d12  ./backup/start-gandom.sh
+27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf  ./frontend-status.txt
+f32871b9c09cbf4d66975730285d3f7a4f6fb2e978962c398842b5960d6e2105  ./git-head.txt
+dc6c59c0b0fbb7e786f9614916b1ababfd4fb16dc591c325b0ce62b2f562ead6  ./git-status.txt
+05eadcc708b9fe618b7c42b245d47d64ba37caf0156fd4f7297eea1bfdbf99dc  ./package-summary.json
+3e25f126155d5fa90bd442ec5bc035d9a960b2c0cce045319338e4c8386b9d54  ./runtime-versions.txt

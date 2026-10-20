@@ -88,7 +88,7 @@ function connect() {
           if (block.index <= latest.index) continue;
           if (block.index !== latest.index + 1) break;
           
-          const valid = chainB.isValidBlock ? chainB.isValidBlock(block, latest) : true;
+          const valid = chainB.isValidBlock ? chainB.isValidBlock(block, latest) : false;
           if (!valid) {
             console.log(`   ❌ بلوک ${block.index} نامعتبر`);
             break;
@@ -120,6 +120,10 @@ function connect() {
             return;
           }
           
+          if (!chainB.isValidBlock(block, latest)) {
+            console.error('REJECTED_INVALID_PEER_BLOCK=' + block.index);
+            return;
+          }
           chainB.chain.push(block);
           chainB.save();
           stats.blocksReceived++;

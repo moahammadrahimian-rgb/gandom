@@ -1,0 +1,13 @@
+{
+  "step": 2,
+  "test": "REAL_RECONNECT_FINAL",
+  "reconnected": 1,
+  "ping_count": 0,
+  "pong_count": 0,
+  "inbound_pong_count": 0,
+  "error_count": 0,
+  "disconnect_count": 1,
+  "outbound_connect_count": 3,
+  "final_peers": 1,
+  "result": "FAIL_REAL"
+}

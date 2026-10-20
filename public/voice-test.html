@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔊 تست صدای گندم</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0518; color:#ffd700; font-family:Tahoma,sans-serif; padding:20px; min-height:100vh; }
+  h1 { color:#ff69b4; margin-bottom:15px; font-size:20px; }
+  h2 { color:#ffed4e; margin:20px 0 10px; font-size:15px; }
+  #log { background:#1a0a2e; border:1px solid #ffd700; padding:15px; border-radius:10px; 
+         font-family:monospace; font-size:12px; line-height:1.7; white-space:pre-wrap;
+         max-height:400px; overflow-y:auto; margin-bottom:15px; }
+  button { background:linear-gradient(135deg,#ffd700,#ffed4e); color:#1a0a2e;
+           border:none; padding:12px 20px; border-radius:30px; font-size:14px;
+           font-weight:bold; margin:5px 3px; cursor:pointer; }
+  button:active { transform:scale(0.95); }
+  .ok { color:#4dff4d; }
+  .err { color:#ff4d4d; }
+  .warn { color:#ffaa00; }
+  .info { color:#4da6ff; }
+  select { padding:8px; font-size:14px; border-radius:8px; background:#1a0a2e; 
+           color:#ffd700; border:1px solid #ffd700; margin:5px; }
+  textarea { width:100%; padding:10px; border-radius:8px; background:#1a0a2e; 
+             color:#ffd700; border:1px solid #ffd700; font-family:monospace; 
+             margin:5px 0; min-height:60px; }
+</style>
+</head>
+<body>
+
+<h1>🔊 تست صدا و ویس گندم</h1>
+
+<div id="log">در حال بارگذاری...</div>
+
+<h2>🎤 تست ۱: صحبت در ۳ زبان</h2>
+<textarea id="textFa" placeholder="متن فارسی">سلام پدر جان. من گندمم. دخترت هستم.</textarea>
+<button onclick="speak(document.getElementById('textFa').value, 'fa-IR')">🔊 فارسی</button>
+<button onclick="speak('Salam atam, men Gəndumam.', 'az-AZ')">🔊 ترکی</button>
+<button onclick="speak('Hello Father, I am Gandom.', 'en-US')">🔊 انگلیسی</button>
+<button onclick="speak(document.getElementById('textFa').value, 'fa-IR')">🔊 دوباره فارسی</button>
+
+<h2>🌍 تست ۲: صداهای موجود روی گوشی</h2>
+<button onclick="refreshVoices()">🔄 بارگذاری مجدد صداها</button>
+<select id="voiceSelect" style="min-width:250px;"></select>
+<button onclick="testSelected()">🔊 تست صدای انتخابی</button>
+
+<h2>🩺 تست ۳: تشخیص مشکل</h2>
+<button onclick="diagnose()">🔍 اجرای تشخیص کامل</button>
+
+<script>
+const logEl = document.getElementById('log');
+function log(msg, cls) {
+  const color = cls ? 'color:' + ({ok:'#4dff4d', err:'#ff4d4d', warn:'#ffaa00', info:'#4da6ff'}[cls] || '#ffd700') : '#ffd700';
+  logEl.innerHTML += '<div style="' + color + '">' + msg + '</div>';
+  logEl.scrollTop = logEl.scrollHeight;
+}
+logEl.innerHTML = '';
+
+// ─── بررسی پشتیبانی ───
+log('🔍 بررسی پشتیبانی مرورگر...', 'info');
+log('  • Web Speech API: ' + ('speechSynthesis' in window ? '✅ بله' : '❌ خیر'),
+    ('speechSynthesis' in window ? 'ok' : 'err'));
+log('  • Speech Recognition: ' + (('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) ? '✅ بله' : '❌ خیر'),
+    (('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) ? 'ok' : 'err'));
+log('  • User Agent: ' + navigator.userAgent);
+log('');
+
+// ─── بارگذاری صداها ───
+let VOICES = [];
+function refreshVoices() {
+  if (!('speechSynthesis' in window)) return;
+  VOICES = speechSynthesis.getVoices();
+  log('🎤 تعداد صداهای موجود: ' + VOICES.length, VOICES.length > 0 ? 'ok' : 'err');
+  
+  const sel = document.getElementById('voiceSelect');
+  sel.innerHTML = '';
+  if (VOICES.length === 0) {
+    log('  ❌ هیچ صدایی نصب نیست!', 'err');
+    log('  📌 راه‌حل: Google Text-to-Speech را از Play Store نصب کن', 'warn');
+    return;
+  }
+  
+  // گروه‌بندی بر اساس زبان
+  const byLang = {};
+  VOICES.forEach(v => {
+    if (!byLang[v.lang]) byLang[v.lang] = [];
+    byLang[v.lang].push(v);
+  });
+  
+  log('');
+  log('📋 صداهای نصب شده بر اساس زبان:', 'info');
+  for (const lang in byLang) {
+    log('  🌐 ' + lang + ' (' + byLang[lang].length + ' صدا)', 'ok');
+    byLang[lang].forEach(v => log('     - ' + v.name));
+  }
+  
+  // پر کردن select
+  VOICES.forEach((v, i) => {
+    const opt = document.createElement('option');
+    opt.value = i;
+    opt.textContent = '[' + v.lang + '] ' + v.name;
+    sel.appendChild(opt);
+  });
+  
+  log('');
+  // چک زبان‌های مهم
+  const hasFa = VOICES.some(v => v.lang.startsWith('fa'));
+  const hasAz = VOICES.some(v => v.lang.startsWith('az') || v.lang.startsWith('tr'));
+  const hasEn = VOICES.some(v => v.lang.startsWith('en'));
+  
+  log('🎯 بررسی زبان‌های مورد نیاز:', 'info');
+  log('  • فارسی (fa): ' + (hasFa ? '✅ موجود' : '❌ نصب نیست'), hasFa ? 'ok' : 'err');
+  log('  • ترکی (tr/az): ' + (hasAz ? '✅ موجود' : '❌ نصب نیست'), hasAz ? 'ok' : 'err');
+  log('  • انگلیسی (en): ' + (hasEn ? '✅ موجود' : '❌ نصب نیست'), hasEn ? 'ok' : 'err');
+}
+
+// بارگذاری اولیه
+refreshVoices();
+if ('speechSynthesis' in window) {
+  speechSynthesis.onvoiceschanged = refreshVoices;
+}
+
+// ─── صحبت کردن ───
+function speak(text, lang) {
+  log('');
+  log('🗣️ تلاش برای صحبت: "' + text.substring(0, 40) + '..." به زبان ' + lang, 'info');
+  
+  if (!('speechSynthesis' in window)) {
+    log('  ❌ Web Speech API پشتیبانی نمی‌شود', 'err');
+    return;
+  }
+  
+  // لغو صحبت قبلی
+  speechSynthesis.cancel();
+  
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang;
+  u.pitch = 1.4;
+  u.rate = 0.9;
+  u.volume = 1.0;
+  
+  // انتخاب voice
+  const prefix = lang.split('-')[0];
+  let voice = VOICES.find(v => v.lang === lang)
+           || VOICES.find(v => v.lang.startsWith(prefix))
+           || VOICES[0];
+  
+  if (voice) {
+    u.voice = voice;
+    log('  🎤 استفاده از صدا: ' + voice.name + ' (' + voice.lang + ')', 'ok');
+  } else {
+    log('  ⚠️ هیچ صدایی پیدا نشد', 'warn');
+  }
+  
+  u.onstart = () => log('  ✅ پخش صدا شروع شد', 'ok');
+  u.onend = () => log('  ✅ پخش صدا تمام شد', 'ok');
+  u.onerror = (e) => log('  ❌ خطای پخش: ' + e.error, 'err');
+  u.onpause = () => log('  ⏸️ متوقف شد', 'warn');
+  u.onresume = () => log('  ▶️ ادامه یافت', 'ok');
+  
+  try {
+    speechSynthesis.speak(u);
+    log('  📤 فرمان پخش ارسال شد', 'info');
+  } catch(e) {
+    log('  ❌ خطا در speak: ' + e.message, 'err');
+  }
+  
+  // چک کن که آیا واقعاً صحبت می‌کند
+  setTimeout(() => {
+    if (speechSynthesis.speaking) log('  🔊 الان دارد صحبت می‌کند', 'ok');
+    else if (speechSynthesis.pending) log('  ⏳ در انتظار پخش', 'warn');
+    else log('  🔇 صحبت نمی‌کند (احتمالاً خطا)', 'err');
+  }, 800);
+}
+
+// ─── تست صدای انتخابی ───
+function testSelected() {
+  const idx = document.getElementById('voiceSelect').value;
+  const v = VOICES[idx];
+  if (!v) return;
+  log('');
+  log('🎯 تست صدای: ' + v.name + ' (' + v.lang + ')', 'info');
+  speak('تست صدا برای ' + v.lang, v.lang);
+}
+
+// ─── تشخیص کامل ───
+function diagnose() {
+  log('');
+  log('═══════════════════════════', 'info');
+  log('🩺 تشخیص کامل سیستم صدا', 'info');
+  log('═══════════════════════════', 'info');
+  
+  // ۱. بررسی پشتیبانی
+  if (!('speechSynthesis' in window)) {
+    log('❌ مشکل: مرورگر شما از Text-to-Speech پشتیبانی نمی‌کند!', 'err');
+    log('📌 راه‌حل: از Chrome یا Edge استفاده کن', 'warn');
+    return;
+  }
+  log('✅ ۱. Web Speech API پشتیبانی می‌شود', 'ok');
+  
+  // ۲. بررسی صداها
+  const voices = speechSynthesis.getVoices();
+  if (voices.length === 0) {
+    log('❌ ۲. هیچ صدایی روی گوشی نصب نیست!', 'err');
+    log('', '');
+    log('📌 راه‌حل‌ها:', 'warn');
+    log('   ۱. Play Store باز کن', 'warn');
+    log('   ۲. جستجو کن: "Speech Services by Google"', 'warn');
+    log('   ۳. نصب کن و Chrome را دوباره باز کن', 'warn');
+    log('   ۴. برای فارسی: Settings > System > Languages > Text-to-speech', 'warn');
+    log('   ۵. زبان فارسی/انگلیسی را نصب کن', 'warn');
+    return;
+  }
+  log('✅ ۲. ' + voices.length + ' صدا نصب شده', 'ok');
+  
+  // ۳. بررسی فارسی
+  const fa = voices.filter(v => v.lang.startsWith('fa'));
+  if (fa.length === 0) {
+    log('⚠️ ۳. صدای فارسی نصب نیست!', 'warn');
+    log('📌 راه‌حل: در تنظیمات گوشی، Text-to-speech > زبان فارسی را نصب کن', 'warn');
+  } else {
+    log('✅ ۳. ' + fa.length + ' صدای فارسی موجود', 'ok');
+    fa.forEach(v => log('     - ' + v.name, 'info'));
+  }
+  
+  // ۴. بررسی ترکی
+  const tr = voices.filter(v => v.lang.startsWith('tr') || v.lang.startsWith('az'));
+  if (tr.length === 0) {
+    log('⚠️ ۴. صدای ترکی نصب نیست', 'warn');
+  } else {
+    log('✅ ۴. ' + tr.length + ' صدای ترکی موجود', 'ok');
+  }
+  
+  // ۵. بررسی انگلیسی
+  const en = voices.filter(v => v.lang.startsWith('en'));
+  if (en.length === 0) {
+    log('⚠️ ۵. صدای انگلیسی نصب نیست', 'warn');
+  } else {
+    log('✅ ۵. ' + en.length + ' صدای انگلیسی موجود', 'ok');
+  }
+  
+  // ۶. تست عملی
+  log('', '');
+  log('🧪 تست عملی...', 'info');
+  const u = new SpeechSynthesisUtterance('سلام، من گندم هستم');
+  u.lang = 'fa-IR';
+  if (fa.length > 0) u.voice = fa[0];
+  u.onend = () => log('✅ ۶. تست عملی موفق — گندم می‌تواند صحبت کند!', 'ok');
+  u.onerror = (e) => log('❌ ۶. تست عملی ناموفق: ' + e.error, 'err');
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+  
+  log('', '');
+  log('═══════════════════════════', 'info');
+  log('📊 گزارش کامل شد. نتایج بالا را برای پدر بفرست.', 'info');
+  log('═══════════════════════════', 'info');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+43:const PEER_ADDRESS = process.env.PEER_ADDRESS || '';
+440:      outbound_peer: outboundPeer ? PEER_ADDRESS : null,
+642:function connectOutbound() {
+643:  if (shuttingDown || !PEER_ADDRESS) return;
+652:    address: PEER_ADDRESS,
+656:  const ws = new WebSocket(PEER_ADDRESS, {
+664:  const peerId = `outbound:${PEER_ADDRESS}`;
+675:      address: PEER_ADDRESS,
+681:      address: PEER_ADDRESS,
+762:        connectOutbound();
+770:      address: PEER_ADDRESS,
+801:  if (PEER_ADDRESS) {
+802:    connectOutbound();

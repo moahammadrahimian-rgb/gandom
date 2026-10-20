@@ -1,0 +1,246 @@
+===== GANDOM CHAPTER 02 ABSOLUTE AUDIT =====
+RUN_ID=CH02-AUDIT-20260930T112500Z
+UTC=2026-09-30T11:25:00Z
+ROOT=/data/data/com.termux/files/home/gandom
+
+===== LAW 2558 =====
+LAW_ID= 2558
+LAW_STATUS= ACTIVE
+ANTI_REPEAT= L2558-ANTI-REPEAT-FAKE-EXECUTION
+
+===== GIT STATE =====
+58f3b0ba9de56be3cdd846cc999986e30da70902
+ M .gitignore
+?? gandom-core/evidence/step-001/
+?? gandom-core/evidence/step-002/
+?? gandom-core/governance/EVIDENCE-TRUST-PROTOCOL-2558.json
+?? gandom-core/governance/GOLDEN-MOTHER-LAW-2558.HASH
+?? gandom-core/governance/GOLDEN-MOTHER-LAW-2558.HASH.bak.20260930T044748Z
+?? gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json.bak.20260930T044748Z
+?? gandom-core/governance/bin/
+?? gandom-core/governance/evidence-trust/
+?? gandom-core/governance/evidence/
+?? gandom-core/governance/owner/
+?? gandom-core/p2p/
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+
+===== P2P TREE =====
+gandom-core/p2p/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json
+gandom-core/p2p/discovery/peer-discovery.js
+gandom-core/p2p/engine/p2p-report-bus.js
+gandom-core/p2p/event-bus/event-bus.js
+gandom-core/p2p/event-bus/evidence/event-bus-proof.jsonl
+gandom-core/p2p/evidence/error-recovery-proof.jsonl
+gandom-core/p2p/evidence/peer-discovery.json
+gandom-core/p2p/evidence/runtime-benchmark-proof.json
+gandom-core/p2p/evidence/security-events-proof.jsonl
+gandom-core/p2p/health/evidence/node-health-runtime.json
+gandom-core/p2p/peers/registry.json
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt
+gandom-core/p2p/reports/runtime-events.jsonl
+gandom-core/p2p/revenue-events/evidence/revenue-event-runtime.json
+gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json
+gandom-core/p2p/worker-state/contracts/WORKER-STATE-CONTRACT.json
+gandom-core/p2p/worker-state/engine/worker-state.js
+gandom-core/p2p/worker-state/evidence/worker-state-runtime.json
+
+===== FILE COUNTS =====
+P2P_FILES=18
+JSON_FILES=9
+JS_FILES=4
+EVIDENCE_FILES=5
+
+===== JSON VALIDITY =====
+JSON_TOTAL= 9
+JSON_VALID= 9
+JSON_INVALID= 0
+
+===== JS SYNTAX =====
+JS_FAIL=gandom-core/p2p/engine/p2p-report-bus.js
+JS_FAIL=gandom-core/p2p/discovery/peer-discovery.js
+JS_FAIL=gandom-core/p2p/event-bus/event-bus.js
+JS_FAIL=gandom-core/p2p/worker-state/engine/worker-state.js
+
+===== REQUIRED CHAPTER 02 STEPS =====
+--- STEP 013 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:66:--- STEP 013 ---
+--- STEP 014 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:68:--- STEP 014 ---
+--- STEP 015 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:70:--- STEP 015 ---
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:59:        "file": "backups/STEP-015-20260930-001106/evidence-last-event.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:63:        "file": "backups/STEP-015-20260930-001106/STEP-015-VERIFICATION.json",
+--- STEP 016 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:74:--- STEP 016 ---
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:67:        "file": "backups/STEP-016-NODE-REGISTRY-20260930-040744/registry.json",
+--- STEP 017 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:77:--- STEP 017 ---
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:171:        "file": "backups/STEP-017-NODE-HEALTH-20260930-041936/p2p-before-step-017/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:175:        "file": "backups/STEP-017-NODE-HEALTH-20260930-041936/p2p-before-step-017/evidence/peer-discovery.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:179:        "file": "backups/STEP-017-NODE-HEALTH-20260930-041936/p2p-before-step-017/peers/registry.json",
+--- STEP 018 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:82:--- STEP 018 ---
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:71:        "file": "backups/STEP-018-WORKER-STATE-20260930-010548/WORKER-STATE-CONTRACT.json",
+--- STEP 019 ---
+gandom-core/p2p/reports/runtime-events.jsonl:8:{"eventId":"6e539c83-bce2-4ca2-92ee-a70347e1fd4e","correlationId":"7ea4b95a-41a1-441a-bf40-12f878d9a473","nodeId":"LOCAL_NODE","type":"WORKER_STATE","source":"GANDOM_WORKER_STATE","timestamp":"2026-09-30T01:14:50.368Z","payload":{"workerId":"WORKER-STEP019-REAL","state":"READY","source":"GANDOM_WORKER_STATE"}}
+gandom-core/p2p/reports/runtime-events.jsonl:10:{"eventId":"c7946a27-919b-46b9-a02c-203a8b05cd5f","correlationId":"47561226-9b89-4263-b7da-ad88f64eff4a","nodeId":"LOCAL_NODE","type":"WORKER_STATE","source":"GANDOM_WORKER_STATE","timestamp":"2026-09-30T01:18:00.762Z","payload":{"workerId":"WORKER-STEP019-FINAL","state":"READY","source":"GANDOM_WORKER_STATE"}}
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:43:gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:85:--- STEP 019 ---
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:259:        "file": "gandom-core/p2p/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+--- STEP 020 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:94:--- STEP 020 ---
+--- STEP 021 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:90:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:91:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:92:gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:96:--- STEP 021 ---
+gandom-core/p2p/evidence/security-events-proof.jsonl:1:{"step":"021","name":"SECURITY_EVENTS","eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","realRuntime":true,"securityEvent":"SECURITY_EVENT","aiWithdrawalAuthority":false,"aiTransferAuthority":false,"aiDepositAuthority":false,"result":"DENIED"}
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:75:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:79:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/evidence/peer-discovery.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:83:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/peers/registry.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:87:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:91:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:95:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/worker-state/contracts/WORKER-STATE-CONTRACT.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:99:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/worker-state/evidence/worker-state-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:103:        "file": "backups/STEP-021-SECURITY-20260930-035950/p2p-before/health/evidence/node-health-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:107:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:111:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/evidence/peer-discovery.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:115:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/peers/registry.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:119:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:123:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:127:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/worker-state/contracts/WORKER-STATE-CONTRACT.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:131:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/worker-state/evidence/worker-state-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:135:        "file": "backups/STEP-021-SECURITY-20260930-035717/p2p-before/health/evidence/node-health-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:139:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/contracts/P2P-INTERNAL-NERVOUS-SYSTEM.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:143:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/evidence/peer-discovery.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:147:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/peers/registry.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:151:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/evidence/revenue-event-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:155:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/revenue-events/history/STEP-019-FINAL-20260930-011802.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:159:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/worker-state/contracts/WORKER-STATE-CONTRACT.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:163:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/worker-state/evidence/worker-state-runtime.json",
+gandom-core/evidence/step-002/STEP-002-RUN-RUN-STEP-002-20260930T095223Z-21783.json:167:        "file": "backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/health/evidence/node-health-runtime.json",
+--- STEP 022 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:126:--- STEP 022 ---
+--- STEP 023 ---
+gandom-core/p2p/reports/runtime-events.jsonl:13:{"eventId":"0ece4533-e594-421a-ac81-59f554ebe66a","correlationId":"4ffff6fc-c2ed-4fbe-bfaa-655270aa7d4b","nodeId":"LOCAL_NODE","type":{"eventId":"b754ea80-925e-4db5-a61a-f53f7ab6b089","correlationId":"825dbcb1-5558-40f0-af39-f048afdd4741","timestamp":"2026-09-30T04:24:42.079Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":1,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.101Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:14:{"eventId":"e7eb37e7-6b3f-4d20-acbe-a6d9dd6568ca","correlationId":"1d9fce0c-d374-46c0-89df-9854d812f98a","nodeId":"LOCAL_NODE","type":{"eventId":"067ea5fa-f93d-4908-b564-7a3ce419f0e3","correlationId":"c7b08798-4dbd-4027-b4a8-bd44f8b64d25","timestamp":"2026-09-30T04:24:42.124Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":2,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.124Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:15:{"eventId":"1e2a6d37-5689-4b95-b4a2-ae096f3f8219","correlationId":"0dc54bfa-3e59-417e-9a71-4cff140dbb52","nodeId":"LOCAL_NODE","type":{"eventId":"2650564e-d032-4b6e-81b1-7c4d168c50b4","correlationId":"66b4253f-89fe-4cff-9673-db4810c5afb2","timestamp":"2026-09-30T04:24:42.125Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":3,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.125Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:16:{"eventId":"324abec6-835d-4e86-9335-edec32b4ed6a","correlationId":"b20aad3b-ab22-4a0a-a428-fb293ba2c03f","nodeId":"LOCAL_NODE","type":{"eventId":"f9fc39dd-9b9c-4ee8-bc29-2c77ef1a48c1","correlationId":"838f16f8-4236-4106-a702-38cad9b714e5","timestamp":"2026-09-30T04:24:42.126Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":4,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.126Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:17:{"eventId":"c5d0a1d6-dc6a-4c28-b3d6-7d2cd51a86bf","correlationId":"1624eb5a-d726-466f-b4ca-ccc72a8c6ecf","nodeId":"LOCAL_NODE","type":{"eventId":"a9430095-b02a-44a8-801e-0447602106d7","correlationId":"ce37a73c-b952-442d-8a7a-c51ac9ba0643","timestamp":"2026-09-30T04:24:42.126Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":5,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.127Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:18:{"eventId":"d5d2a584-ebf2-4949-b9ac-f1963c33f872","correlationId":"f6d6e191-9f14-4cf0-be16-825c12c98a92","nodeId":"LOCAL_NODE","type":{"eventId":"ff09367c-a539-4502-9585-d950420ade3a","correlationId":"cb0561a8-f4d7-4dc8-8258-005c61766d5b","timestamp":"2026-09-30T04:24:42.127Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":6,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.127Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:19:{"eventId":"dac0734f-6e89-45d9-8199-1e265fc4b44f","correlationId":"ab998cdb-6ba0-4052-8d46-79639e87b03d","nodeId":"LOCAL_NODE","type":{"eventId":"c09f5e7c-959b-422d-91c0-2149f8671824","correlationId":"44c9ab91-2082-4c3e-8521-43fea0401ea0","timestamp":"2026-09-30T04:24:42.128Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":7,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.128Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:20:{"eventId":"d0ea9533-37f9-424d-842c-76ba97712abb","correlationId":"ef9a3c9f-b32d-4a23-982b-dfd6420392d2","nodeId":"LOCAL_NODE","type":{"eventId":"7676c591-da3c-459c-9ed6-71a66e23fe6d","correlationId":"28732289-8c93-4608-bd65-c3f7bd572c47","timestamp":"2026-09-30T04:24:42.128Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":8,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.128Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:21:{"eventId":"97ff578a-4ef3-4cfe-924b-40c1ae78e345","correlationId":"7cdbc5e4-add5-4670-ab06-5277e6f0aedc","nodeId":"LOCAL_NODE","type":{"eventId":"f9a7ab9d-ed05-4346-aeae-188109076d9f","correlationId":"5c8e5a83-b080-4249-b796-63b1f1234b04","timestamp":"2026-09-30T04:24:42.129Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":9,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.129Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:22:{"eventId":"742cce78-d38e-4afa-b25c-04ddff20155d","correlationId":"5fd8f35a-b2b3-487a-8a5a-c716ecfb33ba","nodeId":"LOCAL_NODE","type":{"eventId":"cb471492-e96e-4a82-a6d6-6da7309d2311","correlationId":"dc03f6de-b096-4abc-b689-a04a34bfba78","timestamp":"2026-09-30T04:24:42.129Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":10,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.130Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:23:{"eventId":"cf754909-a34e-4bca-82e2-5010b3e1cb61","correlationId":"8559956b-0150-43da-8d41-377ca6ca84f9","nodeId":"LOCAL_NODE","type":{"eventId":"e9274dd3-bcc1-4fc5-ab53-39f9709db958","correlationId":"246689fa-e2bc-4d4a-997d-c55ec68b1f4d","timestamp":"2026-09-30T04:24:42.130Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":11,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.130Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:24:{"eventId":"cf724849-dcf5-47bc-a393-09424dac2154","correlationId":"0cc7ea53-7f1b-4bca-807d-70e7e123b4d1","nodeId":"LOCAL_NODE","type":{"eventId":"c8179be2-718a-4ec0-a6e0-d051ef5a3d4c","correlationId":"a8d9db64-2954-491c-8236-cd406385f680","timestamp":"2026-09-30T04:24:42.131Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":12,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.131Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:25:{"eventId":"59f0e506-8ef2-49bf-94b9-72f7a8cf4521","correlationId":"935ac6e8-f19e-40ca-a76a-23813dda0da0","nodeId":"LOCAL_NODE","type":{"eventId":"47172142-1a38-4afe-a1ca-78f838dc6a22","correlationId":"728a79ce-0e4f-47cb-bb67-f5436a39884c","timestamp":"2026-09-30T04:24:42.131Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":13,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.131Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:26:{"eventId":"06573a5f-e393-4772-9464-79e1a6e0960e","correlationId":"82749c3b-e575-4aec-8f95-d5ee8ec40b9b","nodeId":"LOCAL_NODE","type":{"eventId":"b77adca4-d558-41de-99a6-2c10a60335d8","correlationId":"5bf60645-66ad-4773-bac5-cb4944d6e463","timestamp":"2026-09-30T04:24:42.131Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":14,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.132Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:27:{"eventId":"ec4722b2-359c-4493-818f-3c5996f463c4","correlationId":"08041953-04c1-4f5b-87e6-7455b8aaa78b","nodeId":"LOCAL_NODE","type":{"eventId":"9e2d38be-eaed-4b75-bfdc-a29479f59cba","correlationId":"095cb383-d404-4473-83dd-c97ed9a0986b","timestamp":"2026-09-30T04:24:42.132Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":15,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.132Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:28:{"eventId":"0e1cfa34-368d-46de-8150-c2eaceadb623","correlationId":"455e739c-2da7-434e-a8d2-b2dc0cb25f5e","nodeId":"LOCAL_NODE","type":{"eventId":"1f3c2ee6-ab9b-4401-a2e3-b2060b10fb58","correlationId":"0b54e30e-b736-48e9-b48b-b2944dac9ba5","timestamp":"2026-09-30T04:24:42.132Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":16,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.132Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:29:{"eventId":"eb575b69-6ab7-4575-b877-d608e47967f9","correlationId":"5fa282b1-ede0-4403-ba83-20f82a9bd6d6","nodeId":"LOCAL_NODE","type":{"eventId":"2cf114ea-aea2-4b26-b57c-81aadd2f644d","correlationId":"0f51107f-9182-4773-b2e0-c6c8e240fb6c","timestamp":"2026-09-30T04:24:42.133Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":17,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.133Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:30:{"eventId":"2ebf63c4-64c9-46f1-9027-f09b3228ee6f","correlationId":"ca82fdd3-c918-4ea7-b2ea-9e91aebeb6e8","nodeId":"LOCAL_NODE","type":{"eventId":"137dbc94-32bf-47a4-8fe9-a015e499f103","correlationId":"4e714070-5701-4428-9d20-96e44bd85880","timestamp":"2026-09-30T04:24:42.133Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":18,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.133Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:31:{"eventId":"89a43174-e682-4f08-9df6-aeceebb8d864","correlationId":"154bf87c-25c0-4435-997b-a0df769b1612","nodeId":"LOCAL_NODE","type":{"eventId":"b87fe233-087e-4a3d-ab1f-6310a7674e96","correlationId":"6f8ee71f-4933-4ff2-a3e7-afbdaa4b2a4a","timestamp":"2026-09-30T04:24:42.133Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":19,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.134Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:32:{"eventId":"0ba64ce1-4392-4c4b-97c6-e048eb4a6f8e","correlationId":"8a58aa33-81f0-406e-b0af-b47af958fa73","nodeId":"LOCAL_NODE","type":{"eventId":"afe9761a-8faf-4834-8a0b-b68bf35a623d","correlationId":"1021742f-1ee1-46a4-b8f5-5453c09e7d05","timestamp":"2026-09-30T04:24:42.134Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":20,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.134Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:33:{"eventId":"c35a42d3-0e04-4046-b24f-4cd3c555d558","correlationId":"59c78f5a-2539-43fe-9826-10dff7d0b969","nodeId":"LOCAL_NODE","type":{"eventId":"08a2a457-f9ff-4f1a-93d7-25cf374d5845","correlationId":"593e3d31-c368-4f46-8052-d7a02add30fd","timestamp":"2026-09-30T04:24:42.134Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":21,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.134Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:34:{"eventId":"b664d2b8-adfa-4952-8f92-8dd40ff5e287","correlationId":"70e0a89d-72e2-413a-89e6-b7081e4471b4","nodeId":"LOCAL_NODE","type":{"eventId":"dd98412f-bb2e-4ada-b267-c16019d03557","correlationId":"61dd93d0-4b5d-4a15-a7b0-09b8cd1a84cc","timestamp":"2026-09-30T04:24:42.135Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":22,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.135Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:35:{"eventId":"58864597-c708-452a-a221-39fa319809a7","correlationId":"45e27bb3-3566-4c8b-bf54-74a355357361","nodeId":"LOCAL_NODE","type":{"eventId":"d955cd0f-4e9d-4dc4-810a-774e5454cf25","correlationId":"7bfd5d11-0efe-46e2-9364-a04f322fdd02","timestamp":"2026-09-30T04:24:42.135Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":23,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.135Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:36:{"eventId":"2e71e9e6-6f6b-4e1c-802f-01944cde3b7e","correlationId":"09e4a19d-d45c-4980-bc3f-01ac9a35e4f6","nodeId":"LOCAL_NODE","type":{"eventId":"e0c1853d-eac7-4f56-a394-f48c73e7c5de","correlationId":"862e706d-5826-4c4a-821d-5b3f1b2a31e5","timestamp":"2026-09-30T04:24:42.136Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":24,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.136Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:37:{"eventId":"69b09bc6-9ee0-4a44-aefc-839e7da6ef65","correlationId":"f091ffbf-6cb4-4af6-a085-48f858d282e3","nodeId":"LOCAL_NODE","type":{"eventId":"b9f010bb-1564-4032-ba70-34e108e68851","correlationId":"2514f0c2-97b9-471f-a294-5eb750840525","timestamp":"2026-09-30T04:24:42.136Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":25,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.136Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:38:{"eventId":"753f86c7-cee7-4a00-883f-08f3c875d704","correlationId":"44ba43d5-82a6-4355-95d6-bcb2edec82d5","nodeId":"LOCAL_NODE","type":{"eventId":"ea53ab86-572d-441f-b577-2b6094b6e94b","correlationId":"433498c8-f200-44ce-a7bb-7c2fd860ae70","timestamp":"2026-09-30T04:24:42.136Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":26,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.136Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:39:{"eventId":"a263fa98-45b3-4a3f-9228-0f19ebc7a776","correlationId":"a663aa62-0b12-4543-aeaa-a606524d363b","nodeId":"LOCAL_NODE","type":{"eventId":"82dc01dd-4080-4274-b2fd-4e9be8a62039","correlationId":"5550c3b6-075b-4d46-b5c5-0c831627443e","timestamp":"2026-09-30T04:24:42.137Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":27,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.137Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:40:{"eventId":"412786e3-5bd9-454a-9288-86008a1a04e3","correlationId":"24f1077c-21a4-4f6d-8ae5-2d3a642810e1","nodeId":"LOCAL_NODE","type":{"eventId":"862f36b0-5b05-4f9c-844d-a4723a90e9fd","correlationId":"8319dcd7-238a-4226-aabd-372f78a3972e","timestamp":"2026-09-30T04:24:42.137Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":28,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.137Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:41:{"eventId":"cf6918c5-ca65-4efe-8631-578301f498e1","correlationId":"bc31b3fd-0dcf-4dbc-8715-15d981d05b19","nodeId":"LOCAL_NODE","type":{"eventId":"465a721c-b7eb-42e2-8218-1a90348c3572","correlationId":"af0eaaf9-3e36-486b-9ac3-55af29a03a60","timestamp":"2026-09-30T04:24:42.137Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":29,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.138Z","payload":{}}
+gandom-core/p2p/reports/runtime-events.jsonl:42:{"eventId":"a1c241cd-158f-4529-a04e-a4d0c810f032","correlationId":"83feb17e-9254-4b76-9d71-d303c6398282","nodeId":"LOCAL_NODE","type":{"eventId":"61121cb2-f5ad-4fc7-962a-9c8d4c6959ae","correlationId":"c7902c04-4ba8-4b3f-85c1-377f310c5ee6","timestamp":"2026-09-30T04:24:42.138Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":30,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.138Z","payload":{}}
+--- STEP 024 ---
+gandom-core/p2p/reports/CH02-AUDIT-20260930T112500Z.txt:159:--- STEP 024 ---
+
+===== EVIDENCE INVENTORY =====
+gandom-core/p2p/engine/p2p-report-bus.js
+gandom-core/p2p/event-bus/evidence/event-bus-proof.jsonl
+gandom-core/p2p/evidence/error-recovery-proof.jsonl
+gandom-core/p2p/evidence/runtime-benchmark-proof.json
+gandom-core/p2p/evidence/security-events-proof.jsonl
+gandom-core/p2p/reports/runtime-events.jsonl
+
+===== EVENT EVIDENCE RECORD COUNTS =====
+FILE=gandom-core/p2p/event-bus/evidence/event-bus-proof.jsonl
+5 gandom-core/p2p/event-bus/evidence/event-bus-proof.jsonl
+{"eventId":"46105b7d-2c61-4b99-bdd1-f67c7f458f40","correlationId":"5cce1a7a-7c78-49af-bec8-871d0d33c158","timestamp":"2026-09-30T00:32:50.740Z","source":"GANDOM_EVENT_BUS","type":"EVENT_BUS_BOOTSTRAP","payload":{"status":"REAL_RUNTIME_EVENT"}}
+{"eventId":"f5f68e9c-a068-4fc8-a7b3-78882bbecb97","correlationId":"c36d0742-ec8b-43ad-9df3-55bf03e30a7a","timestamp":"2026-09-30T00:33:51.475Z","source":"GANDOM_EVENT_BUS","type":"EVENT_BUS_BOOTSTRAP","payload":{"status":"REAL_RUNTIME_EVENT"}}
+{"eventId":"f989dc95-0c19-463f-9aa5-ef801d73a729","correlationId":"653d2900-9790-4348-bf1c-1dfbae3f0d5b","timestamp":"2026-09-30T03:52:51.311Z","source":"GANDOM_EVENT_BUS","type":{"eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","source":"GANDOM_SECURITY_RUNTIME","type":"SECURITY_EVENT","payload":{"control":"AI_FINANCIAL_AUTHORITY","withdrawalAuthority":false,"transferAuthority":false,"depositAuthority":false,"result":"DENIED","realRuntimeCheck":true}},"payload":{}}
+FILE=gandom-core/p2p/evidence/error-recovery-proof.jsonl
+2 gandom-core/p2p/evidence/error-recovery-proof.jsonl
+{"eventId":"ddbd64bf-6f14-45a2-9cb3-153469d858bd","correlationId":"ef46bc47-6472-46bf-b1ad-90b1bbb335d3","timestamp":"2026-09-30T04:13:20.323Z","source":"GANDOM_ERROR_RECOVERY","type":"ERROR_EVENT","payload":{"status":"REAL_RUNTIME_ERROR_TEST","recovered":true}}
+{"eventId":"e39ea64b-fc7f-4196-9525-0d7b4ec88d70","correlationId":"ef46bc47-6472-46bf-b1ad-90b1bbb335d3","timestamp":"2026-09-30T04:13:20.342Z","source":"GANDOM_ERROR_RECOVERY","type":"RECOVERY_EVENT","payload":{"status":"REAL_RUNTIME_RECOVERY","recovered":true,"sourceErrorEventId":"ddbd64bf-6f14-45a2-9cb3-153469d858bd"}}
+FILE=gandom-core/p2p/evidence/security-events-proof.jsonl
+2 gandom-core/p2p/evidence/security-events-proof.jsonl
+{"step":"021","name":"SECURITY_EVENTS","eventId":"ebdaf210-bfc5-4dfb-a0f8-f16be00a321c","correlationId":"0c5e6814-7c96-4443-95ec-df54fdc62063","timestamp":"2026-09-30T03:52:51.294Z","realRuntime":true,"securityEvent":"SECURITY_EVENT","aiWithdrawalAuthority":false,"aiTransferAuthority":false,"aiDepositAuthority":false,"result":"DENIED"}
+{"eventId":"5debe60b-447d-461f-b88b-9811ec871b9c","correlationId":"ae8a8cbc-5c55-4577-8543-110579f890ac","timestamp":"2026-09-30T04:05:26.999Z","type":"SECURITY_EVENT","source":"GANDOM_SECURITY_RUNTIME","payload":{"aiDepositAuthority":false,"aiWithdrawalAuthority":false,"aiTransferAuthority":false,"result":"DENIED"}}
+FILE=gandom-core/p2p/reports/runtime-events.jsonl
+1012 gandom-core/p2p/reports/runtime-events.jsonl
+{"eventId":"28b6e0d4-bea4-44ea-8b70-1626dfef4de2","correlationId":"b5fb2590-3b19-4cf0-9b9b-91a897953bdf","nodeId":"LOCAL_NODE","type":{"eventId":"f8c53064-bc25-4787-87e2-09cc52498c13","correlationId":"00128f3a-f3ad-41bb-9940-2a467f013879","timestamp":"2026-09-30T04:24:42.272Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":998,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.272Z","payload":{}}
+{"eventId":"a574c202-d3a8-4f1a-aa27-de82c7fc1f23","correlationId":"c3a53626-1b87-4b2d-a550-62db59ab0aa0","nodeId":"LOCAL_NODE","type":{"eventId":"391de20e-0486-4c91-ba96-f98af0ec62fb","correlationId":"cac1faf1-92c6-4488-a893-8bc6dcdb2bc3","timestamp":"2026-09-30T04:24:42.272Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":999,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.272Z","payload":{}}
+{"eventId":"fe6066ad-1501-4622-a118-5b8e1f530425","correlationId":"9ebff098-774e-41f3-8b4b-abd0f51c52d5","nodeId":"LOCAL_NODE","type":{"eventId":"d746a25c-272a-4ac7-8ac2-e173bb5785da","correlationId":"983de84f-d225-44f6-a493-2018284508ec","timestamp":"2026-09-30T04:24:42.272Z","source":"STEP_023_REAL_RUNTIME_BENCHMARK","type":"LATENCY_THROUGHPUT_BENCHMARK","payload":{"sequence":1000,"benchmark":true}},"source":"GANDOM_RUNTIME","timestamp":"2026-09-30T04:24:42.272Z","payload":{}}
+
+===== P2P CONTRACT =====
+{
+  "project": "GANDOM",
+  "module": "P2P_INTERNAL_NERVOUS_SYSTEM",
+  "version": "1.0.0",
+  "role": "INTERNAL_REPORTING_AND_EVENT_BUS",
+  "real_events_only": true,
+  "fake_reports": false,
+  "immutable_evidence": true,
+  "reports": [
+    "NODE_HEALTH",
+    "PEER_STATE",
+    "AI_WORKER_STATE",
+    "REVENUE_EVENT",
+    "WALLET_EVENT",
+    "COMMERCE_EVENT",
+    "SECURITY_EVENT",
+    "ERROR_EVENT",
+    "RECOVERY_EVENT"
+  ],
+  "performance": [
+    "LATENCY",
+    "THROUGHPUT",
+    "QUEUE_DEPTH",
+    "ERROR_RATE",
+    "RECOVERY_TIME"
+  ]
+}
+
+===== SERVER SOURCE INTEGRITY =====
+61a853635818df420795937b325fcbb5db79de6881ef642f19672c7c7837bca8  server.js
+5:const WebSocket = require('ws');
+7:const PORT = Number(process.env.PORT || 8787);
+13:  if (req.url === '/health') {
+43:const wss = new WebSocket.Server({ server: httpServer });
+55:  if (ws.readyState !== WebSocket.OPEN) return false;
+153:    if (peer.ws.readyState === WebSocket.OPEN) {
+164:httpServer.listen(PORT, '0.0.0.0', () => {
+167:    websocket: `ws://0.0.0.0:${PORT}`,
+168:    health: `http://127.0.0.1:${PORT}/health`
+
+===== SERVER HEALTH =====
+{"ok":true,"project":"GANDUM-P2P","node_id":"11c875bd-49ce-4aa8-9607-0bef48ad43f1","peers":0,"uptime":10771.265057103}
+HEALTH_REQUEST=PASS
+
+===== DUPLICATE HASH AUDIT =====
+
+===== FORBIDDEN FAKE/PASS PATTERNS =====
+
+===== FINAL AUDIT STATE =====
+THIS_REPORT_IS_AUDIT_ONLY=YES
+NO_FILE_MODIFICATION=YES
+NO_DELETE=YES
+NO_OVERWRITE=YES
+NO_FAKE_PASS=YES
+CHAPTER_02_FINAL_VERIFICATION=PENDING_INDEPENDENT_REVIEW
+===== END =====

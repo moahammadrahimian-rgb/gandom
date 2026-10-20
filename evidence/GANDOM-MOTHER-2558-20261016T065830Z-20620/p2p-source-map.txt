@@ -1,0 +1,34 @@
+server.js:43:const PEER_ADDRESS = process.env.PEER_ADDRESS || '';
+server.js:46:let reconnectTimer = null;
+server.js:440:      outbound_peer: outboundPeer ? PEER_ADDRESS : null,
+server.js:471:const wss = new WebSocket.Server({ server: httpServer });
+server.js:508:  log('PEER_CONNECTED', {
+server.js:543:      send(ws, 'HELLO_ACK', {
+server.js:579:    if (message.type === 'DATA') {
+server.js:580:      send(ws, 'DATA_ACK', {
+server.js:627:    log('PEER_DISCONNECTED', {
+server.js:642:function connectOutbound() {
+server.js:643:  if (shuttingDown || !PEER_ADDRESS) return;
+server.js:652:    address: PEER_ADDRESS,
+server.js:656:  const ws = new WebSocket(PEER_ADDRESS, {
+server.js:664:  const peerId = `outbound:${PEER_ADDRESS}`;
+server.js:675:      address: PEER_ADDRESS,
+server.js:681:      address: PEER_ADDRESS,
+server.js:717:    if (message.type === 'HELLO_ACK') {
+server.js:718:      log('PEER_OUTBOUND_HELLO_ACK', {
+server.js:728:    if (message.type === 'DATA_ACK') {
+server.js:729:      log('PEER_OUTBOUND_DATA_ACK', {
+server.js:756:      reconnect_in_ms: shuttingDown ? 0 : RECONNECT_DELAY
+server.js:759:    if (!shuttingDown && !reconnectTimer) {
+server.js:760:      reconnectTimer = setTimeout(() => {
+server.js:761:        reconnectTimer = null;
+server.js:762:        connectOutbound();
+server.js:770:      address: PEER_ADDRESS,
+server.js:776:const heartbeat = setInterval(() => {
+server.js:801:  if (PEER_ADDRESS) {
+server.js:802:    connectOutbound();
+server.js:809:  if (reconnectTimer) {
+server.js:810:    clearTimeout(reconnectTimer);
+server.js:811:    reconnectTimer = null;
+server.js:819:  clearInterval(heartbeat);
+client.js:12:const ws = new WebSocket(url, {

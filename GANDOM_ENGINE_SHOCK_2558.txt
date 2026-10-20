@@ -1,0 +1,490 @@
+GANDOM_ENGINE_SHOCK_2558
+MODE=READ_ONLY
+2026-10-16T16:24:33+03:30
+
+===== BLOCK CLASS =====
+184:  toJSON() {
+198:  static fromJSON(obj) {
+208:class Block {
+225:    this.hash = this.calculateHash();
+236:  calculateHash() {
+249:  mine() {
+253:      this.hash = this.calculateHash();
+257:  toJSON() {
+262:      transactions: this.transactions.map(t => t.toJSON()),
+271:  static fromJSON(obj) {
+272:    const txs = obj.transactions.map(t => Transaction.fromJSON(t));
+305:        chain: this.chain.map(b => b.toJSON())
+309:        this.pendingTx.map(t => t.toJSON()), null, 2
+341:      this.chain = data.chain.map(b => Block.fromJSON(b));
+345:        this.pendingTx = txs.map(t => Transaction.fromJSON(t));
+366:    genesis.hash = genesis.calculateHash();
+378:    block.mine();
+499:      if (block.calculateHash() !== block.hash) return false;
+539:      if (curr.hash !== curr.calculateHash()) return false;
+
+===== MERKLE IMPLEMENTATION =====
+53-      return crypto.verify(null, Buffer.from(data), pk, Buffer.from(signatureHex, 'hex'));
+54-    } catch(e) { return false; }
+55-  }
+56-}
+57-
+58-// ═══════════════════════════════════════════════════════
+59-// 🌳 Merkle Tree
+60-// ═══════════════════════════════════════════════════════
+61:class MerkleTree {
+62-  constructor(transactions) {
+63-    this.transactions = transactions;
+64-    this.leaves = transactions.map(tx => this.hash(tx));
+65-    this.levels = [];
+66-    this.root = this.buildTree();
+67-  }
+68-  
+69-  hash(data) {
+70-    return crypto.createHash('sha256')
+71-      .update(typeof data === 'string' ? data : JSON.stringify(data))
+72-      .digest('hex');
+73-  }
+74-  
+75-  buildTree() {
+76-    if (this.leaves.length === 0) return this.hash('');
+77-    
+78-    this.levels.push(this.leaves);
+79-    let current = this.leaves;
+80-    
+81-    while (current.length > 1) {
+82-      const next = [];
+83-      for (let i = 0; i < current.length; i += 2) {
+84-        const left = current[i];
+85-        const right = current[i + 1] || left;
+86-        next.push(this.hash(left + right));
+87-      }
+88-      this.levels.push(next);
+89-      current = next;
+90-    }
+91-    
+92-    return current[0];
+93-  }
+94-  
+95-  getProof(index) {
+96-    const proof = [];
+97-    let idx = index;
+98-    
+99-    for (let i = 0; i < this.levels.length - 1; i++) {
+100-      const level = this.levels[i];
+101-      const isRightNode = idx % 2 === 1;
+102-      const siblingIdx = isRightNode ? idx - 1 : idx + 1;
+103-      
+104-      if (siblingIdx < level.length) {
+105-        proof.push({
+106-          position: isRightNode ? 'left' : 'right',
+107-          data: level[siblingIdx]
+108-        });
+109-      }
+110-      
+111-      idx = Math.floor(idx / 2);
+112-    }
+113-    
+114-    return proof;
+115-  }
+116-  
+117-  static verifyProof(leaf, proof, root) {
+118-    let hash = crypto.createHash('sha256')
+119-      .update(typeof leaf === 'string' ? leaf : JSON.stringify(leaf))
+120-      .digest('hex');
+121-    
+122-    for (const step of proof) {
+123-      if (step.position === 'left') {
+124-        hash = crypto.createHash('sha256').update(step.data + hash).digest('hex');
+125-      } else {
+126-        hash = crypto.createHash('sha256').update(hash + step.data).digest('hex');
+127-      }
+128-    }
+129-    
+130-    return hash === root;
+131-  }
+
+===== COMPLETE VALIDATOR =====
+      .reduce((s, t) => s + t.amount + t.fee, 0);
+    
+    if (balance < tx.amount + tx.fee + pending) {
+      return { ok: false, error: 'INSUFFICIENT_BALANCE', balance, needed: tx.amount + tx.fee };
+    }
+    
+    this.pendingTx.push(tx);
+    this.save();
+    return { ok: true, txid: tx.txid };
+  }
+  
+  // GANDOM 2558: validate a received block before appending it.
+  isValidBlock(block, previousBlock = this.getLatest()) {
+    try {
+      if (!block || !previousBlock) return false;
+      if (!Number.isSafeInteger(block.index) ||
+          block.index !== previousBlock.index + 1) return false;
+      if (block.prevHash !== previousBlock.hash) return false;
+      if (!Number.isSafeInteger(block.timestamp) ||
+          block.timestamp < previousBlock.timestamp) return false;
+      if (!Number.isSafeInteger(block.nonce) || block.nonce < 0) return false;
+      if (!Number.isSafeInteger(block.difficulty) ||
+          block.difficulty < 1 || block.difficulty > 64) return false;
+      if (!Array.isArray(block.transactions) ||
+          block.transactions.length === 0) return false;
+      if (block.reward !== Block.calculateReward(block.index)) return false;
+
+      const merkle = new MerkleTree(block.transactions);
+      if (merkle.root !== block.merkleRoot) return false;
+      if (block.calculateHash() !== block.hash) return false;
+      if (!block.hash.startsWith('0'.repeat(block.difficulty))) return false;
+
+      const ids = new Set();
+      let coinbaseCount = 0;
+
+      for (const tx of block.transactions) {
+        if (!tx || typeof tx.txid !== 'string' || !tx.txid ||
+            typeof tx.from !== 'string' || typeof tx.to !== 'string' ||
+            !tx.to ||
+            !Number.isFinite(tx.amount) || tx.amount < 0 ||
+            !Number.isFinite(tx.fee) || tx.fee < 0 ||
+            !Number.isFinite(tx.timestamp) || tx.timestamp < 0 ||
+            ids.has(tx.txid)) return false;
+
+        ids.add(tx.txid);
+
+        if (tx.type === 'COINBASE') {
+          coinbaseCount++;
+          if (tx.from !== 'COINBASE' || tx.fee !== 0 ||
+              tx.amount !== block.reward) return false;
+        } else if (tx.type === 'TRANSFER') {
+          if (tx.amount <= 0 || !tx.verify()) return false;
+        } else {
+          return false;
+        }
+      }
+
+      if (coinbaseCount !== 1) return false;
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  // ─── اعتبارسنجی ───
+  isValid() {
+    for (let i = 1; i < this.chain.length; i++) {
+      const curr = this.chain[i];
+      const prev = this.chain[i-1];
+      if (curr.hash !== curr.calculateHash()) return false;
+      if (curr.prevHash !== prev.hash) return false;
+      
+      // بررسی Merkle Root
+      const merkle = new MerkleTree(curr.transactions);
+      if (merkle.root !== curr.merkleRoot) return false;
+    }
+    return true;
+  }
+  
+  // ─── موجودی کل ───
+  getTotalSupply() {
+    let total = 0;
+    for (const block of this.chain) {
+      for (const tx of block.transactions) {
+        if (tx.type === 'COINBASE') total += tx.amount;
+      }
+    }
+    return total;
+  }
+  
+  // ─── آمار ───
+  getStats() {
+    const latest = this.getLatest();
+    return {
+      length: this.chain.length,
+      latest_hash: latest.hash,
+
+===== GENESIS AND BLOCK COMMIT =====
+    } catch(e) {
+      console.error(`❌ خطا: ${e.message}`);
+      return false;
+    }
+  }
+  
+  // ─── بارگذاری ───
+  load() {
+    try {
+      if (!fs.existsSync(CHAIN_FILE)) {
+        this.createGenesis();
+        return;
+      }
+      
+      const data = JSON.parse(fs.readFileSync(CHAIN_FILE, 'utf8'));
+      this.difficulty = data.difficulty || 3;
+      this.chain = data.chain.map(b => Block.fromJSON(b));
+      
+      if (fs.existsSync(TX_FILE)) {
+        const txs = JSON.parse(fs.readFileSync(TX_FILE, 'utf8'));
+        this.pendingTx = txs.map(t => Transaction.fromJSON(t));
+      }
+      
+      if (fs.existsSync(WALLETS_FILE)) {
+        this.wallets = JSON.parse(fs.readFileSync(WALLETS_FILE, 'utf8'));
+      }
+      
+      if (!this.isValid()) {
+        console.error('❌ زنجیره نامعتبره!');
+        this.createGenesis();
+      }
+    } catch(e) {
+      console.error(`❌ خطا در بارگذاری: ${e.message}`);
+      this.createGenesis();
+    }
+  }
+  
+  // ─── Genesis ───
+  createGenesis() {
+    const genesisTx = Transaction.coinbase('GDM-GENESIS-WALLET', 0);
+    const genesis = new Block(0, '0'.repeat(64), 0, [genesisTx], 3);
+    genesis.hash = genesis.calculateHash();
+    this.chain = [genesis];
+    this.wallets['GDM-GENESIS-WALLET'] = 0;
+    this.save();
+  }
+  
+  getLatest() { return this.chain[this.chain.length - 1]; }
+  
+  // ─── اضافه کردن بلوک ───
+  addBlock(block) {
+    block.prevHash = this.getLatest().hash;
+    block.difficulty = this.difficulty;
+    block.mine();
+    this.chain.push(block);
+    this.applyTransactions(block);
+    this.save();
+    return block;
+  }
+  
+  // ─── اعمال تراکنش‌ها روی کیف‌ها ───
+  applyTransactions(block) {
+    for (const tx of block.transactions) {
+      if (tx.type === 'COINBASE') {
+        this.wallets[tx.to] = (this.wallets[tx.to] || 0) + tx.amount;
+      } else {
+
+===== NODE B ACCEPTANCE =====
+        } else {
+          console.log(`✅ زنجیره من جدیدتره`);
+        }
+        return;
+      }
+
+      if (msg.type === 'CHAIN_DATA') {
+        console.log(`📥 دریافت ${msg.payload.blocks.length} بلوک از نود A`);
+        let added = 0;
+        for (const blockData of msg.payload.blocks) {
+          const block = Block.fromJSON(blockData);
+          const latest = chainB.getLatest();
+          
+          if (block.index <= latest.index) continue;
+          if (block.index !== latest.index + 1) break;
+          
+          const valid = chainB.isValidBlock ? chainB.isValidBlock(block, latest) : false;
+          if (!valid) {
+            console.log(`   ❌ بلوک ${block.index} نامعتبر`);
+            break;
+          }
+          
+          chainB.chain.push(block);
+          added++;
+        }
+        
+        if (added > 0) {
+          chainB.save();
+          stats.blocksReceived += added;
+          stats.lastSync = new Date().toISOString();
+          console.log(`   ✅ ${added} بلوک اضافه شد (ارتفاع B: ${chainB.chain.length})`);
+        }
+        return;
+      }
+
+      if (msg.type === 'NEW_BLOCK_FROM_PEER') {
+        console.log(`📥 بلوک جدید از نود A`);
+        try {
+          const block = Block.fromJSON(msg.block);
+          const latest = chainB.getLatest();
+          
+          if (block.index <= latest.index) return;
+          if (block.index !== latest.index + 1) {
+            // gap - نیاز به sync
+            send(ws, 'GET_CHAIN', {});
+            return;
+          }
+          
+          if (!chainB.isValidBlock(block, latest)) {
+            console.error('REJECTED_INVALID_PEER_BLOCK=' + block.index);
+            return;
+          }
+          chainB.chain.push(block);
+          chainB.save();
+          stats.blocksReceived++;
+          console.log(`   ✅ بلوک ${block.index} (ارتفاع B: ${chainB.chain.length})`);
+        } catch(e) {
+          console.log(`   ❌ خطا: ${e.message}`);
+        }
+        return;
+      }
+
+      // ─── پردازشگر عمومی ───
+      if (handleBlockchainMessage(msg, ws, NODE_ID, chainB, new Map(), send)) {
+        return;
+      }
+
+===== P2P ACCEPTANCE =====
+// ═══════════════════════════════════════════════════════
+// 🔗 GANDOM BLOCKCHAIN P2P HANDLER
+// ═══════════════════════════════════════════════════════
+
+function handleBlockchainMessage(message, ws, peerId, gandomChain, peers, send) {
+  const type = message.type;
+
+  // ─── درخواست طول زنجیره ───
+  if (type === 'GET_CHAIN_LENGTH') {
+    console.log(`🔗 ${peerId} درخواست طول زنجیره`);
+    send(ws, 'CHAIN_LENGTH', {
+      length: gandomChain.chain.length,
+      latestHash: gandomChain.getLatest().hash,
+      latestIndex: gandomChain.getLatest().index
+    });
+    return true;
+  }
+
+  // ─── درخواست کل زنجیره ───
+  if (type === 'GET_CHAIN') {
+    console.log(`🔗 ${peerId} درخواست کل زنجیره (${gandomChain.chain.length} بلوک)`);
+    send(ws, 'CHAIN_DATA', {
+      length: gandomChain.chain.length,
+      blocks: gandomChain.chain.map(b => b.toJSON())
+    });
+    return true;
+  }
+
+  // ─── دریافت بلوک جدید از نود دیگه ───
+  if (type === 'NEW_BLOCK_FROM_PEER') {
+    console.log(`📥 بلوک جدید از ${peerId} دریافت شد`);
+    try {
+      const Block = require('./blockchain-100.js').Block;
+      const block = Block.fromJSON(message.block);
+      const latest = gandomChain.getLatest();
+
+      if (block.index <= latest.index) {
+        console.log(`   ⏭️  بلوک ${block.index} قبلاً داریم`);
+        return true;
+      }
+
+      if (block.index !== latest.index + 1) {
+        console.log(`   ⚠️  gap detected - نیاز به sync`);
+        return true;
+      }
+
+      if (!gandomChain.isValidBlock(block, latest)) {
+        console.log(`   ❌ بلوک نامعتبر`);
+        return true;
+      }
+
+      gandomChain.chain.push(block);
+      gandomChain.save();
+      console.log(`   ✅ بلوک ${block.index} اضافه شد (ارتفاع: ${gandomChain.chain.length})`);
+      return true;
+    } catch(e) {
+      console.log(`   ❌ خطا: ${e.message}`);
+      return true;
+    }
+  }
+
+  // ─── نود دیگه‌ای زنجیره‌اش رو طولانی‌تر دیده ───
+  if (type === 'REQUEST_FULL_SYNC') {
+    console.log(`🔄 ${peerId} درخواست sync کامل`);
+    send(ws, 'CHAIN_DATA', {
+      length: gandomChain.chain.length,
+      blocks: gandomChain.chain.map(b => b.toJSON())
+    });
+    return true;
+  }
+
+  return false;
+}
+
+// ═══════════════════════════════════════════════════════
+
+===== TRANSACTION VALIDATION =====
+455-      console.log(`⬆️  سختی افزایش یافت: ${this.difficulty}`);
+456-    } else if (actualTime > expectedTime * 2) {
+457-      this.difficulty = Math.max(1, this.difficulty - 1);
+458-      console.log(`⬇️  سختی کاهش یافت: ${this.difficulty}`);
+459-    }
+460-  }
+461-  
+462-  // ─── اضافه کردن تراکنش ───
+463:  addTransaction(tx) {
+464-    if (tx.type === 'COINBASE') return false;
+465-    if (!tx.verify()) return { ok: false, error: 'INVALID_SIGNATURE' };
+466-    
+467-    const balance = this.wallets[tx.from] || 0;
+468-    const pending = this.pendingTx
+469-      .filter(t => t.from === tx.from)
+470-      .reduce((s, t) => s + t.amount + t.fee, 0);
+471-    
+472-    if (balance < tx.amount + tx.fee + pending) {
+473-      return { ok: false, error: 'INSUFFICIENT_BALANCE', balance, needed: tx.amount + tx.fee };
+474-    }
+475-    
+476-    this.pendingTx.push(tx);
+477-    this.save();
+478-    return { ok: true, txid: tx.txid };
+479-  }
+480-  
+481-  // GANDOM 2558: validate a received block before appending it.
+482-  isValidBlock(block, previousBlock = this.getLatest()) {
+483-    try {
+484-      if (!block || !previousBlock) return false;
+485-      if (!Number.isSafeInteger(block.index) ||
+486-          block.index !== previousBlock.index + 1) return false;
+487-      if (block.prevHash !== previousBlock.hash) return false;
+488-      if (!Number.isSafeInteger(block.timestamp) ||
+489-          block.timestamp < previousBlock.timestamp) return false;
+490-      if (!Number.isSafeInteger(block.nonce) || block.nonce < 0) return false;
+491-      if (!Number.isSafeInteger(block.difficulty) ||
+492-          block.difficulty < 1 || block.difficulty > 64) return false;
+493-      if (!Array.isArray(block.transactions) ||
+494-          block.transactions.length === 0) return false;
+495-      if (block.reward !== Block.calculateReward(block.index)) return false;
+496-
+497-      const merkle = new MerkleTree(block.transactions);
+498-      if (merkle.root !== block.merkleRoot) return false;
+499-      if (block.calculateHash() !== block.hash) return false;
+500-      if (!block.hash.startsWith('0'.repeat(block.difficulty))) return false;
+501-
+502-      const ids = new Set();
+503-      let coinbaseCount = 0;
+504-
+505-      for (const tx of block.transactions) {
+506-        if (!tx || typeof tx.txid !== 'string' || !tx.txid ||
+507-            typeof tx.from !== 'string' || typeof tx.to !== 'string' ||
+508-            !tx.to ||
+
+===== TEST ENTRY POINTS =====
+--- test-100.js ---
+--- test-integration.js ---
+--- test-node-b.js ---
+
+===== CHAIN FINGERPRINTS =====
+cdd1f3703074cb9d0ab41487a99f5b6f5def2fd7e27488eb4b4cdad249432686  blockchain-data/chain.json
+7a9d09eb4fcd75c783e4baaf13ab01811743c06f4f715b30a0a41e6f30fcad12  blockchain-data-b/chain.json
+
+===== SOURCE SYNTAX =====
+SYNTAX_PASS=blockchain-100.js
+SYNTAX_PASS=node-b-chain.js
+SYNTAX_PASS=blockchain-p2p-handler.js
+
+CHAIN_DATA_MODIFIED=NO
+SERVICE_RESTARTED=NO
+PASS_REAL_FULL_SYSTEM=NOT_CLAIMED

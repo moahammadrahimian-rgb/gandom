@@ -1,0 +1,152 @@
+===== ACTIVE BUILD CONFIGURATION =====
+
+===== FILE: android/gradle/wrapper/gradle-wrapper.properties =====
+3:distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-all.zip
+
+===== FILE: android/build.gradle =====
+10:        classpath 'com.android.tools.build:gradle:8.6.0'
+
+===== FILE: android/settings.gradle =====
+26:apply from: 'capacitor.settings.gradle'
+
+===== FILE: android/app/build.gradle =====
+1:apply plugin: 'com.android.application'
+4:    namespace = "com.gandom.app"
+5:    compileSdk = rootProject.ext.compileSdkVersion
+38:    implementation project(':capacitor-android')
+MISSING=android/capacitor-android-plugins/build.gradle
+
+===== FILE: android/capacitor.settings.gradle =====
+2:include ':capacitor-android'
+3:project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/android/capacitor')
+
+===== FILE: node_modules/@capacitor/android/package.json =====
+2:  "name": "@capacitor/android",
+3:  "version": "8.5.2",
+
+===== FILE: node_modules/@capacitor/android/capacitor/build.gradle =====
+25:        classpath 'com.android.tools.build:gradle:8.13.0'
+35:apply plugin: 'com.android.library'
+44:    namespace = "com.getcapacitor.android"
+45:    compileSdk = project.hasProperty('compileSdkVersion') ? rootProject.ext.compileSdkVersion : 36
+
+===== BUILD FAILURE SIGNATURES =====
+REPORT_FOUND=/data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+1: /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */ html { line-height: 1.15; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100% } body { margin: 0 } article, aside, footer, header, nav, section { display: block } h1 { font-size: 2em; margin: .67em 0 } figcaption, figure, main { display: block } figure { margin: 1em
+2: Gradle Configuration Cache
+3: Loading...
+---
+4: function configurationCacheProblems() { return ( // begin-report-data {"diagnostics":[{"locations":[{"path":"settings file '/data/data/com.termux/files/home/gandom/android/settings.gradle'","line":3}],"problem":[{"text":"Properties should be assigned using the 'propName = value' syntax. Setting a property via the Gradle-generated 'propName value' o
+5: !function(n,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports["configuration-cache-report"]=t():n["configuration-cache-report"]=t()}(this,(()=>(({70:function(){void 0===ArrayBuffer.isView&&(ArrayBuffer.isView=function(n){return null!=n&&null!=n
+---
+---
+
+===== RECENT GRADLE LOG ERROR LINES =====
+81:> Could not resolve all artifacts for configuration 'classpath'.
+82:   > Could not find com.android.tools.build:gradle:8.13.0.
+102:BUILD FAILED in 1m 1s
+82:* What went wrong:
+83:A problem occurred configuring project ':capacitor-android'.
+84:> Could not resolve all artifacts for configuration 'classpath'.
+85:   > Could not find com.android.tools.build:gradle:8.13.0.
+99:org.gradle.api.ProjectConfigurationException: A problem occurred configuring project ':capacitor-android'.
+241:Caused by: org.gradle.api.internal.artifacts.ivyservice.TypedResolveException: Could not resolve all artifacts for configuration 'classpath'.
+420:Caused by: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find com.android.tools.build:gradle:8.13.0.
+435:BUILD FAILED in 1m
+82:* What went wrong:
+83:A problem occurred configuring project ':capacitor-android'.
+84:> Could not resolve all artifacts for configuration 'classpath'.
+85:   > Could not find com.android.tools.build:gradle:8.13.0.
+105:BUILD FAILED in 1m 5s
+79:* What went wrong:
+80:A problem occurred configuring project ':capacitor-android'.
+81:> java.nio.BufferOverflowException (no error message)
+95:BUILD FAILED in 57s
+79:* What went wrong:
+80:A problem occurred configuring project ':capacitor-android'.
+81:> java.nio.BufferOverflowException (no error message)
+89:org.gradle.api.ProjectConfigurationException: A problem occurred configuring project ':capacitor-android'.
+231:Caused by: java.nio.BufferOverflowException
+478:BUILD FAILED in 51s
+82:* What went wrong:
+83:A problem occurred configuring project ':capacitor-android'.
+84:> Could not resolve all artifacts for configuration 'classpath'.
+85:   > Could not find com.android.tools.build:gradle:8.13.0.
+105:BUILD FAILED in 1m 28s
+132:* What went wrong:
+133:A problem occurred configuring root project 'capacitor'.
+134:> Could not resolve all artifacts for configuration 'classpath'.
+135:   > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
+138:      > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
+143:      > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
+148:      > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
+160:BUILD FAILED in 2m 45s
+60:* What went wrong:
+61:A problem occurred configuring root project 'GANDOM'.
+62:> Could not resolve all artifacts for configuration 'classpath'.
+63:   > Could not resolve com.android.tools.build:gradle:8.6.0.
+66:      > Could not resolve com.android.tools.build:gradle:8.6.0.
+70:      > Could not resolve com.android.tools.build:gradle:8.6.0.
+74:      > Could not resolve com.android.tools.build:gradle:8.6.0.
+78:      > Could not resolve com.android.tools.build:gradle:8.6.0.
+82:      > Could not resolve com.android.tools.build:gradle:8.6.0.
+86:   > Could not resolve com.google.gms:google-services:4.4.2.
+89:      > Could not resolve com.google.gms:google-services:4.4.2.
+93:      > Could not resolve com.google.gms:google-services:4.4.2.
+97:      > Could not resolve com.google.gms:google-services:4.4.2.
+101:      > Could not resolve com.google.gms:google-services:4.4.2.
+105:      > Could not resolve com.google.gms:google-services:4.4.2.
+122:BUILD FAILED in 5m 15s
+79:* What went wrong:
+80:A problem occurred configuring project ':capacitor-android'.
+81:> java.nio.BufferOverflowException (no error message)
+89:org.gradle.api.ProjectConfigurationException: A problem occurred configuring project ':capacitor-android'.
+231:Caused by: java.nio.BufferOverflowException
+478:BUILD FAILED in 54s
+79:* What went wrong:
+80:A problem occurred configuring project ':capacitor-android'.
+81:> java.nio.BufferOverflowException (no error message)
+89:org.gradle.api.ProjectConfigurationException: A problem occurred configuring project ':capacitor-android'.
+231:Caused by: java.nio.BufferOverflowException
+478:BUILD FAILED in 55s
+64:* What went wrong:
+65:A problem occurred configuring root project 'android'.
+66:> Could not resolve all artifacts for configuration 'classpath'.
+67:   > Could not find com.android.tools.build:gradle:8.13.0.
+80:BUILD FAILED in 42s
+82:* What went wrong:
+83:A problem occurred configuring project ':capacitor-android'.
+84:> Could not resolve all artifacts for configuration 'classpath'.
+85:   > Could not find com.android.tools.build:gradle:8.13.0.
+105:BUILD FAILED in 1m 3s
+61:* What went wrong:
+62:A problem occurred configuring root project 'android'.
+63:> Could not resolve all artifacts for configuration 'classpath'.
+64:   > Could not find com.android.tools.build:gradle:8.7.0.
+77:BUILD FAILED in 42s
+79:* What went wrong:
+80:A problem occurred configuring project ':capacitor-android'.
+81:> Could not resolve all artifacts for configuration 'classpath'.
+82:   > Could not find com.android.tools.build:gradle:8.13.0.
+102:BUILD FAILED in 1m 16s
+61:* What went wrong:
+62:A problem occurred configuring root project 'GANDOM'.
+63:> Could not resolve all artifacts for configuration 'classpath'.
+64:   > Could not find com.android.tools.build:gradle:8.7.0.
+77:BUILD FAILED in 41s
+82:* What went wrong:
+83:A problem occurred configuring project ':capacitor-android'.
+84:> Could not resolve all artifacts for configuration 'classpath'.
+85:   > Could not find com.android.tools.build:gradle:8.13.0.
+99:org.gradle.api.ProjectConfigurationException: A problem occurred configuring project ':capacitor-android'.
+241:Caused by: org.gradle.api.internal.artifacts.ivyservice.TypedResolveException: Could not resolve all artifacts for configuration 'classpath'.
+420:Caused by: org.gradle.internal.resolve.ModuleVersionNotFoundException: Could not find com.android.tools.build:gradle:8.13.0.
+435:BUILD FAILED in 1m 3s
+
+===== PRESERVATION =====
+TESTS=NOT_RUN
+SERVER_RESTART=NO
+SERVER_JS_CHANGED=NO
+WALLET_CHANGED=NO
+DATA_DELETED=NO
+PROJECT_CONFIG_CHANGED=NO

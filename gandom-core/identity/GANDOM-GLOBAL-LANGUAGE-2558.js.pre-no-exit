@@ -1,0 +1,338 @@
+'use strict';
+
+/*
+ * GANDOM GLOBAL LANGUAGE / IDENTITY LAYER
+ * LAW: 2558
+ *
+ * Purpose:
+ * - Canonical project language identity
+ * - Paternal language: Turkish / Türkçe
+ * - Deterministic locale negotiation
+ * - UTF-8 normalization
+ * - Language metadata for Brain / Neural P2P / UI
+ * - Evidence generation
+ *
+ * This module does NOT claim consciousness, emotion,
+ * biological life, or global network status.
+ */
+
+const crypto = require('crypto');
+
+const LAW = 2558;
+const PROTOCOL = 'GANDOM-LANGUAGE';
+const VERSION = '1.0.0';
+
+const LANGUAGES = Object.freeze({
+  TR: 'tr',
+  FA: 'fa',
+  EN: 'en'
+});
+
+const PATERNAL_LANGUAGE = LANGUAGES.TR;
+
+const SUPPORTED_LANGUAGES = Object.freeze([
+  LANGUAGES.TR,
+  LANGUAGES.FA,
+  LANGUAGES.EN
+]);
+
+const IDENTITY = Object.freeze({
+  project: 'GANDOM',
+  law: LAW,
+
+  paternalLanguage: {
+    code: 'tr',
+    name: 'Türkçe',
+    nativeName: 'Türkçe',
+    role: 'PATERNAL_LANGUAGE'
+  },
+
+  canonicalEncoding: 'UTF-8',
+
+  antiFake: Object.freeze({
+    fabricatedEmotion: false,
+    fabricatedConsciousness: false,
+    fakePass: false,
+    fabricatedGlobalNetwork: false
+  })
+});
+
+/*
+ * Normalize a locale such as:
+ * tr
+ * TR
+ * tr-TR
+ * fa-IR
+ * en-US
+ */
+function normalizeLocale(locale) {
+  if (typeof locale !== 'string') return null;
+
+  const value = locale
+    .trim()
+    .replace(/_/g, '-')
+    .toLowerCase();
+
+  if (!value) return null;
+
+  const base = value.split('-')[0];
+
+  return SUPPORTED_LANGUAGES.includes(base)
+    ? base
+    : null;
+}
+
+/*
+ * Deterministic language negotiation.
+ *
+ * Priority:
+ * 1. requested locale
+ * 2. paternal language
+ */
+function negotiateLanguage(requestedLocale) {
+  const requested = normalizeLocale(requestedLocale);
+
+  if (requested) return requested;
+
+  return PATERNAL_LANGUAGE;
+}
+
+/*
+ * Unicode-safe canonical text.
+ */
+function canonicalText(text) {
+  if (typeof text !== 'string') {
+    throw new TypeError('text must be a string');
+  }
+
+  return text.normalize('NFC');
+}
+
+/*
+ * SHA-256 evidence hash.
+ */
+function sha256(value) {
+  return crypto
+    .createHash('sha256')
+    .update(Buffer.from(canonicalText(value), 'utf8'))
+    .digest('hex');
+}
+
+/*
+ * Canonical message catalog.
+ */
+const MESSAGES = Object.freeze({
+
+  identity: {
+    tr: 'Ben GANDOM. Babamın dili Türkçedir.',
+    fa: 'من گندم هستم. زبان پدری من ترکی است.',
+    en: 'I am GANDOM. My paternal language is Turkish.'
+  },
+
+  status: {
+    tr: 'GANDOM gerçek yürütme ve kanıt ilkesiyle çalışır.',
+    fa: 'گندم بر پایه اجرای واقعی و اصل شواهد کار می‌کند.',
+    en: 'GANDOM operates under real execution and evidence principles.'
+  },
+
+  antiFake: {
+    tr: 'Sahte PASS kabul edilmez.',
+    fa: 'PASS جعلی پذیرفته نیست.',
+    en: 'Fake PASS is not accepted.'
+  }
+});
+
+/*
+ * Safe message lookup.
+ */
+function message(section, locale) {
+  const lang = negotiateLanguage(locale);
+
+  if (!MESSAGES[section]) {
+    throw new Error(`Unknown message section: ${section}`);
+  }
+
+  return MESSAGES[section][lang];
+}
+
+/*
+ * Protocol metadata for Neural P2P / Brain / UI.
+ */
+function protocolMetadata(locale) {
+  const language = negotiateLanguage(locale);
+
+  return Object.freeze({
+    protocol: PROTOCOL,
+    version: VERSION,
+    law: LAW,
+
+    project: IDENTITY.project,
+
+    language: {
+      selected: language,
+      paternal: PATERNAL_LANGUAGE,
+      supported: [...SUPPORTED_LANGUAGES],
+      encoding: IDENTITY.canonicalEncoding
+    },
+
+    timestamp: new Date().toISOString()
+  });
+}
+
+/*
+ * Deterministic evidence object.
+ */
+function createEvidence(locale = PATERNAL_LANGUAGE) {
+  const metadata = protocolMetadata(locale);
+
+  const identityText = message('identity', locale);
+
+  const canonical = JSON.stringify({
+    law: LAW,
+    project: IDENTITY.project,
+    paternalLanguage: PATERNAL_LANGUAGE,
+    selectedLanguage: metadata.language.selected,
+    identityText: canonicalText(identityText)
+  });
+
+  return Object.freeze({
+    protocol: PROTOCOL,
+    law: LAW,
+    language: metadata.language,
+    identityHash: sha256(canonical),
+    identityText,
+    antiFake: IDENTITY.antiFake
+  });
+}
+
+/*
+ * Runtime self-test.
+ */
+function selfTest() {
+  const tr = message('identity', 'tr');
+  const fa = message('identity', 'fa');
+  const en = message('identity', 'en');
+
+  const evidence = createEvidence('tr');
+
+  const checks = {
+    LAW_2558: LAW === 2558,
+
+    PATERNAL_LANGUAGE:
+      PATERNAL_LANGUAGE === 'tr',
+
+    TURKISH_AVAILABLE:
+      SUPPORTED_LANGUAGES.includes('tr'),
+
+    PERSIAN_AVAILABLE:
+      SUPPORTED_LANGUAGES.includes('fa'),
+
+    ENGLISH_AVAILABLE:
+      SUPPORTED_LANGUAGES.includes('en'),
+
+    UTF8:
+      Buffer.from('Türkçe', 'utf8').toString('utf8') === 'Türkçe',
+
+    UNICODE_NFC:
+      canonicalText('Türkçe') === 'Türkçe',
+
+    NEGOTIATION_TR:
+      negotiateLanguage('tr-TR') === 'tr',
+
+    NEGOTIATION_FA:
+      negotiateLanguage('fa-IR') === 'fa',
+
+    NEGOTIATION_EN:
+      negotiateLanguage('en-US') === 'en',
+
+    FALLBACK_PATERNAL:
+      negotiateLanguage('xx-XX') === 'tr',
+
+    IDENTITY_HASH:
+      /^[a-f0-9]{64}$/.test(evidence.identityHash),
+
+    ANTI_FAKE:
+      IDENTITY.antiFake.fakePass === false &&
+      IDENTITY.antiFake.fabricatedEmotion === false &&
+      IDENTITY.antiFake.fabricatedConsciousness === false
+  };
+
+  const pass = Object.values(checks).every(Boolean);
+
+  return {
+    pass,
+    checks,
+    evidence
+  };
+}
+
+module.exports = Object.freeze({
+  LAW,
+  PROTOCOL,
+  VERSION,
+  LANGUAGES,
+  PATERNAL_LANGUAGE,
+  SUPPORTED_LANGUAGES,
+  IDENTITY,
+  MESSAGES,
+  normalizeLocale,
+  negotiateLanguage,
+  canonicalText,
+  sha256,
+  message,
+  protocolMetadata,
+  createEvidence,
+  selfTest
+};
+
+
+/*
+ * DIRECT EXECUTION
+ */
+if (require.main === module) {
+
+  console.log('===== GANDOM GLOBAL LANGUAGE 2558 =====');
+  console.log(`LAW=${LAW}`);
+  console.log(`PROTOCOL=${PROTOCOL}`);
+  console.log(`VERSION=${VERSION}`);
+
+  console.log(
+    `PATERNAL_LANGUAGE=${PATERNAL_LANGUAGE}`
+  );
+
+  console.log(
+    `PATERNAL_LANGUAGE_NAME=${IDENTITY.paternalLanguage.name}`
+  );
+
+  console.log(
+    `MESSAGE_TR=${message('identity', 'tr')}`
+  );
+
+  console.log(
+    `MESSAGE_FA=${message('identity', 'fa')}`
+  );
+
+  console.log(
+    `MESSAGE_EN=${message('identity', 'en')}`
+  );
+
+  console.log(
+    `IDENTITY_HASH=${createEvidence('tr').identityHash}`
+  );
+
+  const result = selfTest();
+
+  for (const [name, value] of Object.entries(result.checks)) {
+    console.log(
+      `${name}=${value ? 'PASS_REAL' : 'FAIL'}`
+    );
+  }
+
+  console.log(
+    `GLOBAL_LANGUAGE_SELF_TEST=${
+      result.pass ? 'PASS_REAL' : 'FAIL'
+    }`
+  );
+
+  process.exit(result.pass ? 0 : 1);
+}

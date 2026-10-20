@@ -1,0 +1,47 @@
+{
+  "USR-aa4a1e5d51ec": {
+    "userId": "USR-aa4a1e5d51ec",
+    "username": "alice",
+    "email": "alice@gandom.io",
+    "passwordHash": "bc0c97b98ef2a289ce98a2ca09fa537f7dde8a61ae25aceb380f093103e032795772957811051046696350fc8c020753d560b56e40d1270a3c121308d1f59e89",
+    "passwordSalt": "7f3f82d2e1ac3ee123a879d1a3685bb2",
+    "gdmAddress": "GDM790a74c776358dfaed7cf086d5dfb0bbe8",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAhk+QI2jQppBejE5pL81JB+uaz0A49zUMJctcx6amz9E=\n-----END PUBLIC KEY-----\n",
+    "privateKey": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIPulJjnh3uxbvD2xlO18HljV+ut8qMhEHtzAiApreBkK\n-----END PRIVATE KEY-----\n",
+    "balance": 0,
+    "createdAt": "2026-10-14T13:10:58.486Z",
+    "lastLogin": "2026-10-14T13:10:59.286Z",
+    "verified": false,
+    "role": "user"
+  },
+  "USR-a92f335143df": {
+    "userId": "USR-a92f335143df",
+    "username": "bob",
+    "email": "bob@gandom.io",
+    "passwordHash": "fe065da1d2c7873948a11f28bf6f0c6943a065aa6061e98cb3465e903e6dcb61933853e0de9e59a4fd65f8620ccfa039675ea9dcee454e09d42e5ba9e9a3fd2c",
+    "passwordSalt": "d5281e6ad87831020fbc6dfa168dc198",
+    "gdmAddress": "GDM9777422304cb283489354af12727fab35c",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAUDbCag6K0MAyWj2m6FNI/Q/yXEf60WsEsRP8zt7zIwg=\n-----END PUBLIC KEY-----\n",
+    "privateKey": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEIIBj/pwIbAZWzu1EJAKvMX7SFtfWLGp+6Sj2er/mqd4k\n-----END PRIVATE KEY-----\n",
+    "balance": 0,
+    "createdAt": "2026-10-14T13:10:58.889Z",
+    "lastLogin": null,
+    "verified": false,
+    "role": "user"
+  },
+  "USR-f23e875e94ef": {
+    "userId": "USR-f23e875e94ef",
+    "username": "dave",
+    "email": "dave@gandom.io",
+    "passwordHash": "eb5b7c77e93d75c9ea9c7a5b896c53d392e9e51ca46b93e8660d9a66dad8a1321b128bb2d47e0d8f76b3bd0d8b70408ba3eb801fabf24988b1149f23f68b5ca5",
+    "passwordSalt": "16c8d9908fdc3d17d115dd160969fd47",
+    "gdmAddress": "GDM4a8d5482d065c99e3de18fef2721fb2e04",
+    "publicKey": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA4bh5JgxBOlSCEUNzo8A9O+hQNWelqbPehtsyiqK+sIA=\n-----END PUBLIC KEY-----\n",
+    "privateKey": "-----BEGIN PRIVATE KEY-----\nMC4CAQAwBQYDK2VwBCIEICdtBsRKJP/k89k0g/NPFsmZJphx1DmM2s6kcO6I3+9a\n-----END PRIVATE KEY-----\n",
+    "balance": 0,
+    "createdAt": "2026-10-14T15:17:29.540Z",
+    "lastLogin": null,
+    "verified": false,
+    "role": "user"
+  }
+}

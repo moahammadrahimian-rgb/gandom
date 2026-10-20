@@ -1,0 +1,16 @@
+{
+  "EXP-228c3e84207e4e4d": {
+    "expId": "EXP-228c3e84207e4e4d",
+    "userId": "USR-alice",
+    "category": "travel",
+    "title": "سفر به شمال",
+    "description": "هوای عالی بود",
+    "location": "مازندران",
+    "feeling": "neutral",
+    "rating": 5,
+    "contentHash": "45142a7154fa9c19a9fd0039d2034d1b2f51f96d7145e66037b6ebb0beb342af",
+    "verified": false,
+    "reward_gdm": 0.1,
+    "createdAt": "2026-10-14T15:28:22.107Z"
+  }
+}

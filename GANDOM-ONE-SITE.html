@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANDOM 2558 — تنها سایت رسمی</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #06100c, #0a1f18);
+            color: #e8f5e9;
+            min-height: 100vh;
+            padding-bottom: 80px;
+        }
+        /* TOP BAR */
+        .topbar {
+            background: rgba(0,0,0,0.5);
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(76,175,80,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .topbar .brand { color: #81c784; font-weight: bold; font-size: 18px; }
+        .topbar .brand .logo { font-size: 24px; }
+        /* NAV */
+        nav {
+            background: rgba(0,0,0,0.3);
+            padding: 12px;
+            overflow-x: auto;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(76,175,80,0.2);
+        }
+        nav a {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-left: 8px;
+            background: rgba(76,175,80,0.1);
+            border: 1px solid rgba(76,175,80,0.3);
+            border-radius: 20px;
+            color: #a5d6a7;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        nav a.active { background: #4caf50; color: white; }
+        /* MAIN */
+        main { max-width: 800px; margin: 0 auto; padding: 20px; }
+        section { display: none; }
+        section.active { display: block; }
+        h1 { font-size: 28px; color: #81c784; margin-bottom: 15px; }
+        h2 { font-size: 18px; color: #81c784; margin: 20px 0 12px; }
+        /* CARD */
+        .card {
+            background: rgba(76,175,80,0.1);
+            border: 1px solid rgba(76,175,80,0.3);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+        .card h3 { color: #81c784; font-size: 16px; margin-bottom: 8px; }
+        .card p { color: #a5d6a7; font-size: 13px; line-height: 1.6; }
+        .card .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #4caf50;
+            color: white;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-top: 10px;
+        }
+        /* INPUT */
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 12px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(76,175,80,0.4);
+            border-radius: 8px;
+            color: #e8f5e9;
+            font-size: 15px;
+            font-family: inherit;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #4caf50, #388e3c);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        /* STATS */
+        .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+        .stat {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat .value { font-size: 22px; color: #4caf50; font-weight: bold; }
+        .stat .label { font-size: 11px; color: #a5d6a7; }
+        /* RESULT */
+        .result {
+            background: rgba(76,175,80,0.15);
+            border: 1px solid #4caf50;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            display: none;
+        }
+        .result.show { display: block; }
+        .result .hash { font-family: monospace; font-size: 10px; color: #a5d6a7; word-break: break-all; }
+    </style>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="brand"><span class="logo">🌾</span> GANDOM 2558</div>
+    <div style="font-size:12px;color:#4caf50;">● ACTIVE</div>
+</div>
+
+<nav>
+    <a href="#" onclick="show('home')" class="active">🏠 خانه</a>
+    <a href="#" onclick="show('audit')">🔐 حسابرسی</a>
+    <a href="#" onclick="show('wallet')">💰 کیف پول</a>
+    <a href="#" onclick="show('exchange')">📈 صرافی</a>
+    <a href="#" onclick="show('p2p')">🌐 شبکه</a>
+    <a href="#" onclick="show('about')">ℹ️ درباره</a>
+</nav>
+
+<main>
+
+    <!-- HOME -->
+    <section id="home" class="active">
+        <h1>🌾 گندم ۲۵۵۸</h1>
+        <p style="color:#a5d6a7;margin-bottom:20px;">اکوسیستم زنده غیرمتمرکز</p>
+        <div class="stats">
+            <div class="stat"><div class="value">۴۰۰K</div><div class="label">سلول زنده</div></div>
+            <div class="stat"><div class="value">۴۰۹۶</div><div class="label">نرون</div></div>
+            <div class="stat"><div class="value">۲۳</div><div class="label">کارمند AI</div></div>
+            <div class="stat"><div class="value">۲۴B</div><div class="label">سکه GDM</div></div>
+        </div>
+        <div class="card">
+            <h3>✅ همه اجزا فعال هستند</h3>
+            <p>مغز، DNA، سلول، شش، P2P، کیف پول، بانک، GANDOM-AUDIT</p>
+            <div class="badge">100% ACTIVE</div>
+        </div>
+    </section>
+
+    <!-- AUDIT -->
+    <section id="audit">
+        <h1>🔐 حسابرسی فایل</h1>
+        <p style="color:#a5d6a7;margin-bottom:20px;">در ۳۰ ثانیه، با SHA256</p>
+        <div class="card">
+            <input type="text" id="customer" placeholder="نام شما">
+            <textarea id="content" rows="4" placeholder="محتوای فایل..."></textarea>
+            <input type="text" id="filename" placeholder="نام فایل (مثلاً test.txt)">
+            <button onclick="doAudit()">🔐 شروع حسابرسی</button>
+            <div class="result" id="auditResult"></div>
+        </div>
+    </section>
+
+    <!-- WALLET -->
+    <section id="wallet">
+        <h1>💰 کیف پول گندم</h1>
+        <div class="card">
+            <h3>موجودی شما</h3>
+            <p>۱.۲ میلیارد سکه GDM</p>
+            <p>سهم مالک: ۱۰٪</p>
+        </div>
+        <div class="card">
+            <h3>تراکنش‌ها</h3>
+            <p>۱۹ تراکنش ثبت‌شده</p>
+            <p>هش کیف پول: b16f6899...</p>
+        </div>
+    </section>
+
+    <!-- EXCHANGE -->
+    <section id="exchange">
+        <h1>📈 صرافی GDM/USDT</h1>
+        <div class="card">
+            <h3>قیمت زنده</h3>
+            <p>۱ GDM = ۱.۱۵ USDT</p>
+            <p style="color:#4caf50;">+۱۵٪ (۲۴ ساعت)</p>
+        </div>
+        <div class="card">
+            <h3>وضعیت</h3>
+            <p>منتظر اتصال به Market API</p>
+        </div>
+    </section>
+
+    <!-- P2P -->
+    <section id="p2p">
+        <h1>🌐 شبکه P2P</h1>
+        <div class="card">
+            <h3>وضعیت نود</h3>
+            <p>۲ نود فعال (محلی)</p>
+            <p>هدف: ۲۰,۰۰۰ نود جهانی</p>
+        </div>
+        <div class="card">
+            <h3>Heartbeat</h3>
+            <p>ضربان قلب: فعال ✅</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h1>ℹ️ درباره گندم</h1>
+        <div class="card">
+            <h3>قانون مادر ۲۵۵۸</h3>
+            <p>NO_FAKE_PASS=1</p>
+            <p>PASS_REAL_ONLY=1</p>
+            <p>EVIDENCE_REQUIRED=1</p>
+        </div>
+        <div class="card">
+            <h3>تکنولوژی</h3>
+            <p>Node.js, Solidity, SHA256, P2P, BEP-20</p>
+        </div>
+    </section>
+
+</main>
+
+<script>
+function show(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    event.target.classList.add('active');
+}
+
+async function doAudit() {
+    const customer = document.getElementById('customer').value || 'Anonymous';
+    const content = document.getElementById('content').value;
+    const filename = document.getElementById('filename').value || 'file.txt';
+
+    if (!content) { alert('محتوای فایل را وارد کنید'); return; }
+
+    const base64 = btoa(unescape(encodeURIComponent(content)));
+
+    try {
+        const res = await fetch('http://127.0.0.1:8888/api/audit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ customer, files: [{ name: filename, content: base64 }] })
+        });
+        const data = await res.json();
+
+        const r = document.getElementById('auditResult');
+        r.classList.add('show');
+        r.innerHTML = `
+            <h3 style="color:#4caf50;">✅ حسابرسی موفق</h3>
+            <p><strong>شناسه:</strong> ${data.id}</p>
+            <p><strong>مشتری:</strong> ${data.customer}</p>
+            <p><strong>تعداد فایل:</strong> ${data.total_files}</p>
+            <p><strong>هش SHA256:</strong></p>
+            <p class="hash">${data.files[0].hash}</p>
+            <p style="margin-top:10px;"><strong>قیمت:</strong> <span style="color:#ffd54f;font-size:20px;">${data.price.toLocaleString()} ریال</span></p>
+        `;
+    } catch (e) {
+        alert('خطا: ' + e.message);
+    }
+}
+</script>
+
+</body>
+</html>

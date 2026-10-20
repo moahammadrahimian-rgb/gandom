@@ -2,285 +2,1507 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport"
-      content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#06100c">
-<meta name="description" content="GANDOM decentralized ecosystem">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07100d">
+<title>GANDOM — Global Decentralized Network</title>
 
-<title>GANDOM</title>
+<style>
+:root{
+  --bg:#050908;
+  --panel:#0b1210;
+  --panel2:#101a16;
+  --line:#24342d;
+  --gold:#d6a84f;
+  --gold2:#f0cf78;
+  --green:#55c878;
+  --text:#edf3ee;
+  --muted:#8e9b94;
+  --red:#e66b6b;
+  --blue:#55aee8;
+  --purple:#9c7bea;
+  --shadow:0 18px 50px rgba(0,0,0,.38);
+}
 
-<link rel="stylesheet" href="/assets/css/gandom-ui.css">
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 80% 0%,rgba(214,168,79,.09),transparent 30%),
+    radial-gradient(circle at 10% 30%,rgba(85,200,120,.06),transparent 28%),
+    var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+.app{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:250px 1fr;
+}
+
+.sidebar{
+  position:sticky;
+  top:0;
+  height:100vh;
+  padding:22px 16px;
+  background:rgba(7,12,10,.94);
+  border-left:1px solid var(--line);
+  backdrop-filter:blur(18px);
+  z-index:10;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 6px 24px;
+}
+
+.wheat{
+  width:46px;
+  height:46px;
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,#f2ce72,#9b7027);
+  color:#10120d;
+  font-size:25px;
+  box-shadow:0 0 30px rgba(214,168,79,.25);
+}
+
+.brand strong{
+  display:block;
+  font-size:24px;
+  letter-spacing:2px;
+}
+
+.brand small{
+  color:var(--muted);
+  font-size:9px;
+  letter-spacing:1.5px;
+}
+
+.nav{
+  display:grid;
+  gap:7px;
+}
+
+.nav button{
+  border:1px solid transparent;
+  color:#b8c2bc;
+  background:transparent;
+  text-align:right;
+  padding:12px 14px;
+  border-radius:12px;
+  transition:.2s;
+}
+
+.nav button:hover,
+.nav button.active{
+  color:var(--gold2);
+  background:rgba(214,168,79,.08);
+  border-color:rgba(214,168,79,.25);
+}
+
+.network-mini{
+  margin-top:25px;
+  padding:15px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--panel);
+}
+
+.dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 12px var(--green);
+  margin-left:7px;
+}
+
+.main{
+  min-width:0;
+  padding:18px;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:18px;
+  padding:16px 20px;
+  border:1px solid var(--line);
+  border-radius:20px;
+  background:rgba(11,18,16,.8);
+  box-shadow:var(--shadow);
+}
+
+.status{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+}
+
+.icon-btn{
+  width:40px;
+  height:40px;
+  border:1px solid var(--line);
+  background:var(--panel2);
+  color:var(--text);
+  border-radius:12px;
+}
+
+.hero{
+  display:grid;
+  grid-template-columns:1.5fr .8fr;
+  gap:16px;
+  margin-bottom:16px;
+}
+
+.card{
+  background:linear-gradient(145deg,rgba(16,26,22,.96),rgba(8,14,12,.96));
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+}
+
+.hero-main{
+  min-height:235px;
+  padding:28px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-main:after{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  left:-80px;
+  bottom:-150px;
+  border:1px solid rgba(214,168,79,.22);
+  box-shadow:0 0 80px rgba(214,168,79,.08);
+}
+
+.eyebrow{
+  color:var(--gold2);
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+.hero h1{
+  margin:12px 0 5px;
+  font-size:clamp(34px,5vw,64px);
+  letter-spacing:3px;
+}
+
+.hero p{
+  color:var(--muted);
+  max-width:650px;
+  line-height:1.9;
+}
+
+.hero-owner{
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.owner-value{
+  font-size:28px;
+  margin:12px 0;
+  color:var(--gold2);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
+}
+
+.module{
+  padding:18px;
+  min-height:190px;
+}
+
+.module-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.module h3{
+  margin:0;
+  font-size:18px;
+}
+
+.badge{
+  font-size:11px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#142019;
+  color:var(--green);
+  border:1px solid rgba(85,200,120,.2);
+}
+
+.metric{
+  font-size:26px;
+  font-weight:700;
+  margin:12px 0;
+}
+
+.muted{
+  color:var(--muted);
+}
+
+.small{
+  font-size:12px;
+}
+
+.primary{
+  width:100%;
+  margin-top:15px;
+  padding:11px;
+  border-radius:11px;
+  border:1px solid rgba(214,168,79,.35);
+  background:rgba(214,168,79,.1);
+  color:var(--gold2);
+}
+
+.primary:hover{
+  background:rgba(214,168,79,.18);
+}
+
+.market{
+  margin-top:16px;
+  padding:20px;
+}
+
+.market-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.market-title{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.price{
+  font-size:30px;
+  font-weight:800;
+  color:var(--gold2);
+}
+
+.market-body{
+  display:grid;
+  grid-template-columns:1.4fr .7fr;
+  gap:16px;
+  margin-top:18px;
+}
+
+.chart{
+  min-height:260px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+
+.chart-note{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:var(--muted);
+}
+
+.order-box{
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:16px;
+}
+
+.tabs{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:9px;
+}
+
+.tab.active{
+  color:var(--gold2);
+  border-color:rgba(214,168,79,.4);
+}
+
+.industry{
+  margin-top:16px;
+}
+
+.industry-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:12px;
+}
+
+.industry-card{
+  padding:18px;
+  min-height:125px;
+}
+
+.industry-icon{
+  font-size:25px;
+  margin-bottom:8px;
+}
+
+.footer{
+  margin:18px 0 75px;
+  text-align:center;
+  color:#6f7c75;
+  font-size:11px;
+}
+
+.mobile-nav{
+  display:none;
+}
+
+@media(max-width:1100px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .industry-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+}
+
+@media(max-width:760px){
+  .app{display:block}
+  .sidebar{
+    display:none;
+  }
+
+  .main{
+    padding:10px;
+  }
+
+  .header{
+    padding:12px;
+    border-radius:15px;
+  }
+
+  .header .status{
+    display:none;
+  }
+
+  .hero-main{
+    min-height:205px;
+    padding:22px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .market-body{
+    grid-template-columns:1fr;
+  }
+
+  .industry-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .mobile-nav{
+    position:fixed;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    bottom:8px;
+    right:8px;
+    left:8px;
+    padding:7px;
+    border:1px solid var(--line);
+    border-radius:17px;
+    background:rgba(7,12,10,.96);
+    backdrop-filter:blur(18px);
+    z-index:30;
+  }
+
+  .mobile-nav button{
+    border:0;
+    background:transparent;
+    color:var(--muted);
+    padding:9px 3px;
+    font-size:11px;
+  }
+
+  .mobile-nav button.active{
+    color:var(--gold2);
+  }
+}
+
+
+/* ═══════ Blockchain Styles ═══════ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #1a2332 0%, #0f1620 100%);
+  border: 1px solid #2a3f5f;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  border-color: #ffd700;
+  transform: translateY(-3px);
+}
+
+.stat-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  color: #ffd700;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  color: #8ba3c7;
+  font-size: 12px;
+}
+
+.chain-hash-box {
+  background: #0a0e17;
+  border: 1px solid #2a3f5f;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.hash-label {
+  color: #8ba3c7;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.hash-value {
+  color: #4ade80;
+  font-family: monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.chain-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.action-btn {
+  padding: 12px 24px;
+  background: #ffd700;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s;
+}
+
+.action-btn:hover {
+  background: #e5c100;
+  transform: translateY(-2px);
+}
+
+.action-btn.secondary {
+  background: #2a3f5f;
+  color: #ffd700;
+  border: 1px solid #ffd700;
+}
+
+.action-btn.secondary:hover {
+  background: #3a5070;
+}
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chain-blocks-preview {
+  background: #1a2332;
+  border: 1px solid #2a3f5f;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.chain-blocks-preview h3 {
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+.block-preview-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0a0e17;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-family: monospace;
+}
+
+.block-idx {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.block-hash {
+  color: #4ade80;
+  flex: 1;
+  margin: 0 15px;
+}
+
+.block-tx {
+  color: #8ba3c7;
+}
+</style>
 </head>
 
 <body>
 
 <div class="app">
 
-<header class="header">
+<aside class="sidebar">
+
   <div class="brand">
-    <div class="logo">🌾</div>
+    <div class="wheat">🌾</div>
     <div>
-      <div class="brand-title">GANDOM</div>
-      <div class="brand-sub">Decentralized Ecosystem</div>
+      <strong>GANDOM</strong>
+      <small>GLOBAL DECENTRALIZED NETWORK</small>
     </div>
   </div>
 
-  <span id="runtimeStatus" class="status offline">
-    Checking Runtime
-  </span>
+  <nav class="nav">
+    <button class="active" data-section="home">⌂ خانه</button>
+    <button data-section="wallet">▣ کیف پول</button>
+    <button data-section="market">◈ صرافی GDM</button>
+    <button data-section="industry">◉ اصناف و بازارها</button>
+    <button data-section="p2p">⌘ P2P</button>
+    <button data-section="ai">✦ هوش مصنوعی</button>
+    <button data-section="social">◎ شبکه اجتماعی</button>
+    <button data-section="ads">◇ تبلیغات</button>
+    <button data-section="settings">⚙ تنظیمات</button>
+        <button data-section="exchange" class="nav-btn" onclick="window.open('/assets/exchange.html', '_blank')">
+          <span class="nav-icon">💱</span>
+          <span class="nav-label">صرافی</span>
+        </button>
+        <button data-section="blockchain" class="nav-btn">
+          <span class="nav-icon">⛓️</span>
+          <span class="nav-label">بلاک‌چین</span>
+        </button>
+  </nav>
+
+  <div class="network-mini">
+    <div><span class="dot"></span>شبکه GANDOM</div>
+    <div class="muted small" style="margin-top:8px">
+      وضعیت: <span id="side-status">در حال بررسی</span>
+    </div>
+  </div>
+
+</aside>
+
+<main class="main">
+
+<header class="header">
+
+  <div>
+    <div class="eyebrow">GANDOM NETWORK</div>
+    <div id="page-title">داشبورد جهانی</div>
+  </div>
+
+  <div class="status">
+    <span class="dot"></span>
+    <span id="network-status">در حال بررسی شبکه...</span>
+  </div>
+
+  <div class="actions">
+    <button class="icon-btn" onclick="refreshAll()">↻</button>
+    <button class="icon-btn" onclick="showNotice('تنظیمات امنیتی در حال اتصال به API است.')">⚙</button>
+  </div>
+
 </header>
 
-<main class="page">
+<section class="hero">
 
-<!-- SECTION 2: HOME -->
-<section id="view-home" class="view active">
-
-  <div class="hero section">
-    <div class="eyebrow">GANDOM CORE</div>
-    <h1>گندم</h1>
-    <p class="muted">
-      رابط یکپارچه شبکه، اقتصاد، کیف پول و سرویس‌های GANDOM
+  <div class="card hero-main">
+    <div class="eyebrow">GLOBAL DECENTRALIZED ECONOMY</div>
+    <h1>GANDOM</h1>
+    <p>
+      یک رابط واحد برای شبکه P2P، اقتصاد دیجیتال،
+      بازارهای واقعی، هوش مصنوعی و خدمات غیرمتمرکز.
     </p>
-  </div>
-
-  <div class="grid section">
-
-    <article class="card">
-      <div class="muted small">Network</div>
-      <div class="metric">P2P</div>
-      <span class="status">Core</span>
-    </article>
-
-    <article class="card">
-      <div class="muted small">Runtime</div>
-      <div class="metric">Live</div>
-      <span id="homeRuntime" class="status">Checking</span>
-    </article>
-
-    <article class="card card-full">
-      <h2>وضعیت سیستم</h2>
-      <div class="list">
-        <div class="list-item">
-          <span>UI</span>
-          <span>Ready</span>
-        </div>
-        <div class="list-item">
-          <span>Capacitor</span>
-          <span>Configured</span>
-        </div>
-        <div class="list-item">
-          <span>Core Data</span>
-          <span>Runtime Controlled</span>
-        </div>
-      </div>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- SECTION 2: ECONOMY + EXCHANGE -->
-<section id="view-market" class="view">
-
-  <div class="section">
-    <div class="eyebrow">ECONOMY</div>
-    <h1>اقتصاد و بازار</h1>
-    <p class="muted">
-      داده بازار باید از منبع واقعی Runtime وارد شود.
-    </p>
-  </div>
-
-  <div class="card section">
-    <div class="row">
-      <div>
-        <div class="muted small">GDM Market</div>
-        <h2>Exchange</h2>
-      </div>
-      <span class="status">Ready</span>
+    <div class="muted small">
+      اجرای واقعی فقط پس از تأیید Backend و شبکه ثبت می‌شود.
     </div>
-
-    <canvas id="marketChart" class="chart"></canvas>
-
-    <p class="muted small">
-      نمودار فعلی فقط چارچوب UI است؛ قیمت واقعی تا اتصال API بازار نمایش داده نمی‌شود.
-    </p>
   </div>
 
-  <div class="grid">
-    <article class="card">
-      <div class="muted small">Supply</div>
-      <div class="metric">Core</div>
-    </article>
-
-    <article class="card">
-      <div class="muted small">Market Data</div>
-      <div class="metric">API</div>
-    </article>
-  </div>
-
-</section>
-
-<!-- SECTION 3: WALLET + NETWORK + AI -->
-<section id="view-network" class="view">
-
-  <div class="section">
-    <div class="eyebrow">NETWORK</div>
-    <h1>شبکه و سرویس‌ها</h1>
-  </div>
-
-  <div class="grid section">
-
-    <article class="card">
-      <h2>Wallet</h2>
-      <p class="muted">
-        موجودی و تراکنش فقط از Runtime واقعی.
-      </p>
-      <span class="status">Protected</span>
-    </article>
-
-    <article class="card">
-      <h2>P2P</h2>
-      <p class="muted">
-        Peer / Node / DHT
-      </p>
-      <span class="status">Connected UI</span>
-    </article>
-
-    <article class="card">
-      <h2>AI</h2>
-      <p class="muted">
-        سرویس هوشمند موجود در Core
-      </p>
-      <span class="status">Service</span>
-    </article>
-
-    <article class="card">
-      <h2>Node</h2>
-      <p class="muted">
-        وضعیت Node از Runtime
-      </p>
-      <span class="status">Monitor</span>
-    </article>
-
-  </div>
-
-</section>
-
-<!-- SECTION 4: SECURITY + BACKUP -->
-<section id="view-security" class="view">
-
-  <div class="section">
-    <div class="eyebrow">SECURITY</div>
-    <h1>امنیت و شواهد</h1>
-  </div>
-
-  <div class="card section">
-
-    <details open>
-      <summary>Security</summary>
-      <p class="muted">
-        وضعیت امنیتی از Core واقعی خوانده خواهد شد.
-      </p>
-    </details>
-
-    <details>
-      <summary>Backup</summary>
-      <p class="muted">
-        نقطه پشتیبان پروژه در مسیر backups نگهداری می‌شود.
-      </p>
-    </details>
-
-    <details>
-      <summary>Evidence / Audit</summary>
-      <p class="muted">
-        شواهد باید از اجرای واقعی سیستم ثبت شوند.
-      </p>
-    </details>
-
-  </div>
-
-  <div class="card">
-    <h2>UX States</h2>
-    <div class="list">
-      <div class="list-item"><span>Loading</span><span>Ready</span></div>
-      <div class="list-item"><span>Error</span><span>Supported</span></div>
-      <div class="list-item"><span>Offline</span><span>Supported</span></div>
-      <div class="list-item"><span>Empty</span><span>Supported</span></div>
+  <div class="card hero-owner">
+    <div class="muted small">وضعیت Node</div>
+    <div class="owner-value" id="node-id">در انتظار API</div>
+    <div class="muted small">
+      Peers:
+      <span id="peer-count">--</span>
     </div>
   </div>
 
 </section>
 
-<!-- SECTION 5 -->
-<section id="view-more" class="view">
+<section class="grid">
 
-  <div class="section">
-    <div class="eyebrow">SYSTEM</div>
-    <h1>GANDOM System</h1>
+  <article class="card module" id="p2p">
+    <div class="module-head">
+      <h3>⌘ هسته P2P</h3>
+      <span class="badge" id="p2p-status">CHECK</span>
+    </div>
+    <div class="metric" id="p2p-peers">--</div>
+    <div class="muted">Peerهای مشاهده‌شده</div>
+    <button class="primary" onclick="refreshPeers()">بررسی واقعی شبکه</button>
+  </article>
+
+  <article class="card module" id="ai">
+    <div class="module-head">
+      <h3>✦ AI Core</h3>
+      <span class="badge">CORE</span>
+    </div>
+    <div class="metric">READY</div>
+    <div class="muted">تحلیل، تصمیم‌یار و اتوماسیون</div>
+    <button class="primary" onclick="showNotice('AI فقط پس از اتصال سرویس واقعی فعال می‌شود.')">
+      ورود به AI
+    </button>
+  </article>
+
+  <article class="card module" id="wallet">
+    <div class="module-head">
+      <h3>▣ کیف پول</h3>
+      <span class="badge">SECURE</span>
+    </div>
+    <div class="metric">-- GDM</div>
+    <div class="muted">موجودی پس از اتصال Wallet API</div>
+    <button class="primary" onclick="showNotice('تراکنش مالی بدون API واقعی اجرا نمی‌شود.')">
+      ورود به کیف پول
+    </button>
+  </article>
+
+  <article class="card module" id="social">
+    <div class="module-head">
+      <h3>◎ شبکه اجتماعی</h3>
+      <span class="badge">SOCIAL</span>
+    </div>
+    <div class="metric">GANDOM</div>
+    <div class="muted">محتوا، ارتباط و اقتصاد اجتماعی</div>
+    <button class="primary" onclick="showNotice('ماژول Social API در حال اتصال است.')">
+      ورود به شبکه
+    </button>
+  </article>
+
+</section>
+
+<section class="card market" id="market">
+
+  <div class="market-top">
+
+    <div class="market-title">
+      <h2 style="margin:0">صرافی GDM</h2>
+      <span class="badge">GDM / USDT</span>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active">نمودار</button>
+      <button class="tab" onclick="showNotice('خرید فقط با Trading API واقعی فعال می‌شود.')">خرید</button>
+      <button class="tab" onclick="showNotice('فروش فقط با Trading API واقعی فعال می‌شود.')">فروش</button>
+      <button class="tab" onclick="showNotice('Deposit API هنوز متصل نیست.')">واریز</button>
+      <button class="tab" onclick="showNotice('Withdraw API هنوز متصل نیست.')">برداشت</button>
+      <button class="tab">تاریخچه</button>
+    </div>
+
   </div>
 
-  <div class="card section">
-    <h2>Integration</h2>
-    <div class="list">
-      <div class="list-item">
-        <span>App ID</span>
-        <span>com.gandom.app</span>
-      </div>
-      <div class="list-item">
-        <span>Web Directory</span>
-        <span>www</span>
-      </div>
-      <div class="list-item">
-        <span>UI Sections</span>
-        <span>5</span>
-      </div>
+  <div style="margin-top:16px">
+    <div class="muted small">قیمت زنده GDM</div>
+    <div class="price">--</div>
+    <div class="muted small">
+      قیمت تا اتصال Market API عمداً نمایش داده نمی‌شود.
     </div>
   </div>
 
-  <div class="card">
-    <h2>Backup</h2>
-    <p class="muted">
-      نسخه قبل از اجرای این مرحله در backups ثبت شده است.
-    </p>
+  <div class="market-body">
+
+    <div class="chart">
+      <div class="chart-note">
+        نمودار پس از اتصال دادهٔ واقعی بازار فعال می‌شود
+      </div>
+    </div>
+
+    <div class="order-box">
+      <h3>سفارش</h3>
+
+      <div class="muted small">
+        خرید / فروش فقط از مسیر API معتبر انجام می‌شود.
+      </div>
+
+      <button class="primary"
+        onclick="showNotice('Trading API هنوز برای اجرای تراکنش متصل نشده است.')">
+        اتصال بازار
+      </button>
+
+    </div>
+
   </div>
 
 </section>
 
-</main>
+<section class="industry">
 
-<nav class="nav">
-  <button data-view="home" class="active">خانه</button>
-  <button data-view="market">بازار</button>
-  <button data-view="network">شبکه</button>
-  <button data-view="security">امنیت</button>
-  <button data-view="more">سیستم</button>
-</nav>
+  <div class="card module-head" style="padding:18px;margin:0">
+    <h3>بازارهای واقعی و اصناف</h3>
+    <span class="badge">GLOBAL MARKET</span>
+  </div>
 
+  <div class="industry-grid">
+
+    <article class="card industry-card">
+      <div class="industry-icon">🥇</div>
+      <strong>طلا و جواهر</strong>
+      <div class="muted small">بازار طلا، جواهر و دارایی</div>
+      <button class="primary" onclick="showNotice('Market API طلا هنوز متصل نیست.')">ورود</button>
+    </article>
+
+    <article class="card industry-card">
+      <div class="industry-icon">🏠</div>
+      <strong>املاک</strong>
+      <div class="muted small">خرید، فروش و خدمات املاک</div>
+      <button class="primary" onclick="showNotice('Real Estate API هنوز متصل نیست.')">ورود</button>
+    </article>
+
+    <article class="card industry-card">
+      <div class="industry-icon">🚗</div>
+      <strong>خودرو</strong>
+      <div class="muted small">بازار خودرو و خدمات وابسته</div>
+      <button class="primary" onclick="showNotice('Auto API هنوز متصل نیست.')">ورود</button>
+    </article>
+
+    <article class="card industry-card">
+      <div class="industry-icon">⚙</div>
+      <strong>مس / نقره / فلزات</strong>
+      <div class="muted small">بازار فلزات و کالا</div>
+      <button class="primary" onclick="showNotice('Metals API هنوز متصل نیست.')">ورود</button>
+    </article>
+
+  </div>
+
+</section>
+
+<section class="grid" style="margin-top:16px">
+
+  <article class="card module" id="ads">
+    <div class="module-head">
+      <h3>◇ تبلیغات هوشمند</h3>
+      <span class="badge">AI ADS</span>
+    </div>
+    <div class="metric">READY</div>
+    <div class="muted">درآمد تبلیغات فقط از رویداد واقعی</div>
+  </article>
+
+  <article class="card module">
+    <div class="module-head">
+      <h3>🛡 امنیت</h3>
+      <span class="badge">2558</span>
+    </div>
+    <div class="metric">ACTIVE</div>
+    <div class="muted">Gateهای حاکمیتی و شواهد اجرایی</div>
+  </article>
+
+  <article class="card module" id="settings">
+    <div class="module-head">
+      <h3>⚙ تنظیمات</h3>
+      <span class="badge">SYSTEM</span>
+    </div>
+    <div class="metric" id="api-state">CHECK</div>
+    <div class="muted">Backend API</div>
+  </article>
+    <!-- ═══════ Exchange Section ═══════ -->
+    <section class="card exchange-module" id="exchange" style="display:none; margin-top:16px;">
+      <div class="module-head">
+        <h3>💱 صرافی GDM/IRT</h3>
+        <span class="badge">EXCHANGE</span>
+      </div>
+      
+      <!-- آمار -->
+      <div class="stats-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:20px 0;">
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-value" id="ex-last-price">-</div>
+          <div class="stat-label">آخرین قیمت</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-value" id="ex-volume">-</div>
+          <div class="stat-label">حجم معاملات</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📈</div>
+          <div class="stat-value" id="ex-high">-</div>
+          <div class="stat-label">بالاترین</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📉</div>
+          <div class="stat-value" id="ex-low">-</div>
+          <div class="stat-label">پایین‌ترین</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🔄</div>
+          <div class="stat-value" id="ex-trades">-</div>
+          <div class="stat-label">معاملات</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">📋</div>
+          <div class="stat-value" id="ex-orders">-</div>
+          <div class="stat-label">سفارش باز</div>
+        </div>
+      </div>
+      
+      <!-- فرم سفارش -->
+      <div style="background:#1a2332; border:1px solid #2a3f5f; border-radius:12px; padding:20px; margin:20px 0;">
+        <h4 style="color:#ffd700; margin-bottom:15px;">📝 ثبت سفارش جدید</h4>
+        
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:15px;">
+          <div>
+            <label style="display:block; color:#8ba3c7; font-size:12px; margin-bottom:5px;">نوع</label>
+            <select id="ex-side" style="width:100%; padding:10px; background:#0a0e17; color:#fff; border:1px solid #2a3f5f; border-radius:8px;">
+              <option value="BUY">🟢 خرید</option>
+              <option value="SELL">🔴 فروش</option>
+            </select>
+          </div>
+          <div>
+            <label style="display:block; color:#8ba3c7; font-size:12px; margin-bottom:5px;">قیمت (ریال)</label>
+            <input type="number" id="ex-price" value="1000" style="width:100%; padding:10px; background:#0a0e17; color:#fff; border:1px solid #2a3f5f; border-radius:8px;">
+          </div>
+          <div>
+            <label style="display:block; color:#8ba3c7; font-size:12px; margin-bottom:5px;">مقدار GDM</label>
+            <input type="number" id="ex-amount" value="10" style="width:100%; padding:10px; background:#0a0e17; color:#fff; border:1px solid #2a3f5f; border-radius:8px;">
+          </div>
+          <div>
+            <label style="display:block; color:#8ba3c7; font-size:12px; margin-bottom:5px;">User ID</label>
+            <input type="text" id="ex-user" value="USR-alice" style="width:100%; padding:10px; background:#0a0e17; color:#fff; border:1px solid #2a3f5f; border-radius:8px;">
+          </div>
+        </div>
+        
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button onclick="placeOrder()" style="flex:1; padding:12px 24px; background:#ffd700; color:#000; border:none; border-radius:8px; font-weight:bold; cursor:pointer;">
+            📝 ثبت سفارش
+          </button>
+          <button onclick="refreshExchange()" style="padding:12px 24px; background:#2a3f5f; color:#ffd700; border:1px solid #ffd700; border-radius:8px; font-weight:bold; cursor:pointer;">
+            🔄 بروزرسانی
+          </button>
+        </div>
+      </div>
+      
+      <!-- Order Book -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px; margin:20px 0;">
+        <div style="background:#0a0e17; border:1px solid #4ade80; border-radius:12px; padding:15px;">
+          <h4 style="color:#4ade80; margin-bottom:10px;">🟢 Buy Orders (Bids)</h4>
+          <div id="ex-bids" style="font-family:monospace; font-size:12px;">در حال بارگذاری...</div>
+        </div>
+        <div style="background:#0a0e17; border:1px solid #f87171; border-radius:12px; padding:15px;">
+          <h4 style="color:#f87171; margin-bottom:10px;">🔴 Sell Orders (Asks)</h4>
+          <div id="ex-asks" style="font-family:monospace; font-size:12px;">در حال بارگذاری...</div>
+        </div>
+      </div>
+      
+      <!-- سفارش‌های من -->
+      <div style="background:#1a2332; border:1px solid #2a3f5f; border-radius:12px; padding:20px; margin-top:20px;">
+        <h4 style="color:#ffd700; margin-bottom:15px;">📋 سفارش‌های من</h4>
+        <div id="ex-my-orders">User ID رو وارد کن و دکمه بروزرسانی رو بزن</div>
+      </div>
+    </section>
+    <!-- ═══════ Blockchain Section ═══════ -->
+    <section class="card blockchain-module" id="blockchain" style="display:none; margin-top:16px;">
+      <div class="module-head">
+        <h3>⛓️ بلاک‌چین گندم ۲۵۵۸</h3>
+        <span class="badge">BLOCKCHAIN</span>
+      </div>
+      
+      <div class="stats-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:12px; margin:20px 0;">
+        <div class="stat-card">
+          <div class="stat-icon">📦</div>
+          <div class="stat-value" id="chain-length">-</div>
+          <div class="stat-label">تعداد بلوک</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⚙️</div>
+          <div class="stat-value" id="chain-difficulty">-</div>
+          <div class="stat-label">سطح سختی</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-value" id="chain-valid">-</div>
+          <div class="stat-label">اعتبار</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-value" id="chain-pending">-</div>
+          <div class="stat-label">در انتظار</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-value" id="chain-supply">-</div>
+          <div class="stat-label">موجودی کل</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👛</div>
+          <div class="stat-value" id="chain-wallets">-</div>
+          <div class="stat-label">کیف‌ها</div>
+        </div>
+      </div>
+      
+      <div style="background:#0a0e17; border:1px solid #2a3f5f; border-radius:10px; padding:15px; margin:20px 0;">
+        <div style="color:#8ba3c7; font-size:12px; margin-bottom:5px;">آخرین هش:</div>
+        <div id="chain-latest-hash" style="color:#4ade80; font-family:monospace; font-size:12px; word-break:break-all;">-</div>
+      </div>
+      
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin:20px 0;">
+        <button onclick="mineBlockFromDashboard()" id="btn-mine-chain" style="padding:12px 24px; background:#ffd700; color:#000; border:none; border-radius:8px; font-weight:bold; cursor:pointer; font-family:inherit;">
+          ⛏️ استخراج بلوک جدید
+        </button>
+        <button onclick="refreshChain()" style="padding:12px 24px; background:#2a3f5f; color:#ffd700; border:1px solid #ffd700; border-radius:8px; font-weight:bold; cursor:pointer; font-family:inherit;">
+          🔄 بروزرسانی
+        </button>
+        <a href="/assets/chain.html" target="_blank" style="padding:12px 24px; background:#2a3f5f; color:#ffd700; border:1px solid #ffd700; border-radius:8px; font-weight:bold; cursor:pointer; text-decoration:none; font-family:inherit; display:inline-block;">
+          🔍 کاوشگر کامل
+        </a>
+      </div>
+      
+      <div style="background:#1a2332; border:1px solid #2a3f5f; border-radius:12px; padding:20px; margin-top:20px;">
+        <h3 style="color:#ffd700; margin-bottom:15px; font-size:16px;">📋 آخرین بلوک‌ها</h3>
+        <div id="blocks-preview">در حال بارگذاری...</div>
+      </div>
+    </section>
+
+  <article class="card module">
+    <div class="module-head">
+      <h3>🌐 شبکه</h3>
+      <span class="badge">NODE</span>
+    </div>
+    <div class="metric" id="uptime">--</div>
+    <div class="muted">زمان فعالیت Node</div>
+  </article>
+
+</section>
+
+<div class="footer">
+  GANDOM · GLOBAL DECENTRALIZED NETWORK ·
+  Design → Code → Execute → Evidence → Verify
 </div>
 
-<script src="/assets/js/gandom-ui.js"></script>
+</main>
+</div>
+
+<nav class="mobile-nav">
+  <button class="active" data-section="home">⌂ خانه</button>
+  <button data-section="market">◈ بازار</button>
+  <button data-section="p2p">⌘ P2P</button>
+  <button data-section="wallet">▣ کیف</button>
+  <button data-section="ai">✦ AI</button>
+</nav>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const runtime = document.getElementById('runtimeStatus');
-  const homeRuntime = document.getElementById('homeRuntime');
+const API = location.protocol + '//' + location.hostname + ':8787';
 
-  const observer = new MutationObserver(() => {
-    if(runtime.classList.contains('offline')){
-      homeRuntime.textContent = 'Offline';
-      homeRuntime.classList.add('offline');
-    }else{
-      homeRuntime.textContent = 'Online';
-      homeRuntime.classList.remove('offline');
-    }
+async function getJSON(path){
+  const response = await fetch(API + path, {
+    cache:'no-store'
   });
 
-  observer.observe(runtime, {
-    attributes:true,
-    childList:true,
-    subtree:true
+  if(!response.ok){
+    throw new Error('HTTP ' + response.status);
+  }
+
+  return response.json();
+}
+
+async function refreshHealth(){
+  try{
+    const data = await getJSON('/health');
+
+    document.getElementById('network-status').textContent =
+      'Backend فعال';
+
+    document.getElementById('side-status').textContent =
+      'Online';
+
+    document.getElementById('node-id').textContent =
+      data.node_id || '--';
+
+    document.getElementById('peer-count').textContent =
+      data.peers ?? '--';
+
+    document.getElementById('p2p-peers').textContent =
+      data.peers ?? '--';
+
+    document.getElementById('api-state').textContent =
+      'ONLINE';
+
+    document.getElementById('p2p-status').textContent =
+      'ONLINE';
+
+  }catch(error){
+
+    document.getElementById('network-status').textContent =
+      'Backend قطع است';
+
+    document.getElementById('side-status').textContent =
+      'Offline';
+
+    document.getElementById('api-state').textContent =
+      'OFFLINE';
+
+    document.getElementById('p2p-status').textContent =
+      'OFFLINE';
+  }
+}
+
+async function refreshPeers(){
+  try{
+    const data = await getJSON('/api/peers');
+
+    document.getElementById('p2p-peers').textContent =
+      data.peers_count ?? '--';
+
+    document.getElementById('peer-count').textContent =
+      data.peers_count ?? '--';
+
+    showNotice(
+      'Peerهای واقعی مشاهده‌شده: ' +
+      (data.peers_count ?? 0)
+    );
+
+  }catch(error){
+    showNotice('دریافت وضعیت P2P شکست خورد.');
+  }
+}
+
+async function refreshStats(){
+  try{
+    const data = await getJSON('/api/stats');
+
+    document.getElementById('uptime').textContent =
+      Math.floor(data.uptime_seconds || 0) + 's';
+
+  }catch(error){}
+}
+
+async function refreshAll(){
+  await Promise.all([
+    refreshHealth(),
+    refreshPeers(),
+    refreshStats()
+  ]);
+}
+
+function showNotice(message){
+  alert(message);
+}
+
+function navigate(section){
+
+  const target = document.getElementById(section);
+
+  if(target){
+    target.scrollIntoView({
+      behavior:'smooth',
+      block:'start'
+    });
+  }
+
+  document.querySelectorAll('[data-section]').forEach(button=>{
+    button.classList.toggle(
+      'active',
+      button.dataset.section === section
+    );
+  });
+
+  const names = {
+    home:'داشبورد جهانی',
+    wallet:'کیف پول',
+    market:'صرافی GDM',
+    industry:'بازارها',
+    p2p:'شبکه P2P',
+    ai:'هوش مصنوعی',
+    social:'شبکه اجتماعی',
+    ads:'تبلیغات',
+    settings:'تنظیمات'
+  };
+
+  document.getElementById('page-title').textContent =
+    names[section] || 'داشبورد جهانی';
+}
+
+document.querySelectorAll('[data-section]').forEach(button=>{
+  button.addEventListener('click',()=>{
+    navigate(button.dataset.section);
   });
 });
+
+refreshAll();
+
+setInterval(refreshHealth,5000);
+setInterval(refreshStats,5000);
+
+
+// ═══════════════════════════════════════════════════════
+// ⛓️ Blockchain Dashboard
+// ═══════════════════════════════════════════════════════
+
+async function refreshChain() {
+  try {
+    const r = await fetch('/api/chain/stats');
+    const d = await r.json();
+    if (!d.ok) throw new Error('API error');
+    
+    const setEl = (id, val) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = val;
+    };
+    
+    setEl('chain-length', d.length);
+    setEl('chain-difficulty', d.difficulty);
+    setEl('chain-valid', d.is_valid ? '✅' : '❌');
+    setEl('chain-pending', d.pending_tx);
+    setEl('chain-supply', (d.total_supply / 1000000).toFixed(2) + 'M');
+    setEl('chain-wallets', d.wallets_count || 0);
+    
+    const hashEl = document.getElementById('chain-latest-hash');
+    if (hashEl) hashEl.textContent = d.latest_hash;
+    
+    // بارگذاری بلاک‌ها
+    const r2 = await fetch('/api/chain');
+    const d2 = await r2.json();
+    if (d2.ok && d2.chain) {
+      const preview = document.getElementById('blocks-preview');
+      if (preview) {
+        const blocks = d2.chain.slice(-5).reverse();
+        preview.innerHTML = blocks.map(b => `
+          <div class="block-preview-item">
+            <span class="block-idx">#${b.index}</span>
+            <span class="block-hash">${b.hash.substring(0, 20)}...</span>
+            <span class="block-tx">${b.tx_count} tx</span>
+          </div>
+        `).join('');
+      }
+    }
+  } catch(e) {
+    console.error('Chain refresh error:', e);
+  }
+}
+
+async function mineBlockFromDashboard() {
+  try {
+    const btn = event.target;
+    btn.disabled = true;
+    btn.textContent = '⛏️ در حال استخراج...';
+    
+    const r = await fetch('/api/chain/mine', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ miner: 'GDM-dashboard-miner' })
+    });
+    const d = await r.json();
+    
+    if (d.ok) {
+      alert('🎉 بلوک #' + d.block.index + ' استخراج شد!');
+      await refreshChain();
+    } else {
+      alert('❌ خطا: ' + d.error);
+    }
+  } catch(e) {
+    alert('❌ خطا در استخراج');
+  } finally {
+    const btn = event.target;
+    btn.disabled = false;
+    btn.textContent = '⛏️ استخراج بلوک جدید';
+  }
+}
+
+// شروع خودکار
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(refreshChain, 1000);
+  setInterval(refreshChain, 10000);
+});
+
+
+// ═══════════════════════════════════════════════════════
+// 💱 Exchange JavaScript
+// ═══════════════════════════════════════════════════════
+
+async function refreshExchange() {
+  try {
+    // Order Book
+    const r1 = await fetch('/api/exchange/orderbook');
+    const d1 = await r1.json();
+    
+    if (d1.ok) {
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      
+      set('ex-last-price', (d1.lastPrice || 0).toLocaleString());
+      
+      // Bids
+      const bidsEl = document.getElementById('ex-bids');
+      if (bidsEl) {
+        if (d1.bids && d1.bids.length > 0) {
+          bidsEl.innerHTML = d1.bids.map(b => 
+            `<div style="display:flex;justify-content:space-between;padding:6px;border-bottom:1px solid #1a2332;">
+              <span style="color:#4ade80;">${b.price.toLocaleString()}</span>
+              <span style="color:#8ba3c7;">${b.amount}</span>
+              <span style="color:#ffd700;">${b.total.toLocaleString()}</span>
+            </div>`
+          ).join('');
+        } else {
+          bidsEl.innerHTML = '<div style="color:#8ba3c7;text-align:center;padding:20px;">هیچ سفارش خریدی نیست</div>';
+        }
+      }
+      
+      // Asks
+      const asksEl = document.getElementById('ex-asks');
+      if (asksEl) {
+        if (d1.asks && d1.asks.length > 0) {
+          asksEl.innerHTML = d1.asks.map(a => 
+            `<div style="display:flex;justify-content:space-between;padding:6px;border-bottom:1px solid #1a2332;">
+              <span style="color:#f87171;">${a.price.toLocaleString()}</span>
+              <span style="color:#8ba3c7;">${a.amount}</span>
+              <span style="color:#ffd700;">${a.total.toLocaleString()}</span>
+            </div>`
+          ).join('');
+        } else {
+          asksEl.innerHTML = '<div style="color:#8ba3c7;text-align:center;padding:20px;">هیچ سفارش فروشی نیست</div>';
+        }
+      }
+    }
+    
+    // Stats 24h
+    const r2 = await fetch('/api/exchange/stats24h');
+    const d2 = await r2.json();
+    
+    if (d2.ok) {
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      set('ex-volume', (d2.volume || 0).toLocaleString());
+      set('ex-high', (d2.high || 0).toLocaleString());
+      set('ex-low', (d2.low || 0).toLocaleString());
+      set('ex-trades', d2.trades || 0);
+    }
+    
+    // Global Stats
+    const r3 = await fetch('/api/exchange/stats');
+    const d3 = await r3.json();
+    
+    if (d3.ok) {
+      const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+      set('ex-orders', d3.open_orders || 0);
+    }
+    
+    // سفارش‌های من
+    const userId = document.getElementById('ex-user')?.value;
+    if (userId) {
+      const r4 = await fetch('/api/exchange/orders?user=' + userId);
+      const d4 = await r4.json();
+      
+      const myEl = document.getElementById('ex-my-orders');
+      if (myEl && d4.ok && d4.orders) {
+        if (d4.orders.length === 0) {
+          myEl.innerHTML = '<div style="color:#8ba3c7;text-align:center;">هیچ سفارشی نداری</div>';
+        } else {
+          myEl.innerHTML = d4.orders.map(o => 
+            `<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:10px;background:#0a0e17;border-radius:8px;margin-bottom:8px;font-size:12px;">
+              <span style="color:${o.side === 'BUY' ? '#4ade80' : '#f87171'};">${o.side === 'BUY' ? '🟢 خرید' : '🔴 فروش'}</span>
+              <span style="color:#ffd700;">${o.price.toLocaleString()}</span>
+              <span style="color:#8ba3c7;">${o.remaining}/${o.amount}</span>
+              <span style="color:${o.status === 'FILLED' ? '#4ade80' : o.status === 'OPEN' ? '#ffd700' : '#f87171'};">${o.status}</span>
+              <button onclick="cancelOrder('${o.orderId}','${o.userId}')" style="background:#f87171;color:#fff;border:none;border-radius:4px;padding:4px;cursor:pointer;">لغو</button>
+            </div>`
+          ).join('');
+        }
+      }
+    }
+  } catch(e) {
+    console.error('Exchange error:', e);
+  }
+}
+
+async function placeOrder() {
+  const side = document.getElementById('ex-side')?.value;
+  const price = parseInt(document.getElementById('ex-price')?.value);
+  const amount = parseInt(document.getElementById('ex-amount')?.value);
+  const userId = document.getElementById('ex-user')?.value;
+  
+  if (!side || !price || !amount || !userId) {
+    alert('❌ همه فیلدها رو پر کن');
+    return;
+  }
+  
+  try {
+    const r = await fetch('/api/exchange/order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, side, price, amount })
+    });
+    const d = await r.json();
+    
+    if (d.ok) {
+      const msg = d.message === 'ORDER_MATCHED' 
+        ? '🎉 سفارش ثبت و معامله انجام شد!' 
+        : '✅ سفارش با موفقیت ثبت شد';
+      alert(msg);
+      await refreshExchange();
+    } else {
+      alert('❌ خطا: ' + (d.error || 'unknown'));
+    }
+  } catch(e) {
+    alert('❌ خطا در ارتباط');
+  }
+}
+
+async function cancelOrder(orderId, userId) {
+  if (!confirm('لغو سفارش ' + orderId + '؟')) return;
+  
+  try {
+    const r = await fetch('/api/exchange/cancel', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ orderId, userId })
+    });
+    const d = await r.json();
+    
+    if (d.ok) {
+      alert('✅ سفارش لغو شد');
+      await refreshExchange();
+    } else {
+      alert('❌ خطا: ' + (d.error || ''));
+    }
+  } catch(e) {
+    alert('❌ خطا');
+  }
+}
+
+// بروزرسانی خودکار
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(refreshExchange, 2000);
+  setInterval(refreshExchange, 15000);
+});
+  
+
+// ═══════ SECTIONS-DISPLAY-FIX ═══════
+// این کد همه بخش‌ها رو مدیریت می‌کنه
+(function() {
+  const SECTIONS = ['blockchain', 'exchange', 'settings', 'wallet', 'market', 'p2p', 'ai', 'social', 'ads'];
+  
+  // تابع اصلی navigate رو override کن
+  const originalNavigate = window.navigate;
+  
+  window.navigate = function(section) {
+    console.log('📍 navigate:', section);
+    
+    // اگه تابع اصلی هست، صدا بزن
+    if (typeof originalNavigate === 'function') {
+      try { originalNavigate(section); } catch(e) {}
+    }
+    
+    // مخفی کردن همه section های ماژولار
+    SECTIONS.forEach(s => {
+      const el = document.getElementById(s);
+      if (el && el.classList.contains('card') && el.tagName === 'SECTION') {
+        el.style.display = 'none';
+      }
+    });
+    
+    // اگه بخش بلاک‌چین یا صرافی خواسته شده، نمایش بده
+    if (SECTIONS.includes(section)) {
+      const target = document.getElementById(section);
+      if (target) {
+        target.style.display = 'block';
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // بروزرسانی داده‌ها
+        setTimeout(() => {
+          if (section === 'blockchain' && typeof refreshChain === 'function') {
+            refreshChain();
+          }
+          if (section === 'exchange' && typeof refreshExchange === 'function') {
+            refreshExchange();
+          }
+        }, 200);
+      }
+    }
+  };
+  
+  // اتصال دکمه‌ها
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.querySelectorAll('[data-section]').forEach(btn => {
+        // پاک کردن listener قدیمی و اضافه کردن جدید
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', () => {
+          window.navigate(newBtn.dataset.section);
+        });
+      });
+      console.log('✅ دکمه‌ها متصل شدند');
+    }, 500);
+  });
+})();
 </script>
 
 </body>

@@ -1,0 +1,238 @@
+ M .github/workflows/gandom-ui-e2e.yml
+ D ALL-IN-ONE/README.md
+ D ALL-IN-ONE/audit-server.js
+ D ALL-IN-ONE/backend.js
+ D ALL-IN-ONE/client.html
+ D ALL-IN-ONE/final.html
+ D ALL-IN-ONE/p2p-server.js
+ D ALL-IN-ONE/package.json
+ D ALL-IN-ONE/start.sh
+ D ALL-IN-ONE/ui-server.js
+ D CHECK.sh
+ D GANDOM-BOOT.sh
+ D GANDOM-FINAL-BUILD-AND-AUDIT.sh
+ D RESTORE.sh
+ M android/build.gradle
+ M android/settings.gradle
+ M audit-service/server.js
+ M blockchain-100.js
+ D chromium-dpkg-cycle1.log
+ D chromium-error.log
+ D chromium-runtime.log
+ D ci-diagnostic-36731371010/gandom-gradle-build.log
+ M employees/accounting-ledger.json
+ M employees/wallet-bridge.js
+ D gandom-server.log
+ M node-b-chain.js
+ M public/index.html
+ M server.js
+?? '
+?? .backend-health.json
+?? .evidence/
+?? .gandom-2558/
+?? .gandom-agent-2558/
+?? .gandom-audit-20261016_155330/
+?? .gandom-audit-2558-20261016_160241/
+?? .gandom-execution-lock.json
+?? .gandom-integration-rollback-20261013-094845/
+?? .github/workflows/gandom-ui-e2e.yml.before-ui-server-fix
+?? .installer-pid
+?? .runtime/
+?? =
+?? ALL/dashboard.html
+?? BACKUP_SYNC_FIX_20261017-081230/
+?? FINAL.html
+?? GANDOM-ALL.md
+?? GANDOM-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z
+?? GANDOM-AWAKENING.js
+?? GANDOM-AWAKENING.json
+?? GANDOM-DEEP-TREASURE-SCAN.js
+?? GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-FULL-AUTOMATION-2558.js
+?? GANDOM-INTEGRATE-2558.sh
+?? GANDOM-INTEGRATION-2558-REPORT.txt
+?? GANDOM-LAW2558-AUDIT-20261013-102234.txt
+?? GANDOM-LAW2558-AUDIT.sh
+?? GANDOM-MOTHER-2558.sh
+?? GANDOM-ONE-SITE.html
+?? GANDOM-ONE.html
+?? GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt
+?? GANDOM-SECTION-01.tar.gz
+?? GANDOM-TREASURE-LITE.js
+?? GANDOM_2558_AUDIT_20261016T102512Z.txt
+?? GANDOM_AUDIT_2558_READ_ONLY.json
+?? GANDOM_CONSENSUS_GATE_2558_2026-10-16T11-22-34-402Z.txt
+?? GANDOM_DEEP_AUDIT_20261016T103550Z.txt
+?? GANDOM_ENGINE_SHOCK_2558.txt
+?? GANDOM_EXECUTION_STATE.txt
+?? GANDOM_GLOBAL_BRIDGE_2558.json
+?? GANDOM_PREFLIGHT_20261016T060127Z.txt
+?? GANDOM_PREFLIGHT_20261016T060154Z.txt
+?? GANDOM_ROOT_CAUSE_2558_20261016T141524.txt
+?? GANDOM_ROOT_CAUSE_CODE_20261016T112839Z.txt
+?? GANDOM_ROOT_CAUSE_CODE_AUDIT_2558.sh
+?? GANDOM_ROOT_CAUSE_DEEP_2558.sh
+?? GANDOM_ROOT_CAUSE_DEEP_2558_20261016T104716Z.txt
+?? GANDOM_ROOT_FIX_2558.sh
+?? MASTER-PLAN.md
+?? PROPOSAL.txt
+?? PUZZLE-BACKUP-OVERLAP-2558.sh
+?? SHOVEL-REPORT-20261013-203517.txt
+?? ads-api.js
+?? ads-data/
+?? ads-manager.js
+?? ai-accountant-bridge.js
+?? ai-data/
+?? ai-runner.js
+?? ai-worker.js
+?? android/app/src/main/assets/
+?? architecture/
+?? archives/
+?? audit-data/
+?? audit-service/client.html
+?? audit/
+?? auto-auditor.js
+?? blockchain-100.js.before-gandom-2558-validation-1792134653021.bak
+?? blockchain-core.js
+?? blockchain-persistent.js
+?? blockchain.js
+?? breeding-data/
+?? breeding-manager.js
+?? cell-life-api.js
+?? cell-life-data/
+?? cell-life-engine-v2.js
+?? cell-life-engine.js
+?? cell-life-runner.js
+?? connect-organs.sh
+?? consensus.js
+?? constitution/EVIDENCE-TRUST-PROTOCOL-2558.json
+?? constitution/GANDOM-GLOBAL-2558-UNIFIED-LOCK.md
+?? constitution/GOLDEN-MOTHER-LAW-2558.HASH
+?? constitution/GOLDEN-MOTHER-LAW-2558.json
+?? constitution/GOLDEN-MOTHER-LAW-2558.md
+?? deep-shovel.sh
+?? docs/PRICING-NEW.md
+?? e
+?? "e HEAD"
+?? ecosystem-api.js
+?? employees/treasury-report.json
+?? erver.js
+?? evidence/
+?? exchange-api.js
+?? exchange-data/
+?? exchange-manager.js
+?? experience-data/
+?? experience-recorder.js
+?? family-memory.js
+?? father-audit.json
+?? father-vault.js
+?? father-wallet.json
+?? fix-display.js
+?? fix-route.js
+?? fix-vault-v2.js
+?? fix-vault-v3.js
+?? fix-vault.js
+?? full-audit.js
+?? gandom-alive.js
+?? gandom-audit-20261016-083014.txt
+?? gandom-audit.sh
+?? gandom-backend.js
+?? gandom-code.tar.gz
+?? gandom-core/
+?? gandom-final-start.sh
+?? gandom-global-bridge-2558.js
+?? gandom-investor-audit-20261016-082640.txt
+?? gandom-release-gate.txt
+?? gandom-ui-backtest.html
+?? gandom.db
+?? gandom_2558_execution_gate.sh
+?? gandom_consensus_gate_2558.js
+?? gandom_deep_audit_2558.sh
+?? gandom_mother2558_p2p.sh
+?? gandom_phase2_2558.sh
+?? gandom_phase3_accounting_audit_2558.sh
+?? gandom_preflight.sh
+?? gandom_root_cause_2558.sh
+?? governance/
+?? install-memory-v2.js
+?? install-vault.js
+?? investor-audit.sh
+?? market-api.js
+?? market-data/
+?? market-manager.js
+?? memories/
+?? mother-data/
+?? mother-node.js
+?? music-data/
+?? music-income.js
+?? neural-api.js
+?? neural-bus.js
+?? node-b-chain.js.before-gandom-2558-validation-1792134653022.bak
+?? node-b-chain.js.before-validation-fix-1792134426147.bak
+?? node-b-persistent.js
+?? node-breeding-api.js
+?? node-breeding.js
+?? node-mobile-release.json
+?? nodes-family/
+?? p2p-heavy-test.js
+?? p2p-heavy-test.js.pre-fix-2558
+?? p2p-heavy-test.js.pre-newline-fix
+?? p2p-heavy-test.js.pre-patch-2558
+?? p2p-real-test.js
+?? p2p-sync-fixed.js
+?? p2p-sync.js
+?? patch-blockchain-final.js
+?? patch-dashboard.js
+?? patch-exchange-dashboard.js
+?? patch-exchange-link.js
+?? patch-menu.js
+?? patch-section.js
+?? patch.js
+?? payment-api.js
+?? payment-data/
+?? payment-manager.js
+?? price-api.js
+?? price-oracle.js
+?? public/assets/
+?? public/chain.html
+?? public/chat.html
+?? public/diagnose.html
+?? public/gandom-3d.html
+?? public/gandom-brain.js
+?? public/gandom-girl.html
+?? public/gandom-test.html
+?? public/index.html.backup3
+?? public/index.html.backup4
+?? public/libs/
+?? public/voice-continuous.js
+?? public/voice-test.html
+?? run/
+?? runtime-logs/
+?? runtime/
+?? scripts/
+?? security-audit-20261016-085914.txt
+?? security-audit.sh
+?? security_audit.sh
+?? server.js.before-fix-20261017-124433.bak
+?? shovel.sh
+?? site/
+?? start-ai.js
+?? start-gandom.sh
+?? start-gandom.sh.before-lock-20261017-125729.bak
+?? start-gandom.sh.before-no-pkill-20261017-132028.bak
+?? start-gandom.sh.before-python-fix-20261017-131500.bak
+?? "tatus --short"
+?? test-100.js
+?? test-neuron.js
+?? test-node-b.js
+?? test-organs.sh
+?? utils.js
+?? wallet/GANDOM-WALLET-2558.js
+?? wallet/wallet-state.json
+?? worker-api.js
+?? worker-coordinator.js
+?? worker-node.js
+?? workers-data/
+?? www/gandom-live-ui.html
+?? www/gandom-live-ui.html.step4-before

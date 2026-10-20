@@ -1,0 +1,37 @@
+{
+  "TASK-1-8adbd2": {
+    "task_id": "TASK-1-8adbd2",
+    "task_type": "PROCESS_CELLS",
+    "params": {
+      "count": 5000
+    },
+    "assigned_to": "WORKER-COMPUTE-01",
+    "status": "COMPLETED",
+    "created_at": 1791992962263,
+    "completed_at": 1791992962274,
+    "result": {
+      "processed": 5000,
+      "births": 104,
+      "deaths": 52,
+      "mutations": 158
+    },
+    "duration_ms": 3
+  },
+  "TASK-2-295e57": {
+    "task_id": "TASK-2-295e57",
+    "task_type": "AI_TASK",
+    "params": {
+      "prompt": "تحلیل بازار امروز"
+    },
+    "assigned_to": "WORKER-AI-02",
+    "status": "COMPLETED",
+    "created_at": 1791992965331,
+    "completed_at": 1791992965339,
+    "result": {
+      "prompt": "تحلیل بازار امروز",
+      "response": "پاسخ آماده است",
+      "confidence": 0.9275957984499129
+    },
+    "duration_ms": 0
+  }
+}

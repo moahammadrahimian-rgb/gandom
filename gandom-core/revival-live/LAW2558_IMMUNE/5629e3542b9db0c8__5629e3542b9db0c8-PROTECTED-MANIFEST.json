@@ -1,0 +1,19 @@
+{
+  "project": "GANDOM",
+  "scope": "Blockchain V2",
+  "rule": "Protected files must not be modified",
+  "files": {
+    "index.js": {
+      "sha256": "ae6b1745c4b4d617b8d7452269fde761957a55c154b932c8e5825f6fc137e700"
+    },
+    "ai/index.js": {
+      "sha256": "13f5392da3496c8ae7ee3f44bb909b7cd29431bee5acafe6e0a1ba22716d4af4"
+    },
+    "autopublish/index.js": {
+      "sha256": "cc61c4597fcb88903487259967decf369e6fa8251acca2ed6b92ede76cf96944c"
+    },
+    "coins.json": {
+      "sha256": "bbf87888bd1bcb5b3e8c77293f3f0d817d70ae5450d45109a1a59b3986f34be3"
+    }
+  }
+}

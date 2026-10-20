@@ -1,0 +1,50 @@
+{
+  "LST-d47224ed7cde": {
+    "listingId": "LST-d47224ed7cde",
+    "userId": "USR-alice",
+    "category": "realestate",
+    "title": "آپارتمان ۱۰۰ متری",
+    "description": "دو خوابه، نو، نزدیک مترو",
+    "price": 5000000000,
+    "currency": "IRT",
+    "city": "تهران",
+    "images": [],
+    "metadata": {},
+    "status": "ACTIVE",
+    "views": 0,
+    "createdAt": "2026-10-14T14:24:43.070Z",
+    "updatedAt": "2026-10-14T14:24:43.070Z"
+  },
+  "LST-2b959bc16ccf": {
+    "listingId": "LST-2b959bc16ccf",
+    "userId": "USR-bob",
+    "category": "gold",
+    "title": "سکه طلا امامی",
+    "description": "بهار ۱۴۰۵، درجه یک",
+    "price": 50000000,
+    "currency": "IRT",
+    "city": "اصفهان",
+    "images": [],
+    "metadata": {},
+    "status": "ACTIVE",
+    "views": 0,
+    "createdAt": "2026-10-14T14:24:43.113Z",
+    "updatedAt": "2026-10-14T14:24:43.113Z"
+  },
+  "LST-5294113ce4c4": {
+    "listingId": "LST-5294113ce4c4",
+    "userId": "USR-alice",
+    "category": "car",
+    "title": "پژو ۲۰۶ مدل ۹۵",
+    "description": "بیمه کامل، بدون رنگ",
+    "price": 800000000,
+    "currency": "IRT",
+    "city": "مشهد",
+    "images": [],
+    "metadata": {},
+    "status": "ACTIVE",
+    "views": 0,
+    "createdAt": "2026-10-14T14:24:43.155Z",
+    "updatedAt": "2026-10-14T14:24:43.155Z"
+  }
+}

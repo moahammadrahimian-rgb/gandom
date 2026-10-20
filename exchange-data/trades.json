@@ -1,0 +1,13 @@
+[
+  {
+    "tradeId": "TRD-182f628da6df",
+    "pair": "GDM/IRT",
+    "price": 1000,
+    "amount": 5,
+    "buyOrderId": "ORD-8f11252cb6e3",
+    "sellOrderId": "ORD-e73d836b344a",
+    "buyerId": "USR-alice",
+    "sellerId": "USR-bob",
+    "timestamp": "2026-10-14T13:56:28.523Z"
+  }
+]

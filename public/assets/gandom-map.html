@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GANDOM Ecosystem Map - نقشه کامل گندم</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #0a0e17 0%, #1a1f2e 100%);
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 20px;
+  direction: rtl;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+
+.header {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 2px solid #2a3f5f;
+  margin-bottom: 30px;
+}
+.logo { font-size: 70px; margin-bottom: 15px; }
+h1 { color: #ffd700; font-size: 42px; margin-bottom: 10px; }
+.subtitle { color: #8ba3c7; font-size: 16px; }
+.law { 
+  display: inline-block;
+  margin-top: 15px;
+  padding: 6px 20px;
+  background: #1a2332;
+  border: 1px solid #ffd700;
+  border-radius: 20px;
+  color: #ffd700;
+  font-size: 13px;
+}
+
+.section-title {
+  color: #ffd700;
+  font-size: 24px;
+  margin: 40px 0 20px;
+  padding-right: 15px;
+  border-right: 4px solid #ffd700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: linear-gradient(135deg, #1a2332 0%, #0f1620 100%);
+  border: 1px solid #2a3f5f;
+  border-radius: 14px;
+  padding: 25px;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+}
+.card:hover { 
+  border-color: #ffd700; 
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255,215,0,0.15);
+}
+.card.active { border-color: #4ade80; }
+.card.active::before {
+  content: '✅';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 18px;
+}
+.card.partial { border-color: #fbbf24; }
+.card.partial::before {
+  content: '⚠️';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 18px;
+}
+.card.empty { border-color: #6b7280; }
+.card.empty::before {
+  content: '❌';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 18px;
+}
+
+.card-icon { font-size: 40px; margin-bottom: 12px; }
+.card-title { 
+  color: #ffd700; 
+  font-size: 19px; 
+  font-weight: bold; 
+  margin-bottom: 8px;
+}
+.card-desc { 
+  color: #8ba3c7; 
+  font-size: 13px; 
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.card-status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+}
+.status-active { background: #1a4d2e; color: #4ade80; }
+.status-partial { background: #4d3a1a; color: #fbbf24; }
+.status-empty { background: #2a2a2a; color: #6b7280; }
+
+.stats-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.stat-box {
+  background: #1a2332;
+  border: 1px solid #2a3f5f;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+.stat-value { color: #ffd700; font-size: 24px; font-weight: bold; }
+.stat-label { color: #8ba3c7; font-size: 12px; margin-top: 5px; }
+
+.footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 2px solid #2a3f5f;
+  color: #5a6f8f;
+  font-size: 13px;
+  margin-top: 50px;
+}
+.motto { color: #ffd700; font-style: italic; margin-top: 10px; }
+
+.flow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background: #1a2332;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+.flow-item {
+  padding: 8px 16px;
+  background: #0f1620;
+  border: 1px solid #2a3f5f;
+  border-radius: 8px;
+  color: #ffd700;
+  font-size: 13px;
+}
+.flow-arrow { color: #ffd700; font-size: 18px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo">🌾</div>
+    <h1>GANDOM Ecosystem Map</h1>
+    <p class="subtitle">نقشه کامل اکوسیستم گندم ۲۵۵۸</p>
+    <div class="law">قانون مادر ۲۵۵۸ | No Fake Pass | Real Execution Only</div>
+  </div>
+
+  <!-- آمار کلی -->
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-value">۷</div>
+      <div class="stat-label">گزینش بلاک‌چین</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">۱۱</div>
+      <div class="stat-label">عضو زنده</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">۵</div>
+      <div class="stat-label">نسخه گندم</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">۱۰۰٪</div>
+      <div class="stat-label">بلاک‌چین کامل</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ بخش ۱: هسته اصلی ═══════════════ -->
+  <h2 class="section-title">🧠 ۱. هسته اصلی (Core)</h2>
+  <div class="grid">
+    <a href="/api/stats" class="card active" target="_blank">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">مغز (Engine)</div>
+      <div class="card-desc">منطق اصلی گندم، تصمیم‌گیری و هماهنگی</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/api/stats" class="card active" target="_blank">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">نورون (Neuron)</div>
+      <div class="card-desc">پیام‌رسانی WebSocket بین نودها</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/api/cells" class="card active" target="_blank">
+      <div class="card-icon">🔵</div>
+      <div class="card-title">سلول‌های زنده</div>
+      <div class="card-desc">سیستم سلولی با تولد، مرگ و جهش</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/api/state" class="card active" target="_blank">
+      <div class="card-icon">❤️</div>
+      <div class="card-title">قلب و اعضا</div>
+      <div class="card-desc">۱۱ عضو زنده: قلب، ریه، کلیه، کبد، ...</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۲: بلاک‌چین ═══════════════ -->
+  <h2 class="section-title">⛓️ ۲. بلاک‌چین (Blockchain)</h2>
+  <div class="grid">
+    <a href="/assets/chain.html" class="card active">
+      <div class="card-icon">🔍</div>
+      <div class="card-title">کاوشگر بلاک‌چین</div>
+      <div class="card-desc">نمایش زنده بلاک‌ها، تراکنش‌ها و استخراج</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/api/chain" class="card active" target="_blank">
+      <div class="card-icon">📦</div>
+      <div class="card-title">API بلاک‌چین</div>
+      <div class="card-desc">7 مسیر API برای تعامل با بلاک‌چین</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/api/chain/validate" class="card active" target="_blank">
+      <div class="card-icon">✅</div>
+      <div class="card-title">اعتبارسنجی</div>
+      <div class="card-desc">بررسی یکپارچگی زنجیره</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/api/chain/pending" class="card active" target="_blank">
+      <div class="card-icon">⏳</div>
+      <div class="card-title">تراکنش‌های در انتظار</div>
+      <div class="card-desc">Pool تراکنش‌های تایید نشده</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۳: شبکه ═══════════════ -->
+  <h2 class="section-title">🌐 ۳. شبکه (Network)</h2>
+  <div class="grid">
+    <a href="/api/peers" class="card active" target="_blank">
+      <div class="card-icon">🔗</div>
+      <div class="card-title">شبکه P2P</div>
+      <div class="card-desc">WebSocket بین نود A و نود B</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/health" class="card active" target="_blank">
+      <div class="card-icon">💓</div>
+      <div class="card-title">سلامت سرور</div>
+      <div class="card-desc">Health Check روی پورت 8787</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">🌍</div>
+      <div class="card-title">شبکه جهانی</div>
+      <div class="card-desc">اتصال به نودهای سراسر جهان</div>
+      <span class="card-status status-partial">⚠️ لوکال</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">🔒</div>
+      <div class="card-title">SSL/HTTPS</div>
+      <div class="card-desc">رمزنگاری لایه انتقال</div>
+      <span class="card-status status-partial">⚠️ ناقص</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۴: اقتصاد ═══════════════ -->
+  <h2 class="section-title">💰 ۴. اقتصاد (Economy)</h2>
+  <div class="grid">
+    <a href="/wallet" class="card partial">
+      <div class="card-icon">👛</div>
+      <div class="card-title">کیف پول GDM</div>
+      <div class="card-desc">مدیریت دارایی دیجیتال</div>
+      <span class="card-status status-partial">⚠️ نمایشی</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">📈</div>
+      <div class="card-title">صرافی (Exchange)</div>
+      <div class="card-desc">معاملات GDM/USDT</div>
+      <span class="card-status status-partial">⚠️ ناقص</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">💳</div>
+      <div class="card-title">درگاه پرداخت</div>
+      <div class="card-desc">Zarinpal، Paddle</div>
+      <span class="card-status status-partial">⚠️ غیرفعال</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">🏦</div>
+      <div class="card-title">بانک گندم</div>
+      <div class="card-desc">واریز، برداشت، انتقال</div>
+      <span class="card-status status-partial">⚠️ ناقص</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۵: هوش مصنوعی ═══════════════ -->
+  <h2 class="section-title">🤖 ۵. هوش مصنوعی (AI Agents)</h2>
+  <div class="grid">
+    <a href="#" class="card partial">
+      <div class="card-icon">📊</div>
+      <div class="card-title">AI-ACCOUNTANT</div>
+      <div class="card-desc">حسابداری خودکار</div>
+      <span class="card-status status-partial">⚠️ پایه</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">📣</div>
+      <div class="card-title">AI-MARKETER</div>
+      <div class="card-desc">بازاریابی و تبلیغات</div>
+      <span class="card-status status-partial">⚠️ پایه</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">💼</div>
+      <div class="card-title">AI-TREASURER</div>
+      <div class="card-desc">مدیریت خزانه</div>
+      <span class="card-status status-partial">⚠️ پایه</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">⚙️</div>
+      <div class="card-title">کارمندان دیگر</div>
+      <div class="card-desc">AI-MANAGER، AI-TRADER، ...</div>
+      <span class="card-status status-partial">⚠️ پایه</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۶: بازارها ═══════════════ -->
+  <h2 class="section-title">🏪 ۶. بازارهای واقعی (Markets)</h2>
+  <div class="grid">
+    <a href="#" class="card partial">
+      <div class="card-icon">🏠</div>
+      <div class="card-title">املاک</div>
+      <div class="card-desc">خرید، فروش و اجاره</div>
+      <span class="card-status status-partial">⚠️ UI</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">🥇</div>
+      <div class="card-title">طلا و جواهرات</div>
+      <div class="card-desc">معاملات طلا و جواهر</div>
+      <span class="card-status status-partial">⚠️ UI</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">🚗</div>
+      <div class="card-title">خودرو</div>
+      <div class="card-desc">خرید و فروش خودرو</div>
+      <span class="card-status status-partial">⚠️ UI</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">🔧</div>
+      <div class="card-title">مس و فلزات</div>
+      <div class="card-desc">فلزات و کالا</div>
+      <span class="card-status status-partial">⚠️ UI</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۷: امنیت ═══════════════ -->
+  <h2 class="section-title">🔐 ۷. امنیت (Security)</h2>
+  <div class="grid">
+    <a href="/api/stats" class="card active" target="_blank">
+      <div class="card-icon">🛡️</div>
+      <div class="card-title">حسابرسی (Audit)</div>
+      <div class="card-desc">ممیزی و بررسی یکپارچگی</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="#" class="card active">
+      <div class="card-icon">📋</div>
+      <div class="card-title">شواهد (Evidence)</div>
+      <div class="card-desc">رکوردشواهد با هش SHA-256</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="#" class="card active">
+      <div class="card-icon">🔑</div>
+      <div class="card-title">امضای ED25519</div>
+      <div class="card-desc">امضای دیجیتال شواهد</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="#" class="card active">
+      <div class="card-icon">🏛️</div>
+      <div class="card-title">قانون ۲۵۵۸</div>
+      <div class="card-desc">GOLDEN-MOTHER-LAW</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۸: رابط کاربری ═══════════════ -->
+  <h2 class="section-title">🎨 ۸. رابط کاربری (UI)</h2>
+  <div class="grid">
+    <a href="/" class="card active">
+      <div class="card-icon">🏠</div>
+      <div class="card-title">صفحه اصلی</div>
+      <div class="card-desc">Landing Page گندم</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/assets/chain.html" class="card active">
+      <div class="card-icon">⛓️</div>
+      <div class="card-title">کاوشگر بلاک‌چین</div>
+      <div class="card-desc">Blockchain Explorer</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="/admin.html" class="card partial">
+      <div class="card-icon">⚙️</div>
+      <div class="card-title">پنل مدیریت</div>
+      <div class="card-desc">Admin Panel</div>
+      <span class="card-status status-partial">⚠️ پایه</span>
+    </a>
+
+    <a href="/site/index.html" class="card active">
+      <div class="card-icon">📊</div>
+      <div class="card-title">داشبورد اصلی</div>
+      <div class="card-desc">رابط کاربری کامل</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۹: نسخه‌ها ═══════════════ -->
+  <h2 class="section-title">📱 ۹. نسخه‌ها (Versions)</h2>
+  <div class="grid">
+    <a href="/assets/final-apk/app-debug.apk" class="card active" download>
+      <div class="card-icon">📱</div>
+      <div class="card-title">APK اصلی</div>
+      <div class="card-desc">نسخه اندروید گندم</div>
+      <span class="card-status status-active">✅ دانلود</span>
+    </a>
+
+    <a href="#" class="card active">
+      <div class="card-icon">🌐</div>
+      <div class="card-title">PWA / Web</div>
+      <div class="card-desc">نسخه تحت وب</div>
+      <span class="card-status status-active">✅ فعال</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">🧠</div>
+      <div class="card-title">NRN-ALPHA6</div>
+      <div class="card-desc">نسخه نرون آلفا ۶</div>
+      <span class="card-status status-partial">⚠️ جدا</span>
+    </a>
+
+    <a href="#" class="card partial">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">MYBOT</div>
+      <div class="card-desc">پروژه جانبی</div>
+      <span class="card-status status-partial">⚠️ جدا</span>
+    </a>
+  </div>
+
+  <!-- ═══════════════ بخش ۱۰: مستندات ═══════════════ -->
+  <h2 class="section-title">📚 ۱۰. مستندات (Documentation)</h2>
+  <div class="grid">
+    <a href="https://github.com/moahammadrahimian-rgb/gandom" class="card active" target="_blank">
+      <div class="card-icon">💻</div>
+      <div class="card-title">GitHub Repository</div>
+      <div class="card-desc">کد کامل پروژه</div>
+      <span class="card-status status-active">✅ آنلاین</span>
+    </a>
+
+    <a href="#" class="card active">
+      <div class="card-icon">📖</div>
+      <div class="card-title">GANDOM-ALL.md</div>
+      <div class="card-desc">مستندات کامل</div>
+      <span class="card-status status-active">✅</span>
+    </a>
+
+    <a href="#" class="card active">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title">Master Plan</div>
+      <div class="card-desc">نقشه راه</div>
+      <span class="card-status status-active">✅</span>
+    </a>
+
+    <a href="#" class="card active">
+      <div class="card-icon">📜</div>
+      <div class="card-title">قانون مادر</div>
+      <div class="card-desc">GOLDEN-MOTHER-LAW-2558</div>
+      <span class="card-status status-active">✅</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <p>GANDOM - Law 2558 | No Fake Pass | Real Execution Only</p>
+    <p class="motto">"گندم، فقط یک پروژه نیست؛ یک اکوسیستم زنده است."</p>
+    <p style="margin-top: 15px; color: #ffd700;">🌾 2558 🌾</p>
+  </div>
+
+</div>
+</body>
+</html>

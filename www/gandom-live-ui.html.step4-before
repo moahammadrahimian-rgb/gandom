@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050914">
+<title>گندم | GANDOM Live</title>
+<style>
+:root{
+ --bg:#050914;--panel:#0a1424;--panel2:#0d1c30;--line:#173753;
+ --gold:#f5b94c;--cyan:#35d9ff;--blue:#4d8cff;--text:#edf5ff;
+ --muted:#8da4bd;--good:#36dfa0;--bad:#ff647c;--radius:16px
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 50% 0,#102342 0,transparent 50%),var(--bg);
+ color:var(--text);font-family:Tahoma,Arial,sans-serif;font-size:13px}
+button,a{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:5;background:#050914ed;backdrop-filter:blur(16px);
+ border-bottom:1px solid var(--line);padding:12px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;min-width:170px}
+.wheat{font-size:37px;color:var(--gold);filter:drop-shadow(0 0 10px #f5b94c66)}
+.brand strong{display:block;font-size:22px;color:var(--gold);letter-spacing:2px}
+.brand small{color:var(--muted)}
+.metrics{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.metric{border:1px solid var(--line);background:#0a1627;padding:8px 12px;border-radius:12px;min-width:115px}
+.metric span{display:block;color:var(--muted);font-size:11px;margin-bottom:5px}
+.metric b{font-size:16px}
+.layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:12px;padding:12px;max-width:1800px;margin:auto}
+aside,.card{background:linear-gradient(145deg,#0c192b,#07101d);border:1px solid var(--line);border-radius:var(--radius)}
+aside{padding:10px;height:max-content;position:sticky;top:88px}
+.nav{display:block;text-align:right;width:100%;padding:13px 12px;margin:3px 0;color:#c5d8ee;background:transparent;border:1px solid transparent;border-radius:10px}
+.nav:hover,.nav.active{background:#3a2a164d;border-color:#87652d;color:var(--gold)}
+main{min-width:0}
+.hero{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px;margin-bottom:12px;
+ background:linear-gradient(110deg,#102b47,#0b1423 60%,#382512);border:1px solid #5b512e;border-radius:var(--radius)}
+.hero h1{margin:0 0 8px;font-size:clamp(20px,3vw,32px)}
+.hero p{margin:0;color:#a9bfd7;line-height:1.8}
+.status{border:1px solid var(--line);border-radius:30px;padding:9px 12px;white-space:nowrap;color:var(--muted)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--muted);margin-left:7px}
+.dot.ok{background:var(--good);box-shadow:0 0 10px var(--good)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:12px}
+.card{padding:15px;min-width:0;scroll-margin-top:100px}
+.col12{grid-column:span 12}.col8{grid-column:span 8}.col7{grid-column:span 7}
+.col6{grid-column:span 6}.col5{grid-column:span 5}.col4{grid-column:span 4}
+.col3{grid-column:span 3}
+.card h2{font-size:15px;margin:0 0 14px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.card h2 em{font-style:normal;color:var(--cyan);font-size:11px;font-weight:normal}
+.big{font-size:29px;font-weight:bold;letter-spacing:.3px}
+.muted{color:var(--muted)}.gold{color:var(--gold)}.cyan{color:var(--cyan)}
+.green{color:var(--good)}.red{color:var(--bad)}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0}
+.pill{display:inline-block;padding:5px 8px;border-radius:8px;background:#0b2937;color:var(--cyan);font-size:11px}
+.chart{width:100%;height:125px;display:block;margin-top:10px}
+.spark{stroke:var(--gold);stroke-width:2;fill:none}
+.market-price{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn{border:1px solid #315b7b;border-radius:10px;padding:10px 14px;color:var(--text);background:#10263b}
+.btn.primary{background:linear-gradient(120deg,#b37b28,#f3c968);color:#17100a;border:0;font-weight:bold}
+.btn:hover{filter:brightness(1.2)}
+.list{display:grid;gap:9px}
+.listitem{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #142b40;padding:9px 0}
+.listitem:last-child{border:0}
+.icon{font-size:23px;width:34px;text-align:center}
+.organ-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.organ{padding:12px 7px;border:1px solid #193b55;border-radius:12px;background:#091626;text-align:center}
+.organ .icon{display:block;margin:0 auto 7px;font-size:25px}
+.organ b{display:block;font-size:12px;margin-bottom:5px}
+.organ small{color:var(--muted);font-size:10px}
+.nodes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.node{border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;background:#091626}
+.node b{display:block;font-size:19px;color:var(--cyan);margin:7px 0}
+.log{font:11px/1.9 monospace;direction:ltr;text-align:left;max-height:180px;overflow:auto;color:#a6d8ee;overflow-wrap:anywhere}
+.log div{border-bottom:1px solid #11283a;padding:3px}
+.progress{height:7px;background:#14283a;border-radius:10px;overflow:hidden;margin:10px 0}
+.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--gold));transition:width .3s}
+footer{text-align:center;color:var(--muted);padding:24px 12px}
+.notice{border-right:3px solid var(--gold);padding:9px 12px;background:#30231366;color:#e9d3a6;line-height:1.8}
+@media(max-width:1000px){
+ .layout{grid-template-columns:1fr}
+ aside{position:static;display:flex;overflow-x:auto;gap:4px}
+ .nav{white-space:nowrap;width:auto;padding:10px}
+ .col8,.col7,.col6,.col5,.col4,.col3{grid-column:span 6}
+ header{align-items:flex-start;flex-direction:column}
+ .metrics{justify-content:flex-start;width:100%}
+}
+@media(max-width:600px){
+ .layout{padding:7px;gap:8px}.grid{gap:8px}.card{padding:12px}
+ .col8,.col7,.col6,.col5,.col4,.col3{grid-column:span 12}
+ .organ-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .metric{flex:1;min-width:100px}.metric b{font-size:14px}
+ .hero{align-items:flex-start;flex-direction:column}
+ .nodes{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="wheat">🌾</div><div><strong>گندم</strong><small>GANDOM · REAL P2P ECOSYSTEM</small></div></div>
+ <div class="metrics">
+  <div class="metric"><span>وضعیت API</span><b id="apiStatus">در حال بررسی</b></div>
+  <div class="metric"><span>همتاهای متصل</span><b id="peerCount">نامشخص</b></div>
+  <div class="metric"><span>سلول هدف هر نود</span><b>400,000</b></div>
+  <div class="metric"><span>قیمت GDM/USDT</span><b>داده موجود نیست</b></div>
+ </div>
+</header>
+
+<div class="layout">
+<aside>
+ <button class="nav active" data-target="home">⌂ داشبورد</button>
+ <button class="nav" data-target="market">▥ بازار</button>
+ <button class="nav" data-target="wallet">▣ کیف پول</button>
+ <button class="nav" data-target="p2p">◎ شبکه P2P</button>
+ <button class="nav" data-target="brain">✺ مغز و نورون‌ها</button>
+ <button class="nav" data-target="organs">♡ اندام‌ها</button>
+ <button class="nav" data-target="dna">⌬ DNA و کروموزوم</button>
+ <button class="nav" data-target="ai">◉ هوش مصنوعی</button>
+ <button class="nav" data-target="industries">◇ بازارهای جهانی</button>
+ <button class="nav" data-target="logs">≋ گزارش زنده</button>
+</aside>
+
+<main>
+<section id="home" class="hero">
+ <div><h1>یک جهان؛ یک شبکه؛ یک گندم</h1><p>داشبورد اجرایی GANDOM · بازار، هوش مصنوعی، سلول‌ها و ارتباط همتا‌به‌همتا</p></div>
+ <div class="status"><span class="dot" id="healthDot"></span><span id="healthText">در انتظار بررسی سرور</span></div>
+</section>
+
+<div class="grid">
+<section id="market" class="card col7">
+ <h2>📈 بازار GDM / USDT <em>اتصال قیمت: هنوز تنظیم نشده</em></h2>
+ <div class="market-price"><span class="big" id="marketPrice">—</span><span class="muted">USDT</span><span class="pill">نمودار نمایشی نیست؛ منتظر منبع قیمت</span></div>
+ <svg class="chart" viewBox="0 0 500 125" preserveAspectRatio="none" aria-label="نمودار بازار">
+  <path d="M0 25H500 M0 60H500 M0 95H500" stroke="#17324b" stroke-width="1" fill="none"/>
+  <text x="250" y="65" fill="#819bb5" text-anchor="middle" font-size="13">پس از اتصال API بازار نمایش داده می‌شود</text>
+ </svg>
+ <div class="row"><span class="muted">تغییر ۲۴ ساعته</span><b id="marketChange">ناموجود</b></div>
+ <div class="notice">قیمت و نمودار تا اتصال به منبع واقعی بازار عمداً خالی هستند.</div>
+</section>
+
+<section id="p2p" class="card col5">
+ <h2>🌐 شبکه P2P <em id="p2pStatus">بررسی اتصال</em></h2>
+ <div class="nodes">
+  <div class="node">همتاهای متصل<b id="peersCard">—</b><small>از API</small></div>
+  <div class="node">وضعیت سرور<b id="serverCard">—</b><small>سلامت سرویس</small></div>
+  <div class="node">شناسه نود<b style="font-size:11px" id="nodeId">—</b><small>از API</small></div>
+ </div>
+ <div class="progress"><span id="apiProgress"></span></div>
+ <p class="muted">۴۰۰٬۰۰۰ سلول هدف هر نود است؛ تعداد سلول زنده فقط پس از اتصال شمارندهٔ واقعی ثبت می‌شود.</p>
+ <button class="btn" id="refresh">↻ تازه‌سازی وضعیت</button>
+</section>
+
+<section id="wallet" class="card col4">
+ <h2>💰 کیف پول</h2><div class="big">— <small>GDM</small></div>
+ <p class="muted">موجودی واقعی هنوز به API کیف پول وصل نشده است.</p>
+ <div class="actions"><button class="btn" data-msg="واریز تا اتصال کیف پول غیرفعال است.">واریز</button><button class="btn" data-msg="برداشت تا اتصال کیف پول غیرفعال است.">برداشت</button></div>
+</section>
+
+<section id="brain" class="card col4">
+ <h2>🧠 مغز و نورون‌ها</h2>
+ <div class="row"><span>نورون‌های هدف هر نود</span><b class="cyan">40,000</b></div>
+ <div class="row"><span>تعداد واقعی نورون فعال</span><b>هنوز متصل نیست</b></div>
+ <div class="row"><span>پردازش عصبی</span><b class="muted">نیازمند اتصال موتور</b></div>
+</section>
+
+<section id="dna" class="card col4">
+ <h2>🧬 DNA و کروموزوم</h2>
+ <div class="row"><span>سرویس ژنوم</span><b>در انتظار اتصال</b></div>
+ <div class="row"><span>یکپارچگی داده</span><b>تأیید نشده</b></div>
+ <p class="muted">این بخش جایگاه اتصال موتور ژنوم و شواهد اعتبارسنجی آن است.</p>
+</section>
+
+<section id="organs" class="card col12">
+ <h2>🫀 بخش‌های زنده و اجرایی <em>نمایش وضعیت اتصال</em></h2>
+ <div class="organ-grid">
+  <div class="organ"><span class="icon">🧠</span><b>مغز</b><small>موتور نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">✺</span><b>نورون‌ها</b><small>شمارنده نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">🧬</span><b>DNA</b><small>وضعیت تأیید نشده</small></div>
+  <div class="organ"><span class="icon">❤️</span><b>قلب</b><small>چرخهٔ اصلی نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">🫁</span><b>شش</b><small>جریان داده نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">🫘</span><b>کلیه</b><small>فیلتر داده نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">👁️</span><b>چشم</b><small>ورودی بینایی نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">👂</span><b>گوش</b><small>ورودی صوتی نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">🖐️</span><b>دست</b><small>عملیات نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">🦶</span><b>پا</b><small>حرکت نیازمند اتصال</small></div>
+  <div class="organ"><span class="icon">🌱</span><b>زاد و ولد</b><small>چرخهٔ تکثیر نیازمند آزمون</small></div>
+  <div class="organ"><span class="icon">♻️</span><b>مرگ و بازیافت</b><small>چرخهٔ پایان عمر نیازمند آزمون</small></div>
+ </div>
+</section>
+
+<section id="ai" class="card col6">
+ <h2>🤖 هوش مصنوعی و API</h2>
+ <div class="row"><span>وضعیت موتور AI</span><b>هنوز متصل نیست</b></div>
+ <div class="row"><span>ارائه‌دهنده API</span><b>تنظیم نشده</b></div>
+ <div class="notice">کلید API را داخل HTML یا کد مرورگر قرار نده؛ اتصال امن باید از سمت سرور انجام شود.</div>
+</section>
+
+<section id="industries" class="card col6">
+ <h2>🌍 بازارهای جهانی</h2>
+ <div class="list">
+  <div class="listitem"><span>🪙 طلا</span><span class="muted">نیازمند قیمت واقعی</span></div>
+  <div class="listitem"><span>🏠 املاک</span><span class="muted">نیازمند سرویس بازار</span></div>
+  <div class="listitem"><span>🚗 خودرو</span><span class="muted">نیازمند سرویس بازار</span></div>
+  <div class="listitem"><span>⚙️ مس و نقره</span><span class="muted">نیازمند قیمت واقعی</span></div>
+ </div>
+</section>
+
+<section id="logs" class="card col12">
+ <h2>📡 گزارش زندهٔ ارتباط با سرور <em>خروجی درخواست‌های واقعی این صفحه</em></h2>
+ <div class="log" id="logsBox"><div>UI_READY: رابط در مرورگر بارگذاری شد.</div></div>
+</section>
+</div>
+<footer>🌾 GANDOM · قانون مادر ۲۵۵۸ · رابط کاربری اجرایی · دادهٔ ساختگی به‌عنوان دادهٔ زنده نمایش داده نمی‌شود.</footer>
+</main>
+</div>
+
+<script>
+(() => {
+ const $ = id => document.getElementById(id);
+ const logBox = $('logsBox');
+ function log(message) {
+   const row = document.createElement('div');
+   row.textContent = new Date().toLocaleTimeString() + ' | ' + message;
+   logBox.prepend(row);
+   while (logBox.children.length > 60) logBox.lastElementChild.remove();
+ }
+ async function request(path) {
+   const response = await fetch(path, {cache:'no-store'});
+   if (!response.ok) throw new Error(path + ' HTTP ' + response.status);
+   return response.json();
+ }
+ async function refresh() {
+   $('apiStatus').textContent = 'در حال بررسی';
+   $('healthText').textContent = 'در حال بررسی API';
+   try {
+     const health = await request('http://127.0.0.1:8787/health');
+     $('apiStatus').textContent = 'پاسخ دریافت شد';
+     $('apiStatus').style.color = 'var(--good)';
+     $('healthDot').className = 'dot ok';
+     $('healthText').textContent = 'سرور پاسخ می‌دهد';
+     $('serverCard').textContent = 'ONLINE';
+     $('serverCard').style.color = 'var(--good)';
+     $('apiProgress').style.width = '100%';
+     if (health.node_id) $('nodeId').textContent = health.node_id;
+     if (Number.isFinite(Number(health.peers))) {
+       $('peerCount').textContent = health.peers;
+       $('peersCard').textContent = health.peers;
+     }
+     $('p2pStatus').textContent = 'سرور پاسخ می‌دهد';
+     log('HEALTH_OK: /health پاسخ معتبر داد.');
+     log('HEALTH_DATA: ' + JSON.stringify(health));
+   } catch (error) {
+     $('apiStatus').textContent = 'بدون اتصال';
+     $('apiStatus').style.color = 'var(--bad)';
+     $('healthDot').className = 'dot';
+     $('healthText').textContent = 'API در دسترس نیست';
+     $('serverCard').textContent = 'OFFLINE';
+     $('serverCard').style.color = 'var(--bad)';
+     $('p2pStatus').textContent = 'اتصال تأیید نشد';
+     $('apiProgress').style.width = '0%';
+     log('HEALTH_ERROR: ' + error.message);
+   }
+   for (const path of ['/api/peers','/api/stats','/api/version']) {
+     try {
+       const data = await request('http://127.0.0.1:8787' + path);
+       log(path + ': ' + JSON.stringify(data));
+       if (path === '/api/peers') {
+         const peers = Array.isArray(data) ? data :
+           (Array.isArray(data.peers) ? data.peers : null);
+         if (peers) {
+           $('peerCount').textContent = peers.length;
+           $('peersCard').textContent = peers.length;
+         }
+       }
+     } catch (error) {
+       log(path + ' unavailable: ' + error.message);
+     }
+   }
+ }
+ document.querySelectorAll('[data-target]').forEach(button => {
+   button.addEventListener('click', () => {
+     document.querySelectorAll('.nav').forEach(b => b.classList.remove('active'));
+     button.classList.add('active');
+     document.getElementById(button.dataset.target).scrollIntoView({behavior:'smooth'});
+   });
+ });
+ document.querySelectorAll('[data-msg]').forEach(button => {
+   button.addEventListener('click', () => alert(button.dataset.msg));
+ });
+ $('refresh').addEventListener('click', refresh);
+ refresh();
+ setInterval(refresh, 15000);
+})();
+</script>
+</body>
+</html>

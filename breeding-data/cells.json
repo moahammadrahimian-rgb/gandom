@@ -1,0 +1,30 @@
+{
+  "CELL-8f2f1323aa0d": {
+    "cellId": "CELL-8f2f1323aa0d",
+    "name": "Adam",
+    "parentA": null,
+    "parentB": null,
+    "generation": 0,
+    "dna": "32ad637d679f01c8022c8e993a2500aa976d45d10e5e9ccb860d220bf4d7f870",
+    "energy": 100,
+    "age": 0,
+    "alive": true,
+    "offspring": 0,
+    "traits": [],
+    "createdAt": "2026-10-14T15:28:22.156Z"
+  },
+  "CELL-8049a695ff1e": {
+    "cellId": "CELL-8049a695ff1e",
+    "name": "Eve",
+    "parentA": null,
+    "parentB": null,
+    "generation": 0,
+    "dna": "2059ff322d443f81f0f011597720e1c1ba6208c1a9dbc3221d2f78bfa2e79f1e",
+    "energy": 100,
+    "age": 0,
+    "alive": true,
+    "offspring": 0,
+    "traits": [],
+    "createdAt": "2026-10-14T15:28:22.199Z"
+  }
+}

@@ -1,0 +1,406 @@
+===== GANDOM EXECUTION STATE =====
+2026-10-16T10:12:24+03:30
+PROJECT=/data/data/com.termux/files/home/gandom
+LOCK=.gandom-execution-lock.json
+===== LOCK CONTENT =====
+{
+  "project": "GANDOM Main",
+  "execution_lock": "ACTIVE",
+  "governing_law": 2558,
+  "mission": "Complete the existing integrated GANDOM system",
+  "phases": [
+    "EXISTING_CORE_INTEGRATION",
+    "MULTI_NODE_NETWORK_AND_CHAIN_SYNC",
+    "SECURITY_AUDIT_AND_HARDENING",
+    "LEDGER_ACCOUNTING_AND_DOUBLE_SPEND_PREVENTION",
+    "END_TO_END_INDEPENDENT_VERIFICATION"
+  ],
+  "constraints": [
+    "Reuse the existing project and its components",
+    "Do not create a parallel core",
+    "Do not delete backups",
+    "Avoid unnecessary duplicate files",
+    "Do not claim PASS_REAL without real execution evidence"
+  ],
+  "production_approval": false
+}
+
+===== GIT STATE =====
+ M .github/workflows/gandom-ui-e2e.yml
+ D ALL-IN-ONE/README.md
+ D ALL-IN-ONE/audit-server.js
+ D ALL-IN-ONE/backend.js
+ D ALL-IN-ONE/client.html
+ D ALL-IN-ONE/final.html
+ D ALL-IN-ONE/p2p-server.js
+ D ALL-IN-ONE/package.json
+ D ALL-IN-ONE/start.sh
+ D ALL-IN-ONE/ui-server.js
+ D CHECK.sh
+ D GANDOM-BOOT.sh
+ D GANDOM-FINAL-BUILD-AND-AUDIT.sh
+ D RESTORE.sh
+ M android/build.gradle
+ M android/settings.gradle
+ M audit-service/server.js
+ M blockchain-100.js
+ D chromium-dpkg-cycle1.log
+ D chromium-error.log
+ D chromium-runtime.log
+ D ci-diagnostic-36731371010/gandom-gradle-build.log
+ M employees/accounting-ledger.json
+ M employees/wallet-bridge.js
+ D gandom-server.log
+ M public/index.html
+ M server.js
+?? '
+?? .backend-health.json
+?? .gandom-agent-2558/
+?? .gandom-execution-lock.json
+?? .gandom-integration-rollback-20261013-094845/
+?? .github/workflows/gandom-ui-e2e.yml.before-ui-server-fix
+?? .installer-pid
+?? .runtime/
+?? =
+?? ALL/dashboard.html
+?? FINAL.html
+?? GANDOM-ALL.md
+?? GANDOM-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z
+?? GANDOM-AWAKENING.js
+?? GANDOM-AWAKENING.json
+?? GANDOM-DEEP-TREASURE-SCAN.js
+?? GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-FULL-AUTOMATION-2558.js
+?? GANDOM-INTEGRATE-2558.sh
+?? GANDOM-INTEGRATION-2558-REPORT.txt
+?? GANDOM-LAW2558-AUDIT-20261013-102234.txt
+?? GANDOM-LAW2558-AUDIT.sh
+?? GANDOM-ONE-SITE.html
+?? GANDOM-ONE.html
+?? GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt
+?? GANDOM-SECTION-01.tar.gz
+?? GANDOM-TREASURE-LITE.js
+?? GANDOM_EXECUTION_STATE.txt
+?? GANDOM_PREFLIGHT_20261016T060127Z.txt
+?? GANDOM_PREFLIGHT_20261016T060154Z.txt
+?? MASTER-PLAN.md
+?? PROPOSAL.txt
+?? PUZZLE-BACKUP-OVERLAP-2558.sh
+?? SHOVEL-REPORT-20261013-203517.txt
+?? ads-api.js
+?? ads-data/
+?? ads-manager.js
+?? ai-accountant-bridge.js
+?? ai-data/
+?? ai-runner.js
+?? ai-worker.js
+?? android/app/src/main/assets/
+?? architecture/
+?? archives/
+?? audit-data/
+?? audit-service/client.html
+?? audit/
+?? auto-auditor.js
+?? blockchain-core.js
+?? blockchain-persistent.js
+?? blockchain.js
+?? breeding-data/
+?? breeding-manager.js
+?? cell-life-api.js
+?? cell-life-data/
+?? cell-life-engine-v2.js
+?? cell-life-engine.js
+?? cell-life-runner.js
+?? connect-organs.sh
+?? consensus.js
+?? constitution/EVIDENCE-TRUST-PROTOCOL-2558.json
+?? constitution/GANDOM-GLOBAL-2558-UNIFIED-LOCK.md
+?? constitution/GOLDEN-MOTHER-LAW-2558.HASH
+?? constitution/GOLDEN-MOTHER-LAW-2558.json
+?? constitution/GOLDEN-MOTHER-LAW-2558.md
+?? deep-shovel.sh
+?? docs/PRICING-NEW.md
+?? e
+?? "e HEAD"
+?? ecosystem-api.js
+?? employees/treasury-report.json
+?? erver.js
+?? evidence/
+?? exchange-api.js
+?? exchange-data/
+?? exchange-manager.js
+?? experience-data/
+?? experience-recorder.js
+?? family-memory.js
+?? father-audit.json
+?? father-vault.js
+?? father-wallet.json
+?? fix-display.js
+?? fix-route.js
+?? fix-vault-v2.js
+?? fix-vault-v3.js
+?? fix-vault.js
+?? full-audit.js
+?? gandom-alive.js
+?? gandom-audit-20261016-083014.txt
+?? gandom-audit.sh
+?? gandom-backend.js
+?? gandom-code.tar.gz
+?? gandom-core/
+?? gandom-final-start.sh
+?? gandom-investor-audit-20261016-082640.txt
+?? gandom-release-gate.txt
+?? gandom-ui-backtest.html
+?? gandom.db
+?? gandom_preflight.sh
+?? governance/
+?? install-memory-v2.js
+?? install-vault.js
+?? investor-audit.sh
+?? market-api.js
+?? market-data/
+?? market-manager.js
+?? memories/
+?? mother-data/
+?? mother-node.js
+?? music-data/
+?? music-income.js
+?? neural-api.js
+?? neural-bus.js
+?? node-b-persistent.js
+?? node-breeding-api.js
+?? node-breeding.js
+?? node-mobile-release.json
+?? nodes-family/
+?? p2p-heavy-test.js
+?? p2p-real-test.js
+?? p2p-sync-fixed.js
+?? p2p-sync.js
+?? patch-blockchain-final.js
+?? patch-dashboard.js
+?? patch-exchange-dashboard.js
+?? patch-exchange-link.js
+?? patch-menu.js
+?? patch-section.js
+?? patch.js
+?? payment-api.js
+?? payment-data/
+?? payment-manager.js
+?? price-api.js
+?? price-oracle.js
+?? public/assets/
+?? public/chain.html
+?? public/chat.html
+?? public/diagnose.html
+?? public/gandom-3d.html
+?? public/gandom-brain.js
+?? public/gandom-girl.html
+?? public/gandom-test.html
+?? public/index.html.backup3
+?? public/index.html.backup4
+?? public/libs/
+?? public/voice-continuous.js
+?? public/voice-test.html
+?? run/
+?? runtime-logs/
+?? runtime/
+?? scripts/
+?? security-audit-20261016-085914.txt
+?? security-audit.sh
+?? shovel.sh
+?? site/
+?? start-ai.js
+?? start-gandom.sh
+?? "tatus --short"
+?? test-100.js
+?? test-neuron.js
+?? test-node-b.js
+?? test-organs.sh
+?? utils.js
+?? wallet/GANDOM-WALLET-2558.js
+?? wallet/wallet-state.json
+?? worker-api.js
+?? worker-coordinator.js
+?? worker-node.js
+?? workers-data/
+?? www/gandom-live-ui.html
+?? www/gandom-live-ui.html.step4-before
+main
+
+===== PACKAGE SCRIPTS =====
+{
+  "name": "gandom-p2p",
+  "version": "0.1.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "node client.js",
+    "health": "node -e \"require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})\""
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "ws": "^8.18.0"
+  }
+}
+
+===== ENTRY FILES =====
+-rw-------. 1 u0_a305 u0_a305 24035 Oct 14 22:46 server.js
+-rw-------. 1 u0_a305 u0_a305 961 Sep 27 10:43 client.js
+-rw-------. 1 u0_a305 u0_a305 512 Sep 29 16:48 package.json
+NOT_FOUND: security_audit.sh
+-rwx------. 1 u0_a305 u0_a305 2489 Oct 16 09:31 gandom_preflight.sh
+
+===== NODE PROCESSES =====
+u0_a305  10218     1  0  1970 ?        00:00:01 node /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/home/gandom/server.js
+
+===== LOCAL HEALTH =====
+--- PORT 3000 ---
+curl: (7) Failed to connect to 127.0.0.1:3000 after 2 ms: Could not connect to server
+
+--- PORT 8080 ---
+curl: (7) Failed to connect to 127.0.0.1:8080 after 1 ms: Could not connect to server
+
+--- PORT 8081 ---
+curl: (7) Failed to connect to 127.0.0.1:8081 after 1 ms: Could not connect to server
+
+--- PORT 8787 ---
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 93
+Date: Fri, 16 Oct 2026 06:42:25 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ok":true,"project":"GANDUM-P2P","node_id":"GANDOM-NODE-A","peers":0,"uptime":760.880573892}
+--- PORT 8788 ---
+curl: (7) Failed to connect to 127.0.0.1:8788 after 1 ms: Could not connect to server
+
+
+===== RECENT PREFLIGHT REPORTS =====
+----- GANDOM_PREFLIGHT_20261016T060154Z.txt -----
+3265:PASS ./gandom-core/revival-live/NODE_RUNTIME/1d9bc51a973ed980__1d9bc51a973ed980-regress-crbug-724858.js
+3266:PASS ./gandom-core/revival-live/NODE_RUNTIME/1e0433b2ec134ffc__1e0433b2ec134ffc-test-emit-before-after.js
+3267:PASS ./gandom-core/revival-live/NODE_RUNTIME/1e0ac5fec1fd8546__1e0ac5fec1fd8546-throw_in_line_with_tabs.js
+3268:PASS ./gandom-core/revival-live/NODE_RUNTIME/1ea9802b853927e9__1ea9802b853927e9-getoptionsobject.js
+3269:PASS ./gandom-core/revival-live/NODE_RUNTIME/1eb7b80296cc11e6__1eb7b80296cc11e6-test-inspector-vm-global-accessors-sideeffects.js
+3270:PASS ./gandom-core/revival-live/NODE_RUNTIME/1f26be475bfdabfb__1f26be475bfdabfb-test-timers-unref-remove-other-unref-timers-only-one-fires.js
+3271:PASS ./gandom-core/revival-live/NODE_RUNTIME/1f8c457ded8c0cd6__1f8c457ded8c0cd6-regress-9017.js
+3272:PASS ./gandom-core/revival-live/NODE_RUNTIME/20835bd44560d9ee__20835bd44560d9ee-test-fs-watch-close-when-destroyed.js
+3273:PASS ./gandom-core/revival-live/NODE_RUNTIME/20c071b598687747__20c071b598687747-module-loader-deep.js
+3274:PASS ./gandom-core/revival-live/NODE_RUNTIME/22488e22c10f9d52__22488e22c10f9d52-ls.js
+3275:PASS ./gandom-core/revival-live/NODE_RUNTIME/20cdbffce9b02889__20cdbffce9b02889-set-breakpoint-url-regex.js
+3276:PASS ./gandom-core/revival-live/NODE_RUNTIME/21d7a908f128e969__21d7a908f128e969-test-inspector-esm.js
+3277:PASS ./gandom-core/revival-live/NODE_RUNTIME/2230cd0175b54851__2230cd0175b54851-test-promise-unhandled-silent.js
+3278:PASS ./gandom-core/revival-live/NODE_RUNTIME/22d50fc355505c5a__22d50fc355505c5a-logical-and.js
+3279:PASS ./gandom-core/revival-live/NODE_RUNTIME/23005481150c0510__23005481150c0510-12.1.1_1.js
+3280:PASS ./gandom-core/revival-live/NODE_RUNTIME/236da6da10f41e00__236da6da10f41e00-mutate_objects.js
+3281:PASS ./gandom-core/revival-live/NODE_RUNTIME/23de5c4ea5ec6e38__23de5c4ea5ec6e38-test-tls-ecdh-multiple.js
+3282:PASS ./gandom-core/revival-live/NODE_RUNTIME/2414bd47e268c143__2414bd47e268c143-test-whatwg-encoding-custom-textdecoder.js
+3283:PASS ./gandom-core/revival-live/NODE_RUNTIME/248e83f903a1f762__248e83f903a1f762-parent-process-nonpersistent.js
+3284:PASS ./gandom-core/revival-live/NODE_RUNTIME/2494847bdce867ec__2494847bdce867ec-test-console-stdio-setters.js
+3285:PASS ./gandom-core/revival-live/NODE_RUNTIME/255b1e649741fc65__255b1e649741fc65-test-cli-syntax-piped-good.js
+3286:PASS ./gandom-core/revival-live/NODE_RUNTIME/26511a301b6eeef8__26511a301b6eeef8-regexp-bol.js
+3287:PASS ./gandom-core/revival-live/NODE_RUNTIME/28478f5df6845227__28478f5df6845227-if-cloning.js
+3288:PASS ./gandom-core/revival-live/NODE_RUNTIME/29c593fef56ac352__29c593fef56ac352-dfg-add-not-number.js
+3289:PASS ./gandom-core/revival-live/NODE_RUNTIME/2a7ab916eaee9e69__2a7ab916eaee9e69-instant-from-epoch-seconds.js
+3290:PASS ./gandom-core/revival-live/NODE_RUNTIME/2a91f775296abb15__2a91f775296abb15-regress-259.js
+3291:PASS ./gandom-core/revival-live/NODE_RUNTIME/2c7a02b1bd445edb__2c7a02b1bd445edb-parse.js
+3292:PASS ./gandom-core/revival-live/NODE_RUNTIME/2c846b8355a4a0af__2c846b8355a4a0af-regress-crbug-917076.js
+3293:PASS ./gandom-core/revival-live/NODE_RUNTIME/2cfe9baa6fc28e10__2cfe9baa6fc28e10-test-child-process-execsync-maxbuf.js
+3294:PASS ./gandom-core/revival-live/NODE_RUNTIME/2d5c51e792e3e0ab__2d5c51e792e3e0ab-regress-917151.js
+3295:PASS ./gandom-core/revival-live/NODE_RUNTIME/2e381586adb41cd2__2e381586adb41cd2-sab.js
+3296:PASS ./gandom-core/revival-live/NODE_RUNTIME/2e80ff2d318753e2__2e80ff2d318753e2-class-private-brand-write-method.js
+3297:PASS ./gandom-core/revival-live/NODE_RUNTIME/2efb8e029ceff813__2efb8e029ceff813-explain-dep.js
+3298:PASS ./gandom-core/revival-live/NODE_RUNTIME/30de4791e9c3fd7f__30de4791e9c3fd7f-regress-v8-12122.js
+3299:PASS ./gandom-core/revival-live/NODE_RUNTIME/3171f38e1d8ffd0a__3171f38e1d8ffd0a-dataview-length.js
+3300:PASS ./gandom-core/revival-live/NODE_RUNTIME/14c0d9b8eb6a2c64__14c0d9b8eb6a2c64-regress-crbug-1171954.js
+3301:PASS ./gandom-core/revival-live/NODE_RUNTIME/14fa2cb1824d7ca6__14fa2cb1824d7ca6-test-stream-big-packet.js
+3302:PASS ./gandom-core/revival-live/NODE_RUNTIME/15065e236efe9a6f__15065e236efe9a6f-debug-step-into-json.js
+3303:PASS ./gandom-core/revival-live/NODE_RUNTIME/153f27399d4a411c__153f27399d4a411c-array-foreach.js
+3304:PASS ./gandom-core/revival-live/NODE_RUNTIME/15a8301e8a99dd30__15a8301e8a99dd30-test-buffer-inheritance.js
+3305:PASS ./gandom-core/revival-live/NODE_RUNTIME/15e239924da2354f__15e239924da2354f-regress-crbug-599073-3.js
+3306:PASS ./gandom-core/revival-live/NODE_RUNTIME/161ebdbcdbef9bb7__161ebdbcdbef9bb7-regress-917412.js
+3307:PASS ./gandom-core/revival-live/NODE_RUNTIME/166b47bae3cb0ae5__166b47bae3cb0ae5-wasm-streaming-compile-fail.js
+3308:PASS ./gandom-core/revival-live/NODE_RUNTIME/167bffe1b86dc240__167bffe1b86dc240-computed-property-names.js
+3309:PASS ./gandom-core/revival-live/NODE_RUNTIME/16bc3b80d2396566__16bc3b80d2396566-test-vm-property-not-on-sandbox.js
+3310:PASS ./gandom-core/revival-live/NODE_RUNTIME/16e5bf4847a6d831__16e5bf4847a6d831-test-inspector-resource-name-to-url.js
+3311:PASS ./gandom-core/revival-live/NODE_RUNTIME/17619bd0320b63a6__17619bd0320b63a6-handle_process_exit.js
+3312:./gandom_preflight.sh: line 104:  4666 Hangup                     node --check "$f" > /dev/null 2>&1
+3313:FAIL ./gandom-core/revival-live/NODE_RUNTIME/17ddd5bff4cd0a5d__17ddd5bff4cd0a5d-test-net-options-lookup.js
+3314:PASS ./gandom-core/revival-live/NODE_RUNTIME/184f0f5eb05d78ed__184f0f5eb05d78ed-test-fs-readv-sync.js
+3315:PASS ./gandom-core/revival-live/NODE_RUNTIME/1866e54a83e68739__1866e54a83e68739-accesskey.js
+3316:PASS ./gandom-core/revival-live/NODE_RUNTIME/19400ef455a98f24__19400ef455a98f24-pool-stats.js
+3317:PASS ./gandom-core/revival-live/NODE_RUNTIME/197080f7f408a2cd__197080f7f408a2cd-test-inspector-scriptparsed-context.js
+3318:PASS ./gandom-core/revival-live/NODE_RUNTIME/1a4412cd185c370e__1a4412cd185c370e-tls.js
+3319:PASS ./gandom-core/revival-live/NODE_RUNTIME/1acf3d6b3ab4d855__1acf3d6b3ab4d855-regress-1074586.js
+3320:PASS ./gandom-core/revival-live/NODE_RUNTIME/1c297a2ea1e63ebd__1c297a2ea1e63ebd-regress-crbug-865892.js
+3321:PASS ./gandom-core/revival-live/NODE_RUNTIME/1c55bddf1f261b88__1c55bddf1f261b88-foo.js
+3322:PASS ./gandom-core/revival-live/NODE_RUNTIME/1c8d440779f14ef1__1c8d440779f14ef1-test-benchmark-cluster.js
+3323:PASS ./gandom-core/revival-live/NODE_RUNTIME/1cb1280844be8520__1cb1280844be8520-common.js
+3324:PASS ./gandom-core/revival-live/NODE_RUNTIME/1d8715056af7ad7e__1d8715056af7ad7e-regress-11810.js
+----- GANDOM_PREFLIGHT_20261016T060127Z.txt -----
+3313:PASS ./gandom-core/revival-live/NODE_RUNTIME/1866e54a83e68739__1866e54a83e68739-accesskey.js
+3314:PASS ./gandom-core/revival-live/NODE_RUNTIME/19400ef455a98f24__19400ef455a98f24-pool-stats.js
+3315:PASS ./gandom-core/revival-live/NODE_RUNTIME/197080f7f408a2cd__197080f7f408a2cd-test-inspector-scriptparsed-context.js
+3316:PASS ./gandom-core/revival-live/NODE_RUNTIME/1a4412cd185c370e__1a4412cd185c370e-tls.js
+3317:PASS ./gandom-core/revival-live/NODE_RUNTIME/1acf3d6b3ab4d855__1acf3d6b3ab4d855-regress-1074586.js
+3318:PASS ./gandom-core/revival-live/NODE_RUNTIME/1c297a2ea1e63ebd__1c297a2ea1e63ebd-regress-crbug-865892.js
+3319:PASS ./gandom-core/revival-live/NODE_RUNTIME/1c55bddf1f261b88__1c55bddf1f261b88-foo.js
+3320:PASS ./gandom-core/revival-live/NODE_RUNTIME/1c8d440779f14ef1__1c8d440779f14ef1-test-benchmark-cluster.js
+3321:PASS ./gandom-core/revival-live/NODE_RUNTIME/1cb1280844be8520__1cb1280844be8520-common.js
+3322:PASS ./gandom-core/revival-live/NODE_RUNTIME/1d8715056af7ad7e__1d8715056af7ad7e-regress-11810.js
+3323:PASS ./gandom-core/revival-live/NODE_RUNTIME/1cf1c5470154459c__1cf1c5470154459c-destructuring-array-non-iterable-object-literal.js
+3324:PASS ./gandom-core/revival-live/NODE_RUNTIME/1eb93641b475cc5d__1eb93641b475cc5d-array-concat-spreadable-regexp.js
+3325:PASS ./gandom-core/revival-live/NODE_RUNTIME/1f628fdb07495004__1f628fdb07495004-regress-760-2.js
+3326:PASS ./gandom-core/revival-live/NODE_RUNTIME/1fba2be19f46b108__1fba2be19f46b108-randomInt.js
+3327:PASS ./gandom-core/revival-live/NODE_RUNTIME/200cb069cb6fa2fe__200cb069cb6fa2fe-test-gc-tls-external-memory.js
+3328:PASS ./gandom-core/revival-live/NODE_RUNTIME/20288dfb8daf9608__20288dfb8daf9608-join-sep-int.js
+3329:PASS ./gandom-core/revival-live/NODE_RUNTIME/2152ae483d3a611c__2152ae483d3a611c-locale-info-check-property.js
+3330:PASS ./gandom-core/revival-live/NODE_RUNTIME/21af24bef172262a__21af24bef172262a-test-child-process-constructor.js
+3331:PASS ./gandom-core/revival-live/NODE_RUNTIME/221e870849c43712__221e870849c43712-GH-1899-output.js
+3332:PASS ./gandom-core/revival-live/NODE_RUNTIME/226d47e6404f54cb__226d47e6404f54cb-dfg-patchable-get-by-id-after-watchpoint.js
+3333:PASS ./gandom-core/revival-live/NODE_RUNTIME/22abeaa61327292f__22abeaa61327292f-test-benchmark-vm.js
+3334:PASS ./gandom-core/revival-live/NODE_RUNTIME/243f8c9f20b7b777__243f8c9f20b7b777-regexp-prototype.js
+3335:PASS ./gandom-core/revival-live/NODE_RUNTIME/244a0b8b73439549__244a0b8b73439549-fixed-queue.js
+3336:PASS ./gandom-core/revival-live/NODE_RUNTIME/246c2882737f2ffa__246c2882737f2ffa-regress-503565.js
+3337:PASS ./gandom-core/revival-live/NODE_RUNTIME/25493b8e38965537__25493b8e38965537-test-stream-consumers.js
+3338:PASS ./gandom-core/revival-live/NODE_RUNTIME/25ff53f96f6b5a75__25ff53f96f6b5a75-type-reflection-with-mv.js
+3339:PASS ./gandom-core/revival-live/NODE_RUNTIME/26f0d15b7b5d8645__26f0d15b7b5d8645-regress-2186.js
+3340:PASS ./gandom-core/revival-live/NODE_RUNTIME/2757515f0bfa6ef4__2757515f0bfa6ef4-helper.js
+3341:PASS ./gandom-core/revival-live/NODE_RUNTIME/2758f1ba6cb3f598__2758f1ba6cb3f598-regress-crbug-1166095.js
+3342:PASS ./gandom-core/revival-live/NODE_RUNTIME/275b6969f9ddb7d0__275b6969f9ddb7d0-regress-crbug-528379.js
+3343:PASS ./gandom-core/revival-live/NODE_RUNTIME/121fa8f8282cb668__121fa8f8282cb668-result-table-max.js
+3344:PASS ./gandom-core/revival-live/NODE_RUNTIME/1315078a04981c1d__1315078a04981c1d-test-emit-init.js
+3345:PASS ./gandom-core/revival-live/NODE_RUNTIME/1327f0087c9ed6b9__1327f0087c9ed6b9-test-stream-pipeline-async-iterator.js
+3346:PASS ./gandom-core/revival-live/NODE_RUNTIME/136f920c91d85b62__136f920c91d85b62-object-binding-pattern-await-computed-name.js
+3347:PASS ./gandom-core/revival-live/NODE_RUNTIME/138e2bc103769fd4__138e2bc103769fd4-timezone-name-extended.js
+3348:PASS ./gandom-core/revival-live/NODE_RUNTIME/13c1c7200780f638__13c1c7200780f638-test-repl-throw-null-or-undefined.js
+3349:PASS ./gandom-core/revival-live/NODE_RUNTIME/141a1e47261017d3__141a1e47261017d3-regress-588599.js
+3350:PASS ./gandom-core/revival-live/NODE_RUNTIME/145f0c4ac45a2c6b__145f0c4ac45a2c6b-lookup-promises.js
+3351:PASS ./gandom-core/revival-live/NODE_RUNTIME/1674d17eac6a4ae5__1674d17eac6a4ae5-regress-725743.js
+3352:PASS ./gandom-core/revival-live/NODE_RUNTIME/168751df3e41eb78__168751df3e41eb78-plain.js
+3353:PASS ./gandom-core/revival-live/NODE_RUNTIME/16b7bea99271f214__16b7bea99271f214-test-cpu-prof-invalid-options.js
+3354:PASS ./gandom-core/revival-live/NODE_RUNTIME/16ebb1f9c7251655__16ebb1f9c7251655-test-timers-immediate-unref.js
+3355:PASS ./gandom-core/revival-live/NODE_RUNTIME/1725289b1d782328__1725289b1d782328-regress-crbug-469768.js
+3356:PASS ./gandom-core/revival-live/NODE_RUNTIME/187d22462a7079ee__187d22462a7079ee-patched-global.any.js
+3357:PASS ./gandom-core/revival-live/NODE_RUNTIME/18c689e00a472265__18c689e00a472265-modules-skip-regress-797581-4.js
+3358:PASS ./gandom-core/revival-live/NODE_RUNTIME/18e7ee2c87dfd87d__18e7ee2c87dfd87d-async-stack-traces-prepare-stacktrace-1.js
+3359:PASS ./gandom-core/revival-live/NODE_RUNTIME/19b43d9bf7d6d3f0__19b43d9bf7d6d3f0-array-prototype-properties.js
+3360:PASS ./gandom-core/revival-live/NODE_RUNTIME/1a7b5f8cbd33f7b3__1a7b5f8cbd33f7b3-dfg-inline-early-return.js
+3361:./gandom_preflight.sh: line 104:  4659 Hangup                     node --check "$f" > /dev/null 2>&1
+3362:FAIL ./gandom-core/revival-live/NODE_RUNTIME/1b87e4d2f332b533__1b87e4d2f332b533-test-tty-color-support-warning.js
+3363:PASS ./gandom-core/revival-live/NODE_RUNTIME/1be51e1f8ccba5c2__1be51e1f8ccba5c2-plain-date-time-to-json.js
+3364:PASS ./gandom-core/revival-live/NODE_RUNTIME/1be8ca02704e560e__1be8ca02704e560e-getActiveResourcesInfo.js
+3365:PASS ./gandom-core/revival-live/NODE_RUNTIME/1c2d0417b7b6c1be__1c2d0417b7b6c1be-test-child-process-exec-stdout-stderr-data-string.js
+3366:PASS ./gandom-core/revival-live/NODE_RUNTIME/1eebe8fce218a3c8__1eebe8fce218a3c8-string-pad.js
+3367:PASS ./gandom-core/revival-live/NODE_RUNTIME/1cc306159ab0223f__1cc306159ab0223f-test-process-domain-segfault.js
+3368:PASS ./gandom-core/revival-live/NODE_RUNTIME/1d405c3fbfca75ad__1d405c3fbfca75ad-DOMException-constructor-behavior.any.js
+3369:PASS ./gandom-core/revival-live/NODE_RUNTIME/1d558b60053ad30d__1d558b60053ad30d-regress-crbug-1006631.js
+3370:PASS ./gandom-core/revival-live/NODE_RUNTIME/1eba2c48d8ffcabb__1eba2c48d8ffcabb-month-far-future.js
+3371:PASS ./gandom-core/revival-live/NODE_RUNTIME/1ed690bbb775b98e__1ed690bbb775b98e-test-promise-hook-on-after.js
+3372:PASS ./gandom-core/revival-live/NODE_RUNTIME/20540dc47182c0f7__20540dc47182c0f7-regress-crbug-830565.js
+
+===== END OF STATE =====

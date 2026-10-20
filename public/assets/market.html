@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GANDOM Markets - بازارهای گندم</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Tahoma, sans-serif; background: linear-gradient(135deg, #0a0e17 0%, #1a1f2e 100%); color: #e0e0e0; min-height: 100vh; padding: 20px; direction: rtl; }
+.container { max-width: 1100px; margin: 0 auto; }
+.header { text-align: center; padding: 30px 20px; border-bottom: 2px solid #2a3f5f; margin-bottom: 25px; }
+.logo { font-size: 50px; margin-bottom: 10px; }
+h1 { color: #ffd700; font-size: 36px; margin-bottom: 10px; }
+.subtitle { color: #8ba3c7; font-size: 16px; }
+.status { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 13px; margin-top: 10px; background: #1a4d2e; color: #4ade80; border: 1px solid #4ade80; }
+.section-title { color: #ffd700; font-size: 20px; margin: 25px 0 15px; padding-right: 12px; border-right: 4px solid #ffd700; }
+.categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 25px; }
+.category { background: linear-gradient(135deg, #1a2332, #0f1620); border: 1px solid #2a3f5f; border-radius: 12px; padding: 18px; text-align: center; cursor: pointer; transition: 0.3s; }
+.category:hover { border-color: #ffd700; transform: translateY(-3px); }
+.category.active { border-color: #ffd700; background: #2a3f5f; }
+.category-icon { font-size: 32px; margin-bottom: 8px; }
+.category-name { color: #ffd700; font-size: 15px; font-weight: bold; }
+.category-count { color: #8ba3c7; font-size: 12px; margin-top: 4px; }
+.form-box { background: #1a2332; border: 1px solid #2a3f5f; border-radius: 12px; padding: 20px; margin-bottom: 25px; }
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 15px; }
+.form-field label { display: block; color: #8ba3c7; font-size: 12px; margin-bottom: 5px; }
+.form-field input, .form-field select, .form-field textarea { width: 100%; padding: 10px; background: #0a0e17; color: #fff; border: 1px solid #2a3f5f; border-radius: 8px; font-family: inherit; }
+.form-field textarea { resize: vertical; min-height: 60px; }
+.btn { padding: 12px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-family: inherit; font-size: 14px; transition: 0.3s; }
+.btn-primary { background: #ffd700; color: #000; }
+.btn-primary:hover { background: #e5c100; }
+.btn-secondary { background: #2a3f5f; color: #ffd700; border: 1px solid #ffd700; }
+.btn-danger { background: #f87171; color: #fff; padding: 6px 12px; font-size: 12px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.listings { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; margin-bottom: 25px; }
+.listing { background: linear-gradient(135deg, #1a2332, #0f1620); border: 1px solid #2a3f5f; border-radius: 12px; padding: 18px; transition: 0.3s; cursor: pointer; }
+.listing:hover { border-color: #ffd700; transform: translateY(-3px); }
+.listing-cat { color: #8ba3c7; font-size: 12px; margin-bottom: 6px; }
+.listing-title { color: #ffd700; font-size: 16px; font-weight: bold; margin-bottom: 8px; min-height: 40px; }
+.listing-desc { color: #8ba3c7; font-size: 13px; margin-bottom: 10px; max-height: 40px; overflow: hidden; }
+.listing-price { color: #4ade80; font-size: 18px; font-weight: bold; margin-bottom: 8px; }
+.listing-meta { display: flex; justify-content: space-between; color: #5a6f8f; font-size: 11px; }
+.empty { text-align: center; padding: 40px; color: #8ba3c7; }
+.toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(200px); background: #1a2332; border: 1px solid #ffd700; color: #ffd700; padding: 15px 25px; border-radius: 10px; transition: 0.3s; z-index: 1000; font-weight: bold; }
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.error { border-color: #f87171; color: #f87171; }
+.toast.success { border-color: #4ade80; color: #4ade80; }
+.footer { text-align: center; padding: 30px; border-top: 2px solid #2a3f5f; color: #5a6f8f; font-size: 13px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="logo">🏪</div>
+    <h1>GANDOM Markets</h1>
+    <p class="subtitle">بازارهای واقعی گندم ۲۵۵۸</p>
+    <div class="status" id="status">🟢 در حال اتصال...</div>
+  </div>
+
+  <h2 class="section-title">📂 دسته‌بندی‌ها</h2>
+  <div class="categories" id="categories">در حال بارگذاری...</div>
+
+  <h2 class="section-title">📝 ثبت آگهی جدید</h2>
+  <div class="form-box">
+    <div class="form-grid">
+      <div class="form-field">
+        <label>دسته‌بندی</label>
+        <select id="m-category"></select>
+      </div>
+      <div class="form-field">
+        <label>عنوان</label>
+        <input type="text" id="m-title" placeholder="مثلاً: آپارتمان ۱۰۰ متری">
+      </div>
+      <div class="form-field">
+        <label>قیمت (ریال)</label>
+        <input type="number" id="m-price" value="1000000">
+      </div>
+      <div class="form-field">
+        <label>شهر</label>
+        <input type="text" id="m-city" value="تهران">
+      </div>
+      <div class="form-field">
+        <label>User ID</label>
+        <input type="text" id="m-user" value="USR-alice">
+      </div>
+    </div>
+    <div class="form-field" style="margin-bottom:12px;">
+      <label>توضیحات</label>
+      <textarea id="m-desc" placeholder="توضیحات آگهی..."></textarea>
+    </div>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="createListing()">📝 ثبت آگهی</button>
+      <button class="btn btn-secondary" onclick="refresh()">🔄 بروزرسانی</button>
+    </div>
+  </div>
+
+  <h2 class="section-title">📋 آگهی‌های فعال</h2>
+  <div class="listings" id="listings">در حال بارگذاری...</div>
+
+  <div class="footer">
+    <p>GANDOM 2558 - Real World Markets</p>
+    <p style="margin-top:8px;color:#ffd700;">🏪 Law 2558 | No Fake Pass | Real Execution Only</p>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API = window.location.origin;
+let currentCategory = null;
+
+function showToast(msg, type = 'success') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + type;
+  setTimeout(() => { t.className = 'toast'; }, 3000);
+}
+
+async function loadCategories() {
+  try {
+    const r = await fetch(API + '/api/market/categories');
+    const d = await r.json();
+    if (!d.ok) return;
+
+    const catsEl = document.getElementById('categories');
+    const selectEl = document.getElementById('m-category');
+
+    // ذخیره دسته‌بندی‌ها
+    window.CATEGORIES = d.categories;
+
+    // نمایش کارت‌ها
+    catsEl.innerHTML = `
+      <div class="category ${!currentCategory ? 'active' : ''}" onclick="filterCategory(null)">
+        <div class="category-icon">📦</div>
+        <div class="category-name">همه</div>
+        <div class="category-count" id="count-all">-</div>
+      </div>
+    ` + d.categories.map(c => `
+      <div class="category ${currentCategory === c.id ? 'active' : ''}" onclick="filterCategory('${c.id}')">
+        <div class="category-icon">${c.icon}</div>
+        <div class="category-name">${c.name}</div>
+        <div class="category-count" id="count-${c.id}">-</div>
+      </div>
+    `).join('');
+
+    // پر کردن select
+    selectEl.innerHTML = d.categories.map(c =>
+      `<option value="${c.id}">${c.icon} ${c.name}</option>`
+    ).join('');
+  } catch(e) { console.error(e); }
+}
+
+async function loadStats() {
+  try {
+    const r = await fetch(API + '/api/market/stats');
+    const d = await r.json();
+    if (!d.ok) return;
+
+    const totalEl = document.getElementById('count-all');
+    if (totalEl) totalEl.textContent = d.active_listings;
+
+    if (d.categories) {
+      Object.entries(d.categories).forEach(([id, cat]) => {
+        const el = document.getElementById('count-' + id);
+        if (el) el.textContent = cat.count;
+      });
+    }
+  } catch(e) {}
+}
+
+async function loadListings() {
+  try {
+    const url = currentCategory
+      ? API + '/api/market/listings?category=' + currentCategory
+      : API + '/api/market/listings';
+    const r = await fetch(url);
+    const d = await r.json();
+    if (!d.ok) return;
+
+    const listingsEl = document.getElementById('listings');
+    if (d.listings.length === 0) {
+      listingsEl.innerHTML = '<div class="empty" style="grid-column:1/-1;">هیچ آگهی‌ای وجود نداره</div>';
+      return;
+    }
+
+    listingsEl.innerHTML = d.listings.map(l => {
+      const cat = window.CATEGORIES?.find(c => c.id === l.category);
+      return `
+        <div class="listing">
+          <div class="listing-cat">${cat ? cat.icon + ' ' + cat.name : l.category}</div>
+          <div class="listing-title">${l.title}</div>
+          <div class="listing-desc">${l.description || '—'}</div>
+          <div class="listing-price">${l.price.toLocaleString()} ${l.currency}</div>
+          <div class="listing-meta">
+            <span>📍 ${l.city}</span>
+            <span>👁️ ${l.views}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+  } catch(e) { console.error(e); }
+}
+
+function filterCategory(cat) {
+  currentCategory = cat;
+  loadCategories();
+  loadListings();
+}
+
+async function createListing() {
+  const category = document.getElementById('m-category').value;
+  const title = document.getElementById('m-title').value;
+  const description = document.getElementById('m-desc').value;
+  const price = parseInt(document.getElementById('m-price').value);
+  const city = document.getElementById('m-city').value;
+  const userId = document.getElementById('m-user').value;
+
+  if (!title || !price || !city) {
+    showToast('❌ همه فیلدها رو پر کن', 'error');
+    return;
+  }
+
+  try {
+    const r = await fetch(API + '/api/market/listing', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ userId, category, title, description, price, city })
+    });
+    const d = await r.json();
+
+    if (d.ok) {
+      showToast('✅ آگهی ثبت شد!', 'success');
+      document.getElementById('m-title').value = '';
+      document.getElementById('m-desc').value = '';
+      await refresh();
+    } else {
+      showToast('❌ خطا: ' + (d.error || ''), 'error');
+    }
+  } catch(e) {
+    showToast('❌ خطا در ارتباط', 'error');
+  }
+}
+
+async function refresh() {
+  document.getElementById('status').textContent = '🟢 متصل';
+  await loadCategories();
+  await loadStats();
+  await loadListings();
+}
+
+// شروع
+refresh();
+setInterval(refresh, 15000);
+</script>
+</body>
+</html>

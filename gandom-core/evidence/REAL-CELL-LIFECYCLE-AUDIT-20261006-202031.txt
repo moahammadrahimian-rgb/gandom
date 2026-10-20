@@ -1,0 +1,322 @@
+===== GANDOM REAL CELL LIFECYCLE — COMPLETE AUDIT =====
+Tue Oct  6 20:20:31 +0330 2026
+
+===== 1. CELL CREATION / BIRTH =====
+
+===== 2. PARENT / CHILD RELATION =====
+
+===== 3. REAL CELL STATE / STORAGE =====
+gandom-core/tests/GANDOM-20K-8B-LIVE.js:12:assert.strictEqual(result.liveCells, 8000000000n);
+gandom-core/tests/GANDOM-20K-8B-LIVE.js:22:console.log('LIVE_CELLS=8000000000');
+gandom-core/tests/GANDOM-20K-8B-COMPLETE.js:29:console.log('8B_LIVE_CELLS=PASS');
+gandom-core/tests/GANDOM-REAL-CELL-MATH.js:24:if (r.cells !== 400000) throw new Error('CELL_COUNT_FAIL');
+gandom-core/tests/GANDOM-REAL-NODE-LINK.js:61:      console.log(`CELL_STATE_EXCHANGED=${remoteCells}`);
+gandom-core/tests/GANDOM-REAL-NODE-LINK.js:75:      console.log('REAL_CELL_STATE_EXCHANGE=PASS');
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:187:        'CELL_COUNT_VALID=true'
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:254:      `FULL_STATE_CELLS=${receivedCells}`
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:4:const CELL_COUNT = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:23:      liveCells: base + (BigInt(i) < remainder ? 1n : 0n),
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:32:  return nodes.reduce((sum, node) => sum + node.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:47:    cells === CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:55:    liveCells: cells,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:69:  CELL_COUNT,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:83:    else if ('CELL_COUNT' in __g) __g.TARGET_CELLS = __g.CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:24:      liveCells: base + (BigInt(i) < remainder ? 1n : 0n),
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:38:  return nodes.reduce((s, n) => s + n.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:55:    if ((i + tick) % 997 === 0 && n.liveCells > 100n) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:57:      n.liveCells -= d;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:64:      n.liveCells += b;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:69:    if ((i + tick) % 1999 === 0 && n.liveCells > 200n) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:71:      n.liveCells += d;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:79:    if (n.liveCells < 400000n) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:81:      n.liveCells += h;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:88:      Number(n.liveCells % 1000n) / 1000
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:100:    nodes[0].liveCells += delta;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:105:    if (nodes[0].liveCells <= loss) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:108:    nodes[0].liveCells -= loss;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:221:  console.log(`LIVE_CELLS=${r.cells}`);
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:49:console.log('LIVE_CELLS=' + CELLS.toString());
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:72:    cellCount: CELLS / BigInt(NODES)
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:180:    liveCells: CELLS.toString(),
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:220:    liveCells: CELLS.toString(),
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:243:  liveCells: CELLS.toString(),
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:4:const CELL_COUNT = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:23:      liveCells: base + (BigInt(i) < remainder ? 1n : 0n),
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:32:  return nodes.reduce((sum, node) => sum + node.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:47:    cells === CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:55:    liveCells: cells,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:69:  CELL_COUNT,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:83:    else if ('CELL_COUNT' in __g) __g.TARGET_CELLS = __g.CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:4:const CELL_COUNT = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:23:      liveCells: base + (BigInt(i) < remainder ? 1n : 0n),
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:32:  return nodes.reduce((sum, node) => sum + node.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:47:    cells === CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:55:    liveCells: cells,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:69:  CELL_COUNT,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:83:    else if ('CELL_COUNT' in __g) __g.TARGET_CELLS = __g.CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:4:const CELL_COUNT = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:23:      liveCells: base + (BigInt(i) < remainder ? 1n : 0n),
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:32:  return nodes.reduce((sum, node) => sum + node.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:47:    cells === CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:55:    liveCells: cells,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:69:  CELL_COUNT,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:83:    else if ('CELL_COUNT' in __g) __g.TARGET_CELLS = __g.CELL_COUNT;
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:68:   * Actual memory-backed cell state.
+gandom-core/execution/GANDOM-REAL-NODE-LINK.js:11:  const state = new Float32Array(CELLS);
+gandom-core/execution/GANDOM-SECTION-01-REAL.js:251:    realLiveCells: 8000000000
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:117:        console.log(`CELL_COUNT_VALID=${validCells}`);
+gandom-core/execution-lock/registry/LAW-2558-EXECUTION-REGISTER.json:19:    "realLiveCells": 8000000000
+
+===== 4. NODE -> CELL RELATION =====
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:4:  CELLS_PER_NODE,
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:7:  runRealCellNode
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:8:} = require('../execution/GANDOM-REAL-CELL-NODE');
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:10:const result = runRealCellNode(0, 1);
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:12:console.log('=== GANDOM REAL CELL NODE TEST ===');
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:14:console.log(`CELLS_PER_NODE=${CELLS_PER_NODE}`);
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:29:if (result.updateCount !== CELLS_PER_NODE) throw new Error('UPDATE_COUNT_FAIL');
+gandom-core/tests/GANDOM-REAL-CELL-MATH.js:24:if (r.cells !== 400000) throw new Error('CELL_COUNT_FAIL');
+gandom-core/tests/GANDOM-REAL-NODE-LINK.js:49:        (combined.match(/REMOTE_CELLS=400000/g) || []).length >= 2;
+gandom-core/tests/GANDOM-REAL-ENGINE.js:8:  CELLS_PER_NODE,
+gandom-core/tests/GANDOM-REAL-ENGINE.js:25:console.log(`CELLS_PER_NODE=${CELLS_PER_NODE}`);
+gandom-core/tests/GANDOM-REAL-ENGINE.js:64:    CELLS_PER_NODE - 1
+gandom-core/tests/GANDOM-REAL-ENGINE.js:98:  CELLS_PER_NODE
+gandom-core/tests/GANDOM-REAL-ENGINE.js:103:  CELLS_PER_NODE * 4
+gandom-core/tests/GANDOM-REAL-ENGINE.js:157:  CELLS_PER_NODE
+gandom-core/tests/GANDOM-REAL-ENGINE.js:209:  CELLS_PER_NODE
+gandom-core/tests/GANDOM-REAL-ENGINE.js:214:  CELLS_PER_NODE * 4
+gandom-core/tests/GANDOM-REAL-ENGINE.js:291:  CELLS_PER_NODE
+gandom-core/tests/GANDOM-REAL-ENGINE.js:296:  CELLS_PER_NODE * 4
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:207:      400000 * 4
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:212:      400000 * 4
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:217:      400000
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:31:function totalCells(nodes) {
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:32:  return nodes.reduce((sum, node) => sum + node.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:41:  const cells = totalCells(nodes);
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:9:  const base = TARGET_CELLS / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:10:  const remainder = TARGET_CELLS % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:37:function totalCells(nodes) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:38:  return nodes.reduce((s, n) => s + n.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:79:    if (n.liveCells < 400000n) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:96:  const current = totalCells(nodes);
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:100:    nodes[0].liveCells += delta;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:105:    if (nodes[0].liveCells <= loss) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:108:    nodes[0].liveCells -= loss;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:121:  const cells = totalCells(nodes);
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:159:  if (totalCells(nodes) !== TARGET_CELLS) {
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:72:    cellCount: CELLS / BigInt(NODES)
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:100:const cellsPerNode = CELLS / BigInt(NODES);
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:103:  cellsPerNode * BigInt(NODES) === CELLS,
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:107:console.log('CELLS_PER_NODE=' + cellsPerNode);
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:181:    cellsPerNode: cellsPerNode.toString(),
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:244:  cellsPerNode: cellsPerNode.toString(),
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:31:function totalCells(nodes) {
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:32:  return nodes.reduce((sum, node) => sum + node.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:41:  const cells = totalCells(nodes);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:31:function totalCells(nodes) {
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:32:  return nodes.reduce((sum, node) => sum + node.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:41:  const cells = totalCells(nodes);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:31:function totalCells(nodes) {
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:32:  return nodes.reduce((sum, node) => sum + node.liveCells, 0n);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:41:  const cells = totalCells(nodes);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:13:const CELLS_PER_NODE = LOCAL_X * LOCAL_Y * LOCAL_Z;
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:15:const TOTAL_CELLS = TOTAL_NODES * CELLS_PER_NODE;
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:64:function runRealCellNode(nodeId = 0, epoch = 1) {
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:72:  const phi = new Float32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:73:  const nextPhi = new Float32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:74:  const energy = new Float32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:75:  const health = new Float32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:76:  const epochs = new Uint32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:77:  const masks = new Uint8Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:170:    cells: CELLS_PER_NODE,
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:199:  CELLS_PER_NODE,
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:206:  runRealCellNode
+gandom-core/execution/GANDOM-REAL-NODE-LINK.js:8:const CELLS = 400000;
+gandom-core/execution/GANDOM-SECTION-01-REAL.js:183:  '400,000 REAL CELLS / NODE',
+gandom-core/execution/GANDOM-SECTION-01-REAL.js:250:    realCellsPerNode: 400000,
+gandom-core/engine/GANDOM-REAL-ENGINE.js:26:const CELLS_PER_NODE =
+gandom-core/engine/GANDOM-REAL-ENGINE.js:31:const GLOBAL_X = CONFIG.NODE_X * CONFIG.CELL_X;
+gandom-core/engine/GANDOM-REAL-ENGINE.js:32:const GLOBAL_Y = CONFIG.NODE_Y * CONFIG.CELL_Y;
+gandom-core/engine/GANDOM-REAL-ENGINE.js:33:const GLOBAL_Z = CONFIG.NODE_Z * CONFIG.CELL_Z;
+gandom-core/engine/GANDOM-REAL-ENGINE.js:44:if (CELLS_PER_NODE !== 400000) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:79:        cellIndex >= CELLS_PER_NODE) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:94:  static globalCoordinate(nodeId, cellIndex) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:144:    this.phi = new Float32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:145:    this.nextPhi = new Float32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:147:    this.energy = new Float32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:148:    this.health = new Float32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:150:    this.epochs = new Uint32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:152:    this.neighborMask = new Uint8Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:159:    for (let i = 0; i < CELLS_PER_NODE; i++) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:264:    for (let i = 0; i < CELLS_PER_NODE; i++) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:340:      new CellBlock(nodeId, epoch);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:361:      cells: CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-ENGINE.js:381:      cells: CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-ENGINE.js:515:      CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-ENGINE.js:527:  CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:8:  CELLS_PER_NODE
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:27:    cells: CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:106:          header.cells === CELLS_PER_NODE;
+gandom-core/execution-lock/REAL-EXECUTION-LOCK-2558.md:9:400,000 REAL CELLS / NODE
+gandom-core/execution-lock/REAL-NODE-REGISTRY.js:96:      `${n.nodeId}|${n.host}|${n.port}|${n.cells}|${n.epoch}`
+gandom-core/execution-lock/registry/LAW-2558-EXECUTION-REGISTER.json:18:    "realCellsPerNode": 400000,
+gandom-core/real-node-agent/REAL-NODE-AGENT.js:9:const CELLS = 400000;
+gandom-core/real-node-agent/REAL-NODE-AGENT.js:63:  console.log(`REAL_NODE_CELLS=${CELLS}`);
+
+===== 5. RUNTIME MUTATION / INCREMENT =====
+gandom-core/execution/GANDOM-REAL-NODE-LINK.js:13:  for (let i = 0; i < CELLS; i++) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:159:    for (let i = 0; i < CELLS_PER_NODE; i++) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:264:    for (let i = 0; i < CELLS_PER_NODE; i++) {
+
+===== 6. PROPAGATION / P2P CELL TRANSFER =====
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:173:    const receivedCells =
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:176:          /RECEIVED_CELLS=(\d+)/
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:216:      receivedCells,
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:254:      `FULL_STATE_CELLS=${receivedCells}`
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:112:        console.log(`RECEIVED_CELLS=${header.cells}`);
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:164:  console.log(`SENDER_CELLS=${header.cells}`);
+
+===== 7. EVIDENCE OF ACTUAL CELL CHANGE =====
+gandom-core/tests/GANDOM-REAL-ENGINE.js:290:  evidence.cells,
+gandom-core/governance/evidence-trust/create-challenge.js:15:  createdAt:new Date().toISOString(),
+gandom-core/governance/evidence-trust/RUN-20260930043238567-e32ca99705b26d59.challenge.json:5:  "createdAt": "2026-09-30T04:32:38.651Z",
+gandom-core/execution/GANDOM-33-EXECUTION.js:80:    createdAt: new Date().toISOString(),
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:97:  const delta = TARGET_CELLS - current;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:99:  if (delta > 0n) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:100:    nodes[0].liveCells += delta;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:101:    nodes[0].healed += delta;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:102:    healed += delta;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:103:  } else if (delta < 0n) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:104:    const loss = -delta;
+
+===== 8. TESTS THAT ACTUALLY EXECUTE CELL LIFECYCLE =====
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js
+gandom-core/tests/GANDOM-REAL-CELL-MATH.js
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js
+gandom-core/execution/GANDOM-REAL-CELL-MATH.js
+
+===== 9. CELL SOURCE FILES =====
+gandom-core/tests/GANDOM-20K-8B-LIVE.js
+gandom-core/execution/GANDOM-20K-8B-LIVE.js
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827
+gandom-core/execution/GANDOM-SECTION-01-REAL.js
+gandom-core/execution-lock/registry/LAW-2558-EXECUTION-REGISTER.json
+
+===== 10. GLOBAL CELL REFERENCES — SOURCE ONLY =====
+gandom-core/tests/GANDOM-20K-8B-LIVE.js:12:assert.strictEqual(result.liveCells, 8000000000n);
+gandom-core/tests/GANDOM-20K-8B-LIVE.js:22:console.log('LIVE_CELLS=8000000000');
+gandom-core/tests/GANDOM-20K-8B-COMPLETE.js:10:assert.strictEqual(r.cells, 8000000000n);
+gandom-core/tests/GANDOM-20K-8B-COMPLETE.js:29:console.log('8B_LIVE_CELLS=PASS');
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:4:  CELLS_PER_NODE,
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:14:console.log(`CELLS_PER_NODE=${CELLS_PER_NODE}`);
+gandom-core/tests/GANDOM-REAL-CELL-NODE.js:29:if (result.updateCount !== CELLS_PER_NODE) throw new Error('UPDATE_COUNT_FAIL');
+gandom-core/tests/GANDOM-REAL-CELL-MATH.js:24:if (r.cells !== 400000) throw new Error('CELL_COUNT_FAIL');
+gandom-core/tests/GANDOM-REAL-NODE-LINK.js:49:        (combined.match(/REMOTE_CELLS=400000/g) || []).length >= 2;
+gandom-core/tests/GANDOM-REAL-ENGINE.js:8:  CELLS_PER_NODE,
+gandom-core/tests/GANDOM-REAL-ENGINE.js:25:console.log(`CELLS_PER_NODE=${CELLS_PER_NODE}`);
+gandom-core/tests/GANDOM-REAL-ENGINE.js:64:    CELLS_PER_NODE - 1
+gandom-core/tests/GANDOM-REAL-ENGINE.js:98:  CELLS_PER_NODE
+gandom-core/tests/GANDOM-REAL-ENGINE.js:103:  CELLS_PER_NODE * 4
+gandom-core/tests/GANDOM-REAL-ENGINE.js:157:  CELLS_PER_NODE
+gandom-core/tests/GANDOM-REAL-ENGINE.js:209:  CELLS_PER_NODE
+gandom-core/tests/GANDOM-REAL-ENGINE.js:214:  CELLS_PER_NODE * 4
+gandom-core/tests/GANDOM-REAL-ENGINE.js:291:  CELLS_PER_NODE
+gandom-core/tests/GANDOM-REAL-ENGINE.js:296:  CELLS_PER_NODE * 4
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:187:        'CELL_COUNT_VALID=true'
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:207:      400000 * 4
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:212:      400000 * 4
+gandom-core/tests/GANDOM-FULL-STATE-TCP.js:217:      400000
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:4:const CELL_COUNT = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:47:    cells === CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:69:  CELL_COUNT,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js:83:    else if ('CELL_COUNT' in __g) __g.TARGET_CELLS = __g.CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:4:const TARGET_CELLS = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:79:    if (n.liveCells < 400000n) {
+gandom-core/execution/GANDOM-20K-8B-COMPLETE.js:221:  console.log(`LIVE_CELLS=${r.cells}`);
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:7:const CELLS = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:49:console.log('LIVE_CELLS=' + CELLS.toString());
+gandom-core/execution/GANDOM-20K-8B-GANDUM33-INTEGRATION.js:107:console.log('CELLS_PER_NODE=' + cellsPerNode);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:4:const CELL_COUNT = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:47:    cells === CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:69:  CELL_COUNT,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-090948:83:    else if ('CELL_COUNT' in __g) __g.TARGET_CELLS = __g.CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:4:const CELL_COUNT = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:47:    cells === CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:69:  CELL_COUNT,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-091023:83:    else if ('CELL_COUNT' in __g) __g.TARGET_CELLS = __g.CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:4:const CELL_COUNT = 8000000000n;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:8:  const base = CELL_COUNT / BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:9:  const remainder = CELL_COUNT % BigInt(NODE_COUNT);
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:47:    cells === CELL_COUNT;
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:69:  CELL_COUNT,
+gandom-core/execution/GANDOM-20K-8B-LIVE.js.bak.20261002-104827:83:    else if ('CELL_COUNT' in __g) __g.TARGET_CELLS = __g.CELL_COUNT;
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:13:const CELLS_PER_NODE = LOCAL_X * LOCAL_Y * LOCAL_Z;
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:15:const TOTAL_CELLS = TOTAL_NODES * CELLS_PER_NODE;
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:72:  const phi = new Float32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:73:  const nextPhi = new Float32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:74:  const energy = new Float32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:75:  const health = new Float32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:76:  const epochs = new Uint32Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:77:  const masks = new Uint8Array(CELLS_PER_NODE);
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:170:    cells: CELLS_PER_NODE,
+gandom-core/execution/GANDOM-REAL-CELL-NODE.js:199:  CELLS_PER_NODE,
+gandom-core/execution/GANDOM-REAL-NODE-LINK.js:8:const CELLS = 400000;
+gandom-core/execution/GANDOM-SECTION-01-REAL.js:183:  '400,000 REAL CELLS / NODE',
+gandom-core/execution/GANDOM-SECTION-01-REAL.js:189:  '8,000,000,000 REAL LIVE CELLS',
+gandom-core/execution/GANDOM-SECTION-01-REAL.js:250:    realCellsPerNode: 400000,
+gandom-core/execution/GANDOM-SECTION-01-REAL.js:251:    realLiveCells: 8000000000
+gandom-core/engine/GANDOM-REAL-ENGINE.js:26:const CELLS_PER_NODE =
+gandom-core/engine/GANDOM-REAL-ENGINE.js:44:if (CELLS_PER_NODE !== 400000) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:48:if (TOTAL_CELLS !== 8000000000) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:79:        cellIndex >= CELLS_PER_NODE) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:144:    this.phi = new Float32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:145:    this.nextPhi = new Float32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:147:    this.energy = new Float32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:148:    this.health = new Float32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:150:    this.epochs = new Uint32Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:152:    this.neighborMask = new Uint8Array(CELLS_PER_NODE);
+gandom-core/engine/GANDOM-REAL-ENGINE.js:159:    for (let i = 0; i < CELLS_PER_NODE; i++) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:264:    for (let i = 0; i < CELLS_PER_NODE; i++) {
+gandom-core/engine/GANDOM-REAL-ENGINE.js:361:      cells: CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-ENGINE.js:381:      cells: CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-ENGINE.js:515:      CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-ENGINE.js:527:  CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:8:  CELLS_PER_NODE
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:27:    cells: CELLS_PER_NODE,
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:106:          header.cells === CELLS_PER_NODE;
+gandom-core/engine/GANDOM-REAL-STATE-TCP.js:117:        console.log(`CELL_COUNT_VALID=${validCells}`);
+gandom-core/execution-lock/REAL-EXECUTION-LOCK-2558.md:9:400,000 REAL CELLS / NODE
+gandom-core/execution-lock/REAL-EXECUTION-LOCK-2558.md:10:8,000,000,000 REAL LIVE CELLS
+gandom-core/execution-lock/REAL-EXECUTION-LOCK-2558.md:34:8,000,000,000 REAL LIVE CELLS is NOT COMPLETE.
+gandom-core/execution-lock/registry/LAW-2558-EXECUTION-REGISTER.json:18:    "realCellsPerNode": 400000,
+gandom-core/execution-lock/registry/LAW-2558-EXECUTION-REGISTER.json:19:    "realLiveCells": 8000000000
+gandom-core/real-node-agent/REAL-NODE-AGENT.js:9:const CELLS = 400000;
+
+===== END COMPLETE AUDIT =====

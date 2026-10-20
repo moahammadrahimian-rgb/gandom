@@ -83,7 +83,7 @@ if (require.main === module) {
     console.log('==========================================');
 
     // پرداخت ۱۳ میلیون ریال بین ۱۳ کارمند (۱ میلیون هر کدام)
-    const result = payAllEmployees(13000000);
+    const result = payAllEmployees(6500000);
     console.log('--- SALARY PAID ---');
     console.log(JSON.stringify(result, null, 2));
 

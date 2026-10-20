@@ -1,0 +1,122 @@
+{
+  "system": "GANDOM",
+  "law": 2558,
+  "mode": "READ_ONLY_INTEGRATED_AUDIT",
+  "generatedAt": "2026-10-16T14:47:36.994Z",
+  "safety": {
+    "chainDataModified": false,
+    "sourceModified": false,
+    "serviceRestarted": false,
+    "automaticRepair": false,
+    "passRealFullSystem": false
+  },
+  "chains": [
+    {
+      "file": "blockchain-data/chain.json",
+      "exists": true,
+      "parseOk": true,
+      "blockCount": 2,
+      "genesisHash": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33",
+      "lastIndex": 1,
+      "indexErrors": 0,
+      "linkErrors": 0,
+      "hashErrors": 0,
+      "merkleChecks": "NOT_IMPLEMENTED_IN_PROBE",
+      "powChecks": "NOT_IMPLEMENTED_IN_PROBE",
+      "status": "BASIC_CHECK_PASS"
+    },
+    {
+      "file": "blockchain-data-b/chain.json",
+      "exists": true,
+      "parseOk": true,
+      "blockCount": 2,
+      "genesisHash": "f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624",
+      "lastIndex": 1,
+      "indexErrors": 0,
+      "linkErrors": 1,
+      "hashErrors": 0,
+      "merkleChecks": "NOT_IMPLEMENTED_IN_PROBE",
+      "powChecks": "NOT_IMPLEMENTED_IN_PROBE",
+      "status": "ISSUES_FOUND"
+    }
+  ],
+  "source": {
+    "blockchain-100.js": {
+      "file": "blockchain-100.js",
+      "exists": true,
+      "syntax": "PASS",
+      "markers": {
+        "calculateHash": true,
+        "isValidBlock": true,
+        "isValidChain": true,
+        "genesisCreation": true,
+        "merkleTree": true
+      }
+    },
+    "node-b-chain.js": {
+      "file": "node-b-chain.js",
+      "exists": true,
+      "syntax": "PASS",
+      "markers": {
+        "peerBlockIngress": true,
+        "chainSyncIngress": true,
+        "validatorCall": true,
+        "directChainPush": true
+      }
+    },
+    "blockchain-p2p-handler.js": {
+      "file": "blockchain-p2p-handler.js",
+      "exists": true,
+      "syntax": "PASS",
+      "markers": {
+        "peerBlockIngress": true,
+        "validatorCall": true,
+        "directChainPush": true,
+        "chainSave": true
+      }
+    }
+  },
+  "tests": {
+    "genesis": {
+      "status": "MISMATCH",
+      "hashes": [
+        {
+          "file": "blockchain-data/chain.json",
+          "hash": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33"
+        },
+        {
+          "file": "blockchain-data-b/chain.json",
+          "hash": "f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624"
+        }
+      ]
+    },
+    "p2pRuntime": "NOT_RUN",
+    "officialBlockValidator": "NOT_EXECUTED",
+    "merkleVerification": "NOT_EXECUTED",
+    "powVerification": "NOT_EXECUTED",
+    "transactionSignatureVerification": "NOT_EXECUTED",
+    "consensusAgreement": "NOT_PROVEN"
+  },
+  "findings": [
+    {
+      "level": "FAIL",
+      "code": "CHAIN_LINK_ERRORS",
+      "detail": "blockchain-data-b/chain.json:count=1"
+    },
+    {
+      "level": "FAIL",
+      "code": "GENESIS_MISMATCH",
+      "detail": "The two chain files have different genesis hashes."
+    },
+    {
+      "level": "WARN",
+      "code": "DIRECT_CHAIN_MUTATION_PATH",
+      "detail": "node-b-chain.js: direct push exists; safety depends on preceding validation."
+    },
+    {
+      "level": "WARN",
+      "code": "DIRECT_CHAIN_MUTATION_PATH",
+      "detail": "blockchain-p2p-handler.js: direct push exists; safety depends on preceding validation."
+    }
+  ]
+}

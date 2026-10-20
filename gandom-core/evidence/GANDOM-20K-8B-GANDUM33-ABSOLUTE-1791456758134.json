@@ -1,0 +1,21 @@
+{
+  "protocol": "GANDOM",
+  "law": "MOTHER-2558",
+  "version": "33.0.0",
+  "timestamp": "2026-10-08T10:52:38.134Z",
+  "nodes": 20000,
+  "liveCells": "8000000000",
+  "cellsPerNode": "400000",
+  "nodeConstructionMode": "INTEGRATION_REAL_NODE_BUILDER",
+  "nodeMaterialization": true,
+  "nodeDigest": "2e492009e23cd2336e9dca13cf5c363e2ff2612c698d0ee226de8d684a9f5b41",
+  "dhtK": null,
+  "dhtKEvidence": "NOT_EXPORTED",
+  "lifecycleRun": false,
+  "lifecycleVerify": false,
+  "gandom33ContractVerify": true,
+  "gandom33ExecutionCreate": true,
+  "gandom33Transition": true,
+  "cellModel": "EXACT_COUNT_VIRTUALIZED",
+  "fakePassBlocked": true
+}

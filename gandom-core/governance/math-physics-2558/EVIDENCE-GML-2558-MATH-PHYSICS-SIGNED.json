@@ -1,0 +1,45 @@
+{
+  "evidenceId": "gml-2558-math-physics-f1937e4f-9485-4976-a993-1d2d5122cc40",
+  "subject": "GML_2558_MATH_GEOMETRY_PHYSICS_EXECUTION",
+  "observer": "GANDOM-LOCAL-INDEPENDENT-OBSERVER",
+  "counterparty": null,
+  "timestamp_wall": 1791039884306,
+  "timestamp_mono": 7058285,
+  "payload": {
+    "sourceEvidenceFile": "gandom-core/governance/math-physics-2558/EVIDENCE-GML-2558-MATH-PHYSICS.json",
+    "engine": {
+      "functionValue": 13,
+      "analyticDerivative": 14,
+      "numericalDerivative": 14.000000000180535,
+      "derivativeError": 1.8053469830192626e-10,
+      "distance2D": 5,
+      "forceN": 6,
+      "checks": {
+        "FUNCTION_FINITE": true,
+        "DERIVATIVE_FINITE": true,
+        "DERIVATIVE_MATCH": true,
+        "GEOMETRY_3_4_5": true,
+        "PHYSICS_F_MA": true,
+        "NUMERIC_FINITE": true
+      },
+      "allPassed": true
+    },
+    "law": "2558",
+    "layer": "GML-2558-MATH-PHYSICS",
+    "locked": true,
+    "result": null,
+    "independentVerification": {
+      "INDEPENDENT_DERIVATIVE": true,
+      "INDEPENDENT_GEOMETRY": true,
+      "INDEPENDENT_PHYSICS": true,
+      "ENGINE_REPORTED_PASS": true,
+      "INDEPENDENT_ALL_PASS": true
+    },
+    "originalEvidenceSha256": "87e6c5b2af0de8365e3a49496df3620a1addd43d4a77fbb12820598b09333b15"
+  },
+  "prev_evidence_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "sig_alg": "ed25519",
+  "public_key_spki_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEARKger7nKpllPyUzZ3IImKuK791RVQ2JCwufUbDLfryA=\n-----END PUBLIC KEY-----\n",
+  "evidence_hash": "85714c825f98ed331569e1ef9ad5b20287b4b3e92b7bc5dafe97880b6b65cbe7",
+  "signature": "P1nakNi5coA9ynMTavz8gEuhZamJZ5XVkouVwvHYdFSne6+tRhVq484LmOd9lqP8F+BRKK/0fLtsVoyclgAdCg=="
+}

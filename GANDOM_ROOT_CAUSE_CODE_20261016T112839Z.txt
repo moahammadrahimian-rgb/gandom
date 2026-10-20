@@ -1,0 +1,855 @@
+GANDOM_ROOT_CAUSE_CODE_AUDIT=START
+LAW=2558
+MODE=READ_ONLY
+UTC=2026-10-16T11:28:39Z
+ROOT=/data/data/com.termux/files/home/gandom
+
+===== 1. SOURCE FILES =====
+PRESENT=blockchain-100.js
+603 blockchain-100.js
+5643b9139abebe1511e92c7440ef36120ede9fa6a6a502ac9055a80029118945  blockchain-100.js
+PRESENT=node-b-chain.js
+168 node-b-chain.js
+19a5dbdd3fda3fdec3cd8349b3a9cfb1b2a6b21b403cc8188be32488a4a63710  node-b-chain.js
+PRESENT=blockchain-p2p-handler.js
+95 blockchain-p2p-handler.js
+d1fc01f4e7257455c8842343b45aa10ff51aa28b0905c536e98d34d6069deef4  blockchain-p2p-handler.js
+PRESENT=server.js
+835 server.js
+6153ffd3aa3931ddaa91f27f0e556cb68bd892f21074a0a6d291f7afa521e98f  server.js
+PRESENT=package.json
+17 package.json
+5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3  package.json
+
+===== 2. GENESIS CREATION AND HASH =====
+blockchain-100.js-134-// ═══════════════════════════════════════════════════════
+blockchain-100.js-135-// 💸 Transaction با امضا
+blockchain-100.js-136-// ═══════════════════════════════════════════════════════
+blockchain-100.js-137-class Transaction {
+blockchain-100.js-138-  constructor(from, to, amount, fee = 0.001, publicKey = null) {
+blockchain-100.js:139:    this.txid = crypto.randomBytes(16).toString('hex');
+blockchain-100.js-140-    this.from = from;
+blockchain-100.js-141-    this.to = to;
+blockchain-100.js-142-    this.amount = amount;
+blockchain-100.js-143-    this.fee = fee;
+blockchain-100.js:144:    this.timestamp = Date.now();
+blockchain-100.js-145-    this.publicKey = publicKey;
+blockchain-100.js-146-    this.signature = null;
+blockchain-100.js-147-    this.type = 'TRANSFER';
+blockchain-100.js-148-  }
+blockchain-100.js-149-  
+blockchain-100.js-150-  static coinbase(to, reward) {
+blockchain-100.js-151-    const tx = new Transaction('COINBASE', to, reward, 0, null);
+blockchain-100.js:152:    tx.txid = 'COINBASE-' + crypto.randomBytes(8).toString('hex');
+blockchain-100.js-153-    tx.type = 'COINBASE';
+blockchain-100.js-154-    return tx;
+blockchain-100.js-155-  }
+blockchain-100.js-156-  
+blockchain-100.js-157-  getHash() {
+--
+blockchain-100.js-217-    // Merkle Root
+blockchain-100.js-218-    const merkle = new MerkleTree(transactions);
+blockchain-100.js-219-    this.merkleRoot = merkle.root;
+blockchain-100.js-220-    
+blockchain-100.js-221-    // Block Reward
+blockchain-100.js:222:    this.reward = Block.calculateReward(index);
+blockchain-100.js-223-    
+blockchain-100.js-224-    // Hash
+blockchain-100.js:225:    this.hash = this.calculateHash();
+blockchain-100.js-226-  }
+blockchain-100.js-227-  
+blockchain-100.js-228-  // پاداش هر ۲۱۰۰۰۰ بلوک نصف می‌شه
+blockchain-100.js:229:  static calculateReward(blockIndex) {
+blockchain-100.js-230-    const INITIAL_REWARD = 50;
+blockchain-100.js-231-    const HALVING_INTERVAL = 210000;
+blockchain-100.js-232-    const halvings = Math.floor(blockIndex / HALVING_INTERVAL);
+blockchain-100.js-233-    return INITIAL_REWARD / Math.pow(2, halvings);
+blockchain-100.js-234-  }
+blockchain-100.js-235-  
+blockchain-100.js:236:  calculateHash() {
+blockchain-100.js-237-    return crypto.createHash('sha256')
+blockchain-100.js-238-      .update(
+blockchain-100.js-239-        this.index + 
+blockchain-100.js-240-        this.prevHash + 
+blockchain-100.js-241-        this.timestamp + 
+--
+blockchain-100.js-248-  
+blockchain-100.js-249-  mine() {
+blockchain-100.js-250-    const target = '0'.repeat(this.difficulty);
+blockchain-100.js-251-    while (this.hash.substring(0, this.difficulty) !== target) {
+blockchain-100.js-252-      this.nonce++;
+blockchain-100.js:253:      this.hash = this.calculateHash();
+blockchain-100.js-254-    }
+blockchain-100.js-255-  }
+blockchain-100.js-256-  
+blockchain-100.js-257-  toJSON() {
+blockchain-100.js-258-    return {
+--
+blockchain-100.js-330-  
+blockchain-100.js-331-  // ─── بارگذاری ───
+blockchain-100.js-332-  load() {
+blockchain-100.js-333-    try {
+blockchain-100.js-334-      if (!fs.existsSync(CHAIN_FILE)) {
+blockchain-100.js:335:        this.createGenesis();
+blockchain-100.js-336-        return;
+blockchain-100.js-337-      }
+blockchain-100.js-338-      
+blockchain-100.js-339-      const data = JSON.parse(fs.readFileSync(CHAIN_FILE, 'utf8'));
+blockchain-100.js-340-      this.difficulty = data.difficulty || 3;
+--
+blockchain-100.js-349-        this.wallets = JSON.parse(fs.readFileSync(WALLETS_FILE, 'utf8'));
+blockchain-100.js-350-      }
+blockchain-100.js-351-      
+blockchain-100.js-352-      if (!this.isValid()) {
+blockchain-100.js-353-        console.error('❌ زنجیره نامعتبره!');
+blockchain-100.js:354:        this.createGenesis();
+blockchain-100.js-355-      }
+blockchain-100.js-356-    } catch(e) {
+blockchain-100.js-357-      console.error(`❌ خطا در بارگذاری: ${e.message}`);
+blockchain-100.js:358:      this.createGenesis();
+blockchain-100.js-359-    }
+blockchain-100.js-360-  }
+blockchain-100.js-361-  
+blockchain-100.js-362-  // ─── Genesis ───
+blockchain-100.js:363:  createGenesis() {
+blockchain-100.js:364:    const genesisTx = Transaction.coinbase('GDM-GENESIS-WALLET', 0);
+blockchain-100.js-365-    const genesis = new Block(0, '0'.repeat(64), 0, [genesisTx], 3);
+blockchain-100.js:366:    genesis.hash = genesis.calculateHash();
+blockchain-100.js-367-    this.chain = [genesis];
+blockchain-100.js:368:    this.wallets['GDM-GENESIS-WALLET'] = 0;
+blockchain-100.js-369-    this.save();
+blockchain-100.js-370-  }
+blockchain-100.js-371-  
+blockchain-100.js-372-  getLatest() { return this.chain[this.chain.length - 1]; }
+blockchain-100.js-373-  
+--
+blockchain-100.js-403-  }
+blockchain-100.js-404-  
+blockchain-100.js-405-  // ─── استخراج بلوک جدید ───
+blockchain-100.js-406-  mineBlock(minerAddress) {
+blockchain-100.js-407-    // پاداش
+blockchain-100.js:408:    const reward = Block.calculateReward(this.chain.length);
+blockchain-100.js-409-    const rewardTx = Transaction.coinbase(minerAddress, reward);
+blockchain-100.js-410-    
+blockchain-100.js-411-    // تراکنش‌های در انتظار (معتبر)
+blockchain-100.js-412-    const validTxs = this.pendingTx.filter(tx => {
+blockchain-100.js-413-      if (tx.type === 'COINBASE') return false;
+--
+blockchain-100.js-421-    
+blockchain-100.js-422-    const allTxs = [rewardTx, ...validTxs];
+blockchain-100.js-423-    const block = new Block(
+blockchain-100.js-424-      this.chain.length,
+blockchain-100.js-425-      this.getLatest().hash,
+blockchain-100.js:426:      Date.now(),
+blockchain-100.js-427-      allTxs,
+blockchain-100.js-428-      this.difficulty
+blockchain-100.js-429-    );
+blockchain-100.js-430-    
+blockchain-100.js-431-    this.addBlock(block);
+--
+blockchain-100.js-490-      if (!Number.isSafeInteger(block.nonce) || block.nonce < 0) return false;
+blockchain-100.js-491-      if (!Number.isSafeInteger(block.difficulty) ||
+blockchain-100.js-492-          block.difficulty < 1 || block.difficulty > 64) return false;
+blockchain-100.js-493-      if (!Array.isArray(block.transactions) ||
+blockchain-100.js-494-          block.transactions.length === 0) return false;
+blockchain-100.js:495:      if (block.reward !== Block.calculateReward(block.index)) return false;
+blockchain-100.js-496-
+blockchain-100.js-497-      const merkle = new MerkleTree(block.transactions);
+blockchain-100.js-498-      if (merkle.root !== block.merkleRoot) return false;
+blockchain-100.js:499:      if (block.calculateHash() !== block.hash) return false;
+blockchain-100.js-500-      if (!block.hash.startsWith('0'.repeat(block.difficulty))) return false;
+blockchain-100.js-501-
+blockchain-100.js-502-      const ids = new Set();
+blockchain-100.js-503-      let coinbaseCount = 0;
+blockchain-100.js-504-
+--
+blockchain-100.js-534-  // ─── اعتبارسنجی ───
+blockchain-100.js-535-  isValid() {
+blockchain-100.js-536-    for (let i = 1; i < this.chain.length; i++) {
+blockchain-100.js-537-      const curr = this.chain[i];
+blockchain-100.js-538-      const prev = this.chain[i-1];
+blockchain-100.js:539:      if (curr.hash !== curr.calculateHash()) return false;
+blockchain-100.js-540-      if (curr.prevHash !== prev.hash) return false;
+blockchain-100.js-541-      
+blockchain-100.js-542-      // بررسی Merkle Root
+blockchain-100.js-543-      const merkle = new MerkleTree(curr.transactions);
+blockchain-100.js-544-      if (merkle.root !== curr.merkleRoot) return false;
+--
+blockchain-100.js-569-      pending_tx: this.pendingTx.length,
+blockchain-100.js-570-      total_supply: this.getTotalSupply(),
+blockchain-100.js-571-      max_supply: this.maxSupply,
+blockchain-100.js-572-      circulating_percent: (this.getTotalSupply() / this.maxSupply * 100).toFixed(6),
+blockchain-100.js-573-      wallets_count: Object.keys(this.wallets).length,
+blockchain-100.js:574:      next_reward: Block.calculateReward(this.chain.length),
+blockchain-100.js-575-      mother_id: MOTHER_INFO.mother_id,
+blockchain-100.js-576-      mother_fingerprint: MOTHER_INFO.fingerprint,
+blockchain-100.js-577-      owner_wallet: MOTHER_INFO.wallet_address,
+blockchain-100.js-578-      owner_share: MOTHER_INFO.owner_share,
+blockchain-100.js-579-      total_size: JSON.stringify(this.chain).length
+--
+node-b-chain.js-7-
+node-b-chain.js-8-const WebSocket = require('ws');
+node-b-chain.js-9-const { GandomBlockchain, Block } = require('./blockchain-100.js');
+node-b-chain.js-10-const { handleBlockchainMessage } = require('./blockchain-p2p-handler.js');
+node-b-chain.js-11-
+node-b-chain.js:12:const NODE_ID = 'NODE-B-' + Date.now().toString().slice(-6);
+node-b-chain.js-13-const NODE_A_URL = 'ws://127.0.0.1:8787';
+node-b-chain.js-14-const RECONNECT_DELAY = 3000;
+node-b-chain.js-15-
+node-b-chain.js-16-console.log(`🦶 [${NODE_ID}] شروع نود B با بلاک‌چین`);
+node-b-chain.js-17-console.log(`📁 داده‌ها: ${process.env.GANDOM_DATA_DIR}`);
+--
+node-b-chain.js-28-  lastSync: null
+node-b-chain.js-29-};
+node-b-chain.js-30-
+node-b-chain.js-31-function send(ws, type, payload) {
+node-b-chain.js-32-  if (ws && ws.readyState === 1) {
+node-b-chain.js:33:    ws.send(JSON.stringify({ type, payload, from: NODE_ID, ts: Date.now() }));
+node-b-chain.js-34-  }
+node-b-chain.js-35-}
+node-b-chain.js-36-
+node-b-chain.js-37-function connect() {
+node-b-chain.js-38-  console.log(`🔌 اتصال به نود A...`);
+--
+blockchain-p2p-handler.js-81-    if (peer.ws && peer.ws.readyState === 1) {
+blockchain-p2p-handler.js-82-      peer.ws.send(JSON.stringify({
+blockchain-p2p-handler.js-83-        type: 'NEW_BLOCK_FROM_PEER',
+blockchain-p2p-handler.js-84-        block: block.toJSON(),
+blockchain-p2p-handler.js-85-        from: 'NODE-A',
+blockchain-p2p-handler.js:86:        timestamp: Date.now()
+blockchain-p2p-handler.js-87-      }));
+blockchain-p2p-handler.js-88-      count++;
+blockchain-p2p-handler.js-89-    }
+blockchain-p2p-handler.js-90-  }
+blockchain-p2p-handler.js-91-  console.log(`📡 بلوک #${block.index} به ${count} نود پخش شد`);
+
+===== 3. BLOCK VALIDATION DEFINITIONS AND CALLS =====
+blockchain-100.js-337-      }
+blockchain-100.js-338-      
+blockchain-100.js-339-      const data = JSON.parse(fs.readFileSync(CHAIN_FILE, 'utf8'));
+blockchain-100.js-340-      this.difficulty = data.difficulty || 3;
+blockchain-100.js:341:      this.chain = data.chain.map(b => Block.fromJSON(b));
+blockchain-100.js-342-      
+blockchain-100.js-343-      if (fs.existsSync(TX_FILE)) {
+blockchain-100.js-344-        const txs = JSON.parse(fs.readFileSync(TX_FILE, 'utf8'));
+blockchain-100.js-345-        this.pendingTx = txs.map(t => Transaction.fromJSON(t));
+--
+blockchain-100.js-348-      if (fs.existsSync(WALLETS_FILE)) {
+blockchain-100.js-349-        this.wallets = JSON.parse(fs.readFileSync(WALLETS_FILE, 'utf8'));
+blockchain-100.js-350-      }
+blockchain-100.js-351-      
+blockchain-100.js:352:      if (!this.isValid()) {
+blockchain-100.js-353-        console.error('❌ زنجیره نامعتبره!');
+blockchain-100.js-354-        this.createGenesis();
+blockchain-100.js-355-      }
+blockchain-100.js-356-    } catch(e) {
+--
+blockchain-100.js-371-  
+blockchain-100.js-372-  getLatest() { return this.chain[this.chain.length - 1]; }
+blockchain-100.js-373-  
+blockchain-100.js-374-  // ─── اضافه کردن بلوک ───
+blockchain-100.js:375:  addBlock(block) {
+blockchain-100.js-376-    block.prevHash = this.getLatest().hash;
+blockchain-100.js-377-    block.difficulty = this.difficulty;
+blockchain-100.js-378-    block.mine();
+blockchain-100.js:379:    this.chain.push(block);
+blockchain-100.js-380-    this.applyTransactions(block);
+blockchain-100.js-381-    this.save();
+blockchain-100.js-382-    return block;
+blockchain-100.js-383-  }
+--
+blockchain-100.js-427-      allTxs,
+blockchain-100.js-428-      this.difficulty
+blockchain-100.js-429-    );
+blockchain-100.js-430-    
+blockchain-100.js:431:    this.addBlock(block);
+blockchain-100.js-432-    
+blockchain-100.js-433-    // حذف تراکنش‌های استخراج‌شده
+blockchain-100.js-434-    this.pendingTx = this.pendingTx.filter(tx => !validTxs.includes(tx));
+blockchain-100.js-435-    this.save();
+--
+blockchain-100.js-478-    return { ok: true, txid: tx.txid };
+blockchain-100.js-479-  }
+blockchain-100.js-480-  
+blockchain-100.js-481-  // GANDOM 2558: validate a received block before appending it.
+blockchain-100.js:482:  isValidBlock(block, previousBlock = this.getLatest()) {
+blockchain-100.js-483-    try {
+blockchain-100.js-484-      if (!block || !previousBlock) return false;
+blockchain-100.js-485-      if (!Number.isSafeInteger(block.index) ||
+blockchain-100.js-486-          block.index !== previousBlock.index + 1) return false;
+--
+blockchain-100.js-531-    }
+blockchain-100.js-532-  }
+blockchain-100.js-533-
+blockchain-100.js-534-  // ─── اعتبارسنجی ───
+blockchain-100.js:535:  isValid() {
+blockchain-100.js-536-    for (let i = 1; i < this.chain.length; i++) {
+blockchain-100.js-537-      const curr = this.chain[i];
+blockchain-100.js-538-      const prev = this.chain[i-1];
+blockchain-100.js-539-      if (curr.hash !== curr.calculateHash()) return false;
+--
+blockchain-100.js-564-      length: this.chain.length,
+blockchain-100.js-565-      latest_hash: latest.hash,
+blockchain-100.js-566-      latest_index: latest.index,
+blockchain-100.js-567-      difficulty: this.difficulty,
+blockchain-100.js:568:      is_valid: this.isValid(),
+blockchain-100.js-569-      pending_tx: this.pendingTx.length,
+blockchain-100.js-570-      total_supply: this.getTotalSupply(),
+blockchain-100.js-571-      max_supply: this.maxSupply,
+blockchain-100.js-572-      circulating_percent: (this.getTotalSupply() / this.maxSupply * 100).toFixed(6),
+--
+node-b-chain.js-81-      if (msg.type === 'CHAIN_DATA') {
+node-b-chain.js-82-        console.log(`📥 دریافت ${msg.payload.blocks.length} بلوک از نود A`);
+node-b-chain.js-83-        let added = 0;
+node-b-chain.js-84-        for (const blockData of msg.payload.blocks) {
+node-b-chain.js:85:          const block = Block.fromJSON(blockData);
+node-b-chain.js-86-          const latest = chainB.getLatest();
+node-b-chain.js-87-          
+node-b-chain.js-88-          if (block.index <= latest.index) continue;
+node-b-chain.js-89-          if (block.index !== latest.index + 1) break;
+node-b-chain.js-90-          
+node-b-chain.js:91:          const valid = chainB.isValidBlock ? chainB.isValidBlock(block, latest) : false;
+node-b-chain.js-92-          if (!valid) {
+node-b-chain.js-93-            console.log(`   ❌ بلوک ${block.index} نامعتبر`);
+node-b-chain.js-94-            break;
+node-b-chain.js-95-          }
+node-b-chain.js-96-          
+node-b-chain.js:97:          chainB.chain.push(block);
+node-b-chain.js-98-          added++;
+node-b-chain.js-99-        }
+node-b-chain.js-100-        
+node-b-chain.js-101-        if (added > 0) {
+--
+node-b-chain.js-106-        }
+node-b-chain.js-107-        return;
+node-b-chain.js-108-      }
+node-b-chain.js-109-
+node-b-chain.js:110:      if (msg.type === 'NEW_BLOCK_FROM_PEER') {
+node-b-chain.js-111-        console.log(`📥 بلوک جدید از نود A`);
+node-b-chain.js-112-        try {
+node-b-chain.js:113:          const block = Block.fromJSON(msg.block);
+node-b-chain.js-114-          const latest = chainB.getLatest();
+node-b-chain.js-115-          
+node-b-chain.js-116-          if (block.index <= latest.index) return;
+node-b-chain.js-117-          if (block.index !== latest.index + 1) {
+--
+node-b-chain.js-119-            send(ws, 'GET_CHAIN', {});
+node-b-chain.js-120-            return;
+node-b-chain.js-121-          }
+node-b-chain.js-122-          
+node-b-chain.js:123:          if (!chainB.isValidBlock(block, latest)) {
+node-b-chain.js-124-            console.error('REJECTED_INVALID_PEER_BLOCK=' + block.index);
+node-b-chain.js-125-            return;
+node-b-chain.js-126-          }
+node-b-chain.js:127:          chainB.chain.push(block);
+node-b-chain.js-128-          chainB.save();
+node-b-chain.js-129-          stats.blocksReceived++;
+node-b-chain.js-130-          console.log(`   ✅ بلوک ${block.index} (ارتفاع B: ${chainB.chain.length})`);
+node-b-chain.js-131-        } catch(e) {
+--
+blockchain-p2p-handler.js-26-    return true;
+blockchain-p2p-handler.js-27-  }
+blockchain-p2p-handler.js-28-
+blockchain-p2p-handler.js-29-  // ─── دریافت بلوک جدید از نود دیگه ───
+blockchain-p2p-handler.js:30:  if (type === 'NEW_BLOCK_FROM_PEER') {
+blockchain-p2p-handler.js-31-    console.log(`📥 بلوک جدید از ${peerId} دریافت شد`);
+blockchain-p2p-handler.js-32-    try {
+blockchain-p2p-handler.js-33-      const Block = require('./blockchain-100.js').Block;
+blockchain-p2p-handler.js:34:      const block = Block.fromJSON(message.block);
+blockchain-p2p-handler.js-35-      const latest = gandomChain.getLatest();
+blockchain-p2p-handler.js-36-
+blockchain-p2p-handler.js-37-      if (block.index <= latest.index) {
+blockchain-p2p-handler.js-38-        console.log(`   ⏭️  بلوک ${block.index} قبلاً داریم`);
+--
+blockchain-p2p-handler.js-43-        console.log(`   ⚠️  gap detected - نیاز به sync`);
+blockchain-p2p-handler.js-44-        return true;
+blockchain-p2p-handler.js-45-      }
+blockchain-p2p-handler.js-46-
+blockchain-p2p-handler.js:47:      if (!gandomChain.isValidBlock(block, latest)) {
+blockchain-p2p-handler.js-48-        console.log(`   ❌ بلوک نامعتبر`);
+blockchain-p2p-handler.js-49-        return true;
+blockchain-p2p-handler.js-50-      }
+blockchain-p2p-handler.js-51-
+blockchain-p2p-handler.js:52:      gandomChain.chain.push(block);
+blockchain-p2p-handler.js-53-      gandomChain.save();
+blockchain-p2p-handler.js-54-      console.log(`   ✅ بلوک ${block.index} اضافه شد (ارتفاع: ${gandomChain.chain.length})`);
+blockchain-p2p-handler.js-55-      return true;
+blockchain-p2p-handler.js-56-    } catch(e) {
+--
+blockchain-p2p-handler.js-79-  let count = 0;
+blockchain-p2p-handler.js-80-  for (const [id, peer] of peers) {
+blockchain-p2p-handler.js-81-    if (peer.ws && peer.ws.readyState === 1) {
+blockchain-p2p-handler.js-82-      peer.ws.send(JSON.stringify({
+blockchain-p2p-handler.js:83:        type: 'NEW_BLOCK_FROM_PEER',
+blockchain-p2p-handler.js-84-        block: block.toJSON(),
+blockchain-p2p-handler.js-85-        from: 'NODE-A',
+blockchain-p2p-handler.js-86-        timestamp: Date.now()
+blockchain-p2p-handler.js-87-      }));
+
+===== 4. BLOCK INGRESS AND P2P HANDLERS =====
+node-b-chain.js-4-
+node-b-chain.js-5-// هر نود B پوشه داده خودش رو داره
+node-b-chain.js-6-process.env.GANDOM_DATA_DIR = require('path').join(__dirname, 'blockchain-data-b');
+node-b-chain.js-7-
+node-b-chain.js-8-const WebSocket = require('ws');
+node-b-chain.js-9-const { GandomBlockchain, Block } = require('./blockchain-100.js');
+node-b-chain.js:10:const { handleBlockchainMessage } = require('./blockchain-p2p-handler.js');
+node-b-chain.js-11-
+node-b-chain.js-12-const NODE_ID = 'NODE-B-' + Date.now().toString().slice(-6);
+node-b-chain.js-13-const NODE_A_URL = 'ws://127.0.0.1:8787';
+node-b-chain.js-14-const RECONNECT_DELAY = 3000;
+node-b-chain.js-15-
+node-b-chain.js-16-console.log(`🦶 [${NODE_ID}] شروع نود B با بلاک‌چین`);
+--
+node-b-chain.js-44-    
+node-b-chain.js-45-    // HELLO
+node-b-chain.js-46-    send(ws, 'HELLO', { node_id: NODE_ID, role: 'peer', has_chain: true });
+node-b-chain.js-47-    
+node-b-chain.js-48-    // درخواست طول زنجیره نود A
+node-b-chain.js-49-    setTimeout(() => {
+node-b-chain.js:50:      send(ws, 'GET_CHAIN_LENGTH', {});
+node-b-chain.js-51-    }, 500);
+node-b-chain.js-52-  });
+node-b-chain.js-53-
+node-b-chain.js-54-  ws.on('message', (data) => {
+node-b-chain.js-55-    try {
+node-b-chain.js-56-      const msg = JSON.parse(data.toString());
+--
+node-b-chain.js-68-        const peerLength = msg.payload.length;
+node-b-chain.js-69-        const myLength = chainB.chain.length;
+node-b-chain.js-70-        console.log(`📊 طول زنجیره: من=${myLength} | نود A=${peerLength}`);
+node-b-chain.js-71-        
+node-b-chain.js-72-        if (peerLength > myLength) {
+node-b-chain.js-73-          console.log(`🔄 نیاز به sync - درخواست کل زنجیره`);
+node-b-chain.js:74:          send(ws, 'GET_CHAIN', {});
+node-b-chain.js-75-        } else {
+node-b-chain.js-76-          console.log(`✅ زنجیره من جدیدتره`);
+node-b-chain.js-77-        }
+node-b-chain.js-78-        return;
+node-b-chain.js-79-      }
+node-b-chain.js-80-
+--
+node-b-chain.js-104-          stats.lastSync = new Date().toISOString();
+node-b-chain.js-105-          console.log(`   ✅ ${added} بلوک اضافه شد (ارتفاع B: ${chainB.chain.length})`);
+node-b-chain.js-106-        }
+node-b-chain.js-107-        return;
+node-b-chain.js-108-      }
+node-b-chain.js-109-
+node-b-chain.js:110:      if (msg.type === 'NEW_BLOCK_FROM_PEER') {
+node-b-chain.js-111-        console.log(`📥 بلوک جدید از نود A`);
+node-b-chain.js-112-        try {
+node-b-chain.js-113-          const block = Block.fromJSON(msg.block);
+node-b-chain.js-114-          const latest = chainB.getLatest();
+node-b-chain.js-115-          
+node-b-chain.js-116-          if (block.index <= latest.index) return;
+node-b-chain.js-117-          if (block.index !== latest.index + 1) {
+node-b-chain.js-118-            // gap - نیاز به sync
+node-b-chain.js:119:            send(ws, 'GET_CHAIN', {});
+node-b-chain.js-120-            return;
+node-b-chain.js-121-          }
+node-b-chain.js-122-          
+node-b-chain.js-123-          if (!chainB.isValidBlock(block, latest)) {
+node-b-chain.js-124-            console.error('REJECTED_INVALID_PEER_BLOCK=' + block.index);
+node-b-chain.js-125-            return;
+--
+node-b-chain.js-132-          console.log(`   ❌ خطا: ${e.message}`);
+node-b-chain.js-133-        }
+node-b-chain.js-134-        return;
+node-b-chain.js-135-      }
+node-b-chain.js-136-
+node-b-chain.js-137-      // ─── پردازشگر عمومی ───
+node-b-chain.js:138:      if (handleBlockchainMessage(msg, ws, NODE_ID, chainB, new Map(), send)) {
+node-b-chain.js-139-        return;
+node-b-chain.js-140-      }
+node-b-chain.js-141-
+node-b-chain.js-142-    } catch(e) {
+node-b-chain.js-143-      console.error('Msg error:', e.message);
+node-b-chain.js-144-    }
+--
+blockchain-p2p-handler.js-1-// ═══════════════════════════════════════════════════════
+blockchain-p2p-handler.js-2-// 🔗 GANDOM BLOCKCHAIN P2P HANDLER
+blockchain-p2p-handler.js-3-// ═══════════════════════════════════════════════════════
+blockchain-p2p-handler.js-4-
+blockchain-p2p-handler.js:5:function handleBlockchainMessage(message, ws, peerId, gandomChain, peers, send) {
+blockchain-p2p-handler.js-6-  const type = message.type;
+blockchain-p2p-handler.js-7-
+blockchain-p2p-handler.js-8-  // ─── درخواست طول زنجیره ───
+blockchain-p2p-handler.js:9:  if (type === 'GET_CHAIN_LENGTH') {
+blockchain-p2p-handler.js-10-    console.log(`🔗 ${peerId} درخواست طول زنجیره`);
+blockchain-p2p-handler.js-11-    send(ws, 'CHAIN_LENGTH', {
+blockchain-p2p-handler.js-12-      length: gandomChain.chain.length,
+blockchain-p2p-handler.js-13-      latestHash: gandomChain.getLatest().hash,
+blockchain-p2p-handler.js-14-      latestIndex: gandomChain.getLatest().index
+blockchain-p2p-handler.js-15-    });
+blockchain-p2p-handler.js-16-    return true;
+blockchain-p2p-handler.js-17-  }
+blockchain-p2p-handler.js-18-
+blockchain-p2p-handler.js-19-  // ─── درخواست کل زنجیره ───
+blockchain-p2p-handler.js:20:  if (type === 'GET_CHAIN') {
+blockchain-p2p-handler.js-21-    console.log(`🔗 ${peerId} درخواست کل زنجیره (${gandomChain.chain.length} بلوک)`);
+blockchain-p2p-handler.js-22-    send(ws, 'CHAIN_DATA', {
+blockchain-p2p-handler.js-23-      length: gandomChain.chain.length,
+blockchain-p2p-handler.js-24-      blocks: gandomChain.chain.map(b => b.toJSON())
+blockchain-p2p-handler.js-25-    });
+blockchain-p2p-handler.js-26-    return true;
+blockchain-p2p-handler.js-27-  }
+blockchain-p2p-handler.js-28-
+blockchain-p2p-handler.js-29-  // ─── دریافت بلوک جدید از نود دیگه ───
+blockchain-p2p-handler.js:30:  if (type === 'NEW_BLOCK_FROM_PEER') {
+blockchain-p2p-handler.js-31-    console.log(`📥 بلوک جدید از ${peerId} دریافت شد`);
+blockchain-p2p-handler.js-32-    try {
+blockchain-p2p-handler.js-33-      const Block = require('./blockchain-100.js').Block;
+blockchain-p2p-handler.js-34-      const block = Block.fromJSON(message.block);
+blockchain-p2p-handler.js-35-      const latest = gandomChain.getLatest();
+blockchain-p2p-handler.js-36-
+--
+blockchain-p2p-handler.js-57-      console.log(`   ❌ خطا: ${e.message}`);
+blockchain-p2p-handler.js-58-      return true;
+blockchain-p2p-handler.js-59-    }
+blockchain-p2p-handler.js-60-  }
+blockchain-p2p-handler.js-61-
+blockchain-p2p-handler.js-62-  // ─── نود دیگه‌ای زنجیره‌اش رو طولانی‌تر دیده ───
+blockchain-p2p-handler.js:63:  if (type === 'REQUEST_FULL_SYNC') {
+blockchain-p2p-handler.js-64-    console.log(`🔄 ${peerId} درخواست sync کامل`);
+blockchain-p2p-handler.js-65-    send(ws, 'CHAIN_DATA', {
+blockchain-p2p-handler.js-66-      length: gandomChain.chain.length,
+blockchain-p2p-handler.js-67-      blocks: gandomChain.chain.map(b => b.toJSON())
+blockchain-p2p-handler.js-68-    });
+blockchain-p2p-handler.js-69-    return true;
+--
+blockchain-p2p-handler.js-72-  return false;
+blockchain-p2p-handler.js-73-}
+blockchain-p2p-handler.js-74-
+blockchain-p2p-handler.js-75-// ═══════════════════════════════════════════════════════
+blockchain-p2p-handler.js-76-// 📡 پخش بلوک جدید به همه نودها
+blockchain-p2p-handler.js-77-// ═══════════════════════════════════════════════════════
+blockchain-p2p-handler.js:78:function broadcastNewBlock(block, peers) {
+blockchain-p2p-handler.js-79-  let count = 0;
+blockchain-p2p-handler.js-80-  for (const [id, peer] of peers) {
+blockchain-p2p-handler.js-81-    if (peer.ws && peer.ws.readyState === 1) {
+blockchain-p2p-handler.js-82-      peer.ws.send(JSON.stringify({
+blockchain-p2p-handler.js:83:        type: 'NEW_BLOCK_FROM_PEER',
+blockchain-p2p-handler.js-84-        block: block.toJSON(),
+blockchain-p2p-handler.js-85-        from: 'NODE-A',
+blockchain-p2p-handler.js-86-        timestamp: Date.now()
+blockchain-p2p-handler.js-87-      }));
+blockchain-p2p-handler.js-88-      count++;
+blockchain-p2p-handler.js-89-    }
+blockchain-p2p-handler.js-90-  }
+blockchain-p2p-handler.js-91-  console.log(`📡 بلوک #${block.index} به ${count} نود پخش شد`);
+blockchain-p2p-handler.js-92-  return count;
+blockchain-p2p-handler.js-93-}
+blockchain-p2p-handler.js-94-
+blockchain-p2p-handler.js:95:module.exports = { handleBlockchainMessage, broadcastNewBlock };
+--
+server.js-10-const { handleNeuralAPI } = require('./neural-api.js');
+server.js-11-const { handlePaymentAPI } = require('./payment-api.js');
+server.js-12-const { handleExchangeAPI } = require('./exchange-api.js');
+server.js-13-const { handleMarketAPI } = require('./market-api.js');
+server.js-14-const { handleUsersAPI } = require('./users-api.js');
+server.js-15-
+server.js:16:const { handleBlockchainMessage, broadcastNewBlock } = require('./blockchain-p2p-handler.js');
+server.js-17-
+server.js-18-const { GandomBlockchain } = require('./blockchain-100.js');
+server.js-19-
+server.js-20-// ─── Blockchain ───
+server.js-21-const { handleBlockchainAPI } = require('./blockchain-api.js');
+server.js-22-
+--
+server.js-600-      }
+server.js-601-      if (message.type === "TASK_RESULT" || message.type === "TASK_FAILED") {
+server.js-602-        WorkerCoordinator.receiveResult(message.payload);
+server.js-603-        return;
+server.js-604-      }
+server.js-605-
+server.js:606:      if (handleBlockchainMessage(message, ws, peerId, gandomChain, peers, send)) {
+server.js-607-
+server.js-608-
+server.js-609-        return;
+server.js-610-
+server.js-611-
+server.js-612-    }
+
+===== 5. GIT WORKTREE STATUS =====
+ M .github/workflows/gandom-ui-e2e.yml
+ D ALL-IN-ONE/README.md
+ D ALL-IN-ONE/audit-server.js
+ D ALL-IN-ONE/backend.js
+ D ALL-IN-ONE/client.html
+ D ALL-IN-ONE/final.html
+ D ALL-IN-ONE/p2p-server.js
+ D ALL-IN-ONE/package.json
+ D ALL-IN-ONE/start.sh
+ D ALL-IN-ONE/ui-server.js
+ D CHECK.sh
+ D GANDOM-BOOT.sh
+ D GANDOM-FINAL-BUILD-AND-AUDIT.sh
+ D RESTORE.sh
+ M android/build.gradle
+ M android/settings.gradle
+ M audit-service/server.js
+ M blockchain-100.js
+ D chromium-dpkg-cycle1.log
+ D chromium-error.log
+ D chromium-runtime.log
+ D ci-diagnostic-36731371010/gandom-gradle-build.log
+ M employees/accounting-ledger.json
+ M employees/wallet-bridge.js
+ D gandom-server.log
+ M node-b-chain.js
+ M public/index.html
+ M server.js
+?? '
+?? .backend-health.json
+?? .gandom-agent-2558/
+?? .gandom-execution-lock.json
+?? .gandom-integration-rollback-20261013-094845/
+?? .github/workflows/gandom-ui-e2e.yml.before-ui-server-fix
+?? .installer-pid
+?? .runtime/
+?? =
+?? ALL/dashboard.html
+?? FINAL.html
+?? GANDOM-ALL.md
+?? GANDOM-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z
+?? GANDOM-AWAKENING.js
+?? GANDOM-AWAKENING.json
+?? GANDOM-DEEP-TREASURE-SCAN.js
+?? GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js
+?? GANDOM-FULL-AUTOMATION-2558.js
+?? GANDOM-INTEGRATE-2558.sh
+?? GANDOM-INTEGRATION-2558-REPORT.txt
+?? GANDOM-LAW2558-AUDIT-20261013-102234.txt
+?? GANDOM-LAW2558-AUDIT.sh
+?? GANDOM-MOTHER-2558.sh
+?? GANDOM-ONE-SITE.html
+?? GANDOM-ONE.html
+?? GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt
+?? GANDOM-SECTION-01.tar.gz
+?? GANDOM-TREASURE-LITE.js
+?? GANDOM_2558_AUDIT_20261016T102512Z.txt
+?? GANDOM_CONSENSUS_GATE_2558_2026-10-16T11-22-34-402Z.txt
+?? GANDOM_DEEP_AUDIT_20261016T103550Z.txt
+?? GANDOM_EXECUTION_STATE.txt
+?? GANDOM_PREFLIGHT_20261016T060127Z.txt
+?? GANDOM_PREFLIGHT_20261016T060154Z.txt
+?? GANDOM_ROOT_CAUSE_2558_20261016T141524.txt
+?? GANDOM_ROOT_CAUSE_CODE_20261016T112839Z.txt
+?? GANDOM_ROOT_CAUSE_CODE_AUDIT_2558.sh
+?? GANDOM_ROOT_CAUSE_DEEP_2558.sh
+?? GANDOM_ROOT_CAUSE_DEEP_2558_20261016T104716Z.txt
+?? MASTER-PLAN.md
+?? PROPOSAL.txt
+?? PUZZLE-BACKUP-OVERLAP-2558.sh
+?? SHOVEL-REPORT-20261013-203517.txt
+?? ads-api.js
+?? ads-data/
+?? ads-manager.js
+?? ai-accountant-bridge.js
+?? ai-data/
+?? ai-runner.js
+?? ai-worker.js
+?? android/app/src/main/assets/
+?? architecture/
+?? archives/
+?? audit-data/
+?? audit-service/client.html
+?? audit/
+?? auto-auditor.js
+?? blockchain-100.js.before-gandom-2558-validation-1792134653021.bak
+?? blockchain-core.js
+?? blockchain-persistent.js
+?? blockchain.js
+?? breeding-data/
+?? breeding-manager.js
+?? cell-life-api.js
+?? cell-life-data/
+?? cell-life-engine-v2.js
+?? cell-life-engine.js
+?? cell-life-runner.js
+?? connect-organs.sh
+?? consensus.js
+?? constitution/EVIDENCE-TRUST-PROTOCOL-2558.json
+?? constitution/GANDOM-GLOBAL-2558-UNIFIED-LOCK.md
+?? constitution/GOLDEN-MOTHER-LAW-2558.HASH
+?? constitution/GOLDEN-MOTHER-LAW-2558.json
+?? constitution/GOLDEN-MOTHER-LAW-2558.md
+?? deep-shovel.sh
+?? docs/PRICING-NEW.md
+?? e
+?? "e HEAD"
+?? ecosystem-api.js
+?? employees/treasury-report.json
+?? erver.js
+?? evidence/
+?? exchange-api.js
+?? exchange-data/
+?? exchange-manager.js
+?? experience-data/
+?? experience-recorder.js
+?? family-memory.js
+?? father-audit.json
+?? father-vault.js
+?? father-wallet.json
+?? fix-display.js
+?? fix-route.js
+?? fix-vault-v2.js
+?? fix-vault-v3.js
+?? fix-vault.js
+?? full-audit.js
+?? gandom-alive.js
+?? gandom-audit-20261016-083014.txt
+?? gandom-audit.sh
+?? gandom-backend.js
+?? gandom-code.tar.gz
+?? gandom-core/
+?? gandom-final-start.sh
+?? gandom-investor-audit-20261016-082640.txt
+?? gandom-release-gate.txt
+?? gandom-ui-backtest.html
+?? gandom.db
+?? gandom_2558_execution_gate.sh
+?? gandom_consensus_gate_2558.js
+?? gandom_deep_audit_2558.sh
+?? gandom_mother2558_p2p.sh
+?? gandom_preflight.sh
+?? gandom_root_cause_2558.sh
+?? governance/
+?? install-memory-v2.js
+?? install-vault.js
+?? investor-audit.sh
+?? market-api.js
+?? market-data/
+?? market-manager.js
+?? memories/
+?? mother-data/
+?? mother-node.js
+?? music-data/
+?? music-income.js
+?? neural-api.js
+?? neural-bus.js
+?? node-b-chain.js.before-gandom-2558-validation-1792134653022.bak
+?? node-b-chain.js.before-validation-fix-1792134426147.bak
+?? node-b-persistent.js
+?? node-breeding-api.js
+?? node-breeding.js
+?? node-mobile-release.json
+?? nodes-family/
+?? p2p-heavy-test.js
+?? p2p-real-test.js
+?? p2p-sync-fixed.js
+?? p2p-sync.js
+?? patch-blockchain-final.js
+?? patch-dashboard.js
+?? patch-exchange-dashboard.js
+?? patch-exchange-link.js
+?? patch-menu.js
+?? patch-section.js
+?? patch.js
+?? payment-api.js
+?? payment-data/
+?? payment-manager.js
+?? price-api.js
+?? price-oracle.js
+?? public/assets/
+?? public/chain.html
+?? public/chat.html
+?? public/diagnose.html
+?? public/gandom-3d.html
+?? public/gandom-brain.js
+?? public/gandom-girl.html
+?? public/gandom-test.html
+?? public/index.html.backup3
+?? public/index.html.backup4
+?? public/libs/
+?? public/voice-continuous.js
+?? public/voice-test.html
+?? run/
+?? runtime-logs/
+?? runtime/
+?? scripts/
+?? security-audit-20261016-085914.txt
+?? security-audit.sh
+?? security_audit.sh
+?? shovel.sh
+?? site/
+?? start-ai.js
+?? start-gandom.sh
+?? "tatus --short"
+?? test-100.js
+?? test-neuron.js
+?? test-node-b.js
+?? test-organs.sh
+?? utils.js
+?? wallet/GANDOM-WALLET-2558.js
+?? wallet/wallet-state.json
+?? worker-api.js
+?? worker-coordinator.js
+?? worker-node.js
+?? workers-data/
+?? www/gandom-live-ui.html
+?? www/gandom-live-ui.html.step4-before
+--- CURRENT BRANCH ---
+main
+--- RECENT COMMITS ---
+4af1a673 (HEAD -> main, origin/main, origin/HEAD) 📚 GANDOM 2558 Documentation Release v1.0
+7b51470b feat: GANDOM Registry 2558 (91 unique files, deduplicated)
+159ab185 feat: add start.sh for all servers
+ab1c6c96 feat: GANDOM All-in-One package (10 files, 4 servers)
+a5ec9bbf feat: GANDOM-BOOT-MASTER (12-step execution)
+--- CHANGE SUMMARY ---
+ .github/workflows/gandom-ui-e2e.yml               |    2 +-
+ ALL-IN-ONE/README.md                              |   34 -
+ ALL-IN-ONE/audit-server.js                        |  121 -
+ ALL-IN-ONE/backend.js                             |  112 -
+ ALL-IN-ONE/client.html                            |  128 -
+ ALL-IN-ONE/final.html                             |   73 -
+ ALL-IN-ONE/p2p-server.js                          |  538 --
+ ALL-IN-ONE/package.json                           |   24 -
+ ALL-IN-ONE/start.sh                               |   13 -
+ ALL-IN-ONE/ui-server.js                           |  173 -
+ CHECK.sh                                          |  122 -
+ GANDOM-BOOT.sh                                    |   79 -
+ GANDOM-FINAL-BUILD-AND-AUDIT.sh                   |  280 -
+ RESTORE.sh                                        |   59 -
+ android/build.gradle                              |   14 +-
+ android/settings.gradle                           |   23 +-
+ audit-service/server.js                           |   63 +-
+ blockchain-100.js                                 |   72 +
+ chromium-dpkg-cycle1.log                          |    8 -
+ chromium-error.log                                |    1 -
+ chromium-runtime.log                              |   73 -
+ ci-diagnostic-36731371010/gandom-gradle-build.log | 7208 ---------------------
+ employees/accounting-ledger.json                  |   26 +-
+ employees/wallet-bridge.js                        |    2 +-
+ gandom-server.log                                 |   22 -
+ node-b-chain.js                                   |    6 +-
+ public/index.html                                 |  609 ++
+ server.js                                         |  246 +-
+ 28 files changed, 1016 insertions(+), 9115 deletions(-)
+
+===== 6. EXISTING CHAIN FILES — READ ONLY =====
+
+CHAIN_FILE=blockchain-data/chain.json
+BLOCK_COUNT=2
+{"index":0,"hash":"57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33","prevHash":"0000000000000000000000000000000000000000000000000000000000000000","difficulty":3,"nonce":0,"transactionCount":1}
+{"index":1,"hash":"000e02f24cfafc8e08b21cfc6e5331590ddeb0c6646abd23098723670b67fb92","prevHash":"57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33","difficulty":3,"nonce":1609,"transactionCount":1}
+BROKEN_LINK_COUNT=0
+
+CHAIN_FILE=blockchain-data-b/chain.json
+BLOCK_COUNT=2
+{"index":0,"hash":"f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624","prevHash":"0000000000000000000000000000000000000000000000000000000000000000","difficulty":3,"nonce":0,"transactionCount":1}
+{"index":1,"hash":"000e02f24cfafc8e08b21cfc6e5331590ddeb0c6646abd23098723670b67fb92","prevHash":"57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33","difficulty":3,"nonce":1609,"transactionCount":1}
+BROKEN_LINK_AT=1
+BROKEN_LINK_COUNT=1
+
+===== 7. SAFETY GATE =====
+CHAIN_FILES_MODIFIED=NO
+SOURCE_FILES_MODIFIED=NO
+PRIVATE_KEYS_READ=NO
+SERVICE_RESTARTED=NO
+GENESIS_REPAIR=NOT_PERFORMED
+PRODUCTION_APPROVAL=NOT_GRANTED
+PASS_REAL_FULL_SYSTEM=NOT_CLAIMED
+AUDIT_RESULT=SOURCE_EVIDENCE_COLLECTED

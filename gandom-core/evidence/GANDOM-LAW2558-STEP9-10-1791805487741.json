@@ -1,0 +1,85 @@
+{
+  "law": 2558,
+  "timestamp": "2026-10-12T11:44:47.604Z",
+  "files": {
+    "server.js": {
+      "exists": true,
+      "bytes": 11969,
+      "sha256": "20cc00cced7d0097748a8a31a8a3ffde9a48d0dc288c4f146c7073a4c1f3a8f8"
+    },
+    "package.json": {
+      "exists": true,
+      "bytes": 512,
+      "sha256": "5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3"
+    },
+    "gandom-core/revenue/GANDOM-REAL-PAYMENT-ADAPTER-2558.js": {
+      "exists": true,
+      "bytes": 1670,
+      "sha256": "23b7752dc5db3ffc0d0598e4e80199d623681825e08a2e1f9dcd3185202110ae"
+    },
+    "gandom-core/revenue/GANDOM-AI-REVENUE-ENGINE-2558.js": {
+      "exists": true,
+      "bytes": 10395,
+      "sha256": "bd6142c4038fc4220244d911412a598c50d57d7b2b4602ea6ddb54c8cf84de8a"
+    },
+    "gandom-core/revenue/GANDOM-PADDLE-ADAPTER-2558.js": {
+      "exists": true,
+      "bytes": 3890,
+      "sha256": "5fca69900a9aad4eae59dc22f303d0176f8e6e2717b69e6afc13d57f108cc05b"
+    },
+    "gandom-core/revenue/GANDOM-FPAY-ADAPTER-2558.js": {
+      "exists": true,
+      "bytes": 6544,
+      "sha256": "8351d5262bbe693b56350e49937b438a6dc646b0f79ff549334b9e341756687e"
+    },
+    "www/gandom-live-ui.html": {
+      "exists": true,
+      "bytes": 18876,
+      "sha256": "91fefc4e2a7a024302f18bcfc8a97a9ef6e3629ce0e35292c3b4d439da146a65"
+    }
+  },
+  "nodes": {
+    "8787": {
+      "health": "PASS",
+      "node_id": "GANDOM-NODE-A",
+      "peers_count": 1,
+      "peers": [
+        {
+          "peer_id": "GANDOM-NODE-B",
+          "direction": "inbound",
+          "address": "127.0.0.1",
+          "connected_at": 1791805016732
+        }
+      ],
+      "/api/stats": "PASS",
+      "/api/version": "PASS"
+    },
+    "8788": {
+      "health": "PASS",
+      "node_id": "GANDOM-NODE-B",
+      "peers_count": 1,
+      "peers": [
+        {
+          "direction": "outbound",
+          "address": "ws://127.0.0.1:8787",
+          "connected_at": 1791805016744
+        }
+      ],
+      "/api/stats": "PASS",
+      "/api/version": "PASS"
+    }
+  },
+  "math": {
+    "floating_point_test": 0.30000000000000004,
+    "decimal_tolerance_check": true,
+    "sha256_available": true
+  },
+  "payment": {
+    "realProviderConfigured": false,
+    "realPaymentVerified": false
+  },
+  "p2p": {
+    "same_phone_local_test": true,
+    "remote_device_verified": false
+  }
+}

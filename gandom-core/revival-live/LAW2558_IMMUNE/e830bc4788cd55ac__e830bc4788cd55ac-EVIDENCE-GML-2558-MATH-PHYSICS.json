@@ -1,0 +1,31 @@
+{
+  "law": "2558",
+  "layer": "GML-2558-MATH-PHYSICS",
+  "timestamp": "2026-10-03T14:52:08.992Z",
+  "engine": {
+    "functionValue": 13,
+    "analyticDerivative": 14,
+    "numericalDerivative": 14.000000000180535,
+    "derivativeError": 1.8053469830192626e-10,
+    "distance2D": 5,
+    "forceN": 6,
+    "checks": {
+      "FUNCTION_FINITE": true,
+      "DERIVATIVE_FINITE": true,
+      "DERIVATIVE_MATCH": true,
+      "GEOMETRY_3_4_5": true,
+      "PHYSICS_F_MA": true,
+      "NUMERIC_FINITE": true
+    },
+    "allPassed": true
+  },
+  "independentVerification": {
+    "INDEPENDENT_DERIVATIVE": true,
+    "INDEPENDENT_GEOMETRY": true,
+    "INDEPENDENT_PHYSICS": true,
+    "ENGINE_REPORTED_PASS": true,
+    "INDEPENDENT_ALL_PASS": true
+  },
+  "locked": true,
+  "evidenceSha256": "87e6c5b2af0de8365e3a49496df3620a1addd43d4a77fbb12820598b09333b15"
+}

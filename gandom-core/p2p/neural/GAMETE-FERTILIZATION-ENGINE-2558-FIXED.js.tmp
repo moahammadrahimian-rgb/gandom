@@ -1,0 +1,65 @@
+'use strict';
+
+const { CellLifeEngine2558 } =
+  require('../../cell-life-2558/CELL-LIFE-ENGINE-2558.js');
+
+class GameteFertilizationEngine2558 {
+  constructor(options = {}) {
+    const capacity = Number(options.capacity || 10);
+
+    if (!Number.isSafeInteger(capacity) || capacity < 2) {
+      throw new Error('INVALID_CAPACITY');
+    }
+
+    this.engine = new CellLifeEngine2558(capacity);
+  }
+
+  fertilize(parentId = null) {
+    const before = this.engine.snapshot();
+
+    if (parentId === null) {
+      parentId = this.engine.birth();
+    }
+
+    const parentState = this.engine.snapshot();
+
+    if (
+      !Number.isInteger(parentId) ||
+      parentId < 0 ||
+      !this.engine.alive[parentId]
+    ) {
+      throw new Error('PARENT_NOT_ALIVE');
+    }
+
+    if (parentState.alive >= parentState.capacity) {
+      throw new Error('CELL_CAPACITY_REACHED');
+    }
+
+    const childId = this.engine.divide(parentId);
+    const after = this.engine.snapshot();
+    const inheritance =
+      this.engine.verifyInheritance(parentId, childId);
+
+    if (
+      !Number.isInteger(childId) ||
+      childId < 0 ||
+      inheritance !== true ||
+      after.alive !== before.alive + 1 ||
+      after.divisions !== before.divisions + 1 ||
+      after.births !== before.births + 1
+    ) {
+      throw new Error('FERTILIZATION_VERIFICATION_FAILED');
+    }
+
+    return {
+      verified: true,
+      parentId,
+      childId,
+      inheritance,
+      before,
+      after
+    };
+  }
+}
+
+module.exports = { GameteFertilizationEngine2558 };

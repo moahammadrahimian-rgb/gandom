@@ -1,0 +1,7 @@
+{
+  "mode": "mock",
+  "gdm_price_irt": 100000,
+  "mock_auto_verify": true,
+  "merchant_id": null,
+  "gdm_price_toman": 10000
+}

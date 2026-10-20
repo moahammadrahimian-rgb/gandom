@@ -1,0 +1,770 @@
+═══════════════════════════════════════════════════════
+🌾 GANDOM DEEP SHOVEL REPORT
+📅 Tue Oct 13 20:35:17 +0330 2026
+═══════════════════════════════════════════════════════
+
+▓▓▓ بخش ۱: نودها (Nodes) ▓▓▓
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-NODE-AGENT-20261005-145007.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-NODE-AGENT-POSITIVE-20261005-145137.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-CELL-NODE.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-NODE-LINK.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/p2p/health/evidence/node-health-runtime.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/GANDOM-NODE-DEATH-2558.js
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/execution/GANDOM-REAL-CELL-NODE.js
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/execution/GANDOM-REAL-NODE-LINK.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/execution-lock/REAL-NODE-REGISTRY.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/real-node-agent/REAL-NODE-AGENT.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/27643ce57bdcce35__27643ce57bdcce35-test-http-nodelay.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/599208f7b59dd329__599208f7b59dd329-test-net-server-nodelay.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/627acf5cbcb87425__627acf5cbcb87425-test-require-node-prefix.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/07c1950b5f4e6357__07c1950b5f4e6357-test-inspect-support-for-node_options.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/05ea6418d75932ef__05ea6418d75932ef-node-mobile-release.json
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/15a45291a151107c__15a45291a151107c-node.js
+   حجم: 16K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/1b07310516f8ef3b__1b07310516f8ef3b-test-fs-stream-construct-compat-old-node.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/141a6973d5cb935f__141a6973d5cb935f-test-module-globalpaths-nodepath.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/25439d87d8123592__25439d87d8123592-node-ios-proxy.sh
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/1d83e02319f64f28__1d83e02319f64f28-test-net-persistent-nodelay.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/4f9b6226d75faa9e__4f9b6226d75faa9e-test-unicode-node-options.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/94c311526052c425__94c311526052c425-child-process-spawn-node.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/6dcdc6374587f48d__6dcdc6374587f48d-nodetiming.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/780b22796d115c93__780b22796d115c93-test-buffer-constructor-node-modules-paths.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/61dd4def87656cbe__61dd4def87656cbe-node-android-proxy.sh
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/7b521666f5e6e8a3__7b521666f5e6e8a3-test-buffer-constructor-outside-node-modules.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/67d04cb2000c8735__67d04cb2000c8735-node_protocol_config.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/916186a89ad0f637__916186a89ad0f637-test-cli-node-options-disallowed.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/dc26ed602a9dc166__dc26ed602a9dc166-test-module-nodemodulepaths.js
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/c26813a6367d61b4__c26813a6367d61b4-test-nodeeventtarget.js
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/ae2831d91c7a8e2b__ae2831d91c7a8e2b-copy_libnode_headers.sh
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/b0fef9e405366353__b0fef9e405366353-node-error.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/a103a32038c0c82d__a103a32038c0c82d-test-cli-node-print-help.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/c2925870f12ef912__c2925870f12ef912-test-net-socket-setnodelay.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/b9487847d683470d__b9487847d683470d-codegen-loops-logical-nodes.js
+   حجم: 20K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/d164752b1ad886f1__d164752b1ad886f1-dfg-dead-unreachable-code-with-chain-of-dead-unchecked-nodes.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/ce6b26b32191585e__ce6b26b32191585e-test-net-connect-nodelay.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/d69199ae681c9018__d69199ae681c9018-ref_keeps_node_running.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/b73cefe35596f6c3__b73cefe35596f6c3-test-cli-node-options.js
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/cb208f96040c97ab__cb208f96040c97ab-test-inspector-inspect-brk-node.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/P2P/04dccba4153833b2__04dccba4153833b2-node-b-peers.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/P2P/a4cc224b79e28d74__a4cc224b79e28d74-node-a-peers.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/P2P/fbfd90a6acc2c644__fbfd90a6acc2c644-nodeId.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/backups/STEP-021-SECURITY-EVENTS-20260930-035250/p2p-before/health/evidence/node-health-runtime.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/backups/MOTHER-2558-REAL-ENGINE-20261002-110250/GANDOM-REAL-CELL-NODE.js
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/backups/MOTHER-2558-REAL-ENGINE-20261002-110250/GANDOM-REAL-NODE-LINK.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/backups/LIVE-NODE-GATE-20261002T132427Z/real-node-agent/REAL-NODE-AGENT.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/backups/STEP-3-BEFORE-INTEGRATION-20261003-141616/tests/GANDOM-REAL-CELL-NODE.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/backups/STEP-3-BEFORE-INTEGRATION-20261003-141616/tests/GANDOM-REAL-NODE-LINK.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/backups/section-09-handshake-20261003-172554/gandom-core.snapshot/execution-lock/REAL-NODE-REGISTRY.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/evidence/MAIN-8080-INTEGRATION-STAGE-20260930-200458/source/dht/nodeId.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/evidence/STEP-02-P2P/node-a-peers.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/evidence/STEP-02-P2P/node-b-peers.json
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/node-mobile-release.json
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/P2P-Node/GANDOM-REAL-NODE-LINK.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/P2P-Node/GANDOM-REAL-NODE-LINK-DUP-130-20261010-092454.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/P2P-Node/GANDOM-NODE-DEATH-2558.js
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Cell-Math-Physics/GANDOM-REAL-CELL-NODE.js
+   حجم: 8.0K
+🔹 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Cell-Math-Physics/GANDOM-REAL-CELL-NODE-DUP-210-20261010-092454.js
+   حجم: 4.0K
+🔹 /data/data/com.termux/files/home/gandom/audit/GANDOM-REVIVAL-NODE-2558.js
+   حجم: 8.0K
+
+▓▓▓ بخش ۲: مغزها (Brain) ▓▓▓
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-ENGINE.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/GAMETE-FERTILIZATION-ENGINE-2558.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/governance/math-physics-2558/engine.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/engine/GANDOM-REAL-ENGINE.js
+   حجم: 12K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/cell-life-2558/CELL-LIFE-ENGINE-2558.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/cell-life-2558/REAL-CELL-LIFE-8-ENGINES-2558.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/cell-life-2558/neural/GANDOM-NEURAL-BRAIN-2558.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revenue/GANDOM-AI-REVENUE-ENGINE-2558.js
+   حجم: 12K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/BRAIN_NEURAL/0901f4378a636d75__0901f4378a636d75-33-LIVE-BRAIN-MAP.sh
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/020024abce0210bf__020024abce0210bf-validate-engines.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/05436745cd5d742b__05436745cd5d742b-corepack.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/17fcdd47543d5b21__17fcdd47543d5b21-validate-engines.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/22318503a670ac91__22318503a670ac91-test-tls-keyengine-unsupported.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/548fad0b16c12e79__548fad0b16c12e79-core.js
+   حجم: 108K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/5f76f13f2840ebab__5f76f13f2840ebab-test-tls-keyengine-invalid-arg-type.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/79ea81926e5d6d3b__79ea81926e5d6d3b-test-tls-clientcertengine-unsupported.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/81be11769c96c1c7__81be11769c96c1c7-core-crypto.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/83b28c91b13ec926__83b28c91b13ec926-test-corepack-yarn-install.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/8f8bb264b9a75f8d__8f8bb264b9a75f8d-test-corepack-version.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/96b1a8d257405e52__96b1a8d257405e52-test-tick-processor-cpp-core.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/9810d3bc9a42f67b__9810d3bc9a42f67b-notation-engineering-formatToParts.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/cc8e6783e68f5919__cc8e6783e68f5919-test-repl-underscore.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/eb5f1bb0676abef9__eb5f1bb0676abef9-core_line_numbers.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/ff53e14ced854b3f__ff53e14ced854b3f-test-tls-clientcertengine-invalid-arg-type.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/caf9656b3d6ace6b__caf9656b3d6ace6b-test-tls-server-setoptions-clientcertengine.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/gandom-core/neural/GANDOM-NEURAL-BRAIN-2558.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/backups/MOTHER-2558-FULL-STATE-TCP-20261002-110423/GANDOM-REAL-ENGINE.js
+   حجم: 12K
+🧠 /data/data/com.termux/files/home/gandom/backups/STEP-3-BEFORE-INTEGRATION-20261003-141616/tests/GANDOM-REAL-ENGINE.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/backups/STEP-3-BEFORE-INTEGRATION-20261003-141616/governance/math-physics-2558/engine.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/evidence/MAIN-8080-INTEGRATION-STAGE-20260930-200458/source/blockchain/core-crypto.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/.gandom-integration-rollback-20261013-094845/CELL-LIFE-ENGINE-2558.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/audit/TREASURE-1470-20261008-FULL-MINING/classification/BRAIN-NEURAL.txt
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/audit/33-LIVE-BRAIN-MAP.sh
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/audit/TREASURE-1470-STEP8-USEFULNESS-20261008-174914/categories/BRAIN-NEURAL.txt
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Brain-Neuron/GANDOM-NEURAL-BRAIN-2558.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Cell-Math-Physics/CELL-LIFE-ENGINE-2558.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Cell-Math-Physics/REAL-CELL-LIFE-8-ENGINES-2558.js
+   حجم: 4.0K
+🧠 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Engine-Execution/GANDOM-REAL-ENGINE.js
+   حجم: 12K
+🧠 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Engine-Execution/GANDOM-REAL-ENGINE-DUP-125-20261010-092454.js
+   حجم: 8.0K
+🧠 /data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Wallet-Revenue/GANDOM-AI-REVENUE-ENGINE-2558.js
+   حجم: 12K
+
+▓▓▓ بخش ۳: فایل‌های AI و Neuron ▓▓▓
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/real-cell-runtime/REAL-CELL-NODE-TEST.txt
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/real-cell-runtime/REAL-CELL-MATH-TEST.txt
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-CELL-LIFECYCLE-AUDIT-20261006-202031.txt
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-NODE-AGENT-20261005-145007.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-NODE-AGENT-POSITIVE-20261005-145137.json
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-CELL-NODE.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-CELL-MATH.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence/AGENT-REAL-RUN-20261013T133320Z.log
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence/AGENT-REAL-RUN-20261013T133513Z.log
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence/AGENT-REAL-RUN-20261013T133541Z.log
+/data/data/com.termux/files/home/gandom/gandom-core/governance/run-autonomous-agent-2558.sh
+/data/data/com.termux/files/home/gandom/gandom-core/governance/GANDOM-AUTONOMOUS-AGENT-REGISTRY-2558.json
+/data/data/com.termux/files/home/gandom/gandom-core/governance/GANDOM-LAW-2558-AUTONOMOUS-AGENT-BINDING.json
+/data/data/com.termux/files/home/gandom/gandom-core/governance/GANDOM-AUTONOMOUS-AGENT-REGISTRY-2558.json.before-path-fix-2026-10-13T11-12-36-430Z
+/data/data/com.termux/files/home/gandom/gandom-core/governance/GANDOM-AUTONOMOUS-AGENT-REGISTRY-2558.json.before-path-fix-2026-10-13T11-21-06-765Z
+/data/data/com.termux/files/home/gandom/gandom-core/governance/GANDOM-AUTONOMOUS-AGENT-REGISTRY-2558.json.before-path-fix-20261013-150104
+/data/data/com.termux/files/home/gandom/gandom-core/execution/GANDOM-REAL-CELL-NODE.js
+/data/data/com.termux/files/home/gandom/gandom-core/execution/GANDOM-REAL-CELL-MATH.js
+/data/data/com.termux/files/home/gandom/gandom-core/real-node-agent/REAL-NODE-AGENT.js
+/data/data/com.termux/files/home/gandom/gandom-core/cell-life-2558/CELL-LIFE-ENGINE-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/cell-life-2558/REAL-CELL-LIFE-8-ENGINES-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/cell-life-2558/neural/GANDOM-NEURAL-BRAIN-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/cell-life-2558/CELL-LIFE-EXECUTION-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/revenue/GANDOM-AI-REVENUE-ENGINE-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/live-node/LIVE-CELL-RUNTIME-BRIDGE-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/live-node/TEST-LIVE-CELL-RUNTIME-BRIDGE-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/23970686d32827c4__23970686d32827c4-dfg-check-structure-elimination-for-non-cell.js
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/4b0c7e3b640ffc42__4b0c7e3b640ffc42-weak-cell-basics.js
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/944ab736bc7b18d0__944ab736bc7b18d0-number-cell-reuse.js
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/e4c511d1a5d29403__e4c511d1a5d29403-dfg-to-string-on-cell.js
+
+▓▓▓ بخش ۴: فایل‌های P2P و Network ▓▓▓
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790684411570.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790684479841.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790880439388.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790880440124.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790880712406.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790880713121.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790880880825.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790880881546.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790881032456.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790881033149.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790882000171.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790882000913.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791804847816.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791806360474.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791024465184.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1791024466370.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791024578477.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1791024579649.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791024643046.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1791024644210.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791024670509.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1791024671672.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791024755921.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1791024814157.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791035821910.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791178328098.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1791178350430.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791179231635.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1791179262774.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1791188366363.json
+
+▓▓▓ بخش ۵: پردازش‌های فعال Node ▓▓▓
+u0_a305  27453  0.1  0.2 148112  8400 pts/4    S<l+  1970   0:01 node /data/data/com.termux/files/usr/bin/node server.js
+
+▓▓▓ بخش ۶: پورت‌های فعال ▓▓▓
+netstat ندارد - از ss استفاده کن
+
+▓▓▓ بخش ۷: تمام فایل‌های JS در ریشه گندم ▓▓▓
+-rwx------. 1 u0_a305 u0_a305  12K Oct 13 14:40 /data/data/com.termux/files/home/gandom/GANDOM-AUTONOMOUS-AGENT-2558.js
+-rw-------. 1 u0_a305 u0_a305 5.9K Oct  7 09:04 /data/data/com.termux/files/home/gandom/GANDOM-DEEP-TREASURE-SCAN.js
+-rw-------. 1 u0_a305 u0_a305 6.1K Oct 13 12:42 /data/data/com.termux/files/home/gandom/GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js
+-rw-------. 1 u0_a305 u0_a305 5.6K Oct 10 17:42 /data/data/com.termux/files/home/gandom/GANDOM-FULL-AUTOMATION-2558.js
+-rw-------. 1 u0_a305 u0_a305 3.2K Oct 10 18:58 /data/data/com.termux/files/home/gandom/GANDOM-REGISTRY-2558.js
+-rw-------. 1 u0_a305 u0_a305 4.4K Oct  7 09:07 /data/data/com.termux/files/home/gandom/GANDOM-TREASURE-LITE.js
+-rw-------. 1 u0_a305 u0_a305  961 Sep 27 10:43 /data/data/com.termux/files/home/gandom/client.js
+-rw-------. 1 u0_a305 u0_a305  17K Oct 11 12:50 /data/data/com.termux/files/home/gandom/erver.js
+-rw-------. 1 u0_a305 u0_a305 3.1K Oct 10 18:24 /data/data/com.termux/files/home/gandom/gandom-backend.js
+-rw-------. 1 u0_a305 u0_a305 9.9K Oct  1 17:41 /data/data/com.termux/files/home/gandom/gandom-ui-server.js
+-rw-------. 1 u0_a305 u0_a305  803 Oct  4 08:44 /data/data/com.termux/files/home/gandom/p2p-real-test.js
+-rw-------. 1 u0_a305 u0_a305  13K Oct 12 21:59 /data/data/com.termux/files/home/gandom/server.js
+-rw-------. 1 u0_a305 u0_a305 9.3K Oct  4 08:43 /data/data/com.termux/files/home/gandom/test-12-sections-heavy-8080.js
+-rw-------. 1 u0_a305 u0_a305 2.3K Oct 10 15:35 /data/data/com.termux/files/home/gandom/test-integration.js
+-rw-------. 1 u0_a305 u0_a305 6.2K Oct  3 08:45 /data/data/com.termux/files/home/gandom/test-ui-design-8080.js
+-rw-------. 1 u0_a305 u0_a305 8.9K Oct  1 05:39 /data/data/com.termux/files/home/gandom/test-ui-real-8080.js
+-rw-------. 1 u0_a305 u0_a305   71 Oct  3 06:21 /data/data/com.termux/files/home/gandom/utils.js
+
+▓▓▓ بخش ۸: تمام فایل‌های JS در زیرپوشه‌ها (بدون node_modules) ▓▓▓
+/data/data/com.termux/files/home/gandom/server.js
+/data/data/com.termux/files/home/gandom/public/sw.js
+/data/data/com.termux/files/home/gandom/public/assets/js/gandom-ui.js
+/data/data/com.termux/files/home/gandom/public/assets/js/gandom-complete.js
+/data/data/com.termux/files/home/gandom/www/assets/js/gandom-ui.js
+/data/data/com.termux/files/home/gandom/www/assets/js/gandom-complete.js
+/data/data/com.termux/files/home/gandom/client.js
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/real-cell-runtime/GANDOM-20K-8B-LIVE.before-real-runtime.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-DATA-CONTRACT.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-TWO-PEER-CONNECTION.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-TWO-PEER-DATA.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-LIFECYCLE-PEERS.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-20K-8B-LIVE.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-20K-8B-COMPLETE.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-CELL-NODE.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-CELL-MATH.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-NODE-LINK.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-ENGINE.js
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-FULL-STATE-TCP.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/engine/p2p-report-bus.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/discovery/peer-discovery.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/event-bus/event-bus.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/worker-state/engine/worker-state.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/worker-state/engine/JOB-WORKER-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-EXECUTION-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-SAFETY-GOVERNOR-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-SAFETY-INTEGRATION-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/GANDOM-SELF-HEALING-SHOCK-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/GANDOM-NODE-DEATH-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/GAMETE-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/GAMETE-FERTILIZATION-ENGINE-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence-trust/create-challenge.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence-trust/verify-evidence.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence-trust/record-real-run.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence-trust/sign.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/math-physics-2558/engine.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/math-physics-2558/independent-verifier.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/math-physics-2558/execute-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/math-physics-2558/seal-evidence-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/math-physics-2558/verify-signed-evidence-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/Law2558ExecutionGate.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/Law2558Run.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/GANDOM-LAW2558-MASTER-EXECUTOR.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/STREAMING-AUDIT-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/HISTORY-INDEX-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/INDEX-LOOKUP-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/STREAMING-EVENT-SEARCH-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/GANDOM-LAYER-GATE-EXECUTOR-2558.js
+/data/data/com.termux/files/home/gandom/gandom-core/governance/GANDOM-SOUL-2558.js
+
+▓▓▓ بخش ۹: اسکریپت‌های Shell (.sh) ▓▓▓
+/data/data/com.termux/files/home/gandom/gandom-core/tests/bootstrap-test.sh
+/data/data/com.termux/files/home/gandom/gandom-core/governance/owner/owner-gate.sh
+/data/data/com.termux/files/home/gandom/gandom-core/governance/bin/law2558.sh
+/data/data/com.termux/files/home/gandom/gandom-core/governance/run-autonomous-agent-2558.sh
+/data/data/com.termux/files/home/gandom/gandom-core/cell-life-2558/GANDOM-LUNG-DAEMON.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/BRAIN_NEURAL/0901f4378a636d75__0901f4378a636d75-33-LIVE-BRAIN-MAP.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/07d3c2c28b3e55ac__07d3c2c28b3e55ac-GANDOM-REVIVAL-ENGINE-2558.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/0b5edfc82e3f88d8__0b5edfc82e3f88d8-GANDOM-1470-REVIVAL-ENGINE.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/6247d13234d2f2fe__6247d13234d2f2fe-owner-gate.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/85a651512e6cfc55__85a651512e6cfc55-gost_engine.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/CORE_ENGINE/b28bce439bb02770__b28bce439bb02770-33-LIVE-DEDUP-ENGINE.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/2b069f5f1fd31c0d__2b069f5f1fd31c0d-stop-server.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/6e94cc40de673f23__6e94cc40de673f23-update-nghttp2.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/53addb6f23bb6759__53addb6f23bb6759-update-llhttp.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/871c1407ef6a9a5b__871c1407ef6a9a5b-https_renew_cert.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/b638809bd4b668c7__b638809bd4b668c7-start-server.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/e6699e945f21b306__e6699e945f21b306-update-nghttp3.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/HANDS_API/cc1e56674f47bea3__cc1e56674f47bea3-update-llhttp.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/114efdb32531c4ec__114efdb32531c4ec-GANDOM-FAST-33-REAL-BACKTEST.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/22c98fd1b2134084__22c98fd1b2134084-REVIVE-STAGING-EXACT-CLEAN.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/43e0c8d63571b3a9__43e0c8d63571b3a9-GANDOM-MASS-INDEXER-2558.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/4493d5c9c4589666__4493d5c9c4589666-SAFE-STAGING-SWEEP.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/4d2faaff630cb09a__4d2faaff630cb09a-1470-REAL-CLEAN.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/a13831181aded308__a13831181aded308-merge.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/4ec5d718d43b62f9__4ec5d718d43b62f9-REVIVE-1470-FULL-TREASURE.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/92977f9f7c0234d9__92977f9f7c0234d9-CLEAN-STAGING-EXACT-DUPS.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/a663b6dab93023e9__a663b6dab93023e9-FAST-33-BACKTEST.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/b4ade106d8b50152__b4ade106d8b50152-33-LIVE-ORGANS-MAP.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/b69d6e7263afa5fb__b69d6e7263afa5fb-GANDOM-1470-GLOBAL-INDEX-2558.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/bdd732b54ad3df64__bdd732b54ad3df64-SAFE-CLEAN-DUPLICATES-2558.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/c7a546981e1becc2__c7a546981e1becc2-1470-AUDIT-SIZE-MAP.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/LAW2558_IMMUNE/fcf0bd6cef2b7c3f__fcf0bd6cef2b7c3f-REVIVE-1470-MOTHER-INGEST.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/d36a2b8ffc78c8af__d36a2b8ffc78c8af-cross_build_gcc.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/da070cf617616a2c__da070cf617616a2c-install-pro-ui.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/580d754c5c89c39b__580d754c5c89c39b-android_build.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/9e5822bf8bf1da06__9e5822bf8bf1da06-run-gandom-ui-sections-6-12.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/c4c6b80f957ff905__c4c6b80f957ff905-license-builder.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/f5471830f2ce7031__f5471830f2ce7031-build.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/f7c088285fd7c248__f7c088285fd7c248-GANDOM-FINAL-BUILD-AND-AUDIT.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/EYES_UI/b5191ae41a36205b__b5191ae41a36205b-run-gandom-ui-5-sections.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/00f29836368cbe19__00f29836368cbe19-bootstrap.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/021d7be9d47b80af__021d7be9d47b80af-completion.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/040497047ee52a7f__040497047ee52a7f-mkcert.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/03fa76de32ef6e5e__03fa76de32ef6e5e-osx-codesign.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/085509a8c3d40e2e__085509a8c3d40e2e-start-ci.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/11aff70045fba4d6__11aff70045fba4d6-check-unused-bailouts.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/0a8839703d8feefa__0a8839703d8feefa-opensslwrap.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/0e113462d03b3d05__0e113462d03b3d05-run-llprof.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/13898f001ec8e3dc__13898f001ec8e3dc-macos-firewall.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/1fb4d5aa1b485653__1fb4d5aa1b485653-update-ngtcp2.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/249e6c7c5ef1dabf__249e6c7c5ef1dabf-update-zlib.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/1962107a1a5cad08__1962107a1a5cad08-check-static-initializers.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/25439d87d8123592__25439d87d8123592-node-ios-proxy.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/1f7757a327a294ed__1f7757a327a294ed-make-v8.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/233d9e8d0c9fbb83__233d9e8d0c9fbb83-upstream-local-tests.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/1764d4155aeaa8f0__1764d4155aeaa8f0-update-acorn-walk.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/2d04b40e04d895f6__2d04b40e04d895f6-ocspquery.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/2e3afbbfa11141e2__2e3afbbfa11141e2-mkcerts.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/2c2643b77c194f38__2c2643b77c194f38-update-googletest.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/40e3a8f8be40ce30__40e3a8f8be40ce30-run-perf.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/4cc353957d8b1a99__4cc353957d8b1a99-check-unused-symbols.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/4df1eaa6d624c641__4df1eaa6d624c641-collect_deprecation_stats.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/53584003ed4be723__53584003ed4be723-test.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/3297cb84f1a62806__3297cb84f1a62806-gen_exceptions.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/3cbf5e92850ca496__3cbf5e92850ca496-android-sync.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/316c75e49b64f59e__316c75e49b64f59e-osx-notarize.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/324f2d57a4523ae6__324f2d57a4523ae6-export_to_github.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/45dee54df9d305f7__45dee54df9d305f7-mkxcerts.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/2fa19c29f55057c9__2fa19c29f55057c9-update-simdutf.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/462ac278ff541431__462ac278ff541431-update-cjs-module-lexer.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/4d72ca1a23bd2312__4d72ca1a23bd2312-check-inline-includes.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/32411a9c10b9f6db__32411a9c10b9f6db-update-wasm-spec-tests.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/32919aadffa41025__32919aadffa41025-prune-local-tests.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/45f46806015f90db__45f46806015f90db-mksmime-certs.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/2f5cc94fe0a23973__2f5cc94fe0a23973-update-vscode.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/3f749ec55964be4c__3f749ec55964be4c-update-histogram.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/4e5de2527fbb938d__4e5de2527fbb938d-update-wasm-fuzzers.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/7a0a60ee8553cb0d__7a0a60ee8553cb0d-prepare-android-test.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/6b2523fdfa43458c__6b2523fdfa43458c-modifysidedeck.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/8bd77e39c5cdb1cb__8bd77e39c5cdb1cb-update-undici.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/5ebd6e02dec244d7__5ebd6e02dec244d7-package.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/8bfc6aac31a1c684__8bfc6aac31a1c684-get_jinja2.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/a29f67d6c2986f88__a29f67d6c2986f88-update-ada.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/64a74e99c70b798d__64a74e99c70b798d-linux-perf-renderer-cmd.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/9145e44ea66e059f__9145e44ea66e059f-fuzz-harness.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/703fce674debf4ee__703fce674debf4ee-krb5.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/62af42a19f3ffe65__62af42a19f3ffe65-draw_instruction_graph.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/67d2014f70e0d5d7__67d2014f70e0d5d7-fips-checksums.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/83ae7f1acfd9fe28__83ae7f1acfd9fe28-test_cmake.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/a669f8a3e1c0f127__a669f8a3e1c0f127-ocsprun.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/99f0db6cdc089995__99f0db6cdc089995-android-ll-prof.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/5ddea6d33090c628__5ddea6d33090c628-eval_gc_time.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/9b311fcc65818379__9b311fcc65818379-update-v8-patch.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/6e45c2fcf6d2b17d__6e45c2fcf6d2b17d-ltmain.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/61dd4def87656cbe__61dd4def87656cbe-node-android-proxy.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/6473940e285a103d__6473940e285a103d-update-icu.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/7db0fd9a2727ae4c__7db0fd9a2727ae4c-osx-pkg-postinstall.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/a0a5f90a931ab17b__a0a5f90a931ab17b-update-c-ares.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/acf668dcf4d2d4e8__acf668dcf4d2d4e8-ios_framework_prepare.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/7748e8faf70aae18__7748e8faf70aae18-release.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/6e0418b055b32acf__6e0418b055b32acf-analysis.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/83d9b08e093aedd7__83d9b08e093aedd7-update-base64.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/d2fad25b2229d26f__d2fad25b2229d26f-fuzz-harness.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/f2558c79abe7e10f__f2558c79abe7e10f-create_expfile.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/e84f01408493599b__e84f01408493599b-update-minimatch.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/acba4f083a49fdfe__acba4f083a49fdfe-deploy.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/ee6efa2961e1bec9__ee6efa2961e1bec9-update-openssl.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/ae2831d91c7a8e2b__ae2831d91c7a8e2b-copy_libnode_headers.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/ecb8d03579a0a687__ecb8d03579a0a687-run-unit-tests.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/d5340dab162e1a90__d5340dab162e1a90-get_markupsafe.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/d5c5b0601024eb9e__d5c5b0601024eb9e-update-npm.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/ea35312fe5e1702b__ea35312fe5e1702b-osx-productsign.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/946b182669829305__946b182669829305-create_test_zip.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/e74a99923c3626f5__e74a99923c3626f5-update-postject.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/d6e3cedd2bd3c5e5__d6e3cedd2bd3c5e5-setup.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/f21e64c6244d7e66__f21e64c6244d7e66-mkacerts.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/fc305616aa7379c5__fc305616aa7379c5-commit-queue.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/c5804de1eb4bf0a4__c5804de1eb4bf0a4-update-uvwasi.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/ee0a0241ef5329f1__ee0a0241ef5329f1-prepare-ios-tests.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/a5c7ec9cd78c463e__a5c7ec9cd78c463e-callstats-from-telemetry.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/fca8b1c44e456b26__fca8b1c44e456b26-package.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/b657229147bef734__b657229147bef734-update-brotli.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/df3d2bffc751b3a6__df3d2bffc751b3a6-cpu.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/e1c2095039a736c5__e1c2095039a736c5-update-libuv.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/f21ec135db524015__f21ec135db524015-autogen.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/e2c92d99cccf092e__e2c92d99cccf092e-utils.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/c923a0b038be3ac2__c923a0b038be3ac2-check.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/dbe10db907cf1726__dbe10db907cf1726-bash-completion.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/dcb094455f986a2b__dcb094455f986a2b-cryptography.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/b9f57ead3c55fed6__b9f57ead3c55fed6-update-acorn.sh
+/data/data/com.termux/files/home/gandom/gandom-core/revival-live/NODE_RUNTIME/bf6a9d4c0571eb1a__bf6a9d4c0571eb1a-update-eslint.sh
+/data/data/com.termux/files/home/gandom/backups/final-build-20260930-175613/gandom-core/tests/bootstrap-test.sh
+/data/data/com.termux/files/home/gandom/backups/final-build-20260930-175613/gandom-core/governance/owner/owner-gate.sh
+/data/data/com.termux/files/home/gandom/backups/final-build-20260930-175613/gandom-core/governance/bin/law2558.sh
+/data/data/com.termux/files/home/gandom/backups/SNAPSHOT-20261001-182123/CHECK.sh
+/data/data/com.termux/files/home/gandom/backups/MOTHER-2558-33-START-20261001-183122/gandom-core/governance/owner/owner-gate.sh
+/data/data/com.termux/files/home/gandom/evidence/MAIN-8080-INTEGRATION-STAGE-20260930-200458/source/merge.sh
+/data/data/com.termux/files/home/gandom/run-gandom-ui-5-sections.sh
+/data/data/com.termux/files/home/gandom/run-gandom-ui-sections-6-12.sh
+/data/data/com.termux/files/home/gandom/install-pro-ui.sh
+/data/data/com.termux/files/home/gandom/gandom-final-start.sh
+/data/data/com.termux/files/home/gandom/scripts/start-server.sh
+/data/data/com.termux/files/home/gandom/scripts/stop-server.sh
+/data/data/com.termux/files/home/gandom/scripts/auto-start-servers.sh
+/data/data/com.termux/files/home/gandom/start-gandom.sh
+/data/data/com.termux/files/home/gandom/GANDOM-LAW2558-AUDIT.sh
+/data/data/com.termux/files/home/gandom/shovel.sh
+/data/data/com.termux/files/home/gandom/PUZZLE-BACKUP-OVERLAP-2558.sh
+/data/data/com.termux/files/home/gandom/audit/GANDOM-LIVE-UPGRADE-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVE-1470-MOTHER-INGEST.sh
+/data/data/com.termux/files/home/gandom/audit/SAFE-CLEAN-DUPLICATES-2558.sh
+/data/data/com.termux/files/home/gandom/audit/SAFE-STAGING-SWEEP.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVE-STAGING-EXACT-CLEAN.sh
+/data/data/com.termux/files/home/gandom/audit/CLEAN-STAGING-EXACT-DUPS.sh
+/data/data/com.termux/files/home/gandom/audit/1470-AUDIT-SIZE-MAP.sh
+/data/data/com.termux/files/home/gandom/audit/1470-REAL-CLEAN.sh
+/data/data/com.termux/files/home/gandom/audit/33-LIVE-DEDUP-ENGINE.sh
+/data/data/com.termux/files/home/gandom/audit/33-LIVE-BRAIN-MAP.sh
+/data/data/com.termux/files/home/gandom/audit/FAST-33-BACKTEST.sh
+/data/data/com.termux/files/home/gandom/audit/GANDOM-FAST-33-REAL-BACKTEST.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/CLEAN-BACKUP-DUPLICATES-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/PUZZLE-BACKUP-OVERLAP-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/REAL-DUPLICATE-CLEAN-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/law2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/law2558-DUP-140-20261010-092454.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/43e0c8d63571b3a9__43e0c8d63571b3a9-GANDOM-MASS-INDEXER-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/b69d6e7263afa5fb__b69d6e7263afa5fb-GANDOM-1470-GLOBAL-INDEX-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/bdd732b54ad3df64__bdd732b54ad3df64-SAFE-CLEAN-DUPLICATES-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/f2558c79abe7e10f__f2558c79abe7e10f-create_expfile.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Law2558/puzzle-cleaner-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Engine-Execution/GANDOM-1470-REVIVAL-ENGINE.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Engine-Execution/07d3c2c28b3e55ac__07d3c2c28b3e55ac-GANDOM-REVIVAL-ENGINE-2558.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Engine-Execution/0b5edfc82e3f88d8__0b5edfc82e3f88d8-GANDOM-1470-REVIVAL-ENGINE.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/UI/GANDOM-FINAL-BUILD-AND-AUDIT.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/UI/9e5822bf8bf1da06__9e5822bf8bf1da06-run-gandom-ui-sections-6-12.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/UI/b5191ae41a36205b__b5191ae41a36205b-run-gandom-ui-5-sections.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/UI/f7c088285fd7c248__f7c088285fd7c248-GANDOM-FINAL-BUILD-AND-AUDIT.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/UI/run-gandom-ui-5-sections.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/UI/run-gandom-ui-sections-6-12.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Tests-Evidence/114efdb32531c4ec__114efdb32531c4ec-GANDOM-FAST-33-REAL-BACKTEST.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Tests-Evidence/c7a546981e1becc2__c7a546981e1becc2-1470-AUDIT-SIZE-MAP.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Unknown/GANDOM-BOOT.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Unknown/RESTORE.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Unknown/GANDOM-LUNG-DAEMON.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Unknown/start-gandom.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Unknown/4ec5d718d43b62f9__4ec5d718d43b62f9-REVIVE-1470-FULL-TREASURE.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVAL-1470-20261010-092454/staging/Unknown/fcf0bd6cef2b7c3f__fcf0bd6cef2b7c3f-REVIVE-1470-MOTHER-INGEST.sh
+/data/data/com.termux/files/home/gandom/audit/33-LIVE-ORGANS-MAP.sh
+/data/data/com.termux/files/home/gandom/audit/REVIVE-1470-FULL-TREASURE.sh
+/data/data/com.termux/files/home/gandom/audit/GANDOM-MASS-INDEXER-2558.sh
+/data/data/com.termux/files/home/gandom/audit/GANDOM-1470-GLOBAL-INDEX-2558.sh
+/data/data/com.termux/files/home/gandom/audit/GANDOM-REVIVAL-ENGINE-2558.sh
+/data/data/com.termux/files/home/gandom/audit/START-FULL-REVIVAL-2558-TO-SD.sh
+
+▓▓▓ بخش ۱۰: فایل‌های JSON مهم ▓▓▓
+/data/data/com.termux/files/home/gandom/package.json
+/data/data/com.termux/files/home/gandom/public/manifest.json
+/data/data/com.termux/files/home/gandom/provinces-cities.json
+/data/data/com.termux/files/home/gandom/provinces.json
+/data/data/com.termux/files/home/gandom/iran-cities.json
+/data/data/com.termux/files/home/gandom/capacitor.config.json
+/data/data/com.termux/files/home/gandom/gandom-core/contracts/GANDUM-MASTER-CONTRACT.json
+/data/data/com.termux/files/home/gandom/gandom-core/state/BOOTSTRAP.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/GND-INTEGRATED-RUNTIME-1790683619759.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-DATA-1790684096715.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790684411570.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790684479841.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-LIFECYCLE-1790685042637.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-LIFECYCLE-1790880438338.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790880439388.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790880440124.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790880712406.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790880713121.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790880880825.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790880881546.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-LIFECYCLE-1790881031471.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790881032456.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790881033149.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-1790882000171.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-TWO-PEER-DATA-1790882000913.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-LIFECYCLE-1790882002458.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/REAL-DATA-1790882003496.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/GANDOM-20K-8B-GANDUM33-ABSOLUTE-1790919098725.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/GANDOM-20K-8B-GANDUM33-ABSOLUTE-1790919235727.json
+/data/data/com.termux/files/home/gandom/gandom-core/evidence/GANDOM-20K-8B-GANDUM33-ABSOLUTE-1790919279080.json
+
+▓▓▓ بخش ۱۱: خطوط کلیدی در فایل‌های JS ▓▓▓
+--- جستجوی listen / port / WebSocket / Brain ---
+/data/data/com.termux/files/home/gandom/server.js:14:const WebSocket = require('ws');
+/data/data/com.termux/files/home/gandom/server.js:27:const httpServer = http.createServer((req, res) => {
+/data/data/com.termux/files/home/gandom/server.js:224:const wss = new WebSocket.Server({ server: httpServer });
+/data/data/com.termux/files/home/gandom/server.js:236:  if (ws.readyState !== WebSocket.OPEN) return false;
+/data/data/com.termux/files/home/gandom/server.js:368:      outboundPeer.readyState !== WebSocket.CLOSED &&
+/data/data/com.termux/files/home/gandom/server.js:369:      outboundPeer.readyState !== WebSocket.CLOSING) {
+/data/data/com.termux/files/home/gandom/server.js:378:  const ws = new WebSocket(PEER_ADDRESS, {
+/data/data/com.termux/files/home/gandom/server.js:500:    if (peer.ws.readyState === WebSocket.OPEN) {
+/data/data/com.termux/files/home/gandom/server.js:511:httpServer.listen(PORT, '0.0.0.0', () => {
+/data/data/com.termux/files/home/gandom/client.js:3:const WebSocket = require('ws');
+/data/data/com.termux/files/home/gandom/client.js:12:const ws = new WebSocket(url, {
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-DATA-CONTRACT.js:4:const WebSocket = require('ws');
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-DATA-CONTRACT.js:34:    const ws = new WebSocket(`ws://${HOST}:${PORT}`, {
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-TWO-PEER-CONNECTION.js:3:const WebSocket = require('ws');
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-TWO-PEER-CONNECTION.js:12:    const ws = new WebSocket(URL, {
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-TWO-PEER-DATA.js:3:const WebSocket = require('ws');
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-TWO-PEER-DATA.js:12:    const ws = new WebSocket(URL, {
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-LIFECYCLE-PEERS.js:5:const WebSocket = require('ws');
+/data/data/com.termux/files/home/gandom/gandom-core/tests/REAL-LIFECYCLE-PEERS.js:43:    const ws = new WebSocket(`ws://${HOST}:${PORT}`, {
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-NODE-LINK.js:45:      const listening =
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-NODE-LINK.js:60:      console.log(`TCP_LISTENING=${listening}`);
+/data/data/com.termux/files/home/gandom/gandom-core/tests/GANDOM-REAL-NODE-LINK.js:67:      if (!listening) throw new Error('TCP_LISTEN_FAIL');
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:42:    this.neurons = new Map();
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:56:  registerNeuron(cellId, neuronId, initial = 0) {
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:58:    const key = `${cellId}:${neuronId}`;
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:60:    this.neurons.set(key, {
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:62:      neuronId,
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:210:    const neuron = this.neurons.get(key);
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:212:    if (!neuron) {
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:224:    const oldState = neuron.state;
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:226:    neuron.state =
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:232:    neuron.updates++;
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:233:    neuron.lastMessageId = message.messageId;
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:234:    neuron.generation = message.generation;
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:242:      newState: neuron.state,
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:243:      generation: neuron.generation
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-BUS-2558.js:264:      neurons: Array.from(this.neurons.values()),
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-EXECUTION-2558.js:4:const WebSocket = require('ws');
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-EXECUTION-2558.js:23:const server = http.createServer();
+/data/data/com.termux/files/home/gandom/gandom-core/p2p/neural/REAL-NEURAL-P2P-EXECUTION-2558.js:24:const wss = new WebSocket.Server({ server });
+
+▓▓▓ بخش ۱۲: محتوای package.json ▓▓▓
+{
+  "name": "gandom-p2p",
+  "version": "0.1.0",
+  "description": "GANDUM P2P real-time peer communication core",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "node client.js",
+    "health": "node -e \"require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})\""
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "ws": "^8.18.0"
+  }
+}
+
+▓▓▓ بخش ۱۳: فایل‌های لاگ موجود ▓▓▓
+/data/data/com.termux/files/home/gandom/backend.log
+/data/data/com.termux/files/home/gandom/logs/node-a-8787.log
+/data/data/com.termux/files/home/gandom/logs/node-b-8788.log
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence/AUTONOMOUS-EXECUTION-20261013T133240Z.log
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence/AGENT-REAL-RUN-20261013T133320Z.log
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence/AGENT-REAL-RUN-20261013T133513Z.log
+/data/data/com.termux/files/home/gandom/gandom-core/governance/evidence/AGENT-REAL-RUN-20261013T133541Z.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-1.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-10.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-100.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-1000.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-101.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-102.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-103.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-104.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-105.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-106.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-107.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-108.log
+/data/data/com.termux/files/home/gandom/backups/CH02-EVIDENCE-RECOVERY-20260930T132340Z/gandom-ch02-1000-real-node-evidence/node-109.log
+
+▓▓▓ بخش ۱۴: پوشه‌های اصلی ▓▓▓
+total 3041
+-rw-------.   1 u0_a305 u0_a305   17182 Oct 12 07:24 '
+drwx------.  37 u0_a305 u0_a305    8192 Oct 13 20:35 .
+drwx------.   3 u0_a305 u0_a305    3452 Sep 26 19:59 . g i t hub 
+drwx------.  56 u0_a305 u0_a305    8192 Oct 13 19:26 ..
+-rw-------.   1 u0_a305 u0_a305      91 Oct 13 19:28 .backend-health.json
+-rw-------.   1 u0_a305 u0_a305      91 Sep 30 01:13 .dockerignore
+drwx------.   3 u0_a305 u0_a305    3452 Oct 13 17:45 .gandom-agent-2558
+drwx------.   2 u0_a305 u0_a305    3452 Oct 13 09:48 .gandom-integration-rollback-20261013-094845
+-rw-------.   1 u0_a305 u0_a305       6 Oct  5 08:13 .gandom-server.pid
+drwx------.   7 u0_a305 u0_a305    3452 Oct 13 18:11 .git
+drwx------.   3 u0_a305 u0_a305    3452 Sep 26 19:03 .github
+-rw-------.   1 u0_a305 u0_a305     202 Oct  2 11:58 .gitignore
+drwx------.   3 u0_a305 u0_a305    3452 Oct  8 15:26 .law2558-vacuum-tmp
+drwx------.   2 u0_a305 u0_a305    3452 Oct  8 13:46 .runtime
+-rw-------.   1 u0_a305 u0_a305       0 Oct 11 17:15 =
+drwx------.   2 u0_a305 u0_a305    3452 Oct 10 17:28 ALL
+-rw-------.   1 u0_a305 u0_a305    1035 Oct 10 10:47 CONTRIBUTING.md
+-rw-------.   1 u0_a305 u0_a305     577 Sep 30 01:13 Dockerfile
+-rw-------.   1 u0_a305 u0_a305    1996 Oct 10 18:11 FINAL.html
+-rw-------.   1 u0_a305 u0_a305    7894 Oct  2 15:35 GANDOM-ALL.md
+-rwx------.   1 u0_a305 u0_a305   12124 Oct 13 14:40 GANDOM-AUTONOMOUS-AGENT-2558.js
+-rwx------.   1 u0_a305 u0_a305   12124 Oct 13 11:08 GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z
+-rw-------.   1 u0_a305 u0_a305    5956 Oct  7 09:04 GANDOM-DEEP-TREASURE-SCAN.js
+-rw-------.   1 u0_a305 u0_a305    6155 Oct 13 12:42 GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js
+-rw-------.   1 u0_a305 u0_a305    5723 Oct 10 17:42 GANDOM-FULL-AUTOMATION-2558.js
+-rw-------.   1 u0_a305 u0_a305 1764496 Oct 13 10:23 GANDOM-LAW2558-AUDIT-20261013-102234.txt
+-rwx------.   1 u0_a305 u0_a305   21515 Oct 13 10:22 GANDOM-LAW2558-AUDIT.sh
+-rw-------.   1 u0_a305 u0_a305    9769 Oct 10 17:46 GANDOM-ONE-SITE.html
+-rw-------.   1 u0_a305 u0_a305    6000 Oct 10 17:36 GANDOM-ONE.html
+-rw-------.   1 u0_a305 u0_a305  565421 Oct  6 20:00 GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt
+-rw-------.   1 u0_a305 u0_a305    3221 Oct 10 18:58 GANDOM-REGISTRY-2558.js
+-rw-------.   1 u0_a305 u0_a305   10457 Oct 10 18:48 GANDOM-SECTION-01.tar.gz
+-rw-------.   1 u0_a305 u0_a305    4473 Oct  7 09:07 GANDOM-TREASURE-LITE.js
+-rw-------.   1 u0_a305 u0_a305    1074 Oct 10 10:30 LICENSE
+-rw-------.   1 u0_a305 u0_a305     677 Oct  2 13:55 MASTER-PLAN.md
+-rw-------.   1 u0_a305 u0_a305     741 Oct 10 17:39 PROPOSAL.txt
+-rwx------.   1 u0_a305 u0_a305    1441 Oct  7 11:54 PUZZLE-BACKUP-OVERLAP-2558.sh
+-rw-------.   1 u0_a305 u0_a305     233 Oct 10 10:23 README.md
+-rw-------.   1 u0_a305 u0_a305   61990 Oct 13 20:35 SHOVEL-REPORT-20261013-203517.txt
+drwx------.   7 u0_a305 u0_a305    3452 Oct 10 09:52 android
+drwx------.   2 u0_a305 u0_a305    3452 Oct  2 13:48 architecture
+drwx------.   3 u0_a305 u0_a305    3452 Oct  7 17:02 archives
+drwx------.  44 u0_a305 u0_a305    8192 Oct 10 19:41 audit
+drwx------.   3 u0_a305 u0_a305    3452 Oct 10 16:27 audit-service
+-rw-------.   1 u0_a305 u0_a305     283 Oct 12 04:28 auto-start.log
+-rw-------.   1 u0_a305 u0_a305     854 Oct 13 19:28 backend.log
+drwx------. 121 u0_a305 u0_a305   53248 Oct  8 16:03 backups
+-rw-------.   1 u0_a305 u0_a305      74 Sep 26 20:56 capacitor.config.json
+-rw-------.   1 u0_a305 u0_a305       0 Oct  1 15:57 chromium-dom.html
+drwx------.   2 u0_a305 u0_a305    3452 Oct  8 13:46 ci-diagnostic-36731371010
+-rw-------.   1 u0_a305 u0_a305     961 Sep 27 10:43 client.js
+drwx------.   2 u0_a305 u0_a305    3452 Oct 12 19:22 constitution
+drwx------.   3 u0_a305 u0_a305    3452 Oct 10 16:53 docs
+-rw-------.   1 u0_a305 u0_a305   17182 Oct 12 16:46 e
+-rw-------.   1 u0_a305 u0_a305   17182 Oct 12 16:27 e HEAD
+drwx------.   2 u0_a305 u0_a305    3452 Oct 10 15:47 employees
+-rw-------.   1 u0_a305 u0_a305   17182 Oct 11 12:50 erver.js
+drwx------.  82 u0_a305 u0_a305   20480 Oct 10 08:22 evidence
+drwx------.   2 u0_a305 u0_a305    3452 Oct  2 16:08 execution-lock
+drwx------.   2 u0_a305 u0_a305    3452 Sep 30 18:57 final-apk
+-rw-------.   1 u0_a305 u0_a305     130 Sep 30 18:57 final-apk.sha256
+-rw-------.   1 u0_a305 u0_a305    3096 Oct 10 18:24 gandom-backend.js
+-rw-------.   1 u0_a305 u0_a305   19497 Oct 11 12:07 gandom-code.tar.gz
+drwx------.  28 u0_a305 u0_a305    3452 Oct 12 21:09 gandom-core
+-rwx------.   1 u0_a305 u0_a305    2950 Oct 12 16:13 gandom-final-start.sh
+-rw-------.   1 u0_a305 u0_a305   19435 Oct  5 07:58 gandom-ui-backtest.html
+-rw-------.   1 u0_a305 u0_a305   10081 Oct  1 17:41 gandom-ui-server.js
+-rw-------.   1 u0_a305 u0_a305   12288 Sep 27 05:33 gandom.db
+drwx------.   2 u0_a305 u0_a305    3452 Oct 12 19:06 github-recovery
+drwx------.   2 u0_a305 u0_a305    3452 Oct 13 08:28 governance
+-rwx------.   1 u0_a305 u0_a305     268 Oct  1 16:39 install-pro-ui.sh
+-rw-------.   1 u0_a305 u0_a305      14 Sep 26 14:03 iran-cities.json
+drwx------.   3 u0_a305 u0_a305    3452 Oct 12 23:50 logs
+-rw-------.   1 u0_a305 u0_a305    6811 Oct  5 08:49 node-mobile-release.json
+drwx------.  88 u0_a305 u0_a305    8192 Oct 12 02:11 node_modules
+-rw-------.   1 u0_a305 u0_a305     803 Oct  4 08:44 p2p-real-test.js
+-rw-------.   1 u0_a305 u0_a305   41667 Oct 12 02:11 package-lock.json
+-rw-------.   1 u0_a305 u0_a305     512 Sep 29 16:48 package.json
+-rw-------.   1 u0_a305 u0_a305      14 Sep 26 13:59 provinces-cities.json
+-rw-------.   1 u0_a305 u0_a305      14 Sep 26 14:02 provinces.json
+drwx------.   3 u0_a305 u0_a305    3452 Oct  8 14:32 public
+drwx------.   2 u0_a305 u0_a305    3452 Oct  8 13:55 run
+-rwx------.   1 u0_a305 u0_a305   16471 Sep 30 17:42 run-gandom-ui-5-sections.sh
+-rwx------.   1 u0_a305 u0_a305    4727 Sep 30 17:44 run-gandom-ui-sections-6-12.sh
+drwx------.   3 u0_a305 u0_a305    3452 Oct 12 21:10 runtime
+drwx------.   2 u0_a305 u0_a305   20480 Oct 13 09:37 runtime-logs
+drwx------.   2 u0_a305 u0_a305    3452 Oct  9 09:02 scripts
+-rw-------.   1 u0_a305 u0_a305   12753 Oct 12 21:59 server.js
+-rwx------.   1 u0_a305 u0_a305    4182 Oct 13 20:34 shovel.sh
+drwx------.   2 u0_a305 u0_a305    3452 Oct 10 17:45 site
+-rwx------.   1 u0_a305 u0_a305    2777 Oct  4 18:37 start-gandom.sh
+-rw-------.   1 u0_a305 u0_a305    9491 Oct  4 08:43 test-12-sections-heavy-8080.js
+-rw-------.   1 u0_a305 u0_a305    2269 Oct 10 15:35 test-integration.js
+-rw-------.   1 u0_a305 u0_a305    6274 Oct  3 08:45 test-ui-design-8080.js
+-rw-------.   1 u0_a305 u0_a305    9095 Oct  1 05:39 test-ui-real-8080.js
+-rw-------.   1 u0_a305 u0_a305      71 Oct  3 06:21 utils.js
+drwx------.   2 u0_a305 u0_a305    3452 Oct  8 11:13 vendor
+drwx------.   3 u0_a305 u0_a305    3452 Oct 10 13:36 wallet
+drwx------.   3 u0_a305 u0_a305    3452 Oct 12 15:10 www
+
+▓▓▓ بخش ۱۵: سایز کل پروژه ▓▓▓
+2.1G	/data/data/com.termux/files/home/gandom
+
+═══════════════════════════════════════════════════════
+✅ شخم‌زنی تمام شد
+📄 گزارش ذخیره شد در: /data/data/com.termux/files/home/gandom/SHOVEL-REPORT-20261013-203517.txt
+═══════════════════════════════════════════════════════

@@ -1,0 +1,15 @@
+{
+  "mother_id": "GDM-MOTHER-2558",
+  "mother_name": "GANDOM-MOTHER-NODE",
+  "law": "2558",
+  "version": "1.0.0",
+  "network": "GANDOM-NETWORK",
+  "wallet_address": "GDM-MOTHER-WALLET-2558-OWNER",
+  "created_at": "2026-10-14",
+  "owner": "MOHAMMAD-RAHIMIAN",
+  "role": "MOTHER",
+  "public_key": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEA6Qvj769p965QnvdzeE6lyTwU54+gZoDYjQHE5USUsuU=\n-----END PUBLIC KEY-----\n",
+  "fingerprint": "9472060a44dc141706a9884d1eabe3d7",
+  "generated_at": "2026-10-14T15:01:44.576Z",
+  "identity_hash": "8897a75b3424f91bade62f58759e835b9fa86d4ad6ecb3a51cb1e4abec66cfad"
+}

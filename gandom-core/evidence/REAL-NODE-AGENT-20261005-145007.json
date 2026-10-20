@@ -1,0 +1,17 @@
+{
+  "chapter": 3,
+  "test": "REAL_NODE_AGENT",
+  "agent": "gandom-core/real-node-agent/REAL-NODE-AGENT.js",
+  "agent_sha256": "90c0d0296ca8a122242939c7ae1d6c301f508ac7e95f4064546b7b71b9219414",
+  "node_id": "REAL-NODE-A-20261005-145007",
+  "port": 19101,
+  "syntax_rc": 0,
+  "negative_id_guard": true,
+  "negative_exit_nonzero": true,
+  "process_live": false,
+  "tcp_listener_real": false,
+  "agent_output_pass": false,
+  "fake_pass_blocked": true,
+  "node_id_visible": false,
+  "result": "FAIL_REAL"
+}

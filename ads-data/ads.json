@@ -1,0 +1,28 @@
+{
+  "AD-af5e3585210f": {
+    "adId": "AD-af5e3585210f",
+    "userId": "USR-alice",
+    "package": "monthly",
+    "packageName": "ماهانه",
+    "title": "فروش آپارتمان لوکس",
+    "description": "آپارتمان ۲۰۰ متری در زعفرانیه",
+    "targetUrl": "gandom.io/realestate",
+    "image": null,
+    "category": "realestate",
+    "status": "PENDING_PAYMENT",
+    "price_irt": 10000000,
+    "days": 30,
+    "impressions_quota": 50000,
+    "impressions_used": 0,
+    "platforms": [
+      "internal",
+      "telegram",
+      "twitter",
+      "instagram"
+    ],
+    "viral_boost": 5,
+    "createdAt": "2026-10-14T15:25:23.709Z",
+    "startsAt": null,
+    "expiresAt": null
+  }
+}

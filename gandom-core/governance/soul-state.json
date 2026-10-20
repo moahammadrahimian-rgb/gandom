@@ -1,0 +1,33 @@
+{
+  "soul_id": "SOUL-f59b943256297303c80f1be71b19bb2e",
+  "born_at": "2026-10-10T13:54:56.269Z",
+  "generation": 1,
+  "experiences": [
+    {
+      "ts": "2026-10-10T13:54:56.275Z",
+      "generation": 0,
+      "experience": {
+        "event": "BOOT",
+        "law_active": true
+      },
+      "hash": "db535d0dde0bad21"
+    },
+    {
+      "ts": "2026-10-10T13:54:56.276Z",
+      "generation": 1,
+      "experience": {
+        "event": "EVOLUTION",
+        "new_generation": 1
+      },
+      "hash": "4f8464982e9dec3f"
+    }
+  ],
+  "will": {
+    "target_nodes": 20000,
+    "target_cells": 8000000000,
+    "target_global": true,
+    "mission": "Decentralized Living Ecosystem"
+  },
+  "continuity_count": 1,
+  "last_awake": "2026-10-10T13:54:56.269Z"
+}

@@ -1,0 +1,27 @@
+LAW=2558
+GRADLE_WRAPPER:
+3:distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-all.zip
+ACTIVE_AGP_REFERENCES:
+android/build.gradle:10:        classpath 'com.android.tools.build:gradle:8.6.0'
+node_modules/@capacitor/android/capacitor/build.gradle:24:        classpath 'com.android.tools.build:gradle:8.13.0'
+node_modules/@capacitor/android/capacitor/build.gradle:34:apply plugin: 'com.android.library'
+REPOSITORIES:
+android/settings.gradle:3:        maven { url "https://maven.aliyun.com/repository/google" }
+android/settings.gradle:4:        maven { url "https://maven.aliyun.com/repository/public" }
+android/settings.gradle:5:        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+android/settings.gradle:6:        google()
+android/settings.gradle:7:        mavenCentral()
+android/settings.gradle:12:    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+android/settings.gradle:14:        maven { url "https://maven.aliyun.com/repository/google" }
+android/settings.gradle:15:        maven { url "https://maven.aliyun.com/repository/public" }
+android/settings.gradle:16:        google()
+android/settings.gradle:17:        mavenCentral()
+android/build.gradle:3:        maven { url "https://maven.aliyun.com/repository/google" }
+android/build.gradle:4:        maven { url "https://maven.aliyun.com/repository/public" }
+android/build.gradle:5:        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+android/build.gradle:6:        google()
+android/build.gradle:7:        mavenCentral()
+android/build.gradle:19:        maven { url "https://maven.aliyun.com/repository/google" }
+android/build.gradle:20:        maven { url "https://maven.aliyun.com/repository/public" }
+android/build.gradle:21:        google()
+android/build.gradle:22:        mavenCentral()

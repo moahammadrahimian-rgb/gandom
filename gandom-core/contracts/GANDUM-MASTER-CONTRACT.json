@@ -1,0 +1,50 @@
+{
+  "project": "GANDUM",
+  "project_id": "GND-MASTER-0001",
+  "version": "1.0.0",
+  "mode": "REAL_EXECUTION",
+  "status": "BOOTSTRAPPED",
+
+  "principles": [
+    "NO_FAKE_PASS",
+    "NO_INVENTED_FEATURE",
+    "NO_DESTRUCTIVE_OVERWRITE",
+    "REAL_EXECUTION_REQUIRED",
+    "REAL_OUTPUT_REQUIRED",
+    "EVIDENCE_REQUIRED",
+    "FIRST_FAILURE_WINS",
+    "TRACEABLE_CHANGES",
+    "RELEASE_ONLY_AFTER_REAL_DEVICE_TEST"
+  ],
+
+  "domains": [
+    "MASTER_BLUEPRINT",
+    "UI_UX",
+    "CORE_RUNTIME",
+    "IDENTITY",
+    "SECURITY",
+    "DATABASE",
+    "API",
+    "P2P",
+    "DHT",
+    "MESSAGE_ENGINE",
+    "HOMEPAGE",
+    "ANDROID",
+    "OBSERVABILITY",
+    "EVIDENCE",
+    "TEST_ENGINE",
+    "RECOVERY",
+    "RELEASE"
+  ],
+
+  "result_states": [
+    "PLANNED",
+    "IMPLEMENTED",
+    "TESTED",
+    "PASS_REAL",
+    "FAIL_REAL",
+    "BLOCKED"
+  ],
+
+  "release_rule": "REAL_DEVICE_EXECUTION_REQUIRED"
+}

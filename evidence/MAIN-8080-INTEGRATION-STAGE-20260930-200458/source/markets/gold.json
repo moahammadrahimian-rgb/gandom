@@ -1,0 +1,98 @@
+[
+  {
+    "id": "eaf6883b-6a7c-4cca-a3f1-602369d8e69a",
+    "type": "Gold Coin",
+    "weightGrams": 10,
+    "purity": 999,
+    "priceGDM": 1000,
+    "tokens": 1000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 500,
+        "grams": 5,
+        "date": 1790666816143
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 200,
+        "grams": 2,
+        "date": 1790666816146
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790666815949
+  },
+  {
+    "id": "0ebcfd8f-8288-428a-ba85-961400c42f4d",
+    "type": "Gold Coin",
+    "weightGrams": 10,
+    "purity": 999,
+    "priceGDM": 1000,
+    "tokens": 1000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 500,
+        "grams": 5,
+        "date": 1790669081990
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 200,
+        "grams": 2,
+        "date": 1790669081991
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790669081987
+  },
+  {
+    "id": "6afe5a4b-c798-42a3-8837-9335fb157a20",
+    "type": "Gold Coin",
+    "weightGrams": 10,
+    "purity": 999,
+    "priceGDM": 1000,
+    "tokens": 1000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 500,
+        "grams": 5,
+        "date": 1790670850869
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 200,
+        "grams": 2,
+        "date": 1790670850869
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790670850866
+  },
+  {
+    "id": "e7c043cf-d14b-4c98-b55c-2ab7cdf8f7a3",
+    "type": "Gold Coin",
+    "weightGrams": 10,
+    "purity": 999,
+    "priceGDM": 1000,
+    "tokens": 1000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 500,
+        "grams": 5,
+        "date": 1790673962712
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 200,
+        "grams": 2,
+        "date": 1790673962713
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790673962708
+  }
+]

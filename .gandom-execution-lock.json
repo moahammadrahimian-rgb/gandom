@@ -1,0 +1,21 @@
+{
+  "project": "GANDOM Main",
+  "execution_lock": "ACTIVE",
+  "governing_law": 2558,
+  "mission": "Complete the existing integrated GANDOM system",
+  "phases": [
+    "EXISTING_CORE_INTEGRATION",
+    "MULTI_NODE_NETWORK_AND_CHAIN_SYNC",
+    "SECURITY_AUDIT_AND_HARDENING",
+    "LEDGER_ACCOUNTING_AND_DOUBLE_SPEND_PREVENTION",
+    "END_TO_END_INDEPENDENT_VERIFICATION"
+  ],
+  "constraints": [
+    "Reuse the existing project and its components",
+    "Do not create a parallel core",
+    "Do not delete backups",
+    "Avoid unnecessary duplicate files",
+    "Do not claim PASS_REAL without real execution evidence"
+  ],
+  "production_approval": false
+}

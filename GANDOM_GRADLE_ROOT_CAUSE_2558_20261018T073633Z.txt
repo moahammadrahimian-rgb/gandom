@@ -1,0 +1,403 @@
+GANDOM GRADLE ROOT CAUSE REPORT
+LAW=2558
+TIMESTAMP_UTC=20261018T073633Z
+PROJECT=/data/data/com.termux/files/home/gandom
+MODE=DIAGNOSTIC_BUILD
+PROJECT_SOURCE_FILES_MODIFIED=NO
+
+===== JAVA =====
+openjdk version "21.0.11" 2026-04-21
+OpenJDK Runtime Environment (build 21.0.11)
+OpenJDK Server VM (build 21.0.11, mixed mode)
+
+===== GRADLE WRAPPER =====
+
+------------------------------------------------------------
+Gradle 8.13
+------------------------------------------------------------
+
+Build time:    2025-02-25 09:22:14 UTC
+Revision:      073314332697ba45c16c0a0ce1891fa6794179ff
+
+Kotlin:        2.0.21
+Groovy:        3.0.22
+Ant:           Apache Ant(TM) version 1.10.15 compiled on August 25 2024
+Launcher JVM:  21.0.11 (Termux 21.0.11)
+Daemon JVM:    /data/data/com.termux/files/usr/lib/jvm/java-21-openjdk (no JDK specified, using current Java home)
+OS:            Linux 4.19.191-28701252-abA137FXXSCEZB1 arm
+
+
+===== ANDROID BUILD CONFIG =====
+--- android/gradle/wrapper/gradle-wrapper.properties
+distributionBase=GRADLE_USER_HOME
+distributionPath=wrapper/dists
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-all.zip
+networkTimeout=10000
+validateDistributionUrl=true
+zipStoreBase=GRADLE_USER_HOME
+zipStorePath=wrapper/dists
+--- android/settings.gradle
+1:pluginManagement {
+2:    repositories {
+5:        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+6:        google()
+7:        mavenCentral()
+12:    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+13:    repositories {
+16:        google()
+17:        mavenCentral()
+21:include ':app'
+22:include ':capacitor-cordova-android-plugins'
+23:project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins/')
+26:apply from: 'capacitor.settings.gradle'
+MISSING: android/settings.gradle.kts
+--- android/build.gradle
+2:    repositories {
+5:        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+6:        google()
+7:        mavenCentral()
+10:        classpath 'com.android.tools.build:gradle:8.6.0'
+11:        classpath 'com.google.gms:google-services:4.4.2'
+17:allprojects {
+18:    repositories {
+21:        google()
+22:        mavenCentral()
+MISSING: android/build.gradle.kts
+--- android/app/build.gradle
+1:apply plugin: 'com.android.application'
+27:repositories {
+29:        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+34:    implementation fileTree(include: ['*.jar'], dir: 'libs')
+38:    implementation project(':capacitor-android')
+42:    implementation project(':capacitor-cordova-android-plugins')
+45:apply from: 'capacitor.build.gradle'
+50:        apply plugin: 'com.google.gms.google-services'
+53:    logger.info("google-services.json not found, google-services plugin not applied. Push Notifications won't work")
+MISSING: android/app/build.gradle.kts
+--- node_modules/@capacitor/android/package.json
+{
+  "name": "@capacitor/android",
+  "version": "8.5.2",
+  "description": "Capacitor: Cross-platform apps with JavaScript and the web",
+  "homepage": "https://capacitorjs.com",
+  "author": "Ionic Team <hi@ionic.io> (https://ionic.io)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/capacitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ionic-team/capacitor/issues"
+  },
+  "files": [
+    "capacitor/build.gradle",
+    "capacitor/lint-baseline.xml",
+    "capacitor/lint.xml",
+    "capacitor/proguard-rules.pro",
+    "capacitor/src/main/"
+  ],
+  "scripts": {
+    "verify": "./gradlew clean lint build test -b capacitor/build.gradle"
+  },
+  "peerDependencies": {
+    "@capacitor/core": "^8.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
+--- package.json
+{
+  "name": "gandom-p2p",
+  "version": "0.1.0",
+  "description": "GANDUM P2P real-time peer communication core",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "node client.js",
+    "health": "node -e \"require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})\""
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "ws": "^8.18.0"
+  }
+}
+
+===== FRESH BUILD DIAGNOSTIC =====
+Running Gradle with stacktrace; no clean, no dependency upgrade.
+
+===== BUILD RESULT =====
+GRADLE_BUILD_EXIT=1
+
+===== ROOT CAUSE SIGNATURES =====
+2229-Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file 'build.gradle'
+2230-Build was configured to prefer settings repositories over project repositories but repository 'maven' was added by build file 'build.gradle'
+2231-Build was configured to prefer settings repositories over project repositories but repository 'maven2' was added by build file 'build.gradle'
+2232-Build was configured to prefer settings repositories over project repositories but repository 'Google' was added by build file 'build.gradle'
+2233-Build was configured to prefer settings repositories over project repositories but repository 'MavenRepo' was added by build file 'build.gradle'
+2234-
+2235-> Configure project :app
+2236-WARNING: The option setting 'android.aapt2FromMavenOverride=/data/data/com.termux/files/home/android-sdk/build-tools/36.0.0/aapt2' is experimental.
+2237:Declaring an 'is-' property with a Boolean type has been deprecated. Starting with Gradle 9.0, this property will be ignored by Gradle. The combination of method name and return type is not consistent with Java Bean property rules and will become unsupported in future versions of Groovy. Add a method named 'getCrunchPngs' with the same behavior and mark the old one with @Deprecated, or change the type of 'com.android.build.gradle.internal.dsl.BuildType$AgpDecorated.isCrunchPngs' (and the setter) to 'boolean'. Consult the upgrading guide for further information: https://docs.gradle.org/8.13/userguide/upgrading_version_8.html#groovy_boolean_properties
+2238-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator$BooleanPropertyDeprecatingValidator.validateProperty(AbstractClassGenerator.java:1609)
+2239-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.inspectType(AbstractClassGenerator.java:308)
+2240-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.generateUnderLock(AbstractClassGenerator.java:232)
+2241-	at org.gradle.cache.internal.DefaultCrossBuildInMemoryCacheFactory$AbstractCrossBuildInMemoryCache.get(DefaultCrossBuildInMemoryCacheFactory.java:150)
+2242-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.generate(AbstractClassGenerator.java:192)
+2243-	at org.gradle.internal.instantiation.generator.AsmBackedClassGenerator.generate(AsmBackedClassGenerator.java:123)
+2244-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.lambda$forType$0(Jsr330ConstructorSelector.java:56)
+2245-	at org.gradle.cache.Cache.lambda$get$0(Cache.java:31)
+2246-	at org.gradle.cache.internal.DefaultCrossBuildInMemoryCacheFactory$AbstractCrossBuildInMemoryCache.get(DefaultCrossBuildInMemoryCacheFactory.java:150)
+2247-	at org.gradle.cache.Cache.get(Cache.java:31)
+2248-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.forType(Jsr330ConstructorSelector.java:53)
+2249-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.forParams(Jsr330ConstructorSelector.java:48)
+2250-	at org.gradle.internal.instantiation.generator.DependencyInjectingInstantiator.doCreate(DependencyInjectingInstantiator.java:59)
+2251-	at org.gradle.internal.instantiation.generator.DependencyInjectingInstantiator.newInstance(DependencyInjectingInstantiator.java:53)
+2252-	at org.gradle.api.internal.model.DefaultObjectFactory.newInstance(DefaultObjectFactory.java:92)
+2253-	at com.android.build.gradle.internal.services.BaseServicesImpl.newInstance(BaseServicesImpl.kt:36)
+2254-	at com.android.build.gradle.internal.services.DslServicesImpl.newDecoratedInstance(DslServicesImpl.kt:81)
+2255-	at com.android.build.gradle.internal.dsl.BuildTypeFactory.create(BuildTypeFactory.java:40)
+2256-	at com.android.build.gradle.internal.dsl.BuildTypeFactory.create(BuildTypeFactory.java:26)
+2257-	at org.gradle.api.internal.FactoryNamedDomainObjectContainer.doCreate(FactoryNamedDomainObjectContainer.java:102)
+2258-	at org.gradle.api.internal.AbstractNamedDomainObjectContainer.create(AbstractNamedDomainObjectContainer.java:56)
+2259-	at com.android.build.gradle.internal.variant.AbstractAppVariantFactory.createDefaultComponents(AbstractAppVariantFactory.kt:141)
+2260-	at com.android.build.gradle.internal.plugins.BasePlugin.configureExtension(BasePlugin.kt:530)
+2261-	at com.android.build.gradle.internal.plugins.AndroidPluginBaseServices$basePluginApply$3.call(AndroidPluginBaseServices.kt:205)
+--
+2467-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+2468-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+2469-	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
+2470-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+2471-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+2472-	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+2473-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+2474-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+2475-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+2476-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+2477-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+2478-	at java.base/java.lang.Thread.run(Thread.java:1583)
+2479:Declaring an 'is-' property with a Boolean type has been deprecated. Starting with Gradle 9.0, this property will be ignored by Gradle. The combination of method name and return type is not consistent with Java Bean property rules and will become unsupported in future versions of Groovy. Add a method named 'getUseProguard' with the same behavior and mark the old one with @Deprecated, or change the type of 'com.android.build.gradle.internal.dsl.BuildType.isUseProguard' (and the setter) to 'boolean'. Consult the upgrading guide for further information: https://docs.gradle.org/8.13/userguide/upgrading_version_8.html#groovy_boolean_properties
+2480-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator$BooleanPropertyDeprecatingValidator.validateProperty(AbstractClassGenerator.java:1609)
+2481-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.inspectType(AbstractClassGenerator.java:308)
+2482-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.generateUnderLock(AbstractClassGenerator.java:232)
+2483-	at org.gradle.cache.internal.DefaultCrossBuildInMemoryCacheFactory$AbstractCrossBuildInMemoryCache.get(DefaultCrossBuildInMemoryCacheFactory.java:150)
+2484-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.generate(AbstractClassGenerator.java:192)
+2485-	at org.gradle.internal.instantiation.generator.AsmBackedClassGenerator.generate(AsmBackedClassGenerator.java:123)
+2486-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.lambda$forType$0(Jsr330ConstructorSelector.java:56)
+2487-	at org.gradle.cache.Cache.lambda$get$0(Cache.java:31)
+2488-	at org.gradle.cache.internal.DefaultCrossBuildInMemoryCacheFactory$AbstractCrossBuildInMemoryCache.get(DefaultCrossBuildInMemoryCacheFactory.java:150)
+2489-	at org.gradle.cache.Cache.get(Cache.java:31)
+2490-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.forType(Jsr330ConstructorSelector.java:53)
+2491-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.forParams(Jsr330ConstructorSelector.java:48)
+2492-	at org.gradle.internal.instantiation.generator.DependencyInjectingInstantiator.doCreate(DependencyInjectingInstantiator.java:59)
+2493-	at org.gradle.internal.instantiation.generator.DependencyInjectingInstantiator.newInstance(DependencyInjectingInstantiator.java:53)
+2494-	at org.gradle.api.internal.model.DefaultObjectFactory.newInstance(DefaultObjectFactory.java:92)
+2495-	at com.android.build.gradle.internal.services.BaseServicesImpl.newInstance(BaseServicesImpl.kt:36)
+2496-	at com.android.build.gradle.internal.services.DslServicesImpl.newDecoratedInstance(DslServicesImpl.kt:81)
+2497-	at com.android.build.gradle.internal.dsl.BuildTypeFactory.create(BuildTypeFactory.java:40)
+2498-	at com.android.build.gradle.internal.dsl.BuildTypeFactory.create(BuildTypeFactory.java:26)
+2499-	at org.gradle.api.internal.FactoryNamedDomainObjectContainer.doCreate(FactoryNamedDomainObjectContainer.java:102)
+2500-	at org.gradle.api.internal.AbstractNamedDomainObjectContainer.create(AbstractNamedDomainObjectContainer.java:56)
+2501-	at com.android.build.gradle.internal.variant.AbstractAppVariantFactory.createDefaultComponents(AbstractAppVariantFactory.kt:141)
+2502-	at com.android.build.gradle.internal.plugins.BasePlugin.configureExtension(BasePlugin.kt:530)
+2503-	at com.android.build.gradle.internal.plugins.AndroidPluginBaseServices$basePluginApply$3.call(AndroidPluginBaseServices.kt:205)
+--
+2711-	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
+2712-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+2713-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+2714-	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+2715-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+2716-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+2717-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+2718-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+2719-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+2720-	at java.base/java.lang.Thread.run(Thread.java:1583)
+2721-Build was configured to prefer settings repositories over project repositories but repository 'flatDir' was added by build file 'app/build.gradle'
+2722-WARNING: Using flatDir should be avoided because it doesn't support any meta-data formats.
+2723:Declaring an 'is-' property with a Boolean type has been deprecated. Starting with Gradle 9.0, this property will be ignored by Gradle. The combination of method name and return type is not consistent with Java Bean property rules and will become unsupported in future versions of Groovy. Add a method named 'getWearAppUnbundled' with the same behavior and mark the old one with @Deprecated, or change the type of 'com.android.build.api.variant.impl.ApplicationVariantImpl.isWearAppUnbundled' (and the setter) to 'boolean'. Consult the upgrading guide for further information: https://docs.gradle.org/8.13/userguide/upgrading_version_8.html#groovy_boolean_properties
+2724-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator$BooleanPropertyDeprecatingValidator.validateProperty(AbstractClassGenerator.java:1609)
+2725-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.inspectType(AbstractClassGenerator.java:308)
+2726-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.generateUnderLock(AbstractClassGenerator.java:232)
+2727-	at org.gradle.cache.internal.DefaultCrossBuildInMemoryCacheFactory$AbstractCrossBuildInMemoryCache.get(DefaultCrossBuildInMemoryCacheFactory.java:150)
+2728-	at org.gradle.internal.instantiation.generator.AbstractClassGenerator.generate(AbstractClassGenerator.java:192)
+2729-	at org.gradle.internal.instantiation.generator.AsmBackedClassGenerator.generate(AsmBackedClassGenerator.java:123)
+2730-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.lambda$forType$0(Jsr330ConstructorSelector.java:56)
+2731-	at org.gradle.cache.Cache.lambda$get$0(Cache.java:31)
+2732-	at org.gradle.cache.internal.DefaultCrossBuildInMemoryCacheFactory$AbstractCrossBuildInMemoryCache.get(DefaultCrossBuildInMemoryCacheFactory.java:150)
+2733-	at org.gradle.cache.Cache.get(Cache.java:31)
+2734-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.forType(Jsr330ConstructorSelector.java:53)
+2735-	at org.gradle.internal.instantiation.generator.Jsr330ConstructorSelector.forParams(Jsr330ConstructorSelector.java:48)
+2736-	at org.gradle.internal.instantiation.generator.DependencyInjectingInstantiator.doCreate(DependencyInjectingInstantiator.java:59)
+2737-	at org.gradle.internal.instantiation.generator.DependencyInjectingInstantiator.newInstance(DependencyInjectingInstantiator.java:53)
+2738-	at org.gradle.api.internal.model.DefaultObjectFactory.newInstance(DefaultObjectFactory.java:92)
+2739-	at com.android.build.gradle.internal.services.BaseServicesImpl.newInstance(BaseServicesImpl.kt:36)
+2740-	at com.android.build.gradle.internal.variant.ApplicationVariantFactory.createVariant(ApplicationVariantFactory.kt:105)
+2741-	at com.android.build.gradle.internal.variant.ApplicationVariantFactory.createVariant(ApplicationVariantFactory.kt:66)
+2742-	at com.android.build.gradle.internal.VariantManager.createVariant(VariantManager.kt:391)
+2743-	at com.android.build.gradle.internal.VariantManager.createVariantsFromCombination(VariantManager.kt:824)
+2744-	at com.android.build.gradle.internal.VariantManager.computeVariants(VariantManager.kt:226)
+2745-	at com.android.build.gradle.internal.VariantManager.createVariants(VariantManager.kt:189)
+2746-	at com.android.build.gradle.internal.plugins.BasePlugin.createAndroidTasks(BasePlugin.kt:715)
+2747-	at com.android.build.gradle.internal.plugins.BasePlugin$createTasks$2$1.call(BasePlugin.kt:599)
+--
+2919-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+2920-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+2921-	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+2922-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+2923-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+2924-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+2925-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+2926-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+2927-	at java.base/java.lang.Thread.run(Thread.java:1583)
+2928-
+2929-[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+2930-
+2931:FAILURE: Build failed with an exception.
+2932-
+2933:* What went wrong:
+2934-A problem occurred configuring project ':capacitor-android'.
+2935:> java.nio.BufferOverflowException (no error message)
+2936-
+2937-* Try:
+2938-> Run with --info or --debug option to get more log output.
+2939-> Run with --scan to get full insights.
+2940-> Get more help at https://help.gradle.org.
+2941-
+2942-* Exception is:
+2943-org.gradle.api.ProjectConfigurationException: A problem occurred configuring project ':capacitor-android'.
+2944-	at org.gradle.configuration.project.LifecycleProjectEvaluator.wrapException(LifecycleProjectEvaluator.java:84)
+2945-	at org.gradle.configuration.project.LifecycleProjectEvaluator.addConfigurationFailure(LifecycleProjectEvaluator.java:77)
+2946-	at org.gradle.configuration.project.LifecycleProjectEvaluator.access$500(LifecycleProjectEvaluator.java:55)
+2947-	at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.lambda$run$0(LifecycleProjectEvaluator.java:111)
+2948-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$1(DefaultProjectStateRegistry.java:435)
+2949-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$fromMutableState$2(DefaultProjectStateRegistry.java:458)
+2950-	at org.gradle.internal.work.DefaultWorkerLeaseService.withReplacedLocks(DefaultWorkerLeaseService.java:359)
+2951-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:458)
+2952-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:434)
+2953-	at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.run(LifecycleProjectEvaluator.java:100)
+2954-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+2955-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+2956-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+2957-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+2958-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+2959-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+--
+3073-	at org.gradle.launcher.daemon.server.exec.LogAndCheckHealth.execute(LogAndCheckHealth.java:53)
+3074-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+3075-	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
+3076-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+3077-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+3078-	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
+3079-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+3080-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+3081-	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+3082-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+3083-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+3084-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+3085:Caused by: java.nio.BufferOverflowException
+3086-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.ensureRemaining(CodePointBuffer.java:191)
+3087-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.append(CodePointBuffer.java:217)
+3088-	at groovyjarjarantlr4.v4.runtime.CharStreams.fromReader(CharStreams.java:184)
+3089-	at org.apache.groovy.parser.antlr4.AstBuilder.createCharStream(AstBuilder.java:195)
+3090-	at org.apache.groovy.parser.antlr4.AstBuilder.<init>(AstBuilder.java:181)
+3091-	at org.apache.groovy.parser.antlr4.Antlr4ParserPlugin.buildAST(Antlr4ParserPlugin.java:56)
+3092-	at org.gradle.groovy.scripts.internal.DefaultScriptCompilationHandler.compileScript(DefaultScriptCompilationHandler.java:164)
+3093-	at org.gradle.groovy.scripts.internal.DefaultScriptCompilationHandler.compileToDir(DefaultScriptCompilationHandler.java:116)
+3094-	at org.gradle.groovy.scripts.internal.BuildOperationBackedScriptCompilationHandler$2.run(BuildOperationBackedScriptCompilationHandler.java:54)
+3095-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+3096-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+3097-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+3098-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+3099-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+3100-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+3101-	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
+3102-	at org.gradle.groovy.scripts.internal.BuildOperationBackedScriptCompilationHandler.compileToDir(BuildOperationBackedScriptCompilationHandler.java:51)
+3103:	at org.gradle.groovy.scripts.internal.GroovyScriptClassCompiler$GroovyScriptCompilationAndInstrumentation.compile(GroovyScriptClassCompiler.java:298)
+3104-	at org.gradle.internal.scripts.BuildScriptCompilationAndInstrumentation.execute(BuildScriptCompilationAndInstrumentation.java:136)
+3105-	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+3106-	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+3107-	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+3108-	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+3109-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+3110-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+3111-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+3112-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+3113-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+3114-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+3115-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+3116-	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+3117-	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+3118-	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+3119-	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+3120-	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+3121-	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
+3122-	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
+3123-	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
+3124-	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
+3125-	at org.gradle.internal.execution.steps.NoInputChangesStep.execute(NoInputChangesStep.java:30)
+3126-	at org.gradle.internal.execution.steps.NoInputChangesStep.execute(NoInputChangesStep.java:21)
+3127-	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+--
+3151-	at org.gradle.internal.execution.steps.AssignImmutableWorkspaceStep.execute(AssignImmutableWorkspaceStep.java:121)
+3152-	at org.gradle.internal.execution.steps.AssignImmutableWorkspaceStep.execute(AssignImmutableWorkspaceStep.java:90)
+3153-	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:38)
+3154-	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+3155-	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+3156-	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+3157-	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+3158-	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+3159-	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+3160-	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:48)
+3161-	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:35)
+3162-	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:61)
+3163:	at org.gradle.groovy.scripts.internal.GroovyScriptClassCompiler.doCompile(GroovyScriptClassCompiler.java:170)
+3164:	at org.gradle.groovy.scripts.internal.GroovyScriptClassCompiler.compile(GroovyScriptClassCompiler.java:132)
+3165-	at org.gradle.groovy.scripts.internal.CrossBuildInMemoryCachingScriptClassCache.getOrCompile(CrossBuildInMemoryCachingScriptClassCache.java:56)
+3166-	at org.gradle.groovy.scripts.internal.BuildScopeInMemoryCachingScriptClassCompiler.compile(BuildScopeInMemoryCachingScriptClassCompiler.java:50)
+3167-	at org.gradle.groovy.scripts.DefaultScriptCompilerFactory$ScriptCompilerImpl.compile(DefaultScriptCompilerFactory.java:49)
+3168-	at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl.apply(DefaultScriptPluginFactory.java:117)
+3169-	at org.gradle.configuration.BuildOperationScriptPlugin$1.run(BuildOperationScriptPlugin.java:68)
+3170-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+3171-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+3172-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+3173-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+3174-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+3175-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+3176-	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
+3177-	at org.gradle.configuration.BuildOperationScriptPlugin.lambda$apply$0(BuildOperationScriptPlugin.java:65)
+3178-	at org.gradle.internal.code.DefaultUserCodeApplicationContext.apply(DefaultUserCodeApplicationContext.java:44)
+3179-	at org.gradle.configuration.BuildOperationScriptPlugin.apply(BuildOperationScriptPlugin.java:65)
+3180-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$1(DefaultProjectStateRegistry.java:435)
+3181-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.fromMutableState(DefaultProjectStateRegistry.java:453)
+3182-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.applyToMutableState(DefaultProjectStateRegistry.java:434)
+3183-	at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:46)
+3184-	at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:27)
+3185-	at org.gradle.configuration.project.ConfigureActionsProjectEvaluator.evaluate(ConfigureActionsProjectEvaluator.java:35)
+3186-	at org.gradle.configuration.project.LifecycleProjectEvaluator$EvaluateProject.lambda$run$0(LifecycleProjectEvaluator.java:109)
+3187-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$applyToMutableState$1(DefaultProjectStateRegistry.java:435)
+3188-	at org.gradle.api.internal.project.DefaultProjectStateRegistry$ProjectStateImpl.lambda$fromMutableState$2(DefaultProjectStateRegistry.java:458)
+--
+3314-	at org.gradle.launcher.daemon.server.exec.LogToClient.doBuild(LogToClient.java:63)
+3315-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+3316-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+3317-	at org.gradle.launcher.daemon.server.exec.EstablishBuildEnvironment.doBuild(EstablishBuildEnvironment.java:84)
+3318-	at org.gradle.launcher.daemon.server.exec.BuildCommandOnly.execute(BuildCommandOnly.java:37)
+3319-	at org.gradle.launcher.daemon.server.api.DaemonCommandExecution.proceed(DaemonCommandExecution.java:104)
+3320-	at org.gradle.launcher.daemon.server.exec.StartBuildOrRespondWithBusy$1.run(StartBuildOrRespondWithBusy.java:52)
+3321-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+3322-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+3323-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+3324-
+3325-
+3326:BUILD FAILED in 56s
+
+===== RAW LOG LOCATION =====
+/data/data/com.termux/files/home/gandom/.runtime/gradle-root-cause-20261018T073633Z.log
+
+===== REPORT STATUS =====
+DIAGNOSTIC_REPORT_CREATED=YES
+ROOT_CAUSE_CONFIRMED=NO
+PASS_REAL=NOT_CLAIMED
+LAW=2558

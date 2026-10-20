@@ -1,0 +1,24 @@
+{
+  "time": "2026-10-16T19:17:37.454Z",
+  "mode": "READ_ONLY_REPAIR_PREFLIGHT",
+  "mutation": false,
+  "restart": false,
+  "nodeA": {
+    "file": "/data/data/com.termux/files/home/gandom/blockchain-data/chain.json",
+    "blocks": 2,
+    "genesis": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33",
+    "lastIndex": 1,
+    "fileSHA256": "cdd1f3703074cb9d0ab41487a99f5b6f5def2fd7e27488eb4b4cdad249432686"
+  },
+  "nodeB": {
+    "file": "/data/data/com.termux/files/home/gandom/blockchain-data-b/chain.json",
+    "blocks": 1,
+    "genesis": "2271a0a7eca3880cd727c27ce3e47388897d9121674792d7737368737746d7f3",
+    "lastIndex": 0,
+    "fileSHA256": "29a1c80fd7f5e81bd17d5272c81e92cf3e21ec12965f17c606f509c3a802104e"
+  },
+  "sameGenesis": false,
+  "plan": "VALIDATE_A_FULL_CHAIN_THEN_PREPARE_EXPLICIT_B_RECOVERY",
+  "warning": "No automatic genesis recreation, chain replacement, or service restart performed.",
+  "status": "PREFLIGHT_COMPLETE_NOT_REPAIRED"
+}

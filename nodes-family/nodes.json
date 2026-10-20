@@ -1,0 +1,176 @@
+{
+  "NODE-BDA1AE69": {
+    "nodeId": "NODE-BDA1AE69",
+    "name": "Adam",
+    "role": "mother-child",
+    "generation": 0,
+    "dna": "0c2effb34a0a63dfd73ea9401ddb0c14ceea74888cbe6346265c357eeeaed28c",
+    "parentA": null,
+    "parentB": null,
+    "energy": 80,
+    "age": 0,
+    "alive": true,
+    "offspring": 1,
+    "capabilities": [
+      "compute",
+      "ai",
+      "cells",
+      "blockchain"
+    ],
+    "traits": [],
+    "bornAt": "2026-10-14T15:41:20.514Z",
+    "mother_id": "GDM-MOTHER-2558"
+  },
+  "NODE-945D0D63": {
+    "nodeId": "NODE-945D0D63",
+    "name": "Eve",
+    "role": "mother-child",
+    "generation": 0,
+    "dna": "5213ef988f89b806c55fd5ac4a231f2537e03366474f0f5c396c3d6ccab7dec5",
+    "parentA": null,
+    "parentB": null,
+    "energy": 80,
+    "age": 0,
+    "alive": true,
+    "offspring": 1,
+    "capabilities": [
+      "compute",
+      "ai",
+      "cells"
+    ],
+    "traits": [],
+    "bornAt": "2026-10-14T15:41:20.627Z",
+    "mother_id": "GDM-MOTHER-2558"
+  },
+  "NODE-G1-E0675B": {
+    "nodeId": "NODE-G1-E0675B",
+    "name": "Child G1-1",
+    "role": "worker",
+    "generation": 1,
+    "dna": "522eefb38f89b8dfd75fd5404a230c25ceea74888cbe6346265c3d7ecaaede8c",
+    "parentA": "NODE-BDA1AE69",
+    "parentB": "NODE-945D0D63",
+    "energy": 100,
+    "age": 0,
+    "alive": true,
+    "offspring": 0,
+    "capabilities": [
+      "compute",
+      "ai",
+      "cells",
+      "blockchain"
+    ],
+    "traits": [],
+    "bornAt": "2026-10-14T15:41:22.727Z",
+    "mother_id": "GDM-MOTHER-2558"
+  },
+  "NODE-58E060BE": {
+    "nodeId": "NODE-58E060BE",
+    "name": "Adam",
+    "role": "mother-child",
+    "generation": 0,
+    "dna": "7a6cb1d1006387d57a4505971050cab7f315d162446614b8f19b70f85591c21b",
+    "parentA": null,
+    "parentB": null,
+    "energy": 80,
+    "age": 0,
+    "alive": true,
+    "offspring": 3,
+    "capabilities": [
+      "compute",
+      "ai",
+      "cells",
+      "blockchain"
+    ],
+    "traits": [],
+    "bornAt": "2026-10-14T15:47:52.788Z",
+    "mother_id": "GDM-MOTHER-2558"
+  },
+  "NODE-EAA7C0C6": {
+    "nodeId": "NODE-EAA7C0C6",
+    "name": "Eve",
+    "role": "mother-child",
+    "generation": 0,
+    "dna": "b6e5ac2ecc4a8b9a312976d26f8ae65cc1950c5196172b36f384324c92db7f06",
+    "parentA": null,
+    "parentB": null,
+    "energy": 80,
+    "age": 0,
+    "alive": true,
+    "offspring": 3,
+    "capabilities": [
+      "compute",
+      "ai",
+      "cells"
+    ],
+    "traits": [],
+    "bornAt": "2026-10-14T15:47:52.876Z",
+    "mother_id": "GDM-MOTHER-2558"
+  },
+  "NODE-G1-43FDCB": {
+    "nodeId": "NODE-G1-43FDCB",
+    "name": "Child G1-1",
+    "role": "worker",
+    "generation": 1,
+    "dna": "b66cb12e00638b9a314505976f8ae65cf3150c62961714b8f39b9c4c55db7f06",
+    "parentA": "NODE-58E060BE",
+    "parentB": "NODE-EAA7C0C6",
+    "energy": 100,
+    "age": 0,
+    "alive": true,
+    "offspring": 0,
+    "capabilities": [
+      "compute",
+      "ai",
+      "cells",
+      "blockchain"
+    ],
+    "traits": [],
+    "bornAt": "2026-10-14T15:47:54.989Z",
+    "mother_id": "GDM-MOTHER-2558"
+  },
+  "NODE-G1-ABC9D6": {
+    "nodeId": "NODE-G1-ABC9D6",
+    "name": "Child G1-2",
+    "role": "worker",
+    "generation": 1,
+    "dna": "7ae5b12e004d87d57a4505971050e65cc195d16254732b05f19bb24c92917f1b",
+    "parentA": "NODE-58E060BE",
+    "parentB": "NODE-EAA7C0C6",
+    "energy": 100,
+    "age": 0,
+    "alive": true,
+    "offspring": 0,
+    "capabilities": [
+      "compute",
+      "ai",
+      "cells",
+      "blockchain"
+    ],
+    "traits": [],
+    "bornAt": "2026-10-14T15:47:54.990Z",
+    "mother_id": "GDM-MOTHER-2558"
+  },
+  "NODE-G1-DBE5D4": {
+    "nodeId": "NODE-G1-DBE5D4",
+    "name": "Child G1-3",
+    "role": "worker",
+    "generation": 1,
+    "dna": "7a6cac2e01638b9a7a2905976f8ae6b7c115d15144172bb8f18432a892917f06",
+    "parentA": "NODE-58E060BE",
+    "parentB": "NODE-EAA7C0C6",
+    "energy": 100,
+    "age": 0,
+    "alive": true,
+    "offspring": 0,
+    "capabilities": [
+      "compute",
+      "ai",
+      "cells",
+      "blockchain"
+    ],
+    "traits": [],
+    "bornAt": "2026-10-14T15:47:54.991Z",
+    "mother_id": "GDM-MOTHER-2558"
+  }
+}

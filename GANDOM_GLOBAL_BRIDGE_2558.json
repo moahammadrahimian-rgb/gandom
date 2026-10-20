@@ -1,0 +1,52 @@
+{
+  "system": "GANDOM",
+  "law": 2558,
+  "mode": "CONNECTIVITY_CHECK_ONLY",
+  "generated_at": "2026-10-16T14:38:54.314Z",
+  "summary": {
+    "total": 4,
+    "reachable": 4,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "GITHUB_REPOSITORY",
+      "url": "https://github.com/moahammadrahimian-rgb/gandom",
+      "status": "REACHABLE",
+      "http_status": 200,
+      "latency_ms": 2065,
+      "checked_at": "2026-10-16T14:38:54.308Z"
+    },
+    {
+      "name": "ETHEREUM_CONSENSUS_REFERENCE",
+      "url": "https://ethereum.org/developers/docs/consensus-mechanisms/",
+      "status": "REACHABLE",
+      "http_status": 200,
+      "latency_ms": 1387,
+      "checked_at": "2026-10-16T14:38:53.708Z"
+    },
+    {
+      "name": "NODEJS_REFERENCE",
+      "url": "https://nodejs.org/api/",
+      "status": "REACHABLE",
+      "http_status": 200,
+      "latency_ms": 1614,
+      "checked_at": "2026-10-16T14:38:53.938Z"
+    },
+    {
+      "name": "LOCAL_GANDOM_HEALTH",
+      "url": "http://127.0.0.1:8787/health",
+      "status": "REACHABLE",
+      "http_status": 200,
+      "latency_ms": 44,
+      "checked_at": "2026-10-16T14:38:52.372Z"
+    }
+  ],
+  "safety": {
+    "chain_data_modified": false,
+    "source_files_modified_by_probe": false,
+    "service_restarted": false,
+    "consensus_verified": false,
+    "pass_real_full_system": false
+  }
+}

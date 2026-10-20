@@ -1,0 +1,2 @@
+53:    <button class="balance-btn btn-deposit">واریز</button>
+54:    <button class="balance-btn btn-withdraw">برداشت</button>

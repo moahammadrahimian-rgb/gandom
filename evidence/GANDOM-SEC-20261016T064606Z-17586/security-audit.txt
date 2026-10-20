@@ -1,0 +1,90 @@
+==================================================
+GANDOM SECURITY AUDIT — MOTHER LAW 2558
+RUN_ID=GANDOM-SEC-20261016T064606Z-17586
+UTC=2026-10-16T06:46:06Z
+ROOT=/data/data/com.termux/files/home/gandom
+MODE=READ_ONLY
+PRODUCTION_APPROVAL=NO
+==================================================
+
+===== 1. RUNTIME =====
+v24.17.0
+11.17.0
+Linux localhost 4.19.191-28701252-abA137FXXSCEZB1 #1 SMP PREEMPT Thu Feb 5 17:39:30 KST 2026 armv8l Android
+
+===== 2. PROJECT ENTRYPOINTS =====
+FOUND package.json bytes=512
+5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3  /data/data/com.termux/files/home/gandom/package.json
+FOUND server.js bytes=24035
+6153ffd3aa3931ddaa91f27f0e556cb68bd892f21074a0a6d291f7afa521e98f  /data/data/com.termux/files/home/gandom/server.js
+FOUND client.js bytes=961
+75c3d43921f2e24f34707e8e750b1104d0ad304445200396568c624a15a7811f  /data/data/com.termux/files/home/gandom/client.js
+
+===== 3. PACKAGE SCRIPTS AND DEPENDENCIES =====
+{
+  "name": "gandom-p2p",
+  "version": "0.1.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "client": "node client.js",
+    "health": "node -e \"require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})\""
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {}
+}
+
+===== 4. LISTENING SOCKETS =====
+State       Recv-Q Send-Q Local Address:Port               Peer Address:Port              
+Cannot open netlink socket: Permission denied
+
+===== 5. LOCAL HTTP OBSERVATIONS =====
+--- PORT=3000 ---
+curl: (7) Failed to connect to 127.0.0.1:3000 after 2 ms: Could not connect to server
+HTTP_CODE=000 CONNECT=0.000000s TOTAL=0.002502s
+--- PORT=8080 ---
+curl: (7) Failed to connect to 127.0.0.1:8080 after 2 ms: Could not connect to server
+HTTP_CODE=000 CONNECT=0.000000s TOTAL=0.002056s
+--- PORT=8081 ---
+curl: (7) Failed to connect to 127.0.0.1:8081 after 1 ms: Could not connect to server
+HTTP_CODE=000 CONNECT=0.000000s TOTAL=0.001930s
+--- PORT=8787 ---
+HTTP_CODE=200 CONNECT=0.003695s TOTAL=0.010243s
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 93
+Date: Fri, 16 Oct 2026 06:46:08 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"ok":true,"project":"GANDUM-P2P","node_id":"GANDOM-NODE-A","peers":0,"uptime":983.820988982}
+
+===== 6. STATIC SECURITY PATTERN SCAN =====
+RIPGREP_MISSING; static pattern scan skipped
+No package installation performed.
+
+===== 7. DEPENDENCY AUDIT AVAILABILITY =====
+LOCKFILE_FOUND
+Dependency audit is NOT run automatically because it may require network access.
+To inspect known advisories later, explicitly run: npm audit --omit=dev
+
+===== 8. SOURCE FILE INTEGRITY =====
+SOURCE_FILE_COUNT=365
+SOURCE_FILE_LIST=/data/data/com.termux/files/home/gandom/evidence/GANDOM-SEC-20261016T064606Z-17586/source-file-list.txt
+ENTRYPOINT_HASHES=/data/data/com.termux/files/home/gandom/evidence/GANDOM-SEC-20261016T064606Z-17586/entrypoint-sha256.txt
+
+===== 9. AUDIT RESULT =====
+STATIC_REVIEW=NEEDS_MANUAL_VERIFICATION
+P2P_RESILIENCE=NOT_PROVEN
+CONSENSUS_SECURITY=NOT_PROVEN
+LEDGER_CONSISTENCY=NOT_PROVEN
+PRODUCTION_APPROVAL=NO
+RUN_ID=GANDOM-SEC-20261016T064606Z-17586
+REPORT=/data/data/com.termux/files/home/gandom/evidence/GANDOM-SEC-20261016T064606Z-17586/security-audit.txt
+EVIDENCE_DIR=/data/data/com.termux/files/home/gandom/evidence/GANDOM-SEC-20261016T064606Z-17586
+==================================================

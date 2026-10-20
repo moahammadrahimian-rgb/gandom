@@ -1,0 +1,19 @@
+{
+  "evidenceType": "LAW_2558_REGISTRATION",
+  "runId": "RUN-20260930T044748Z-84778f23-9099-4ece-96f5-41669fef347f",
+  "timestamp": "2026-09-30T04:47:50.469Z",
+  "project": "GANDOM",
+  "projectRoot": "/data/data/com.termux/files/home/gandom",
+  "gitHead": "437ab2afca97ac41b410784b4cf8af3a077fc2dc",
+  "lawId": "2558",
+  "lawFile": "/data/data/com.termux/files/home/gandom/gandom-core/governance/GOLDEN-MOTHER-LAW-2558.json",
+  "lawSha256": "403bc94442cebcfbd552b07ca9965ff06da54d97f4ea3b796dd98132c2e41a92",
+  "ownerKeyProtected": true,
+  "ownerKeyMode": "0600",
+  "screenshotEvidenceAccepted": false,
+  "chatEvidenceAccepted": false,
+  "fakePass": false,
+  "runtimeExecutionClaim": false,
+  "registration": "REAL_FILE_REGISTRATION",
+  "worktreeAtRegistration": " M .gitignore\n?? gandom-core/governance/\n?? gandom-core/p2p/"
+}

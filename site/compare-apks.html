@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مقایسه ۳ APK گندم</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: Tahoma, sans-serif;
+  background: #0a0e17;
+  color: #e0e0e0;
+  padding: 20px;
+}
+h1 { color: #ffd700; text-align: center; margin-bottom: 30px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  background: #1a2332;
+  border: 2px solid #2a3f5f;
+  border-radius: 16px;
+  padding: 25px;
+}
+.card.best { border-color: #4ade80; box-shadow: 0 0 20px rgba(74,222,128,0.3); }
+.card.good { border-color: #ffd700; }
+.card.ok { border-color: #8ba3c7; }
+h2 { color: #ffd700; margin-bottom: 15px; font-size: 20px; }
+.info { margin: 10px 0; color: #8ba3c7; }
+.info strong { color: #fff; }
+.btn {
+  display: block;
+  background: #ffd700;
+  color: #000;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 15px;
+  font-weight: bold;
+}
+.btn:hover { background: #e5c100; }
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.badge.best { background: #4ade80; color: #000; }
+.badge.good { background: #ffd700; color: #000; }
+.badge.ok { background: #8ba3c7; color: #000; }
+</style>
+</head>
+<body>
+
+<h1>🌾 مقایسه ۳ نسخه APK گندم</h1>
+
+<div class="grid">
+
+  <div class="card ok">
+    <span class="badge ok">🥉 نسخه سوم</span>
+    <h2>APK #1 - Final</h2>
+    <div class="info">📁 <strong>final-apk/</strong></div>
+    <div class="info">📅 تاریخ: <strong>۲۰۲۶-۰۹-۳۰ ۱۸:۵۷</strong></div>
+    <div class="info">💾 حجم: <strong>۴.۱ مگابایت</strong></div>
+    <div class="info">📦 تعداد فایل: <strong>۴۴۳</strong></div>
+    <div class="info">📊 حجم محتوا: <strong>۹.۶ مگابایت</strong></div>
+    <div class="info">❌ قدیمی‌ترین نسخه</div>
+    <a href="apks/APK-1-final.apk" class="btn" download>دانلود APK #1</a>
+  </div>
+
+  <div class="card best">
+    <span class="badge best">🏆 بهترین</span>
+    <h2>APK #2 - GitHub Recovery</h2>
+    <div class="info">📁 <strong>github-recovery/</strong></div>
+    <div class="info">📅 تاریخ: <strong>۲۰۲۶-۱۰-۱۲ ۱۹:۰۶</strong> ⭐</div>
+    <div class="info">💾 حجم: <strong>۴.۱۳ مگابایت</strong></div>
+    <div class="info">📦 تعداد فایل: <strong>۴۴۶</strong></div>
+    <div class="info">📊 حجم محتوا: <strong>۹.۷ مگابایت</strong> ⭐</div>
+    <div class="info">✅ جدیدترین و کامل‌ترین</div>
+    <a href="apks/APK-2-github.apk" class="btn" download>دانلود APK #2</a>
+  </div>
+
+  <div class="card good">
+    <span class="badge good">🥈 دوم</span>
+    <h2>APK #3 - Artifacts</h2>
+    <div class="info">📁 <strong>gandom-artifacts/RUN-.../</strong></div>
+    <div class="info">📅 تاریخ: <strong>۲۰۲۶-۰۹-۳۰ ۱۱:۵۱</strong></div>
+    <div class="info">💾 حجم: <strong>۳.۶ مگابایت</strong></div>
+    <div class="info">📦 تعداد فایل: <strong>۴۸۹</strong> ⭐</div>
+    <div class="info">📊 حجم محتوا: <strong>۸.۴ مگابایت</strong></div>
+    <div class="info">✅ از CI/CD، دارای امضا</div>
+    <a href="apks/APK-3-artifacts.apk" class="btn" download>دانلود APK #3</a>
+  </div>
+
+</div>
+
+</body>
+</html>

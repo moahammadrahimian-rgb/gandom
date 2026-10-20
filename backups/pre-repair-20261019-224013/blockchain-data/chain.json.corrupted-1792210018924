@@ -1,0 +1,62 @@
+{
+  "version": "2.0",
+  "saved_at": "2026-10-14T23:29:56.354Z",
+  "difficulty": 3,
+  "length": 2,
+  "chain": [
+    {
+      "index": 0,
+      "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "timestamp": 0,
+      "transactions": [
+        {
+          "txid": "COINBASE-b30a6da81f223f73",
+          "from": "COINBASE",
+          "to": "GDM-GENESIS-WALLET",
+          "amount": 0,
+          "fee": 0,
+          "timestamp": 1791990178458,
+          "publicKey": null,
+          "signature": null,
+          "type": "COINBASE"
+        }
+      ],
+      "merkleRoot": "4e3225608ca216d741753a1cb16dc9eabb7577b92550a68cad6282997b509fec",
+      "nonce": 0,
+      "difficulty": 3,
+      "reward": 50,
+      "hash": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33"
+    },
+    {
+      "index": 1,
+      "prevHash": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33",
+      "timestamp": 1792020596270,
+      "transactions": [
+        {
+          "txid": "COINBASE-c3f699b4d9a2a40a",
+          "from": "COINBASE",
+          "to": [
+            {
+              "from": "COINBASE",
+              "to": "GDMa12a0b138f7538",
+              "amount": 50,
+              "fee": 0,
+              "timestamp": 1792020596263
+            }
+          ],
+          "amount": 50,
+          "fee": 0,
+          "timestamp": 1792020596269,
+          "publicKey": null,
+          "signature": null,
+          "type": "COINBASE"
+        }
+      ],
+      "merkleRoot": "ed0d1b36f43f21b89271c92347b4cc0b82a306695f3d1665b9b3b94bf3b36bf1",
+      "nonce": 1609,
+      "difficulty": 3,
+      "reward": 50,
+      "hash": "000e02f24cfafc8e08b21cfc6e5331590ddeb0c6646abd23098723670b67fb92"
+    }
+  ]
+}

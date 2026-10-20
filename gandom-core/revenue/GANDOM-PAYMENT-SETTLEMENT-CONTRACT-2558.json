@@ -1,0 +1,77 @@
+{
+  "law": "2558",
+  "name": "GANDOM REAL PAYMENT SETTLEMENT CONTRACT",
+  "version": "1.0.0",
+
+  "antiFake": {
+    "fakePayment": false,
+    "testProviderCountsAsRealPayment": false,
+    "localSimulationCountsAsRealPayment": false,
+    "ledgerCreditWithoutVerifiedPayment": false,
+    "walletCreditWithoutSettlement": false,
+    "fakePass": false
+  },
+
+  "requiredChain": [
+    "CUSTOMER_ORDER",
+    "PAYMENT_PROVIDER",
+    "EXTERNAL_PAYMENT_VERIFICATION",
+    "SETTLEMENT",
+    "LEDGER_POST",
+    "OWNER_AUTHORIZATION",
+    "WALLET_CREDIT"
+  ],
+
+  "payment": {
+    "providerId": null,
+    "externalPaymentId": null,
+    "amount": null,
+    "currency": null,
+    "status": "UNVERIFIED",
+    "verifiedAt": null
+  },
+
+  "settlement": {
+    "settlementId": null,
+    "paymentId": null,
+    "status": "NOT_SETTLED",
+    "amount": null,
+    "currency": null
+  },
+
+  "ledger": {
+    "transactionId": null,
+    "debit": null,
+    "credit": null,
+    "currency": null,
+    "status": "NOT_POSTED",
+    "idempotencyKey": null
+  },
+
+  "ownerControl": {
+    "required": true,
+    "authorization": null,
+    "authorizedAt": null
+  },
+
+  "wallet": {
+    "status": "NOT_CREDITED",
+    "creditedAmount": null
+  },
+
+  "evidence": {
+    "providerEvidence": null,
+    "settlementEvidence": null,
+    "ledgerEvidence": null,
+    "walletEvidence": null,
+    "independentVerification": false
+  },
+
+  "finalGate": {
+    "realExternalPayment": false,
+    "realSettlement": false,
+    "realLedgerPost": false,
+    "realWalletCredit": false,
+    "pass": false
+  }
+}

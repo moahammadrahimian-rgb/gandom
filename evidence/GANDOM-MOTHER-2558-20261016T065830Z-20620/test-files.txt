@@ -1,0 +1,12 @@
+./gandom-core/live-node/TEST-GOLDEN-INTEGRATION-2558.js
+./gandom-core/live-node/TEST-LIVE-CELL-RUNTIME-BRIDGE-2558.js
+./gandom-core/revenue/test-fpay.js
+./p2p-heavy-test.js
+./p2p-real-test.js
+./test-100.js
+./test-12-sections-heavy-8080.js
+./test-integration.js
+./test-neuron.js
+./test-node-b.js
+./test-ui-design-8080.js
+./test-ui-real-8080.js

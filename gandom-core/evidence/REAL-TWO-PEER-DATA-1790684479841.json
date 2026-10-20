@@ -1,0 +1,12 @@
+{
+  "project": "GANDUM",
+  "test": "REAL-TWO-PEER-DATA",
+  "mode": "REAL_EXECUTION",
+  "timestamp": "2026-09-29T12:21:19.840Z",
+  "peer_count": 2,
+  "peer_a": "REAL-DATA-PEER-A",
+  "peer_b": "REAL-DATA-PEER-B",
+  "message_id": "two-peer-data-1790684479825",
+  "ack_type": "DATA_ACK",
+  "accepted": true
+}

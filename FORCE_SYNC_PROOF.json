@@ -1,0 +1,26 @@
+{
+  "law": 2558,
+  "timestamp": "2026-10-20T07:35:09.831Z",
+  "filesModified": 0,
+  "status": "FAILED",
+  "error": "CHAIN_CONFLICT: shorter chain is not an exact prefix; automatic overwrite refused to protect ledger data",
+  "actions": [
+    {
+      "action": "BACKUP_CREATED",
+      "file": "blockchain-data/chain.json",
+      "backup": "blockchain-data/chain.json.pre-force-sync-2026-10-20T07-35-09-822Z.bak"
+    },
+    {
+      "action": "BACKUP_CREATED",
+      "file": "blockchain-data-b/chain.json",
+      "backup": "blockchain-data-b/chain.json.pre-force-sync-2026-10-20T07-35-09-826Z.bak"
+    },
+    {
+      "action": "BACKUP_CREATED",
+      "file": "wallet/wallet-state.json",
+      "backup": "wallet/wallet-state.json.pre-force-sync-2026-10-20T07-35-09-826Z.bak"
+    }
+  ],
+  "errors": [],
+  "note": "No PASS_REAL claim on failed repair."
+}

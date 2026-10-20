@@ -1,0 +1,21 @@
+{
+  "law": 2558,
+  "started_at": "2026-10-19T19:17:30.310Z",
+  "status": "FAILED",
+  "files_modified": 0,
+  "action": "NONE",
+  "chain_a": 1,
+  "chain_b": 2,
+  "synced_chain_length": null,
+  "chain_hash_a": "e8f9288e2e2d3af6020d8396338a2a9e3832002f70e52e6533395a59bf6f6993",
+  "chain_hash_b": "3b9e77cbbbe953ded14b22b074b2473dce1fef66a75407b3284dc912ff4fc71b",
+  "wallet_hash": null,
+  "backups": [
+    "/data/data/com.termux/files/home/gandom/blockchain-data/chain.json.pre-force-2026-10-19T19-17-30-339Z.bak",
+    "/data/data/com.termux/files/home/gandom/blockchain-data-b/chain.json.pre-force-2026-10-19T19-17-30-341Z.bak",
+    "/data/data/com.termux/files/home/gandom/wallet/wallet-state.json.pre-force-2026-10-19T19-17-30-342Z.bak"
+  ],
+  "notes": [],
+  "error": "CHAIN_CONFLICT: shorter chain is not an exact prefix; manual reconciliation required",
+  "finished_at": "2026-10-19T19:17:30.343Z"
+}

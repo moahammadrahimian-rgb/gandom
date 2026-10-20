@@ -1,0 +1,67 @@
+{
+  "record_type": "GANDOM_MASTER_EXPERIENCE",
+  "law": "GOLDEN-MOTHER-LAW-2558",
+  "status": "RECORDED_NOT_YET_INJECTED",
+  "purpose": "Convert whole-project audit experience into reusable knowledge for live GANDOM components",
+  "pipeline": [
+    "MASTER_INVENTORY",
+    "CLASSIFICATION",
+    "DEDUPLICATION",
+    "VERSION_SELECTION",
+    "DEPENDENCY_ANALYSIS",
+    "EVIDENCE",
+    "INDEPENDENT_VERIFICATION",
+    "LEARNING",
+    "PROPAGATION"
+  ],
+  "rules": [
+    "Never delete before dependency verification",
+    "Never treat identical names as identical content",
+    "Use SHA256 for exact duplicate detection",
+    "Preserve historical rollback-capable versions",
+    "Select canonical versions only after evidence and dependency analysis",
+    "Do not count simulation as real execution",
+    "Do not claim PASS without execution evidence and independent verification",
+    "Do not rebuild an existing capability without first checking the inventory",
+    "Propagate verified experience to relevant live components"
+  ],
+  "target_components": [
+    "brain",
+    "neuron",
+    "core",
+    "engine",
+    "p2p",
+    "tpc",
+    "node",
+    "discovery",
+    "registry",
+    "state",
+    "consensus",
+    "persistence",
+    "recovery",
+    "evidence",
+    "verification",
+    "api",
+    "backend",
+    "ui",
+    "wallet",
+    "economy",
+    "ai",
+    "android",
+    "infrastructure"
+  ],
+  "current_evidence": {
+    "master_inventory": "audit/master-inventory/GANDOM-MASTER-INVENTORY.txt",
+    "backup_list": "audit/master-inventory/BACKUPS-FULL-LIST.txt",
+    "classification": "audit/master-inventory/BACKUP-CLASSIFICATION.csv",
+    "backup_hashes": "audit/master-inventory/BACKUP-SHA256.txt",
+    "duplicate_hashes": "audit/master-inventory/DUPLICATE-HASHES.txt"
+  },
+  "integration_gate": {
+    "backup_before_change": true,
+    "real_execution_required": true,
+    "evidence_required": true,
+    "independent_verification_required": true,
+    "fake_pass_forbidden": true
+  }
+}

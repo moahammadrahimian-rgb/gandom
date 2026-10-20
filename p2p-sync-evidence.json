@@ -1,0 +1,20 @@
+{
+  "law": 2558,
+  "checkedAt": "2026-10-19T15:59:26.239Z",
+  "health": {
+    "A": 200,
+    "B": 200
+  },
+  "peers": {
+    "A": 0,
+    "B": 0
+  },
+  "height": {
+    "A": null,
+    "B": null
+  },
+  "state": "BLOCKED",
+  "notes": [
+    "No recognized live chain-height API was found at /api/chain. No file-based height is treated as live node proof."
+  ]
+}

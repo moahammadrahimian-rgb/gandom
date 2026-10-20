@@ -1,0 +1,15 @@
+start-gandom.sh:6:BACKEND_PORT=8787
+start-gandom.sh:7:FRONTEND_PORT=8080
+start-gandom.sh:8:NODE_ID="GANDOM-NODE-A"
+start-gandom.sh:23:  PORT="$BACKEND_PORT" \
+start-gandom.sh:24:  NODE_ID="$NODE_ID" \
+start-gandom.sh:25:  node "$ROOT/server.js" \
+start-gandom.sh:37:      "http://127.0.0.1:${BACKEND_PORT}/health" \
+start-gandom.sh:66:nohup "$PYTHON_BIN" -m http.server "$FRONTEND_PORT" \
+start-gandom.sh:80:      "http://127.0.0.1:${FRONTEND_PORT}/" 2>/dev/null || true)"
+start-gandom.sh:100:curl -fsS "http://127.0.0.1:${BACKEND_PORT}/api/version"
+start-gandom.sh:104:curl -fsS "http://127.0.0.1:${BACKEND_PORT}/api/peers"
+start-gandom.sh:114:   "http://127.0.0.1:${BACKEND_PORT}/health" >/dev/null \
+start-gandom.sh:116:       "http://127.0.0.1:${FRONTEND_PORT}/" 2>/dev/null)" = "200" ]
+start-gandom.sh:127:echo "BACKEND=http://127.0.0.1:${BACKEND_PORT}"
+start-gandom.sh:128:echo "FRONTEND=http://127.0.0.1:${FRONTEND_PORT}"

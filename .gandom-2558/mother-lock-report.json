@@ -1,0 +1,36 @@
+{
+  "law": 2558,
+  "project": "GANDOM",
+  "mode": "READ_ONLY",
+  "timestamp": "2026-10-16T16:02:25.743Z",
+  "automaticRepair": false,
+  "automaticGenesisCreation": false,
+  "serviceRestart": false,
+  "chains": [
+    {
+      "file": "blockchain-data/chain.json",
+      "bytes": 1730,
+      "sha256": "cdd1f3703074cb9d0ab41487a99f5b6f5def2fd7e27488eb4b4cdad249432686",
+      "status": "STRUCTURAL_PASS",
+      "blockCount": 2,
+      "genesisHash": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33",
+      "errors": [],
+      "valid": true
+    },
+    {
+      "file": "blockchain-data-b/chain.json",
+      "bytes": 1730,
+      "sha256": "7a9d09eb4fcd75c783e4baaf13ab01811743c06f4f715b30a0a41e6f30fcad12",
+      "status": "BLOCKED",
+      "blockCount": 2,
+      "genesisHash": "f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624",
+      "errors": [
+        "LINK_MISMATCH:1"
+      ],
+      "valid": false
+    }
+  ],
+  "genesisConsistent": false,
+  "fullSystemPass": false,
+  "note": "Structural inspection only; consensus and P2P are not proven."
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "project": "GANDOM",
+  "law": 2558,
+  "binding_id": "GANDOM-LAW-2558-AUTONOMOUS-AGENT",
+  "agent_id": "GANDOM-AUTONOMOUS-AGENT-2558",
+  "agent_file": "GANDOM-AUTONOMOUS-AGENT-2558.js",
+  "registry_file": "gandom-core/governance/GANDOM-AUTONOMOUS-AGENT-REGISTRY-2558.json",
+  "runner_file": "gandom-core/governance/run-autonomous-agent-2558.sh",
+  "enabled": true,
+  "startup_policy": "MANUAL_OR_EXTERNAL_SCHEDULER",
+  "persistence": "PROJECT_FILES",
+  "safety": {
+    "preserve_golden_law": true,
+    "preserve_source_files": true,
+    "never_delete_backups_automatically": true,
+    "never_claim_unverified_project_pass": true,
+    "require_evidence_for_completion": true
+  },
+  "status": "REGISTERED_BINDING_VERIFIED",
+  "updated_at": "2026-10-13T07:43:43.700Z"
+}

@@ -1,0 +1,1621 @@
+
+
+========== GANDOM ROOT CAUSE ENGINE / LAW 2558 ==========
+TIME=20261016T141524
+ROOT=/data/data/com.termux/files/home/gandom
+CHAIN_MUTATION=PROHIBITED
+AUTOMATIC_REPAIR=NO
+SERVICE_RESTART=NO
+
+
+========== 1. REPOSITORY AND RUNTIME ==========
+v24.17.0
+11.17.0
+FILE_PRESENT=package.json
+FILE_PRESENT=package-lock.json
+FILE_PRESENT=blockchain-100.js
+FILE_PRESENT=node-b-chain.js
+FILE_PRESENT=blockchain-p2p-handler.js
+FILE_PRESENT=server.js
+
+
+========== 2. READ-ONLY CHAIN FORENSICS ==========
+CHAIN_FILE=blockchain-data/chain.json
+BLOCK_COUNT=2
+BLOCK_0_INDEX=0
+BLOCK_0_HASH=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+BLOCK_0_PREV_HASH=0000000000000000000000000000000000000000000000000000000000000000
+BLOCK_1_INDEX=1
+BLOCK_1_HASH=000e02f24cfafc8e08b21cfc6e5331590ddeb0c6646abd23098723670b67fb92
+BLOCK_1_PREV_HASH=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+STRUCTURAL_ERRORS=0
+STRUCTURE_STATUS=PASS_STRUCTURAL_ONLY
+CHAIN_FILE=blockchain-data-b/chain.json
+BLOCK_COUNT=2
+BLOCK_0_INDEX=0
+BLOCK_0_HASH=f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624
+BLOCK_0_PREV_HASH=0000000000000000000000000000000000000000000000000000000000000000
+BLOCK_1_INDEX=1
+BLOCK_1_HASH=000e02f24cfafc8e08b21cfc6e5331590ddeb0c6646abd23098723670b67fb92
+BLOCK_1_PREV_HASH=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+BROKEN_LINK_AT=1
+EXPECTED_PREV=f661d1cf29b0d28d914d629be3b0b0561f6a1e5e80ddc45393be9efa8a941624
+ACTUAL_PREV=57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33
+STRUCTURAL_ERRORS=1
+STRUCTURE_STATUS=FAIL
+GENESIS_HASH_MATCH=false
+TIP_HASH_MATCH=true
+ROOT_CAUSE_CANDIDATE=DIFFERENT_GENESIS
+ROOT_CAUSE_CONFIRMED=NODE_B_BROKEN_GENESIS_LINK
+CHAIN_FILES_MODIFIED=NO
+PRIVATE_KEYS_READ=NO
+
+
+========== 3. GENESIS CREATION AND DETERMINISM ==========
+127-      }
+128-    }
+129-    
+130-    return hash === root;
+131-  }
+132-}
+133-
+134-// ═══════════════════════════════════════════════════════
+135-// 💸 Transaction با امضا
+136-// ═══════════════════════════════════════════════════════
+137-class Transaction {
+138-  constructor(from, to, amount, fee = 0.001, publicKey = null) {
+139:    this.txid = crypto.randomBytes(16).toString('hex');
+140-    this.from = from;
+141-    this.to = to;
+142-    this.amount = amount;
+143-    this.fee = fee;
+144:    this.timestamp = Date.now();
+145-    this.publicKey = publicKey;
+146-    this.signature = null;
+147-    this.type = 'TRANSFER';
+148-  }
+149-  
+150-  static coinbase(to, reward) {
+151-    const tx = new Transaction('COINBASE', to, reward, 0, null);
+152:    tx.txid = 'COINBASE-' + crypto.randomBytes(8).toString('hex');
+153-    tx.type = 'COINBASE';
+154-    return tx;
+155-  }
+156-  
+157-  getHash() {
+158-    return crypto.createHash('sha256')
+159-      .update(this.txid + this.from + this.to + this.amount + this.fee + this.timestamp)
+160-      .digest('hex');
+161-  }
+162-  
+163-  sign(privateKey) {
+164-    if (this.type === 'COINBASE') return true;
+165-    try {
+166-      const keyObj = crypto.createPrivateKey(privateKey);
+167-      this.signature = crypto.sign(null, Buffer.from(this.getHash()), keyObj).toString('hex');
+168-      return true;
+169-    } catch(e) { 
+170-      console.error('Sign err:', e.message);
+171-      return false; 
+172-    }
+173-  }
+174-  
+175-  verify() {
+176-    if (this.type === 'COINBASE') return true;
+177-    if (!this.signature || !this.publicKey) return false;
+178-    try {
+179-      const pk = crypto.createPublicKey(this.publicKey);
+180-      return crypto.verify(null, Buffer.from(this.getHash()), pk, Buffer.from(this.signature, 'hex'));
+181-    } catch(e) { return false; }
+182-  }
+183-  
+184-  toJSON() {
+185-    return {
+186-      txid: this.txid,
+187-      from: this.from,
+--
+213-    this.transactions = transactions;
+214-    this.difficulty = difficulty;
+215-    this.nonce = 0;
+216-    
+217-    // Merkle Root
+218-    const merkle = new MerkleTree(transactions);
+219-    this.merkleRoot = merkle.root;
+220-    
+221-    // Block Reward
+222-    this.reward = Block.calculateReward(index);
+223-    
+224-    // Hash
+225:    this.hash = this.calculateHash();
+226-  }
+227-  
+228-  // پاداش هر ۲۱۰۰۰۰ بلوک نصف می‌شه
+229-  static calculateReward(blockIndex) {
+230-    const INITIAL_REWARD = 50;
+231-    const HALVING_INTERVAL = 210000;
+232-    const halvings = Math.floor(blockIndex / HALVING_INTERVAL);
+233-    return INITIAL_REWARD / Math.pow(2, halvings);
+234-  }
+235-  
+236:  calculateHash() {
+237-    return crypto.createHash('sha256')
+238-      .update(
+239-        this.index + 
+240-        this.prevHash + 
+241-        this.timestamp + 
+242-        this.merkleRoot + 
+243-        this.nonce + 
+244-        this.difficulty
+245-      )
+246-      .digest('hex');
+247-  }
+248-  
+249-  mine() {
+250-    const target = '0'.repeat(this.difficulty);
+251-    while (this.hash.substring(0, this.difficulty) !== target) {
+252-      this.nonce++;
+253:      this.hash = this.calculateHash();
+254-    }
+255-  }
+256-  
+257-  toJSON() {
+258-    return {
+259-      index: this.index,
+260-      prevHash: this.prevHash,
+261-      timestamp: this.timestamp,
+262-      transactions: this.transactions.map(t => t.toJSON()),
+263-      merkleRoot: this.merkleRoot,
+264-      nonce: this.nonce,
+265-      difficulty: this.difficulty,
+266-      reward: this.reward,
+267-      hash: this.hash
+268-    };
+269-  }
+270-  
+271-  static fromJSON(obj) {
+272-    const txs = obj.transactions.map(t => Transaction.fromJSON(t));
+273-    const b = new Block(obj.index, obj.prevHash, obj.timestamp, txs, obj.difficulty);
+274-    b.nonce = obj.nonce;
+275-    b.merkleRoot = obj.merkleRoot;
+276-    b.reward = obj.reward;
+277-    b.hash = obj.hash;
+278-    return b;
+279-  }
+280-}
+281-
+282-// ═══════════════════════════════════════════════════════
+283-// ⛓️  Blockchain کامل
+284-// ═══════════════════════════════════════════════════════
+285-class GandomBlockchain {
+286-  constructor() {
+287-    this.chain = [];
+288-    this.pendingTx = [];
+--
+323-      
+324-      return true;
+325-    } catch(e) {
+326-      console.error(`❌ خطا: ${e.message}`);
+327-      return false;
+328-    }
+329-  }
+330-  
+331-  // ─── بارگذاری ───
+332-  load() {
+333-    try {
+334-      if (!fs.existsSync(CHAIN_FILE)) {
+335:        this.createGenesis();
+336-        return;
+337-      }
+338-      
+339-      const data = JSON.parse(fs.readFileSync(CHAIN_FILE, 'utf8'));
+340-      this.difficulty = data.difficulty || 3;
+341-      this.chain = data.chain.map(b => Block.fromJSON(b));
+342-      
+343-      if (fs.existsSync(TX_FILE)) {
+344-        const txs = JSON.parse(fs.readFileSync(TX_FILE, 'utf8'));
+345-        this.pendingTx = txs.map(t => Transaction.fromJSON(t));
+346-      }
+347-      
+348-      if (fs.existsSync(WALLETS_FILE)) {
+349-        this.wallets = JSON.parse(fs.readFileSync(WALLETS_FILE, 'utf8'));
+350-      }
+351-      
+352-      if (!this.isValid()) {
+353-        console.error('❌ زنجیره نامعتبره!');
+354:        this.createGenesis();
+355-      }
+356-    } catch(e) {
+357-      console.error(`❌ خطا در بارگذاری: ${e.message}`);
+358:      this.createGenesis();
+359-    }
+360-  }
+361-  
+362-  // ─── Genesis ───
+363:  createGenesis() {
+364:    const genesisTx = Transaction.coinbase('GDM-GENESIS-WALLET', 0);
+365-    const genesis = new Block(0, '0'.repeat(64), 0, [genesisTx], 3);
+366:    genesis.hash = genesis.calculateHash();
+367-    this.chain = [genesis];
+368:    this.wallets['GDM-GENESIS-WALLET'] = 0;
+369-    this.save();
+370-  }
+371-  
+372-  getLatest() { return this.chain[this.chain.length - 1]; }
+373-  
+374-  // ─── اضافه کردن بلوک ───
+375-  addBlock(block) {
+376-    block.prevHash = this.getLatest().hash;
+377-    block.difficulty = this.difficulty;
+378-    block.mine();
+379-    this.chain.push(block);
+380-    this.applyTransactions(block);
+381-    this.save();
+382-    return block;
+383-  }
+384-  
+385-  // ─── اعمال تراکنش‌ها روی کیف‌ها ───
+386-  applyTransactions(block) {
+387-    for (const tx of block.transactions) {
+388-      if (tx.type === 'COINBASE') {
+389-        this.wallets[tx.to] = (this.wallets[tx.to] || 0) + tx.amount;
+390-      } else {
+391-        // از فرستنده کم کن
+392-        if (this.wallets[tx.from] === undefined) this.wallets[tx.from] = 0;
+393-        this.wallets[tx.from] -= (tx.amount + tx.fee);
+394-        
+395-        // به گیرنده اضافه کن
+396-        if (this.wallets[tx.to] === undefined) this.wallets[tx.to] = 0;
+397-        this.wallets[tx.to] += tx.amount;
+398-        
+399-        // کارمزد به ماینر
+400-        // TODO: نیاز به آدرس ماینر در بلوک
+401-      }
+402-    }
+403-  }
+--
+414-      if (!tx.verify()) return false;
+415-      
+416-      const senderBalance = this.wallets[tx.from] || 0;
+417-      if (senderBalance < tx.amount + tx.fee) return false;
+418-      
+419-      return true;
+420-    });
+421-    
+422-    const allTxs = [rewardTx, ...validTxs];
+423-    const block = new Block(
+424-      this.chain.length,
+425-      this.getLatest().hash,
+426:      Date.now(),
+427-      allTxs,
+428-      this.difficulty
+429-    );
+430-    
+431-    this.addBlock(block);
+432-    
+433-    // حذف تراکنش‌های استخراج‌شده
+434-    this.pendingTx = this.pendingTx.filter(tx => !validTxs.includes(tx));
+435-    this.save();
+436-    
+437-    // تنظیم سختی
+438-    this.adjustDifficulty();
+439-    
+440-    return block;
+441-  }
+442-  
+443-  // ─── تعدیل سختی ───
+444-  adjustDifficulty() {
+445-    if (this.chain.length < this.adjustmentInterval) return;
+446-    if (this.chain.length % this.adjustmentInterval !== 0) return;
+447-    
+448-    const last = this.getLatest();
+449-    const prev = this.chain[this.chain.length - this.adjustmentInterval];
+450-    const actualTime = last.timestamp - prev.timestamp;
+451-    const expectedTime = this.targetBlockTime * this.adjustmentInterval;
+452-    
+453-    if (actualTime < expectedTime / 2) {
+454-      this.difficulty++;
+455-      console.log(`⬆️  سختی افزایش یافت: ${this.difficulty}`);
+456-    } else if (actualTime > expectedTime * 2) {
+457-      this.difficulty = Math.max(1, this.difficulty - 1);
+458-      console.log(`⬇️  سختی کاهش یافت: ${this.difficulty}`);
+459-    }
+460-  }
+461-  
+--
+487-      if (block.prevHash !== previousBlock.hash) return false;
+488-      if (!Number.isSafeInteger(block.timestamp) ||
+489-          block.timestamp < previousBlock.timestamp) return false;
+490-      if (!Number.isSafeInteger(block.nonce) || block.nonce < 0) return false;
+491-      if (!Number.isSafeInteger(block.difficulty) ||
+492-          block.difficulty < 1 || block.difficulty > 64) return false;
+493-      if (!Array.isArray(block.transactions) ||
+494-          block.transactions.length === 0) return false;
+495-      if (block.reward !== Block.calculateReward(block.index)) return false;
+496-
+497-      const merkle = new MerkleTree(block.transactions);
+498-      if (merkle.root !== block.merkleRoot) return false;
+499:      if (block.calculateHash() !== block.hash) return false;
+500-      if (!block.hash.startsWith('0'.repeat(block.difficulty))) return false;
+501-
+502-      const ids = new Set();
+503-      let coinbaseCount = 0;
+504-
+505-      for (const tx of block.transactions) {
+506-        if (!tx || typeof tx.txid !== 'string' || !tx.txid ||
+507-            typeof tx.from !== 'string' || typeof tx.to !== 'string' ||
+508-            !tx.to ||
+509-            !Number.isFinite(tx.amount) || tx.amount < 0 ||
+510-            !Number.isFinite(tx.fee) || tx.fee < 0 ||
+511-            !Number.isFinite(tx.timestamp) || tx.timestamp < 0 ||
+512-            ids.has(tx.txid)) return false;
+513-
+514-        ids.add(tx.txid);
+515-
+516-        if (tx.type === 'COINBASE') {
+517-          coinbaseCount++;
+518-          if (tx.from !== 'COINBASE' || tx.fee !== 0 ||
+519-              tx.amount !== block.reward) return false;
+520-        } else if (tx.type === 'TRANSFER') {
+521-          if (tx.amount <= 0 || !tx.verify()) return false;
+522-        } else {
+523-          return false;
+524-        }
+525-      }
+526-
+527-      if (coinbaseCount !== 1) return false;
+528-      return true;
+529-    } catch (_) {
+530-      return false;
+531-    }
+532-  }
+533-
+534-  // ─── اعتبارسنجی ───
+535-  isValid() {
+536-    for (let i = 1; i < this.chain.length; i++) {
+537-      const curr = this.chain[i];
+538-      const prev = this.chain[i-1];
+539:      if (curr.hash !== curr.calculateHash()) return false;
+540-      if (curr.prevHash !== prev.hash) return false;
+541-      
+542-      // بررسی Merkle Root
+543-      const merkle = new MerkleTree(curr.transactions);
+544-      if (merkle.root !== curr.merkleRoot) return false;
+545-    }
+546-    return true;
+547-  }
+548-  
+549-  // ─── موجودی کل ───
+550-  getTotalSupply() {
+551-    let total = 0;
+552-    for (const block of this.chain) {
+553-      for (const tx of block.transactions) {
+554-        if (tx.type === 'COINBASE') total += tx.amount;
+555-      }
+556-    }
+557-    return total;
+558-  }
+559-  
+560-  // ─── آمار ───
+561-  getStats() {
+562-    const latest = this.getLatest();
+563-    return {
+564-      length: this.chain.length,
+565-      latest_hash: latest.hash,
+566-      latest_index: latest.index,
+567-      difficulty: this.difficulty,
+568-      is_valid: this.isValid(),
+569-      pending_tx: this.pendingTx.length,
+570-      total_supply: this.getTotalSupply(),
+571-      max_supply: this.maxSupply,
+572-      circulating_percent: (this.getTotalSupply() / this.maxSupply * 100).toFixed(6),
+573-      wallets_count: Object.keys(this.wallets).length,
+574-      next_reward: Block.calculateReward(this.chain.length),
+
+
+========== 4. BLOCK VALIDATION IMPLEMENTATION ==========
+38-  constructor() {
+39-    const { privateKey, publicKey } = crypto.generateKeyPairSync('ed25519');
+40-    this.privateKeyObj = privateKey;
+41-    this.publicKeyObj = publicKey;
+42-    this.privateKey = privateKey.export({ type: 'pkcs8', format: 'pem' });
+43-    this.publicKey = publicKey.export({ type: 'spki', format: 'pem' });
+44-  }
+45-  sign(data) {
+46-    try {
+47-      return crypto.sign(null, Buffer.from(data), this.privateKeyObj).toString('hex');
+48-    } catch(e) { return null; }
+49-  }
+50:  static verify(publicKeyPem, data, signatureHex) {
+51-    try {
+52-      const pk = crypto.createPublicKey(publicKeyPem);
+53:      return crypto.verify(null, Buffer.from(data), pk, Buffer.from(signatureHex, 'hex'));
+54-    } catch(e) { return false; }
+55-  }
+56-}
+57-
+58-// ═══════════════════════════════════════════════════════
+59-// 🌳 Merkle Tree
+60-// ═══════════════════════════════════════════════════════
+61-class MerkleTree {
+62-  constructor(transactions) {
+63-    this.transactions = transactions;
+64-    this.leaves = transactions.map(tx => this.hash(tx));
+65-    this.levels = [];
+66-    this.root = this.buildTree();
+67-  }
+68-  
+69-  hash(data) {
+70-    return crypto.createHash('sha256')
+71-      .update(typeof data === 'string' ? data : JSON.stringify(data))
+72-      .digest('hex');
+73-  }
+74-  
+75-  buildTree() {
+76-    if (this.leaves.length === 0) return this.hash('');
+77-    
+78-    this.levels.push(this.leaves);
+79-    let current = this.leaves;
+80-    
+81-    while (current.length > 1) {
+82-      const next = [];
+83-      for (let i = 0; i < current.length; i += 2) {
+84-        const left = current[i];
+85-        const right = current[i + 1] || left;
+86-        next.push(this.hash(left + right));
+87-      }
+88-      this.levels.push(next);
+89-      current = next;
+90-    }
+91-    
+92-    return current[0];
+93-  }
+--
+163-  sign(privateKey) {
+164-    if (this.type === 'COINBASE') return true;
+165-    try {
+166-      const keyObj = crypto.createPrivateKey(privateKey);
+167-      this.signature = crypto.sign(null, Buffer.from(this.getHash()), keyObj).toString('hex');
+168-      return true;
+169-    } catch(e) { 
+170-      console.error('Sign err:', e.message);
+171-      return false; 
+172-    }
+173-  }
+174-  
+175:  verify() {
+176-    if (this.type === 'COINBASE') return true;
+177-    if (!this.signature || !this.publicKey) return false;
+178-    try {
+179-      const pk = crypto.createPublicKey(this.publicKey);
+180:      return crypto.verify(null, Buffer.from(this.getHash()), pk, Buffer.from(this.signature, 'hex'));
+181-    } catch(e) { return false; }
+182-  }
+183-  
+184-  toJSON() {
+185-    return {
+186-      txid: this.txid,
+187-      from: this.from,
+188-      to: this.to,
+189-      amount: this.amount,
+190-      fee: this.fee,
+191-      timestamp: this.timestamp,
+192-      publicKey: this.publicKey,
+193-      signature: this.signature,
+194-      type: this.type
+195-    };
+196-  }
+197-  
+198-  static fromJSON(obj) {
+199-    const tx = new Transaction(obj.from, obj.to, obj.amount, obj.fee, obj.publicKey);
+200-    Object.assign(tx, obj);
+201-    return tx;
+202-  }
+203-}
+204-
+205-// ═══════════════════════════════════════════════════════
+206-// 🧱 Block با Merkle Root
+207-// ═══════════════════════════════════════════════════════
+208-class Block {
+209-  constructor(index, prevHash, timestamp, transactions, difficulty = 3) {
+210-    this.index = index;
+211-    this.prevHash = prevHash;
+212-    this.timestamp = timestamp;
+213-    this.transactions = transactions;
+214-    this.difficulty = difficulty;
+215-    this.nonce = 0;
+216-    
+217-    // Merkle Root
+218-    const merkle = new MerkleTree(transactions);
+219-    this.merkleRoot = merkle.root;
+220-    
+221-    // Block Reward
+222:    this.reward = Block.calculateReward(index);
+223-    
+224-    // Hash
+225:    this.hash = this.calculateHash();
+226-  }
+227-  
+228-  // پاداش هر ۲۱۰۰۰۰ بلوک نصف می‌شه
+229:  static calculateReward(blockIndex) {
+230-    const INITIAL_REWARD = 50;
+231-    const HALVING_INTERVAL = 210000;
+232-    const halvings = Math.floor(blockIndex / HALVING_INTERVAL);
+233-    return INITIAL_REWARD / Math.pow(2, halvings);
+234-  }
+235-  
+236:  calculateHash() {
+237-    return crypto.createHash('sha256')
+238-      .update(
+239-        this.index + 
+240-        this.prevHash + 
+241-        this.timestamp + 
+242-        this.merkleRoot + 
+243-        this.nonce + 
+244-        this.difficulty
+245-      )
+246-      .digest('hex');
+247-  }
+248-  
+249:  mine() {
+250-    const target = '0'.repeat(this.difficulty);
+251-    while (this.hash.substring(0, this.difficulty) !== target) {
+252-      this.nonce++;
+253:      this.hash = this.calculateHash();
+254-    }
+255-  }
+256-  
+257-  toJSON() {
+258-    return {
+259-      index: this.index,
+260-      prevHash: this.prevHash,
+261-      timestamp: this.timestamp,
+262-      transactions: this.transactions.map(t => t.toJSON()),
+263-      merkleRoot: this.merkleRoot,
+264-      nonce: this.nonce,
+265-      difficulty: this.difficulty,
+266-      reward: this.reward,
+267-      hash: this.hash
+268-    };
+269-  }
+270-  
+271-  static fromJSON(obj) {
+272-    const txs = obj.transactions.map(t => Transaction.fromJSON(t));
+273-    const b = new Block(obj.index, obj.prevHash, obj.timestamp, txs, obj.difficulty);
+274-    b.nonce = obj.nonce;
+275-    b.merkleRoot = obj.merkleRoot;
+276-    b.reward = obj.reward;
+277-    b.hash = obj.hash;
+278-    return b;
+279-  }
+280-}
+281-
+282-// ═══════════════════════════════════════════════════════
+283-// ⛓️  Blockchain کامل
+284-// ═══════════════════════════════════════════════════════
+285-class GandomBlockchain {
+286-  constructor() {
+287-    this.chain = [];
+288-    this.pendingTx = [];
+289-    this.difficulty = 3;
+290-    this.targetBlockTime = 10000; // ۱۰ ثانیه
+291-    this.adjustmentInterval = 5;  // هر ۵ بلوک
+292-    this.wallets = {};            // موجودی آدرس‌ها
+293-    this.maxSupply = 24000000000; // ۲۴ میلیارد
+--
+340-      this.difficulty = data.difficulty || 3;
+341-      this.chain = data.chain.map(b => Block.fromJSON(b));
+342-      
+343-      if (fs.existsSync(TX_FILE)) {
+344-        const txs = JSON.parse(fs.readFileSync(TX_FILE, 'utf8'));
+345-        this.pendingTx = txs.map(t => Transaction.fromJSON(t));
+346-      }
+347-      
+348-      if (fs.existsSync(WALLETS_FILE)) {
+349-        this.wallets = JSON.parse(fs.readFileSync(WALLETS_FILE, 'utf8'));
+350-      }
+351-      
+352:      if (!this.isValid()) {
+353-        console.error('❌ زنجیره نامعتبره!');
+354-        this.createGenesis();
+355-      }
+356-    } catch(e) {
+357-      console.error(`❌ خطا در بارگذاری: ${e.message}`);
+358-      this.createGenesis();
+359-    }
+360-  }
+361-  
+362-  // ─── Genesis ───
+363-  createGenesis() {
+364-    const genesisTx = Transaction.coinbase('GDM-GENESIS-WALLET', 0);
+365-    const genesis = new Block(0, '0'.repeat(64), 0, [genesisTx], 3);
+366:    genesis.hash = genesis.calculateHash();
+367-    this.chain = [genesis];
+368-    this.wallets['GDM-GENESIS-WALLET'] = 0;
+369-    this.save();
+370-  }
+371-  
+372-  getLatest() { return this.chain[this.chain.length - 1]; }
+373-  
+374-  // ─── اضافه کردن بلوک ───
+375:  addBlock(block) {
+376-    block.prevHash = this.getLatest().hash;
+377-    block.difficulty = this.difficulty;
+378:    block.mine();
+379-    this.chain.push(block);
+380-    this.applyTransactions(block);
+381-    this.save();
+382-    return block;
+383-  }
+384-  
+385-  // ─── اعمال تراکنش‌ها روی کیف‌ها ───
+386-  applyTransactions(block) {
+387-    for (const tx of block.transactions) {
+388-      if (tx.type === 'COINBASE') {
+389-        this.wallets[tx.to] = (this.wallets[tx.to] || 0) + tx.amount;
+390-      } else {
+391-        // از فرستنده کم کن
+392-        if (this.wallets[tx.from] === undefined) this.wallets[tx.from] = 0;
+393-        this.wallets[tx.from] -= (tx.amount + tx.fee);
+394-        
+395-        // به گیرنده اضافه کن
+396-        if (this.wallets[tx.to] === undefined) this.wallets[tx.to] = 0;
+397-        this.wallets[tx.to] += tx.amount;
+398-        
+399-        // کارمزد به ماینر
+400-        // TODO: نیاز به آدرس ماینر در بلوک
+401-      }
+402-    }
+403-  }
+404-  
+405-  // ─── استخراج بلوک جدید ───
+406-  mineBlock(minerAddress) {
+407-    // پاداش
+408:    const reward = Block.calculateReward(this.chain.length);
+409-    const rewardTx = Transaction.coinbase(minerAddress, reward);
+410-    
+411-    // تراکنش‌های در انتظار (معتبر)
+412-    const validTxs = this.pendingTx.filter(tx => {
+413-      if (tx.type === 'COINBASE') return false;
+414:      if (!tx.verify()) return false;
+415-      
+416-      const senderBalance = this.wallets[tx.from] || 0;
+417-      if (senderBalance < tx.amount + tx.fee) return false;
+418-      
+419-      return true;
+420-    });
+421-    
+422-    const allTxs = [rewardTx, ...validTxs];
+423-    const block = new Block(
+424-      this.chain.length,
+425-      this.getLatest().hash,
+426-      Date.now(),
+427-      allTxs,
+428-      this.difficulty
+429-    );
+430-    
+431:    this.addBlock(block);
+432-    
+433-    // حذف تراکنش‌های استخراج‌شده
+434-    this.pendingTx = this.pendingTx.filter(tx => !validTxs.includes(tx));
+435-    this.save();
+436-    
+437-    // تنظیم سختی
+438-    this.adjustDifficulty();
+439-    
+440-    return block;
+441-  }
+442-  
+443-  // ─── تعدیل سختی ───
+444-  adjustDifficulty() {
+445-    if (this.chain.length < this.adjustmentInterval) return;
+446-    if (this.chain.length % this.adjustmentInterval !== 0) return;
+447-    
+448-    const last = this.getLatest();
+449-    const prev = this.chain[this.chain.length - this.adjustmentInterval];
+450-    const actualTime = last.timestamp - prev.timestamp;
+451-    const expectedTime = this.targetBlockTime * this.adjustmentInterval;
+452-    
+453-    if (actualTime < expectedTime / 2) {
+454-      this.difficulty++;
+455-      console.log(`⬆️  سختی افزایش یافت: ${this.difficulty}`);
+456-    } else if (actualTime > expectedTime * 2) {
+457-      this.difficulty = Math.max(1, this.difficulty - 1);
+458-      console.log(`⬇️  سختی کاهش یافت: ${this.difficulty}`);
+459-    }
+460-  }
+461-  
+462-  // ─── اضافه کردن تراکنش ───
+463-  addTransaction(tx) {
+464-    if (tx.type === 'COINBASE') return false;
+465:    if (!tx.verify()) return { ok: false, error: 'INVALID_SIGNATURE' };
+466-    
+467-    const balance = this.wallets[tx.from] || 0;
+468-    const pending = this.pendingTx
+469-      .filter(t => t.from === tx.from)
+470-      .reduce((s, t) => s + t.amount + t.fee, 0);
+471-    
+472-    if (balance < tx.amount + tx.fee + pending) {
+473-      return { ok: false, error: 'INSUFFICIENT_BALANCE', balance, needed: tx.amount + tx.fee };
+474-    }
+475-    
+476-    this.pendingTx.push(tx);
+477-    this.save();
+478-    return { ok: true, txid: tx.txid };
+479-  }
+480-  
+481-  // GANDOM 2558: validate a received block before appending it.
+482:  isValidBlock(block, previousBlock = this.getLatest()) {
+483-    try {
+484-      if (!block || !previousBlock) return false;
+485-      if (!Number.isSafeInteger(block.index) ||
+486-          block.index !== previousBlock.index + 1) return false;
+487-      if (block.prevHash !== previousBlock.hash) return false;
+488-      if (!Number.isSafeInteger(block.timestamp) ||
+489-          block.timestamp < previousBlock.timestamp) return false;
+490-      if (!Number.isSafeInteger(block.nonce) || block.nonce < 0) return false;
+491-      if (!Number.isSafeInteger(block.difficulty) ||
+492-          block.difficulty < 1 || block.difficulty > 64) return false;
+493-      if (!Array.isArray(block.transactions) ||
+494-          block.transactions.length === 0) return false;
+495:      if (block.reward !== Block.calculateReward(block.index)) return false;
+496-
+497-      const merkle = new MerkleTree(block.transactions);
+498-      if (merkle.root !== block.merkleRoot) return false;
+499:      if (block.calculateHash() !== block.hash) return false;
+500-      if (!block.hash.startsWith('0'.repeat(block.difficulty))) return false;
+501-
+502-      const ids = new Set();
+503-      let coinbaseCount = 0;
+504-
+505-      for (const tx of block.transactions) {
+506-        if (!tx || typeof tx.txid !== 'string' || !tx.txid ||
+507-            typeof tx.from !== 'string' || typeof tx.to !== 'string' ||
+508-            !tx.to ||
+509-            !Number.isFinite(tx.amount) || tx.amount < 0 ||
+510-            !Number.isFinite(tx.fee) || tx.fee < 0 ||
+511-            !Number.isFinite(tx.timestamp) || tx.timestamp < 0 ||
+512-            ids.has(tx.txid)) return false;
+513-
+514-        ids.add(tx.txid);
+515-
+516-        if (tx.type === 'COINBASE') {
+517-          coinbaseCount++;
+518-          if (tx.from !== 'COINBASE' || tx.fee !== 0 ||
+519-              tx.amount !== block.reward) return false;
+520-        } else if (tx.type === 'TRANSFER') {
+521:          if (tx.amount <= 0 || !tx.verify()) return false;
+522-        } else {
+523-          return false;
+524-        }
+525-      }
+526-
+527-      if (coinbaseCount !== 1) return false;
+528-      return true;
+529-    } catch (_) {
+530-      return false;
+531-    }
+532-  }
+533-
+534-  // ─── اعتبارسنجی ───
+535:  isValid() {
+536-    for (let i = 1; i < this.chain.length; i++) {
+537-      const curr = this.chain[i];
+538-      const prev = this.chain[i-1];
+539:      if (curr.hash !== curr.calculateHash()) return false;
+540-      if (curr.prevHash !== prev.hash) return false;
+541-      
+542-      // بررسی Merkle Root
+543-      const merkle = new MerkleTree(curr.transactions);
+544-      if (merkle.root !== curr.merkleRoot) return false;
+545-    }
+546-    return true;
+547-  }
+548-  
+549-  // ─── موجودی کل ───
+550-  getTotalSupply() {
+551-    let total = 0;
+552-    for (const block of this.chain) {
+553-      for (const tx of block.transactions) {
+554-        if (tx.type === 'COINBASE') total += tx.amount;
+555-      }
+556-    }
+557-    return total;
+558-  }
+559-  
+560-  // ─── آمار ───
+561-  getStats() {
+562-    const latest = this.getLatest();
+563-    return {
+564-      length: this.chain.length,
+565-      latest_hash: latest.hash,
+566-      latest_index: latest.index,
+567-      difficulty: this.difficulty,
+568:      is_valid: this.isValid(),
+569-      pending_tx: this.pendingTx.length,
+570-      total_supply: this.getTotalSupply(),
+571-      max_supply: this.maxSupply,
+572-      circulating_percent: (this.getTotalSupply() / this.maxSupply * 100).toFixed(6),
+573-      wallets_count: Object.keys(this.wallets).length,
+574:      next_reward: Block.calculateReward(this.chain.length),
+575-      mother_id: MOTHER_INFO.mother_id,
+576-      mother_fingerprint: MOTHER_INFO.fingerprint,
+577-      owner_wallet: MOTHER_INFO.wallet_address,
+578-      owner_share: MOTHER_INFO.owner_share,
+579-      total_size: JSON.stringify(this.chain).length
+580-    };
+581-  }
+582-  
+583-  getBalance(address) {
+584-    return this.wallets[address] || 0;
+585-  }
+586-  
+587-  getWalletList() {
+588-    return Object.entries(this.wallets)
+589-      .map(([address, balance]) => ({ address, balance }))
+590-      .sort((a, b) => b.balance - a.balance);
+591-  }
+592-}
+593-
+594-// ═══════════════════════════════════════════════════════
+595-// 📤 Exports
+596-// ═══════════════════════════════════════════════════════
+597-module.exports = {
+598-  GandomBlockchain,
+599-  Block,
+600-  Transaction,
+601-  MerkleTree,
+602-  KeyPair
+603-};
+
+
+========== 5. NETWORK INGRESS AND BYPASS AUDIT ==========
+
+--- SOURCE=node-b-chain.js ---
+38-  console.log(`🔌 اتصال به نود A...`);
+39-  ws = new WebSocket(NODE_A_URL);
+40-
+41-  ws.on('open', () => {
+42-    stats.connects++;
+43-    console.log(`✅ وصل شد (اتصال #${stats.connects})`);
+44-    
+45-    // HELLO
+46-    send(ws, 'HELLO', { node_id: NODE_ID, role: 'peer', has_chain: true });
+47-    
+48-    // درخواست طول زنجیره نود A
+49-    setTimeout(() => {
+50:      send(ws, 'GET_CHAIN_LENGTH', {});
+51-    }, 500);
+52-  });
+53-
+54-  ws.on('message', (data) => {
+55-    try {
+56-      const msg = JSON.parse(data.toString());
+57-      
+58-      // ─── پیام‌های معمول P2P ───
+59-      if (msg.type === 'PONG') return;
+60-      if (msg.type === 'WELCOME') {
+61-        console.log(`🎉 WELCOME از نود A`);
+62-        return;
+63-      }
+64-      if (msg.type === 'HELLO_ACK') return;
+65-
+66-      // ─── پیام‌های بلاک‌چین ───
+67-      if (msg.type === 'CHAIN_LENGTH') {
+68-        const peerLength = msg.payload.length;
+69-        const myLength = chainB.chain.length;
+70-        console.log(`📊 طول زنجیره: من=${myLength} | نود A=${peerLength}`);
+71-        
+72-        if (peerLength > myLength) {
+73-          console.log(`🔄 نیاز به sync - درخواست کل زنجیره`);
+74:          send(ws, 'GET_CHAIN', {});
+75-        } else {
+76-          console.log(`✅ زنجیره من جدیدتره`);
+77-        }
+78-        return;
+79-      }
+80-
+81-      if (msg.type === 'CHAIN_DATA') {
+82-        console.log(`📥 دریافت ${msg.payload.blocks.length} بلوک از نود A`);
+83-        let added = 0;
+84-        for (const blockData of msg.payload.blocks) {
+85:          const block = Block.fromJSON(blockData);
+86-          const latest = chainB.getLatest();
+87-          
+88-          if (block.index <= latest.index) continue;
+89-          if (block.index !== latest.index + 1) break;
+90-          
+91:          const valid = chainB.isValidBlock ? chainB.isValidBlock(block, latest) : false;
+92-          if (!valid) {
+93-            console.log(`   ❌ بلوک ${block.index} نامعتبر`);
+94-            break;
+95-          }
+96-          
+97:          chainB.chain.push(block);
+98-          added++;
+99-        }
+100-        
+101-        if (added > 0) {
+102:          chainB.save();
+103-          stats.blocksReceived += added;
+104-          stats.lastSync = new Date().toISOString();
+105-          console.log(`   ✅ ${added} بلوک اضافه شد (ارتفاع B: ${chainB.chain.length})`);
+106-        }
+107-        return;
+108-      }
+109-
+110:      if (msg.type === 'NEW_BLOCK_FROM_PEER') {
+111-        console.log(`📥 بلوک جدید از نود A`);
+112-        try {
+113:          const block = Block.fromJSON(msg.block);
+114-          const latest = chainB.getLatest();
+115-          
+116-          if (block.index <= latest.index) return;
+117-          if (block.index !== latest.index + 1) {
+118-            // gap - نیاز به sync
+119:            send(ws, 'GET_CHAIN', {});
+120-            return;
+121-          }
+122-          
+123:          if (!chainB.isValidBlock(block, latest)) {
+124-            console.error('REJECTED_INVALID_PEER_BLOCK=' + block.index);
+125-            return;
+126-          }
+127:          chainB.chain.push(block);
+128:          chainB.save();
+129-          stats.blocksReceived++;
+130-          console.log(`   ✅ بلوک ${block.index} (ارتفاع B: ${chainB.chain.length})`);
+131-        } catch(e) {
+132-          console.log(`   ❌ خطا: ${e.message}`);
+133-        }
+134-        return;
+135-      }
+136-
+137-      // ─── پردازشگر عمومی ───
+138-      if (handleBlockchainMessage(msg, ws, NODE_ID, chainB, new Map(), send)) {
+139-        return;
+140-      }
+141-
+142-    } catch(e) {
+143-      console.error('Msg error:', e.message);
+144-    }
+145-  });
+146-
+147-  ws.on('error', (err) => {
+148-    console.log(`❌ خطا: ${err.message}`);
+149-  });
+150-
+151-  ws.on('close', () => {
+152-    console.log(`🔌 قطع شد، اتصال مجدد در ۳ ثانیه...`);
+153-    ws = null;
+154-    setTimeout(connect, RECONNECT_DELAY);
+155-  });
+156-}
+157-
+158-// گزارش هر ۳۰ ثانیه
+159-setInterval(() => {
+160-  console.log(`📊 B: بلوک‌ها=${chainB.chain.length} | دریافتی=${stats.blocksReceived} | اتصال=${stats.connects}`);
+
+--- SOURCE=blockchain-p2p-handler.js ---
+1-// ═══════════════════════════════════════════════════════
+2-// 🔗 GANDOM BLOCKCHAIN P2P HANDLER
+3-// ═══════════════════════════════════════════════════════
+4-
+5-function handleBlockchainMessage(message, ws, peerId, gandomChain, peers, send) {
+6-  const type = message.type;
+7-
+8-  // ─── درخواست طول زنجیره ───
+9:  if (type === 'GET_CHAIN_LENGTH') {
+10-    console.log(`🔗 ${peerId} درخواست طول زنجیره`);
+11-    send(ws, 'CHAIN_LENGTH', {
+12-      length: gandomChain.chain.length,
+13-      latestHash: gandomChain.getLatest().hash,
+14-      latestIndex: gandomChain.getLatest().index
+15-    });
+16-    return true;
+17-  }
+18-
+19-  // ─── درخواست کل زنجیره ───
+20:  if (type === 'GET_CHAIN') {
+21-    console.log(`🔗 ${peerId} درخواست کل زنجیره (${gandomChain.chain.length} بلوک)`);
+22-    send(ws, 'CHAIN_DATA', {
+23-      length: gandomChain.chain.length,
+24-      blocks: gandomChain.chain.map(b => b.toJSON())
+25-    });
+26-    return true;
+27-  }
+28-
+29-  // ─── دریافت بلوک جدید از نود دیگه ───
+30:  if (type === 'NEW_BLOCK_FROM_PEER') {
+31-    console.log(`📥 بلوک جدید از ${peerId} دریافت شد`);
+32-    try {
+33-      const Block = require('./blockchain-100.js').Block;
+34:      const block = Block.fromJSON(message.block);
+35-      const latest = gandomChain.getLatest();
+36-
+37-      if (block.index <= latest.index) {
+38-        console.log(`   ⏭️  بلوک ${block.index} قبلاً داریم`);
+39-        return true;
+40-      }
+41-
+42-      if (block.index !== latest.index + 1) {
+43-        console.log(`   ⚠️  gap detected - نیاز به sync`);
+44-        return true;
+45-      }
+46-
+47:      if (!gandomChain.isValidBlock(block, latest)) {
+48-        console.log(`   ❌ بلوک نامعتبر`);
+49-        return true;
+50-      }
+51-
+52:      gandomChain.chain.push(block);
+53:      gandomChain.save();
+54-      console.log(`   ✅ بلوک ${block.index} اضافه شد (ارتفاع: ${gandomChain.chain.length})`);
+55-      return true;
+56-    } catch(e) {
+57-      console.log(`   ❌ خطا: ${e.message}`);
+58-      return true;
+59-    }
+60-  }
+61-
+62-  // ─── نود دیگه‌ای زنجیره‌اش رو طولانی‌تر دیده ───
+63:  if (type === 'REQUEST_FULL_SYNC') {
+64-    console.log(`🔄 ${peerId} درخواست sync کامل`);
+65-    send(ws, 'CHAIN_DATA', {
+66-      length: gandomChain.chain.length,
+67-      blocks: gandomChain.chain.map(b => b.toJSON())
+68-    });
+69-    return true;
+70-  }
+71-
+72-  return false;
+73-}
+74-
+75-// ═══════════════════════════════════════════════════════
+76-// 📡 پخش بلوک جدید به همه نودها
+77-// ═══════════════════════════════════════════════════════
+78-function broadcastNewBlock(block, peers) {
+79-  let count = 0;
+80-  for (const [id, peer] of peers) {
+81-    if (peer.ws && peer.ws.readyState === 1) {
+82-      peer.ws.send(JSON.stringify({
+83:        type: 'NEW_BLOCK_FROM_PEER',
+84-        block: block.toJSON(),
+85-        from: 'NODE-A',
+86-        timestamp: Date.now()
+87-      }));
+88-      count++;
+89-    }
+90-  }
+91-  console.log(`📡 بلوک #${block.index} به ${count} نود پخش شد`);
+92-  return count;
+93-}
+94-
+95-module.exports = { handleBlockchainMessage, broadcastNewBlock };
+
+--- SOURCE=server.js ---
+
+
+========== 6. HTTP SECURITY AND EXTERNAL INPUT ==========
+46-let reconnectTimer = null;
+47-let shuttingDown = false;
+48-
+49-const peers = new Map();
+50-
+51:const httpServer = http.createServer((req, res) => {
+52-        // --- PRIVATE VOICE MEMORY (FATHER ONLY) ---
+53:        if (req.url.startsWith("/api/memory/private")) {
+54-            if (req.headers["x-father-key"] !== FATHER_SECRET_KEY) {
+55:                res.writeHead(403, {"Content-Type":"application/json"});
+56-                res.end(JSON.stringify({ok:false, error:"PRIVATE ACCESS ONLY"}));
+57-                return;
+58-            }
+59:            if (req.method === "GET" && req.url === "/api/memory/private/stats") {
+60:                res.writeHead(200, {"Content-Type":"application/json"});
+61-                res.end(JSON.stringify({ok:true, stats: privateMemory.stats()}));
+62-                return;
+63-            }
+64:            if (req.method === "GET" && req.url === "/api/memory/private/recall") {
+65:                res.writeHead(200, {"Content-Type":"application/json"});
+66-                res.end(JSON.stringify({ok:true, memories: privateMemory.recall(20)}));
+67-                return;
+68-            }
+69:            if (req.method === "POST" && req.url === "/api/memory/private/record") {
+70-                let body = "";
+71-                req.on("data", c => body += c.toString());
+72-                req.on("end", () => {
+73-                    try {
+74:                        const data = JSON.parse(body);
+75-                        if (data.from === "father") privateMemory.fatherSaid(data.text, data.language || "fa");
+76-                        else if (data.from === "gandom") privateMemory.gandomReplied(data.text, data.emotion || "love");
+77:                        res.writeHead(200, {"Content-Type":"application/json"});
+78-                        res.end(JSON.stringify({ok:true, saved:true}));
+79-                    } catch(e) {
+80:                        res.writeHead(400, {"Content-Type":"application/json"});
+81-                        res.end(JSON.stringify({ok:false, error:"Bad Request"}));
+82-                    }
+83-                });
+84-                return;
+85-            }
+86:            res.writeHead(404, {"Content-Type":"application/json"});
+87-            res.end(JSON.stringify({ok:false, error:"Unknown memory route"}));
+88-            return;
+89-        }
+90-
+91-        // --- GANDOM 3D HTML ROUTE ---
+92:        if (req.url === "/diagnose.html" || req.url.startsWith("/diagnose.html?")) {
+93-            const path2 = require("path");
+94-            const file = path2.join(__dirname, "public", "diagnose.html");
+95-            require("fs").readFile(file, (err, data) => {
+96:                if (err) { res.writeHead(404); res.end("NOT FOUND"); return; }
+97:                res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+98-                res.end(data);
+99-            });
+100-            return;
+101-        }
+102-
+103:        if (req.url === "/voice-test.html" || req.url.startsWith("/voice-test.html?")) {
+104-            const path2 = require("path");
+105-            const file = path2.join(__dirname, "public", "voice-test.html");
+106-            require("fs").readFile(file, (err, data) => {
+107:                if (err) { res.writeHead(404); res.end("NOT FOUND"); return; }
+108:                res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+109-                res.end(data);
+110-            });
+111-            return;
+112-        }
+113-
+114:        if (req.url === "/gandom-brain.js") {
+115-            const path2 = require("path");
+116-            const file = path2.join(__dirname, "public", "gandom-brain.js");
+117-            require("fs").readFile(file, (err, data) => {
+118:                if (err) { res.writeHead(404); res.end("NOT FOUND"); return; }
+119:                res.writeHead(200, {"Content-Type": "application/javascript; charset=utf-8"});
+120-                res.end(data);
+121-            });
+122-            return;
+123-        }
+124:        if (req.url === "/voice-continuous.js") {
+125-            const path2 = require("path");
+126-            const file = path2.join(__dirname, "public", "voice-continuous.js");
+127-            require("fs").readFile(file, (err, data) => {
+128:                if (err) { res.writeHead(404); res.end("NOT FOUND"); return; }
+129:                res.writeHead(200, {"Content-Type": "application/javascript; charset=utf-8"});
+130-                res.end(data);
+131-            });
+132-            return;
+133-        }
+134-
+135:        if (req.url === "/gandom-girl.html" || req.url.startsWith("/gandom-girl.html?")) {
+136-            const path2 = require("path");
+137-            const file = path2.join(__dirname, "public", "gandom-girl.html");
+138-            require("fs").readFile(file, (err, data) => {
+139:                if (err) { res.writeHead(404); res.end("NOT FOUND"); return; }
+140:                res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+141-                res.end(data);
+142-            });
+143-            return;
+144-        }
+145-
+146:        if (req.url === "/gandom-test.html" || req.url.startsWith("/gandom-test.html?")) {
+147-            const path2 = require("path");
+148-            const file = path2.join(__dirname, "public", "gandom-test.html");
+149-            require("fs").readFile(file, (err, data) => {
+150:                if (err) { res.writeHead(404); res.end("NOT FOUND"); return; }
+151:                res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+152-                res.end(data);
+153-            });
+154-            return;
+155-        }
+156-
+157:        if (req.url.startsWith("/libs/")) {
+158-            const path2 = require("path");
+159:            const file = path2.join(__dirname, "public", req.url.replace("/libs/", "libs/"));
+160-            require("fs").readFile(file, (err, data) => {
+161:                if (err) { res.writeHead(404); res.end("NOT FOUND"); return; }
+162:                res.writeHead(200, {"Content-Type": "application/javascript; charset=utf-8"});
+163-                res.end(data);
+164-            });
+165-            return;
+166-        }
+167-
+168:        if (req.url === "/gandom-3d.html" || req.url.startsWith("/gandom-3d.html?")) {
+169-            const fs2 = require("fs");
+170-            const path2 = require("path");
+171-            const file = path2.join(__dirname, "public", "gandom-3d.html");
+172-            fs2.readFile(file, (err, data) => {
+173:                if (err) { res.writeHead(404); res.end("NOT FOUND"); return; }
+174:                res.writeHead(200, {"Content-Type": "text/html; charset=utf-8"});
+175-                res.end(data);
+176-            });
+177-            return;
+178-        }
+179-
+180-        // --- FATHER VAULT APIs (TOP SECRET) ---
+181:        if (req.url.startsWith("/api/father/vault")) {
+182-            if (req.method === "POST") {
+183-                let body = "";
+184-                req.on("data", c => body += c.toString());
+185-                req.on("end", () => {
+186-                    try {
+187:                        const data = JSON.parse(body);
+188-                        if (data.secret_key !== FATHER_SECRET_KEY) {
+189:                            res.writeHead(403, {"Content-Type":"application/json"});
+190-                            res.end(JSON.stringify({ok:false, error:"ACCESS DENIED: YOU ARE NOT THE FATHER"}));
+191-                            return;
+192-                        }
+193-                        const ok = fatherVault.executeFatherTransaction(data.action, data.amount, data.signature, data.timestamp);
+194:                        res.writeHead(ok ? 200 : 400, {"Content-Type":"application/json"});
+195-                        res.end(JSON.stringify({ok: ok, wallet: fatherVault.wallet}));
+196-                    } catch (e) {
+197:                        res.writeHead(400, {"Content-Type":"application/json"});
+198-                        res.end(JSON.stringify({ok:false, error:"Invalid Request"}));
+199-                    }
+200-                });
+201-                return;
+202-            } else {
+203-                if (req.headers["x-father-key"] === FATHER_SECRET_KEY) {
+204:                    res.writeHead(200, {"Content-Type":"application/json"});
+205-                    res.end(JSON.stringify({ok:true, audit: fatherVault.getAuditReport()}));
+206-                } else {
+207:                    res.writeHead(403, {"Content-Type":"application/json"});
+208-                    res.end(JSON.stringify({ok:false, error:"ACCESS DENIED"}));
+209-                }
+210-                return;
+211-            }
+212-        }
+213-
+214-  // ─── Worker APIs ───
+215:  if (handleWorkerAPI(req, res, req.url, req.method)) {
+216-    return;
+217-  }
+218-
+219-  // ─── Node Breeding APIs ───
+220:  if (handleNodeBreedingAPI(req, res, req.url, req.method)) {
+221-    return;
+222-  }
+223-
+224-  // ─── Cell Life APIs ───
+225:  if (handleCellLifeAPI(req, res, req.url, req.method)) {
+226-    return;
+227-  }
+228-
+229-  // ─── Price APIs ───
+230:  if (handlePriceAPI(req, res, req.url, req.method)) {
+231-    return;
+232-  }
+233-
+234-  // ─── Ecosystem APIs ───
+235:  if (handleEcosystemAPI(req, res, req.url, req.method)) {
+236-    return;
+237-  }
+238-
+239-  // ─── Ads APIs ───
+240:  if (handleAdsAPI(req, res, req.url, req.method)) {
+241-    return;
+242-  }
+243-
+244-  // ─── Neural APIs ───
+245:  if (handleNeuralAPI(req, res, req.url, req.method)) {
+246-    return;
+247-  }
+248-
+249-  // ─── Payment APIs ───
+250:  if (handlePaymentAPI(req, res, req.url, req.method)) {
+251-    return;
+252-  }
+253-
+254-  // ─── Exchange APIs ───
+255:  if (handleExchangeAPI(req, res, req.url, req.method)) {
+256-    return;
+257-  }
+258-
+259-  // ─── Market APIs ───
+260:  if (handleMarketAPI(req, res, req.url, req.method)) {
+261-    return;
+262-  }
+263-
+264-  // ─── Users APIs ───
+265:  if (handleUsersAPI(req, res, req.url, req.method)) {
+266-    return;
+267-  }
+268-
+269-    // ─── Blockchain APIs ───
+270:    if (handleBlockchainAPI(req, res, req.url, req.method, gandomChain) !== false) {
+271-        return;
+272-    }
+273-
+274-
+275-    // ================== UI STATIC SERVER ==================
+276-    if (
+277:        req.url === '/' ||
+278:        req.url.startsWith('/index.html') ||
+279:        req.url.startsWith('/assets/') ||
+280:        req.url.startsWith('/css/') ||
+281:        req.url.startsWith('/js/') ||
+282:        req.url.startsWith('/images/') ||
+283:        req.url.startsWith('/static/')
+284-    ) {
+285:        let requestPath = req.url.split('?')[0];
+286-
+287-        if (requestPath === '/') {
+288-            requestPath = '/index.html';
+289-        }
+290-
+291-        let decodedPath;
+292-
+293-        try {
+294:            decodedPath = decodeURIComponent(requestPath);
+295-        } catch {
+296:            res.writeHead(400);
+297-            res.end('Bad Request');
+298-            return;
+299-        }
+300-
+301-        const publicRoot = path.resolve(__dirname, 'public');
+302-        const filePath = path.resolve(
+303-            publicRoot,
+304-            '.' + decodedPath
+305-        );
+306-
+307-        if (
+308-            filePath !== publicRoot &&
+309-            !filePath.startsWith(publicRoot + path.sep)
+310-        ) {
+311:            res.writeHead(403);
+312-            res.end('Forbidden');
+313-            return;
+314-        }
+315-
+316-        fs.stat(filePath, (err, stat) => {
+317-            if (err || !stat.isFile()) {
+318-
+319:                res.writeHead(404);
+320-                res.end('Not Found');
+321-                return;
+322-            }
+323-
+324-            const ext = path.extname(filePath).toLowerCase();
+325-
+326-            const mime = {
+327-                '.html': 'text/html; charset=utf-8',
+328-                '.js': 'application/javascript; charset=utf-8',
+329-                '.css': 'text/css; charset=utf-8',
+330-                '.json': 'application/json; charset=utf-8',
+331-                '.svg': 'image/svg+xml',
+332-                '.png': 'image/png',
+333-                '.jpg': 'image/jpeg',
+--
+336-                '.ico': 'image/x-icon',
+337-                '.woff': 'font/woff',
+338-                '.woff2': 'font/woff2'
+339-            };
+340-
+341:            res.writeHead(200, {
+342-                'Content-Type':
+343-                    mime[ext] || 'application/octet-stream',
+344-                'Cache-Control': 'no-store'
+345-            });
+346-
+347-            fs.createReadStream(filePath).pipe(res);
+348-        });
+349-
+350-        return;
+351-    }
+352-
+353-
+354:  if (req.url === '/health') {
+355-    const body = JSON.stringify({
+356-      ok: true,
+357-      project: 'GANDUM-P2P',
+358-      node_id: NODE_ID,
+359-      peers: peers.size,
+360-      uptime: process.uptime()
+361-    });
+362-
+363:    res.writeHead(200, {
+364-      'Content-Type': 'application/json',
+365-      'Content-Length': Buffer.byteLength(body)
+366-    });
+367-
+368-    return res.end(body);
+369-  }
+370-
+371:  if (req.url === '/') {
+372:    const html = require("fs").readFileSync("./public/index.html","utf8"); res.writeHead(200,{"Content-Type":"text/html; charset=utf-8"}); return res.end(html); const body = "GANDUM-P2P NODE\\n";
+373:    res.writeHead(200, {
+374-      'Content-Type': 'text/plain',
+375-      'Content-Length': Buffer.byteLength(body)
+376-    });
+377-    return res.end(body);
+378-  }
+379-
+380-
+381-  // API 1: همتاهای متصل واقعی
+382:  if (req.url === '/api/peers') {
+383-    const peerList = Array.from(peers.values()).map((peer) => ({
+384-      peer_id: peer.id,
+385-      direction: peer.direction || 'unknown',
+386-      address: peer.address || null,
+387-      connected_at: peer.connectedAt || null
+388-    }));
+389-
+390:    res.writeHead(200, {
+391-      'Content-Type': 'application/json; charset=utf-8'
+392-    });
+393-
+394-    return res.end(JSON.stringify({
+395-      ok: true,
+396-      node_id: NODE_ID,
+397-      peers_count: peerList.length,
+398-      peers: peerList
+399-    }));
+400-  }
+401-
+402-  // API 2: آمار واقعی نود
+403-
+404:  if (req.url === '/api/state') {
+405-    try {
+406-      const snapshot = getStateSnapshot();
+407-
+408:      res.writeHead(200, {
+409-        'Content-Type': 'application/json; charset=utf-8',
+410-        'Cache-Control': 'no-store'
+411-      });
+412-
+413-      return res.end(JSON.stringify(snapshot));
+414-    } catch (err) {
+415:      res.writeHead(500, {
+416-        'Content-Type': 'application/json; charset=utf-8',
+417-        'Cache-Control': 'no-store'
+418-      });
+419-
+420-      return res.end(JSON.stringify({
+421-        ok: false,
+422-        error: 'STATE_API_ERROR',
+423-        message: String(err.message || err)
+424-      }));
+425-    }
+426-  }
+427-
+428:if (req.url === '/api/stats') {
+429-    const memoryMB = process.memoryUsage().rss / 1024 / 1024;
+430-
+431:    res.writeHead(200, {
+432-      'Content-Type': 'application/json; charset=utf-8'
+433-    });
+434-
+435-    return res.end(JSON.stringify({
+436-      ok: true,
+437-      project: 'GANDOM',
+438-      node_id: NODE_ID,
+439-      peers_count: peers.size,
+440-      outbound_peer: outboundPeer ? PEER_ADDRESS : null,
+441-      uptime_seconds: Math.floor(process.uptime()),
+442-      memory_mb: Number(memoryMB.toFixed(2)),
+443-      node_version: process.version
+444-    }));
+445-  }
+446-
+447-  // API 3: نسخه واقعی پروژه
+448:  if (req.url === '/api/version') {
+449:    res.writeHead(200, {
+450-      'Content-Type': 'application/json; charset=utf-8'
+451-    });
+452-
+453-    return res.end(JSON.stringify({
+454-      ok: true,
+455-      project: 'GANDOM',
+456-      version: PROJECT_VERSION
+457-    }));
+458-  }
+459-
+460:  if (req.url.split('?')[0] === '/api/cells' && req.method === 'GET') {
+461:  res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+462-  return res.end(JSON.stringify({
+463-    ok: true, law: 2558, integration: 'LIVE_CELL_BRIDGE_2558',
+464-    ...cellBridge.snapshot()
+465-  }));
+466-}
+467:res.writeHead(404);
+468-  res.end('NOT_FOUND');
+469-});
+470-
+471-const wss = new WebSocket.Server({ server: httpServer });
+472-
+473-function log(event, data = {}) {
+474-  console.log(JSON.stringify({
+475-    ts: new Date().toISOString(),
+476-    event,
+477-    node_id: NODE_ID,
+478-    ...data
+479-  }));
+480-}
+481-
+--
+517-
+518-  ws.on('message', raw => {
+519-    let message;
+520-
+521-    try {
+522:      message = JSON.parse(raw.toString());
+523-    } catch {
+524-      send(ws, 'ERROR', {
+525-        code: 'INVALID_JSON'
+526-      });
+527-      return;
+528-    }
+529-
+530-    log('MESSAGE_RECEIVED', {
+531-      peer_id: peerId,
+532-      type: message.type || 'UNKNOWN'
+533-    });
+534-
+535-    if (message.type === 'PING') {
+536-      send(ws, 'PONG', {
+--
+690-
+691-  ws.on('message', raw => {
+692-    let message;
+693-
+694-    try {
+695:      message = JSON.parse(raw.toString());
+696-    } catch (error) {
+697-      log('PEER_OUTBOUND_INVALID_MESSAGE', {
+698-        peer_id: peerId,
+699-        error: error.message
+700-      });
+701-      return;
+702-    }
+703-
+704-    log('PEER_OUTBOUND_MESSAGE', {
+705-      peer_id: peerId,
+706-      type: message.type || null
+707-    });
+708-
+709-    if (message.type === 'PING') {
+--
+784-      peers.delete(peerId);
+785-    }
+786-  }
+787-}, 15000);
+788-
+789:httpServer.listen(PORT, '0.0.0.0', () => {
+790-  log('NODE_STARTED', {
+791-    port: PORT,
+792-    websocket: `ws://0.0.0.0:${PORT}`,
+793-    health: `http://127.0.0.1:${PORT}/health`
+794-  });
+795-
+796-  cellBridge.start();
+797-  log('LIVE_CELL_BRIDGE_STARTED', {
+798-    capacity: cellBridge.capacity,
+799-    intervalMs: cellBridge.intervalMs
+800-  });
+801-  if (PEER_ADDRESS) {
+802-    connectOutbound();
+803-  }
+
+
+========== 7. DEPENDENCY STATUS ==========
+PACKAGE_LOCK=PRESENT
+NODE_MODULES=PRESENT
+NPM_AUDIT_EXIT=1
+NOTE=NPM_AUDIT_EXIT_ALONE_IS_NOT_A_SECURITY_VERDICT
+
+
+========== 8. ROOT CAUSE GATES ==========
+VALIDATOR_REFERENCE_FOUND=YES
+NOTE=CHECK_CLASS_METHOD_AND_ALL_CALL_SITES_MANUALLY
+NONDETERMINISTIC_VALUE_SOURCE_FOUND=YES
+NOTE=VERIFY_WHETHER_USED_IN_GENESIS
+
+
+========== 9. FINAL SAFETY GATE ==========
+CHAIN_FILES_MODIFIED=NO
+AUTOMATIC_REPAIR=NO
+SERVICE_RESTARTED=NO
+GENESIS_REPAIR=NOT_PERFORMED
+PRODUCTION_APPROVAL=NOT_GRANTED
+PASS_REAL_FULL_SYSTEM=NOT_CLAIMED
+AUDIT_REPORT=/data/data/com.termux/files/home/gandom/GANDOM_ROOT_CAUSE_2558_20261016T141524.txt
+AUDIT_COMPLETE=YES

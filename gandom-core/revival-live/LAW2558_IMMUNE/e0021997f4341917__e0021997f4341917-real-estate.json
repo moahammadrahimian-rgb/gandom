@@ -1,0 +1,102 @@
+[
+  {
+    "id": "f9b45fb7-9579-48fd-bc5e-cb62304d2e29",
+    "name": "Gandom Tower",
+    "address": "Tehran, Valiasr St",
+    "area": 500,
+    "priceToman": 10000000000,
+    "priceGDM": 1000000,
+    "tokens": 1000000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 100000,
+        "percentage": 10,
+        "date": 1790666711634
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 50000,
+        "percentage": 5,
+        "date": 1790666711636
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790666711459
+  },
+  {
+    "id": "c8700e12-a3e9-483f-adb3-0b4e92ffe407",
+    "name": "Gandom Tower",
+    "address": "Tehran, Valiasr St",
+    "area": 500,
+    "priceToman": 10000000000,
+    "priceGDM": 1000000,
+    "tokens": 1000000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 100000,
+        "percentage": 10,
+        "date": 1790669081983
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 50000,
+        "percentage": 5,
+        "date": 1790669081984
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790669081845
+  },
+  {
+    "id": "e3cfe3af-a02e-4fba-ad2f-1c7a2fbf0ec2",
+    "name": "Gandom Tower",
+    "address": "Tehran, Valiasr St",
+    "area": 500,
+    "priceToman": 10000000000,
+    "priceGDM": 1000000,
+    "tokens": 1000000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 100000,
+        "percentage": 10,
+        "date": 1790670850855
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 50000,
+        "percentage": 5,
+        "date": 1790670850856
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790670850718
+  },
+  {
+    "id": "713bcea1-d6e6-4513-ac31-fe6b66b0075e",
+    "name": "Gandom Tower",
+    "address": "Tehran, Valiasr St",
+    "area": 500,
+    "priceToman": 10000000000,
+    "priceGDM": 1000000,
+    "tokens": 1000000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 100000,
+        "percentage": 10,
+        "date": 1790673962697
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 50000,
+        "percentage": 5,
+        "date": 1790673962698
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790673962532
+  }
+]

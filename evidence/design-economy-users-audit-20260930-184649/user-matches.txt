@@ -1,0 +1,1 @@
+gandom-core/global-architecture/design/GLOBAL-ARCHITECTURE.md:27:End users do not require Termux, Node.js, Gradle or Android SDK.

@@ -1,0 +1,99 @@
+{
+  "law": "2558",
+  "purpose": "Scientific source discovery and syllabus indexing",
+  "created_at": "2026-10-11T08:51:34.684Z",
+  "total_sources": 6,
+  "successfully_parsed": 3,
+  "sources": [
+    {
+      "id": "MIT_SINGLE_VARIABLE_CALCULUS",
+      "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/pages/1.-differentiation/",
+      "result": "FAILED",
+      "error": "fetch failed"
+    },
+    {
+      "id": "MIT_MULTIVARIABLE_CALCULUS",
+      "url": "https://live.ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/pages/syllabus/",
+      "result": "FAILED",
+      "error": "fetch failed"
+    },
+    {
+      "id": "OPENSTAX_CALCULUS_FUNCTIONS_DERIVATIVES",
+      "url": "https://openstax.org/books/calculus-volume-1/pages/preface",
+      "http_status": 200,
+      "bytes_received": 250616,
+      "sha256": "fa57a73e3ffcd8b7b4346dee5b7c2509968060e5af1749633f16dd3c20ec4272",
+      "title": "Preface - Calculus Volume 1 | OpenStax",
+      "headings": [
+        "Preface",
+        "About OpenStax",
+        "About OpenStax's resources",
+        "About Calculus Volume 1",
+        "Additional resources",
+        "About the authors",
+        "OpenStax’s mission is to make an amazing education accessible for all.",
+        "Help",
+        "OpenStax",
+        "Policies"
+      ],
+      "fetched_at": "2026-10-11T08:51:24.200Z",
+      "result": "FETCHED_AND_PARSED"
+    },
+    {
+      "id": "OPENSTAX_CALCULUS_GEOMETRY_VECTORS",
+      "url": "https://openstax.org/books/calculus-volume-3/pages/preface",
+      "http_status": 200,
+      "bytes_received": 251812,
+      "sha256": "b95100818c36f2b7549ac52f16ae659a52e45e3cb820e2210fb55536d9847d90",
+      "title": "Preface - Calculus Volume 3 | OpenStax",
+      "headings": [
+        "Preface",
+        "About OpenStax",
+        "About OpenStax's resources",
+        "About Calculus Volume 3",
+        "Additional resources",
+        "About the authors",
+        "OpenStax’s mission is to make an amazing education accessible for all.",
+        "Help",
+        "OpenStax",
+        "Policies"
+      ],
+      "fetched_at": "2026-10-11T08:51:24.374Z",
+      "result": "FETCHED_AND_PARSED"
+    },
+    {
+      "id": "OPENSTAX_UNIVERSITY_PHYSICS",
+      "url": "https://openstax.org/books/university-physics-volume-1/pages/preface",
+      "http_status": 200,
+      "bytes_received": 305972,
+      "sha256": "4bc671c2afc7617dcc08f4afb016317c4e936880999d0fc9315d73e83a512e48",
+      "title": "Preface - University Physics Volume 1 | OpenStax",
+      "headings": [
+        "Preface",
+        "About OpenStax",
+        "About OpenStax's resources",
+        "About University Physics",
+        "Additional resources",
+        "About the authors",
+        "OpenStax’s mission is to make an amazing education accessible for all.",
+        "Help",
+        "OpenStax",
+        "Policies"
+      ],
+      "fetched_at": "2026-10-11T08:51:24.532Z",
+      "result": "FETCHED_AND_PARSED"
+    },
+    {
+      "id": "MIT_CLASSICAL_MECHANICS",
+      "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/",
+      "result": "FAILED",
+      "error": "fetch failed"
+    }
+  ],
+  "full_text_downloaded": false,
+  "formula_verification": false,
+  "brain_connected": false,
+  "server_connected": false,
+  "overall_status": "PARTIAL_SOURCE_FETCH",
+  "no_fake_pass": true
+}

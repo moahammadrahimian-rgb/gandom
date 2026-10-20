@@ -1,0 +1,43 @@
+{
+  "law": "2558",
+  "project": "GANDOM",
+  "kind": "research_source_registry",
+  "status": "SOURCES_REGISTERED_NOT_YET_INGESTED",
+  "subjects": [
+    {
+      "id": "MATHEMATICS_CALCULUS",
+      "topics": ["functions", "limits", "continuity", "integrals", "series"],
+      "source": "MIT OpenCourseWare",
+      "url": "https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/"
+    },
+    {
+      "id": "DERIVATIVES",
+      "topics": ["definition", "chain_rule", "product_rule", "higher_derivatives"],
+      "source": "MIT OpenCourseWare",
+      "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/pages/1.-differentiation/"
+    },
+    {
+      "id": "GEOMETRY_AND_MULTIVARIABLE_CALCULUS",
+      "topics": ["partial_derivatives", "gradients", "multiple_integrals", "vector_calculus"],
+      "source": "MIT OpenCourseWare",
+      "url": "https://live.ocw.mit.edu/courses/res-18-001-calculus-fall-2023/mitres_18_001_f17_full_book.pdf"
+    },
+    {
+      "id": "CLASSICAL_PHYSICS",
+      "topics": ["motion", "force", "newton_laws", "mechanics"],
+      "source": "MIT OpenCourseWare",
+      "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/"
+    }
+  ],
+  "ingestion": {
+    "downloaded": false,
+    "parsed": false,
+    "verified": false,
+    "connected_to_brain": false,
+    "connected_to_live_node": false
+  },
+  "law_gate": {
+    "no_fake_pass": true,
+    "pass_real_requires_execution_and_evidence": true
+  }
+}

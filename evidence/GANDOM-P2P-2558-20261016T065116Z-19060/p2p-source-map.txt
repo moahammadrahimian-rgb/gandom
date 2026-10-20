@@ -1,0 +1,20 @@
+40:const PORT = Number(process.env.PORT || 8787);
+43:const PEER_ADDRESS = process.env.PEER_ADDRESS || '';
+440:      outbound_peer: outboundPeer ? PEER_ADDRESS : null,
+471:const wss = new WebSocket.Server({ server: httpServer });
+508:  log('PEER_CONNECTED', {
+543:      send(ws, 'HELLO_ACK', {
+580:      send(ws, 'DATA_ACK', {
+643:  if (shuttingDown || !PEER_ADDRESS) return;
+652:    address: PEER_ADDRESS,
+656:  const ws = new WebSocket(PEER_ADDRESS, {
+664:  const peerId = `outbound:${PEER_ADDRESS}`;
+675:      address: PEER_ADDRESS,
+681:      address: PEER_ADDRESS,
+717:    if (message.type === 'HELLO_ACK') {
+718:      log('PEER_OUTBOUND_HELLO_ACK', {
+728:    if (message.type === 'DATA_ACK') {
+729:      log('PEER_OUTBOUND_DATA_ACK', {
+770:      address: PEER_ADDRESS,
+789:httpServer.listen(PORT, '0.0.0.0', () => {
+801:  if (PEER_ADDRESS) {

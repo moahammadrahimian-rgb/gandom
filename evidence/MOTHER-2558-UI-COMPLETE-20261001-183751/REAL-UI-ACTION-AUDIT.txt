@@ -1,0 +1,122 @@
+=== REAL UI ACTION AUDIT ===
+=== EXCHANGE API ===
+www/assets/js/gandom-complete.js:579:    var r = await api('/api/exchange/'+side,{method:'POST',body:JSON.stringify({amount:+a})});
+=== WALLET API ===
+www/assets/js/gandom-ui.js:34:function nav(name, el) { if (name === "wallet") console.log("Wallet opened"); }
+www/assets/js/gandom-complete.js:56:    const r = await api('/api/wallet/income', { method: 'POST', body: JSON.stringify({ amount }) });
+www/assets/js/gandom-complete.js:89:    const r = await api('/api/wallet/owner-transfer', {
+gandom-core/execution/GANDOM-33-EXECUTION.js:121:function walletTransferFlow() {
+=== BUTTON HANDLERS ===
+www/index.html:482:<header class="topbar"><button class="hd-back" id="hdBack" onclick="goHome()">←</button>
+www/index.html:497:  <div class="top-icons"><div class="icon-btn" onclick="openApiKey()" title="API Keys">🔑</div>
+www/index.html:507:    <div class="hero-card hero-ai" onclick="scrollTo_('aiCore')">
+www/index.html:516:    <div class="hero-card hero-p2p" onclick="scrollTo_('p2pCore')">
+www/index.html:533:      <div class="qa light" onclick="scrollTo_('exCard')"><span class="qa-ic">💱</span>خرید</div>
+www/index.html:534:      <div class="qa light" onclick="scrollTo_('exCard')"><span class="qa-ic">💸</span>فروش</div>
+www/index.html:535:      <div class="qa light" onclick="openModal('deposit')"><span class="qa-ic">📥</span>واریز</div>
+www/index.html:536:      <div class="qa light" onclick="openModal('withdraw')"><span class="qa-ic">📤</span>برداشت</div>
+www/index.html:647:      <button class="btn-buy" onclick="doTrade('buy')">🟢 خرید GDM</button>
+www/index.html:648:      <button class="btn-sell" onclick="doTrade('sell')">🔴 فروش GDM</button>
+www/index.html:667:      <button class="btn-buy" onclick="openModal('deposit')">📥 واریز</button>
+www/index.html:668:      <button class="btn-sell" onclick="openModal('withdraw')">📤 برداشت</button>
+www/index.html:736:  <div class="owner-block" onclick="openOwnerControl()" style="cursor:pointer">
+www/index.html:791:  <button class="active" onclick="scrollTo_(null,this)"><span class="ic">⌂</span>خانه</button>
+www/index.html:792:  <button onclick="scrollTo_('aiCore',this)"><span class="ic">🤖</span>AI</button>
+www/index.html:793:  <button onclick="scrollTo_('p2pCore',this)"><span class="ic">🌐</span>P2P</button>
+www/index.html:794:  <button onclick="scrollTo_('walletCard',this)"><span class="ic">👛</span>کیف</button>
+www/index.html:795:  <button onclick="scrollTo_('exCard',this)"><span class="ic">📈</span>صرافی</button>
+www/index.html:808:      <button class="m-cancel" onclick="closeModal()">لغو</button>
+www/index.html:809:      <button class="m-ok" onclick="confirmModal()">تأیید</button>
+www/index.html:824:      <button onclick="document.getElementById('apiModal').classList.remove('show')" style="background:rgba(255,255,255,.06);color:#f0f0f5;border:none;border-radius:12px;padding:13px;font-weight:900;cursor:pointer;font-size:14px">لغو</button>
+www/index.html:825:      <button onclick="saveApiKeys()" style="background:linear-gradient(135deg,#a855f7,#7e22ce);color:#fff;border:none;border-radius:12px;padding:13px;font-weight:900;cursor:pointer;font-size:14px">ذخیره</button>
+www/index.html:837:      <button onclick="document.getElementById('ownerModal').classList.remove('show')" style="background:rgba(255,255,255,.06);color:#f0f0f5;border:none;border-radius:12px;padding:13px;font-weight:900;cursor:pointer;font-size:14px">لغو</button>
+www/index.html:838:      <button onclick="confirmOwner()" style="background:linear-gradient(135deg,#f0b90b,#d97706);color:#000;border:none;border-radius:12px;padding:13px;font-weight:900;cursor:pointer;font-size:14px">تأیید</button>
+www/index.html:853:    <div class="tile purple" onclick="goPage('ai')"><span class="tile-ic">🤖</span><span class="tile-nm">هسته AI</span></div>
+www/index.html:854:    <div class="tile blue" onclick="goPage('p2p')"><span class="tile-ic">🌐</span><span class="tile-nm">شبکه P2P</span></div>
+www/index.html:855:    <div class="tile gold" onclick="goPage('exchange')"><span class="tile-ic">📈</span><span class="tile-nm">صرافی</span></div>
+www/index.html:860:    <div class="tile" onclick="goPage('wallet')"><span class="tile-ic">👛</span><span class="tile-nm">کیف پول</span></div>
+www/index.html:861:    <div class="tile gold" onclick="goPage('owner')"><span class="tile-ic">👑</span><span class="tile-nm">سهم مالک</span></div>
+www/index.html:862:    <div class="tile" onclick="goPage('supply')"><span class="tile-ic">💎</span><span class="tile-nm">۲۴ میلیارد</span></div>
+www/index.html:863:    <div class="tile blue" onclick="goPage('users')"><span class="tile-ic">🌍</span><span class="tile-nm">۸ میلیارد</span></div>
+www/index.html:864:    <div class="tile gold" onclick="goPage('ads')"><span class="tile-ic">📢</span><span class="tile-nm">تبلیغات</span></div>
+www/index.html:865:    <div class="tile" onclick="goPage('ledger')"><span class="tile-ic">📋</span><span class="tile-nm">دفتر کل</span></div>
+www/index.html:870:    <div class="tile gold" onclick="goPage('gold')"><span class="tile-ic">🪙</span><span class="tile-nm">طلا</span></div>
+www/index.html:871:    <div class="tile blue" onclick="goPage('re')"><span class="tile-ic">🏢</span><span class="tile-nm">املاک</span></div>
+www/index.html:872:    <div class="tile" onclick="goPage('auto')"><span class="tile-ic">🚗</span><span class="tile-nm">خودرو</span></div>
+www/index.html:877:    <div class="tile" onclick="goPage('ig')"><span class="tile-ic">📷</span><span class="tile-nm">Instagram</span></div>
+www/index.html:878:    <div class="tile blue" onclick="goPage('tg')"><span class="tile-ic">✈️</span><span class="tile-nm">Telegram</span></div>
+www/index.html:879:    <div class="tile" onclick="goPage('tw')"><span class="tile-ic">🐦</span><span class="tile-nm">X</span></div>
+www/index.html:880:    <div class="tile" onclick="goPage('yt')"><span class="tile-ic">▶️</span><span class="tile-nm">YouTube</span></div>
+www/index.html:881:    <div class="tile" onclick="goPage('wa')"><span class="tile-ic">💬</span><span class="tile-nm">WhatsApp</span></div>
+www/index.html:882:    <div class="tile purple" onclick="goPage('bots')"><span class="tile-ic">🤖</span><span class="tile-nm">کل ربات‌ها</span></div>
+www/index.html:887:    <div class="tile" onclick="goPage('dht')"><span class="tile-ic">⬡</span><span class="tile-nm">DHT</span></div>
+www/index.html:888:    <div class="tile" onclick="goPage('ipfs')"><span class="tile-ic">▣</span><span class="tile-nm">IPFS</span></div>
+www/index.html:889:    <div class="tile gold" onclick="goPage('chain')"><span class="tile-ic">⛓</span><span class="tile-nm">Blockchain</span></div>
+www/index.html:890:    <div class="tile" onclick="goPage('sec')"><span class="tile-ic">🛡</span><span class="tile-nm">امنیت</span></div>
+www/index.html:891:    <div class="tile" onclick="goPage('tor')"><span class="tile-ic">◎</span><span class="tile-nm">Tor</span></div>
+www/index.html:892:    <div class="tile" onclick="goPage('gov')"><span class="tile-ic">📜</span><span class="tile-nm">حاکمیت</span></div>
+www/index.html:897:    <div class="tile" onclick="goPage('kyc')"><span class="tile-ic">🪪</span><span class="tile-nm">احراز هویت</span></div>
+www/index.html:898:    <div class="tile purple" onclick="goPage('chat')"><span class="tile-ic">💭</span><span class="tile-nm">چت AI</span></div>
+www/index.html:899:    <div class="tile purple" onclick="openApiKey()"><span class="tile-ic">🔑</span><span class="tile-nm">کلید API</span></div>
+www/index.html:900:    <div class="tile blue" onclick="goPage('publish')"><span class="tile-ic">📤</span><span class="tile-nm">Auto Publish</span></div>
+www/index.html:901:    <div class="tile" onclick="goPage('evidence')"><span class="tile-ic">📊</span><span class="tile-nm">Evidence</span></div>
+www/index.html:902:    <div class="tile" onclick="goPage('social')"><span class="tile-ic">👥</span><span class="tile-nm">شبکه اجتماعی</span></div>
+www/assets/js/gandom-ui.js:12:    btn.addEventListener('click', () => {
+www/assets/js/gandom-complete.js:52:$('incomeBtn').addEventListener('click', async () => {
+www/assets/js/gandom-complete.js:68:$('transferBtn').addEventListener('click', () => {
+www/assets/js/gandom-complete.js:105:$('ownerModal').addEventListener('click', e => { if (e.target.id === 'ownerModal') closeOwnerModal(); });
+www/assets/js/gandom-complete.js:117:$('aiBtn').addEventListener('click', async () => {
+www/assets/js/gandom-complete.js:131:$('adSaleBtn').addEventListener('click', async () => {
+www/assets/js/gandom-complete.js:142:  b.addEventListener('click', () => {
+www/assets/js/gandom-complete.js:149:$('refreshBtn').addEventListener('click', async () => {
+www/assets/js/gandom-complete.js:155:  btn.addEventListener('click', () => {
+www/assets/js/gandom-complete.js:279:document.addEventListener('click', e => {
+www/assets/js/gandom-complete.js:359:      + '<button class="spa-btn green" onclick="doTrade(\'buy\')">🟢 خرید GDM</button>'
+www/assets/js/gandom-complete.js:360:      + '<button class="spa-btn red" onclick="doTrade(\'sell\')">🔴 فروش GDM</button>'
+www/assets/js/gandom-complete.js:368:      + '<button class="spa-btn green" onclick="openModal(\'deposit\')">📥 واریز</button>'
+www/assets/js/gandom-complete.js:369:      + '<button class="spa-btn red" onclick="openModal(\'withdraw\')">📤 برداشت</button>'
+www/assets/js/gandom-complete.js:379:      + '<button class="spa-btn gold" onclick="openOwnerControl()">🔓 دسترسی مالک</button>',
+www/assets/js/gandom-complete.js:403:      + '<button class="spa-btn gold" onclick="api(\'/api/ads/sale\',{method:\'POST\',body:\'{}\'}).then(function(){toast(\'✅ ثبت شد\');loadState();})">📢 ثبت فروش</button>',
+www/assets/js/gandom-complete.js:532:    kb.addEventListener('click', async function(){
+www/assets/js/gandom-complete.js:551:    ab.addEventListener('click', sendChatMsg);
+=== NUMERIC INPUTS ===
+www/index.html:685:      <input class="inp" id="kycNationalId" type="tel" inputmode="numeric" maxlength="10" placeholder="کد ملی (10 رقم)">
+www/index.html:802:    <input class="inp" id="mAmount" type="number" inputmode="decimal" placeholder="مثلاً 100">
+www/admin.html:12:        <input type="number" id="price" inputmode="decimal" step="0.01" placeholder="قیمت (تومان)">
+www/admin.html:16:        <input type="number" id="amount" inputmode="numeric" placeholder="تعداد را وارد کنید">
+www/assets/js/gandom-complete.js:485:      + '<input id="kycNationalId" type="tel" inputmode="numeric" maxlength="10" placeholder="کد ملی (10 رقم)" style="width:100%;background:#0b0e11;border:1px solid #2b3139;border-radius:10px;padding:12px 14px;color:#eaecef;font-size:14px;margin-bottom:8px;font-family:inherit;outline:none">'
+=== KYC ===
+www/index.html:339:/* ============ KYC ============ */
+www/index.html:340:.kyc-row{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+www/index.html:341:.kyc-em{
+www/index.html:347:.kyc-em.pending{background:linear-gradient(135deg,#fbbf24,#d97706);box-shadow:0 6px 18px rgba(251,191,36,.4)}
+www/index.html:673:  <!-- ===== KYC ===== -->
+www/index.html:674:  <div class="sec"><h2>احراز هویت</h2><span class="tag">KYC</span></div>
+www/index.html:676:    <div class="kyc-row">
+www/index.html:677:      <div class="kyc-em" id="kycIcon">🪪</div>
+www/index.html:679:        <div style="font-size:13px;font-weight:800" id="kycTitle">کاربر مهمان</div>
+www/index.html:680:        <div style="font-size:11px;color:#a5a5b8;margin-top:2px" id="kycSub">برای دسترسی کامل، احراز هویت کنید</div>
+www/index.html:683:    <div id="kycForm">
+www/index.html:684:      <input class="inp" id="kycName" placeholder="نام و نام خانوادگی">
+www/index.html:685:      <input class="inp" id="kycNationalId" type="tel" inputmode="numeric" maxlength="10" placeholder="کد ملی (10 رقم)">
+www/index.html:686:      <button class="btn-sub" id="kycBtn">🪪 ارسال</button>
+www/index.html:687:      <div class="res" id="kycRes"></div>
+www/index.html:750:      <div style="text-align:center;padding:10px;background:rgba(10,6,18,.5);border-radius:10px"><div style="font-size:16px;font-weight:900;color:#a855f7" id="uVerified">892</div><div style="font-size:9px;color:#a5a5b8">KYC</div></div>
+www/index.html:897:    <div class="tile" onclick="goPage('kyc')"><span class="tile-ic">🪪</span><span class="tile-nm">احراز هویت</span></div>
+www/index.html:930:<div class="pg-view" id="spa-kyc"></div>
+www/assets/js/gandom-complete.js:394:      + spaStat((users.verified||892).toLocaleString('fa-IR'),'KYC')
+www/assets/js/gandom-complete.js:483:    kyc: spaHead('🪪','احراز هویت','KYC','#0ecb81')
+www/assets/js/gandom-complete.js:484:      + '<input id="kycName" placeholder="نام و نام خانوادگی" style="width:100%;background:#0b0e11;border:1px solid #2b3139;border-radius:10px;padding:12px 14px;color:#eaecef;font-size:14px;margin-bottom:8px;font-family:inherit;outline:none">'
+www/assets/js/gandom-complete.js:485:      + '<input id="kycNationalId" type="tel" inputmode="numeric" maxlength="10" placeholder="کد ملی (10 رقم)" style="width:100%;background:#0b0e11;border:1px solid #2b3139;border-radius:10px;padding:12px 14px;color:#eaecef;font-size:14px;margin-bottom:8px;font-family:inherit;outline:none">'
+www/assets/js/gandom-complete.js:486:      + '<button id="kycBtn" class="spa-btn green">🪪 ارسال</button>'
+www/assets/js/gandom-complete.js:487:      + '<div id="kycRes" style="margin-top:10px;font-size:12px"></div>',
+www/assets/js/gandom-complete.js:529:  var kb = document.getElementById('kycBtn');
+www/assets/js/gandom-complete.js:533:      var n = document.getElementById('kycName').value.trim();
+www/assets/js/gandom-complete.js:534:      var i = document.getElementById('kycNationalId').value.trim();
+www/assets/js/gandom-complete.js:536:        document.getElementById('kycRes').innerHTML = '<span style="color:#f6465d">❌ نام و کد ملی 10 رقمی</span>';
+www/assets/js/gandom-complete.js:540:        await api('/api/kyc/verify',{method:'POST',body:JSON.stringify({fullName:n,nationalId:i})});
+www/assets/js/gandom-complete.js:541:        document.getElementById('kycRes').innerHTML = '<span style="color:#0ecb81">✅ احراز هویت موفق</span>';
+www/assets/js/gandom-complete.js:544:        document.getElementById('kycRes').innerHTML = '<span style="color:#f6465d">❌ '+e.message+'</span>';
+gandom-core/execution/GANDOM-33-EXECUTION.js:15:  ['KYC', 'احراز هویت'],
+=== RESULT ===
+REAL_UI_ACTION_AUDIT_CREATED=PASS

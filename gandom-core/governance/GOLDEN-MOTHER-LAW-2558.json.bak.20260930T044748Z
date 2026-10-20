@@ -1,0 +1,44 @@
+{
+  "id": "2558",
+  "project": "GANDOM",
+  "type": "GOLDEN_MOTHER_LAW",
+  "version": "1.1.0",
+  "status": "ACTIVE",
+  "purpose": "Permanent protection and preservation of GANDOM construction method and canonical architecture.",
+  "rules": {
+    "unauthorized_structure_change": "DENY",
+    "unauthorized_delete": "DENY",
+    "unauthorized_replace": "DENY",
+    "unauthorized_overwrite": "DENY",
+    "owner_authorization_required": true,
+    "backup_before_change": true,
+    "history_before_change": true,
+    "rollback_required": true,
+    "audit_required": true,
+    "fake_pass": false,
+    "destructive_overwrite": false
+  },
+  "change_protocol": [
+    "VERIFY_LAW_2558",
+    "BACKUP_CURRENT_STATE",
+    "RECORD_CHANGE_REQUEST",
+    "OWNER_AUTHORIZATION",
+    "APPLY_CHANGE",
+    "VERIFY_STRUCTURE",
+    "RECORD_HASH",
+    "RECORD_AUDIT",
+    "KEEP_ROLLBACK"
+  ],
+  "evidenceTrust": {
+    "protocol": "2558-EVIDENCE",
+    "mode": "FAIL_CLOSED",
+    "screenshotIsEvidence": false,
+    "chatTextIsEvidence": false,
+    "echoOutputIsEvidence": false,
+    "runIdRequired": true,
+    "challengeRequired": true,
+    "independentVerifierRequired": true,
+    "crossSessionReuse": false,
+    "staleEvidenceDenied": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "chapter": 3,
+  "test": "REAL_NODE_AGENT_POSITIVE_EXECUTION",
+  "agent_sha256": "90c0d0296ca8a122242939c7ae1d6c301f508ac7e95f4064546b7b71b9219414",
+  "node_id": "REAL-NODE-A-20261005-145137",
+  "port": 19101,
+  "syntax_rc": 0,
+  "process_live": 1,
+  "tcp_listener_real": 0,
+  "agent_output_pass": 0,
+  "fake_pass_blocked": 1,
+  "result": "FAIL_REAL"
+}

@@ -1,0 +1,966 @@
+=== GANDOM EXECUTION AGENT ===
+LAW=2558
+PROJECT=/data/data/com.termux/files/home/gandom
+NRN_PROJECT=/data/data/com.termux/files/home/nrn-alpha6
+UTC=20261018T141708Z
+MODE=SAFE_DIAGNOSIS
+PROJECT_FILES_MODIFIED=NO
+PROJECT_FILES_DELETED=NO
+SERVERS_RESTARTED=NO
+WALLETS_OR_DATABASES_TOUCHED=NO
+BUILD_TRIGGERED=NO
+PASS_REAL=NOT_ISSUED
+
+=== 1. ENVIRONMENT ===
+Linux localhost 4.19.191-28701252-abA137FXXSCEZB1 #1 SMP PREEMPT Thu Feb 5 17:39:30 KST 2026 armv8l Android
+ARCH=armv8l
+LONG_BIT=32
+v24.17.0
+openjdk version "21.0.11" 2026-04-21
+OpenJDK Runtime Environment (build 21.0.11)
+OpenJDK Server VM (build 21.0.11, mixed mode)
+GRADLE=Gradle 9.6.0
+
+=== 2. GLOBAL EXTRACTION REPORT ===
+GLOBAL_DIR=/data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z
+--- FILE: /data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/GLOBAL_MASTER_REPORT.txt
+GANDOM GLOBAL EXTRACTION — LAW 2558
+UTC=20261018T141240Z
+LOCAL_PROJECT_CANDIDATES=69
+PUBLIC_GITHUB_CANDIDATES=4
+
+IMPORTANT: discovery only; this is not a successful integration/build proof.
+PROJECT_FILES_MODIFIED=NO
+PROJECT_FILES_DELETED=NO
+WALLETS_OR_DATABASES_TOUCHED=NO
+SERVERS_RESTARTED=NO
+REPOSITORIES_CLONED=NO
+BUILD_TRIGGERED=NO
+PASS_REAL=NOT_ISSUED
+
+GITHUB CANDIDATES:
+- moahammadrahimian-rgb/gandom | branch=main | updated=2026-10-14T13:40:38Z | https://github.com/moahammadrahimian-rgb/gandom
+- moahammadrahimian-rgb/NRN_Alpha6- | branch=main | updated=2026-09-23T03:11:13Z | https://github.com/moahammadrahimian-rgb/NRN_Alpha6-
+- moahammadrahimian-rgb/NRN_Alpha6 | branch=main | updated=2026-09-21T10:09:12Z | https://github.com/moahammadrahimian-rgb/NRN_Alpha6
+- moahammadrahimian-rgb/-NRN-Alpha6- | branch=main | updated=2026-09-21T02:18:53Z | https://github.com/moahammadrahimian-rgb/-NRN-Alpha6-
+
+LOCAL CANDIDATES:
+- /data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z | git=False
+- /data/data/com.termux/files/home/NRN_ALPHA6_GANDOM_FULL_AUDIT_20261018T084048Z | git=False
+- /data/data/com.termux/files/home/GANDOM_GITHUB_SWEEP_2558_20261018T083629Z | git=False
+- /data/data/com.termux/files/home/GANDOM_GLOBAL_AUDIT_2558_20261018T080320Z | git=False
+- /data/data/com.termux/files/home/NRN_ALPHA6_ROOT_CAUSE_2558 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261017-005103 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184946 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-TREASURE-ABSORPTION-DISCOVERY | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-DISCOVERY-20261008-184653 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-MASS-TREASURE-MINING-20261008-184546 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-20261007-225219 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-20261007-224312 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-MASS-INDEX-20261007-223954 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-2558-LIVE-REGISTRY | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-2558-LIVE-REGISTRY/EINSTEIN-GANDOM | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-REVIVAL-20261008-183042 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-LIVE-UPGRADE-20261008-081501 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/GANDOM-MOTHER-2558-20261016T065830Z-20620 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/GANDOM-SEC-20261016T064606Z-17586 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/GANDOM-P2P-2558-20261016T065116Z-19060 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/GANDOM-CORE-P2P-UNIFIED-20261001-135857 | git=False
+- /data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/gandom-core | git=False
+- /data/data/com.termux/files/home/GANDOM-AUDIT | git=False
+- /data/data/com.termux/files/home/GANDOM-CORE-PROTECTION | git=False
+- /data/data/com.termux/files/home/gandom-quarantine | git=False
+- /data/data/com.termux/files/home/gandom-chain-before-test-20261014-234926 | git=False
+- /data/data/com.termux/files/home/GANDOM-2558-FULL-RESTORE-TEST-20261003-194753 | git=False
+- /data/data/com.termux/files/home/GANDOM-2558-FULL-RESTORE-TEST-20261003-194753/GANDOM-SNAPSHOT | git=False
+- /data/data/com.termux/files/home/GANDOM-2558-FINAL-ARCHIVE-TEST-20261003-193240 | git=False
+- /data/data/com.termux/files/home/GANDOM-2558-RECOVERY-TEST-20261003-192948 | git=False
+- /data/data/com.termux/files/home/GANDOM-2558-RECOVERY-20261003-192806 | git=False
+- /data/data/com.termux/files/home/GANDOM-MASTER-LAW-2558 | git=False
+- /data/data/com.termux/files/home/gandom-backups | git=False
+- /data/data/com.termux/files/home/gandom-xvfb | git=False
+- /data/data/com.termux/files/home/gandom-artifacts | git=False
+- /data/data/com.termux/files/home/nrn-restored | git=False
+- /data/data/com.termux/files/home/gandom | git=True
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-TREASURE-ABSORPTION-DISCOVERY | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-1470-GLOBAL-DISCOVERY-20261008-184653 | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-MASS-TREASURE-MINING-20261008-184546 | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-1470-GLOBAL-20261007-225219 | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-1470-GLOBAL-20261007-224312 | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-MASS-INDEX-20261007-223954 | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-2558-LIVE-REGISTRY | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-2558-LIVE-REGISTRY/EINSTEIN-GANDOM | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-REVIVAL-20261008-183042 | git=False
+- /data/data/com.termux/files/home/gandom/audit/GANDOM-LIVE-UPGRADE-20261008-081501 | git=False
+- /data/data/com.termux/files/home/gandom/evidence/GANDOM-MOTHER-2558-20261016T065830Z-20620 | git=False
+- /data/data/com.termux/files/home/gandom/evidence/GANDOM-P2P-2558-20261016T065116Z-19060 | git=False
+- /data/data/com.termux/files/home/gandom/evidence/GANDOM-SEC-20261016T064606Z-17586 | git=False
+- /data/data/com.termux/files/home/gandom/evidence/GANDOM-CORE-P2P-UNIFIED-20261001-135857 | git=False
+- /data/data/com.termux/files/home/gandom/gandom-core | git=False
+- /data/data/com.termux/files/home/gandom/gandom-core/governance/evidence-trust/gandom-keys | git=False
+- /data/data/com.termux/files/home/NRN-ALPHA6-BUILD-BACKUP | git=False
+- /data/data/com.termux/files/home/alpha6-web | git=True
+- /data/data/com.termux/files/home/NRN-ALPHA6 | git=True
+- /data/data/com.termux/files/home/NRN-ALPHA6/server/modules/alpha6_501_542 | git=False
+- /data/data/com.termux/files/home/NRN-ALPHA6/server/modules/alpha6_451_500 | git=False
+- /data/data/com.termux/files/home/NRN-ALPHA6/server/modules/alpha6_401_450 | git=False
+- /data/data/com.termux/files/home/NRN-ALPHA6/server/modules/alpha6_351_400 | git=False
+- /data/data/com.termux/files/home/NRN-ALPHA6/server/modules/alpha6_301_350 | git=False
+- /data/data/com.termux/files/home/NRN-ALPHA6/server/modules/alpha6_251_300 | git=False
+- /data/data/com.termux/files/home/NRN-ALPHA6/server/modules/alpha6_201_250 | git=False
+- /data/data/com.termux/files/home/nrn-alpha6 | git=True
+- /data/data/com.termux/files/home/gandom-logs | git=False
+- /data/data/com.termux/files/home/downloads/gandom-source-review | git=False
+- /data/data/com.termux/files/home/storage/external-0/GANDOM-BACKUP-20261001-113140 | git=True
+- /data/data/com.termux/files/home/storage/external-0/GANDOM-BACKUP-20261001-113140/gandom-core | git=False
+
+FILES:
+/data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/GLOBAL_MASTER_REPORT.txt
+/data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/GITHUB_REPOSITORIES.json
+/data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/LOCAL_PROJECTS.json
+/data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/PROJECT_FILE_INVENTORY.txt
+/data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/NETWORK_AND_SCAN_STATUS.txt
+--- FILE: /data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/GITHUB_REPOSITORIES.json
+[
+  {
+    "owner": "moahammadrahimian-rgb",
+    "name": "gandom",
+    "full_name": "moahammadrahimian-rgb/gandom",
+    "url": "https://github.com/moahammadrahimian-rgb/gandom",
+    "clone_url": "https://github.com/moahammadrahimian-rgb/gandom.git",
+    "default_branch": "main",
+    "private": false,
+    "archived": false,
+    "updated_at": "2026-10-14T13:40:38Z",
+    "pushed_at": "2026-10-14T13:40:25Z",
+    "size_kb": 12731,
+    "description": "گندم — سه صنف: املاک، طلا، خودرو"
+  },
+  {
+    "owner": "moahammadrahimian-rgb",
+    "name": "NRN_Alpha6-",
+    "full_name": "moahammadrahimian-rgb/NRN_Alpha6-",
+    "url": "https://github.com/moahammadrahimian-rgb/NRN_Alpha6-",
+    "clone_url": "https://github.com/moahammadrahimian-rgb/NRN_Alpha6-.git",
+    "default_branch": "main",
+    "private": false,
+    "archived": false,
+    "updated_at": "2026-09-23T03:11:13Z",
+    "pushed_at": "2026-09-23T03:11:09Z",
+    "size_kb": 202,
+    "description": null
+  },
+  {
+    "owner": "moahammadrahimian-rgb",
+    "name": "NRN_Alpha6",
+    "full_name": "moahammadrahimian-rgb/NRN_Alpha6",
+    "url": "https://github.com/moahammadrahimian-rgb/NRN_Alpha6",
+    "clone_url": "https://github.com/moahammadrahimian-rgb/NRN_Alpha6.git",
+    "default_branch": "main",
+    "private": false,
+    "archived": false,
+    "updated_at": "2026-09-21T10:09:12Z",
+    "pushed_at": "2026-09-21T10:09:08Z",
+    "size_kb": 0,
+    "description": null
+  },
+  {
+    "owner": "moahammadrahimian-rgb",
+    "name": "-NRN-Alpha6-",
+    "full_name": "moahammadrahimian-rgb/-NRN-Alpha6-",
+    "url": "https://github.com/moahammadrahimian-rgb/-NRN-Alpha6-",
+    "clone_url": "https://github.com/moahammadrahimian-rgb/-NRN-Alpha6-.git",
+    "default_branch": "main",
+    "private": false,
+    "archived": false,
+    "updated_at": "2026-09-21T02:18:53Z",
+    "pushed_at": "2026-09-21T02:18:49Z",
+    "size_kb": 0,
+    "description": null
+  }
+]
+--- FILE: /data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/LOCAL_PROJECTS.json
+[
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z",
+    "directory_name": "GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/NRN_ALPHA6_GANDOM_FULL_AUDIT_20261018T084048Z",
+    "directory_name": "NRN_ALPHA6_GANDOM_FULL_AUDIT_20261018T084048Z",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM_GITHUB_SWEEP_2558_20261018T083629Z",
+    "directory_name": "GANDOM_GITHUB_SWEEP_2558_20261018T083629Z",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM_GLOBAL_AUDIT_2558_20261018T080320Z",
+    "directory_name": "GANDOM_GLOBAL_AUDIT_2558_20261018T080320Z",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/NRN_ALPHA6_ROOT_CAUSE_2558",
+    "directory_name": "NRN_ALPHA6_ROOT_CAUSE_2558",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261017-005103",
+    "directory_name": "gandom-recovery-20261017-005103",
+    "git_repository": false,
+    "markers": [
+      "package.json"
+    ],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184946",
+    "directory_name": "gandom-recovery-20261016-184946",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204",
+    "directory_name": "gandom-recovery-20261016-184204",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-TREASURE-ABSORPTION-DISCOVERY",
+    "directory_name": "GANDOM-TREASURE-ABSORPTION-DISCOVERY",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-DISCOVERY-20261008-184653",
+    "directory_name": "GANDOM-1470-GLOBAL-DISCOVERY-20261008-184653",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-MASS-TREASURE-MINING-20261008-184546",
+    "directory_name": "GANDOM-MASS-TREASURE-MINING-20261008-184546",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-20261007-225219",
+    "directory_name": "GANDOM-1470-GLOBAL-20261007-225219",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-20261007-224312",
+    "directory_name": "GANDOM-1470-GLOBAL-20261007-224312",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-MASS-INDEX-20261007-223954",
+    "directory_name": "GANDOM-MASS-INDEX-20261007-223954",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-2558-LIVE-REGISTRY",
+    "directory_name": "GANDOM-2558-LIVE-REGISTRY",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-2558-LIVE-REGISTRY/EINSTEIN-GANDOM",
+    "directory_name": "EINSTEIN-GANDOM",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-REVIVAL-20261008-183042",
+    "directory_name": "GANDOM-REVIVAL-20261008-183042",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-LIVE-UPGRADE-20261008-081501",
+    "directory_name": "GANDOM-LIVE-UPGRADE-20261008-081501",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/GANDOM-MOTHER-2558-20261016T065830Z-20620",
+    "directory_name": "GANDOM-MOTHER-2558-20261016T065830Z-20620",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/GANDOM-SEC-20261016T064606Z-17586",
+    "directory_name": "GANDOM-SEC-20261016T064606Z-17586",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/GANDOM-P2P-2558-20261016T065116Z-19060",
+    "directory_name": "GANDOM-P2P-2558-20261016T065116Z-19060",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/evidence/GANDOM-CORE-P2P-UNIFIED-20261001-135857",
+    "directory_name": "GANDOM-CORE-P2P-UNIFIED-20261001-135857",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/gandom-core",
+    "directory_name": "gandom-core",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM-AUDIT",
+    "directory_name": "GANDOM-AUDIT",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM-CORE-PROTECTION",
+    "directory_name": "GANDOM-CORE-PROTECTION",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-quarantine",
+    "directory_name": "gandom-quarantine",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-chain-before-test-20261014-234926",
+    "directory_name": "gandom-chain-before-test-20261014-234926",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM-2558-FULL-RESTORE-TEST-20261003-194753",
+    "directory_name": "GANDOM-2558-FULL-RESTORE-TEST-20261003-194753",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM-2558-FULL-RESTORE-TEST-20261003-194753/GANDOM-SNAPSHOT",
+    "directory_name": "GANDOM-SNAPSHOT",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM-2558-FINAL-ARCHIVE-TEST-20261003-193240",
+    "directory_name": "GANDOM-2558-FINAL-ARCHIVE-TEST-20261003-193240",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM-2558-RECOVERY-TEST-20261003-192948",
+    "directory_name": "GANDOM-2558-RECOVERY-TEST-20261003-192948",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM-2558-RECOVERY-20261003-192806",
+    "directory_name": "GANDOM-2558-RECOVERY-20261003-192806",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/GANDOM-MASTER-LAW-2558",
+    "directory_name": "GANDOM-MASTER-LAW-2558",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-backups",
+    "directory_name": "gandom-backups",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-xvfb",
+    "directory_name": "gandom-xvfb",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom-artifacts",
+    "directory_name": "gandom-artifacts",
+    "git_repository": false,
+    "markers": [],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/nrn-restored",
+    "directory_name": "nrn-restored",
+    "git_repository": false,
+    "markers": [
+      "package.json"
+    ],
+    "git": {}
+  },
+  {
+    "path": "/data/data/com.termux/files/home/gandom",
+    "directory_name": "gandom",
+    "git_repository": true,
+    "markers": [
+      "capacitor.config.json",
+      "package.json",
+      "server.js"
+    ],
+    "git": {
+      "remote": "origin\thttps://github.com/moahammadrahimian-rgb/gandom.git (fetch)\norigin\thttps://github.com/moahammadrahimian-rgb/gandom.git (push)",
+      "branch": "main",
+      "commit": "4af1a673d690dc663a3809205b4260402f60f7bb\n2026-10-14T17:10:22+03:30\n📚 GANDOM 2558 Documentation Release v1.0",
+      "status": "M .github/workflows/gandom-ui-e2e.yml\n D ALL-IN-ONE/README.md\n D ALL-IN-ONE/audit-server.js\n D ALL-IN-ONE/backend.js\n D ALL-IN-ONE/client.html\n D ALL-IN-ONE/final.html\n D ALL-IN-ONE/p2p-server.js\n D ALL-IN-ONE/package.json\n D ALL-IN-ONE/start.sh\n D ALL-IN-ONE/ui-server.js\n D CHECK.sh\n D GANDOM-BOOT.sh\n D GANDOM-FINAL-BUILD-AND-AUDIT.sh\n D RESTORE.sh\n M android/build.gradle\n M android/settings.gradle\n M audit-service/server.js\n M blockchain-100.js\n D chromium-dpkg-cycle1.log\n D chromium-error.log\n D chromium-runtime.log\n D ci-diagnostic-36731371010/gandom-gradle-build.log\n M employees/accounting-ledger.json\n M employees/wallet-bridge.js\n D gandom-server.log\n M node-b-chain.js\n M public/index.html\n M server.js\n?? '\n?? .backend-health.json\n?? .evidence/\n?? .gandom-2558/\n?? .gandom-agent-2558/\n?? .gandom-audit-20261016_155330/\n?? .gandom-audit-2558-20261016_160241/\n?? .gandom-execution-lock.json\n?? .gandom-integration-rollback-20261013-094845/\n?? .github/workflows/gandom-ui-e2e.yml.before-ui-server-fix\n?? .installer-pid\n?? .law2558-gradle-backup-20261018-083014/\n?? .runtime/\n?? =\n?? ALL/dashboard.html\n?? BACKUP_SYNC_FIX_20261017-081230/\n?? FINAL.html\n?? GANDOM-ALL.md\n?? GANDOM-AUTONOMOUS-AGENT-2558.js\n?? GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z\n?? GANDOM-AWAKENING.js\n?? GANDOM-AWAKENING.json\n?? GANDOM-DEEP-TREASURE-SCAN.js\n?? GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js\n?? GANDOM-FULL-AUTOMATION-2558.js\n?? GANDOM-INTEGRATE-2558.sh\n?? GANDOM-INTEGRATION-2558-REPORT.txt\n?? GANDOM-LAW2558-AUDIT-20261013-102234.txt\n?? GANDOM-LAW2558-AUDIT.sh\n?? GANDOM-MOTHER-2558.sh\n?? GANDOM-ONE-SITE.html\n?? GANDOM-ONE.html\n?? GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt\n?? GANDOM-SECTION-01.tar.gz\n?? GANDOM-TREASURE-LITE.js\n?? GANDOM_2558_AUDIT_20261016T102512Z.txt\n?? GANDOM_AUDIT_2558_READ_ONLY.json\n?? GANDOM_CONSENSUS_GATE_2558_2026-10-16T11-22-34-402Z.txt\n?? GANDOM_DEEP_AUDIT_20261016T103550Z.txt\n?? GANDOM_ENGINE_SHOCK_2558.txt\n?? GANDOM_EXECUTION_STATE.txt\n?? GANDOM_GLOBAL_BRIDGE_2558.json\n?? GANDOM_GRADLE_ROOT_CAUSE_2558.sh\n?? GANDOM_GRADLE_ROOT_CAUSE_2558_20261018T073633Z.txt\n?? GANDOM_PREFLIGHT_20261016T060127Z.txt\n?? GANDOM_PREFLIGHT_20261016T060154Z.txt\n?? GANDOM_ROOT_CAUSE_2558_20261016T141524.txt\n?? GANDOM_ROOT_CAUSE_CODE_20261016T112839Z.txt\n?? GANDOM_ROOT_CAUSE_CODE_AUDIT_2558.sh\n?? GANDOM_ROOT_CAUSE_DEEP_2558.sh\n?? GANDOM_ROOT_CAUSE_DEEP_2558_20261016T104716Z.txt\n?? GANDOM_ROOT_FIX_2558.sh\n?? MASTER-PLAN.md\n?? PROPOSAL.txt\n?? PUZZLE-BACKUP-OVERLAP-2558.sh\n?? SHOVEL-REPORT-20261013-203517.txt\n?? ads-api.js\n?? ads-data/\n?? ads-manager.js\n?? ai-accountant-bridge.js\n?? ai-data/\n?? ai-runner.js\n?? ai-worker.js\n?? android/app/src/main/assets/\n?? architecture/\n?? archives/\n?? audit-data/\n?? audit-service/client.html\n?? audit/\n?? auto-auditor.js\n?? blockchain-100.js.before-gandom-2558-validation-1792134653021.b
+--- FILE: /data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/PROJECT_FILE_INVENTORY.txt
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/NRN_ALPHA6_GANDOM_FULL_AUDIT_20261018T084048Z
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/GANDOM_GITHUB_SWEEP_2558_20261018T083629Z
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/GANDOM_GLOBAL_AUDIT_2558_20261018T080320Z
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/NRN_ALPHA6_ROOT_CAUSE_2558
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261017-005103
+MARKERS=package.json
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184946
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-TREASURE-ABSORPTION-DISCOVERY
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-DISCOVERY-20261008-184653
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-MASS-TREASURE-MINING-20261008-184546
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-20261007-225219
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-1470-GLOBAL-20261007-224312
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-MASS-INDEX-20261007-223954
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-2558-LIVE-REGISTRY
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-2558-LIVE-REGISTRY/EINSTEIN-GANDOM
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-REVIVAL-20261008-183042
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+
+========================================================================
+PROJECT=/data/data/com.termux/files/home/gandom-recovery-20261016-184204/project/audit/GANDOM-LIVE-UPGRADE-20261008-081501
+MARKERS=
+GIT_REMOTE=
+GIT_BRANCH=
+GIT_COMMIT=
+GIT_STATUS_READ_ONLY:
+
+
+--- FILE: /data/data/com.termux/files/home/GANDOM_GLOBAL_EXTRACTION_2558_20261018T141240Z/NETWORK_AND_SCAN_STATUS.txt
+GITHUB_API=OK user=moahammadrahimian-rgb returned=7
+GITHUB_API_ERROR user=mohammadrahimian-rgb error=HTTPError: HTTP Error 404: Not Found
+
+=== 3. ANDROID/GRADLE CONFIGURATION ===
+--- PROJECT: /data/data/com.termux/files/home/gandom
+### android/build.gradle
+2:    repositories {
+3:        maven { url "https://maven.aliyun.com/repository/google" }
+4:        maven { url "https://maven.aliyun.com/repository/public" }
+5:        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+6:        google()
+7:        mavenCentral()
+10:        classpath 'com.android.tools.build:gradle:8.6.0'
+18:    repositories {
+19:        maven { url "https://maven.aliyun.com/repository/google" }
+20:        maven { url "https://maven.aliyun.com/repository/public" }
+21:        google()
+22:        mavenCentral()
+### android/settings.gradle
+2:    repositories {
+3:        maven { url "https://maven.aliyun.com/repository/google" }
+4:        maven { url "https://maven.aliyun.com/repository/public" }
+5:        maven { url "https://maven.aliyun.com/repository/gradle-plugin" }
+6:        google()
+7:        mavenCentral()
+12:    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+13:    repositories {
+14:        maven { url "https://maven.aliyun.com/repository/google" }
+15:        maven { url "https://maven.aliyun.com/repository/public" }
+16:        google()
+17:        mavenCentral()
+22:include ':capacitor-cordova-android-plugins'
+23:project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins/')
+25:// Capacitor settings (auto-generated)
+26:apply from: 'capacitor.settings.gradle'
+### android/gradle.properties
+22:android.useAndroidX=true
+### android/gradle/wrapper/gradle-wrapper.properties
+3:distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-all.zip
+5:validateDistributionUrl=true
+### package.json
+3:  "version": "0.1.0",
+6:  "scripts": {
+12:    "@capacitor/android": "^8.5.2",
+13:    "@capacitor/cli": "^8.5.2",
+14:    "@capacitor/core": "^8.5.2",
+### node_modules/@capacitor/android/capacitor/build.gradle
+16:    repositories {
+17:        maven { url = uri("https://maven.aliyun.com/repository/google") }
+18:        google()
+19:        mavenCentral()
+25:        classpath 'com.android.tools.build:gradle:8.6.0'
+44:    namespace = "com.getcapacitor.android"
+75:repositories {
+76:    google()
+77:    mavenCentral()
+### node_modules/@capacitor/android/package.json
+2:  "name": "@capacitor/android",
+4:  "description": "Capacitor: Cross-platform apps with JavaScript and the web",
+5:  "homepage": "https://capacitorjs.com",
+10:    "url": "git+https://github.com/ionic-team/capacitor.git"
+13:    "url": "https://github.com/ionic-team/capacitor/issues"
+16:    "capacitor/build.gradle",
+17:    "capacitor/lint-baseline.xml",
+18:    "capacitor/lint.xml",
+19:    "capacitor/proguard-rules.pro",
+20:    "capacitor/src/main/"
+23:    "verify": "./gradlew clean lint build test -b capacitor/build.gradle"
+26:    "@capacitor/core": "^8.5.0"
+
+--- PROJECT: /data/data/com.termux/files/home/nrn-alpha6
+### package.json
+3:  "version":"1.0.0",
+5:  "scripts":{"start":"node server/app.js"},
+
+=== 4. RECENT BUILD LOGS ===
+--- LOG: /data/data/com.termux/files/home/gandom/.evidence/AGP-813-RESOLUTION-2558.log
+35-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/analytics-library/crash/31.6.0/crash-31.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:15 GMT 2025).
+36-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/lint/lint-typedef-remover/31.6.0/lint-typedef-remover-31.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:11 GMT 2025).
+37-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/lint/lint-model/31.6.0/lint-model-31.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+38:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+39:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-common/8.6.0/databinding-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:11 GMT 2025).
+40-Cached resource https://maven.aliyun.com/repository/google/com/android/databinding/baseLibrary/8.6.0/baseLibrary-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:13 GMT 2025).
+41-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/build/builder-test-api/8.6.0/builder-test-api-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+42-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/layoutlib/layoutlib-api/31.6.0/layoutlib-api-31.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+--
+371-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/analytics-library/crash/31.6.0/crash-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:31 GMT 2025).
+372-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/analytics-library/tracker/31.6.0/tracker-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:41:23 GMT 2025).
+373-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/analytics-library/shared/31.6.0/shared-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:53:25 GMT 2025).
+374:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:31 GMT 2025).
+375-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/lint/lint-typedef-remover/31.6.0/lint-typedef-remover-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:45:51 GMT 2025).
+376:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-common/8.6.0/databinding-common-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:31 GMT 2025).
+377-Cached resource https://maven.aliyun.com/repository/google/com/android/databinding/baseLibrary/8.6.0/baseLibrary-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:45:47 GMT 2025).
+378-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/layoutlib/layoutlib-api/31.6.0/layoutlib-api-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:41:24 GMT 2025).
+379-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/utp/android-device-provider-ddmlib-proto/31.6.0/android-device-provider-ddmlib-proto-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:29 GMT 2025).
+--
+511-
+512-[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+513-
+514:FAILURE: Build failed with an exception.
+515-
+516:* What went wrong:
+517-A problem occurred configuring project ':capacitor-android'.
+518:> Could not resolve all artifacts for configuration 'classpath'.
+519:   > Could not find com.android.tools.build:gradle:8.13.0.
+520-     Searched in the following locations:
+521-       - https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+522-       - https://repo.maven.apache.org/maven2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+523-       - https://plugins.gradle.org/m2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+524:     Required by:
+525-         project :capacitor-android
+526-
+527-* Try:
+--
+536-
+537-For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+538-
+539:BUILD FAILED in 3m 49s
+--- LOG: /data/data/com.termux/files/home/gandom/.evidence/AGP-ALIYUN-DIAG-2558.log
+26-
+27-> Configure project :
+28-Evaluating root project 'capacitor' using build file '/data/data/com.termux/files/home/gandom/node_modules/@capacitor/android/capacitor/build.gradle'.
+29:Downloading https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.13.0/databinding-compiler-common-8.13.0.pom to /data/data/com.termux/files/home/.gradle/.tmp/gradle_download6497970575922022774bin
+30-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/org/jetbrains/kotlin/kotlin-stdlib/2.2.0/kotlin-stdlib-2.2.0.pom]
+31-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/commons-io/commons-io/2.16.1/commons-io-2.16.1.pom]
+32-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/org/ow2/asm/asm/9.8/asm-9.8.pom]
+--
+44-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/io/grpc/grpc-inprocess/1.69.1/grpc-inprocess-1.69.1.pom]
+45-Downloading https://maven.aliyun.com/repository/google/com/google/testing/platform/core-proto/0.0.9-alpha03/core-proto-0.0.9-alpha03.pom to /data/data/com.termux/files/home/.gradle/.tmp/gradle_download7947322446053868811bin
+46-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/org/tensorflow/tensorflow-lite-metadata/0.2.0/tensorflow-lite-metadata-0.2.0.pom]
+47:Downloading https://maven.aliyun.com/repository/google/androidx/databinding/databinding-common/8.13.0/databinding-common-8.13.0.pom to /data/data/com.termux/files/home/.gradle/.tmp/gradle_download7452217722221279456bin
+48-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/com/google/guava/guava/33.3.1-jre/guava-33.3.1-jre.pom]
+49-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/org/bouncycastle/bcprov-jdk18on/1.79/bcprov-jdk18on-1.79.pom]
+50-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/org/jetbrains/kotlin/kotlin-reflect/2.2.0/kotlin-reflect-2.2.0.pom]
+--
+80-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/org/jetbrains/kotlinx/kotlinx-coroutines-bom/1.9.0/kotlinx-coroutines-bom-1.9.0.pom]
+81-Resource missing. [HTTP HEAD: https://maven.aliyun.com/repository/google/io/netty/netty-resolver/4.1.110.Final/netty-resolver-4.1.110.Final.pom]
+82-
+83:FAILURE: Build failed with an exception.
+84-
+85:* What went wrong:
+86-A problem occurred configuring root project 'capacitor'.
+87:> Could not resolve all artifacts for configuration 'classpath'.
+88:   > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
+89:     Required by:
+90:         root project : > com.android.tools.build:gradle:8.13.0 > androidx.databinding:databinding-compiler-common:8.13.0
+91:      > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
+92-         > Could not get resource 'https://dl.google.com/dl/android/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'.
+93-            > Could not HEAD 'https://dl.google.com/dl/android/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'.
+94-               > The server may not support the client's requested TLS protocol versions: (TLSv1.2, TLSv1.3). You may need to configure the client to allow other protocols to be used. For more on this, please refer to https://docs.gradle.org/8.13/userguide/build_environment.html#sec:gradle_system_properties in the Gradle documentation.
+95-                  > Remote host terminated the handshake
+96:      > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
+97-         > Could not get resource 'https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'.
+98-            > Could not HEAD 'https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'.
+99-               > The server may not support the client's requested TLS protocol versions: (TLSv1.2, TLSv1.3). You may need to configure the client to allow other protocols to be used. For more on this, please refer to https://docs.gradle.org/8.13/userguide/build_environment.html#sec:gradle_system_properties in the Gradle documentation.
+100-                  > Remote host terminated the handshake
+101:      > Could not resolve com.googlecode.juniversalchardet:juniversalchardet:1.0.3.
+102-         > Could not get resource 'https://plugins.gradle.org/m2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'.
+103-            > Could not HEAD 'https://plugins.gradle.org/m2/com/googlecode/juniversalchardet/juniversalchardet/1.0.3/juniversalchardet-1.0.3.pom'.
+104-               > The server may not support the client's requested TLS protocol versions: (TLSv1.2, TLSv1.3). You may need to configure the client to allow other protocols to be used. For more on this, please refer to https://docs.gradle.org/8.13/userguide/build_environment.html#sec:gradle_system_properties in the Gradle documentation.
+--
+110-> Run with --scan to get full insights.
+111-> Get more help at https://help.gradle.org.
+112-
+113:BUILD FAILED in 2m 45s
+114-Build cache (/data/data/com.termux/files/home/.gradle/caches/build-cache-1) removing files not accessed on or after Sat Oct 10 12:29:59 GMT 2026.
+115-Build cache (/data/data/com.termux/files/home/.gradle/caches/build-cache-1) cleanup deleted 0 files/directories.
+116-Build cache (/data/data/com.termux/files/home/.gradle/caches/build-cache-1) cleaned up in 0.032 secs.
+--- LOG: /data/data/com.termux/files/home/gandom/.evidence/GANDOM-ANDROID-BUILD-2558-20261017-135326/build.log
+26-
+27-[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+28-
+29:FAILURE: Build failed with an exception.
+30-
+31:* What went wrong:
+32-A problem occurred configuring project ':capacitor-android'.
+33:> Could not resolve all artifacts for configuration 'classpath'.
+34:   > Could not find com.android.tools.build:gradle:8.13.0.
+35-     Searched in the following locations:
+36-       - https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+37-       - https://repo.maven.apache.org/maven2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+38-       - https://plugins.gradle.org/m2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+39:     Required by:
+40-         project :capacitor-android
+41-
+42-* Try:
+--
+51-
+52-For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+53-
+54:BUILD FAILED in 1m 16s
+--- LOG: /data/data/com.termux/files/home/gandom/.evidence/GANDOM-FINAL-BUILD-2558-20261017-134744/gradle-assembleDebug-info.log
+35-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/analytics-library/shared/31.6.0/shared-31.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:18 GMT 2025).
+36-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/lint/lint-model/31.6.0/lint-model-31.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+37-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/lint/lint-typedef-remover/31.6.0/lint-typedef-remover-31.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:11 GMT 2025).
+38:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+39:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-common/8.6.0/databinding-common-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:11 GMT 2025).
+40-Cached resource https://maven.aliyun.com/repository/google/com/android/databinding/baseLibrary/8.6.0/baseLibrary-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:43:13 GMT 2025).
+41-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/build/builder-test-api/8.6.0/builder-test-api-8.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+42-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/layoutlib/layoutlib-api/31.6.0/layoutlib-api-31.6.0.pom is up-to-date (lastModified: Wed Dec 10 08:41:13 GMT 2025).
+--
+372-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/analytics-library/tracker/31.6.0/tracker-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:41:23 GMT 2025).
+373-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/analytics-library/shared/31.6.0/shared-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:53:25 GMT 2025).
+374-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/lint/lint-typedef-remover/31.6.0/lint-typedef-remover-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:45:51 GMT 2025).
+375:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-compiler-common/8.6.0/databinding-compiler-common-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:31 GMT 2025).
+376:Cached resource https://maven.aliyun.com/repository/google/androidx/databinding/databinding-common/8.6.0/databinding-common-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:31 GMT 2025).
+377-Cached resource https://maven.aliyun.com/repository/google/com/android/databinding/baseLibrary/8.6.0/baseLibrary-8.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:45:47 GMT 2025).
+378-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/layoutlib/layoutlib-api/31.6.0/layoutlib-api-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:41:24 GMT 2025).
+379-Cached resource https://maven.aliyun.com/repository/google/com/android/tools/utp/android-device-provider-ddmlib-proto/31.6.0/android-device-provider-ddmlib-proto-31.6.0.jar is up-to-date (lastModified: Wed Dec 10 08:43:29 GMT 2025).
+--
+517-
+518-[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+519-
+520:FAILURE: Build failed with an exception.
+521-
+522:* What went wrong:
+523-A problem occurred configuring project ':capacitor-android'.
+524:> Could not resolve all artifacts for configuration 'classpath'.
+525:   > Could not find com.android.tools.build:gradle:8.13.0.
+526-     Searched in the following locations:
+527-       - https://dl.google.com/dl/android/maven2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+528-       - https://repo.maven.apache.org/maven2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+529-       - https://plugins.gradle.org/m2/com/android/tools/build/gradle/8.13.0/gradle-8.13.0.pom
+530:     Required by:
+531-         project :capacitor-android
+532-
+533-* Try:
+--
+542-
+543-For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+544-
+545:BUILD FAILED in 3m 53s
+--- LOG: /data/data/com.termux/files/home/gandom/.evidence/GANDOM-GRADLE-BUILD-STEP3.log
+51-
+52-[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+53-
+54:FAILURE: Build failed with an exception.
+55-
+56:* What went wrong:
+57-A problem occurred configuring project ':capacitor-android'.
+58-> java.nio.BufferOverflowException (no error message)
+59-
+--
+205-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+206-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+207-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+208:Caused by: java.nio.BufferOverflowException
+209-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.ensureRemaining(CodePointBuffer.java:191)
+210-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.append(CodePointBuffer.java:217)
+211-	at groovyjarjarantlr4.v4.runtime.CharStreams.fromReader(CharStreams.java:184)
+--
+452-
+453-For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+454-
+455:BUILD FAILED in 58s
+--- LOG: /data/data/com.termux/files/home/gandom/.evidence/gradle-root-cause-2558.log
+26-
+27-[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+28-
+29:FAILURE: Build failed with an exception.
+30-
+31:* What went wrong:
+32-A problem occurred configuring project ':capacitor-android'.
+33-> java.nio.BufferOverflowException (no error message)
+34-
+--
+180-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+181-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+182-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+183:Caused by: java.nio.BufferOverflowException
+184-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.ensureRemaining(CodePointBuffer.java:191)
+185-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.append(CodePointBuffer.java:217)
+186-	at groovyjarjarantlr4.v4.runtime.CharStreams.fromReader(CharStreams.java:184)
+--
+427-
+428-For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+429-
+430:BUILD FAILED in 55s
+--- LOG: /data/data/com.termux/files/home/gandom/.runtime/gradle-root-cause-20261018T073633Z.log
+2928-
+2929-[Incubating] Problems report is available at: file:///data/data/com.termux/files/home/gandom/android/build/reports/problems/problems-report.html
+2930-
+2931:FAILURE: Build failed with an exception.
+2932-
+2933:* What went wrong:
+2934-A problem occurred configuring project ':capacitor-android'.
+2935-> java.nio.BufferOverflowException (no error message)
+2936-
+--
+3082-	at org.gradle.launcher.daemon.server.DaemonStateCoordinator.lambda$runCommand$0(DaemonStateCoordinator.java:321)
+3083-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+3084-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+3085:Caused by: java.nio.BufferOverflowException
+3086-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.ensureRemaining(CodePointBuffer.java:191)
+3087-	at groovyjarjarantlr4.v4.runtime.CodePointBuffer$Builder.append(CodePointBuffer.java:217)
+3088-	at groovyjarjarantlr4.v4.runtime.CharStreams.fromReader(CharStreams.java:184)
+--
+3323-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+3324-
+3325-
+3326:BUILD FAILED in 56s
+
+=== 5. ROOT-CAUSE EVALUATION ===
+ANDROID_CONFIG_FILES_FOUND=4
+/data/data/com.termux/files/home/gandom/android/build.gradle:10:        classpath 'com.android.tools.build:gradle:8.6.0'
+/data/data/com.termux/files/home/gandom/android/capacitor-cordova-android-plugins/build.gradle:12:        classpath 'com.android.tools.build:gradle:8.6.0'
+/data/data/com.termux/files/home/gandom/node_modules/@capacitor/android/capacitor/build.gradle:25:        classpath 'com.android.tools.build:gradle:8.6.0'
+AGP_DECLARATIONS_ABOVE=FOUND
+ANDROIDX_FLAG=ENABLED
+
+=== 6. VERIFICATION BOUNDARY ===
+This run inspects configuration and existing logs only.
+A version appearing in Gradle cache does not prove it is the required version.
+An AndroidX warning alone does not prove it caused BUILD FAILED.
+A dependency-resolution error must be matched to the exact requested coordinate and repository.
+No source/configuration repair was applied.
+PROJECT_FILES_MODIFIED=NO
+PROJECT_FILES_DELETED=NO
+SERVERS_RESTARTED=NO
+WALLETS_OR_DATABASES_TOUCHED=NO
+BUILD_TRIGGERED=NO
+PASS_REAL=NOT_ISSUED
+REPORT=/data/data/com.termux/files/home/gandom/evidence/GANDOM_EXECUTION_AGENT_2558_20261018T141708Z/EXECUTION_REPORT.txt

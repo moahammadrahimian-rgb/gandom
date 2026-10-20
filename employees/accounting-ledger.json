@@ -17,11 +17,29 @@
       "description": "Salary payment to AI-AUDITOR",
       "ts": "2026-10-10T12:09:10.572Z",
       "hash": "b99913e3240ad6cfaa70c11b70c382fb92ee3d9a1f3a994b315933f13946b3b1"
+    },
+    {
+      "id": "ENTRY-c49e21ed",
+      "debit": "moahammadrahimian-rgb",
+      "credit": "GANDOM-TREASURY",
+      "amount_irt": 51000,
+      "description": "Owner share from AUDIT-850a7257",
+      "ts": "2026-10-10T13:55:00.235Z",
+      "hash": "a42d277f4b564bf0e4cdfb493b62e58738226327e044851575fc765ca5305856"
+    },
+    {
+      "id": "ENTRY-067ebef0",
+      "debit": "GANDOM-TREASURY",
+      "credit": "AI-AUDITOR",
+      "amount_irt": 1000000,
+      "description": "Salary payment to AI-AUDITOR",
+      "ts": "2026-10-10T13:55:00.242Z",
+      "hash": "b99913e3240ad6cfaa70c11b70c382fb92ee3d9a1f3a994b315933f13946b3b1"
     }
   ],
-  "total_debit": 1051000,
-  "total_credit": 1051000,
+  "total_debit": 2102000,
+  "total_credit": 2102000,
   "balance": 0,
-  "hash": "a1de2addd44a4529e92d62fd8a7fada4e826bf926d7b0e54050adeef861a78c3",
-  "last_updated": "2026-10-10T12:09:10.572Z"
+  "hash": "26e922d3be84073a9db7ad5f0a1570f12f7452e93ecbf3d0d0d3e12602e561d1",
+  "last_updated": "2026-10-10T13:55:00.242Z"
 }

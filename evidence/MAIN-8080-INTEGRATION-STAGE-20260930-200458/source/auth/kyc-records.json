@@ -1,0 +1,15 @@
+[
+  {
+    "id": "e0539cf0-e718-4a33-adca-7c585021c07d",
+    "userId": "1b557f66-a0cb-42fc-b1ff-8e689d998c14",
+    "phone": "09121234567",
+    "nationalId": "0084575948",
+    "firstName": "Ali",
+    "lastName": "Ahmadi",
+    "birthDate": "1370/01/01",
+    "address": "Tehran",
+    "status": "verified",
+    "submittedAt": 1790670643379,
+    "verifiedAt": 1790670643381
+  }
+]

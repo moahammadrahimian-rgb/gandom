@@ -1,0 +1,41 @@
+{
+  "test": "GANDOM_TWO_WORKER_SHA256_STRESS",
+  "mode": "COMPUTE_ONLY_READ_ONLY_CHAIN_DATA",
+  "iterationsPerWorker": 200000,
+  "totalHashes": 400000,
+  "wallTimeMs": 1577.46,
+  "workers": [
+    {
+      "node": "NODE-A-WORKLOAD",
+      "iterations": 200000,
+      "elapsedMs": 1321.27,
+      "hashesPerSecond": 151370,
+      "finalDigest": "f486b8274bc9d88eb0becd94eb1e11a5320918bff3d56667fcb7a0184c56d814"
+    },
+    {
+      "node": "NODE-B-WORKLOAD",
+      "iterations": 200000,
+      "elapsedMs": 1326.27,
+      "hashesPerSecond": 150799,
+      "finalDigest": "662025e8029dcd99cac69968de9e37a75fc10aa20e73e2775ea1953c796fa2b2"
+    }
+  ],
+  "chainsBefore": [
+    {
+      "file": "blockchain-data/chain.json",
+      "count": 2,
+      "genesis": "57f721c057964e4be853ccdab967bf09b8de95eb6916140605c6faeee7930b33",
+      "lastIndex": 1
+    },
+    {
+      "file": "blockchain-data-b/chain.json",
+      "count": 1,
+      "genesis": "2271a0a7eca3880cd727c27ce3e47388897d9121674792d7737368737746d7f3",
+      "lastIndex": 0
+    }
+  ],
+  "sameGenesis": false,
+  "verdict": "GENESIS_MISMATCH_SYNC_BLOCKED",
+  "chainMutation": false,
+  "serviceRestarted": false
+}
