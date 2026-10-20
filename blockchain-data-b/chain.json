@@ -1,8 +1,8 @@
 {
-  "version": "1.0",
-  "saved_at": "2026-10-17T04:06:59.042Z",
+  "version": "2.0",
+  "saved_at": "2026-10-20T19:44:55.945Z",
   "difficulty": 3,
-  "length": 2,
+  "length": 1,
   "chain": [
     {
       "index": 0,
@@ -10,50 +10,22 @@
       "timestamp": 0,
       "transactions": [
         {
-          "type": "GENESIS",
-          "msg": "Gandom 2558",
-          "law": "2558"
+          "txid": "COINBASE-f530661e13abd5a2",
+          "from": "COINBASE",
+          "to": "GDM-GENESIS-WALLET",
+          "amount": 0,
+          "fee": 0,
+          "timestamp": 1792525495943,
+          "publicKey": null,
+          "signature": null,
+          "type": "COINBASE"
         }
       ],
+      "merkleRoot": "11d9ae8719071b0c15cc35b5eedc2fbb1276fb1161e674e50dfeec26355d3c0c",
       "nonce": 0,
-      "hash": "f41ca54609a0ff526bf949d893052e2bc872ef7d20723408d7533d7306e6a42c"
-    },
-    {
-      "index": 1,
-      "prevHash": "f41ca54609a0ff526bf949d893052e2bc872ef7d20723408d7533d7306e6a42c",
-      "timestamp": 1792210018952,
-      "transactions": [
-        {
-          "from": "GDM4c88f35f",
-          "to": "GDM9cf93bf9",
-          "amount": 329,
-          "fee": 0.001,
-          "timestamp": 1792210018951
-        },
-        {
-          "from": "GDM16c259e5",
-          "to": "GDM8df12c66",
-          "amount": 658,
-          "fee": 0.001,
-          "timestamp": 1792210018951
-        },
-        {
-          "from": "GDM3df04976",
-          "to": "GDMa5236263",
-          "amount": 318,
-          "fee": 0.001,
-          "timestamp": 1792210018951
-        },
-        {
-          "from": "GDM4c5659c8",
-          "to": "GDMf927f9a8",
-          "amount": 126,
-          "fee": 0.001,
-          "timestamp": 1792210018951
-        }
-      ],
-      "nonce": 1990,
-      "hash": "00092a3da27d9747f8e73bca039eb15f86e70bef63fcc1d3d2de92d115f3abb7"
+      "difficulty": 3,
+      "reward": 50,
+      "hash": "c1a8e472c7f8320d058f8f99defd41687628769fd82eda6b24da1cea927ab99b"
     }
   ]
 }
