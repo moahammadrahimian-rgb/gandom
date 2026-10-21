@@ -50,7 +50,37 @@ const httpServer = http.createServer((req, res) => {
 
         fs.stat(filePath, (err, stat) => {
             if (err || !stat.isFile()) {
-                res.writeHead(404);
+                
+    // ========== NEW INTEGRATION APIS ==========
+    if (req.url === '/api/wallet') {
+        try {
+            const walletPath = path.join(__dirname, 'wallet/wallet-state.json');
+            const walletData = JSON.parse(fs.readFileSync(walletPath, 'utf8'));
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ ok: true, balance: walletData.balance || 12450, currency: 'GDM' }));
+        } catch (e) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ ok: false, error: e.message }));
+        }
+    }
+
+    if (req.url === '/api/tokenomics') {
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ ok: true, total_supply: 24000000000, owner_share: 1200000000, currency: 'GDM' }));
+    }
+
+    if (req.url === '/api/market/chart') {
+        const chartData = [
+            { time: '10:00', price: 0.1200 }, { time: '11:00', price: 0.1215 },
+            { time: '12:00', price: 0.1190 }, { time: '13:00', price: 0.1240 },
+            { time: '14:00', price: 0.1284 }
+        ];
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        return res.end(JSON.stringify({ ok: true, data: chartData, pair: 'GDM/USDT' }));
+    }
+    // ===========================================
+
+    res.writeHead(404);
                 return res.end('Not Found');
             }
 
