@@ -1,0 +1,23 @@
+{
+  "core": {
+    "blockchain": "EXISTS",
+    "wallet": "EXISTS",
+    "ai_engine": "EXISTS",
+    "workers": "EXISTS",
+    "api_gateway": "EXISTS",
+    "android_apk": "EXISTS",
+    "chain_length": 4,
+    "wallet_owner_irt": 25502
+  },
+  "network": {
+    "nodeA": "RUNNING",
+    "nodeB": "RUNNING"
+  },
+  "ai_workers": {
+    "brain": "STOPPED"
+  },
+  "frontend": {
+    "api": "STOPPED"
+  },
+  "missing": []
+}

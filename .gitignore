@@ -8,3 +8,5 @@ audit/
 backup/
 *.tar.gz
 *.zip
+archives/
+*.gz

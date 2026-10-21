@@ -42,12 +42,12 @@
   "owner_share_percent": 5,
   "last_hash": "4713aa456b605a23d9c7f4810afc1ac7ddf7003041e40f848fca9988d8789030",
   "treasury_balance": {
-    "irt": 484499,
+    "irt": 484498,
     "gdm": 22800000000
   },
   "owner_balance": {
-    "irt": 25501,
+    "irt": 25502,
     "gdm": 12000000000
   },
-  "total_transactions": 1
+  "total_transactions": 2
 }

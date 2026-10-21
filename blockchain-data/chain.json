@@ -2,7 +2,7 @@
   "version": "1.0",
   "saved_at": "2026-10-17T04:06:59.042Z",
   "difficulty": 3,
-  "length": 3,
+  "length": 4,
   "chain": [
     {
       "index": 0,
@@ -58,6 +58,11 @@
     {
       "index": 2,
       "timestamp": 1792494774945,
+      "tx": "VICTORY"
+    },
+    {
+      "index": 3,
+      "timestamp": 1792498473599,
       "tx": "VICTORY"
     }
   ]

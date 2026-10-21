@@ -4,5 +4,5 @@
   "p2p_independently_verified": true,
   "local_test_fixture_mutation": true,
   "absolute_pass_real": true,
-  "blockchain_length": 3
+  "blockchain_length": 4
 }
