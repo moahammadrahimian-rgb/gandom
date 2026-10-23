@@ -47,7 +47,7 @@ jobs:
           echo "HEALTH=PASS"
 
       - name: Run real browser UI test
-        run: node test-ui-real-8080.js
+        run: node archive/20261019-224013/test-ui-real-8080.js
 
       - name: Upload UI evidence
         if: always()
