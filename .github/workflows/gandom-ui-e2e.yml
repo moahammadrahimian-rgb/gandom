@@ -32,12 +32,12 @@ jobs:
           # Start Frontend on 8080
           PORT=8080 nohup node gandom-ui-server.js > /tmp/gandom-frontend.log 2>&1 &
           
-          # Start Backend API on 8787 (تغییر اصلی اینجاست: server.js)
+          # Start Backend API on 8787
           PORT=8787 nohup node server.js > /tmp/gandom-backend.log 2>&1 &
           
-          # Wait for both ports to respond (Maximum 60 seconds)
+          # Wait for both PORTS to be open (Maximum 60 seconds)
           echo "Waiting for servers to be ready..."
-          npx wait-on http://127.0.0.1:8080/health http://127.0.0.1:8787/health -t 60000
+          npx wait-on tcp:8080 tcp:8787 -t 60000
 
       - name: Run E2E Browser Test
         run: node archive/20261019-224013/test-ui-real-8080.js
