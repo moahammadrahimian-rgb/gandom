@@ -31,7 +31,7 @@ function check(name,ok,detail=''){
 
   try {
     browser = await playwright.chromium.launch({
-      headless:true
+      headless: true, args: ["--disable-web-security"]
     });
 
     async function runViewport(name,width,height){
