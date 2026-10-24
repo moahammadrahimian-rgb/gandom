@@ -29,14 +29,11 @@ jobs:
 
       - name: Start Servers (Frontend & Backend)
         run: |
-          echo "Checking backend file..."
-          ls -l node-b-chain.js
-          
           # Start Frontend on 8080
           PORT=8080 nohup node gandom-ui-server.js > /tmp/gandom-frontend.log 2>&1 &
           
-          # Start Backend on 8787
-          PORT=8787 nohup node node-b-chain.js > /tmp/gandom-backend.log 2>&1 &
+          # Start Backend API on 8787 (تغییر اصلی اینجاست: server.js)
+          PORT=8787 nohup node server.js > /tmp/gandom-backend.log 2>&1 &
           
           # Wait for both ports to respond (Maximum 60 seconds)
           echo "Waiting for servers to be ready..."
@@ -46,7 +43,7 @@ jobs:
         run: node archive/20261019-224013/test-ui-real-8080.js
 
       - name: Upload Evidence & Logs
-        if: always() # این خط باعث می‌شود حتی اگر تست فیل شد، لاگ‌ها آپلود شوند
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: gandom-ui-e2e-evidence
