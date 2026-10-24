@@ -40,6 +40,17 @@ jobs:
             sleep 1
           done
 
+      - name: Start Backend API Server
+        run: |
+          nohup node node-b-chain.js > /tmp/backend-server.log 2>&1 &
+          sleep 5
+
+      - name: Backend health verification
+        run: |
+          curl -fsS http://127.0.0.1:8787/health
+          echo
+          echo "BACKEND_HEALTH=PASS"
+
       - name: Server health verification
         run: |
           curl -fsS http://127.0.0.1:8080/health
@@ -58,3 +69,4 @@ jobs:
             evidence/
             /tmp/gandom-server.log
           if-no-files-found: ignore
+
