@@ -38,7 +38,7 @@ async function loadState() {
     $('adPrice').textContent = Number(s.ads.priceToman).toLocaleString('fa-IR');
     $('adsSold').textContent = Number(s.ads.todaySold).toLocaleString('fa-IR');
     $('supply').textContent = Number(s.economy.totalSupply).toLocaleString('fa-IR');
-    $('userTarget').textContent = Number(s.users.target).toLocaleString('fa-IR');
+    $('userTarget').textContent = Number(s.users?.target || 0).toLocaleString('fa-IR');
     $('connText').textContent = 'متصل';
     $('evidenceState').textContent = 'آخرین بروزرسانی: ' + new Date().toLocaleTimeString('fa-IR');
   } catch (e) {
