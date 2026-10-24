@@ -10,63 +10,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm ci
 
-      - name: Install Playwright
-        run: npm install --no-save playwright
-
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Start GANDOM server
+      - name: Install Playwright & Chromium
         run: |
-          PORT=8080 node gandom-ui-server.js > /tmp/gandom-server.log 2>&1 &
-          for i in {1..30}; do
-            if curl -fsS http://127.0.0.1:8080/health; then
-              echo
-              echo "GANDOM_SERVER=PASS"
-              break
-            fi
-            sleep 1
-          done
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
 
-      - name: Start Backend API Server
+      - name: Start Servers (Frontend & Backend)
         run: |
-          nohup node node-b-chain.js > /tmp/backend-server.log 2>&1 &
-          sleep 5
+          echo "Checking backend file..."
+          ls -l node-b-chain.js
+          
+          # Start Frontend on 8080
+          PORT=8080 nohup node gandom-ui-server.js > /tmp/gandom-frontend.log 2>&1 &
+          
+          # Start Backend on 8787
+          PORT=8787 nohup node node-b-chain.js > /tmp/gandom-backend.log 2>&1 &
+          
+          # Wait for both ports to respond (Maximum 60 seconds)
+          echo "Waiting for servers to be ready..."
+          npx wait-on http://127.0.0.1:8080/health http://127.0.0.1:8787/health -t 60000
 
-      - name: Backend health verification
-        run: |
-          curl -fsS http://127.0.0.1:8787/health
-          echo
-          echo "BACKEND_HEALTH=PASS"
-
-      - name: Server health verification
-        run: |
-          curl -fsS http://127.0.0.1:8080/health
-          echo
-          echo "HEALTH=PASS"
-
-      - name: Run real browser UI test
+      - name: Run E2E Browser Test
         run: node archive/20261019-224013/test-ui-real-8080.js
 
-      - name: Upload UI evidence
-        if: always()
+      - name: Upload Evidence & Logs
+        if: always() # این خط باعث می‌شود حتی اگر تست فیل شد، لاگ‌ها آپلود شوند
         uses: actions/upload-artifact@v4
         with:
           name: gandom-ui-e2e-evidence
           path: |
             evidence/
-            /tmp/gandom-server.log
+            /tmp/gandom-frontend.log
+            /tmp/gandom-backend.log
           if-no-files-found: ignore
 
