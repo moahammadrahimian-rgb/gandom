@@ -1249,7 +1249,7 @@ async function refreshChain() {
   }
 }
 
-async function mineBlockFromDashboard() {
+async function mineBlockFromDashboard(event) {
   try {
     const btn = event.target;
     btn.disabled = true;
