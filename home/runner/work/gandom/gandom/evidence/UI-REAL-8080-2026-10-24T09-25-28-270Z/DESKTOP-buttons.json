@@ -1,0 +1,364 @@
+[
+  {
+    "index": 0,
+    "text": "⌂ خانه",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 120,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 1,
+    "text": "▣ کیف پول",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 172,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 2,
+    "text": "◈ صرافی GDM",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 224,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 3,
+    "text": "◉ اصناف و بازارها",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 276,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 4,
+    "text": "⌘ P2P",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 328,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 5,
+    "text": "✦ هوش مصنوعی",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 380,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 6,
+    "text": "◎ شبکه اجتماعی",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 432,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 7,
+    "text": "◇ تبلیغات",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 484,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 8,
+    "text": "⚙ تنظیمات",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 536,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 9,
+    "text": "💱 صرافی",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 588,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 10,
+    "text": "⛓️ بلاک‌چین",
+    "disabled": false,
+    "box": {
+      "x": 1207,
+      "y": 640,
+      "width": 217,
+      "height": 45
+    }
+  },
+  {
+    "index": 11,
+    "text": "↻",
+    "disabled": false,
+    "box": {
+      "x": 87,
+      "y": 35,
+      "width": 40,
+      "height": 40
+    }
+  },
+  {
+    "index": 12,
+    "text": "⚙",
+    "disabled": false,
+    "box": {
+      "x": 39,
+      "y": 35,
+      "width": 40,
+      "height": 40
+    }
+  },
+  {
+    "index": 13,
+    "text": "بررسی واقعی شبکه",
+    "disabled": false,
+    "box": {
+      "x": 913,
+      "y": 524.78125,
+      "width": 240,
+      "height": 43
+    }
+  },
+  {
+    "index": 14,
+    "text": "ورود به AI",
+    "disabled": false,
+    "box": {
+      "x": 621,
+      "y": 524.78125,
+      "width": 240,
+      "height": 43
+    }
+  },
+  {
+    "index": 15,
+    "text": "ورود به کیف پول",
+    "disabled": false,
+    "box": {
+      "x": 329,
+      "y": 524.78125,
+      "width": 240,
+      "height": 43
+    }
+  },
+  {
+    "index": 16,
+    "text": "ورود به شبکه",
+    "disabled": false,
+    "box": {
+      "x": 37,
+      "y": 524.78125,
+      "width": 240,
+      "height": 43
+    }
+  },
+  {
+    "index": 17,
+    "text": "نمودار",
+    "disabled": false,
+    "box": {
+      "x": 417.21875,
+      "y": 623.78125,
+      "width": 67.265625,
+      "height": 37
+    }
+  },
+  {
+    "index": 18,
+    "text": "خرید",
+    "disabled": false,
+    "box": {
+      "x": 352.640625,
+      "y": 623.78125,
+      "width": 57.578125,
+      "height": 37
+    }
+  },
+  {
+    "index": 19,
+    "text": "فروش",
+    "disabled": false,
+    "box": {
+      "x": 275.90625,
+      "y": 623.78125,
+      "width": 69.734375,
+      "height": 37
+    }
+  },
+  {
+    "index": 20,
+    "text": "واریز",
+    "disabled": false,
+    "box": {
+      "x": 209.71875,
+      "y": 623.78125,
+      "width": 59.1875,
+      "height": 37
+    }
+  },
+  {
+    "index": 21,
+    "text": "برداشت",
+    "disabled": false,
+    "box": {
+      "x": 122.75,
+      "y": 623.78125,
+      "width": 79.96875,
+      "height": 37
+    }
+  },
+  {
+    "index": 22,
+    "text": "تاریخچه",
+    "disabled": false,
+    "box": {
+      "x": 39,
+      "y": 623.78125,
+      "width": 76.75,
+      "height": 37
+    }
+  },
+  {
+    "index": 23,
+    "text": "اتصال بازار",
+    "disabled": false,
+    "box": {
+      "x": 56,
+      "y": 862.21875,
+      "width": 331.34375,
+      "height": 43
+    }
+  },
+  {
+    "index": 24,
+    "text": "ورود",
+    "disabled": false,
+    "box": {
+      "x": 911.5,
+      "y": 1267.21875,
+      "width": 241.5,
+      "height": 43
+    }
+  },
+  {
+    "index": 25,
+    "text": "ورود",
+    "disabled": false,
+    "box": {
+      "x": 620,
+      "y": 1267.21875,
+      "width": 241.5,
+      "height": 43
+    }
+  },
+  {
+    "index": 26,
+    "text": "ورود",
+    "disabled": false,
+    "box": {
+      "x": 328.5,
+      "y": 1267.21875,
+      "width": 241.5,
+      "height": 43
+    }
+  },
+  {
+    "index": 27,
+    "text": "ورود",
+    "disabled": false,
+    "box": {
+      "x": 37,
+      "y": 1267.21875,
+      "width": 241.5,
+      "height": 43
+    }
+  },
+  {
+    "index": 28,
+    "text": "📝 ثبت سفارش",
+    "disabled": false,
+    "box": null
+  },
+  {
+    "index": 29,
+    "text": "🔄 بروزرسانی",
+    "disabled": false,
+    "box": null
+  },
+  {
+    "index": 30,
+    "text": "⛏️ استخراج بلوک جدید",
+    "disabled": false,
+    "box": null
+  },
+  {
+    "index": 31,
+    "text": "🔄 بروزرسانی",
+    "disabled": false,
+    "box": null
+  },
+  {
+    "index": 32,
+    "text": "⌂ خانه",
+    "disabled": false,
+    "box": null
+  },
+  {
+    "index": 33,
+    "text": "◈ بازار",
+    "disabled": false,
+    "box": null
+  },
+  {
+    "index": 34,
+    "text": "⌘ P2P",
+    "disabled": false,
+    "box": null
+  },
+  {
+    "index": 35,
+    "text": "▣ کیف",
+    "disabled": false,
+    "box": null
+  },
+  {
+    "index": 36,
+    "text": "✦ AI",
+    "disabled": false,
+    "box": null
+  }
+]

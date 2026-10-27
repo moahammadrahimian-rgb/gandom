@@ -1,0 +1,4 @@
+gandom-core/tests/REAL-DATA-CONTRACT.js
+gandom-core/tests/REAL-LIFECYCLE-PEERS.js
+gandom-core/tests/REAL-TWO-PEER-CONNECTION.js
+gandom-core/tests/REAL-TWO-PEER-DATA.js

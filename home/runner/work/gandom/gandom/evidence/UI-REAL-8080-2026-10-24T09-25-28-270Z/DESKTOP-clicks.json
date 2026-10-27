@@ -1,0 +1,167 @@
+[
+  {
+    "text": "⌂ خانه",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "▣ کیف پول",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "◈ صرافی GDM",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "◉ اصناف و بازارها",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "⌘ P2P",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "✦ هوش مصنوعی",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "◎ شبکه اجتماعی",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "◇ تبلیغات",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "⚙ تنظیمات",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "💱 صرافی",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "⛓️ بلاک‌چین",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "↻",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "⚙",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "بررسی واقعی شبکه",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "ورود به AI",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "ورود به کیف پول",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "ورود به شبکه",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "نمودار",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29996.580000000016ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "تاریخچه",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29995.100000000035ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "اتصال بازار",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29996.179999999935ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "ورود",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "ورود",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "ورود",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "ورود",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "📝 ثبت سفارش",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29996.766999999993ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "🔄 بروزرسانی",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29996.174ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "⛏️ استخراج بلوک جدید",
+    "result": "PASS",
+    "changed": true
+  },
+  {
+    "text": "🔄 بروزرسانی",
+    "result": "PASS",
+    "changed": false
+  },
+  {
+    "text": "⌂ خانه",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29996.44200000004ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "◈ بازار",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29996.447999999975ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "⌘ P2P",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29995.92499999993ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "▣ کیف",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29995.454999999958ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  },
+  {
+    "text": "✦ AI",
+    "result": "FAIL",
+    "error": "locator.scrollIntoViewIfNeeded: Timeout 29996.34899999993ms exceeded.\nCall log:\n  - attempting scroll into view action\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n    - waiting 20ms\n    2 × waiting for element to be stable\n      - element is not visible\n    - retrying scroll into view action\n      - waiting 100ms\n    58 × waiting for element to be stable\n       - element is not visible\n     - retrying scroll into view action\n       - waiting 500ms\n"
+  }
+]

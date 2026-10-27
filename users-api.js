@@ -29,7 +29,7 @@ function readBody(req, callback) {
 }
 
 function handleUsersAPI(req, res, url, method) {
-  const path = url.split('?')[0];
+  const path = (typeof url === 'string' ? url : (url.url || '')).split('?')[0];
 
   // ─── POST /api/users/register ───
   if (path === '/api/users/register' && method === 'POST') {

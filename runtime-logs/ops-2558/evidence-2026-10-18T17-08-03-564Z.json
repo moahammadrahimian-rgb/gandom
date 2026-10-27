@@ -1,0 +1,182 @@
+{
+  "schema": "GANDOM-OPS-2558/v1",
+  "generated_at": "2026-10-18T17:08:03.564Z",
+  "law": {
+    "id": 2558,
+    "no_fake_pass": true,
+    "project_mutations": false,
+    "process_control": false
+  },
+  "root": "/data/data/com.termux/files/home/gandom",
+  "checks": [
+    {
+      "id": "LAW",
+      "status": "PASS",
+      "detail": "2558; read-only; no fake pass"
+    },
+    {
+      "id": "PROJECT_ROOT",
+      "status": "PASS",
+      "detail": "/data/data/com.termux/files/home/gandom"
+    },
+    {
+      "id": "FILE:package.json",
+      "status": "PASS",
+      "detail": "bytes=512;sha256=5486e551b6c2e70415ad79f2cd00dd6c0494f0e0c417b5958fe8c071c3718ea3"
+    },
+    {
+      "id": "FILE:server.js",
+      "status": "PASS",
+      "detail": "bytes=24035;sha256=6153ffd3aa3931ddaa91f27f0e556cb68bd892f21074a0a6d291f7afa521e98f"
+    },
+    {
+      "id": "FILE:public/index.html",
+      "status": "PASS",
+      "detail": "bytes=41605;sha256=4120f6e043e6c2a1cfa4cb24812f3a293ed188d89531f1583979b127a3345eba"
+    },
+    {
+      "id": "FILE:audit-service/server.js",
+      "status": "PASS",
+      "detail": "bytes=4448;sha256=5e60459617ca40c06aee00a8ab898cc27a1da02bc3703add9858beb7504a5b9d"
+    },
+    {
+      "id": "FILE:gandom-core/index.js",
+      "status": "MISSING",
+      "detail": "ENOENT"
+    },
+    {
+      "id": "PACKAGE_JSON_PARSE",
+      "status": "PASS",
+      "detail": "name=gandom-p2p; scripts=start,client,health"
+    },
+    {
+      "id": "DEPENDENCY:ws",
+      "status": "PASS",
+      "detail": "package metadata exists"
+    },
+    {
+      "id": "DEPENDENCY:@capacitor/core",
+      "status": "PASS",
+      "detail": "package metadata exists"
+    },
+    {
+      "id": "DEPENDENCY:@capacitor/cli",
+      "status": "PASS",
+      "detail": "package metadata exists"
+    },
+    {
+      "id": "DEPENDENCY:@capacitor/android",
+      "status": "PASS",
+      "detail": "package metadata exists"
+    },
+    {
+      "id": "JS_SYNTAX:server.js",
+      "status": "PASS",
+      "detail": "node --check exit 0"
+    },
+    {
+      "id": "JS_SYNTAX:client.js",
+      "status": "PASS",
+      "detail": "node --check exit 0"
+    },
+    {
+      "id": "JS_SYNTAX:audit-service/server.js",
+      "status": "PASS",
+      "detail": "node --check exit 0"
+    },
+    {
+      "id": "CHAIN:blockchain-data/chain.json",
+      "status": "PASS",
+      "detail": "valid JSON; structure_length=1; sha256=e8f9288e2e2d3af6020d8396338a2a9e3832002f70e52e6533395a59bf6f6993",
+      "chain_length": 1
+    },
+    {
+      "id": "CHAIN:blockchain-data-b/chain.json",
+      "status": "PASS",
+      "detail": "valid JSON; structure_length=2; sha256=3b9e77cbbbe953ded14b22b074b2473dce1fef66a75407b3284dc912ff4fc71b",
+      "chain_length": 2
+    },
+    {
+      "id": "GIT_WORKTREE",
+      "status": "PASS",
+      "detail": "/data/data/com.termux/files/home/gandom"
+    },
+    {
+      "id": "GIT_BRANCH",
+      "status": "PASS",
+      "detail": "main"
+    },
+    {
+      "id": "GIT_HEAD",
+      "status": "PASS",
+      "detail": "4af1a673d690dc663a3809205b4260402f60f7bb 2026-10-14T17:10:22+03:30 📚 GANDOM 2558 Documentation Release v1.0"
+    },
+    {
+      "id": "GIT_STATUS",
+      "status": "PASS",
+      "detail": "M .github/workflows/gandom-ui-e2e.yml\n D ALL-IN-ONE/README.md\n D ALL-IN-ONE/audit-server.js\n D ALL-IN-ONE/backend.js\n D ALL-IN-ONE/client.html\n D ALL-IN-ONE/final.html\n D ALL-IN-ONE/p2p-server.js\n D ALL-IN-ONE/package.json\n D ALL-IN-ONE/start.sh\n D ALL-IN-ONE/ui-server.js\n D CHECK.sh\n D GANDOM-BOOT.sh\n D GANDOM-FINAL-BUILD-AND-AUDIT.sh\n D RESTORE.sh\n M android/build.gradle\n M android/settings.gradle\n M audit-service/server.js\n M blockchain-100.js\n D chromium-dpkg-cycle1.log\n D chromium-error.log\n D chromium-runtime.log\n D ci-diagnostic-36731371010/gandom-gradle-build.log\n M employees/accounting-ledger.json\n M employees/wallet-bridge.js\n D gandom-server.log\n M node-b-chain.js\n M public/index.html\n M server.js\n?? '\n?? .backend-health.json\n?? .evidence/\n?? .gandom-2558/\n?? .gandom-agent-2558/\n?? .gandom-audit-20261016_155330/\n?? .gandom-audit-2558-20261016_160241/\n?? .gandom-execution-lock.json\n?? .gandom-integration-rollback-20261013-094845/\n?? .github/workflows/gandom-ui-e2e.yml.before-ui-server-fix\n?? .installer-pid\n?? .law2558-gradle-backup-20261018-083014/\n?? .runtime/\n?? =\n?? ALL/dashboard.html\n?? BACKUP_SYNC_FIX_20261017-081230/\n?? FINAL.html\n?? GANDOM-ALL.md\n?? GANDOM-AUTONOMOUS-AGENT-2558.js\n?? GANDOM-AUTONOMOUS-AGENT-2558.js.disabled-2026-10-13T09-13-43-724Z\n?? GANDOM-AWAKENING.js\n?? GANDOM-AWAKENING.json\n?? GANDOM-DEEP-TREASURE-SCAN.js\n?? GANDOM-FINAL-AUTONOMOUS-AGENT-2558.js\n?? GANDOM-FORENSIC-2558-20261018-191812.txt\n?? GANDOM-FORENSIC-RECOVERY-2558.sh\n?? GANDOM-FULL-AUTOMATION-2558.js\n?? GANDOM-GLOBAL-START-2558.sh\n?? GANDOM-INTEGRATE-2558.sh\n?? GANDOM-INTEGRATION-2558-REPORT.txt\n?? GANDOM-LAW2558-AUDIT-20261013-102234.txt\n?? GANDOM-LAW2558-AUDIT.sh\n?? GANDOM-MOTHER-2558.sh\n?? GANDOM-ONE-SITE.html\n?? GANDOM-ONE.html\n?? GANDOM-PREVIOUS-FULL-EXECUTION-INDEX.txt\n?? GANDOM-SECTION-01.tar.gz\n?? GANDOM-TREASURE-LITE.js\n?? GANDOM_2558_AUDIT_20261016T102512Z.txt\n?? GANDOM_AUDIT_2558_READ_ONLY.json\n?? GANDOM_CONSENSUS_GATE_2558_2026-10-16T11-22-34-402Z.txt\n?? GANDOM_DEEP_AUDIT_20261016T103550Z.txt\n?? GANDOM_ENGINE_SHOCK_2558.txt\n?? GANDOM_EXECUTION_STATE.txt\n?? GANDOM_GLOBAL_BRIDGE_2558.json\n?? GANDOM_GRADLE_ROOT_CAUSE_2558.sh\n?? GANDOM_GRADLE_ROOT_CAUSE_2558_20261018T073633Z.txt\n?? GANDOM_PREFLIGHT_20261016T060127Z.txt\n?? GANDOM_PREFLIGHT_20261016T060154Z.txt\n?? GANDOM_ROOT_CAUSE_2558_20261016T141524.txt\n?? GANDOM_ROOT_CAUSE_CODE_20261016T112839Z.txt\n?? GANDOM_ROOT_CAUSE_CODE_AUDIT_2558.sh\n?? GANDOM_ROOT_CAUSE_DEEP_2558.sh\n?? GANDOM_ROOT_CAUSE_DEEP_2558_20261016T104716Z.txt\n?? GANDOM_ROOT_FIX_2558.sh\n?? MASTER-PLAN.md\n?? PROPOSAL.txt\n?? PUZZLE-BACKUP-OVERLAP-2558.sh\n?? SHOVEL-REPORT-20261013-203517.txt\n?? ads-api.js\n?? ads-data/\n?? ads-manager.js\n?? ai-accountant-bridge.js\n?? ai-data/\n?? ai-runner.js\n?? ai-worker.js\n?? android/app/src/main/assets/\n?? architecture/\n?? archives/\n?? audit-data/\n?? audit-service/client.html\n?? audit/\n?? auto-auditor.js\n?? blockchain-100.js.before-gandom-2558-validation-1792134653021.bak\n?? blockchain-core.js\n?? bl"
+    },
+    {
+      "id": "GIT_UNTRACKED_COUNT",
+      "status": "PASS",
+      "detail": "1"
+    },
+    {
+      "id": "HTTP:AUDIT_HEALTH",
+      "status": "PASS",
+      "detail": "http://127.0.0.1:8888/health; HTTP_200",
+      "http_status": 200,
+      "content_type": "application/json",
+      "body_excerpt": "{\"ok\":true,\"service\":\"GANDOM-AUDIT\",\"sessions\":0,\"uptime\":5265.400515083}"
+    },
+    {
+      "id": "HTTP:API_HEALTH",
+      "status": "PASS",
+      "detail": "http://127.0.0.1:8787/health; HTTP_200",
+      "http_status": 200,
+      "content_type": "application/json",
+      "body_excerpt": "{\"ok\":true,\"project\":\"GANDUM-P2P\",\"node_id\":\"GANDOM-NODE-A\",\"peers\":0,\"uptime\":122019.224064734}"
+    },
+    {
+      "id": "HTTP:PEERS_API",
+      "status": "PASS",
+      "detail": "http://127.0.0.1:8787/api/peers; HTTP_200",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "body_excerpt": "{\"ok\":true,\"node_id\":\"GANDOM-NODE-A\",\"peers_count\":0,\"peers\":[]}"
+    },
+    {
+      "id": "HTTP:CELLS_API",
+      "status": "PASS",
+      "detail": "http://127.0.0.1:8787/api/cells; HTTP_200",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "body_excerpt": "{\"ok\":true,\"law\":2558,\"integration\":\"LIVE_CELL_BRIDGE_2558\",\"capacity\":1000,\"running\":true,\"tickCount\":24387,\"uptimeMs\":122018934,\"rootCellId\":0,\"engine\":{\"capacity\":1000,\"alive\":0,\"births\":1,\"deaths\":1,\"divisions\":0,\"mutations\":0,\"messages\":0,\"epoch\":24387}}"
+    },
+    {
+      "id": "HTTP:WORKERS_API",
+      "status": "UNKNOWN",
+      "detail": "http://127.0.0.1:8787/api/workers; ROUTE_NOT_FOUND_NOT_EQUIVALENT_TO_SERVICE_FAILURE",
+      "http_status": 404,
+      "content_type": "",
+      "body_excerpt": "NOT_FOUND"
+    },
+    {
+      "id": "HTTP:UI_ROOT",
+      "status": "PASS",
+      "detail": "http://127.0.0.1:8080/; HTTP_200",
+      "http_status": 200,
+      "content_type": "text/html",
+      "body_excerpt": ""
+    }
+  ],
+  "summary": {
+    "checks": 28,
+    "pass": 26,
+    "fail": 0,
+    "missing": 1,
+    "unknown": 1,
+    "pass_real": false,
+    "interpretation": "Operational observations only; no end-to-end release approval."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "law": "2558",
+  "noFakePass": 1,
+  "lawFile": "/data/data/com.termux/files/home/gandom/constitution/GOLDEN-MOTHER-LAW-2558.json",
+  "lawSha256": "a27f951a47c4fc8a0214970782655dc900d52a49ec2381273a81a60568f0b8aa",
+  "executionChain": [
+    "CONTRACT",
+    "REAL_CODE",
+    "REAL_INFRASTRUCTURE",
+    "REAL_EXECUTION",
+    "REAL_OUTPUT",
+    "EVIDENCE",
+    "INDEPENDENT_VERIFICATION",
+    "PASS"
+  ],
+  "antiFake": {
+    "simulationIsNotReality": true,
+    "demoIsNotReality": true,
+    "processIsNotPhysicalNode": true,
+    "targetIsNotReality": true,
+    "screenshotAloneIsNotEvidence": true,
+    "fakePassForbidden": true
+  },
+  "layers": [
+    {
+      "layer": "01_GOVERNANCE",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "02_MATH_PHYSICS",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "03_CELL_LIFE",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "04_BRAIN_NEURON",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "05_NEURAL_P2P",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "06_DISCOVERY_NETWORK",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "07_SECURITY_SAFETY",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "08_JOB_MARKET_ECONOMY",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "09_PAYMENT_LEDGER_WALLET",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "10_ANDROID_REAL_NODE",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "11_GLOBAL_PHYSICAL_NETWORK",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "12_UI_API_PRODUCT",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    },
+    {
+      "layer": "13_EVIDENCE_AUDIT_ROLLBACK",
+      "status": "BLOCKED_REAL",
+      "reason": "LAYER_GATE_NOT_EXECUTED"
+    }
+  ]
+}

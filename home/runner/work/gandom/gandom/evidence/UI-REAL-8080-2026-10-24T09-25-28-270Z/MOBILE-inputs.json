@@ -1,0 +1,23 @@
+[
+  {
+    "index": 0,
+    "type": "number",
+    "inputmode": "",
+    "name": "",
+    "placeholder": ""
+  },
+  {
+    "index": 1,
+    "type": "number",
+    "inputmode": "",
+    "name": "",
+    "placeholder": ""
+  },
+  {
+    "index": 2,
+    "type": "text",
+    "inputmode": "",
+    "name": "",
+    "placeholder": ""
+  }
+]

@@ -12,7 +12,16 @@
     "@capacitor/android": "^8.5.2",
     "@capacitor/cli": "^8.5.2",
     "@capacitor/core": "^8.5.2",
+    "@npmcli/config": "^11.2.0",
+    "axios": "^1.20.0",
+    "cacache": "^21.0.1",
+    "cheerio": "^1.2.0",
+    "crypto": "^1.0.1",
     "express": "^5.3.0",
-    "ws": "^8.18.0"
+    "http": "^0.0.1-security",
+    "make-fetch-happen": "^16.0.1",
+    "pacote": "^22.0.1",
+    "playwright": "^1.64.1",
+    "ws": "^8.22.0"
   }
 }

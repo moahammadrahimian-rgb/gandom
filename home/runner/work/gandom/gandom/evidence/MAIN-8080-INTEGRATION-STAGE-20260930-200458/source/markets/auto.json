@@ -1,0 +1,102 @@
+[
+  {
+    "id": "84e0cea6-85fb-4bf9-ad61-9e74cbccc702",
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2024,
+    "priceToman": 5000000000,
+    "priceGDM": 500000,
+    "tokens": 500000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 100000,
+        "percentage": 20,
+        "date": 1790666904058
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 50000,
+        "percentage": 10,
+        "date": 1790666904059
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790666903968
+  },
+  {
+    "id": "3f80b481-8bb8-4152-aad5-e4148e4a5b46",
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2024,
+    "priceToman": 5000000000,
+    "priceGDM": 500000,
+    "tokens": 500000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 100000,
+        "percentage": 20,
+        "date": 1790669082003
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 50000,
+        "percentage": 10,
+        "date": 1790669082004
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790669082000
+  },
+  {
+    "id": "13efaab5-d391-4f51-a8fe-377e51e84637",
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2024,
+    "priceToman": 5000000000,
+    "priceGDM": 500000,
+    "tokens": 500000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 100000,
+        "percentage": 20,
+        "date": 1790670850876
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 50000,
+        "percentage": 10,
+        "date": 1790670850877
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790670850873
+  },
+  {
+    "id": "9ce86ad7-b8ae-4169-80b6-aaf15c1eebd3",
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2024,
+    "priceToman": 5000000000,
+    "priceGDM": 500000,
+    "tokens": 500000,
+    "owners": [
+      {
+        "buyer": "1User1Address",
+        "amount": 100000,
+        "percentage": 20,
+        "date": 1790673962722
+      },
+      {
+        "buyer": "1User2Address",
+        "amount": 50000,
+        "percentage": 10,
+        "date": 1790673962723
+      }
+    ],
+    "status": "available",
+    "createdAt": 1790673962718
+  }
+]

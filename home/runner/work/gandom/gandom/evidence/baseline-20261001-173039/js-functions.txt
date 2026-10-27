@@ -1,0 +1,7 @@
+function addAiMsg
+function api
+function closeOwnerModal
+function confirmOwnerAuth
+function loadState
+function showResult
+function showToast

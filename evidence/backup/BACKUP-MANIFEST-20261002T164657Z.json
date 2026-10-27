@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "law": "2558",
+  "checkpoint_timestamp_utc": "20261002T152557Z",
+  "manifest_created_utc": "20261002T164657Z",
+  "backup": {
+    "path": "/data/data/com.termux/files/home/gandom-backups/GANDOM-LAW2558-CHECKPOINT-20261002T152557Z.tar.gz",
+    "sha256": "74ee70163c07cde1b0d4c956c9e09dc11a78068a7aeb49e04f4e196f6ad3a41d",
+    "size_bytes": 11507765
+  },
+  "evidence": {
+    "path": "evidence/p2p/EVIDENCE-1790959318450.json",
+    "sha256": "8c104d0203db8ba003d0db71f7ec2421b5f4927a35db815caa4a91d7933bc6ef",
+    "size_bytes": 1747
+  },
+  "verification": {
+    "independent_verification": "PENDING"
+  }
+}

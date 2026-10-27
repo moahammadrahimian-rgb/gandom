@@ -18,7 +18,37 @@ let shuttingDown = false;
 
 const peers = new Map();
 
+const { handleMarketAPI } = require("./market-api.js");
+const { handleNeuralAPI } = require("./neural-api.js");
+const { handlePaymentAPI } = require("./payment-api.js");
+const { handlePriceAPI } = require("./price-api.js");
+const { handleUsersAPI } = require("./users-api.js");
+const { handleWorkerAPI } = require("./worker-api.js");
 const httpServer = http.createServer((req, res) => {
+
+  let wheatRegistry = [];
+  if (req.url === '/api/wheat/register' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        const data = JSON.parse(body);
+        data.id = Date.now();
+        wheatRegistry.push(data);
+        res.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
+        res.end(JSON.stringify({ok: true, msg: 'ثبت شد'}));
+      } catch(e) {
+        res.writeHead(400, {'Access-Control-Allow-Origin': '*'}); res.end('{"error":"bad request"}');
+      }
+    });
+    return;
+  }
+  if (req.url === '/api/wheat/list' && req.method === 'GET') {
+    res.writeHead(200, {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'});
+    res.end(JSON.stringify(wheatRegistry));
+    return;
+  }
+
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -84,7 +114,8 @@ const httpServer = http.createServer((req, res) => {
     }
     // ===========================================
 
-    res.writeHead(404);
+    if (req.url.startsWith("/api/")) { try { const u=new URL(req.url,"http://127.0.0.1"); for(const h of [handleMarketAPI,handleNeuralAPI,handlePaymentAPI,handlePriceAPI,handleUsersAPI,handleWorkerAPI]) { if(h(req,res,u,req.method||"GET")) return; } } catch(e) { console.error("[API_ROUTER_ERROR]",e.stack||e.message); if(!res.headersSent){res.writeHead(500,{"Content-Type":"application/json"});return res.end(JSON.stringify({ok:false,error:"INTERNAL_API_ERROR"}));} return res.end(); } }
+  res.writeHead(404);
                 return res.end('Not Found');
             }
 
@@ -171,7 +202,24 @@ const httpServer = http.createServer((req, res) => {
         return res.end(JSON.stringify({ ok: true, project: 'GANDOM', version: PROJECT_VERSION }));
     }
 
-    res.writeHead(404);
+    // API_ROUTER_INTEGRATED_V1
+        if (req.url.startsWith('/api/')) {
+            try {
+                const u = new URL(req.url, 'http://127.0.0.1');
+                for (const h of [handleMarketAPI, handleNeuralAPI, handlePaymentAPI, handlePriceAPI, handleUsersAPI, handleWorkerAPI]) {
+                    if (h(req, res, u, req.method || 'GET')) return;
+                }
+            } catch (e) {
+                console.error('[API_ROUTER_ERROR]', e.stack || e.message);
+                if (!res.headersSent) {
+                    res.writeHead(500, { 'Content-Type': 'application/json' });
+                    return res.end(JSON.stringify({ ok: false, error: 'INTERNAL_API_ERROR' }));
+                }
+                return res.end();
+            }
+        }
+
+        res.writeHead(404);
     res.end('NOT_FOUND');
 });
 

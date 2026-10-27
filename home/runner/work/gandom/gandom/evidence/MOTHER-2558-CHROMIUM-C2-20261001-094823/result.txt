@@ -1,0 +1,11 @@
+=== LAW 2558 / CHROMIUM CYCLE 2 ===
+DEB=/data/data/com.termux/files/usr/var/tmp/apt/chromium_138.0.7204.100_arm.deb
+DPKG_EXIT=1
+=== CONFIGURE ===
+CONFIGURE_EXIT=0
+=== FINAL STATUS ===
+Package: chromium
+Status: install ok not-installed
+Architecture: arm
+=== BINARIES ===
+/data/data/com.termux/files/usr/bin/Xvfb

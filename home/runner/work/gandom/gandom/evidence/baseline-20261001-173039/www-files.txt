@@ -1,0 +1,6 @@
+total 51
+drwx------.  3 u0_a305 u0_a305  3452 Sep 30 17:42 .
+drwx------. 16 u0_a305 u0_a305  3452 Oct  1 16:47 ..
+-rw-------.  1 u0_a305 u0_a305   629 Oct  1 14:48 admin.html
+drwx------.  4 u0_a305 u0_a305  3452 Sep 30 17:42 assets
+-rw-------.  1 u0_a305 u0_a305 36582 Oct  1 17:18 index.html

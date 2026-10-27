@@ -1,0 +1,171 @@
+{
+  "timestamp": "2026-10-24T09:38:14.681Z",
+  "server": "http://127.0.0.1:8080",
+  "results": [
+    {
+      "name": "MOBILE_PAGE_LOAD",
+      "status": "PASS",
+      "detail": "status=200"
+    },
+    {
+      "name": "MOBILE_TITLE",
+      "status": "PASS",
+      "detail": "title=GANDOM — Global Decentralized Network"
+    },
+    {
+      "name": "MOBILE_BUTTONS_FOUND",
+      "status": "PASS",
+      "detail": "count=37"
+    },
+    {
+      "name": "MOBILE_SAFE_BUTTON_CLICKS",
+      "status": "FAIL",
+      "detail": "clicked=18 failures=15"
+    },
+    {
+      "name": "MOBILE_INPUTS_FOUND",
+      "status": "PASS",
+      "detail": "count=3"
+    },
+    {
+      "name": "MOBILE_NUMERIC_KEYBOARD_SURFACE",
+      "status": "PASS",
+      "detail": "numeric_inputs=2"
+    },
+    {
+      "name": "MOBILE_AMOUNT_INPUT",
+      "status": "FAIL",
+      "detail": "amount_inputs=0"
+    },
+    {
+      "name": "MOBILE_WALLET_SURFACE",
+      "status": "PASS",
+      "detail": "wallet=true"
+    },
+    {
+      "name": "MOBILE_EXCHANGE_SURFACE",
+      "status": "FAIL",
+      "detail": "exchange=false"
+    },
+    {
+      "name": "MOBILE_BUY_SURFACE",
+      "status": "PASS",
+      "detail": "buy=true"
+    },
+    {
+      "name": "MOBILE_SELL_SURFACE",
+      "status": "PASS",
+      "detail": "sell=true"
+    },
+    {
+      "name": "MOBILE_TRANSFER_SURFACE",
+      "status": "FAIL",
+      "detail": "transfer=false"
+    },
+    {
+      "name": "MOBILE_TOUCH_TARGETS",
+      "status": "FAIL",
+      "detail": "small_targets=22"
+    },
+    {
+      "name": "MOBILE_NO_HORIZONTAL_OVERFLOW",
+      "status": "PASS",
+      "detail": "scrollWidth=390 viewport=390"
+    },
+    {
+      "name": "MOBILE_CONSOLE_ERRORS",
+      "status": "FAIL",
+      "detail": "errors=405"
+    },
+    {
+      "name": "MOBILE_PAGE_ERRORS",
+      "status": "PASS",
+      "detail": "errors=0"
+    },
+    {
+      "name": "MOBILE_NETWORK_FAILURES",
+      "status": "FAIL",
+      "detail": "failed=189"
+    },
+    {
+      "name": "DESKTOP_PAGE_LOAD",
+      "status": "PASS",
+      "detail": "status=200"
+    },
+    {
+      "name": "DESKTOP_TITLE",
+      "status": "PASS",
+      "detail": "title=GANDOM — Global Decentralized Network"
+    },
+    {
+      "name": "DESKTOP_BUTTONS_FOUND",
+      "status": "PASS",
+      "detail": "count=37"
+    },
+    {
+      "name": "DESKTOP_SAFE_BUTTON_CLICKS",
+      "status": "FAIL",
+      "detail": "clicked=23 failures=10"
+    },
+    {
+      "name": "DESKTOP_INPUTS_FOUND",
+      "status": "PASS",
+      "detail": "count=3"
+    },
+    {
+      "name": "DESKTOP_NUMERIC_KEYBOARD_SURFACE",
+      "status": "PASS",
+      "detail": "numeric_inputs=2"
+    },
+    {
+      "name": "DESKTOP_AMOUNT_INPUT",
+      "status": "FAIL",
+      "detail": "amount_inputs=0"
+    },
+    {
+      "name": "DESKTOP_WALLET_SURFACE",
+      "status": "PASS",
+      "detail": "wallet=true"
+    },
+    {
+      "name": "DESKTOP_EXCHANGE_SURFACE",
+      "status": "PASS",
+      "detail": "exchange=true"
+    },
+    {
+      "name": "DESKTOP_BUY_SURFACE",
+      "status": "PASS",
+      "detail": "buy=true"
+    },
+    {
+      "name": "DESKTOP_SELL_SURFACE",
+      "status": "PASS",
+      "detail": "sell=true"
+    },
+    {
+      "name": "DESKTOP_TRANSFER_SURFACE",
+      "status": "FAIL",
+      "detail": "transfer=false"
+    },
+    {
+      "name": "DESKTOP_NO_HORIZONTAL_OVERFLOW",
+      "status": "PASS",
+      "detail": "scrollWidth=1440 viewport=1440"
+    },
+    {
+      "name": "DESKTOP_CONSOLE_ERRORS",
+      "status": "FAIL",
+      "detail": "errors=284"
+    },
+    {
+      "name": "DESKTOP_PAGE_ERRORS",
+      "status": "FAIL",
+      "detail": "errors=1"
+    },
+    {
+      "name": "DESKTOP_NETWORK_FAILURES",
+      "status": "FAIL",
+      "detail": "failed=129"
+    }
+  ]
+}

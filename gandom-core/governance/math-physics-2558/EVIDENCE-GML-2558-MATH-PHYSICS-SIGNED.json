@@ -1,10 +1,10 @@
 {
-  "evidenceId": "gml-2558-math-physics-f1937e4f-9485-4976-a993-1d2d5122cc40",
+  "evidenceId": "gml-2558-math-physics-507ee9c7-784d-4982-a66f-8ee68a571012",
   "subject": "GML_2558_MATH_GEOMETRY_PHYSICS_EXECUTION",
   "observer": "GANDOM-LOCAL-INDEPENDENT-OBSERVER",
   "counterparty": null,
-  "timestamp_wall": 1791039884306,
-  "timestamp_mono": 7058285,
+  "timestamp_wall": 1793041589839,
+  "timestamp_mono": 1174837,
   "payload": {
     "sourceEvidenceFile": "gandom-core/governance/math-physics-2558/EVIDENCE-GML-2558-MATH-PHYSICS.json",
     "engine": {
@@ -35,11 +35,11 @@
       "ENGINE_REPORTED_PASS": true,
       "INDEPENDENT_ALL_PASS": true
     },
-    "originalEvidenceSha256": "87e6c5b2af0de8365e3a49496df3620a1addd43d4a77fbb12820598b09333b15"
+    "originalEvidenceSha256": "88e904fe79ac1714f5027501bbe04092cd7791a54e1270f5b5ab3e9a5d71d8ec"
   },
   "prev_evidence_hash": "0000000000000000000000000000000000000000000000000000000000000000",
   "sig_alg": "ed25519",
   "public_key_spki_pem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEARKger7nKpllPyUzZ3IImKuK791RVQ2JCwufUbDLfryA=\n-----END PUBLIC KEY-----\n",
-  "evidence_hash": "85714c825f98ed331569e1ef9ad5b20287b4b3e92b7bc5dafe97880b6b65cbe7",
-  "signature": "P1nakNi5coA9ynMTavz8gEuhZamJZ5XVkouVwvHYdFSne6+tRhVq484LmOd9lqP8F+BRKK/0fLtsVoyclgAdCg=="
+  "evidence_hash": "fc146469508b7663a42151d53e96fc3daf41b70e0bb5efb827efca933059c1ca",
+  "signature": "p1Ciyflu+TG3vCMNoizcHhk19aSqHd2GD1z2Yc4NLVVDOxFZGkvNVCXEDJX+yGyEdSE8hB/9v6P02OJtmyFQBg=="
 }

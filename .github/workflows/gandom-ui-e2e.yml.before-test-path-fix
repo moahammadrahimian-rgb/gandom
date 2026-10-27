@@ -1,0 +1,60 @@
+name: GANDOM UI Real E2E
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  ui-e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npm install --no-save playwright
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Start GANDOM server
+        run: |
+          PORT=8080 node gandom-ui-server.js > /tmp/gandom-server.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:8080/health; then
+              echo
+              echo "GANDOM_SERVER=PASS"
+              break
+            fi
+            sleep 1
+          done
+
+      - name: Server health verification
+        run: |
+          curl -fsS http://127.0.0.1:8080/health
+          echo
+          echo "HEALTH=PASS"
+
+      - name: Run real browser UI test
+        run: node test-ui-real-8080.js
+
+      - name: Upload UI evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gandom-ui-e2e-evidence
+          path: |
+            evidence/
+            /tmp/gandom-server.log
+          if-no-files-found: ignore

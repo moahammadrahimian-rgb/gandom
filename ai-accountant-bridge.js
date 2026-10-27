@@ -1,26 +1,48 @@
-const { fatherVault } = require("./father-vault.js");
-const FATHER_TAX_PERCENT = 0.05;
+const http = require('http');
 
-class AIAccountantBridge {
-    constructor() {
-        this.total_tax_collected = 0;
-        this.transactions_processed = 0;
-        console.log("👑 پل حسابدار راه‌اندازی شد. مالیات ۵٪ فعال.");
+console.log("🧾 [ACCOUNTANT] Unified Financial Bridge Active.");
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/api/accountant/profit' && req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => body += chunk);
+        req.on('end', () => {
+            try {
+                const { amount, source } = JSON.parse(body);
+                console.log(`💰 [ACCOUNTANT] Received ${amount} GDM from ${source}.`);
+
+                // محاسبه ۵ درصد سهم مالک (اگر نیاز به کسر باشد) - فعلاً کل مبلغ واریز می‌شود
+                const ownerShare = amount * 0.05;
+                const systemShare = amount - ownerShare;
+
+                console.log(`📊 [ACCOUNTANT] Owner Share (5%): ${ownerShare} GDM | System: ${systemShare} GDM`);
+
+                // ارسال به کیف پول امن
+                const walletData = JSON.stringify({ amount: amount });
+                const walletReq = http.request({
+                    hostname: '127.0.0.1',
+                    port: 3000,
+                    path: '/api/wallet/deposit',
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                }, (walletRes) => {
+                    if (walletRes.statusCode === 200) {
+                        console.log(`✅ [ACCOUNTANT] ${amount} GDM deposited securely to Wallet.`);
+                    }
+                });
+                walletReq.write(walletData);
+                walletReq.end();
+
+                res.writeHead(200); res.end(JSON.stringify({ success: true }));
+            } catch (e) {
+                res.writeHead(400); res.end(e.message);
+            }
+        });
+    } else {
+        res.writeHead(404); res.end();
     }
-    processTransaction(txData) {
-        const { amount_gdm, type, user_id } = txData;
-        const tax = amount_gdm * FATHER_TAX_PERCENT;
-        // 🔑 حالا از تابع addTaxIncome استفاده می‌کنیم که در فایل ذخیره می‌کند
-        fatherVault.addTaxIncome(tax, type);
-        this.total_tax_collected += tax;
-        this.transactions_processed++;
-        console.log(`💰 مالیات ۵٪ | ${type} | ${user_id} | کل: ${amount_gdm} | سهم پدر: +${tax.toFixed(2)} GDM`);
-        return { success: true, tax_collected: tax };
-    }
-}
-const accountantBridge = new AIAccountantBridge();
-setInterval(() => {
-    const mockTx = { amount_gdm: Math.floor(Math.random() * 10000) + 100, type: "EXCHANGE_TRADE", user_id: "USR-alice" };
-    accountantBridge.processTransaction(mockTx);
-}, 5000); // هر ۵ ثانیه
-module.exports = { accountantBridge };
+});
+
+server.listen(4000, '127.0.0.1', () => {
+    console.log(`🧾 [ACCOUNTANT] Listening on port 4000 for profit events.`);
+});

@@ -1,0 +1,8 @@
+'/api/state
+'/api/wallet/income
+'/api/wallet/owner-transfer
+'/api/ai
+'/api/ads/sale
+'/api/ads/sale\
+'/api/kyc/verify
+'/api/exchange/

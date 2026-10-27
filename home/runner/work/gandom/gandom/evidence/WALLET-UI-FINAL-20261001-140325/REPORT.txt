@@ -1,0 +1,19 @@
+GANDOM WALLET UI FINAL
+TIME=20261001-140325
+BACKUP=backups/WALLET-UI-FINAL-20261001-140325
+WALLET_UI=APPLIED
+JS_SYNTAX_EXIT=0
+CAPACITOR_SYNC_EXIT=1
+--- WALLET FEATURES ---
+www/admin.html:77:<section id="gandom-wallet-core" class="gandom-card gandom-wallet-core" data-view="wallet">
+www/admin.html:88:    <button type="button" data-wallet-action="deposit">واریز</button>
+www/admin.html:89:    <button type="button" data-wallet-action="withdraw">برداشت</button>
+www/admin.html:90:    <button type="button" data-wallet-action="transfer">انتقال</button>
+www/admin.html:91:    <button type="button" data-wallet-action="owner">کنترل مالک</button>
+www/admin.html:100:               inputmode="decimal"
+www/admin.html:117:    <div id="gandom-owner-auth" class="gandom-owner-auth" hidden>
+www/assets/js/gandom-ui.js:442:  const ownerAuth = document.querySelector('#gandom-owner-auth');
+www/assets/js/gandom-ui.js:471:  document.querySelectorAll('[data-wallet-action]').forEach(btn => {
+www/assets/css/gandom-ui.css:318:.gandom-wallet-core{
+www/assets/css/gandom-ui.css:365:.gandom-owner-auth label{
+www/assets/css/gandom-ui.css:372:.gandom-owner-auth input{

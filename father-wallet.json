@@ -1,9 +1,9 @@
 {
   "id": "GDM-FATHER-2558",
-  "balance_gdm": 1204089062.2499995,
+  "balance_gdm": 1204409054.8999968,
   "balance_irt": 0,
-  "total_tax_collected": 4089062.2499999953,
-  "transactions_count": 16081,
-  "last_audit": "2026-10-19T10:18:56.939Z",
+  "total_tax_collected": 4409054.899999979,
+  "transactions_count": 17346,
+  "last_audit": "2026-10-26T19:45:59.860Z",
   "status": "LOCKED"
 }

@@ -53,7 +53,7 @@ $('incomeBtn').addEventListener('click', async () => {
   const amount = Number($('incomeAmount').value);
   if (!amount || amount <= 0) return showResult('walletResult', 'error', '❌ مبلغ معتبر وارد کنید');
   try {
-    const r = await api('/api/wallet/income', { method: 'POST', body: JSON.stringify({ amount }) });
+    const r = await api('http://127.0.0.1:3000/api/wallet/income', { method: 'POST', body: JSON.stringify({ amount }) });
     showResult('walletResult', 'success', '✅ درآمد به کیف پول اضافه شد\n💰 مبلغ: ' + r.event.amount + ' GDM\n🔗 Ledger: ' + r.event.id.slice(0, 18) + '...');
     $('incomeAmount').value = '';
     await loadState();
@@ -86,7 +86,7 @@ async function confirmOwnerAuth() {
   if (!auth) return showToast('رمز تأیید را وارد کنید');
   if (!pendingTransfer) return;
   try {
-    const r = await api('/api/wallet/owner-transfer', {
+    const r = await api('http://127.0.0.1:3000/api/wallet/owner-transfer', {
       method: 'POST',
       body: JSON.stringify({ ...pendingTransfer, ownerAuth: auth })
     });

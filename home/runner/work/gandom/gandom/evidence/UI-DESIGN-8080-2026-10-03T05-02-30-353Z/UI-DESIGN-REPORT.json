@@ -1,0 +1,129 @@
+{
+  "timestamp": "2026-10-03T05:02:31.320Z",
+  "server": "GANDOM 8080",
+  "files": {
+    "html": 2,
+    "js": 2,
+    "css": 2
+  },
+  "buttons": 5,
+  "inputs": 2,
+  "apiCalls": 2,
+  "checks": [
+    {
+      "name": "WWW_EXISTS",
+      "status": "PASS",
+      "detail": "/data/data/com.termux/files/home/gandom/www"
+    },
+    {
+      "name": "HTML_FILES",
+      "status": "PASS",
+      "detail": "count=2"
+    },
+    {
+      "name": "JS_FILES",
+      "status": "PASS",
+      "detail": "count=2"
+    },
+    {
+      "name": "CSS_FILES",
+      "status": "PASS",
+      "detail": "count=2"
+    },
+    {
+      "name": "BUTTON_ACTION_SURFACE",
+      "status": "FAIL",
+      "detail": "buttons=5 actionable=0"
+    },
+    {
+      "name": "FORM_INPUTS",
+      "status": "PASS",
+      "detail": "inputs=2 named=2"
+    },
+    {
+      "name": "WALLET_UI",
+      "status": "PASS",
+      "detail": "wallet=true"
+    },
+    {
+      "name": "WALLET_TRANSFER_UI",
+      "status": "PASS",
+      "detail": "transfer=true"
+    },
+    {
+      "name": "WALLET_AMOUNT_INPUT",
+      "status": "PASS",
+      "detail": "amount=true"
+    },
+    {
+      "name": "WALLET_DESTINATION_INPUT",
+      "status": "PASS",
+      "detail": "address=true"
+    },
+    {
+      "name": "EXCHANGE_UI",
+      "status": "PASS",
+      "detail": "exchange=true"
+    },
+    {
+      "name": "BUY_UI",
+      "status": "PASS",
+      "detail": "buy=true"
+    },
+    {
+      "name": "SELL_UI",
+      "status": "PASS",
+      "detail": "sell=true"
+    },
+    {
+      "name": "MARKET_CHART_UI",
+      "status": "PASS",
+      "detail": "chart=true"
+    },
+    {
+      "name": "REVENUE_TO_WALLET_PATH",
+      "status": "PASS",
+      "detail": "revenue=true wallet=true transfer=true"
+    },
+    {
+      "name": "API_CALL_SURFACE",
+      "status": "PASS",
+      "detail": "fetch=2 xhr=0"
+    },
+    {
+      "name": "API_ROUTES_IN_UI",
+      "status": "PASS",
+      "detail": "routes=8"
+    },
+    {
+      "name": "MOBILE_NUMERIC_KEYBOARD",
+      "status": "PASS",
+      "detail": "numeric/tel inputs=2"
+    },
+    {
+      "name": "DISABLED_BUTTON_AUDIT",
+      "status": "PASS",
+      "detail": "disabled_buttons=0"
+    },
+    {
+      "name": "UI_EVENT_HANDLERS",
+      "status": "PASS",
+      "detail": "handlers=18"
+    },
+    {
+      "name": "UI_STATE_HANDLING",
+      "status": "PASS",
+      "detail": "loading/error/success surface=true"
+    },
+    {
+      "name": "MOBILE_RESPONSIVE",
+      "status": "PASS",
+      "detail": "responsive=true"
+    },
+    {
+      "name": "UI_JS_SYNTAX",
+      "status": "PASS",
+      "detail": "files=2 failures=0"
+    }
+  ]
+}

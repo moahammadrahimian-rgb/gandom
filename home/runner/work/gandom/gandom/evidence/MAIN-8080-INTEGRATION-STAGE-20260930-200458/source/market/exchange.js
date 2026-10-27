@@ -1,0 +1,344 @@
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+
+const DATA_FILE = path.join(__dirname, '..', 'exchange-orders.json');
+const FEE_RATE = 0.01;
+
+function loadOrders() {
+  if (!fs.existsSync(DATA_FILE)) return [];
+  try {
+    const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+    return Array.isArray(data) ? data : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveOrders(orders) {
+  fs.writeFileSync(DATA_FILE, JSON.stringify(orders, null, 2));
+}
+
+class InternalExchange {
+  constructor(options = {}) {
+    this.coinSystem = options.coinSystem || null;
+    this.orders = loadOrders();
+    this.cash = new Map();
+    this.reservedCash = new Map();
+    this.reservedCoins = new Map();
+  }
+
+  setCoinSystem(coinSystem) {
+    this.coinSystem = coinSystem;
+    return this;
+  }
+
+  _cash(user) {
+    return Number(this.cash.get(user) || 0);
+  }
+
+  _reservedCash(user) {
+    return Number(this.reservedCash.get(user) || 0);
+  }
+
+  _reservedCoins(user) {
+    return Number(this.reservedCoins.get(user) || 0);
+  }
+
+  depositCash(user, amount) {
+    if (!user || !Number.isFinite(amount) || amount <= 0) {
+      throw new Error('INVALID_CASH_DEPOSIT');
+    }
+
+    this.cash.set(user, this._cash(user) + amount);
+    return this._cash(user);
+  }
+
+  _availableCash(user) {
+    return this._cash(user) - this._reservedCash(user);
+  }
+
+  _availableCoins(user) {
+    if (!this.coinSystem) throw new Error('COIN_SYSTEM_REQUIRED');
+
+    const balance = this.coinSystem.getBalance(user);
+    return Number(balance || 0) - this._reservedCoins(user);
+  }
+
+  _reserveCash(user, amount) {
+    this.reservedCash.set(
+      user,
+      this._reservedCash(user) + amount
+    );
+  }
+
+  _releaseCash(user, amount) {
+    const next = this._reservedCash(user) - amount;
+    this.reservedCash.set(user, Math.max(0, next));
+  }
+
+  _reserveCoins(user, amount) {
+    this.reservedCoins.set(
+      user,
+      this._reservedCoins(user) + amount
+    );
+  }
+
+  _releaseCoins(user, amount) {
+    const next = this._reservedCoins(user) - amount;
+    this.reservedCoins.set(user, Math.max(0, next));
+  }
+
+  createOrder({ user, side, quantity, price }) {
+    if (!user) throw new Error('INVALID_USER');
+    if (!['buy', 'sell'].includes(side)) {
+      throw new Error('INVALID_SIDE');
+    }
+
+    quantity = Number(quantity);
+    price = Number(price);
+
+    if (!Number.isFinite(quantity) || quantity <= 0) {
+      throw new Error('INVALID_QUANTITY');
+    }
+
+    if (!Number.isFinite(price) || price <= 0) {
+      throw new Error('INVALID_PRICE');
+    }
+
+    const total = quantity * price;
+    const fee = total * FEE_RATE;
+
+    // Reserve funds BEFORE creating the order.
+    if (side === 'buy') {
+      const required = total + fee;
+
+      if (this._availableCash(user) < required) {
+        throw new Error('INSUFFICIENT_CASH');
+      }
+
+      this._reserveCash(user, required);
+    }
+
+    if (side === 'sell') {
+      if (this._availableCoins(user) < quantity) {
+        throw new Error('INSUFFICIENT_COINS');
+      }
+
+      this._reserveCoins(user, quantity);
+    }
+
+    const order = {
+      id: crypto.randomUUID(),
+      user,
+      side,
+      quantity,
+      remaining: quantity,
+      price,
+      feeRate: FEE_RATE,
+      status: 'open',
+      createdAt: Date.now()
+    };
+
+    this.orders.push(order);
+    saveOrders(this.orders);
+
+    return { ...order };
+  }
+
+  cancelOrder(orderId) {
+    const order = this.orders.find(
+      item => item.id === orderId
+    );
+
+    if (!order) throw new Error('ORDER_NOT_FOUND');
+
+    if (order.status !== 'open') {
+      throw new Error('ORDER_NOT_OPEN');
+    }
+
+    const remainingValue = order.remaining * order.price;
+    const remainingFee = remainingValue * FEE_RATE;
+
+    if (order.side === 'buy') {
+      this._releaseCash(
+        order.user,
+        remainingValue + remainingFee
+      );
+    } else {
+      this._releaseCoins(
+        order.user,
+        order.remaining
+      );
+    }
+
+    order.status = 'cancelled';
+    order.cancelledAt = Date.now();
+
+    saveOrders(this.orders);
+
+    return { ...order };
+  }
+
+  _settleTrade(buy, sell, quantity, price) {
+    if (!this.coinSystem) {
+      throw new Error('COIN_SYSTEM_REQUIRED');
+    }
+
+    const gross = quantity * price;
+    const fee = gross * FEE_RATE;
+
+    // Validate everything BEFORE mutating balances.
+    const buyerCashRequired = gross + fee;
+      const buyerCash = this._cash(buy.user);
+
+      if (buyerCash < buyerCashRequired) {
+        throw new Error('BUY_CASH_INSUFFICIENT');
+      }
+
+    if (this._reservedCash(buy.user) < buyerCashRequired) {
+      throw new Error('BUY_RESERVE_INVALID');
+    }
+
+    if (this._reservedCoins(sell.user) < quantity) {
+      throw new Error('SELL_RESERVE_INVALID');
+    }
+
+    // Coin transfer.
+    this.coinSystem.transfer(
+      sell.user,
+      buy.user,
+      quantity
+    );
+
+    // Cash settlement.
+    this._releaseCash(buy.user, buyerCashRequired);
+
+      this.cash.set(
+        buy.user,
+        buyerCash - buyerCashRequired
+      );
+    this._releaseCoins(sell.user, quantity);
+
+    this.cash.set(
+      sell.user,
+      this._cash(sell.user) + gross - fee
+    );
+
+    return {
+      buyer: buy.user,
+      seller: sell.user,
+      quantity,
+      price,
+      gross,
+      fee,
+      total: gross + fee,
+      timestamp: Date.now()
+    };
+  }
+
+  matchOrders() {
+    const trades = [];
+
+    const buys = this.orders
+      .filter(o => o.status === 'open' && o.side === 'buy')
+      .sort((a, b) => {
+        if (b.price !== a.price) return b.price - a.price;
+        return a.createdAt - b.createdAt;
+      });
+
+    const sells = this.orders
+      .filter(o => o.status === 'open' && o.side === 'sell')
+      .sort((a, b) => {
+        if (a.price !== b.price) return a.price - b.price;
+        return a.createdAt - b.createdAt;
+      });
+
+    for (const buy of buys) {
+      for (const sell of sells) {
+        if (buy.status !== 'open' || sell.status !== 'open') {
+          continue;
+        }
+
+        if (buy.price < sell.price) {
+          continue;
+        }
+
+        const quantity = Math.min(
+          buy.remaining,
+          sell.remaining
+        );
+
+        const price = sell.price;
+
+        const trade = this._settleTrade(
+          buy,
+          sell,
+          quantity,
+          price
+        );
+
+        trades.push(trade);
+
+        buy.remaining -= quantity;
+        sell.remaining -= quantity;
+
+        if (buy.remaining <= 0) {
+          buy.remaining = 0;
+          buy.status = 'filled';
+        }
+
+        if (sell.remaining <= 0) {
+          sell.remaining = 0;
+          sell.status = 'filled';
+        }
+      }
+    }
+
+    saveOrders(this.orders);
+
+    return trades;
+  }
+
+  getOrderBook() {
+    return {
+      buy: this.orders
+        .filter(o => o.status === 'open' && o.side === 'buy')
+        .sort((a, b) => b.price - a.price)
+        .map(o => ({ ...o })),
+
+      sell: this.orders
+        .filter(o => o.status === 'open' && o.side === 'sell')
+        .sort((a, b) => a.price - b.price)
+        .map(o => ({ ...o }))
+    };
+  }
+
+  getPrice() {
+    const trades = this.orders
+      .filter(o => o.lastTradePrice)
+      .sort((a, b) => b.updatedAt - a.updatedAt);
+
+    return trades.length ? trades[0].lastTradePrice : null;
+  }
+
+  getBalances(user) {
+    return {
+      cash: this._cash(user),
+      reservedCash: this._reservedCash(user),
+      availableCash: this._availableCash(user),
+      coins: this.coinSystem
+        ? Number(this.coinSystem.getBalance(user) || 0)
+        : 0,
+      reservedCoins: this._reservedCoins(user),
+      availableCoins: this.coinSystem
+        ? this._availableCoins(user)
+        : 0
+    };
+  }
+}
+
+module.exports = {
+  InternalExchange,
+  FEE_RATE
+};

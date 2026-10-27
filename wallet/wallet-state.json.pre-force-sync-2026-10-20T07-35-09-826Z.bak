@@ -1,0 +1,44 @@
+{
+  "created": "2026-10-10T13:54:58.627Z",
+  "owner": "moahammadrahimian-rgb",
+  "balances": {
+    "moahammadrahimian-rgb": {
+      "gdm": 1200000000,
+      "irt": 25500,
+      "role": "OWNER"
+    },
+    "GANDOM-TREASURY": {
+      "gdm": 22800000000,
+      "irt": 484500,
+      "role": "TREASURY"
+    }
+  },
+  "transactions": [
+    {
+      "type": "GENESIS",
+      "to": "moahammadrahimian-rgb",
+      "amount_gdm": 1200000000,
+      "ts": "2026-10-10T13:54:58.630Z",
+      "note": "Owner 5% share from genesis"
+    },
+    {
+      "type": "GENESIS",
+      "to": "GANDOM-TREASURY",
+      "amount_gdm": 22800000000,
+      "ts": "2026-10-10T13:54:58.630Z",
+      "note": "Public 95% allocation"
+    },
+    {
+      "type": "INCOME",
+      "from": "Test Customer",
+      "amount_irt": 510000,
+      "audit_id": "AUDIT-850a7257",
+      "owner_share_irt": 25500,
+      "treasury_share_irt": 484500,
+      "ts": "2026-10-10T13:54:58.636Z"
+    }
+  ],
+  "total_supply": 24000000000,
+  "owner_share_percent": 5,
+  "last_hash": "377690b09e54979382e93ba448731a268061b8bec5301cdd7e36a771e61a4f2e"
+}

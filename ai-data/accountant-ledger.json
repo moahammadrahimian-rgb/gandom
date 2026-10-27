@@ -4619,9 +4619,135 @@
       "source": "market_listing",
       "amount_irt": 0,
       "listingId": "LST-test-001"
+    },
+    {
+      "id": "LED-c1f25aeb",
+      "ts": 1793033313522,
+      "iso": "2026-10-26T16:48:33.522Z",
+      "direction": "IN",
+      "source": "payment",
+      "amount_irt": 10000000,
+      "gdm": 100,
+      "userId": "USR-treasurer-test",
+      "paymentId": "PAY-f6f16491ee56",
+      "refId": "MOCK-6225C0B2"
+    },
+    {
+      "id": "LED-69d21bdd",
+      "ts": 1793033313538,
+      "iso": "2026-10-26T16:48:33.538Z",
+      "direction": "IN",
+      "source": "payment",
+      "amount_irt": 100000,
+      "gdm": 100,
+      "userId": "USR-alice",
+      "paymentId": "PAY-f10c9930b304",
+      "refId": "MOCK-B0019C21"
+    },
+    {
+      "id": "LED-9765d4d1",
+      "ts": 1793033313545,
+      "iso": "2026-10-26T16:48:33.545Z",
+      "direction": "IN",
+      "source": "payment",
+      "amount_irt": 10000,
+      "gdm": 10,
+      "userId": "USR-test",
+      "paymentId": "PAY-d9d6b8943799",
+      "refId": "MOCK-967609D8"
+    },
+    {
+      "id": "LED-926f27c8",
+      "ts": 1793033313584,
+      "iso": "2026-10-26T16:48:33.584Z",
+      "direction": "OUT",
+      "source": "market_listing",
+      "amount_irt": 0,
+      "listingId": "LST-5294113ce4c4"
+    },
+    {
+      "id": "LED-93f44c38",
+      "ts": 1793033313781,
+      "iso": "2026-10-26T16:48:33.781Z",
+      "direction": "OUT",
+      "source": "market_listing",
+      "amount_irt": 0,
+      "listingId": "LST-2b959bc16ccf"
+    },
+    {
+      "id": "LED-cf64537b",
+      "ts": 1793033313795,
+      "iso": "2026-10-26T16:48:33.795Z",
+      "direction": "OUT",
+      "source": "market_listing",
+      "amount_irt": 0,
+      "listingId": "LST-d47224ed7cde"
+    },
+    {
+      "id": "LED-92147f6f",
+      "ts": 1793033735915,
+      "iso": "2026-10-26T16:55:35.915Z",
+      "direction": "IN",
+      "source": "payment",
+      "amount_irt": 10000000,
+      "gdm": 100,
+      "userId": "USR-treasurer-test",
+      "paymentId": "PAY-f6f16491ee56",
+      "refId": "MOCK-6225C0B2"
+    },
+    {
+      "id": "LED-84f6ff8e",
+      "ts": 1793033735928,
+      "iso": "2026-10-26T16:55:35.928Z",
+      "direction": "IN",
+      "source": "payment",
+      "amount_irt": 100000,
+      "gdm": 100,
+      "userId": "USR-alice",
+      "paymentId": "PAY-f10c9930b304",
+      "refId": "MOCK-B0019C21"
+    },
+    {
+      "id": "LED-65b63ad0",
+      "ts": 1793033735936,
+      "iso": "2026-10-26T16:55:35.936Z",
+      "direction": "IN",
+      "source": "payment",
+      "amount_irt": 10000,
+      "gdm": 10,
+      "userId": "USR-test",
+      "paymentId": "PAY-d9d6b8943799",
+      "refId": "MOCK-967609D8"
+    },
+    {
+      "id": "LED-90f9b1b8",
+      "ts": 1793033735970,
+      "iso": "2026-10-26T16:55:35.970Z",
+      "direction": "OUT",
+      "source": "market_listing",
+      "amount_irt": 0,
+      "listingId": "LST-5294113ce4c4"
+    },
+    {
+      "id": "LED-5a2a11d4",
+      "ts": 1793033736188,
+      "iso": "2026-10-26T16:55:36.188Z",
+      "direction": "OUT",
+      "source": "market_listing",
+      "amount_irt": 0,
+      "listingId": "LST-2b959bc16ccf"
+    },
+    {
+      "id": "LED-fc0b0649",
+      "ts": 1793033736204,
+      "iso": "2026-10-26T16:55:36.204Z",
+      "direction": "OUT",
+      "source": "market_listing",
+      "amount_irt": 0,
+      "listingId": "LST-d47224ed7cde"
     }
   ],
-  "total_in": 1881760000,
+  "total_in": 1901980000,
   "total_out": 0,
-  "balance": 1881760000
+  "balance": 1901980000
 }

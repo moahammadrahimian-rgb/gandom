@@ -1,0 +1,16 @@
+1792133912.0101502630 1539 /data/data/com.termux/files/home/gandom/evidence/GANDOM-MOTHER-2558-20261016T065830Z-20620/execution.log
+1792133485.3541502370 7148 /data/data/com.termux/files/home/gandom/evidence/GANDOM-P2P-2558-20261016T065116Z-19060/execution.log
+1792133484.3021502370 1737 /data/data/com.termux/files/home/gandom/evidence/GANDOM-P2P-2558-20261016T065116Z-19060/SHA256SUMS.txt
+1792133484.1941502370 114 /data/data/com.termux/files/home/gandom/evidence/GANDOM-P2P-2558-20261016T065116Z-19060/secondary-health-final.json
+1792133484.1301502370 94 /data/data/com.termux/files/home/gandom/evidence/GANDOM-P2P-2558-20261016T065116Z-19060/main-health-final.json
+1792133479.0421502370 114 /data/data/com.termux/files/home/gandom/evidence/GANDOM-P2P-2558-20261016T065116Z-19060/secondary-health.json
+1792133477.7621502370 94 /data/data/com.termux/files/home/gandom/evidence/GANDOM-P2P-2558-20261016T065116Z-19060/main-response.txt
+1792133168.2021502180 3533 /data/data/com.termux/files/home/gandom/evidence/GANDOM-SEC-20261016T064606Z-17586/security-audit.txt
+1790880442.9778504440 116 /data/data/com.termux/files/home/gandom/evidence/33-live/09-health.json
+1790863240.5008416860 98 /data/data/com.termux/files/home/gandom/evidence/baseline-20261001-173039/health.json
+1790850542.8795985450 117 /data/data/com.termux/files/home/gandom/evidence/GANDOM-CORE-P2P-UNIFIED-20261001-135857/health-response.txt
+1790849232.8355984670 117 /data/data/com.termux/files/home/gandom/evidence/CHROMIUM-ICU-DIRECT-FINAL-20261001-133712/health.json
+1790848891.5875984470 116 /data/data/com.termux/files/home/gandom/evidence/CHROMIUM-LINKER-DIAGNOSTIC-20261001-133129/health.json
+1790848435.9835984200 116 /data/data/com.termux/files/home/gandom/evidence/MOTHER-2558-CHROMIUM-FINAL-20261001-132355/health.json
+1790842288.9605094040 118 /data/data/com.termux/files/home/gandom/evidence/CHROMIUM-REAL-20261001-114128/health.json
+1790832724.5725088340 0 /data/data/com.termux/files/home/gandom/evidence/MOTHER-2558-CHROMIUM-20261001-090141/dpkg-audit.txt

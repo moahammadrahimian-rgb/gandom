@@ -1,0 +1,44 @@
+const candidates = [
+  'section9-mempool-real.js',
+  'section10-block-validation.js',
+  'section11-chain-validation.js',
+  'section12-chain-work.js',
+  'section13-fork-resolution.js',
+  'section14-reorg.js',
+  'section15-confirmations.js',
+  'section16-persistence.js',
+  'section17-crash-recovery.js',
+  'section18-overflow.js',
+  'section19-serialization.js',
+  'section20-security.js',
+  'section24-real-tests.js',
+  'section25-attack-tests.js',
+  'section26-benchmark.js'
+];
+
+function run(file) {
+  const full = path.join(root, file);
+  if (!fs.existsSync(full)) return null;
+
+  const r = spawnSync(process.execPath, [full], {
+    cwd: path.join(root, '..', '..'),
+    encoding: 'utf8',
+    timeout: 300000
+  });
+
+  return {
+    exitCode: r.status,
+    output: `${r.stdout || ''}${r.stderr || ''}`
+  };
+}
+
+console.log('=== GANDOM BLOCKCHAIN CORE V2 — FRAMEWORK 100 ===');
+
+let completed = 0;
+
+for (let i = 0; i < tests.length; i++) {
+  const n = i + 1;
+  const name = tests[i];
+
+  let status = 'PENDING';
+

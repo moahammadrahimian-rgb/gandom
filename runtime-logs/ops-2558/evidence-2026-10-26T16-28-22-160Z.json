@@ -1,0 +1,182 @@
+{
+  "schema": "GANDOM-OPS-2558/v1",
+  "generated_at": "2026-10-26T16:28:22.160Z",
+  "law": {
+    "id": 2558,
+    "no_fake_pass": true,
+    "project_mutations": false,
+    "process_control": false
+  },
+  "root": "/data/data/com.termux/files/home/gandom",
+  "checks": [
+    {
+      "id": "LAW",
+      "status": "PASS",
+      "detail": "2558; read-only; no fake pass"
+    },
+    {
+      "id": "PROJECT_ROOT",
+      "status": "PASS",
+      "detail": "/data/data/com.termux/files/home/gandom"
+    },
+    {
+      "id": "FILE:package.json",
+      "status": "PASS",
+      "detail": "bytes=537;sha256=6c51400fd246d37ccd1d1c1b4782c6279f739c174549efdb4b3a2b292a6b4c0c"
+    },
+    {
+      "id": "FILE:server.js",
+      "status": "PASS",
+      "detail": "bytes=15128;sha256=f7421a4b98b998633afbc2ede4fac780aab2b1aa4a44698feaef987c51f2d3f8"
+    },
+    {
+      "id": "FILE:public/index.html",
+      "status": "PASS",
+      "detail": "bytes=6242;sha256=d01190f1dbcaffb5e4ef6a7338f8908454fa59863b8eb95a991ce811f1e31760"
+    },
+    {
+      "id": "FILE:audit-service/server.js",
+      "status": "PASS",
+      "detail": "bytes=4448;sha256=5e60459617ca40c06aee00a8ab898cc27a1da02bc3703add9858beb7504a5b9d"
+    },
+    {
+      "id": "FILE:gandom-core/index.js",
+      "status": "MISSING",
+      "detail": "ENOENT"
+    },
+    {
+      "id": "PACKAGE_JSON_PARSE",
+      "status": "PASS",
+      "detail": "name=gandom-p2p; scripts=start,client,health"
+    },
+    {
+      "id": "DEPENDENCY:ws",
+      "status": "PASS",
+      "detail": "package metadata exists"
+    },
+    {
+      "id": "DEPENDENCY:@capacitor/core",
+      "status": "PASS",
+      "detail": "package metadata exists"
+    },
+    {
+      "id": "DEPENDENCY:@capacitor/cli",
+      "status": "PASS",
+      "detail": "package metadata exists"
+    },
+    {
+      "id": "DEPENDENCY:@capacitor/android",
+      "status": "PASS",
+      "detail": "package metadata exists"
+    },
+    {
+      "id": "JS_SYNTAX:server.js",
+      "status": "PASS",
+      "detail": "node --check exit 0"
+    },
+    {
+      "id": "JS_SYNTAX:client.js",
+      "status": "PASS",
+      "detail": "node --check exit 0"
+    },
+    {
+      "id": "JS_SYNTAX:audit-service/server.js",
+      "status": "PASS",
+      "detail": "node --check exit 0"
+    },
+    {
+      "id": "CHAIN:blockchain-data/chain.json",
+      "status": "PASS",
+      "detail": "valid JSON; structure_length=4295; sha256=8b2fd1de32833cf5686652d4b8ddfd3f6e87fc4a28092c62692999bdec43e2a5",
+      "chain_length": 4295
+    },
+    {
+      "id": "CHAIN:blockchain-data-b/chain.json",
+      "status": "PASS",
+      "detail": "valid JSON; structure_length=1; sha256=cd07304eb9f1a85d0c1b3aca27e4ace740193a8c38cb379a9acf3a6a7fdf21e5",
+      "chain_length": 1
+    },
+    {
+      "id": "GIT_WORKTREE",
+      "status": "PASS",
+      "detail": "/data/data/com.termux/files/home/gandom"
+    },
+    {
+      "id": "GIT_BRANCH",
+      "status": "PASS",
+      "detail": "main"
+    },
+    {
+      "id": "GIT_HEAD",
+      "status": "PASS",
+      "detail": "28a04976e3edb6a96b0732c35cb57b44c2814a95 2026-10-24T20:40:56+03:30 Fix: Resolve CORS, API endpoints, and block E2E alerts"
+    },
+    {
+      "id": "GIT_STATUS",
+      "status": "PASS",
+      "detail": "M .backend-health.json\n M blockchain-data/chain.json\n M node-b-chain.js\n M server.js\n M www/index.html\n?? .github/workflows/gandom-ui-e2e.yml.before-test-path-fix\n?? GANDOM-ALPHA-6-MASTER-BOOT.js\n?? GANDOM_CONSENSUS_GATE_2558_2026-10-21T07-23-02-400Z.txt\n?? GANDOM_CONSENSUS_GATE_2558_2026-10-21T07-26-44-646Z.txt\n?? GANDOM_CONSENSUS_GATE_2558_2026-10-21T07-29-35-416Z.txt\n?? add_wheat_feature.js\n?? backups/chain-recovery-20261021-105215/\n?? backups/chain-recovery-20261021-105610/\n?? backups/node-b-chain.before-reconnect-guard.1793011049360.js\n?? backups/node-b-chain.before-timer-v2.1793010865486.js\n?? backups/node-b-chain.js.before-reconnect-fix.20261026-015825\n?? backups/node-b-chain.pre-timer-fix.1792967486.js\n?? evidence_download/\n?? fail_logs/\n?? final_evidence/\n?? fix_wheat_feature.js\n?? gandom-alpha-6-bridge.js\n?? home/\n?? scripts/gandom-five-locks.js\n?? server.js.before-api-router-1792913513842\n?? server.js.before-router-fix-1792918058296"
+    },
+    {
+      "id": "GIT_UNTRACKED_COUNT",
+      "status": "PASS",
+      "detail": "3419"
+    },
+    {
+      "id": "HTTP:UI_ROOT",
+      "status": "UNKNOWN",
+      "detail": "http://127.0.0.1:8080/; ECONNREFUSED",
+      "http_status": null,
+      "content_type": "",
+      "body_excerpt": ""
+    },
+    {
+      "id": "HTTP:AUDIT_HEALTH",
+      "status": "UNKNOWN",
+      "detail": "http://127.0.0.1:8888/health; ECONNREFUSED",
+      "http_status": null,
+      "content_type": "",
+      "body_excerpt": ""
+    },
+    {
+      "id": "HTTP:API_HEALTH",
+      "status": "PASS",
+      "detail": "http://127.0.0.1:8787/health; HTTP_200",
+      "http_status": 200,
+      "content_type": "application/json",
+      "body_excerpt": "{\"ok\":true,\"project\":\"GANDUM-P2P\",\"node_id\":\"d3fa02ed-0429-415e-bc1a-a2d9434a9a7f\",\"peers\":0,\"uptime\":188.445387088}"
+    },
+    {
+      "id": "HTTP:PEERS_API",
+      "status": "PASS",
+      "detail": "http://127.0.0.1:8787/api/peers; HTTP_200",
+      "http_status": 200,
+      "content_type": "application/json",
+      "body_excerpt": "{\"ok\":true,\"node_id\":\"d3fa02ed-0429-415e-bc1a-a2d9434a9a7f\",\"peers_count\":0,\"peers\":[]}"
+    },
+    {
+      "id": "HTTP:CELLS_API",
+      "status": "FAIL",
+      "detail": "http://127.0.0.1:8787/api/cells; HTTP_500",
+      "http_status": 500,
+      "content_type": "application/json",
+      "body_excerpt": "{\"ok\":false,\"error\":\"INTERNAL_API_ERROR\"}"
+    },
+    {
+      "id": "HTTP:WORKERS_API",
+      "status": "FAIL",
+      "detail": "http://127.0.0.1:8787/api/workers; HTTP_500",
+      "http_status": 500,
+      "content_type": "application/json",
+      "body_excerpt": "{\"ok\":false,\"error\":\"INTERNAL_API_ERROR\"}"
+    }
+  ],
+  "summary": {
+    "checks": 28,
+    "pass": 23,
+    "fail": 2,
+    "missing": 1,
+    "unknown": 2,
+    "pass_real": false,
+    "interpretation": "Operational observations only; no end-to-end release approval."
+  }
+}

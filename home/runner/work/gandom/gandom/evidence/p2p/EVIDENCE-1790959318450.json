@@ -1,0 +1,46 @@
+{
+  "law": 2558,
+  "evidence_type": "P2P_EVENT_HASH_CHAIN",
+  "node_id": "53cac16f-c053-4c75-b2d4-c21aae0acc04",
+  "event_count": 4,
+  "chain": [
+    {
+      "ts": "2026-10-02T15:22:18.103Z",
+      "event": "MESSAGE_RECEIVED",
+      "node_id": "53cac16f-c053-4c75-b2d4-c21aae0acc04",
+      "peer_id": "client-1790954530976",
+      "type": "DATA",
+      "previous_hash": "GENESIS-2558",
+      "hash": "710ec43adfb0cfb4b74d9a887b2645ee5f5603f4c8230056a1b9a01662dd9156"
+    },
+    {
+      "ts": "2026-10-02T15:23:28.469Z",
+      "event": "PEER_CONNECTED",
+      "node_id": "53cac16f-c053-4c75-b2d4-c21aae0acc04",
+      "peer_id": "client-1790954608413",
+      "peers": 1,
+      "previous_hash": "710ec43adfb0cfb4b74d9a887b2645ee5f5603f4c8230056a1b9a01662dd9156",
+      "hash": "176a731fe0829a54b47ff834afe1a12b92d151c1d127e881f1e9077579c22a10"
+    },
+    {
+      "ts": "2026-10-02T15:23:28.487Z",
+      "event": "MESSAGE_RECEIVED",
+      "node_id": "53cac16f-c053-4c75-b2d4-c21aae0acc04",
+      "peer_id": "client-1790954608413",
+      "type": "HELLO",
+      "previous_hash": "176a731fe0829a54b47ff834afe1a12b92d151c1d127e881f1e9077579c22a10",
+      "hash": "0135c34777557329595b998cac6fa85d5be1738c36a469aef9616ee28980531f"
+    },
+    {
+      "ts": "2026-10-02T15:23:29.493Z",
+      "event": "MESSAGE_RECEIVED",
+      "node_id": "53cac16f-c053-4c75-b2d4-c21aae0acc04",
+      "peer_id": "client-1790954608413",
+      "type": "DATA",
+      "previous_hash": "0135c34777557329595b998cac6fa85d5be1738c36a469aef9616ee28980531f",
+      "hash": "f956da202e53e0b1a77974c9b69adc316de5a895d3876e84d4c4f571d92ec3ba"
+    }
+  ],
+  "final_hash": "f956da202e53e0b1a77974c9b69adc316de5a895d3876e84d4c4f571d92ec3ba",
+  "verification": "PENDING_INDEPENDENT_VERIFIER"
+}

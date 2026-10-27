@@ -1,0 +1,16 @@
+=== LAW 2558 / CHROMIUM ICU FINAL ===
+Thu Oct  1 13:38:42 +0330 2026
+=== BINARY ===
+/data/data/com.termux/files/usr/bin/chromium-browser
+BIN=/data/data/com.termux/files/usr/bin/chromium-browser
+=== REAL PATH ===
+/data/data/com.termux/files/usr/lib/chromium/chromium-launcher.sh
+=== ICU FILES ===
+/data/data/com.termux/files/usr/lib/chromium/chrome
+/data/data/com.termux/files/usr/lib/chromium/icudtl.dat
+=== PACKAGE FILES ===
+/data/data/com.termux/files/usr/lib/chromium/chrome
+/data/data/com.termux/files/usr/lib/chromium/icudtl.dat
+ICU=/data/data/com.termux/files/usr/lib/chromium/icudtl.dat
+REALBIN=
+=== TEST 1: NORMAL ===

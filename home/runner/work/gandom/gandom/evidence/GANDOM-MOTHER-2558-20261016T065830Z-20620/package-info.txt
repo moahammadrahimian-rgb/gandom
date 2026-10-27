@@ -1,0 +1,13 @@
+PACKAGE_NAME=gandom-p2p
+ENTRYPOINT=server.js
+SCRIPTS={
+  "start": "node server.js",
+  "client": "node client.js",
+  "health": "node -e \"require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})\""
+}
+DEPENDENCIES={
+  "@capacitor/android": "^8.5.2",
+  "@capacitor/cli": "^8.5.2",
+  "@capacitor/core": "^8.5.2",
+  "ws": "^8.18.0"
+}

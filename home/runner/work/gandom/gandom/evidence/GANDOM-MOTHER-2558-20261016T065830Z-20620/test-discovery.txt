@@ -1,0 +1,3 @@
+TEST_SCRIPT=NOT_DEFINED
+HEALTH_SCRIPT=node -e "require('http').get('http://127.0.0.1:8787/health',r=>{let s='';r.on('data',d=>s+=d);r.on('end',()=>console.log(s))})"
+START_SCRIPT=node server.js
